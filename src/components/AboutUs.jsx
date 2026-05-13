@@ -7,7 +7,7 @@ import {
   TrendingUp,
   MapPin,
   Building2,
- Trees,
+  Trees,
 } from "lucide-react";
 
 import logo from "../assets/images/logo.png";
@@ -50,7 +50,7 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-24"
     >
       {/* BACKGROUND */}
       <img
@@ -62,7 +62,7 @@ export default function AboutUs() {
       {/* OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f5f7ff] to-[#fff0f8]" />
 
-      {/* GLOW EFFECTS */}
+      {/* GLOW EFFECT */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/20 blur-3xl rounded-full"></div>
 
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-400/20 blur-3xl rounded-full"></div>
@@ -70,7 +70,7 @@ export default function AboutUs() {
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
 
           {/* LEFT SIDE */}
           <motion.div
@@ -83,7 +83,7 @@ export default function AboutUs() {
             flex
             flex-col
             justify-center
-            min-h-[850px]
+            min-h-[720px]
             "
           >
 
@@ -91,12 +91,12 @@ export default function AboutUs() {
             <div
               className="
               absolute
-              -left-10
+              -left-24
               top-1/2
               -translate-y-1/2
 
-              w-52
-              h-52
+              w-64
+              h-64
 
               rounded-full
 
@@ -118,12 +118,12 @@ export default function AboutUs() {
               <img
                 src={logo}
                 alt="Subham Park"
-                className="w-28 h-28 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
 
             {/* TEXT CONTENT */}
-            <div className="pl-40">
+            <div className="pl-56 relative z-20">
 
               {/* TAG */}
               <p
@@ -150,8 +150,11 @@ export default function AboutUs() {
                 className="
                 mt-6
 
-                text-[72px]
-                leading-[0.95]
+                text-[58px]
+                md:text-[64px]
+
+                leading-[1]
+                tracking-[-3px]
 
                 font-black
 
@@ -181,10 +184,10 @@ export default function AboutUs() {
               <p
                 className="
                 mt-8
-                max-w-[620px]
+                max-w-[540px]
 
-                text-[19px]
-                leading-9
+                text-[18px]
+                leading-8
 
                 text-slate-600
                 "
@@ -195,11 +198,13 @@ export default function AboutUs() {
                 residential community in Jorhat.
               </p>
 
-              {/* SMALL FEATURE BOXES */}
+              {/* SMALL BOXES */}
               <div
                 className="
                 grid
-                grid-cols-3
+                grid-cols-1
+                md:grid-cols-3
+
                 gap-5
                 mt-12
                 max-w-[700px]
@@ -231,6 +236,8 @@ export default function AboutUs() {
                       text-center
 
                       hover:-translate-y-1
+                      hover:shadow-[0_20px_50px_rgba(236,72,153,0.18)]
+
                       transition-all
                       duration-300
                       "
@@ -278,7 +285,7 @@ export default function AboutUs() {
           </motion.div>
 
           {/* RIGHT SIDE */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5">
 
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -292,7 +299,7 @@ export default function AboutUs() {
                   viewport={{ once: true }}
                   whileHover={{ y: -4 }}
                   className="
-                  p-8
+                  p-6
 
                   rounded-[34px]
 
@@ -333,8 +340,8 @@ export default function AboutUs() {
 
                   <h3
                     className="
-                    mt-6
-                    text-3xl
+                    mt-5
+                    text-2xl
                     font-bold
                     text-[#16214a]
                     "
@@ -345,8 +352,8 @@ export default function AboutUs() {
                   <p
                     className="
                     mt-3
-                    text-lg
-                    leading-8
+                    text-base
+                    leading-7
                     text-slate-600
                     "
                   >
