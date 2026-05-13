@@ -5,18 +5,18 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#f7f9ff] pt-16 pb-20"
+      className="relative min-h-screen overflow-hidden bg-[#f7f9ff]"
     >
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f4f7ff] to-[#fff0f8]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f5f8ff] to-[#fff1f8]" />
 
-      {/* BLUR EFFECTS */}
+      {/* SOFT LIGHTS */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-300/20 blur-[120px]" />
 
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-300/20 blur-[120px]" />
 
-      {/* MAIN CONTAINER */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      {/* MAIN SECTION */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-20">
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -27,15 +27,15 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
 
-            {/* HEADING */}
+            {/* MAIN TITLE */}
             <h1
               className="
-              text-[58px]
-              sm:text-[75px]
-              lg:text-[96px]
+              text-[60px]
+              sm:text-[78px]
+              lg:text-[105px]
               font-bold
-              leading-[0.92]
-              tracking-[-4px]
+              leading-[0.9]
+              tracking-[-5px]
               text-[#08113d]
               "
             >
@@ -44,7 +44,7 @@ export default function Hero() {
               YOUR
               <br />
 
-              <span className="bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-500 via-[#7c8dff] to-pink-400 bg-clip-text text-transparent">
                 DREAM HOME
               </span>
 
@@ -67,7 +67,7 @@ export default function Hero() {
               and a secure future for your family.
             </p>
 
-            {/* LINE */}
+            {/* GRADIENT LINE */}
             <div className="mt-8 w-28 h-1 rounded-full bg-gradient-to-r from-blue-500 to-pink-400"></div>
 
             {/* BUTTON AREA */}
@@ -86,7 +86,7 @@ export default function Hero() {
                 text-white
                 text-lg
                 font-semibold
-                shadow-[0_10px_40px_rgba(59,130,246,0.35)]
+                shadow-[0_15px_40px_rgba(59,130,246,0.25)]
                 hover:scale-105
                 transition-all
                 duration-300
@@ -133,11 +133,11 @@ export default function Hero() {
             className="relative"
           >
 
-            {/* CARD */}
+            {/* GLASS CARD */}
             <div
               className="
               relative
-              bg-white/75
+              bg-white/70
               backdrop-blur-2xl
               border border-white/60
               rounded-[42px]
@@ -163,7 +163,7 @@ export default function Hero() {
 
               </div>
 
-              {/* CONTENT */}
+              {/* TEXT */}
               <div className="mt-8">
 
                 <h2 className="text-4xl font-semibold leading-tight text-[#08113d]">
@@ -178,71 +178,76 @@ export default function Hero() {
 
               </div>
 
-              {/* IMAGE */}
-              <div className="mt-10 rounded-[32px] overflow-hidden">
+              {/* IMAGE SECTION */}
+              <div className="mt-10 relative">
 
-                <img
-                  src={heroBg}
-                  alt="Subham Park"
-                  className="
-                  w-full
-                  h-[420px]
-                  object-cover
-                  "
-                />
-
-              </div>
-
-              {/* FLOATING ROOM TOUR */}
-              <div
-                className="
-                absolute
-                top-24
-                right-6
-                bg-[#fff7fb]
-                rounded-[24px]
-                p-5
-                shadow-xl
-                "
-              >
-                <p className="text-sm font-semibold text-slate-700">
-                  ROOMTOUR
-                </p>
-
-                <div className="mt-4 rounded-xl overflow-hidden">
+                <div className="rounded-[34px] overflow-hidden">
 
                   <img
                     src={heroBg}
-                    alt="Room Tour"
-                    className="w-32 h-24 object-cover"
+                    alt="Subham Park"
+                    className="
+                    w-full
+                    h-[470px]
+                    object-cover
+                    "
                   />
 
                 </div>
 
-              </div>
+                {/* SMALL ROOM TOUR CARD */}
+                <div
+                  className="
+                  absolute
+                  top-6
+                  right-6
+                  bg-[#fff7fb]
+                  rounded-[24px]
+                  p-5
+                  shadow-xl
+                  "
+                >
+                  <p className="text-sm font-semibold text-slate-700">
+                    ROOMTOUR
+                  </p>
 
-              {/* PLAY BUTTON */}
-              <div
-                className="
-                absolute
-                top-1/2
-                right-[-30px]
-                -translate-y-1/2
-                w-16
-                h-16
-                rounded-full
-                bg-gradient-to-r
-                from-blue-500
-                to-pink-400
-                flex
-                items-center
-                justify-center
-                text-white
-                text-2xl
-                shadow-xl
-                "
-              >
-                ▶
+                  <div className="mt-4 rounded-xl overflow-hidden">
+
+                    <img
+                      src={heroBg}
+                      alt="Room Tour"
+                      className="w-32 h-24 object-cover"
+                    />
+
+                  </div>
+
+                </div>
+
+                {/* PLAY BUTTON */}
+                <div
+                  className="
+                  absolute
+                  top-1/2
+                  left-1/2
+                  -translate-x-1/2
+                  -translate-y-1/2
+                  w-20
+                  h-20
+                  rounded-full
+                  bg-gradient-to-r
+                  from-blue-500
+                  to-pink-400
+                  flex
+                  items-center
+                  justify-center
+                  text-white
+                  text-3xl
+                  shadow-2xl
+                  "
+                >
+                  ▶
+                </div>
+
               </div>
 
             </div>
@@ -261,7 +266,7 @@ export default function Hero() {
           bg-white/70
           backdrop-blur-2xl
           border border-white/60
-          rounded-[40px]
+          rounded-[42px]
           shadow-[0_20px_80px_rgba(0,0,0,0.06)]
           grid
           md:grid-cols-3
