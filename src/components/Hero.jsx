@@ -95,20 +95,6 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1 }}
             className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-5"
           >
-            {[
-              ["500+", "Happy Families"],
-              ["50+", "Premium Plots"],
-              ["24/7", "Security"],
-              ["100%", "Legal Approval"],
-            ].map(([value, label]) => (
-              <div
-                key={label}
-                className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl"
-              >
-                <h3 className="text-2xl font-bold text-white">{value}</h3>
-                <p className="text-sm text-slate-300 mt-1">{label}</p>
-              </div>
-            ))}
           </motion.div>
         </div>
       </div>
