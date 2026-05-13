@@ -15,31 +15,55 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 pt-4">
+    <header className="fixed top-0 left-0 w-full z-50 px-4 lg:px-6 pt-4">
+      
+      {/* NAVBAR */}
       <nav
         className="
         max-w-[1700px]
         mx-auto
-        bg-white/70
+        bg-white/55
         backdrop-blur-2xl
         border
-        border-white/50
+        border-white/40
         rounded-[30px]
-        shadow-[0_10px_40px_rgba(80,120,255,0.12)]
+        shadow-[0_10px_50px_rgba(99,102,241,0.12)]
         "
       >
-        <div className="px-6 lg:px-10">
 
-          {/* NAVBAR */}
+        <div className="px-5 lg:px-10">
+
+          {/* NAVBAR CONTAINER */}
           <div className="flex items-center justify-between h-[88px]">
 
             {/* LOGO */}
-            <a href="#home" className="flex items-center">
+            <a
+              href="#home"
+              className="
+              flex
+              items-center
+              justify-center
+              w-[92px]
+              h-[92px]
+              rounded-[24px]
+              bg-white/70
+              backdrop-blur-xl
+              border
+              border-white/50
+              shadow-lg
+              "
+            >
+
               <img
                 src={logo}
                 alt="Subham Park"
-                className="h-20 w-auto object-contain"
+                className="
+                h-16
+                w-auto
+                object-contain
+                "
               />
+
             </a>
 
             {/* DESKTOP MENU */}
@@ -50,7 +74,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className="
-                  text-[#1b2559]
+                  text-[#16214a]
                   uppercase
                   tracking-[2px]
                   text-[14px]
@@ -66,7 +90,7 @@ export default function Navbar() {
 
             </div>
 
-            {/* BUTTON */}
+            {/* CTA BUTTON */}
             <div className="hidden lg:flex">
 
               <a
@@ -76,7 +100,6 @@ export default function Navbar() {
                 from-blue-500
                 via-[#7b8cff]
                 to-pink-400
-                hover:scale-105
                 text-white
                 uppercase
                 tracking-[2px]
@@ -85,9 +108,10 @@ export default function Navbar() {
                 px-8
                 py-5
                 rounded-[20px]
+                shadow-[0_10px_35px_rgba(99,102,241,0.35)]
+                hover:scale-105
                 transition-all
                 duration-300
-                shadow-[0_10px_30px_rgba(99,102,241,0.35)]
                 "
               >
                 Download Brochure ↗
@@ -95,10 +119,10 @@ export default function Navbar() {
 
             </div>
 
-            {/* MOBILE BUTTON */}
+            {/* MOBILE TOGGLE */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-[#1b2559]"
+              className="lg:hidden text-[#16214a]"
             >
               {isOpen ? <X size={30} /> : <Menu size={30} />}
             </button>
@@ -115,8 +139,9 @@ export default function Navbar() {
                   <a
                     key={link.name}
                     href={link.href}
+                    onClick={() => setIsOpen(false)}
                     className="
-                    text-[#1b2559]
+                    text-[#16214a]
                     uppercase
                     tracking-[2px]
                     text-sm
@@ -127,6 +152,7 @@ export default function Navbar() {
                   </a>
                 ))}
 
+                {/* MOBILE BUTTON */}
                 <a
                   href="#contact"
                   className="
@@ -153,7 +179,9 @@ export default function Navbar() {
           )}
 
         </div>
+
       </nav>
+
     </header>
   );
 }
