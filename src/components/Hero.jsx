@@ -87,15 +87,6 @@ export default function Hero() {
               Book Free Site Visit
             </a>
           </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-5"
-          >
-          </motion.div>
         </div>
       </div>
 
