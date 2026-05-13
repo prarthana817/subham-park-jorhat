@@ -7,13 +7,13 @@ import {
   TrendingUp,
   MapPin,
   Building2,
-  Trees,
+ Trees,
 } from "lucide-react";
 
 import logo from "../assets/images/logo.png";
 import bgImage from "../assets/images/about-day.jpg";
 
-const topFeatures = [
+const features = [
   {
     icon: Leaf,
     title: "Green Environment",
@@ -50,24 +50,24 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-28"
+      className="relative overflow-hidden py-32"
     >
-      {/* Background */}
+      {/* BACKGROUND */}
       <img
         src={bgImage}
-        alt="Background"
+        alt="About Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-[3px]" />
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f5f7ff] to-[#fff0f8]" />
 
-      {/* Glow Effects */}
+      {/* GLOW EFFECTS */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/20 blur-3xl rounded-full"></div>
 
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-400/20 blur-3xl rounded-full"></div>
 
-      {/* Content */}
+      {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -78,140 +78,200 @@ export default function AboutUs() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col items-start justify-center"
+            className="
+            relative
+            flex
+            flex-col
+            justify-center
+            min-h-[850px]
+            "
           >
 
             {/* BIG ROUND LOGO */}
             <div
               className="
-              w-40
-              h-40
+              absolute
+              -left-10
+              top-1/2
+              -translate-y-1/2
+
+              w-52
+              h-52
+
               rounded-full
-              bg-white/70
-              backdrop-blur-2xl
+
+              bg-white/40
+              backdrop-blur-3xl
+
               border
-              border-white/40
-              shadow-[0_20px_60px_rgba(99,102,241,0.18)]
+              border-white/60
+
+              shadow-[0_0_100px_rgba(236,72,153,0.18)]
+
               flex
               items-center
               justify-center
-              mb-10
+
+              z-10
               "
             >
               <img
                 src={logo}
                 alt="Subham Park"
-                className="w-24 h-24 object-contain"
+                className="w-28 h-28 object-contain"
               />
             </div>
 
-            {/* SMALL TITLE */}
-            <p
-              className="
-              uppercase
-              tracking-[0.4em]
-              text-sm
-              font-semibold
-              bg-gradient-to-r
-              from-blue-500
-              to-pink-500
-              bg-clip-text
-              text-transparent
-              "
-            >
-              About Project
-            </p>
+            {/* TEXT CONTENT */}
+            <div className="pl-40">
 
-            {/* HEADING */}
-            <h2
-              className="
-              mt-5
-              text-4xl
-              md:text-5xl
-              lg:text-6xl
-              font-black
-              leading-[1.05]
-              text-[#0f172a]
-              "
-            >
-              Premium Living at
-
-              <span
+              {/* TAG */}
+              <p
                 className="
-                block
+                uppercase
+                tracking-[0.45em]
+                text-sm
+                font-semibold
+
                 bg-gradient-to-r
                 from-blue-500
                 via-[#8b7cff]
                 to-pink-500
+
                 bg-clip-text
                 text-transparent
                 "
               >
-                Subham Park Jorhat
-              </span>
-            </h2>
+                About Project
+              </p>
 
-            {/* TEXT */}
-            <p
-              className="
-              mt-7
-              text-lg
-              leading-9
-              text-slate-600
-              max-w-2xl
-              "
-            >
-              Subham Park is a thoughtfully planned residential project
-              in Jorhat, Assam, designed to offer modern living,
-              elegant surroundings, premium comfort, and future-ready
-              investment opportunities.
-            </p>
+              {/* HEADING */}
+              <h2
+                className="
+                mt-6
 
-            {/* SMALL FEATURE BOXES */}
-            <div className="flex flex-wrap gap-4 mt-10">
+                text-[72px]
+                leading-[0.95]
 
-              {smallFeatures.map((item) => {
-                const Icon = item.icon;
+                font-black
 
-                return (
-                  <div
-                    key={item.title}
-                    className="
-                    flex
-                    items-center
-                    gap-3
-                    px-5
-                    py-4
-                    rounded-2xl
-                    bg-white/65
-                    backdrop-blur-xl
-                    border
-                    border-white/40
-                    shadow-lg
-                    "
-                  >
+                text-[#101942]
+                "
+              >
+                Premium Living at
+
+                <span
+                  className="
+                  block
+
+                  bg-gradient-to-r
+                  from-blue-500
+                  via-[#8b7cff]
+                  to-pink-500
+
+                  bg-clip-text
+                  text-transparent
+                  "
+                >
+                  Subham Park
+                </span>
+              </h2>
+
+              {/* DESCRIPTION */}
+              <p
+                className="
+                mt-8
+                max-w-[620px]
+
+                text-[19px]
+                leading-9
+
+                text-slate-600
+                "
+              >
+                Experience premium modern living with elegant
+                architecture, peaceful green surroundings,
+                smart amenities, and a beautifully planned
+                residential community in Jorhat.
+              </p>
+
+              {/* SMALL FEATURE BOXES */}
+              <div
+                className="
+                grid
+                grid-cols-3
+                gap-5
+                mt-12
+                max-w-[700px]
+                "
+              >
+
+                {smallFeatures.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
                     <div
+                      key={item.title}
                       className="
-                      w-11
-                      h-11
-                      rounded-xl
-                      bg-gradient-to-r
-                      from-blue-500
-                      to-pink-500
+                      p-5
+
+                      rounded-[26px]
+
+                      bg-white/45
+                      backdrop-blur-3xl
+
+                      border
+                      border-white/60
+
+                      shadow-[0_10px_40px_rgba(99,102,241,0.10)]
+
                       flex
+                      flex-col
                       items-center
-                      justify-center
+                      text-center
+
+                      hover:-translate-y-1
+                      transition-all
+                      duration-300
                       "
                     >
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
 
-                    <p className="font-semibold text-[#16214a]">
-                      {item.title}
-                    </p>
-                  </div>
-                );
-              })}
+                      <div
+                        className="
+                        w-14
+                        h-14
+
+                        rounded-2xl
+
+                        bg-gradient-to-r
+                        from-blue-500
+                        via-[#8b7cff]
+                        to-pink-500
+
+                        flex
+                        items-center
+                        justify-center
+                        "
+                      >
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+
+                      <p
+                        className="
+                        mt-4
+                        text-[15px]
+                        font-semibold
+                        text-[#16214a]
+                        "
+                      >
+                        {item.title}
+                      </p>
+
+                    </div>
+                  );
+                })}
+
+              </div>
 
             </div>
 
@@ -220,7 +280,7 @@ export default function AboutUs() {
           {/* RIGHT SIDE */}
           <div className="flex flex-col gap-6">
 
-            {topFeatures.map((feature, index) => {
+            {features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
@@ -228,17 +288,24 @@ export default function AboutUs() {
                   key={feature.title}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.15 }}
+                  transition={{ delay: index * 0.12 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -4 }}
                   className="
                   p-8
+
                   rounded-[34px]
-                  bg-white/60
-                  backdrop-blur-2xl
+
+                  bg-white/45
+                  backdrop-blur-3xl
+
                   border
-                  border-white/40
+                  border-white/60
+
                   shadow-[0_15px_50px_rgba(99,102,241,0.10)]
+
+                  transition-all
+                  duration-300
                   "
                 >
 
@@ -246,14 +313,18 @@ export default function AboutUs() {
                     className="
                     w-16
                     h-16
+
                     rounded-2xl
+
                     bg-gradient-to-r
                     from-blue-500
                     via-[#8b7cff]
                     to-pink-500
+
                     flex
                     items-center
                     justify-center
+
                     shadow-xl
                     "
                   >
