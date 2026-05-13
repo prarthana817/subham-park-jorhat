@@ -5,11 +5,18 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-cover bg-center flex items-center"
-      style={{ backgroundImage: `url(${heroBg})` }}
+      className="relative min-h-screen overflow-hidden flex items-center"
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-900/40"></div>
+      {/* Dark + White Gradient Overlay for readability + image clarity */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-white/10"></div>
+
+      {/* Extra soft blur overlay for premium feel */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px]"></div>
 
       {/* Decorative Blur Circles */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/20 blur-3xl rounded-full"></div>
@@ -18,6 +25,7 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 w-full">
         <div className="max-w-3xl text-white">
+
           {/* Premium Tag */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -58,9 +66,9 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-8 inline-block bg-green-500/15 border border-green-400/30 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl"
+            className="mt-8 inline-block bg-white/10 border border-white/20 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl"
           >
-            <p className="text-sm uppercase tracking-widest text-green-300">
+            <p className="text-sm uppercase tracking-widest text-green-200">
               Starting From
             </p>
             <p className="text-3xl font-bold text-white">₹12 Lakhs*</p>
