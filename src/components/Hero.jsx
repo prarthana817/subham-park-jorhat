@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-emerald-400/10 blur-3xl rounded-full"></div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-28 w-full">
         <div className="max-w-3xl text-white">
           
           {/* Premium Tag */}
@@ -76,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            className="mt-10 mb-12 flex flex-col sm:flex-row gap-4"
           >
             <a
               href="#about"
