@@ -15,8 +15,8 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 lg:px-6 pt-4">
-      
+    <header className="fixed top-0 left-0 w-full z-50 px-4 lg:px-6 pt-5">
+
       {/* NAVBAR */}
       <nav
         className="
@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="px-5 lg:px-10">
 
           {/* NAVBAR CONTAINER */}
-          <div className="flex items-center justify-between h-[88px]">
+          <div className="flex items-center justify-between h-[92px]">
 
             {/* LOGO */}
             <a
@@ -43,8 +43,8 @@ export default function Navbar() {
               flex
               items-center
               justify-center
-              w-[92px]
-              h-[92px]
+              w-[96px]
+              h-[96px]
               rounded-[24px]
               bg-white/70
               backdrop-blur-xl
@@ -53,7 +53,6 @@ export default function Navbar() {
               shadow-lg
               "
             >
-
               <img
                 src={logo}
                 alt="Subham Park"
@@ -63,7 +62,6 @@ export default function Navbar() {
                 object-contain
                 "
               />
-
             </a>
 
             {/* DESKTOP MENU */}
@@ -119,10 +117,13 @@ export default function Navbar() {
 
             </div>
 
-            {/* MOBILE TOGGLE */}
+            {/* MOBILE MENU BUTTON */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-[#16214a]"
+              className="
+              lg:hidden
+              text-[#16214a]
+              "
             >
               {isOpen ? <X size={30} /> : <Menu size={30} />}
             </button>
@@ -159,6 +160,7 @@ export default function Navbar() {
                   mt-2
                   bg-gradient-to-r
                   from-blue-500
+                  via-[#7b8cff]
                   to-pink-400
                   text-white
                   uppercase
@@ -168,6 +170,7 @@ export default function Navbar() {
                   px-6
                   py-4
                   rounded-2xl
+                  shadow-lg
                   "
                 >
                   Download Brochure
