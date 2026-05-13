@@ -12,65 +12,63 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* Soft blue + white cinematic glow (NO DARK OVERLAY) */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/10 via-transparent to-white/10"></div>
+      {/* VERY LIGHT gradient only for readability (image fully visible) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-blue-100/10"></div>
 
-      {/* Light blur glow for premium feel */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 blur-3xl rounded-full"></div>
+      {/* soft floating glow (no dark overlay) */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/10 blur-3xl rounded-full"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/10 blur-3xl rounded-full"></div>
 
-      {/* Main Content */}
+      {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 w-full">
         <div className="max-w-3xl">
 
-          {/* Floating glass tag */}
+          {/* Floating glass badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20, rotate: -2 }}
-            animate={{ opacity: 1, y: 0, rotate: -2 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full 
-            bg-white/30 backdrop-blur-md border border-white/40 
-            text-blue-900 font-semibold mb-6 shadow-lg"
+            bg-white/40 backdrop-blur-md 
+            border border-white/50 
+            text-blue-900 font-semibold mb-6 shadow-lg rotate-[-1deg]"
           >
             🌿 Premium Gated Community in Jorhat
           </motion.div>
 
-          {/* Heading with tilted glass effect */}
+          {/* MAIN HEADING */}
           <motion.h1
-            initial={{ opacity: 0, y: 40, rotate: -1 }}
-            animate={{ opacity: 1, y: 0, rotate: -1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight 
-            text-white drop-shadow-lg"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg"
           >
             Discover Your Dream Home at{" "}
-            <span className="text-blue-200 bg-white/20 px-3 py-1 rounded-xl backdrop-blur-md">
+            <span className="bg-white/30 backdrop-blur-md px-4 py-1 rounded-xl text-blue-900">
               Subham Park
             </span>
           </motion.h1>
 
-          {/* Description glass card */}
+          {/* DESCRIPTION GLASS */}
           <motion.p
-            initial={{ opacity: 0, y: 30, rotate: 0.5 }}
-            animate={{ opacity: 1, y: 0, rotate: 0.5 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             className="mt-6 text-lg md:text-xl leading-8 max-w-2xl 
-            text-white bg-white/20 backdrop-blur-md 
-            border border-white/30 p-5 rounded-2xl shadow-lg"
+            bg-white/25 backdrop-blur-md 
+            border border-white/40 
+            p-5 rounded-2xl text-slate-900 shadow-lg rotate-[0.5deg]"
           >
             Experience a thoughtfully planned residential community with lush
             greenery, wide internal roads, modern amenities, and a secure future
             for your family in the heart of Jorhat.
           </motion.p>
 
-          {/* Price glass card */}
+          {/* PRICE TAG */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-8 inline-block 
-            bg-blue-100/30 backdrop-blur-md 
-            border border-white/40 px-6 py-4 rounded-2xl shadow-xl rotate-[-1deg]"
+            bg-white/40 backdrop-blur-md 
+            border border-white/50 
+            px-6 py-4 rounded-2xl shadow-xl rotate-[-1deg]"
           >
             <p className="text-sm uppercase tracking-widest text-blue-900">
               Starting From
@@ -78,25 +76,24 @@ export default function Hero() {
             <p className="text-3xl font-bold text-white">₹12 Lakhs*</p>
           </motion.div>
 
-          {/* Buttons */}
+          {/* BUTTONS */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
             <a
               href="#about"
-              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-2xl transition duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold shadow-xl transition"
             >
               Explore Project
             </a>
 
             <a
               href="#contact"
-              className="bg-white/30 border border-white/40 backdrop-blur-md 
+              className="bg-white/40 backdrop-blur-md border border-white/50 
               hover:bg-white hover:text-blue-900 text-white 
-              px-8 py-4 rounded-full font-semibold transition duration-300"
+              px-8 py-4 rounded-full font-semibold transition"
             >
               Book Free Site Visit
             </a>
@@ -105,17 +102,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* SCROLL */}
       <motion.a
         href="#about"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{
-          opacity: { delay: 1.5, duration: 1 },
-          y: { repeat: Infinity, duration: 2 },
-        }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 
-        text-white text-sm tracking-widest uppercase"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-sm tracking-widest uppercase"
       >
         Scroll Down ↓
       </motion.a>
