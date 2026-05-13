@@ -103,7 +103,6 @@ export default function Amenities() {
           >
             Explore Amenities
           </motion.button>
-
         </div>
       </div>
     </section>
