@@ -189,12 +189,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <p className="text-slate-400">
-            © {currentYear} Subham Park Jorhat. All Rights Reserved.
+            © {currentYear} Subham Park Jorhat.
           </p>
 
-          <p className="mt-2 text-sm text-slate-500">
-            Designed & Developed with React, Tailwind CSS and Framer Motion.
-          </p>
+        
         </div>
       </div>
     </footer>
