@@ -104,11 +104,6 @@ export default function Amenities() {
             Explore Amenities
           </motion.button>
 
-          {/* HINT */}
-          <p className="mt-6 text-sm text-slate-300">
-            Click to pause / play slideshow
-          </p>
-
         </div>
       </div>
     </section>
