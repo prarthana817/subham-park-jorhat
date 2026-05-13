@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden flex items-center justify-center"
+      className="relative min-h-screen overflow-hidden"
     >
       {/* BACKGROUND IMAGE */}
       <div
@@ -15,176 +15,144 @@ export default function Hero() {
         }}
       />
 
-      {/* LIGHT OVERLAY LIKE REFERENCE */}
-      <div className="absolute inset-0 bg-black/35"></div>
+      {/* CLEAN DARK OVERLAY */}
+      <div className="absolute inset-0 bg-[#050816]/55" />
 
-      {/* SOFT BLUE + PINK GLOW */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 blur-[120px]" />
-      <div className="absolute bottom-0 right-10 w-72 h-72 bg-pink-500/20 blur-[120px]" />
+      {/* LEFT SOLID SHADE */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#081226]/88 via-[#081226]/60 to-transparent" />
 
-      {/* TOP GLASS NAV EFFECT */}
-      <div className="absolute top-0 left-0 w-full h-24 bg-white/5 backdrop-blur-md border-b border-white/10 z-10" />
+      {/* SOFT BLUE LIGHT */}
+      <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-500/15 blur-[140px]" />
+
+      {/* SOFT PINK LIGHT */}
+      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-pink-400/10 blur-[130px]" />
 
       {/* CONTENT */}
-      <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-20 min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-14 w-full">
 
-        {/* BADGE */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="
-          inline-flex items-center gap-2
-          px-5 py-2
-          rounded-full
-          bg-white/10
-          border border-white/20
-          backdrop-blur-md
-          text-white
-          text-sm
-          font-medium
-          shadow-xl
-          "
-        >
-          ✨ Premium Living Experience
-        </motion.div>
+          {/* LEFT CONTENT */}
+          <div className="max-w-3xl">
 
-        {/* HEADING */}
-        <motion.h1
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="
-          mt-8
-          text-5xl
-          sm:text-6xl
-          lg:text-7xl
-          font-bold
-          leading-[1.05]
-          tracking-tight
-          text-white
-          "
-        >
-          Build Your{" "}
-          <span className="bg-gradient-to-r from-blue-300 via-white to-pink-300 bg-clip-text text-transparent">
-            Dream Home
-          </span>
-        </motion.h1>
+            {/* TITLE */}
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="
+              text-5xl
+              sm:text-6xl
+              lg:text-8xl
+              font-bold
+              leading-[0.95]
+              tracking-tight
+              text-white
+              "
+            >
+              Discover Your Dream Home at{" "}
 
-        {/* DESCRIPTION */}
-        <motion.p
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="
-          mt-8
-          text-lg
-          sm:text-xl
-          leading-9
-          text-white/85
-          max-w-3xl
-          mx-auto
-          "
-        >
-          Create beautiful and functional living spaces with modern
-          architecture, elegant interiors, and luxury comfort designed
-          for your future lifestyle.
-        </motion.p>
+              <span className="bg-gradient-to-r from-blue-400 to-pink-300 bg-clip-text text-transparent">
+                Subham Park
+              </span>
+            </motion.h1>
 
-        {/* BUTTON */}
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="mt-12"
-        >
-          <a
-            href="#about"
-            className="
-            inline-flex items-center gap-3
-            px-10 py-5
-            rounded-2xl
-            bg-white
-            text-slate-900
-            font-semibold
-            text-xl
-            shadow-2xl
-            hover:scale-105
-            transition-all
-            duration-300
-            "
-          >
-            Get Started
-            <span className="text-2xl">›</span>
-          </a>
-        </motion.div>
+            {/* DESCRIPTION */}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="
+              mt-10
+              text-xl
+              leading-10
+              text-white/75
+              max-w-2xl
+              "
+            >
+              Experience a thoughtfully planned residential community
+              with lush greenery, modern amenities, elegant living
+              spaces, and a secure future for your family.
+            </motion.p>
 
-        {/* GLASS STATS SECTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 45 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.3 }}
-          className="
-          mt-20
-          grid
-          grid-cols-1
-          md:grid-cols-3
-          overflow-hidden
-          rounded-[32px]
-          border border-white/10
-          bg-white/10
-          backdrop-blur-xl
-          shadow-2xl
-          "
-        >
+            {/* PRICE CARD */}
+            <motion.div
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.1 }}
+              className="
+              mt-12
+              inline-block
+              bg-white/10
+              backdrop-blur-xl
+              border border-white/10
+              rounded-[32px]
+              px-10
+              py-7
+              shadow-2xl
+              "
+            >
+              <p className="text-sm tracking-[6px] uppercase text-blue-200">
+                Starting From
+              </p>
 
-          {/* CARD 1 */}
-          <div className="p-8 text-left border-b md:border-b-0 md:border-r border-white/10">
-            <div className="flex items-center gap-3">
-              <div className="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center text-white text-2xl">
-                ★
-              </div>
+              <h2 className="mt-3 text-5xl font-bold text-white">
+                ₹12 Lakhs*
+              </h2>
+            </motion.div>
 
-              <div>
-                <h2 className="text-3xl font-bold text-white">
-                  4.8
-                </h2>
+            {/* BUTTONS */}
+            <motion.div
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
+              className="mt-12 flex flex-wrap gap-5"
+            >
+              {/* PRIMARY BUTTON */}
+              <a
+                href="#about"
+                className="
+                px-10
+                py-5
+                rounded-full
+                bg-gradient-to-r
+                from-blue-500
+                to-pink-500
+                text-white
+                text-xl
+                font-semibold
+                shadow-[0_10px_40px_rgba(59,130,246,0.45)]
+                hover:scale-105
+                transition-all
+                duration-300
+                "
+              >
+                Explore Project
+              </a>
 
-                <p className="text-white/70">
-                  Excellent Reviews
-                </p>
-              </div>
-            </div>
+              {/* SECONDARY BUTTON */}
+              <a
+                href="#contact"
+                className="
+                px-10
+                py-5
+                rounded-full
+                bg-white/10
+                backdrop-blur-xl
+                border border-white/10
+                text-white
+                text-xl
+                font-semibold
+                hover:bg-white/20
+                transition-all
+                duration-300
+                "
+              >
+                Book Free Site Visit
+              </a>
+            </motion.div>
 
-            <p className="mt-5 text-white/85 text-lg leading-8">
-              “Excellent service and beautiful modern design.”
-            </p>
           </div>
-
-          {/* CARD 2 */}
-          <div className="p-8 text-left border-b md:border-b-0 md:border-r border-white/10">
-            <h2 className="text-5xl font-bold text-white">
-              5k+
-            </h2>
-
-            <p className="mt-3 text-white/80 text-lg">
-              Successfully completed luxury projects.
-            </p>
-          </div>
-
-          {/* CARD 3 */}
-          <div className="p-8 text-left">
-            <h2 className="text-5xl font-bold text-white">
-              Since 1998
-            </h2>
-
-            <p className="mt-3 text-white/80 text-lg">
-              Building trust with modern architecture and premium quality.
-            </p>
-          </div>
-
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );
