@@ -22,12 +22,12 @@ export default function Navbar() {
         className="
         max-w-[1700px]
         mx-auto
-        bg-white/55
-        backdrop-blur-2xl
+        bg-white/80
+        backdrop-blur-[20px]
         border
-        border-white/40
+        border-white/60
         rounded-[30px]
-        shadow-[0_10px_50px_rgba(99,102,241,0.12)]
+        shadow-[0_10px_60px_rgba(99,102,241,0.18)]
         "
       >
 
@@ -46,11 +46,10 @@ export default function Navbar() {
               w-[96px]
               h-[96px]
               rounded-[24px]
-              bg-white/70
-              backdrop-blur-xl
+              bg-white
               border
-              border-white/50
-              shadow-lg
+              border-[#edf0ff]
+              shadow-[0_8px_30px_rgba(99,102,241,0.12)]
               "
             >
               <img
@@ -72,11 +71,11 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className="
-                  text-[#16214a]
+                  text-[#101942]
                   uppercase
                   tracking-[2px]
                   text-[14px]
-                  font-semibold
+                  font-bold
                   hover:text-pink-500
                   transition-all
                   duration-300
@@ -122,7 +121,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="
               lg:hidden
-              text-[#16214a]
+              text-[#101942]
               "
             >
               {isOpen ? <X size={30} /> : <Menu size={30} />}
@@ -142,11 +141,11 @@ export default function Navbar() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className="
-                    text-[#16214a]
+                    text-[#101942]
                     uppercase
                     tracking-[2px]
                     text-sm
-                    font-semibold
+                    font-bold
                     "
                   >
                     {link.name}
