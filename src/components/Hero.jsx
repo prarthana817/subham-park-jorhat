@@ -6,7 +6,11 @@ export default function Hero() {
     <section
       id="home"
       className="relative min-h-screen overflow-hidden bg-cover bg-center flex items-center"
-      style={{ backgroundImage: `url(${heroBg})` }}
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: "120% auto",
+        backgroundPosition: "center 65%",
+      }}
     >
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-900/40"></div>
@@ -18,6 +22,7 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 w-full">
         <div className="max-w-3xl text-white">
+          
           {/* Premium Tag */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
