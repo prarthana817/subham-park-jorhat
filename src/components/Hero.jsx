@@ -12,73 +12,77 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* VERY LIGHT gradient only for readability (image fully visible) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-blue-100/10"></div>
+      {/* very light overlay only for readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-blue-50/10"></div>
 
-      {/* soft floating glow (no dark overlay) */}
+      {/* soft glow */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/10 blur-3xl rounded-full"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/10 blur-3xl rounded-full"></div>
 
-      {/* CONTENT */}
+      {/* content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 w-full">
         <div className="max-w-3xl">
 
-          {/* Floating glass badge */}
+          {/* badge (soft rounded) */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full 
-            bg-white/40 backdrop-blur-md 
-            border border-white/50 
-            text-blue-900 font-semibold mb-6 shadow-lg rotate-[-1deg]"
+            bg-white/40 backdrop-blur-md border border-white/50 
+            text-blue-900 font-semibold mb-6 shadow-md"
           >
             🌿 Premium Gated Community in Jorhat
           </motion.div>
 
-          {/* MAIN HEADING */}
+          {/* heading (clean, not tilted) */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg"
           >
             Discover Your Dream Home at{" "}
-            <span className="bg-white/30 backdrop-blur-md px-4 py-1 rounded-xl text-blue-900">
+            <span className="bg-white/30 backdrop-blur-md px-4 py-1 rounded-2xl text-blue-900">
               Subham Park
             </span>
           </motion.h1>
 
-          {/* DESCRIPTION GLASS */}
+          {/* description (soft rounded card, no rotation) */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="mt-6 text-lg md:text-xl leading-8 max-w-2xl 
             bg-white/25 backdrop-blur-md 
             border border-white/40 
-            p-5 rounded-2xl text-slate-900 shadow-lg rotate-[0.5deg]"
+            p-5 rounded-2xl text-slate-900 shadow-lg"
           >
             Experience a thoughtfully planned residential community with lush
             greenery, wide internal roads, modern amenities, and a secure future
             for your family in the heart of Jorhat.
           </motion.p>
 
-          {/* PRICE TAG */}
+          {/* PRICE (LEFT ALIGNED FIX) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="mt-8 inline-block 
-            bg-white/40 backdrop-blur-md 
-            border border-white/50 
-            px-6 py-4 rounded-2xl shadow-xl rotate-[-1deg]"
+            className="mt-8 flex justify-start"
           >
-            <p className="text-sm uppercase tracking-widest text-blue-900">
-              Starting From
-            </p>
-            <p className="text-3xl font-bold text-white">₹12 Lakhs*</p>
+            <div
+              className="bg-white/40 backdrop-blur-md 
+              border border-white/50 
+              px-6 py-4 rounded-2xl shadow-xl"
+            >
+              <p className="text-sm uppercase tracking-widest text-blue-900">
+                Starting From
+              </p>
+              <p className="text-3xl font-bold text-white text-left">
+                ₹12 Lakhs*
+              </p>
+            </div>
           </motion.div>
 
-          {/* BUTTONS */}
+          {/* buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
@@ -102,7 +106,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* SCROLL */}
+      {/* scroll */}
       <motion.a
         href="#about"
         initial={{ opacity: 0 }}
