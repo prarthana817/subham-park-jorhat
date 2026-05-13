@@ -5,39 +5,37 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-[#f7f9ff]"
+      className="relative overflow-hidden bg-[#f6f8ff] pt-40 pb-24"
     >
 
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f4f7ff] to-[#fff1f8]" />
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-[-120px] left-[-120px] w-[500px] h-[500px] bg-blue-200/30 blur-[140px]" />
 
-      {/* GLOW EFFECT */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-300/20 blur-[120px]" />
+      <div className="absolute bottom-[-120px] right-[-120px] w-[500px] h-[500px] bg-pink-200/30 blur-[140px]" />
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-300/20 blur-[120px]" />
+      {/* MAIN CONTAINER */}
+      <div className="relative z-10 max-w-[1700px] mx-auto px-6 lg:px-12">
 
-      {/* MAIN */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-20">
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="pt-6"
           >
 
-            {/* HEADING */}
+            {/* BIG HEADING */}
             <h1
               className="
-              text-[44px]
-              sm:text-[58px]
-              lg:text-[76px]
-              font-bold
-              leading-[0.95]
-              tracking-[-3px]
-              text-[#08113d]
+              text-[78px]
+              sm:text-[100px]
+              lg:text-[118px]
+              font-black
+              leading-[0.84]
+              tracking-[-6px]
+              text-[#07113d]
               "
             >
               DISCOVER
@@ -45,23 +43,24 @@ export default function Hero() {
               YOUR
               <br />
 
-              <span className="bg-gradient-to-r from-blue-500 via-[#7c8dff] to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-500 via-[#8b8cff] to-pink-400 bg-clip-text text-transparent">
                 DREAM HOME
               </span>
 
               <br />
-              AT SUBHAM PARK
+              AT SUBHAM
+              <br />
+              PARK
             </h1>
 
             {/* DESCRIPTION */}
             <p
               className="
-              mt-8
-              text-lg
-              lg:text-xl
-              leading-8
+              mt-10
+              text-[22px]
+              leading-[44px]
               text-slate-600
-              max-w-xl
+              max-w-[650px]
               "
             >
               Experience a thoughtfully planned residential
@@ -70,28 +69,28 @@ export default function Hero() {
             </p>
 
             {/* LINE */}
-            <div className="mt-8 w-28 h-1 rounded-full bg-gradient-to-r from-blue-500 to-pink-400"></div>
+            <div className="mt-8 w-36 h-[4px] rounded-full bg-gradient-to-r from-blue-500 to-pink-400" />
 
-            {/* BUTTONS */}
-            <div className="mt-12 flex items-center gap-6 flex-wrap">
+            {/* BUTTON */}
+            <div className="mt-12">
 
-              {/* BUTTON */}
               <a
                 href="#about"
                 className="
-                px-8
-                py-4
-                rounded-[18px]
+                inline-flex
+                items-center
+                justify-center
+                px-10
+                py-5
+                rounded-full
                 bg-gradient-to-r
                 from-blue-500
                 via-[#7b8cff]
                 to-pink-400
                 text-white
-                text-[15px]
-                uppercase
-                tracking-[2px]
-                font-bold
-                shadow-[0_10px_35px_rgba(99,102,241,0.30)]
+                text-[18px]
+                font-semibold
+                shadow-[0_15px_40px_rgba(99,102,241,0.30)]
                 hover:scale-105
                 transition-all
                 duration-300
@@ -100,37 +99,11 @@ export default function Hero() {
                 Explore Project
               </a>
 
-              {/* VIDEO */}
-              <div className="flex items-center gap-4 cursor-pointer">
-
-                <div
-                  className="
-                  w-14
-                  h-14
-                  rounded-full
-                  bg-white
-                  shadow-lg
-                  flex
-                  items-center
-                  justify-center
-                  text-blue-600
-                  text-xl
-                  "
-                >
-                  ▶
-                </div>
-
-                <span className="text-lg font-semibold text-[#08113d]">
-                  Watch Video
-                </span>
-
-              </div>
-
             </div>
 
           </motion.div>
 
-          {/* RIGHT IMAGE CARD */}
+          {/* RIGHT SIDE CARD */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -138,92 +111,74 @@ export default function Hero() {
             className="relative"
           >
 
-            {/* CARD */}
+            {/* GLASS CARD */}
             <div
               className="
               relative
-              bg-white/75
+              bg-white/70
               backdrop-blur-2xl
               border
               border-white/60
-              rounded-[40px]
-              p-6
-              shadow-[0_20px_80px_rgba(0,0,0,0.08)]
+              rounded-[45px]
+              p-8
+              shadow-[0_25px_80px_rgba(0,0,0,0.08)]
               "
             >
 
-              {/* TAGS */}
-              <div className="flex items-center gap-3">
+              {/* TOP TAGS */}
+              <div className="flex items-center gap-4">
 
-                <div className="px-5 py-2 rounded-full border border-slate-200 text-slate-700 text-sm font-medium">
-                  Premium
+                <div className="px-6 py-3 rounded-full border border-slate-200 text-[#1d2755] text-[18px] font-medium">
+                  Interior
                 </div>
 
-                <div className="px-5 py-2 rounded-full border border-slate-200 text-slate-700 text-sm font-medium">
-                  Modern
+                <div className="px-6 py-3 rounded-full border border-slate-200 text-[#1d2755] text-[18px] font-medium">
+                  Design
                 </div>
 
-                <div className="px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 to-pink-400 text-white text-sm font-medium">
-                  Luxury
+                <div className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-pink-400 text-white text-[18px] font-medium">
+                  3D
                 </div>
 
               </div>
 
-              {/* TEXT */}
-              <div className="mt-8">
+              {/* CONTENT */}
+              <div className="mt-10">
 
-                <h2 className="text-3xl lg:text-4xl font-semibold leading-tight text-[#08113d]">
-                  Elegant living
+                <h2
+                  className="
+                  text-[58px]
+                  leading-[1]
+                  font-semibold
+                  text-[#07113d]
+                  "
+                >
+                  Unique design &
                   <br />
-                  experience
+                  ergonomics
                 </h2>
 
-                <p className="mt-4 text-lg text-slate-500">
-                  Crafted for modern lifestyle.
+                <p className="mt-5 text-[26px] text-slate-500">
+                  From blueprints to renders.
                 </p>
 
               </div>
 
               {/* IMAGE */}
-              <div className="mt-8 relative">
+              <div className="mt-10 relative">
 
-                <div className="rounded-[30px] overflow-hidden">
+                <div className="rounded-[36px] overflow-hidden">
 
                   <img
                     src={heroBg}
                     alt="Subham Park"
                     className="
                     w-full
-                    h-[430px]
+                    h-[620px]
                     object-cover
                     "
                   />
 
-                </div>
-
-                {/* PLAY BUTTON */}
-                <div
-                  className="
-                  absolute
-                  top-1/2
-                  left-1/2
-                  -translate-x-1/2
-                  -translate-y-1/2
-                  w-20
-                  h-20
-                  rounded-full
-                  bg-gradient-to-r
-                  from-blue-500
-                  to-pink-400
-                  flex
-                  items-center
-                  justify-center
-                  text-white
-                  text-3xl
-                  shadow-2xl
-                  "
-                >
-                  ▶
                 </div>
 
               </div>
