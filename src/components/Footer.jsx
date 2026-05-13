@@ -191,8 +191,6 @@ export default function Footer() {
           <p className="text-slate-400">
             © {currentYear} Subham Park Jorhat.
           </p>
-
-        
         </div>
       </div>
     </footer>
