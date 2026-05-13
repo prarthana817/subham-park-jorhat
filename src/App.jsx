@@ -1,0 +1,30 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import AboutUs from "./components/AboutUs";
+import Amenities from "./components/Amenities";
+import Experience from "./components/Experience";
+import Gallery from "./components/Gallery";
+import VideoSection from "./components/Planning";
+import ContactForm from "./components/ContactForm";
+import ProjectLocation from "./components/ProjectLocation";
+import Footer from "./components/Footer";
+import Planning from "./components/Planning";
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <AboutUs />
+      <Amenities />
+      <Experience />
+      <Gallery />
+      <Planning />
+      <ContactForm />
+      <ProjectLocation />
+      <Footer />
+    </>
+  );
+}
+
+export default App;
