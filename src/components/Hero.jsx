@@ -5,36 +5,38 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#f7f9ff] pt-32 pb-16"
+      className="relative overflow-hidden bg-[#f7f9ff] pt-32 pb-10"
     >
 
-      {/* LIGHT GLOW */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-200/20 blur-[120px]" />
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-0 left-0 w-[420px] h-[420px] bg-blue-200/20 blur-[120px]" />
 
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-200/20 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-pink-200/20 blur-[120px]" />
 
+      {/* MAIN CONTAINER */}
       <div className="relative z-10 max-w-[1500px] mx-auto px-6 lg:px-10">
 
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 items-center">
 
-          {/* LEFT SIDE */}
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-[620px]"
+            className="max-w-[560px] pt-8 lg:pt-16"
           >
 
             {/* HEADING */}
             <h1
               className="
-              text-[58px]
-              sm:text-[72px]
-              lg:text-[86px]
+              text-[52px]
+              sm:text-[64px]
+              lg:text-[78px]
               font-black
-              leading-[0.9]
+              leading-[0.88]
               tracking-[-4px]
               text-[#07113d]
+              max-w-[520px]
               "
             >
               DISCOVER
@@ -57,17 +59,17 @@ export default function Hero() {
               className="
               mt-7
               text-[18px]
-              leading-[36px]
+              leading-[34px]
               text-slate-600
-              max-w-[560px]
+              max-w-[520px]
               "
             >
               Experience a thoughtfully planned residential
-              community with lush greenery, modern amenities
+              community with lush greenery, modern amenities,
               and elegant living spaces for your family.
             </p>
 
-            {/* LINE */}
+            {/* GRADIENT LINE */}
             <div className="mt-6 w-28 h-[4px] rounded-full bg-gradient-to-r from-blue-500 to-pink-400" />
 
             {/* BUTTON */}
@@ -107,9 +109,10 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
-            className="relative"
+            className="relative -mt-6"
           >
 
+            {/* GLASS CARD */}
             <div
               className="
               bg-white/75
@@ -162,16 +165,16 @@ export default function Hero() {
               </div>
 
               {/* IMAGE */}
-              <div className="mt-8">
+              <div className="mt-8 relative">
 
-                <div className="rounded-[28px] overflow-hidden">
+                <div className="rounded-[30px] overflow-hidden">
 
                   <img
                     src={heroBg}
                     alt="Subham Park"
                     className="
                     w-full
-                    h-[460px]
+                    h-[470px]
                     object-cover
                     "
                   />
