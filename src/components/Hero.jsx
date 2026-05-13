@@ -5,36 +5,35 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#f6f8ff] pt-40 pb-24"
+      className="relative overflow-hidden bg-[#f7f9ff] pt-32 pb-16"
     >
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-[-120px] left-[-120px] w-[500px] h-[500px] bg-blue-200/30 blur-[140px]" />
+      {/* LIGHT GLOW */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-200/20 blur-[120px]" />
 
-      <div className="absolute bottom-[-120px] right-[-120px] w-[500px] h-[500px] bg-pink-200/30 blur-[140px]" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-200/20 blur-[120px]" />
 
-      {/* MAIN CONTAINER */}
-      <div className="relative z-10 max-w-[1700px] mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-[1500px] mx-auto px-6 lg:px-10">
 
         <div className="grid lg:grid-cols-2 gap-10 items-center">
 
-          {/* LEFT CONTENT */}
+          {/* LEFT SIDE */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="pt-6"
+            transition={{ duration: 0.7 }}
+            className="max-w-[620px]"
           >
 
-            {/* BIG HEADING */}
+            {/* HEADING */}
             <h1
               className="
-              text-[78px]
-              sm:text-[100px]
-              lg:text-[118px]
+              text-[58px]
+              sm:text-[72px]
+              lg:text-[86px]
               font-black
-              leading-[0.84]
-              tracking-[-6px]
+              leading-[0.9]
+              tracking-[-4px]
               text-[#07113d]
               "
             >
@@ -56,23 +55,23 @@ export default function Hero() {
             {/* DESCRIPTION */}
             <p
               className="
-              mt-10
-              text-[22px]
-              leading-[44px]
+              mt-7
+              text-[18px]
+              leading-[36px]
               text-slate-600
-              max-w-[650px]
+              max-w-[560px]
               "
             >
               Experience a thoughtfully planned residential
-              community with lush greenery, modern amenities,
-              and a secure future for your family.
+              community with lush greenery, modern amenities
+              and elegant living spaces for your family.
             </p>
 
             {/* LINE */}
-            <div className="mt-8 w-36 h-[4px] rounded-full bg-gradient-to-r from-blue-500 to-pink-400" />
+            <div className="mt-6 w-28 h-[4px] rounded-full bg-gradient-to-r from-blue-500 to-pink-400" />
 
             {/* BUTTON */}
-            <div className="mt-12">
+            <div className="mt-10">
 
               <a
                 href="#about"
@@ -80,17 +79,17 @@ export default function Hero() {
                 inline-flex
                 items-center
                 justify-center
-                px-10
-                py-5
+                px-8
+                py-4
                 rounded-full
                 bg-gradient-to-r
                 from-blue-500
                 via-[#7b8cff]
                 to-pink-400
                 text-white
-                text-[18px]
+                text-[16px]
                 font-semibold
-                shadow-[0_15px_40px_rgba(99,102,241,0.30)]
+                shadow-[0_10px_30px_rgba(99,102,241,0.25)]
                 hover:scale-105
                 transition-all
                 duration-300
@@ -103,52 +102,50 @@ export default function Hero() {
 
           </motion.div>
 
-          {/* RIGHT SIDE CARD */}
+          {/* RIGHT CARD */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.9 }}
             className="relative"
           >
 
-            {/* GLASS CARD */}
             <div
               className="
-              relative
-              bg-white/70
+              bg-white/75
               backdrop-blur-2xl
               border
               border-white/60
-              rounded-[45px]
-              p-8
-              shadow-[0_25px_80px_rgba(0,0,0,0.08)]
+              rounded-[38px]
+              p-6
+              shadow-[0_20px_70px_rgba(0,0,0,0.06)]
               "
             >
 
-              {/* TOP TAGS */}
-              <div className="flex items-center gap-4">
+              {/* TAGS */}
+              <div className="flex items-center gap-3">
 
-                <div className="px-6 py-3 rounded-full border border-slate-200 text-[#1d2755] text-[18px] font-medium">
+                <div className="px-5 py-2 rounded-full border border-slate-200 text-[#16214a] text-sm font-medium">
                   Interior
                 </div>
 
-                <div className="px-6 py-3 rounded-full border border-slate-200 text-[#1d2755] text-[18px] font-medium">
+                <div className="px-5 py-2 rounded-full border border-slate-200 text-[#16214a] text-sm font-medium">
                   Design
                 </div>
 
-                <div className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-pink-400 text-white text-[18px] font-medium">
+                <div className="px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 to-pink-400 text-white text-sm font-medium">
                   3D
                 </div>
 
               </div>
 
               {/* CONTENT */}
-              <div className="mt-10">
+              <div className="mt-8">
 
                 <h2
                   className="
-                  text-[58px]
-                  leading-[1]
+                  text-[42px]
+                  leading-[1.1]
                   font-semibold
                   text-[#07113d]
                   "
@@ -158,23 +155,23 @@ export default function Hero() {
                   ergonomics
                 </h2>
 
-                <p className="mt-5 text-[26px] text-slate-500">
+                <p className="mt-4 text-[20px] text-slate-500">
                   From blueprints to renders.
                 </p>
 
               </div>
 
               {/* IMAGE */}
-              <div className="mt-10 relative">
+              <div className="mt-8">
 
-                <div className="rounded-[36px] overflow-hidden">
+                <div className="rounded-[28px] overflow-hidden">
 
                   <img
                     src={heroBg}
                     alt="Subham Park"
                     className="
                     w-full
-                    h-[620px]
+                    h-[460px]
                     object-cover
                     "
                   />
