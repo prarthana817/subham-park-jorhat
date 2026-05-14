@@ -5,183 +5,145 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#f7f9ff] pt-32 pb-10"
+      className="relative overflow-hidden bg-[#f7f8fc]"
     >
+      <div className="max-w-[1800px] mx-auto px-6 lg:px-8 pt-6">
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-0 left-0 w-[420px] h-[420px] bg-blue-200/20 blur-[120px]" />
+        {/* HERO */}
+        <div className="grid lg:grid-cols-[0.74fr_1.26fr] items-center min-h-screen gap-10">
 
-      <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-pink-200/20 blur-[120px]" />
-
-      {/* MAIN CONTAINER */}
-      <div className="relative z-10 max-w-[1500px] mx-auto px-6 lg:px-10">
-
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 items-center">
-
-          {/* LEFT CONTENT */}
+          {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-[560px] pt-8 lg:pt-16"
+            transition={{ duration: 0.9 }}
+            className="relative z-10"
           >
 
-            {/* HEADING */}
+            {/* TOP SMALL TEXT */}
+            <div className="flex items-center gap-6 mb-14">
+
+              <div className="w-12 h-[2px] bg-[#4b73ff]" />
+
+              <p
+                className="
+                uppercase
+                tracking-[0.45em]
+                text-[13px]
+                font-[300]
+                text-[#5c7cff]
+                "
+              >
+                Premium Living
+              </p>
+
+            </div>
+
+            {/* TITLE */}
             <h1
               className="
-              text-[52px]
-              sm:text-[64px]
-              lg:text-[78px]
-              font-black
-              leading-[0.88]
-              tracking-[-4px]
-              text-[#07113d]
-              max-w-[520px]
+              text-[72px]
+              sm:text-[92px]
+              lg:text-[108px]
+
+              leading-[0.92]
+
+              tracking-[-5px]
+
+              font-[200]
+
+              text-[#14151c]
               "
             >
               DISCOVER
               <br />
+
               YOUR
               <br />
 
-              <span className="bg-gradient-to-r from-blue-500 via-[#8b8cff] to-pink-400 bg-clip-text text-transparent">
-                DREAM HOME
+              <span className="bg-gradient-to-r from-[#4678ff] to-[#8f63ff] bg-clip-text text-transparent">
+                DREAM
               </span>
 
               <br />
-              AT SUBHAM
-              <br />
-              PARK
+
+              <span className="bg-gradient-to-r from-[#5a7dff] to-[#9563ff] bg-clip-text text-transparent">
+                HOME
+              </span>
             </h1>
 
             {/* DESCRIPTION */}
             <p
               className="
-              mt-7
-              text-[18px]
-              leading-[34px]
-              text-slate-600
-              max-w-[520px]
+              mt-14
+
+              max-w-[470px]
+
+              text-[17px]
+
+              leading-[2.1]
+
+              font-[300]
+
+              text-[#8e97ae]
               "
             >
-              Experience a thoughtfully planned residential
-              community with lush greenery, modern amenities,
-              and elegant living spaces for your family.
+              Premium residences with elegant modern
+              architecture and peaceful luxury living
+              experiences in Jorhat.
             </p>
-
-            {/* GRADIENT LINE */}
-            <div className="mt-6 w-28 h-[4px] rounded-full bg-gradient-to-r from-blue-500 to-pink-400" />
-
-            {/* BUTTON */}
-            <div className="mt-10">
-
-              <a
-                href="#about"
-                className="
-                inline-flex
-                items-center
-                justify-center
-                px-8
-                py-4
-                rounded-full
-                bg-gradient-to-r
-                from-blue-500
-                via-[#7b8cff]
-                to-pink-400
-                text-white
-                text-[16px]
-                font-semibold
-                shadow-[0_10px_30px_rgba(99,102,241,0.25)]
-                hover:scale-105
-                transition-all
-                duration-300
-                "
-              >
-                Explore Project
-              </a>
-
-            </div>
 
           </motion.div>
 
-          {/* RIGHT CARD */}
+          {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 70 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
-            className="relative -mt-6"
+            transition={{ duration: 1 }}
+            className="
+            relative
+            flex
+            justify-end
+            items-center
+            "
           >
 
-            {/* GLASS CARD */}
+            {/* SHAPE */}
             <div
               className="
-              bg-white/75
-              backdrop-blur-2xl
-              border
-              border-white/60
-              rounded-[38px]
-              p-6
-              shadow-[0_20px_70px_rgba(0,0,0,0.06)]
+              relative
+
+              w-full
+              max-w-[1200px]
+
+              h-[760px]
+
+              overflow-hidden
               "
+              style={{
+                clipPath:
+                  "polygon(13% 0%, 100% 0%, 100% 70%, 92% 88%, 74% 100%, 24% 100%, 0% 78%, 0% 16%)",
+                WebkitClipPath:
+                  "polygon(13% 0%, 100% 0%, 100% 70%, 92% 88%, 74% 100%, 24% 100%, 0% 78%, 0% 16%)",
+                borderRadius: "34px",
+              }}
             >
 
-              {/* TAGS */}
-              <div className="flex items-center gap-3">
-
-                <div className="px-5 py-2 rounded-full border border-slate-200 text-[#16214a] text-sm font-medium">
-                  Interior
-                </div>
-
-                <div className="px-5 py-2 rounded-full border border-slate-200 text-[#16214a] text-sm font-medium">
-                  Design
-                </div>
-
-                <div className="px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 to-pink-400 text-white text-sm font-medium">
-                  3D
-                </div>
-
-              </div>
-
-              {/* CONTENT */}
-              <div className="mt-8">
-
-                <h2
-                  className="
-                  text-[42px]
-                  leading-[1.1]
-                  font-semibold
-                  text-[#07113d]
-                  "
-                >
-                  Unique design &
-                  <br />
-                  ergonomics
-                </h2>
-
-                <p className="mt-4 text-[20px] text-slate-500">
-                  From blueprints to renders.
-                </p>
-
-              </div>
-
               {/* IMAGE */}
-              <div className="mt-8 relative">
+              <img
+                src={heroBg}
+                alt="Subham Park"
+                className="
+                w-full
+                h-full
 
-                <div className="rounded-[30px] overflow-hidden">
+                object-cover
 
-                  <img
-                    src={heroBg}
-                    alt="Subham Park"
-                    className="
-                    w-full
-                    h-[470px]
-                    object-cover
-                    "
-                  />
+                object-[38%_center]
 
-                </div>
-
-              </div>
+                scale-[1.02]
+                "
+              />
 
             </div>
 
@@ -190,7 +152,6 @@ export default function Hero() {
         </div>
 
       </div>
-
     </section>
   );
 }

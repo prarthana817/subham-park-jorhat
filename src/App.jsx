@@ -1,10 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import StatsBar from "./components/StatsBar";
 import AboutUs from "./components/AboutUs";
 import Amenities from "./components/Amenities";
 import Experience from "./components/Experience";
 import Gallery from "./components/Gallery";
-import VideoSection from "./components/Planning";
 import ContactForm from "./components/ContactForm";
 import ProjectLocation from "./components/ProjectLocation";
 import Footer from "./components/Footer";
@@ -14,14 +14,26 @@ function App() {
   return (
     <>
       <Navbar />
+
       <Hero />
+
+      {/* PREMIUM STATS SECTION */}
+      <StatsBar />
+
       <AboutUs />
+
       <Amenities />
+
       <Experience />
+
       <Gallery />
+
       <Planning />
+
       <ContactForm />
+
       <ProjectLocation />
+
       <Footer />
     </>
   );

@@ -3,28 +3,33 @@
 import { motion } from "framer-motion";
 import {
   Leaf,
-  Shield,
+  ShieldCheck,
   TrendingUp,
+  ArrowUpRight,
 } from "lucide-react";
 
-import logo from "../assests/images/logo.png";
-import bgImage from "../assests/images/about-day.jpg";
+import img1 from "../assests/images/gallery-3.jpg";
+import img2 from "../assests/images/gallery-5.jpg";
+import img3 from "../assests/images/gallery-2.jpg";
 
-const features = [
+const cards = [
   {
+    title: "Elegant Architecture",
+    desc: "Premium design with timeless modern aesthetics.",
+    image: img1,
     icon: Leaf,
-    title: "Green Environment",
-    desc: "Lush landscapes and serene surroundings.",
   },
   {
-    icon: Shield,
-    title: "Secure Community",
-    desc: "Safe and well-planned gated development.",
+    title: "Luxury Lifestyle",
+    desc: "Smart spaces crafted for refined living experience.",
+    image: img2,
+    icon: ShieldCheck,
   },
   {
+    title: "Future Investment",
+    desc: "A perfect blend of comfort and long term value.",
+    image: img3,
     icon: TrendingUp,
-    title: "Smart Investment",
-    desc: "Excellent future appreciation potential.",
   },
 ];
 
@@ -32,265 +37,297 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32 bg-[#f5f7ff]"
+      className="relative overflow-hidden bg-[#f5f7fd] py-24"
     >
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <img
+          src={img1}
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-      {/* BACKGROUND IMAGE */}
-      <img
-        src={bgImage}
-        alt="About Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-10"
-      />
+      <div className="relative z-10 max-w-[1680px] mx-auto px-5 lg:px-8">
 
-      {/* OVERLAY */}
-      <div
-        className="
-        absolute inset-0
+        {/* MAIN GRID */}
+        <div className="grid lg:grid-cols-[0.85fr_1.55fr] gap-10 items-start">
 
-        bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(244,114,182,0.20),transparent_35%),linear-gradient(to_bottom_right,#eef4ff,#f7f4ff,#fff7fb)]
-
-        backdrop-blur-[2px]
-        "
-      />
-
-      {/* BLUE GLOW */}
-      <div
-        className="
-        absolute
-        top-[-120px]
-        left-[-120px]
-
-        w-[520px]
-        h-[520px]
-
-        bg-blue-400/30
-        blur-[140px]
-        rounded-full
-        "
-      ></div>
-
-      {/* PINK GLOW */}
-      <div
-        className="
-        absolute
-        bottom-[-120px]
-        right-[-120px]
-
-        w-[520px]
-        h-[520px]
-
-        bg-pink-400/25
-        blur-[140px]
-        rounded-full
-        "
-      ></div>
-
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-
-        {/* MAIN CONTENT */}
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-
-          {/* LEFT LOGO */}
+          {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="
-            w-[280px]
-            h-[280px]
-
-            rounded-full
-
-            bg-white/50
-            backdrop-blur-3xl
-
-            border border-white/60
-
-            shadow-[0_0_80px_rgba(236,72,153,0.15)]
-
-            flex items-center justify-center
-
-            shrink-0
-            "
-          >
-            <img
-              src={logo}
-              alt="Subham Park"
-              className="w-36 h-36 object-contain"
-            />
-          </motion.div>
-
-          {/* RIGHT CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex-1"
+            className="max-w-[430px]"
           >
 
-            {/* TAG */}
-            <p
-              className="
-              uppercase
-              tracking-[0.45em]
-              text-sm
-              font-semibold
+            {/* TOP TAG */}
+            <div className="flex items-center gap-5 mb-10">
 
-              bg-gradient-to-r
-              from-blue-500
-              via-[#8b7cff]
-              to-pink-500
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#4c74ff] to-[#ca4dff]" />
 
-              bg-clip-text
-              text-transparent
-              "
-            >
-              About Project
-            </p>
+              <p
+                className="
+                uppercase
+                tracking-[0.4em]
+                text-[14px]
+                font-[400]
+                text-[#5a72ff]
+                "
+              >
+                About Us
+              </p>
 
-            {/* HEADING */}
+            </div>
+
+            {/* TITLE */}
             <h2
               className="
-              mt-5
-
-              text-[52px]
-              md:text-[70px]
+              text-[58px]
+              md:text-[74px]
 
               leading-[0.95]
 
-              font-black
+              tracking-[-3px]
 
-              text-[#101942]
+              font-[250]
+
+              text-[#131927]
               "
             >
-              Premium Living at
-
-              <span
-                className="
-                block
-
-                bg-gradient-to-r
-                from-blue-500
-                via-[#8b7cff]
-                to-pink-500
-
-                bg-clip-text
-                text-transparent
-                "
-              >
-                Subham Park
-              </span>
+              Premium
+              <br />
+              Living
+              <br />
+              Experience
             </h2>
+
+            {/* UNDERLINE */}
+            <div
+              className="
+              mt-8
+
+              w-[240px]
+              h-[5px]
+
+              rounded-full
+
+              bg-gradient-to-r
+              from-[#4c74ff]
+              via-[#8667ff]
+              to-[#d54cff]
+              "
+            />
 
             {/* DESCRIPTION */}
             <p
               className="
-              mt-7
-              max-w-[720px]
+              mt-10
 
               text-[18px]
-              md:text-[20px]
 
-              leading-9
+              leading-[2]
 
-              text-slate-600
+              font-[300]
+
+              text-[#7e89a7]
               "
             >
-              Experience premium modern living with elegant
-              architecture, peaceful green surroundings,
-              smart amenities, and a beautifully planned
-              residential community in Jorhat.
+              Discover a beautifully planned residential
+              environment crafted with elegant architecture,
+              premium lifestyle amenities and peaceful modern
+              living experiences.
             </p>
 
-            {/* FEATURE BOXES */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
+          </motion.div>
 
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
+          {/* RIGHT CARDS */}
+          <div
+            className="
+            grid
 
-                return (
-                  <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -5 }}
+            grid-cols-1
+            md:grid-cols-2
+            xl:grid-cols-3
+
+            gap-6
+            "
+          >
+
+            {cards.map((card, index) => {
+              const Icon = card.icon;
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.12 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8 }}
+                  className="
+                  relative
+
+                  overflow-hidden
+
+                  rounded-[34px]
+
+                  bg-white/85
+                  backdrop-blur-xl
+
+                  border border-white/60
+
+                  shadow-[0_20px_60px_rgba(15,23,42,0.08)]
+
+                  transition-all
+                  duration-500
+                  "
+                >
+
+                  {/* IMAGE */}
+                  <div
                     className="
-                    p-5
+                    relative
 
-                    rounded-[24px]
+                    h-[250px]
 
-                    bg-white/45
-                    backdrop-blur-3xl
-
-                    border border-white/60
-
-                    shadow-[0_10px_40px_rgba(99,102,241,0.10)]
-
-                    transition-all
-                    duration-300
+                    overflow-hidden
                     "
                   >
+
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="
+                      w-full
+                      h-full
+
+                      object-cover
+
+                      transition-transform
+                      duration-700
+
+                      group-hover:scale-105
+                      "
+                    />
 
                     {/* ICON */}
                     <div
                       className="
+                      absolute
+                      top-5
+                      left-5
+
                       w-14
                       h-14
 
-                      rounded-2xl
+                      rounded-[20px]
 
-                      bg-gradient-to-r
-                      from-blue-500
-                      via-[#8b7cff]
-                      to-pink-500
+                      bg-white/20
+                      backdrop-blur-xl
 
-                      flex items-center justify-center
+                      border border-white/30
+
+                      flex
+                      items-center
+                      justify-center
                       "
                     >
                       <Icon className="w-6 h-6 text-white" />
                     </div>
 
+                  </div>
+
+                  {/* CONTENT */}
+                  <div className="relative px-8 py-8">
+
+                    {/* ARROW BUTTON */}
+                    <div
+                      className="
+                      absolute
+                      top-[-30px]
+                      right-7
+
+                      w-16
+                      h-16
+
+                      rounded-full
+
+                      bg-gradient-to-r
+                      from-[#4c74ff]
+                      to-[#8f63ff]
+
+                      shadow-[0_15px_40px_rgba(99,102,241,0.35)]
+
+                      flex
+                      items-center
+                      justify-center
+                      "
+                    >
+                      <ArrowUpRight className="w-7 h-7 text-white" />
+                    </div>
+
                     {/* TITLE */}
                     <h3
                       className="
-                      mt-4
-                      text-lg
-                      font-bold
-                      text-[#16214a]
+                      pr-14
+
+                      text-[28px]
+
+                      leading-[1.25]
+
+                      tracking-[-1px]
+
+                      font-[600]
+
+                      text-[#151c34]
                       "
                     >
-                      {feature.title}
+                      {card.title}
                     </h3>
+
+                    {/* LINE */}
+                    <div
+                      className="
+                      mt-6
+                      mb-6
+
+                      w-full
+                      h-[1px]
+
+                      bg-gradient-to-r
+                      from-[#7c92ff]
+                      to-transparent
+                      "
+                    />
 
                     {/* DESC */}
                     <p
                       className="
-                      mt-2
-                      text-sm
-                      leading-7
-                      text-slate-600
+                      text-[17px]
+
+                      leading-[2]
+
+                      font-[300]
+
+                      text-[#7d86a5]
                       "
                     >
-                      {feature.desc}
+                      {card.desc}
                     </p>
 
-                  </motion.div>
-                );
-              })}
+                  </div>
 
-            </div>
+                </motion.div>
+              );
+            })}
 
-          </motion.div>
+          </div>
 
         </div>
 
       </div>
-
     </section>
   );
 }

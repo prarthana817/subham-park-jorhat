@@ -1,109 +1,593 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+  Dumbbell,
+  Trees,
+  Waves,
+  Building2,
+  Gamepad2,
+  Trophy,
+} from "lucide-react";
 
-import img1 from "../assests/images/amenities-1.jpg";
-import img2 from "../assests/images/amenities-2.jpg";
+import img1 from "../assests/images/location-map.jpg";
+import img2 from "../assests/images/gallery-2.jpg";
+import img3 from "../assests/images/gallery-3.jpg";
+import img4 from "../assests/images/gallery-5.jpg";
+import img5 from "../assests/images/gallery-4.jpg";
+import img6 from "../assests/images/gallery-6.jpg";
+const amenities = [
+  {
+    title: "Community Hall",
+    desc: "Elegant gathering and event space.",
+    image: img1,
+    icon: Building2,
+  },
+  {
+    title: "Modern Gym",
+    desc: "Advanced fitness and wellness zone.",
+    image: img2,
+    icon: Dumbbell,
+  },
+  {
+    title: "Lawn Area",
+    desc: "Beautiful landscaped green retreat.",
+    image: img3,
+    icon: Trees,
+  },
+  {
+    title: "Swimming Pool",
+    desc: "Luxury pool with relaxing ambience.",
+    image: img4,
+    icon: Waves,
+  },
+  {
+    title: "Badminton Court",
+    desc: "Professional sports experience.",
+    image: img5,
+    icon: Trophy,
+  },
+  {
+    title: "Indoor Games",
+    desc: "Fun gaming and leisure activities.",
+    image: img6,
+    icon: Gamepad2,
+  },
+];
+
+const stats = [
+  {
+    number: "120+",
+    label: "Families",
+  },
+  {
+    number: "25+",
+    label: "Amenities",
+  },
+  {
+    number: "15K+",
+    label: "Green Area",
+  },
+  {
+    number: "24/7",
+    label: "Security",
+  },
+];
 
 export default function Amenities() {
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const images = [img1, img2];
-
-  useEffect(() => {
-    if (paused) return;
-
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [paused]);
-
   return (
     <section
       id="amenities"
-      className="relative h-screen overflow-hidden cursor-pointer"
-      onClick={() => setPaused(!paused)}
+      className="relative overflow-hidden py-20 bg-[#eef2ff]"
     >
-      {/* BACKGROUND SLIDESHOW */}
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={index}
-          src={images[index]}
-          initial={{ opacity: 0, scale: 1.15 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </AnimatePresence>
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(217,70,239,0.10),transparent_30%)]" />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="relative z-10 max-w-[1380px] mx-auto px-5 lg:px-6">
 
-      {/* LIGHT EFFECT */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-green-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-emerald-400/20 blur-3xl rounded-full"></div>
+        {/* TOP SECTION */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
 
-      {/* CONTENT */}
-      <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
+          {/* LEFT */}
+          <div className="max-w-[520px]">
 
-        <div className="max-w-4xl text-white">
+            <div className="flex items-center gap-4 mb-6">
 
-          {/* SPLIT TITLE CONVERGENCE */}
-          <div className="flex justify-center items-center gap-4 md:gap-6 flex-wrap">
+              <div className="w-12 h-[2px] bg-gradient-to-r from-[#4f7cff] to-[#c026d3]" />
 
-            {/* LEFT → AMENITIES */}
-            <motion.h2
-              initial={{ x: -200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-bold"
+              <p
+                className="
+                uppercase
+                tracking-[0.38em]
+                text-[11px]
+                font-[400]
+                text-[#5e6dff]
+                "
+              >
+                Premium Amenities
+              </p>
+
+            </div>
+
+            <h2
+              className="
+              text-[42px]
+              md:text-[58px]
+
+              leading-[0.95]
+
+              tracking-[-2px]
+
+              font-[300]
+
+              text-[#111827]
+              "
             >
-              Amenities
-            </motion.h2>
+              Luxury
+              <br />
 
-            {/* CENTER ICON / GLOW */}
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="w-3 h-3 md:w-4 md:h-4 bg-green-400 rounded-full shadow-[0_0_25px_#22c55e]"
+              Living
+              <br />
+
+              <span className="bg-gradient-to-r from-[#4677ff] to-[#965cff] bg-clip-text text-transparent">
+                Experience
+              </span>
+            </h2>
+
+            <div
+              className="
+              mt-5
+
+              w-[180px]
+              h-[4px]
+
+              rounded-full
+
+              bg-gradient-to-r
+              from-[#4677ff]
+              to-[#d946ef]
+              "
             />
 
-            {/* RIGHT → PREMIUM LIFESTYLE */}
-            <motion.h2
-              initial={{ x: 200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-bold text-green-400"
+            <p
+              className="
+              mt-7
+
+              text-[15px]
+
+              leading-[2]
+
+              font-[300]
+
+              text-[#74809d]
+              "
             >
-              Premium Lifestyle
-            </motion.h2>
+              Thoughtfully designed premium amenities for
+              elegant modern living and peaceful comfort.
+            </p>
+
           </div>
 
-          {/* SUBTITLE (FORWARD PUSH FEEL) */}
-          <motion.p
-            initial={{ opacity: 0, y: 40, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-6 text-lg text-slate-200 leading-8"
-          >
-            Experience world-class living with modern infrastructure, lush green
-            landscapes, and premium community amenities designed for elegance and comfort.
-          </motion.p>
+          {/* ROTATING CIRCLE */}
+          <div className="flex justify-center lg:justify-end">
 
-          {/* BUTTON */}
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="mt-8 px-8 py-4 bg-green-600 hover:bg-green-700 rounded-full font-semibold shadow-2xl transition"
-          >
-            Explore Amenities
-          </motion.button>
+            <div className="relative w-[170px] h-[170px]">
+
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 12,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="
+                absolute
+                inset-0
+
+                rounded-full
+
+                border border-[#cfd7f7]
+
+                flex
+                items-center
+                justify-center
+                "
+              >
+                <svg
+                  viewBox="0 0 200 200"
+                  className="w-full h-full"
+                >
+                  <defs>
+                    <path
+                      id="circlePath"
+                      d="
+                        M 100,100
+                        m -70,0
+                        a 70,70 0 1,1 140,0
+                        a 70,70 0 1,1 -140,0
+                      "
+                    />
+                  </defs>
+
+                  <text
+                    fill="#6675ff"
+                    fontSize="12"
+                    letterSpacing="4"
+                  >
+                    <textPath href="#circlePath">
+                      SHUBHAM PARK • JORHAT • PREMIUM LIVING •
+                    </textPath>
+                  </text>
+                </svg>
+              </motion.div>
+
+              <div
+                className="
+                absolute
+                inset-[28px]
+
+                rounded-full
+
+                bg-gradient-to-br
+                from-[#4677ff]
+                to-[#9c5cff]
+
+                shadow-[0_15px_40px_rgba(99,102,241,0.25)]
+
+                flex
+                items-center
+                justify-center
+                "
+              >
+                <span
+                  className="
+                  text-white
+
+                  text-[14px]
+
+                  tracking-[0.2em]
+
+                  uppercase
+
+                  font-[300]
+                  "
+                >
+                  WHY
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
+        {/* CARDS */}
+        <div
+          className="
+          mt-16
+
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          xl:grid-cols-3
+
+          gap-5
+          "
+        >
+          {amenities.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6 }}
+                className="
+                group
+
+                overflow-hidden
+
+                rounded-[28px]
+
+                bg-[#f7f9ff]
+
+                border border-[#dde5ff]
+
+                hover:bg-gradient-to-br
+                hover:from-[#4677ff]
+                hover:to-[#905cff]
+
+                transition-all
+                duration-500
+
+                shadow-[0_10px_35px_rgba(15,23,42,0.06)]
+                "
+              >
+                {/* IMAGE */}
+                <div className="relative overflow-hidden h-[210px]">
+
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="
+                    w-full
+                    h-full
+
+                    object-cover
+
+                    group-hover:scale-110
+
+                    transition-transform
+                    duration-700
+                    "
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+
+                  {/* ICON */}
+                  <div
+                    className="
+                    absolute
+                    top-4
+                    left-4
+
+                    w-12
+                    h-12
+
+                    rounded-[16px]
+
+                    bg-white/20
+                    backdrop-blur-xl
+
+                    border border-white/20
+
+                    flex
+                    items-center
+                    justify-center
+                    "
+                  >
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+
+                </div>
+
+                {/* CONTENT */}
+                <div className="p-6">
+
+                  <div className="flex items-start justify-between gap-4">
+
+                    <h3
+                      className="
+                      text-[28px]
+
+                      leading-[1.08]
+
+                      tracking-[-1px]
+
+                      font-[500]
+
+                      text-[#12192f]
+
+                      group-hover:text-white
+
+                      transition-colors
+                      duration-500
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    <div
+                      className="
+                      shrink-0
+
+                      w-12
+                      h-12
+
+                      rounded-full
+
+                      bg-gradient-to-br
+                      from-[#4677ff]
+                      to-[#9c5cff]
+
+                      flex
+                      items-center
+                      justify-center
+
+                      text-white
+                      text-xl
+
+                      group-hover:bg-white
+                      group-hover:text-[#5f63ff]
+
+                      transition-all
+                      duration-500
+                      "
+                    >
+                      ↗
+                    </div>
+
+                  </div>
+
+                  <div
+                    className="
+                    mt-5
+
+                    w-full
+                    h-[2px]
+
+                    bg-gradient-to-r
+                    from-[#7b8cff]
+                    to-transparent
+
+                    group-hover:from-white
+                    "
+                  />
+
+                  <p
+                    className="
+                    mt-5
+
+                    text-[15px]
+
+                    leading-[1.9]
+
+                    font-[300]
+
+                    text-[#7d87a5]
+
+                    group-hover:text-white/85
+
+                    transition-colors
+                    duration-500
+                    "
+                  >
+                    {item.desc}
+                  </p>
+
+                </div>
+
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* WHY CHOOSE US */}
+        <div className="mt-24">
+
+          <div className="text-center">
+
+            <p
+              className="
+              uppercase
+
+              tracking-[0.35em]
+
+              text-[11px]
+
+              text-[#6b73ff]
+              "
+            >
+              Why Choose Us
+            </p>
+
+            <h3
+              className="
+              mt-4
+
+              text-[36px]
+              md:text-[48px]
+
+              leading-[1]
+
+              tracking-[-2px]
+
+              font-[300]
+
+              text-[#111827]
+              "
+            >
+              Crafted For
+              <span className="block bg-gradient-to-r from-[#4677ff] to-[#965cff] bg-clip-text text-transparent">
+                Premium Families
+              </span>
+            </h3>
+
+          </div>
+
+          {/* STATS */}
+          <div
+            className="
+            mt-12
+
+            grid
+            grid-cols-2
+            lg:grid-cols-4
+
+            gap-5
+            "
+          >
+            {stats.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: index * 0.08,
+                  duration: 0.5,
+                }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="
+                rounded-[24px]
+
+                bg-[#f7f9ff]
+
+                border border-[#dfe5ff]
+
+                hover:bg-gradient-to-br
+                hover:from-[#4677ff]
+                hover:to-[#9c5cff]
+
+                px-6
+                py-8
+
+                text-center
+
+                transition-all
+                duration-500
+
+                shadow-[0_10px_30px_rgba(15,23,42,0.05)]
+                "
+              >
+                <h4
+                  className="
+                  text-[34px]
+
+                  leading-none
+
+                  font-[500]
+
+                  bg-gradient-to-r
+                  from-[#4677ff]
+                  to-[#965cff]
+
+                  bg-clip-text
+                  text-transparent
+
+                  group-hover:text-white
+                  "
+                >
+                  {item.number}
+                </h4>
+
+                <p
+                  className="
+                  mt-3
+
+                  text-[13px]
+
+                  tracking-[0.08em]
+
+                  uppercase
+
+                  text-[#7d87a5]
+                  "
+                >
+                  {item.label}
+                </p>
+
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
