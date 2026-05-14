@@ -1,195 +1,467 @@
+// src/components/Plans.jsx
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  DoorOpen,
-  Sofa,
-  ChefHat,
-  BedDouble,
-  Wind,
-  CarFront,
-  Expand,
-} from "lucide-react";
 
-import floorPlan from "../assests/images/floor-plan-3d.jpg";
+import planA from "../assests/images/plan-a.jpg";
+import planB from "../assests/images/plan-b.jpg";
+import planC from "../assests/images/plan-c.jpg";
 
-const features = [
+const plans = [
   {
-    icon: DoorOpen,
-    title: "Grand Entrance",
-    description: "Welcoming entry with elegant circulation.",
+    id: "A",
+    title: "Unit A",
+    image: planA,
+    size: "3 BHK Premium Apartment",
+    desc: "Spacious modern layout with elegant living and dining experience.",
   },
+
   {
-    icon: Sofa,
-    title: "Spacious Living Room",
-    description: "Designed for comfort and family gatherings.",
+    id: "B",
+    title: "Unit B",
+    image: planB,
+    size: "2 BHK Smart Living",
+    desc: "Compact luxury planning with optimized comfort and ventilation.",
   },
+
   {
-    icon: ChefHat,
-    title: "Modern Kitchen",
-    description: "Efficient layout with contemporary utility.",
-  },
-  {
-    icon: BedDouble,
-    title: "Comfortable Bedrooms",
-    description: "Private and well-ventilated sleeping spaces.",
-  },
-  {
-    icon: Wind,
-    title: "Balcony & Ventilation",
-    description: "Natural light and cross-ventilation throughout.",
-  },
-  {
-    icon: CarFront,
-    title: "Dedicated Parking",
-    description: "Convenient and secure parking arrangements.",
+    id: "C",
+    title: "Penthouse",
+    image: planC,
+    size: "Luxury Rooftop Residence",
+    desc: "Premium private living crafted with modern architectural elegance.",
   },
 ];
 
-export default function Planning() {
-  const [open, setOpen] = useState(false);
+export default function Plans() {
+  const [active, setActive] = useState(0);
 
   return (
     <section
-      id="planning"
-      className="py-24 bg-gradient-to-b from-white via-emerald-50 to-white"
+      id="plan"
+      className="
+      relative
+
+      overflow-hidden
+
+      py-24
+
+      bg-[#e9edf7]
+      "
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <p className="text-emerald-600 font-semibold tracking-[0.3em] uppercase">
-            Master Plan
-          </p>
+      {/* SOLID PREMIUM BACKGROUND */}
+      <div
+        className="
+        absolute
+        inset-0
 
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-slate-900">
-            3D Floor Layout Showcase
-          </h2>
+        bg-[linear-gradient(to_bottom_right,#eef2ff,#e8ecf7,#f4f6fb)]
+        "
+      />
 
-          <p className="mt-5 text-slate-600 max-w-3xl mx-auto leading-8">
-            Visualize every corner of your future home—from the grand entrance
-            and living room to bedrooms, kitchen, balconies, and parking.
-          </p>
-        </motion.div>
+      {/* LEFT GLOW */}
+      <div
+        className="
+        absolute
+        top-[-120px]
+        left-[-120px]
 
-        {/* MAIN IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-16"
-        >
-          <div
-            onClick={() => setOpen(true)}
-            className="group relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-emerald-200/50 cursor-pointer border border-emerald-100"
-          >
-            <img
-              src={floorPlan}
-              alt="3D Floor Plan"
-              className="w-full h-auto transition duration-700 group-hover:scale-105"
-            />
+        w-[300px]
+        h-[300px]
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        rounded-full
 
-            {/* Expand Button */}
-            <div className="absolute top-6 right-6 w-14 h-14 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center group-hover:scale-110 transition duration-500">
-              <Expand className="w-6 h-6 text-slate-800" />
-            </div>
+        bg-[#6c7cff]/10
 
-            {/* Bottom Caption */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <h3 className="text-white text-2xl font-semibold">
-                Smart Architectural Planning
-              </h3>
-              <p className="text-slate-200 mt-2">
-                Click to explore the full high-resolution floor layout.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+        blur-[120px]
+        "
+      />
 
-        {/* FEATURES */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((item, index) => {
-            const Icon = item.icon;
+      {/* RIGHT GLOW */}
+      <div
+        className="
+        absolute
+        bottom-[-120px]
+        right-[-120px]
 
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative bg-white/90 backdrop-blur-sm p-8 rounded-[2rem]
-                           border border-emerald-100 shadow-xl shadow-emerald-100/50
-                           hover:shadow-2xl hover:shadow-emerald-200/60
-                           hover:border-emerald-300 transition-all duration-500"
+        w-[300px]
+        h-[300px]
+
+        rounded-full
+
+        bg-[#d56dff]/10
+
+        blur-[120px]
+        "
+      />
+
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
+
+        {/* TOP */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+
+          {/* LEFT */}
+          <div>
+
+            {/* TAG */}
+            <div className="flex items-center gap-4 mb-6">
+
+              <div
+                className="
+                w-14
+                h-[2px]
+
+                bg-gradient-to-r
+                from-[#4f7cff]
+                to-[#cb6ce6]
+                "
+              />
+
+              <p
+                className="
+                uppercase
+
+                tracking-[0.38em]
+
+                text-[13px]
+
+                font-[500]
+
+                text-[#5e6eff]
+                "
               >
-                {/* Top Glow */}
-                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                Master Plan
+              </p>
 
-                {/* Icon */}
-                <div
-                  className="w-16 h-16 rounded-2xl bg-gradient-to-br
-                             from-emerald-500 to-green-600
-                             flex items-center justify-center
-                             shadow-lg shadow-emerald-500/30
-                             group-hover:scale-110 group-hover:rotate-6
-                             transition duration-500"
-                >
-                  <Icon className="w-8 h-8 text-white" />
-                </div>
+            </div>
 
-                {/* Title */}
-                <h3 className="mt-6 text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors duration-300">
-                  {item.title}
-                </h3>
+            {/* TITLE */}
+            <h2
+              className="
+              text-[48px]
+              md:text-[70px]
 
-                {/* Description */}
-                <p className="mt-3 text-slate-600 leading-8">
-                  {item.description}
-                </p>
+              leading-[0.95]
 
-                {/* Bottom Accent */}
-                <div
-                  className="mt-6 h-1 w-14 rounded-full
-                             bg-gradient-to-r from-emerald-500 to-green-400
-                             group-hover:w-24 transition-all duration-500"
-                ></div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
+              tracking-[-3px]
 
-      {/* LIGHTBOX */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setOpen(false)}
+              font-[300]
+
+              text-[#121826]
+              "
+            >
+              Premium
+              <br />
+
+              Living
+              <br />
+
+              <span
+                className="
+                bg-gradient-to-r
+                from-[#4d7cff]
+                to-[#c66dff]
+
+                bg-clip-text
+                text-transparent
+                "
+              >
+                Layouts
+              </span>
+            </h2>
+
+          </div>
+
+          {/* BUTTONS */}
+          <div
+            className="
+            flex
+            items-center
+            gap-4
+
+            flex-wrap
+            "
           >
-            <motion.img
-              src={floorPlan}
-              alt="Full Floor Plan"
-              className="max-w-[95%] max-h-[95%] rounded-3xl shadow-2xl"
-              initial={{ scale: 0.85 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.85 }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {plans.map((plan, index) => (
+              <button
+                key={plan.id}
+                onClick={() => setActive(index)}
+                className={`
+                px-7
+                py-3
+
+                rounded-full
+
+                text-sm
+                tracking-[0.18em]
+                uppercase
+
+                transition-all
+                duration-300
+
+                border
+
+                ${
+                  active === index
+                    ? `
+                    bg-gradient-to-r
+                    from-[#4d7cff]
+                    to-[#c66dff]
+
+                    text-white
+
+                    border-transparent
+
+                    shadow-[0_10px_35px_rgba(99,102,241,0.35)]
+                    `
+                    : `
+                    bg-white/80
+                    backdrop-blur-xl
+
+                    text-[#20263d]
+
+                    border-white/70
+
+                    hover:border-[#6b7dff]
+                    hover:text-[#5b6dff]
+                    `
+                }
+                `}
+              >
+                {plan.title}
+              </button>
+            ))}
+          </div>
+
+        </div>
+
+        {/* MAIN CARD */}
+        <div className="mt-16">
+
+          <div
+            className="
+            grid
+            lg:grid-cols-[1.05fr_0.95fr]
+
+            overflow-hidden
+
+            rounded-[42px]
+
+            bg-white/80
+            backdrop-blur-xl
+
+            border border-white/70
+
+            shadow-[0_25px_80px_rgba(15,23,42,0.08)]
+
+            shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]
+            "
+          >
+
+            {/* IMAGE */}
+            <div
+              className="
+              relative
+
+              min-h-[320px]
+              lg:min-h-[620px]
+
+              bg-[#f8f9fd]
+              "
+            >
+
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={plans[active].image}
+                  src={plans[active].image}
+                  alt={plans[active].title}
+
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+
+                  transition={{ duration: 0.5 }}
+
+                  className="
+                  absolute
+                  inset-0
+
+                  w-full
+                  h-full
+
+                  object-contain
+                  "
+                />
+              </AnimatePresence>
+
+            </div>
+
+            {/* RIGHT */}
+            <div
+              className="
+              flex
+              flex-col
+              justify-center
+
+              p-8
+              md:p-12
+              lg:p-16
+              "
+            >
+
+              {/* SMALL */}
+              <p
+                className="
+                uppercase
+
+                tracking-[0.35em]
+
+                text-[12px]
+
+                text-[#6b7dff]
+
+                font-[500]
+                "
+              >
+                Floor Plan
+              </p>
+
+              {/* TITLE */}
+              <h3
+                className="
+                mt-5
+
+                text-[38px]
+                md:text-[52px]
+
+                leading-[1]
+
+                tracking-[-2px]
+
+                font-[300]
+
+                text-[#121826]
+                "
+              >
+                {plans[active].title}
+              </h3>
+
+              {/* LINE */}
+              <div
+                className="
+                mt-7
+
+                w-full
+                h-[1px]
+
+                bg-gradient-to-r
+                from-[#5d7dff]
+                to-transparent
+                "
+              />
+
+              {/* SIZE */}
+              <p
+                className="
+                mt-8
+
+                text-[22px]
+
+                font-[500]
+
+                text-[#1f2940]
+                "
+              >
+                {plans[active].size}
+              </p>
+
+              {/* DESC */}
+              <p
+                className="
+                mt-5
+
+                max-w-[460px]
+
+                text-[16px]
+
+                leading-[2]
+
+                font-[300]
+
+                text-[#6d7896]
+                "
+              >
+                {plans[active].desc}
+              </p>
+
+              {/* FEATURES */}
+              <div
+                className="
+                mt-10
+
+                grid
+                grid-cols-2
+
+                gap-4
+                "
+              >
+
+                {[
+                  "Luxury Finish",
+                  "Modern Layout",
+                  "Natural Ventilation",
+                  "Premium Lifestyle",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="
+                    flex
+                    items-center
+                    gap-3
+
+                    rounded-2xl
+
+                    px-4
+                    py-4
+
+                    bg-[#f6f8ff]
+
+                    border border-white
+
+                    text-[#2c3550]
+
+                    text-sm
+                    "
+                  >
+
+                    <div
+                      className="
+                      w-2
+                      h-2
+
+                      rounded-full
+
+                      bg-gradient-to-r
+                      from-[#4f7cff]
+                      to-[#cb6ce6]
+                      "
+                    />
+
+                    {item}
+
+                  </div>
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
   );
 }

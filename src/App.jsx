@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
 import AboutUs from "./components/AboutUs";
 import Amenities from "./components/Amenities";
-import Experience from "./components/Experience";
 import Gallery from "./components/Gallery";
 import ContactForm from "./components/ContactForm";
 import ProjectLocation from "./components/ProjectLocation";
@@ -23,8 +22,6 @@ function App() {
       <AboutUs />
 
       <Amenities />
-
-      <Experience />
 
       <Gallery />
 

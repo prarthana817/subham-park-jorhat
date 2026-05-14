@@ -1,13 +1,8 @@
 // src/components/Gallery.jsx
-// SMOOTH OPTIMIZED VERSION
-// আগের version-এ অনেকগুলো image একসাথে animate হচ্ছিল,
-// তাই hang করছিল। এই version-এ শুধুমাত্র 5টি visible image render হবে,
-// animation duration কমানো হয়েছে এবং GPU-friendly transform ব্যবহার করা হয়েছে.
+// PREMIUM STACKED SIDECARD GALLERY
 
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-
-import heroBg from "../assests/images/hero-bg.jpg";
 
 import img1 from "../assests/images/gallery-1.jpg";
 import img2 from "../assests/images/gallery-2.jpg";
@@ -16,166 +11,417 @@ import img4 from "../assests/images/gallery-4.jpg";
 import img5 from "../assests/images/gallery-5.jpg";
 import img6 from "../assests/images/gallery-6.jpg";
 
+const galleryItems = [
+  {
+    image: img1,
+    title: "Luxury Exterior",
+    desc: "Elegant architectural aesthetics with premium modern design.",
+  },
+  {
+    image: img2,
+    title: "Sky Lounge",
+    desc: "Relaxing rooftop atmosphere with premium comfort.",
+  },
+  {
+    image: img3,
+    title: "Modern Workspace",
+    desc: "Beautiful interiors crafted for smart modern living.",
+  },
+  {
+    image: img4,
+    title: "Premium Lobby",
+    desc: "Classic entrance experience with elegant ambience.",
+  },
+  {
+    image: img5,
+    title: "Community Space",
+    desc: "Designed for social comfort and family lifestyle.",
+  },
+  {
+    image: img6,
+    title: "Luxury Lifestyle",
+    desc: "Premium residential experience with timeless aesthetics.",
+  },
+];
+
 export default function Gallery() {
-  const images = useMemo(
-    () => [img1, img2, img3, img4, img5, img6],
-    []
-  );
-
-  const [index, setIndex] = useState(0);
-
-  // Auto slide every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  // Relative position calculation
-  const getRelativePosition = (i) => {
-    const total = images.length;
-    let diff = i - index;
-
-    if (diff > total / 2) diff -= total;
-    if (diff < -total / 2) diff += total;
-
-    return diff;
-  };
+  const [active, setActive] = useState(0);
 
   return (
-    <section id="gallery" className="relative py-24 overflow-hidden">
-      {/* Background */}
-      <img
-        src={heroBg}
-        alt="Gallery Background"
-        className="absolute inset-0 w-full h-full object-cover"
+    <section
+      id="gallery"
+      className="
+      relative
+
+      overflow-hidden
+
+      py-24
+
+      bg-[#eef2ff]
+      "
+    >
+      {/* GLOW */}
+      <div
+        className="
+        absolute
+        top-[-100px]
+        left-[-100px]
+
+        w-[350px]
+        h-[350px]
+
+        bg-blue-300/10
+
+        blur-[120px]
+
+        rounded-full
+        "
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/75"></div>
+      <div
+        className="
+        absolute
+        bottom-[-100px]
+        right-[-100px]
 
-      {/* Green Glow */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-green-400/10 blur-3xl rounded-full"></div>
+        w-[350px]
+        h-[350px]
 
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center text-white">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold">
-          Project <span className="text-emerald-400">Gallery</span>
-        </h2>
+        bg-pink-300/10
 
-        <p className="mt-4 text-slate-300">
-          Experience the lifestyle of Subham Park Jorhat
-        </p>
+        blur-[120px]
 
-        {/* Slider */}
-        <div className="mt-20 relative h-[500px] flex items-center justify-center">
-          {images.map((img, i) => {
-            const pos = getRelativePosition(i);
+        rounded-full
+        "
+      />
 
-            // Render only nearby images (-2 to +2)
-            if (Math.abs(pos) > 2) return null;
+      {/* MAIN */}
+      <div className="relative z-10 max-w-[1500px] mx-auto px-5 lg:px-8">
 
-            const isCenter = pos === 0;
+        {/* TOP */}
+        <div className="text-center max-w-[720px] mx-auto">
 
-            const settings = {
-              0: {
-                x: 0,
-                scale: 1,
-                opacity: 1,
-                zIndex: 50,
-                width: 420,
-                height: 320,
-              },
-              1: {
-                x: 260,
-                scale: 0.85,
-                opacity: 0.85,
-                zIndex: 40,
-                width: 320,
-                height: 250,
-              },
-              2: {
-                x: 430,
-                scale: 0.7,
-                opacity: 0.45,
-                zIndex: 30,
-                width: 260,
-                height: 200,
-              },
-              [-1]: {
-                x: -260,
-                scale: 0.85,
-                opacity: 0.85,
-                zIndex: 40,
-                width: 320,
-                height: 250,
-              },
-              [-2]: {
-                x: -430,
-                scale: 0.7,
-                opacity: 0.45,
-                zIndex: 30,
-                width: 260,
-                height: 200,
-              },
-            };
+          <div className="flex items-center justify-center gap-4 mb-6">
 
-            const style = settings[pos];
+            <div className="w-12 h-[2px] bg-gradient-to-r from-[#4b74ff] to-[#cf4dff]" />
 
-            return (
-              <motion.img
-                key={`${i}-${index}`}
-                src={img}
-                alt={`Gallery ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className="absolute rounded-3xl shadow-2xl object-cover cursor-pointer border border-white/10 will-change-transform"
-                animate={style}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.22, 1, 0.36, 1],
+            <p
+              className="
+              uppercase
+
+              tracking-[0.4em]
+
+              text-[11px]
+
+              text-[#5d74ff]
+
+              font-[400]
+              "
+            >
+              Project Gallery
+            </p>
+
+          </div>
+
+          <h2
+            className="
+            text-[42px]
+            md:text-[62px]
+
+            leading-[0.95]
+
+            tracking-[-2px]
+
+            font-[300]
+
+            text-[#111827]
+            "
+          >
+            Premium
+            <span className="block bg-gradient-to-r from-[#4b74ff] to-[#a855f7] bg-clip-text text-transparent">
+              Visual Experience
+            </span>
+          </h2>
+
+          <div
+            className="
+            mt-5
+
+            mx-auto
+
+            w-[180px]
+            h-[4px]
+
+            rounded-full
+
+            bg-gradient-to-r
+            from-[#4b74ff]
+            to-[#cf4dff]
+            "
+          />
+
+        </div>
+
+        {/* GALLERY LAYOUT */}
+        <div
+          className="
+          mt-20
+
+          grid
+          lg:grid-cols-[0.75fr_1.25fr]
+
+          gap-8
+
+          items-center
+          "
+        >
+          {/* LEFT SIDECARDS */}
+          <div
+            className="
+            grid
+            grid-cols-2
+
+            sm:grid-cols-3
+
+            gap-4
+            "
+          >
+            {galleryItems.map((item, index) => (
+              <motion.div
+                key={index}
+                onClick={() => setActive(index)}
+                whileHover={{
+                  y: -6,
+                  scale: 1.02,
                 }}
-                whileHover={
-                  isCenter
-                    ? {
-                        scale: 1.03,
-                      }
-                    : {}
-                }
-              />
-            );
-          })}
-        </div>
+                transition={{ duration: 0.3 }}
+                className={`
+                  relative
 
-        {/* Description */}
-        <div className="mt-10">
-          <h3 className="text-2xl font-bold">
-            Modern Lifestyle Experience
-          </h3>
+                  overflow-hidden
 
-          <p className="mt-3 text-slate-300 max-w-2xl mx-auto leading-8">
-            A premium residential community surrounded by greenery,
-            modern infrastructure, and thoughtfully designed spaces.
-          </p>
-        </div>
+                  rounded-[28px]
 
-        {/* Dots */}
-        <div className="mt-8 flex justify-center gap-3">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              className={`transition-all duration-300 rounded-full ${
-                i === index
-                  ? "w-8 h-3 bg-emerald-500"
-                  : "w-3 h-3 bg-slate-500 hover:bg-slate-400"
-              }`}
+                  cursor-pointer
+
+                  group
+
+                  border
+
+                  ${
+                    active === index
+                      ? "border-[#6b7cff] shadow-[0_15px_45px_rgba(79,70,229,0.18)]"
+                      : "border-white/50"
+                  }
+                `}
+              >
+
+                {/* IMAGE */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="
+                  w-full
+
+                  h-[180px]
+
+                  object-cover
+
+                  transition-all
+                  duration-700
+
+                  group-hover:scale-110
+                  "
+                />
+
+                {/* OVERLAY */}
+                <div
+                  className="
+                  absolute inset-0
+
+                  bg-gradient-to-t
+                  from-black/70
+                  via-black/10
+                  to-transparent
+                  "
+                />
+
+                {/* TITLE */}
+                <div
+                  className="
+                  absolute
+                  bottom-4
+                  left-4
+                  right-4
+                  "
+                >
+                  <h3
+                    className="
+                    text-white
+
+                    text-[16px]
+
+                    leading-[1.3]
+
+                    font-[500]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+                </div>
+
+              </motion.div>
+            ))}
+          </div>
+
+          {/* RIGHT BIG IMAGE */}
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="
+            relative
+
+            overflow-hidden
+
+            rounded-[48px]
+
+            border border-white/60
+
+            bg-white/40
+            backdrop-blur-xl
+
+            shadow-[0_25px_80px_rgba(15,23,42,0.12)]
+            "
+          >
+            {/* BIG IMAGE */}
+            <img
+              src={galleryItems[active].image}
+              alt={galleryItems[active].title}
+              className="
+              w-full
+
+              h-[620px]
+
+              object-cover
+              "
             />
-          ))}
+
+            {/* OVERLAY */}
+            <div
+              className="
+              absolute inset-0
+
+              bg-gradient-to-t
+              from-black/70
+              via-black/10
+              to-transparent
+              "
+            />
+
+            {/* CONTENT */}
+            <div
+              className="
+              absolute
+              bottom-0
+              left-0
+
+              w-full
+
+              p-8
+              md:p-12
+              "
+            >
+
+              {/* TAG */}
+              <div
+                className="
+                inline-flex
+
+                px-5
+                py-2
+
+                rounded-full
+
+                bg-white/15
+                backdrop-blur-xl
+
+                border border-white/10
+
+                text-white
+
+                uppercase
+
+                tracking-[0.28em]
+
+                text-[10px]
+                "
+              >
+                Subham Park
+              </div>
+
+              {/* TITLE */}
+              <h3
+                className="
+                mt-6
+
+                text-[38px]
+                md:text-[56px]
+
+                leading-[0.95]
+
+                tracking-[-2px]
+
+                font-[300]
+
+                text-white
+                "
+              >
+                {galleryItems[active].title}
+              </h3>
+
+              {/* LINE */}
+              <div
+                className="
+                mt-5
+
+                w-[140px]
+                h-[4px]
+
+                rounded-full
+
+                bg-gradient-to-r
+                from-[#4b74ff]
+                to-[#cf4dff]
+                "
+              />
+
+              {/* DESC */}
+              <p
+                className="
+                mt-6
+
+                max-w-[620px]
+
+                text-[16px]
+
+                leading-[2]
+
+                font-[300]
+
+                text-white/80
+                "
+              >
+                {galleryItems[active].desc}
+              </p>
+
+            </div>
+
+          </motion.div>
+
         </div>
+
       </div>
     </section>
   );
