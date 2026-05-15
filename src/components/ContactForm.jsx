@@ -1,245 +1,470 @@
-// src/components/ContactForm.jsx
-// FINAL FIXED VERSION
-// lucide-react এর কিছু ভার্সনে Instagram / Youtube icon থাকে না।
-// তাই 100% compatibility এর জন্য শুধুমাত্র নিশ্চিতভাবে থাকা icons ব্যবহার করা হয়েছে.
+// src/components/Contact.jsx
 
-import { motion } from "framer-motion";
 import {
   Phone,
   Mail,
-  MapPin,
-  Globe,
-  Camera,
-  Play,
-  Leaf,
-  ShieldCheck,
-  TrendingUp,
+  Navigation,
+  ArrowUpRight,
+  TrainFront,
+  Plane,
+  Car,
 } from "lucide-react";
 
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Call Us",
-    value: "+91 98765 43210",
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    value: "info@subhampark.com",
-  },
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    value: "Jorhat, Assam",
-  },
-];
+import locationMap from "../assests/images/location.jpg";
 
-// Social icons (100% compatible)
-const socialIcons = [Globe, Camera, Play];
-
-const features = [
-  { icon: Leaf, label: "Green Living" },
-  { icon: ShieldCheck, label: "Secure Community" },
-  { icon: TrendingUp, label: "High Growth" },
-];
-
-export default function ContactForm() {
+export default function Contact() {
   return (
     <section
-      id="contact"
-      className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white"
+      id="location"
+      className="relative overflow-hidden py-10 bg-[#f5f1ec]"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-black/40"></div>
-      <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-green-400/10 blur-3xl rounded-full"></div>
-      <div className="absolute top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 bg-emerald-400/5 blur-3xl rounded-full"></div>
+      {/* SIDE PATTERN */}
+      <div
+        className="absolute left-0 top-0 w-[70px] h-full opacity-[0.08]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to right,#d8cec6 0px,#d8cec6 2px,transparent 2px,transparent 10px)",
+        }}
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        {/* TOP SECTION */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="text-emerald-400 font-semibold tracking-[0.35em] uppercase">
-              Contact Us
+      <div className="relative z-10 max-w-[1280px] mx-auto px-4 lg:px-5">
+
+        {/* HEADER */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-7">
+
+          <div>
+
+            <p
+              className="text-[11px] uppercase tracking-[0.35em] text-[#c0886e] mb-2"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+              }}
+            >
+              PRIME CONNECTIVITY
             </p>
 
-            <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Let&apos;s Discuss Your
-              <span className="block text-emerald-400">Dream Property</span>
+            <h2
+              className="text-[34px] sm:text-[48px] lg:text-[60px] leading-[0.9] tracking-[-2px] text-[#1f1f1f]"
+              style={{
+                fontFamily: "'Cinzel Decorative', serif",
+                fontWeight: 400,
+              }}
+            >
+              LOCATION
+              <br />
+
+              <span className="text-[#d69073]">
+                ADVANTAGE
+              </span>
+
             </h2>
 
-            <p className="mt-6 text-slate-300 leading-8 max-w-xl">
-              Connect with our team to know more about Subham Park Jorhat,
-              available plots, pricing, site visits, and long-term investment
-              opportunities.
-            </p>
+          </div>
 
-            {/* CONTACT INFO */}
-            <div className="mt-10 grid sm:grid-cols-3 gap-4">
-              {contactInfo.map((item, index) => {
-                const Icon = item.icon;
-
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.08 }}
-                    whileHover={{ y: -6, scale: 1.02 }}
-                    className="bg-white/10 backdrop-blur-xl p-5 rounded-3xl border border-white/10 shadow-xl"
-                  >
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-
-                    <h3 className="mt-4 font-semibold text-white">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-1 text-sm text-slate-300 leading-6">
-                      {item.value}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-
-          {/* RIGHT VISUAL PANEL */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative"
+          <p
+            className="max-w-[420px] text-[13px] leading-[1.8] text-[#645d57]"
+            style={{
+              fontFamily: "'Josefin Sans', sans-serif",
+            }}
           >
-            <div className="relative h-[560px] rounded-t-[12rem] rounded-b-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-white/10 via-emerald-500/10 to-green-600/10 backdrop-blur-2xl shadow-2xl shadow-emerald-900/40">
-              <div className="absolute top-10 left-10 w-40 h-40 bg-emerald-400/20 blur-3xl rounded-full"></div>
-              <div className="absolute bottom-10 right-10 w-48 h-48 bg-green-300/10 blur-3xl rounded-full"></div>
+            Subham Park enjoys seamless connectivity to schools,
+            hospitals, transport hubs and major city landmarks
+            across Jorhat.
+          </p>
 
-              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-10">
-                <motion.div
-                  animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 2, -2, 0],
+        </div>
+
+        {/* MAIN GRID */}
+        <div className="grid lg:grid-cols-2 border border-[#ddd2ca] bg-[#faf7f3]">
+
+          {/* LEFT SIDE */}
+          <div className="border-r border-[#ddd2ca] p-4 flex flex-col gap-4">
+
+            {/* MAP */}
+            <div className="overflow-hidden border border-[#e4d8cf] bg-white">
+
+              <img
+                src={locationMap}
+                alt="Location Map"
+                className="w-full h-[330px] object-cover"
+              />
+
+            </div>
+
+            {/* BUTTON */}
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noreferrer"
+              className="
+              inline-flex
+              items-center
+              justify-center
+              gap-3
+
+              w-fit
+
+              px-5
+              py-3
+
+              bg-[#1f1f1f]
+              hover:bg-[#d69073]
+
+              text-white
+
+              transition-all
+              duration-300
+              "
+            >
+
+              <Navigation className="w-4 h-4" />
+
+              <span
+                className="uppercase tracking-[0.18em] text-[10px]"
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                }}
+              >
+                Open Google Map
+              </span>
+
+              <ArrowUpRight className="w-4 h-4" />
+
+            </a>
+
+            {/* FORM */}
+            <div className="border border-[#e4d8cf] bg-white p-5">
+
+              <p
+                className="uppercase tracking-[0.32em] text-[10px] text-[#c0886e] mb-2"
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                }}
+              >
+                Quick Enquiry
+              </p>
+
+              <h3
+                className="text-[34px] leading-none text-[#1f1f1f] mb-5"
+                style={{
+                  fontFamily: "'Cinzel Decorative', serif",
+                  fontWeight: 400,
+                }}
+              >
+                Book A Visit
+              </h3>
+
+              <div className="space-y-3">
+
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="
+                  w-full
+                  border
+                  border-[#ddd2ca]
+                  bg-[#f8f4ef]
+                  px-4
+                  py-3
+                  outline-none
+                  text-[14px]
+                  "
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
                   }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
+                />
+
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  className="
+                  w-full
+                  border
+                  border-[#ddd2ca]
+                  bg-[#f8f4ef]
+                  px-4
+                  py-3
+                  outline-none
+                  text-[14px]
+                  "
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
                   }}
-                  className="w-32 h-32 rounded-[2.5rem] bg-gradient-to-br from-emerald-400 to-green-600 flex items-center justify-center shadow-2xl shadow-emerald-500/40"
+                />
+
+                <textarea
+                  rows="4"
+                  placeholder="Write Your Message..."
+                  className="
+                  w-full
+                  border
+                  border-[#ddd2ca]
+                  bg-[#f8f4ef]
+                  px-4
+                  py-3
+                  outline-none
+                  resize-none
+                  text-[14px]
+                  "
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
+                  }}
+                />
+
+                <button
+                  className="
+                  w-full
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
+
+                  py-3
+
+                  bg-[#1f1f1f]
+                  hover:bg-[#d69073]
+
+                  text-white
+
+                  uppercase
+                  tracking-[0.18em]
+                  text-[10px]
+
+                  transition-all
+                  duration-300
+                  "
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                  }}
                 >
-                  <MapPin className="w-16 h-16 text-white" />
-                </motion.div>
+                  Send Enquiry
 
-                <h3 className="mt-8 text-3xl md:text-4xl font-bold text-white">
-                  Visit Subham Park
-                </h3>
+                  <ArrowUpRight className="w-4 h-4" />
 
-                <p className="mt-4 text-slate-300 leading-8 max-w-md">
-                  Discover premium residential plots in the heart of Jorhat,
-                  thoughtfully planned for modern living and future growth.
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="p-4 bg-[#fcfaf7] flex flex-col justify-between">
+
+            <div>
+
+              {/* TITLE */}
+              <div className="mb-4">
+
+                <p
+                  className="uppercase tracking-[0.32em] text-[10px] text-[#c0886e] mb-2"
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                  }}
+                >
+                  PRIME LOCATION BENEFITS
                 </p>
 
-                <div className="mt-8 flex flex-wrap justify-center gap-3">
-                  {features.map((feature, index) => {
-                    const Icon = feature.icon;
-
-                    return (
-                      <div
-                        key={index}
-                        className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm text-emerald-200 flex items-center gap-2"
-                      >
-                        <Icon className="w-4 h-4" />
-                        <span>{feature.label}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* BOTTOM SECTION */}
-        <div className="mt-20 grid lg:grid-cols-2 gap-10">
-          {/* CONTACT FORM */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="bg-white/10 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-white/10 shadow-2xl"
-          >
-            <h3 className="text-3xl font-bold text-white">Get In Touch</h3>
-
-            <form className="mt-8 space-y-5">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-5 py-4 rounded-full bg-white/10 border border-white/10 outline-none placeholder:text-slate-400 text-white"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full px-5 py-4 rounded-full bg-white/10 border border-white/10 outline-none placeholder:text-slate-400 text-white"
-              />
-
-              <textarea
-                rows="5"
-                placeholder="Your Message"
-                className="w-full px-5 py-4 rounded-3xl bg-white/10 border border-white/10 outline-none placeholder:text-slate-400 text-white resize-none"
-              ></textarea>
-
-              <button
-                type="submit"
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 font-semibold shadow-lg shadow-emerald-500/30 hover:scale-105 transition duration-300"
-              >
-                Submit Inquiry
-              </button>
-            </form>
-          </motion.div>
-
-          {/* MAP + SOCIAL */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-3xl font-bold text-white">Our Location</h3>
-
-            <div className="mt-6 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-              <iframe
-                title="Subham Park Location"
-                src="https://www.google.com/maps?q=Jorhat,Assam&output=embed"
-                className="w-full h-[320px]"
-                loading="lazy"
-              ></iframe>
-            </div>
-
-            <div className="mt-8 flex gap-4">
-              {socialIcons.map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 hover:scale-110 transition duration-300"
+                <h3
+                  className="text-[34px] leading-[0.95] text-[#1f1f1f] mb-3"
+                  style={{
+                    fontFamily: "'Cinzel Decorative', serif",
+                    fontWeight: 400,
+                  }}
                 >
-                  <Icon className="w-5 h-5 text-white" />
-                </a>
-              ))}
+                  Connected
+                  <br />
+
+                  Luxury Living
+                </h3>
+
+                <p
+                  className="text-[13px] leading-[1.8] text-[#645d57]"
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
+                  }}
+                >
+                  Strategically located near Assam Trunk Road,
+                  Subham Park offers excellent connectivity to
+                  educational institutes, healthcare centers,
+                  shopping destinations and transport facilities.
+                </p>
+
+              </div>
+
+              {/* CONNECTIVITY */}
+              <div className="grid gap-3 mb-4">
+
+                {/* ROAD */}
+                <div className="flex items-start gap-3 border border-[#e4d8cf] bg-[#f8f3ee] p-3">
+
+                  <div className="w-10 h-10 flex items-center justify-center bg-[#f3e5db]">
+                    <Car className="w-4 h-4 text-[#d69073]" />
+                  </div>
+
+                  <div>
+
+                    <h4
+                      className="text-[17px] text-[#1f1f1f]"
+                      style={{
+                        fontFamily: "'Cinzel Decorative', serif",
+                      }}
+                    >
+                      By Road
+                    </h4>
+
+                    <p
+                      className="mt-1 text-[13px] leading-[1.7] text-[#655d57]"
+                      style={{
+                        fontFamily: "'Josefin Sans', sans-serif",
+                      }}
+                    >
+                      Direct access from Assam Trunk Road and
+                      nearby ISBT ensures easy city commuting.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                {/* TRAIN */}
+                <div className="flex items-start gap-3 border border-[#e4d8cf] bg-[#f8f3ee] p-3">
+
+                  <div className="w-10 h-10 flex items-center justify-center bg-[#e8f5f4]">
+                    <TrainFront className="w-4 h-4 text-[#56bdb7]" />
+                  </div>
+
+                  <div>
+
+                    <h4
+                      className="text-[17px] text-[#1f1f1f]"
+                      style={{
+                        fontFamily: "'Cinzel Decorative', serif",
+                      }}
+                    >
+                      Railway Connectivity
+                    </h4>
+
+                    <p
+                      className="mt-1 text-[13px] leading-[1.7] text-[#655d57]"
+                      style={{
+                        fontFamily: "'Josefin Sans', sans-serif",
+                      }}
+                    >
+                      Jorhat Town Railway Station is located
+                      nearby for smooth travel convenience.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                {/* AIRPORT */}
+                <div className="flex items-start gap-3 border border-[#e4d8cf] bg-[#f8f3ee] p-3">
+
+                  <div className="w-10 h-10 flex items-center justify-center bg-[#f3e5db]">
+                    <Plane className="w-4 h-4 text-[#d69073]" />
+                  </div>
+
+                  <div>
+
+                    <h4
+                      className="text-[17px] text-[#1f1f1f]"
+                      style={{
+                        fontFamily: "'Cinzel Decorative', serif",
+                      }}
+                    >
+                      Airport Access
+                    </h4>
+
+                    <p
+                      className="mt-1 text-[13px] leading-[1.7] text-[#655d57]"
+                      style={{
+                        fontFamily: "'Josefin Sans', sans-serif",
+                      }}
+                    >
+                      Jorhat Airport can be reached within a
+                      short drive from the project site.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
-          </motion.div>
+
+            {/* CONTACT BOX */}
+            <div className="grid sm:grid-cols-2 gap-3 mt-4">
+
+              {/* PHONE */}
+              <div className="border border-[#e4d8cf] bg-white p-4">
+
+                <div className="flex items-center gap-2">
+
+                  <Phone className="w-4 h-4 text-[#d69073]" />
+
+                  <span
+                    className="uppercase tracking-[0.2em] text-[10px] text-[#b58671]"
+                    style={{
+                      fontFamily: "'Raleway', sans-serif",
+                    }}
+                  >
+                    Call Us
+                  </span>
+
+                </div>
+
+                <p
+                  className="mt-2 text-[18px] text-[#1f1f1f]"
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
+                  }}
+                >
+                  +91 98765 43210
+                </p>
+
+              </div>
+
+              {/* EMAIL */}
+              <div className="border border-[#e4d8cf] bg-white p-4">
+
+                <div className="flex items-center gap-2">
+
+                  <Mail className="w-4 h-4 text-[#56bdb7]" />
+
+                  <span
+                    className="uppercase tracking-[0.2em] text-[10px] text-[#b58671]"
+                    style={{
+                      fontFamily: "'Raleway', sans-serif",
+                    }}
+                  >
+                    Email
+                  </span>
+
+                </div>
+
+                <p
+                  className="mt-2 text-[14px] text-[#1f1f1f] break-all"
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
+                  }}
+                >
+                  sales@subhampark.com
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
   );
 }

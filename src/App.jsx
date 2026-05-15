@@ -4,35 +4,49 @@ import StatsBar from "./components/StatsBar";
 import AboutUs from "./components/AboutUs";
 import Amenities from "./components/Amenities";
 import Gallery from "./components/Gallery";
-import ContactForm from "./components/ContactForm";
-import ProjectLocation from "./components/ProjectLocation";
-import Footer from "./components/Footer";
 import Planning from "./components/Planning";
+import ProjectOverview from "./components/ProjectOverview";
+import Walkthrough from "./components/Walkthrough";
+import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <div className="overflow-hidden bg-[#f5f1ec]">
+
+      {/* NAVBAR */}
       <Navbar />
 
+      {/* HERO SECTION */}
       <Hero />
 
-      {/* PREMIUM STATS SECTION */}
+      {/* STATS */}
       <StatsBar />
 
+      {/* ABOUT */}
       <AboutUs />
 
+      {/* AMENITIES */}
       <Amenities />
 
+      {/* GALLERY */}
       <Gallery />
 
+      {/* MASTER PLAN */}
       <Planning />
 
+      {/* PROJECT OVERVIEW */}
+      <ProjectOverview />
+
+      <Walkthrough />
+
+      {/* CONTACT */}
       <ContactForm />
 
-      <ProjectLocation />
-
+      {/* FOOTER */}
       <Footer />
-    </>
+
+    </div>
   );
 }
 

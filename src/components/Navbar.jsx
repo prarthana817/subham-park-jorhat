@@ -10,92 +10,108 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Amenities", href: "#amenities" },
+
+    // ProjectOverview.jsx
+    { name: "Overview", href: "#overview" },
+
+    // Walkthrough.jsx
+    { name: "Walkthrough", href: "#walkthrough" },
+
     { name: "Gallery", href: "#gallery" },
-    { name: "Plan", href: "#plan" },
+
+    // Planning.jsx
+    { name: "Plan", href: "#plans" },
+
+    // ContactUs.jsx
     { name: "Location", href: "#location" },
+
     { name: "About", href: "#about" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 pt-4">
+    <header className="fixed top-0 left-0 w-full z-50 px-2 pt-2">
       <nav
         className="
-        max-w-[1720px]
+        max-w-[1500px]
         mx-auto
+        h-[78px]
 
-        h-[82px]
+        rounded-[18px]
 
-        rounded-[28px]
-
-        bg-[#edf2ff]/90
-        backdrop-blur-2xl
+        bg-[#f5eee9]/92
+        backdrop-blur-xl
 
         border
-        border-white/70
+        border-[#ead9cf]
 
-        shadow-[0_10px_40px_rgba(99,102,241,0.10)]
+        shadow-[0_8px_24px_rgba(198,162,143,0.12)]
 
-        px-6
-        lg:px-8
+        px-4
+        lg:px-5
         "
       >
         <div className="flex items-center justify-between h-full">
 
-          {/* LEFT SIDE */}
-          <div className="flex items-center">
+          {/* LEFT */}
+          <div className="flex items-center shrink-0">
 
-            {/* BIG LOGO ONLY */}
             <div
               className="
-              w-[74px]
-              h-[74px]
+              w-[68px]
+              h-[68px]
 
-              rounded-[24px]
+              rounded-[18px]
 
               bg-white
 
               border
-              border-[#dbe3ff]
+              border-[#ead8ce]
 
-              shadow-lg
+              shadow-[0_6px_16px_rgba(0,0,0,0.05)]
 
               flex
               items-center
               justify-center
+
+              overflow-hidden
               "
             >
               <img
                 src={logo}
                 alt="Subham Park"
-                className="w-12 h-12 object-contain"
+                className="w-[58px] h-[58px] object-contain scale-[1.35]"
               />
             </div>
 
           </div>
 
           {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
 
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className="
-                text-[13px]
-
-                font-extrabold
+                text-[11px]
 
                 uppercase
 
                 tracking-[0.18em]
 
-                text-[#1b2559]
+                text-[#1c2340]
 
-                hover:text-[#e66bc3]
+                hover:text-[#d69073]
 
                 transition-all
                 duration-300
+
+                whitespace-nowrap
                 "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 400,
+                }}
               >
                 {link.name}
               </a>
@@ -105,42 +121,46 @@ export default function Navbar() {
             <a
               href="#contact"
               className="
-              ml-2
+              ml-1
 
-              px-6
-              py-4
+              px-4
+              py-[11px]
 
-              rounded-[20px]
+              rounded-[14px]
 
               bg-gradient-to-r
-              from-blue-500
-              via-[#8b7cff]
-              to-pink-500
+              from-[#d69073]
+              to-[#c6a28f]
 
               text-white
 
-              text-[12px]
-              font-black
+              text-[10px]
 
               uppercase
 
-              tracking-[0.16em]
+              tracking-[0.15em]
 
               flex
               items-center
               gap-2
 
-              hover:scale-105
+              hover:scale-[1.02]
 
               transition-all
               duration-300
 
-              shadow-[0_12px_30px_rgba(139,124,255,0.35)]
+              shadow-[0_8px_18px_rgba(214,144,115,0.22)]
+
+              whitespace-nowrap
               "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 400,
+              }}
             >
               Download Brochure
 
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={14} />
             </a>
 
           </div>
@@ -148,9 +168,9 @@ export default function Navbar() {
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-[#111c4d]"
+            className="lg:hidden text-[#1c2340]"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
         </div>
@@ -161,19 +181,22 @@ export default function Navbar() {
             className="
             lg:hidden
 
-            mt-4
-            pb-6
+            mt-2
+
+            rounded-[20px]
+
+            bg-[#f8f2ed]
+
+            border
+            border-[#ead8ce]
+
+            p-4
+
+            shadow-[0_10px_25px_rgba(0,0,0,0.08)]
 
             flex
             flex-col
-            gap-5
-
-            bg-white
-            rounded-3xl
-
-            p-6
-
-            shadow-xl
+            gap-4
             "
           >
             {navLinks.map((link) => (
@@ -182,14 +205,22 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="
-                text-[#16214a]
-
-                font-bold
+                text-[#1c2340]
 
                 uppercase
 
                 tracking-[0.14em]
+
+                text-[13px]
+
+                hover:text-[#d69073]
+
+                transition
                 "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 400,
+                }}
               >
                 {link.name}
               </a>
@@ -198,22 +229,21 @@ export default function Navbar() {
             <a
               href="#contact"
               className="
-              mt-2
+              mt-1
 
               bg-gradient-to-r
-              from-blue-500
-              via-[#8b7cff]
-              to-pink-500
+              from-[#d69073]
+              to-[#c6a28f]
 
               text-white
 
-              py-4
+              py-3
 
-              rounded-2xl
-
-              font-bold
+              rounded-[16px]
 
               uppercase
+
+              text-[11px]
 
               tracking-[0.14em]
 
@@ -221,10 +251,17 @@ export default function Navbar() {
               items-center
               justify-center
               gap-2
+
+              shadow-[0_10px_20px_rgba(214,144,115,0.22)]
               "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 400,
+              }}
             >
               Download Brochure
-              <ArrowUpRight size={18} />
+
+              <ArrowUpRight size={15} />
             </a>
           </div>
         )}

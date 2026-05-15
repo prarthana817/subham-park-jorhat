@@ -1,329 +1,400 @@
 // src/components/AboutUs.jsx
 
 import { motion } from "framer-motion";
-import {
-  Leaf,
-  ShieldCheck,
-  TrendingUp,
-  ArrowUpRight,
-} from "lucide-react";
 
 import img1 from "../assests/images/gallery-3.jpg";
 import img2 from "../assests/images/gallery-5.jpg";
-import img3 from "../assests/images/gallery-2.jpg";
-
-const cards = [
-  {
-    title: "Elegant Architecture",
-    desc: "Premium design with timeless modern aesthetics.",
-    image: img1,
-    icon: Leaf,
-  },
-  {
-    title: "Luxury Lifestyle",
-    desc: "Smart spaces crafted for refined living experience.",
-    image: img2,
-    icon: ShieldCheck,
-  },
-  {
-    title: "Future Investment",
-    desc: "A perfect blend of comfort and long term value.",
-    image: img3,
-    icon: TrendingUp,
-  },
-];
 
 export default function AboutUs() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#f5f7fd] py-24"
+      className="
+      relative
+      overflow-hidden
+      bg-[#f5f2ee]
+      py-14
+      lg:py-16
+      "
     >
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <img
-          src={img1}
-          alt=""
-          className="w-full h-full object-cover"
+      {/* STRIP DESIGN */}
+      <div className="absolute left-0 top-0 h-full w-[160px] opacity-[0.18] overflow-hidden">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(to right, #cfc7bf 0px, #cfc7bf 2px, transparent 2px, transparent 8px)",
+          }}
         />
       </div>
 
-      <div className="relative z-10 max-w-[1680px] mx-auto px-5 lg:px-8">
+      <div className="relative z-10 max-w-[1380px] mx-auto px-5 lg:px-8">
 
-        {/* MAIN GRID */}
-        <div className="grid lg:grid-cols-[0.85fr_1.55fr] gap-10 items-start">
+        {/* TOP SECTION */}
+        <div
+          className="
+          grid
+          lg:grid-cols-[1.15fr_0.85fr]
+          gap-5
+          items-start
+          "
+        >
 
-          {/* LEFT CONTENT */}
+          {/* BIG IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="max-w-[430px]"
+            className="relative"
           >
 
-            {/* TOP TAG */}
-            <div className="flex items-center gap-5 mb-10">
-
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#4c74ff] to-[#ca4dff]" />
-
-              <p
-                className="
-                uppercase
-                tracking-[0.4em]
-                text-[14px]
-                font-[400]
-                text-[#5a72ff]
-                "
-              >
-                About Us
-              </p>
-
-            </div>
-
-            {/* TITLE */}
-            <h2
-              className="
-              text-[58px]
-              md:text-[74px]
-
-              leading-[0.95]
-
-              tracking-[-3px]
-
-              font-[250]
-
-              text-[#131927]
-              "
-            >
-              Premium
-              <br />
-              Living
-              <br />
-              Experience
-            </h2>
-
-            {/* UNDERLINE */}
             <div
               className="
-              mt-8
+              overflow-hidden
+              rounded-[28px]
 
-              w-[240px]
-              h-[5px]
+              h-[340px]
+              lg:h-[430px]
 
-              rounded-full
-
-              bg-gradient-to-r
-              from-[#4c74ff]
-              via-[#8667ff]
-              to-[#d54cff]
-              "
-            />
-
-            {/* DESCRIPTION */}
-            <p
-              className="
-              mt-10
-
-              text-[18px]
-
-              leading-[2]
-
-              font-[300]
-
-              text-[#7e89a7]
+              shadow-[0_18px_50px_rgba(0,0,0,0.07)]
               "
             >
-              Discover a beautifully planned residential
-              environment crafted with elegant architecture,
-              premium lifestyle amenities and peaceful modern
-              living experiences.
-            </p>
+              <img
+                src={img1}
+                alt="Luxury Interior"
+                className="
+                w-full
+                h-full
+                object-cover
+                object-center
+                scale-[1.02]
+                "
+              />
+            </div>
+
+            {/* FLOATING TEXT */}
+            <div
+              className="
+              absolute
+              bottom-[-20px]
+              left-0
+
+              bg-[#f5f2ee]
+
+              px-6
+              py-4
+
+              rounded-tr-[24px]
+
+              max-w-[260px]
+              "
+            >
+              <h2
+                className="
+                text-[34px]
+                lg:text-[46px]
+
+                leading-[0.95]
+
+                text-[#1b1b1b]
+                "
+                style={{
+                  fontFamily: "'Cinzel Decorative', serif",
+                  fontWeight: 400,
+                }}
+              >
+                Modern
+                <br />
+                Luxury
+              </h2>
+            </div>
 
           </motion.div>
 
-          {/* RIGHT CARDS */}
-          <div
-            className="
-            grid
+          {/* RIGHT SIDE */}
+          <div className="flex flex-col gap-5">
 
-            grid-cols-1
-            md:grid-cols-2
-            xl:grid-cols-3
+            {/* TEXT CARD */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="
+              bg-[#e8dfd7]
 
-            gap-6
-            "
-          >
+              rounded-[24px]
 
-            {cards.map((card, index) => {
-              const Icon = card.icon;
+              p-6
 
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.12 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+              min-h-[205px]
+
+              flex
+              flex-col
+              justify-between
+              "
+            >
+
+              <div>
+                <span
                   className="
-                  relative
+                  inline-block
 
-                  overflow-hidden
+                  px-3
+                  py-1.5
 
-                  rounded-[34px]
+                  rounded-full
 
-                  bg-white/85
-                  backdrop-blur-xl
+                  border
+                  border-[#c7b6aa]
 
-                  border border-white/60
+                  text-[10px]
 
-                  shadow-[0_20px_60px_rgba(15,23,42,0.08)]
-
-                  transition-all
-                  duration-500
+                  text-[#8d6f61]
                   "
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                    letterSpacing: "0.12em",
+                  }}
                 >
+                  PREMIUM LIVING
+                </span>
+              </div>
 
-                  {/* IMAGE */}
-                  <div
-                    className="
-                    relative
+              <div>
+                <h3
+                  className="
+                  text-[28px]
 
-                    h-[250px]
+                  leading-[1.05]
 
-                    overflow-hidden
-                    "
-                  >
+                  text-[#1f1f1f]
+                  "
+                  style={{
+                    fontFamily: "'Cinzel Decorative', serif",
+                    fontWeight: 400,
+                  }}
+                >
+                  Into a gallery
+                  <br />
+                  of elegance
+                </h3>
 
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="
-                      w-full
-                      h-full
+                <p
+                  className="
+                  mt-3
 
-                      object-cover
+                  text-[13px]
 
-                      transition-transform
-                      duration-700
+                  leading-[1.7]
 
-                      group-hover:scale-105
-                      "
-                    />
+                  text-[#444]
+                  "
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
+                    fontWeight: 300,
+                  }}
+                >
+                  Elegant architecture with refined luxury,
+                  premium ambience and peaceful living.
+                </p>
+              </div>
 
-                    {/* ICON */}
-                    <div
-                      className="
-                      absolute
-                      top-5
-                      left-5
+            </motion.div>
 
-                      w-14
-                      h-14
+            {/* SMALL IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="
+              relative
 
-                      rounded-[20px]
+              overflow-hidden
 
-                      bg-white/20
-                      backdrop-blur-xl
+              rounded-[24px]
 
-                      border border-white/30
+              h-[200px]
+              lg:h-[220px]
 
-                      flex
-                      items-center
-                      justify-center
-                      "
-                    >
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
+              shadow-[0_18px_40px_rgba(0,0,0,0.07)]
+              "
+            >
 
-                  </div>
+              <img
+                src={img2}
+                alt="Luxury"
+                className="
+                w-full
+                h-full
+                object-cover
+                object-center
+                scale-[1.03]
+                "
+              />
 
-                  {/* CONTENT */}
-                  <div className="relative px-8 py-8">
+              <div
+                className="
+                absolute
+                inset-0
 
-                    {/* ARROW BUTTON */}
-                    <div
-                      className="
-                      absolute
-                      top-[-30px]
-                      right-7
+                bg-gradient-to-t
+                from-black/50
+                to-transparent
+                "
+              />
 
-                      w-16
-                      h-16
+              <div className="absolute bottom-4 left-4">
 
-                      rounded-full
+                <span
+                  className="
+                  inline-block
 
-                      bg-gradient-to-r
-                      from-[#4c74ff]
-                      to-[#8f63ff]
+                  px-3
+                  py-1
 
-                      shadow-[0_15px_40px_rgba(99,102,241,0.35)]
+                  rounded-full
 
-                      flex
-                      items-center
-                      justify-center
-                      "
-                    >
-                      <ArrowUpRight className="w-7 h-7 text-white" />
-                    </div>
+                  bg-white/20
+                  backdrop-blur-md
 
-                    {/* TITLE */}
-                    <h3
-                      className="
-                      pr-14
+                  text-white
+                  text-[9px]
+                  "
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                    letterSpacing: "0.14em",
+                  }}
+                >
+                  LUXURY SPACES
+                </span>
 
-                      text-[28px]
+                <h4
+                  className="
+                  mt-2
 
-                      leading-[1.25]
+                  text-[22px]
 
-                      tracking-[-1px]
+                  leading-[1.05]
 
-                      font-[600]
+                  text-white
+                  "
+                  style={{
+                    fontFamily: "'Cinzel Decorative', serif",
+                    fontWeight: 400,
+                  }}
+                >
+                  Refined
+                  <br />
+                  Lifestyle
+                </h4>
 
-                      text-[#151c34]
-                      "
-                    >
-                      {card.title}
-                    </h3>
+              </div>
 
-                    {/* LINE */}
-                    <div
-                      className="
-                      mt-6
-                      mb-6
-
-                      w-full
-                      h-[1px]
-
-                      bg-gradient-to-r
-                      from-[#7c92ff]
-                      to-transparent
-                      "
-                    />
-
-                    {/* DESC */}
-                    <p
-                      className="
-                      text-[17px]
-
-                      leading-[2]
-
-                      font-[300]
-
-                      text-[#7d86a5]
-                      "
-                    >
-                      {card.desc}
-                    </p>
-
-                  </div>
-
-                </motion.div>
-              );
-            })}
+            </motion.div>
 
           </div>
+
+        </div>
+
+        {/* STATS */}
+        <div
+          className="
+          mt-12
+
+          grid
+          grid-cols-2
+          lg:grid-cols-4
+
+          gap-y-8
+
+          bg-[#f1ece7]
+
+          rounded-[30px]
+
+          py-8
+          px-4
+          lg:px-6
+          "
+        >
+
+          {[
+            {
+              number: "16",
+              label: "Completed Projects",
+            },
+            {
+              number: "28 Lac",
+              label: "Sq. Ft. Constructed",
+            },
+            {
+              number: "15 Lac",
+              label: "Sq. Ft. Ongoing",
+            },
+            {
+              number: "6000+",
+              label: "Happy Residents",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="
+              relative
+
+              text-center
+
+              lg:border-r
+              border-[#c8beb6]
+
+              last:border-r-0
+              "
+            >
+
+              <h3
+                className="
+                text-[36px]
+                lg:text-[58px]
+
+                leading-none
+
+                text-[#434343]
+                "
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 500,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                {item.number}
+              </h3>
+
+              <p
+                className="
+                mt-1.5
+
+                text-[12px]
+                lg:text-[14px]
+
+                tracking-[0.01em]
+
+                text-[#555]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 300,
+                }}
+              >
+                {item.label}
+              </p>
+
+            </motion.div>
+          ))}
 
         </div>
 

@@ -10,22 +10,22 @@ const stats = [
   {
     icon: Trees,
     value: "70%",
-    label: "Open Green Area",
+    label: "OPEN GREEN AREA",
   },
   {
     icon: Building2,
     value: "1535",
-    label: "SQM Clubhouse",
+    label: "SQM CLUBHOUSE",
   },
   {
     icon: Home,
     value: "257",
-    label: "Total Units",
+    label: "TOTAL UNITS",
   },
   {
     icon: Sparkles,
     value: "2031",
-    label: "Completion",
+    label: "COMPLETION",
   },
 ];
 
@@ -33,13 +33,7 @@ export default function StatsBar() {
   const repeatedStats = [...stats, ...stats];
 
   return (
-    <section className="relative overflow-hidden py-5 bg-transparent">
-
-      {/* LEFT GLOW */}
-      <div className="absolute left-0 top-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full"></div>
-
-      {/* RIGHT GLOW */}
-      <div className="absolute right-0 bottom-0 w-96 h-96 bg-pink-500/10 blur-3xl rounded-full"></div>
+    <section className="relative overflow-hidden py-[6px] bg-transparent">
 
       {/* MAIN BAR */}
       <div
@@ -47,19 +41,29 @@ export default function StatsBar() {
         relative
         overflow-hidden
 
-        rounded-[32px]
-
         bg-gradient-to-r
-        from-[#16214a]
-        via-[#24367d]
-        to-[#5a36a8]
+        from-[#cf9477]
+        via-[#dca287]
+        to-[#e0ad92]
 
         border
-        border-white/10
-
-        shadow-[0_15px_60px_rgba(20,20,50,0.25)]
+        border-[#ffffff15]
         "
       >
+
+        {/* SOFT OVERLAY */}
+        <div
+          className="
+          absolute
+          inset-0
+
+          bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)]
+
+          bg-[size:120px_100%]
+
+          opacity-40
+          "
+        />
 
         {/* MOVING CONTENT */}
         <motion.div
@@ -71,7 +75,7 @@ export default function StatsBar() {
             duration: 22,
             ease: "linear",
           }}
-          className="flex w-max"
+          className="flex w-max relative z-10"
         >
 
           {repeatedStats.map((item, index) => {
@@ -83,12 +87,12 @@ export default function StatsBar() {
                 className="
                 flex
                 items-center
-                gap-5
+                gap-3
 
-                px-10
-                py-7
+                px-7
+                py-3
 
-                min-w-[360px]
+                min-w-[270px]
 
                 border-r
                 border-white/10
@@ -98,54 +102,61 @@ export default function StatsBar() {
                 {/* ICON */}
                 <div
                   className="
-                  w-14
-                  h-14
+                  w-9
+                  h-9
 
                   rounded-full
 
                   bg-white/10
 
                   border
-                  border-white/10
+                  border-white/15
 
                   flex
                   items-center
                   justify-center
 
-                  backdrop-blur-2xl
+                  shrink-0
                   "
                 >
-                  <Icon className="w-6 h-6 text-white" />
+                  <Icon className="w-[15px] h-[15px] text-white" />
                 </div>
 
                 {/* TEXT */}
-                <div className="flex items-end gap-3">
+                <div className="flex items-end gap-2.5">
 
                   <h3
                     className="
-                    text-[54px]
-                    font-black
+                    text-[28px]
                     leading-none
                     text-white
                     "
+                    style={{
+                      fontFamily: "'Josefin Sans', sans-serif",
+                      fontWeight: 600,
+                    }}
                   >
                     {item.value}
                   </h3>
 
                   <p
                     className="
-                    text-sm
+                    text-[9px]
 
                     uppercase
 
                     tracking-[0.30em]
 
-                    font-semibold
+                    text-[#fffaf6]
 
-                    text-[#dbe7ff]
+                    mb-[3px]
 
-                    mb-1
+                    whitespace-nowrap
                     "
+                    style={{
+                      fontFamily: "'Josefin Sans', sans-serif",
+                      fontWeight: 400,
+                    }}
                   >
                     {item.label}
                   </p>

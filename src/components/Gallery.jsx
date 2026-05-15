@@ -1,428 +1,357 @@
 // src/components/Gallery.jsx
-// PREMIUM STACKED SIDECARD GALLERY
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 
-import img1 from "../assests/images/gallery-1.jpg";
-import img2 from "../assests/images/gallery-2.jpg";
-import img3 from "../assests/images/gallery-3.jpg";
-import img4 from "../assests/images/gallery-4.jpg";
-import img5 from "../assests/images/gallery-5.jpg";
-import img6 from "../assests/images/gallery-6.jpg";
+import gallery1 from "../assests/images/gallery-1.jpg";
+import gallery2 from "../assests/images/gallery-2.jpg";
+import gallery3 from "../assests/images/gallery-3.jpg";
+import gallery4 from "../assests/images/gallery-4.jpg";
+import gallery5 from "../assests/images/gallery-5.jpg";
+import gallery6 from "../assests/images/gallery-6.jpg";
 
-const galleryItems = [
+import {
+  ArrowUpRight,
+  Leaf,
+} from "lucide-react";
+
+const galleryImages = [
   {
-    image: img1,
+    img: gallery1,
+    title: "Sky High Homescape",
+    desc: "Elegant aerial lifestyle with greenery and open spaces.",
+  },
+  {
+    img: gallery2,
     title: "Luxury Exterior",
-    desc: "Elegant architectural aesthetics with premium modern design.",
+    desc: "Premium architecture crafted with timeless elegance.",
   },
   {
-    image: img2,
-    title: "Sky Lounge",
-    desc: "Relaxing rooftop atmosphere with premium comfort.",
+    img: gallery3,
+    title: "Refined Interiors",
+    desc: "Warm sophisticated interiors with premium ambience.",
   },
   {
-    image: img3,
-    title: "Modern Workspace",
-    desc: "Beautiful interiors crafted for smart modern living.",
+    img: gallery4,
+    title: "Modern Lifestyle",
+    desc: "Contemporary living blended with peaceful surroundings.",
   },
   {
-    image: img4,
-    title: "Premium Lobby",
-    desc: "Classic entrance experience with elegant ambience.",
+    img: gallery5,
+    title: "Elegant Living",
+    desc: "Luxury lifestyle spaces inspired by modern comfort.",
   },
   {
-    image: img5,
-    title: "Community Space",
-    desc: "Designed for social comfort and family lifestyle.",
-  },
-  {
-    image: img6,
-    title: "Luxury Lifestyle",
-    desc: "Premium residential experience with timeless aesthetics.",
+    img: gallery6,
+    title: "Nature & Serenity",
+    desc: "Beautiful balance of greenery and refined experiences.",
   },
 ];
 
 export default function Gallery() {
-  const [active, setActive] = useState(0);
-
   return (
     <section
       id="gallery"
       className="
       relative
-
       overflow-hidden
 
-      py-24
+      py-20
 
-      bg-[#eef2ff]
+      bg-gradient-to-br
+      from-[#ebe1d8]
+      via-[#f3ece6]
+      to-[#e2d6cb]
       "
     >
-      {/* GLOW */}
+
+      {/* TOP BORDER */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-[#d9cbbf]" />
+
+      {/* TOP LEFT GLOW */}
+      <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-[#d89b7a]/10 blur-[120px] rounded-full" />
+
+      {/* BOTTOM RIGHT GLOW */}
+      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-[#b89a84]/10 blur-[120px] rounded-full" />
+
+      {/* LEFT STRIP */}
       <div
         className="
         absolute
-        top-[-100px]
-        left-[-100px]
-
-        w-[350px]
-        h-[350px]
-
-        bg-blue-300/10
-
-        blur-[120px]
-
-        rounded-full
+        left-0
+        top-0
+        h-full
+        w-[85px]
+        opacity-[0.28]
         "
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to right,#d8cdc3 0px,#d8cdc3 2px,transparent 2px,transparent 10px)",
+        }}
       />
 
-      <div
-        className="
-        absolute
-        bottom-[-100px]
-        right-[-100px]
-
-        w-[350px]
-        h-[350px]
-
-        bg-pink-300/10
-
-        blur-[120px]
-
-        rounded-full
-        "
-      />
-
-      {/* MAIN */}
-      <div className="relative z-10 max-w-[1500px] mx-auto px-5 lg:px-8">
+      <div className="relative z-10 max-w-[1450px] mx-auto px-4 lg:px-5">
 
         {/* TOP */}
-        <div className="text-center max-w-[720px] mx-auto">
-
-          <div className="flex items-center justify-center gap-4 mb-6">
-
-            <div className="w-12 h-[2px] bg-gradient-to-r from-[#4b74ff] to-[#cf4dff]" />
-
-            <p
-              className="
-              uppercase
-
-              tracking-[0.4em]
-
-              text-[11px]
-
-              text-[#5d74ff]
-
-              font-[400]
-              "
-            >
-              Project Gallery
-            </p>
-
-          </div>
-
-          <h2
-            className="
-            text-[42px]
-            md:text-[62px]
-
-            leading-[0.95]
-
-            tracking-[-2px]
-
-            font-[300]
-
-            text-[#111827]
-            "
-          >
-            Premium
-            <span className="block bg-gradient-to-r from-[#4b74ff] to-[#a855f7] bg-clip-text text-transparent">
-              Visual Experience
-            </span>
-          </h2>
-
-          <div
-            className="
-            mt-5
-
-            mx-auto
-
-            w-[180px]
-            h-[4px]
-
-            rounded-full
-
-            bg-gradient-to-r
-            from-[#4b74ff]
-            to-[#cf4dff]
-            "
-          />
-
-        </div>
-
-        {/* GALLERY LAYOUT */}
         <div
           className="
-          mt-20
-
-          grid
-          lg:grid-cols-[0.75fr_1.25fr]
-
+          flex
+          flex-col
+          lg:flex-row
+          lg:items-end
+          lg:justify-between
           gap-8
-
-          items-center
+          mb-12
           "
         >
-          {/* LEFT SIDECARDS */}
-          <div
-            className="
-            grid
-            grid-cols-2
 
-            sm:grid-cols-3
+          {/* LEFT */}
+          <div>
 
-            gap-4
-            "
-          >
-            {galleryItems.map((item, index) => (
-              <motion.div
-                key={index}
-                onClick={() => setActive(index)}
-                whileHover={{
-                  y: -6,
-                  scale: 1.02,
-                }}
-                transition={{ duration: 0.3 }}
-                className={`
-                  relative
+            <div className="flex items-center gap-3">
 
-                  overflow-hidden
+              <div className="w-10 h-[2px] bg-[#d88963]" />
 
-                  rounded-[28px]
-
-                  cursor-pointer
-
-                  group
-
-                  border
-
-                  ${
-                    active === index
-                      ? "border-[#6b7cff] shadow-[0_15px_45px_rgba(79,70,229,0.18)]"
-                      : "border-white/50"
-                  }
-                `}
-              >
-
-                {/* IMAGE */}
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="
-                  w-full
-
-                  h-[180px]
-
-                  object-cover
-
-                  transition-all
-                  duration-700
-
-                  group-hover:scale-110
-                  "
-                />
-
-                {/* OVERLAY */}
-                <div
-                  className="
-                  absolute inset-0
-
-                  bg-gradient-to-t
-                  from-black/70
-                  via-black/10
-                  to-transparent
-                  "
-                />
-
-                {/* TITLE */}
-                <div
-                  className="
-                  absolute
-                  bottom-4
-                  left-4
-                  right-4
-                  "
-                >
-                  <h3
-                    className="
-                    text-white
-
-                    text-[16px]
-
-                    leading-[1.3]
-
-                    font-[500]
-                    "
-                  >
-                    {item.title}
-                  </h3>
-                </div>
-
-              </motion.div>
-            ))}
-          </div>
-
-          {/* RIGHT BIG IMAGE */}
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="
-            relative
-
-            overflow-hidden
-
-            rounded-[48px]
-
-            border border-white/60
-
-            bg-white/40
-            backdrop-blur-xl
-
-            shadow-[0_25px_80px_rgba(15,23,42,0.12)]
-            "
-          >
-            {/* BIG IMAGE */}
-            <img
-              src={galleryItems[active].image}
-              alt={galleryItems[active].title}
-              className="
-              w-full
-
-              h-[620px]
-
-              object-cover
-              "
-            />
-
-            {/* OVERLAY */}
-            <div
-              className="
-              absolute inset-0
-
-              bg-gradient-to-t
-              from-black/70
-              via-black/10
-              to-transparent
-              "
-            />
-
-            {/* CONTENT */}
-            <div
-              className="
-              absolute
-              bottom-0
-              left-0
-
-              w-full
-
-              p-8
-              md:p-12
-              "
-            >
-
-              {/* TAG */}
-              <div
-                className="
-                inline-flex
-
-                px-5
-                py-2
-
-                rounded-full
-
-                bg-white/15
-                backdrop-blur-xl
-
-                border border-white/10
-
-                text-white
-
-                uppercase
-
-                tracking-[0.28em]
-
-                text-[10px]
-                "
-              >
-                Subham Park
-              </div>
-
-              {/* TITLE */}
-              <h3
-                className="
-                mt-6
-
-                text-[38px]
-                md:text-[56px]
-
-                leading-[0.95]
-
-                tracking-[-2px]
-
-                font-[300]
-
-                text-white
-                "
-              >
-                {galleryItems[active].title}
-              </h3>
-
-              {/* LINE */}
-              <div
-                className="
-                mt-5
-
-                w-[140px]
-                h-[4px]
-
-                rounded-full
-
-                bg-gradient-to-r
-                from-[#4b74ff]
-                to-[#cf4dff]
-                "
-              />
-
-              {/* DESC */}
               <p
                 className="
-                mt-6
-
-                max-w-[620px]
-
-                text-[16px]
-
-                leading-[2]
-
-                font-[300]
-
-                text-white/80
+                uppercase
+                tracking-[0.32em]
+                text-[11px]
+                text-[#c17d5d]
                 "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                }}
               >
-                {galleryItems[active].desc}
+                Luxury Gallery
               </p>
 
             </div>
 
-          </motion.div>
+            <h2
+              className="
+              mt-4
+              text-[44px]
+              lg:text-[72px]
+              leading-[0.92]
+              text-[#171717]
+              "
+              style={{
+                fontFamily: "'Cinzel Decorative', serif",
+                fontWeight: 400,
+              }}
+            >
+              EXPERIENCE
+              <br />
+
+              ELEVATED
+              <br />
+
+              <span className="text-[#d88963]">
+                LIVING
+              </span>
+
+            </h2>
+
+          </div>
+
+          {/* RIGHT */}
+          <div className="max-w-[470px] relative">
+
+            <Leaf
+              className="
+              absolute
+              -top-10
+              right-0
+              w-24
+              h-24
+              text-[#e3d4c8]
+              "
+              strokeWidth={1}
+            />
+
+            <p
+              className="
+              text-[18px]
+              leading-[1.9]
+              text-[#5f5953]
+              relative
+              z-10
+              "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 300,
+              }}
+            >
+              Inspired by brochure aesthetics,
+              Subham Park blends luxury architecture,
+              green surroundings and refined lifestyle
+              experiences crafted for modern living.
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* GRID */}
+        <div
+          className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-5
+          "
+        >
+
+          {galleryImages.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.08,
+              }}
+              viewport={{ once: true }}
+              className={`
+              group
+              relative
+              overflow-hidden
+              h-[260px]
+              lg:h-[340px]
+
+              ${
+                index % 2 === 0
+                  ? "bg-[#e7ded6]"
+                  : "bg-[#f3ede7]"
+              }
+              `}
+              style={{
+                clipPath:
+                  index % 2 === 0
+                    ? "polygon(0 0,100% 0,100% 88%,92% 100%,0 100%)"
+                    : "polygon(8% 0,100% 0,100% 100%,0 100%,0 12%)",
+              }}
+            >
+
+              {/* IMAGE */}
+              <img
+                src={item.img}
+                alt={item.title}
+                className="
+                absolute
+                inset-0
+                w-full
+                h-full
+                object-cover
+                transition-transform
+                duration-700
+                group-hover:scale-110
+                "
+              />
+
+              {/* OVERLAY */}
+              <div
+                className={`
+                absolute
+                inset-0
+
+                ${
+                  index % 2 === 0
+                    ? "bg-gradient-to-t from-black/75 via-black/20 to-transparent"
+                    : "bg-gradient-to-t from-[#3a2d25]/70 via-black/10 to-transparent"
+                }
+                `}
+              />
+
+              {/* CONTENT */}
+              <div
+                className="
+                absolute
+                bottom-0
+                left-0
+                w-full
+                p-6
+                "
+              >
+
+                <div
+                  className="
+                  flex
+                  items-center
+                  justify-between
+                  gap-4
+                  "
+                >
+
+                  <div>
+
+                    <h3
+                      className="
+                      text-[28px]
+                      leading-[1]
+                      text-white
+                      "
+                      style={{
+                        fontFamily: "'Cinzel Decorative', serif",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      className="
+                      mt-3
+                      text-[13px]
+                      leading-[1.7]
+                      text-white/80
+                      max-w-[260px]
+                      "
+                      style={{
+                        fontFamily: "'Josefin Sans', sans-serif",
+                        fontWeight: 300,
+                      }}
+                    >
+                      {item.desc}
+                    </p>
+
+                  </div>
+
+                  {/* ICON */}
+                  <div
+                    className="
+                    shrink-0
+
+                    w-12
+                    h-12
+
+                    flex
+                    items-center
+                    justify-center
+
+                    border
+                    border-white/20
+
+                    bg-white/10
+
+                    backdrop-blur-md
+                    "
+                  >
+                    <ArrowUpRight className="w-5 h-5 text-white" />
+                  </div>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+          ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

@@ -1,3 +1,5 @@
+// src/components/Hero.jsx
+
 import { motion } from "framer-motion";
 import heroBg from "../assests/images/hero-bg.jpg";
 
@@ -5,55 +7,85 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#f7f8fc]"
+      className="
+      relative
+      overflow-hidden
+      bg-[#f6f4f3]
+      min-h-screen
+      flex
+      items-center
+      "
     >
-      <div className="max-w-[1800px] mx-auto px-6 lg:px-8 pt-6">
 
-        {/* HERO */}
-        <div className="grid lg:grid-cols-[0.74fr_1.26fr] items-center min-h-screen gap-10">
+      {/* PREMIUM GLOW */}
+      <div className="absolute top-[-120px] left-[-120px] w-[260px] h-[260px] bg-[#d69073]/10 blur-[120px] rounded-full"></div>
+
+      <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-[#c6a28f]/10 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-[1450px] mx-auto w-full px-4 lg:px-6">
+
+        {/* GRID */}
+        <div
+          className="
+          grid
+          lg:grid-cols-[0.52fr_1.48fr]
+          items-center
+          gap-8
+
+          pt-[120px]
+          lg:pt-[95px]
+
+          pb-10
+          "
+        >
 
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 0.8 }}
             className="relative z-10"
           >
 
-            {/* TOP SMALL TEXT */}
-            <div className="flex items-center gap-6 mb-14">
+            {/* TOP TEXT */}
+            <div className="flex items-center gap-3 mb-5">
 
-              <div className="w-12 h-[2px] bg-[#4b73ff]" />
+              <div className="w-10 h-[2px] bg-[#d69073]" />
 
               <p
                 className="
                 uppercase
-                tracking-[0.45em]
-                text-[13px]
-                font-[300]
-                text-[#5c7cff]
+                tracking-[0.35em]
+                text-[10px]
+                text-[#b58d7c]
                 "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 400,
+                }}
               >
                 Premium Living
               </p>
 
             </div>
 
-            {/* TITLE */}
+            {/* HEADING */}
             <h1
               className="
-              text-[72px]
-              sm:text-[92px]
-              lg:text-[108px]
+              text-[42px]
+              sm:text-[54px]
+              lg:text-[62px]
 
-              leading-[0.92]
+              leading-[0.9]
 
-              tracking-[-5px]
+              tracking-[-2px]
 
-              font-[200]
-
-              text-[#14151c]
+              text-[#171b30]
               "
+              style={{
+                fontFamily: "'Cinzel Decorative', serif",
+                fontWeight: 400,
+              }}
             >
               DISCOVER
               <br />
@@ -61,43 +93,57 @@ export default function Hero() {
               YOUR
               <br />
 
-              <span className="bg-gradient-to-r from-[#4678ff] to-[#8f63ff] bg-clip-text text-transparent">
+              <span className="text-[#d69073]">
                 DREAM
               </span>
 
-              <br />
-
-              <span className="bg-gradient-to-r from-[#5a7dff] to-[#9563ff] bg-clip-text text-transparent">
-                HOME
-              </span>
             </h1>
 
-            {/* DESCRIPTION */}
+            {/* LINE */}
+            <div
+              className="
+              mt-4
+              w-[145px]
+              h-[3px]
+              rounded-full
+              bg-gradient-to-r
+              from-[#d69073]
+              to-[#c6a28f]
+              "
+            />
+
+            {/* PARAGRAPH */}
             <p
               className="
-              mt-14
+              mt-5
 
-              max-w-[470px]
+              max-w-[360px]
 
-              text-[17px]
+              text-[14px]
+              lg:text-[15px]
 
-              leading-[2.1]
+              leading-[1.45]
 
-              font-[300]
-
-              text-[#8e97ae]
+              text-[#1d1d1d]
               "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 300,
+                wordSpacing: "-2px",
+                letterSpacing: "-0.3px",
+              }}
             >
-              Premium residences with elegant modern
-              architecture and peaceful luxury living
-              experiences in Jorhat.
+              Elegant premium residences crafted with
+              modern architecture, peaceful surroundings,
+              and refined luxury living experiences in
+              Jorhat.
             </p>
 
           </motion.div>
 
           {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: 70 }}
+            initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="
@@ -108,23 +154,27 @@ export default function Hero() {
             "
           >
 
-            {/* SHAPE */}
+            {/* D SHAPE IMAGE BOX */}
             <div
               className="
               relative
 
               w-full
-              max-w-[1200px]
+              max-w-[720px]
 
-              h-[760px]
+              h-[470px]
 
               overflow-hidden
+
+              bg-[#ebe6e2]
+
+              shadow-[0_20px_60px_rgba(0,0,0,0.12)]
               "
               style={{
                 clipPath:
-                  "polygon(13% 0%, 100% 0%, 100% 70%, 92% 88%, 74% 100%, 24% 100%, 0% 78%, 0% 16%)",
+                  "polygon(12% 0%,100% 0%,100% 80%,88% 100%,18% 100%,0% 84%,0% 14%)",
                 WebkitClipPath:
-                  "polygon(13% 0%, 100% 0%, 100% 70%, 92% 88%, 74% 100%, 24% 100%, 0% 78%, 0% 16%)",
+                  "polygon(12% 0%,100% 0%,100% 80%,88% 100%,18% 100%,0% 84%,0% 14%)",
                 borderRadius: "34px",
               }}
             >
@@ -134,14 +184,27 @@ export default function Hero() {
                 src={heroBg}
                 alt="Subham Park"
                 className="
+                absolute
+                inset-0
+
                 w-full
                 h-full
 
                 object-cover
 
-                object-[38%_center]
+                object-[center_58%]
+                "
+              />
 
-                scale-[1.02]
+              {/* OVERLAY */}
+              <div
+                className="
+                absolute
+                inset-0
+
+                bg-gradient-to-t
+                from-black/[0.03]
+                to-transparent
                 "
               />
 
@@ -152,6 +215,7 @@ export default function Hero() {
         </div>
 
       </div>
+
     </section>
   );
 }
