@@ -1,13 +1,12 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
-import AboutUs from "./components/AboutUs";
+import ProjectOverview from "./components/ProjectOverview";
 import Amenities from "./components/Amenities";
+import Walkthrough from "./components/Walkthrough";
 import Gallery from "./components/Gallery";
 import Planning from "./components/Planning";
-import ProjectOverview from "./components/ProjectOverview";
-import Walkthrough from "./components/Walkthrough";
-import ContactForm from "./components/ContactForm";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
@@ -17,31 +16,29 @@ function App() {
       {/* NAVBAR */}
       <Navbar />
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <Hero />
 
       {/* STATS */}
       <StatsBar />
 
-      {/* ABOUT */}
-      <AboutUs />
+      {/* PROJECT OVERVIEW */}
+      <ProjectOverview />
 
       {/* AMENITIES */}
       <Amenities />
 
+      {/* WALKTHROUGH */}
+      <Walkthrough />
+
       {/* GALLERY */}
       <Gallery />
 
-      {/* MASTER PLAN */}
+      {/* FLOOR PLAN */}
       <Planning />
 
-      {/* PROJECT OVERVIEW */}
-      <ProjectOverview />
-
-      <Walkthrough />
-
-      {/* CONTACT */}
-      <ContactForm />
+      {/* LOCATION & CONTACT */}
+      <Contact />
 
       {/* FOOTER */}
       <Footer />
