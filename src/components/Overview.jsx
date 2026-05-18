@@ -49,7 +49,7 @@ export default function Overview() {
             {/* TOP TEXT */}
             <div className="flex items-center gap-4 mb-5">
 
-              <div className="w-[60px] h-[2px] bg-[#d6b92f]" />
+              <div className="w-[60px] h-[2px] bg-[#d97745]" />
 
               <p
                 className="
@@ -58,7 +58,7 @@ export default function Overview() {
 
                 text-[11px]
 
-                text-[#b89d22]
+                text-[#c56d3d]
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
@@ -90,9 +90,21 @@ export default function Overview() {
             >
               The{" "}
 
-              <span className="italic text-[#d6b92f]">
-                Luxury
-              </span>{" "}
+              <span
+  className="
+  italic
+
+  bg-gradient-to-r
+  from-[#ffb36b]
+  via-[#ff8c42]
+  to-[#d97745]
+
+  bg-clip-text
+  text-transparent
+  "
+>
+  Luxury
+</span>{" "}
 
               Homes
               <br />
@@ -158,7 +170,7 @@ export default function Overview() {
 
                   rounded-[14px]
 
-                  bg-[#f5f2eb]
+                  bg-[#fff2ea]
 
                   flex
                   items-center
@@ -167,7 +179,7 @@ export default function Overview() {
                 >
                   <ShieldCheck
                     size={20}
-                    color="#111111"
+                    color="#d97745"
                   />
                 </div>
 
@@ -227,7 +239,7 @@ export default function Overview() {
 
                   rounded-[14px]
 
-                  bg-[#f5f2eb]
+                  bg-[#fff2ea]
 
                   flex
                   items-center
@@ -236,7 +248,7 @@ export default function Overview() {
                 >
                   <Zap
                     size={20}
-                    color="#111111"
+                    color="#d97745"
                   />
                 </div>
 
@@ -296,7 +308,7 @@ export default function Overview() {
 
                   rounded-[14px]
 
-                  bg-[#f5f2eb]
+                  bg-[#fff2ea]
 
                   flex
                   items-center
@@ -305,7 +317,7 @@ export default function Overview() {
                 >
                   <LockKeyhole
                     size={20}
-                    color="#111111"
+                    color="#d97745"
                   />
                 </div>
 
@@ -365,7 +377,7 @@ export default function Overview() {
 
                   rounded-[14px]
 
-                  bg-[#f5f2eb]
+                  bg-[#fff2ea]
 
                   flex
                   items-center
@@ -374,7 +386,7 @@ export default function Overview() {
                 >
                   <Droplets
                     size={20}
-                    color="#111111"
+                    color="#d97745"
                   />
                 </div>
 
@@ -444,7 +456,7 @@ export default function Overview() {
 
                 leading-none
 
-                text-[#e7dfba]
+                text-[#f1c4aa]
 
                 mb-3
                 "
@@ -487,13 +499,13 @@ export default function Overview() {
                   rounded-full
 
                   border
-                  border-[#d6b92f]
+                  border-[#d97745]
 
                   flex
                   items-center
                   justify-center
 
-                  text-[#d6b92f]
+                  text-[#d97745]
 
                   text-[20px]
                   "
@@ -558,7 +570,6 @@ export default function Overview() {
               items-center
               "
             >
-              {/* ITEM */}
               <div className="text-center">
 
                 <p
@@ -595,7 +606,6 @@ export default function Overview() {
 
               </div>
 
-              {/* ITEM */}
               <div
                 className="
                 text-center
@@ -638,7 +648,6 @@ export default function Overview() {
 
               </div>
 
-              {/* ITEM */}
               <div className="text-center">
 
                 <p

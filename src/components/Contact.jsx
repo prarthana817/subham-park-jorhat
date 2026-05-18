@@ -60,7 +60,7 @@ export default function Contact() {
       <div className="relative z-10 max-w-[1250px] mx-auto px-4 lg:px-5">
 
         {/* HEADER */}
-        <div className="mb-8 text-center">
+        <div className="mb-8 text-left">
 
           <p
             className="text-[11px] uppercase tracking-[0.35em] text-[#dffaf7] mb-3"
@@ -81,14 +81,14 @@ export default function Contact() {
             Book A
             <br />
 
-            <span className="text-[#9ff3ee]">
+            <span className="text-[#f7f1e8]">
               Site Visit
             </span>
 
           </h2>
 
           <p
-            className="max-w-[700px] mx-auto mt-4 text-[14px] leading-[1.9] text-white/80"
+            className="max-w-[700px] ml-auto mt-4 text-[14px] leading-[1.9] text-white/80"
             style={{
               fontFamily: "'Josefin Sans', sans-serif",
             }}
