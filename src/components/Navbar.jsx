@@ -9,21 +9,19 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Amenities", href: "#amenities" },
-
-    // ProjectOverview.jsx
     { name: "Overview", href: "#overview" },
 
-    // Walkthrough.jsx
-    { name: "Walkthrough", href: "#walkthrough" },
+    { name: "Amenities", href: "#amenities" },
+
+    { name: "Walkthrough Video", href: "#walkthrough" },
 
     { name: "Gallery", href: "#gallery" },
 
-    // Planning.jsx
-    { name: "Plan", href: "#plans" },
+    { name: "Floor Plans", href: "#planning" },
 
-    // ContactUs.jsx
-    { name: "Location", href: "#location" },
+    { name: "Location", href: "#contact" },
+
+    { name: "Contact", href: "#contact" },
 
     { name: "About", href: "#about" },
   ];

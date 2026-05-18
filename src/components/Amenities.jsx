@@ -87,9 +87,23 @@ export default function Amenities() {
       relative
       overflow-hidden
       py-10
-      bg-[#f6f2ee]
+      bg-[#b96f4c]
       "
     >
+      {/* TEXTURE */}
+      <div
+        className="
+        absolute
+        inset-0
+        opacity-[0.08]
+        "
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "18px 18px",
+        }}
+      />
+
       {/* LEFT STRIP */}
       <div
         className="
@@ -98,11 +112,11 @@ export default function Amenities() {
         top-0
         w-[80px]
         h-full
-        opacity-[0.4]
+        opacity-[0.12]
         "
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to right,#ddd5ce 0px,#ddd5ce 3px,transparent 3px,transparent 11px)",
+            "repeating-linear-gradient(to right,#ffffff 0px,#ffffff 2px,transparent 2px,transparent 10px)",
         }}
       />
 
@@ -115,8 +129,8 @@ export default function Amenities() {
           grid
           lg:grid-cols-[1.15fr_0.85fr]
           border
-          border-[#ddd5ce]
-          bg-[#faf7f3]
+          border-[#d6a58c]
+          bg-transparent
           "
         >
 
@@ -124,12 +138,12 @@ export default function Amenities() {
           <Leaf
             className="
             absolute
-            right-[-20px]
-            top-[-10px]
+            right-[20px]
+            top-[10px]
             w-[230px]
             h-[230px]
-            text-[#ebe3dc]
-            opacity-80
+            text-[#f0c7b3]
+            opacity-20
             "
             strokeWidth={1}
           />
@@ -141,7 +155,7 @@ export default function Amenities() {
             p-8
             lg:p-12
             border-r
-            border-[#ddd5ce]
+            border-[#d6a58c]
             "
           >
 
@@ -150,7 +164,7 @@ export default function Amenities() {
               uppercase
               tracking-[0.32em]
               text-[11px]
-              text-[#d88963]
+              text-[#ffe5d7]
               "
               style={{
                 fontFamily: "'Raleway', sans-serif",
@@ -170,17 +184,17 @@ export default function Amenities() {
               }}
             >
 
-              <span className="block text-[58px] text-[#222222]">
+              <span className="block text-[58px] text-[#fff8f3]">
                 ASPIRATIONAL
               </span>
 
-              <span className="block text-[58px] text-[#222222]">
+              <span className="block text-[58px] text-[#fff8f3]">
                 LIVING
               </span>
 
               <div className="flex items-end gap-4 mt-1">
 
-                <span className="text-[46px] text-[#222222]">
+                <span className="text-[46px] text-[#fff8f3]">
                   IN
                 </span>
 
@@ -196,11 +210,7 @@ export default function Amenities() {
 
                   <span
                     style={{
-                      background:
-                        "repeating-linear-gradient(45deg,#c46f49 0px,#c46f49 3px,transparent 3px,transparent 11px)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 0.7px #a35b3b",
+                      color: "#f08b57",
                     }}
                   >
                     J
@@ -208,11 +218,7 @@ export default function Amenities() {
 
                   <span
                     style={{
-                      background:
-                        "repeating-radial-gradient(circle,#b39a87 0px,#b39a87 2px,transparent 2px,transparent 9px)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 0.7px #9f8673",
+                      color: "#f4d8c7",
                     }}
                   >
                     O
@@ -220,11 +226,7 @@ export default function Amenities() {
 
                   <span
                     style={{
-                      background:
-                        "repeating-linear-gradient(to bottom,#49c7bf 0px,#49c7bf 3px,transparent 3px,transparent 10px)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 0.7px #38a9a1",
+                      color: "#43d6cf",
                     }}
                   >
                     R
@@ -232,12 +234,7 @@ export default function Amenities() {
 
                   <span
                     style={{
-                      background:
-                        "radial-gradient(#9d836d 1.8px, transparent 1.8px)",
-                      backgroundSize: "10px 10px",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 0.7px #7e6856",
+                      color: "#f4d8c7",
                     }}
                   >
                     H
@@ -245,11 +242,7 @@ export default function Amenities() {
 
                   <span
                     style={{
-                      background:
-                        "repeating-linear-gradient(-45deg,#d5a08f 0px,#d5a08f 3px,transparent 3px,transparent 11px)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 0.7px #b7806f",
+                      color: "#f0b09a",
                     }}
                   >
                     A
@@ -257,11 +250,7 @@ export default function Amenities() {
 
                   <span
                     style={{
-                      background:
-                        "repeating-linear-gradient(to right,#8ca8c4 0px,#8ca8c4 3px,transparent 3px,transparent 10px)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 0.7px #6f89a3",
+                      color: "#8fb8e6",
                     }}
                   >
                     T
@@ -285,7 +274,6 @@ export default function Amenities() {
             px-8
             py-10
             lg:px-12
-            bg-[#faf7f3]
             "
           >
 
@@ -297,7 +285,7 @@ export default function Amenities() {
               -translate-y-1/2
               w-[1px]
               h-[180px]
-              bg-[#d8d0c8]
+              bg-[#e4b59c]
               "
             />
 
@@ -307,7 +295,7 @@ export default function Amenities() {
                 className="
                 w-7
                 h-7
-                text-[#d8a58b]
+                text-[#ffd8c3]
                 "
                 strokeWidth={1.8}
               />
@@ -317,7 +305,7 @@ export default function Amenities() {
                 mt-6
                 text-[20px]
                 leading-[1.9]
-                text-[#645d57]
+                text-[#fff3eb]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -345,7 +333,7 @@ export default function Amenities() {
           lg:grid-cols-5
           border-l
           border-t
-          border-[#ddd5ce]
+          border-[#d6a58c]
           "
         >
 
@@ -363,15 +351,15 @@ export default function Amenities() {
                 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  backgroundColor: "#f0ebe6",
+                  y: -4,
                 }}
                 className="
                 relative
                 overflow-hidden
                 border-r
                 border-b
-                border-[#ddd5ce]
-                bg-[#f7f3ef]
+                border-[#d6a58c]
+                bg-[#fffdfa]
                 p-5
                 min-h-[300px]
                 transition-all
@@ -384,21 +372,16 @@ export default function Amenities() {
                   className="
                   absolute
                   inset-0
-                  opacity-[0.12]
+                  opacity-[0.05]
                   "
                   style={{
                     backgroundImage:
-                      index % 2 === 0
-                        ? "repeating-linear-gradient(45deg,#ddd5ce 0px,#ddd5ce 1px,transparent 1px,transparent 14px)"
-                        : "radial-gradient(#d9d1ca 1px, transparent 1px)",
-                    backgroundSize:
-                      index % 2 === 0
-                        ? "22px 22px"
-                        : "14px 14px",
+                      "radial-gradient(#d8c7bb 1px, transparent 1px)",
+                    backgroundSize: "16px 16px",
                   }}
                 />
 
-                {/* UPDATED SMALL NUMBER */}
+                {/* NUMBER */}
                 <div
                   className="
                   absolute
@@ -406,12 +389,12 @@ export default function Amenities() {
                   right-5
                   text-[32px]
                   leading-none
-                  opacity-50
                   "
                   style={{
                     fontFamily: "'Cinzel Decorative', serif",
-                    color: "#d88963",
+                    color: index % 2 === 0 ? "#43d6cf" : "#d88963",
                     fontWeight: 400,
+                    opacity: 0.8,
                   }}
                 >
                   {String(index + 1).padStart(2, "0")}
@@ -422,7 +405,7 @@ export default function Amenities() {
                   {[...Array(9)].map((_, i) => (
                     <div
                       key={i}
-                      className="w-[3px] h-[3px] rounded-full bg-[#67cfc7]"
+                      className="w-[3px] h-[3px] rounded-full bg-[#d89b7a]"
                     />
                   ))}
                 </div>
@@ -442,14 +425,14 @@ export default function Amenities() {
                     justify-center
                     "
                     style={{
-                      borderColor: "#67cfc7",
-                      backgroundColor: "rgba(103,207,199,0.08)",
+                      borderColor: "#43d6cf",
+                      backgroundColor: "rgba(67,214,207,0.06)",
                     }}
                   >
                     <Icon
                       className="w-7 h-7"
                       style={{
-                        color: "#67cfc7",
+                        color: "#43d6cf",
                       }}
                     />
                   </div>
@@ -491,7 +474,7 @@ export default function Amenities() {
                       mt-4
                       w-[44px]
                       h-[2px]
-                      bg-[#67cfc7]
+                      bg-[#43d6cf]
                       "
                     />
 

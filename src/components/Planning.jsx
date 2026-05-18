@@ -84,7 +84,7 @@ export default function FloorPlans() {
 
   return (
     <section
-      id="plan"
+      id="planning"
       className="
       relative
       overflow-hidden
@@ -93,16 +93,15 @@ export default function FloorPlans() {
       "
       style={{
         background: `
-          radial-gradient(circle at top left, rgba(255,255,255,0.07), transparent 26%),
-          radial-gradient(circle at bottom right, rgba(0,0,0,0.28), transparent 30%),
+          radial-gradient(circle at top left, rgba(214,144,115,0.08), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(86,189,183,0.08), transparent 28%),
           linear-gradient(
             135deg,
-            #1b1411 0%,
-            #2a1d18 18%,
-            #3a271f 38%,
-            #56372b 58%,
-            #7b4d3a 78%,
-            #b37a5d 100%
+            #faf7f3 0%,
+            #f6f1eb 22%,
+            #f3ece5 45%,
+            #efe5dc 70%,
+            #eadfd5 100%
           )
         `,
       }}
@@ -112,12 +111,12 @@ export default function FloorPlans() {
         className="
         absolute
         inset-0
-        opacity-[0.07]
+        opacity-[0.05]
         "
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
           `,
           backgroundSize: "65px 65px",
         }}
@@ -135,18 +134,18 @@ export default function FloorPlans() {
         "
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to right, rgba(255,255,255,0.35) 0px, rgba(255,255,255,0.35) 1px, transparent 1px, transparent 10px)",
+            "repeating-linear-gradient(to right, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 10px)",
         }}
       />
 
-      {/* GOLD BLUR */}
-      <div className="absolute top-[-120px] right-[-120px] w-[420px] h-[420px] rounded-full bg-[#d8a285]/20 blur-[140px]" />
+      {/* ORANGE BLUR */}
+      <div className="absolute top-[-120px] right-[-120px] w-[420px] h-[420px] rounded-full bg-[#d8a285]/10 blur-[140px]" />
 
-      {/* DARK BLUR */}
-      <div className="absolute bottom-[-180px] left-[-120px] w-[380px] h-[380px] rounded-full bg-black/30 blur-[130px]" />
+      {/* CYAN BLUR */}
+      <div className="absolute bottom-[-180px] left-[-120px] w-[380px] h-[380px] rounded-full bg-[#56bdb7]/10 blur-[130px]" />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-white/20" />
 
       <div className="relative z-10 max-w-[1450px] mx-auto px-4 lg:px-6">
 
@@ -166,14 +165,14 @@ export default function FloorPlans() {
 
             <div className="flex items-center gap-3 mb-5">
 
-              <div className="w-10 h-[2px] bg-[#f0c9b3]" />
+              <div className="w-10 h-[2px] bg-[#d69073]" />
 
               <p
                 className="
                 uppercase
                 tracking-[0.32em]
                 text-[11px]
-                text-[#f6d8c7]
+                text-[#b58671]
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
@@ -191,7 +190,7 @@ export default function FloorPlans() {
               lg:text-[72px]
               leading-[0.92]
               tracking-[-2px]
-              text-white
+              text-[#1f1f1f]
               "
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
@@ -208,7 +207,7 @@ export default function FloorPlans() {
           <div
             className="
             lg:max-w-[420px]
-            text-[#f1e4db]
+            text-[#5f5953]
             text-[15px]
             leading-[1.9]
             "
@@ -233,11 +232,11 @@ export default function FloorPlans() {
           overflow-hidden
 
           border
-          border-[#ffffff12]
+          border-[#e5d8cf]
 
           bg-[#fdf9f6]
 
-          shadow-[0_35px_80px_rgba(0,0,0,0.35)]
+          shadow-[0_35px_80px_rgba(0,0,0,0.08)]
           "
         >
 
@@ -290,7 +289,7 @@ export default function FloorPlans() {
                       ? `
                         bg-[#1f1f1f]
                         border-[#1f1f1f]
-                        shadow-[0_12px_25px_rgba(0,0,0,0.25)]
+                        shadow-[0_12px_25px_rgba(0,0,0,0.12)]
                       `
                       : `
                         bg-[#fcfaf8]
@@ -430,104 +429,6 @@ export default function FloorPlans() {
                     >
                       {active.title}
                     </h3>
-
-                  </div>
-
-                  <div className="flex gap-6 flex-wrap">
-
-                    <div className="flex items-center gap-3">
-
-                      <div
-                        className="
-                        w-12
-                        h-12
-                        flex
-                        items-center
-                        justify-center
-                        bg-[#f3e5db]
-                        "
-                      >
-                        <Layers3 className="w-5 h-5 text-[#d69073]" />
-                      </div>
-
-                      <div>
-
-                        <p
-                          className="
-                          text-[11px]
-                          uppercase
-                          tracking-[0.2em]
-                          text-[#9d8577]
-                          "
-                          style={{
-                            fontFamily: "'Raleway', sans-serif",
-                          }}
-                        >
-                          Layout
-                        </p>
-
-                        <h4
-                          className="
-                          text-[17px]
-                          text-[#1f1f1f]
-                          "
-                          style={{
-                            fontFamily: "'Josefin Sans', sans-serif",
-                          }}
-                        >
-                          {active.size}
-                        </h4>
-
-                      </div>
-
-                    </div>
-
-                    <div className="flex items-center gap-3">
-
-                      <div
-                        className="
-                        w-12
-                        h-12
-                        flex
-                        items-center
-                        justify-center
-                        bg-[#e6f6f4]
-                        "
-                      >
-                        <Building2 className="w-5 h-5 text-[#56bdb7]" />
-                      </div>
-
-                      <div>
-
-                        <p
-                          className="
-                          text-[11px]
-                          uppercase
-                          tracking-[0.2em]
-                          text-[#9d8577]
-                          "
-                          style={{
-                            fontFamily: "'Raleway', sans-serif",
-                          }}
-                        >
-                          Planning
-                        </p>
-
-                        <h4
-                          className="
-                          text-[17px]
-                          text-[#1f1f1f]
-                          "
-                          style={{
-                            fontFamily: "'Josefin Sans', sans-serif",
-                          }}
-                        >
-                          Premium Design
-                        </h4>
-
-                      </div>
-
-                    </div>
 
                   </div>
 

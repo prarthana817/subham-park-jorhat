@@ -15,14 +15,45 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-12 bg-[#f5f1ec]"
+      className="
+      relative
+      overflow-hidden
+      py-14
+
+      bg-gradient-to-br
+      from-[#d79a74]
+      via-[#b87452]
+      to-[#7a4b35]
+      "
     >
+
+      {/* TOP GLOW */}
+      <div className="absolute top-[-140px] right-[-120px] w-[340px] h-[340px] rounded-full bg-[#f3c2a4]/25 blur-[130px]" />
+
+      {/* BOTTOM GLOW */}
+      <div className="absolute bottom-[-160px] left-[-140px] w-[360px] h-[360px] rounded-full bg-[#5c3424]/35 blur-[130px]" />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/10" />
+
+      {/* GRID */}
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
       {/* SIDE PATTERN */}
       <div
-        className="absolute left-0 top-0 w-[70px] h-full opacity-[0.07]"
+        className="absolute left-0 top-0 w-[70px] h-full opacity-[0.08]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to right,#d8cec6 0px,#d8cec6 2px,transparent 2px,transparent 10px)",
+            "repeating-linear-gradient(to right,rgba(255,255,255,0.3) 0px,rgba(255,255,255,0.3) 2px,transparent 2px,transparent 10px)",
         }}
       />
 
@@ -32,7 +63,7 @@ export default function Contact() {
         <div className="mb-8 text-center">
 
           <p
-            className="text-[11px] uppercase tracking-[0.35em] text-[#56bdb7] mb-3"
+            className="text-[11px] uppercase tracking-[0.35em] text-[#dffaf7] mb-3"
             style={{
               fontFamily: "'Raleway', sans-serif",
             }}
@@ -41,7 +72,7 @@ export default function Contact() {
           </p>
 
           <h2
-            className="text-[34px] sm:text-[48px] lg:text-[60px] leading-[0.92] tracking-[-2px] text-[#1f1f1f]"
+            className="text-[34px] sm:text-[48px] lg:text-[60px] leading-[0.92] tracking-[-2px] text-white"
             style={{
               fontFamily: "'Cinzel Decorative', serif",
               fontWeight: 400,
@@ -50,14 +81,14 @@ export default function Contact() {
             Book A
             <br />
 
-            <span className="text-[#56bdb7]">
+            <span className="text-[#9ff3ee]">
               Site Visit
             </span>
 
           </h2>
 
           <p
-            className="max-w-[700px] mx-auto mt-4 text-[14px] leading-[1.9] text-[#645d57]"
+            className="max-w-[700px] mx-auto mt-4 text-[14px] leading-[1.9] text-white/80"
             style={{
               fontFamily: "'Josefin Sans', sans-serif",
             }}
@@ -70,7 +101,21 @@ export default function Contact() {
         </div>
 
         {/* MAIN GRID */}
-        <div className="grid lg:grid-cols-2 border border-[#ddd2ca] bg-[#faf7f3] overflow-hidden">
+        <div
+          className="
+          grid
+          lg:grid-cols-2
+
+          border
+          border-[#ffffff20]
+
+          bg-[#fdfbf8]
+
+          overflow-hidden
+
+          shadow-[0_35px_90px_rgba(0,0,0,0.22)]
+          "
+        >
 
           {/* LEFT SIDE — FORM */}
           <div className="p-5 lg:p-7 bg-white border-r border-[#e4d8cf]">
@@ -381,7 +426,6 @@ export default function Contact() {
             {/* CONTACT INFO */}
             <div className="grid sm:grid-cols-3 gap-3 mt-6">
 
-              {/* PHONE */}
               <div className="border border-[#e4d8cf] bg-white p-4">
 
                 <div className="flex items-center gap-2">
@@ -410,7 +454,6 @@ export default function Contact() {
 
               </div>
 
-              {/* EMAIL */}
               <div className="border border-[#e4d8cf] bg-white p-4">
 
                 <div className="flex items-center gap-2">
@@ -439,7 +482,6 @@ export default function Contact() {
 
               </div>
 
-              {/* ADDRESS */}
               <div className="border border-[#e4d8cf] bg-white p-4">
 
                 <div className="flex items-center gap-2">

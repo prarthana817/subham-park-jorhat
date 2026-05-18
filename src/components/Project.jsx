@@ -102,7 +102,7 @@ export default function ProjectOverview() {
 
   return (
     <section
-      id="overview"
+      id="about"
       className="
       relative
       overflow-hidden
@@ -262,12 +262,16 @@ export default function ProjectOverview() {
                 key={key}
                 onClick={() => setActive(key)}
                 className={`
+                  relative
+                  overflow-hidden
+
                   min-w-[240px]
 
                   px-6
                   py-5
 
                   border
+                  border-[#ddd2ca]
 
                   flex
                   items-center
@@ -280,44 +284,61 @@ export default function ProjectOverview() {
                   ${
                     active === key
                       ? "bg-[#c58b6d] text-white border-[#c58b6d]"
-                      : "bg-white border-[#ddd2ca] text-[#1f1f1f] hover:bg-[#f8f4ef]"
+                      : "bg-transparent text-[#1f1f1f] hover:bg-[#f8f4ef]"
                   }
                 `}
               >
 
+                {/* GRID INSIDE BUTTON */}
+
                 <div
-                  className={`
-                  w-[52px]
-                  h-[52px]
+                  className="absolute inset-0 opacity-[0.08]"
+                  style={{
+                    backgroundImage: `
+                      linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "28px 28px",
+                  }}
+                />
 
-                  flex
-                  items-center
-                  justify-center
+                <div className="relative z-10 flex items-center gap-4">
 
-                  ${
-                    active === key
-                      ? "bg-[#ffffff20]"
-                      : "bg-[#f1e5dc]"
-                  }
-                  `}
-                >
-                  {item.icon}
-                </div>
+                  <div
+                    className={`
+                    w-[52px]
+                    h-[52px]
 
-                <div>
+                    flex
+                    items-center
+                    justify-center
 
-                  <h3
-                    className="
-                    text-[18px]
-                    leading-[1.3]
-                    text-left
-                    "
-                    style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                    }}
+                    ${
+                      active === key
+                        ? "bg-[#ffffff20]"
+                        : "bg-[#f1e5dc]"
+                    }
+                    `}
                   >
-                    {item.title}
-                  </h3>
+                    {item.icon}
+                  </div>
+
+                  <div>
+
+                    <h3
+                      className="
+                      text-[18px]
+                      leading-[1.3]
+                      text-left
+                      "
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+
+                  </div>
 
                 </div>
 

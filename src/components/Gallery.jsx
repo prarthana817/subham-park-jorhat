@@ -58,20 +58,36 @@ export default function Gallery() {
       py-20
 
       bg-gradient-to-br
-      from-[#ebe1d8]
-      via-[#f3ece6]
-      to-[#e2d6cb]
+      from-[#b56f4e]
+      via-[#9c5e42]
+      to-[#7f4933]
       "
     >
 
       {/* TOP BORDER */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-[#d9cbbf]" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-[#d9b39d]/30" />
 
       {/* TOP LEFT GLOW */}
-      <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-[#d89b7a]/10 blur-[120px] rounded-full" />
+      <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-[#f0b08a]/20 blur-[120px] rounded-full" />
 
       {/* BOTTOM RIGHT GLOW */}
-      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-[#b89a84]/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-[#5c2f20]/30 blur-[120px] rounded-full" />
+
+      {/* GRID OVERLAY */}
+      <div
+        className="
+        absolute
+        inset-0
+        opacity-[0.06]
+        "
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
 
       {/* LEFT STRIP */}
       <div
@@ -81,11 +97,11 @@ export default function Gallery() {
         top-0
         h-full
         w-[85px]
-        opacity-[0.28]
+        opacity-[0.18]
         "
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to right,#d8cdc3 0px,#d8cdc3 2px,transparent 2px,transparent 10px)",
+            "repeating-linear-gradient(to right,#ffffff 0px,#ffffff 2px,transparent 2px,transparent 10px)",
         }}
       />
 
@@ -109,14 +125,14 @@ export default function Gallery() {
 
             <div className="flex items-center gap-3">
 
-              <div className="w-10 h-[2px] bg-[#d88963]" />
+              <div className="w-10 h-[2px] bg-[#ffe1d1]" />
 
               <p
                 className="
                 uppercase
                 tracking-[0.32em]
                 text-[11px]
-                text-[#c17d5d]
+                text-[#fff2ea]
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
@@ -133,7 +149,7 @@ export default function Gallery() {
               text-[44px]
               lg:text-[72px]
               leading-[0.92]
-              text-[#171717]
+              text-white
               "
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
@@ -146,7 +162,7 @@ export default function Gallery() {
               ELEVATED
               <br />
 
-              <span className="text-[#d88963]">
+              <span className="text-[#ffe1d1]">
                 LIVING
               </span>
 
@@ -164,7 +180,7 @@ export default function Gallery() {
               right-0
               w-24
               h-24
-              text-[#e3d4c8]
+              text-white/20
               "
               strokeWidth={1}
             />
@@ -173,7 +189,7 @@ export default function Gallery() {
               className="
               text-[18px]
               leading-[1.9]
-              text-[#5f5953]
+              text-white/80
               relative
               z-10
               "

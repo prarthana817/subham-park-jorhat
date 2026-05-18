@@ -1,6 +1,8 @@
 // src/components/Hero.jsx
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
 import heroBg from "../assests/images/hero-bg.jpg";
 
 export default function Hero() {
@@ -10,32 +12,45 @@ export default function Hero() {
       className="
       relative
       overflow-hidden
-      bg-[#f6f4f3]
-      min-h-screen
+
+      bg-[#f5f1ec]
+
       flex
       items-center
+
+      py-4
       "
     >
 
-      {/* PREMIUM GLOW */}
-      <div className="absolute top-[-120px] left-[-120px] w-[260px] h-[260px] bg-[#d69073]/10 blur-[120px] rounded-full"></div>
+      {/* GLOW */}
+      <div className="absolute top-[-120px] left-[-120px] w-[260px] h-[260px] bg-[#d69073]/10 blur-[120px] rounded-full" />
 
-      <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-[#c6a28f]/10 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-[#d69073]/10 blur-[120px] rounded-full" />
 
-      <div className="max-w-[1450px] mx-auto w-full px-4 lg:px-6">
+      <div
+        className="
+        max-w-[1750px]
+        mx-auto
+
+        w-full
+
+        px-6
+        lg:px-8
+        "
+      >
 
         {/* GRID */}
         <div
           className="
           grid
-          lg:grid-cols-[0.52fr_1.48fr]
+          lg:grid-cols-[0.92fr_1.08fr]
+
           items-center
-          gap-8
 
-          pt-[120px]
-          lg:pt-[95px]
+          gap-6
 
-          pb-10
+          pt-[90px]
+          pb-2
           "
         >
 
@@ -48,20 +63,21 @@ export default function Hero() {
           >
 
             {/* TOP TEXT */}
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-4 mb-4">
 
-              <div className="w-10 h-[2px] bg-[#d69073]" />
+              <div className="w-[55px] h-[2px] bg-[#d69073]" />
 
               <p
                 className="
                 uppercase
                 tracking-[0.35em]
-                text-[10px]
-                text-[#b58d7c]
+
+                text-[11px]
+
+                text-[#c1886d]
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 400,
                 }}
               >
                 Premium Living
@@ -72,29 +88,45 @@ export default function Hero() {
             {/* HEADING */}
             <h1
               className="
-              text-[42px]
-              sm:text-[54px]
-              lg:text-[62px]
+              text-[#171b30]
+
+              text-[72px]
+              lg:text-[82px]
 
               leading-[0.9]
 
               tracking-[-2px]
 
-              text-[#171b30]
+              mb-5
               "
               style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontWeight: 400,
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 500,
               }}
             >
-              DISCOVER
+
+              Discover
+
               <br />
 
-              YOUR
-              <br />
+              <span className="flex items-end gap-4">
 
-              <span className="text-[#d69073]">
-                DREAM
+                <span>
+                  Your
+                </span>
+
+                <span
+                  className="
+                  italic
+                  text-[#d69073]
+
+                  text-[66px]
+                  lg:text-[76px]
+                  "
+                >
+                  Dream
+                </span>
+
               </span>
 
             </h1>
@@ -102,80 +134,136 @@ export default function Hero() {
             {/* LINE */}
             <div
               className="
-              mt-4
-              w-[145px]
-              h-[3px]
+              w-[330px]
+              h-[4px]
+
               rounded-full
-              bg-gradient-to-r
-              from-[#d69073]
-              to-[#c6a28f]
+
+              bg-[#d69073]
+
+              mb-8
               "
             />
 
-            {/* PARAGRAPH */}
+            {/* TEXT */}
             <p
               className="
-              mt-5
+              max-w-[650px]
 
-              max-w-[360px]
+              text-[15px]
 
-              text-[14px]
-              lg:text-[15px]
+              leading-[1.9]
 
-              leading-[1.45]
+              text-[#2b2b2b]
 
-              text-[#1d1d1d]
+              mb-8
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
                 fontWeight: 300,
-                wordSpacing: "-2px",
-                letterSpacing: "-0.3px",
               }}
             >
-              Elegant premium residences crafted with
-              modern architecture, peaceful surroundings,
-              and refined luxury living experiences in
-              Jorhat.
+              Experience refined luxury living at
+              Subham Park with elegant architecture,
+              peaceful surroundings and premium urban
+              comfort in the heart of Jorhat.
             </p>
+
+            {/* BUTTONS */}
+            <div className="flex items-center gap-8">
+
+              {/* BTN */}
+              <button
+                className="
+                h-[54px]
+
+                px-9
+
+                bg-[#d69073]
+
+                text-white
+
+                uppercase
+                tracking-[0.18em]
+
+                text-[11px]
+
+                hover:bg-[#bf7c5f]
+
+                transition-all
+                duration-300
+                "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                Book A Site Visit
+              </button>
+
+              {/* BTN */}
+              <button
+                className="
+                flex
+                items-center
+                gap-4
+
+                border-b
+                border-[#171b30]
+
+                pb-3
+
+                text-[#171b30]
+
+                uppercase
+                tracking-[0.18em]
+
+                text-[11px]
+
+                hover:text-[#d69073]
+
+                transition-all
+                duration-300
+                "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 500,
+                }}
+              >
+                Explore Project
+
+                <ArrowRight size={16} />
+              </button>
+
+            </div>
 
           </motion.div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="
-            relative
-            flex
-            justify-end
-            items-center
-            "
+            className="relative"
           >
 
-            {/* D SHAPE IMAGE BOX */}
+            {/* IMAGE BOX */}
             <div
               className="
               relative
 
-              w-full
-              max-w-[720px]
+              overflow-hidden
 
               h-[470px]
 
-              overflow-hidden
-
-              bg-[#ebe6e2]
-
-              shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+              rounded-tr-[50px]
+              rounded-bl-[50px]
               "
               style={{
                 clipPath:
-                  "polygon(12% 0%,100% 0%,100% 80%,88% 100%,18% 100%,0% 84%,0% 14%)",
+                  "polygon(12% 0%,100% 0%,100% 84%,90% 100%,16% 100%,0% 86%,0% 14%)",
                 WebkitClipPath:
-                  "polygon(12% 0%,100% 0%,100% 80%,88% 100%,18% 100%,0% 84%,0% 14%)",
-                borderRadius: "34px",
+                  "polygon(12% 0%,100% 0%,100% 84%,90% 100%,16% 100%,0% 86%,0% 14%)",
               }}
             >
 
@@ -191,8 +279,8 @@ export default function Hero() {
                 h-full
 
                 object-cover
-
-                object-[center_58%]
+                object-center
+                scale-[1.16]
                 "
               />
 
@@ -203,7 +291,7 @@ export default function Hero() {
                 inset-0
 
                 bg-gradient-to-t
-                from-black/[0.03]
+                from-black/[0.04]
                 to-transparent
                 "
               />

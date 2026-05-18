@@ -17,17 +17,23 @@ export default function Footer() {
       relative
       overflow-hidden
 
-      bg-[#0d0d0d]
+      bg-gradient-to-br
+      from-[#8f4b2b]
+      via-[#a85b35]
+      to-[#6f371d]
 
       pt-14
       pb-8
       "
     >
 
-      {/* PREMIUM BLUR */}
-      <div className="absolute top-[-120px] left-[10%] w-[260px] h-[260px] rounded-full bg-[#d69073]/10 blur-[120px]" />
+      {/* LIGHT ORANGE GLOW */}
+      <div className="absolute top-[-120px] left-[8%] w-[320px] h-[320px] rounded-full bg-[#ffc4a4]/25 blur-[130px]" />
 
-      <div className="absolute bottom-[-120px] right-[10%] w-[260px] h-[260px] rounded-full bg-[#56bdb7]/10 blur-[120px]" />
+      <div className="absolute bottom-[-120px] right-[8%] w-[320px] h-[320px] rounded-full bg-[#ffb184]/20 blur-[140px]" />
+
+      {/* LIGHT OVERLAY */}
+      <div className="absolute inset-0 bg-[#4a210f]/20" />
 
       {/* ANIMATED BG LOGO */}
       <motion.img
@@ -35,7 +41,7 @@ export default function Footer() {
         alt="logo"
         animate={{
           rotate: [0, 4, -4, 0],
-          scale: [1, 1.04, 1],
+          scale: [1, 1.05, 1],
           opacity: [0.16, 0.24, 0.16],
         }}
         transition={{
@@ -47,19 +53,15 @@ export default function Footer() {
         absolute
 
         left-1/2
-        top-1/2
+        top-[40%]
 
         -translate-x-1/2
         -translate-y-1/2
 
         w-[260px]
-        lg:w-[340px]
+        lg:w-[360px]
 
         opacity-[0.20]
-
-        blur-[0.3px]
-
-        mix-blend-screen
 
         pointer-events-none
         select-none
@@ -77,7 +79,7 @@ export default function Footer() {
           gap-10
 
           border-b
-          border-white/20
+          border-white/10
 
           pb-10
           "
@@ -89,9 +91,7 @@ export default function Footer() {
             <img
               src={logo}
               alt="Subham Park"
-              className="
-              w-[110px]
-              "
+              className="w-[110px]"
             />
 
             <h2
@@ -112,7 +112,6 @@ export default function Footer() {
             >
               PREMIUM
               <br />
-
               LIVING
             </h2>
 
@@ -125,7 +124,7 @@ export default function Footer() {
               text-[14px]
               leading-[1.9]
 
-              text-[#cbc3bc]
+              text-[#fff1e8]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
@@ -150,7 +149,7 @@ export default function Footer() {
 
               text-[11px]
 
-              text-[#d69073]
+              text-[#ffe0cf]
 
               mb-6
               "
@@ -180,8 +179,8 @@ export default function Footer() {
                   items-center
                   gap-3
 
-                  text-[#e9e1db]
-                  hover:text-[#d69073]
+                  text-[#fff7f2]
+                  hover:text-[#ffe0cf]
 
                   transition-all
                   duration-300
@@ -213,7 +212,7 @@ export default function Footer() {
 
               text-[11px]
 
-              text-[#d69073]
+              text-[#ffe0cf]
 
               mb-6
               "
@@ -227,7 +226,21 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
 
               {/* PHONE */}
-              <div className="flex items-start gap-4">
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="
+                flex items-start gap-4
+
+                p-3
+
+                rounded-sm
+
+                transition-all
+                duration-300
+
+                hover:bg-white/10
+                "
+              >
 
                 <div
                   className="
@@ -238,13 +251,13 @@ export default function Footer() {
                   items-center
                   justify-center
 
-                  bg-white/5
+                  bg-white/10
 
                   border
                   border-white/10
                   "
                 >
-                  <Phone className="w-4 h-4 text-[#56bdb7]" />
+                  <Phone className="w-4 h-4 text-[#7ee6df]" />
                 </div>
 
                 <div>
@@ -255,7 +268,7 @@ export default function Footer() {
                     uppercase
                     tracking-[0.2em]
 
-                    text-[#a3958a]
+                    text-[#ffe2d2]
                     "
                     style={{
                       fontFamily: "'Raleway', sans-serif",
@@ -281,10 +294,24 @@ export default function Footer() {
 
                 </div>
 
-              </div>
+              </motion.div>
 
               {/* EMAIL */}
-              <div className="flex items-start gap-4">
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="
+                flex items-start gap-4
+
+                p-3
+
+                rounded-sm
+
+                transition-all
+                duration-300
+
+                hover:bg-white/10
+                "
+              >
 
                 <div
                   className="
@@ -295,13 +322,13 @@ export default function Footer() {
                   items-center
                   justify-center
 
-                  bg-white/5
+                  bg-white/10
 
                   border
                   border-white/10
                   "
                 >
-                  <Mail className="w-4 h-4 text-[#d69073]" />
+                  <Mail className="w-4 h-4 text-[#ffe0cf]" />
                 </div>
 
                 <div>
@@ -312,7 +339,7 @@ export default function Footer() {
                     uppercase
                     tracking-[0.2em]
 
-                    text-[#a3958a]
+                    text-[#ffe2d2]
                     "
                     style={{
                       fontFamily: "'Raleway', sans-serif",
@@ -339,10 +366,24 @@ export default function Footer() {
 
                 </div>
 
-              </div>
+              </motion.div>
 
               {/* ADDRESS */}
-              <div className="flex items-start gap-4">
+              <motion.div
+                whileHover={{ x: 5 }}
+                className="
+                flex items-start gap-4
+
+                p-3
+
+                rounded-sm
+
+                transition-all
+                duration-300
+
+                hover:bg-white/10
+                "
+              >
 
                 <div
                   className="
@@ -353,13 +394,13 @@ export default function Footer() {
                   items-center
                   justify-center
 
-                  bg-white/5
+                  bg-white/10
 
                   border
                   border-white/10
                   "
                 >
-                  <MapPin className="w-4 h-4 text-[#56bdb7]" />
+                  <MapPin className="w-4 h-4 text-[#7ee6df]" />
                 </div>
 
                 <div>
@@ -370,7 +411,7 @@ export default function Footer() {
                     uppercase
                     tracking-[0.2em]
 
-                    text-[#a3958a]
+                    text-[#ffe2d2]
                     "
                     style={{
                       fontFamily: "'Raleway', sans-serif",
@@ -399,7 +440,7 @@ export default function Footer() {
 
                 </div>
 
-              </div>
+              </motion.div>
 
             </div>
 
@@ -427,7 +468,7 @@ export default function Footer() {
             className="
             text-[13px]
 
-            text-[#9d938c]
+            text-[#ffe3d3]
             "
             style={{
               fontFamily: "'Josefin Sans', sans-serif",
@@ -440,7 +481,7 @@ export default function Footer() {
             className="
             text-[13px]
 
-            text-[#cba58f]
+            text-[#ffe0cf]
             "
             style={{
               fontFamily: "'Josefin Sans', sans-serif",

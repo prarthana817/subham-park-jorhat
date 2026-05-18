@@ -1,7 +1,10 @@
+// src/App.jsx
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
-import ProjectOverview from "./components/ProjectOverview";
+import Overview from "./components/Overview";
+import Project from "./components/Project";
 import Amenities from "./components/Amenities";
 import Walkthrough from "./components/Walkthrough";
 import Gallery from "./components/Gallery";
@@ -22,8 +25,8 @@ function App() {
       {/* STATS */}
       <StatsBar />
 
-      {/* PROJECT OVERVIEW */}
-      <ProjectOverview />
+      {/* OVERVIEW */}
+      <Overview />
 
       {/* AMENITIES */}
       <Amenities />
@@ -34,11 +37,14 @@ function App() {
       {/* GALLERY */}
       <Gallery />
 
-      {/* FLOOR PLAN */}
+      {/* FLOOR PLANS */}
       <Planning />
 
-      {/* LOCATION & CONTACT */}
+      {/* LOCATION + CONTACT */}
       <Contact />
+
+      {/* ABOUT */}
+      <Project />
 
       {/* FOOTER */}
       <Footer />
