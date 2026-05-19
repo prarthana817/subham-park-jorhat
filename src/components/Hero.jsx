@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 import heroBg from "../assests/images/hero-bg.jpg";
 
-export default function Hero() {
+export default function Hero({ setOpen }) {
   return (
     <section
       id="home"
@@ -174,6 +174,7 @@ export default function Hero() {
 
               {/* BTN */}
               <button
+                onClick={() => setOpen(true)}
                 className="
                 h-[54px]
 

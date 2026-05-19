@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Layers3,
-  Building2,
-  ArrowRight,
-  Sparkles,
-  X,
-} from "lucide-react";
+import { ArrowRight, Sparkles, X } from "lucide-react";
 
 import plan1 from "../assests/images/plan1.jpg";
 import plan2 from "../assests/images/plan2.jpg";
@@ -20,77 +14,24 @@ import plan7 from "../assests/images/plan7.jpg";
 import plan8 from "../assests/images/plan8.jpg";
 
 const plans = [
-  {
-    id: 1,
-    title: "1st Floor",
-    image: plan8,
-    size: "Signature Floor Plan",
-    desc: "Premium apartment composition inspired by luxury living.",
-  },
-  {
-    id: 2,
-    title: "2nd Floor",
-    image: plan6,
-    size: "Family Residence",
-    desc: "Thoughtfully planned units with efficient space utilization.",
-  },
-  {
-    id: 3,
-    title: "2nd & 5th Floor",
-    image: plan4,
-    size: "Classic Layout",
-    desc: "Functional premium residences with refined planning.",
-  },
-  {
-    id: 4,
-    title: "3rd Floor",
-    image: plan3,
-    size: "Comfort Living",
-    desc: "Elegant apartment layout with spacious circulation areas.",
-  },
-  {
-    id: 5,
-    title: "3rd & 6th Floor",
-    image: plan2,
-    size: "Smart Family Plan",
-    desc: "Balanced floor arrangement designed for modern families.",
-  },
-  {
-    id: 6,
-    title: "4th Floor",
-    image: plan7,
-    size: "Modern Configuration",
-    desc: "Modern architectural planning with elegant zoning.",
-  },
-  {
-    id: 7,
-    title: "5th Floor",
-    image: plan5,
-    size: "Luxury Unit Plan",
-    desc: "Wide-open living spaces with premium room alignment.",
-  },
-  {
-    id: 8,
-    title: "6th Floor",
-    image: plan1,
-    size: "3BHK Premium Layout",
-    desc: "Large luxury residences with open balconies and cross ventilation.",
-  },
+  { id: 1, title: "1st Floor", image: plan8 },
+  { id: 2, title: "2nd Floor", image: plan6 },
+  { id: 3, title: "2nd & 5th Floor", image: plan4 },
+  { id: 4, title: "3rd Floor", image: plan3 },
+  { id: 5, title: "3rd & 6th Floor", image: plan2 },
+  { id: 6, title: "4th Floor", image: plan7 },
+  { id: 7, title: "5th Floor", image: plan5 },
+  { id: 8, title: "6th Floor", image: plan1 },
 ];
 
 export default function FloorPlans() {
   const [active, setActive] = useState(plans[0]);
-  const [open, setOpen] = useState(false);
+  const [imageOpen, setImageOpen] = useState(false);
 
   return (
     <section
       id="planning"
-      className="
-      relative
-      overflow-hidden
-      py-20
-      lg:py-24
-      "
+      className="relative overflow-hidden py-12 lg:py-16"
       style={{
         background: `
           radial-gradient(circle at top left, rgba(214,144,115,0.08), transparent 24%),
@@ -108,72 +49,33 @@ export default function FloorPlans() {
     >
       {/* GRID */}
       <div
-        className="
-        absolute
-        inset-0
-        opacity-[0.05]
-        "
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage: `
             linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
             linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
           `,
-          backgroundSize: "65px 65px",
+          backgroundSize: "60px 60px",
         }}
       />
 
-      {/* LEFT LINES */}
-      <div
-        className="
-        absolute
-        left-0
-        top-0
-        h-full
-        w-[120px]
-        opacity-[0.08]
-        "
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(to right, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 10px)",
-        }}
-      />
-
-      {/* ORANGE BLUR */}
-      <div className="absolute top-[-120px] right-[-120px] w-[420px] h-[420px] rounded-full bg-[#d8a285]/10 blur-[140px]" />
-
-      {/* CYAN BLUR */}
-      <div className="absolute bottom-[-180px] left-[-120px] w-[380px] h-[380px] rounded-full bg-[#56bdb7]/10 blur-[130px]" />
-
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-white/20" />
+      {/* BLURS */}
+      <div className="absolute top-[-120px] right-[-120px] w-[380px] h-[380px] rounded-full bg-[#d8a285]/10 blur-[120px]" />
+      <div className="absolute bottom-[-140px] left-[-100px] w-[320px] h-[320px] rounded-full bg-[#56bdb7]/10 blur-[120px]" />
 
       <div className="relative z-10 max-w-[1450px] mx-auto px-4 lg:px-6">
 
         {/* HEADER */}
-        <div
-          className="
-          flex
-          flex-col
-          lg:flex-row
-          lg:items-end
-          lg:justify-between
-          gap-10
-          mb-14
-          "
-        >
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
+
           <div className="max-w-[720px]">
 
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-3 mb-3">
 
               <div className="w-10 h-[2px] bg-[#d69073]" />
 
               <p
-                className="
-                uppercase
-                tracking-[0.32em]
-                text-[11px]
-                text-[#b58671]
-                "
+                className="uppercase tracking-[0.32em] text-[10px] text-[#b58671]"
                 style={{
                   fontFamily: "'Raleway', sans-serif",
                 }}
@@ -184,41 +86,32 @@ export default function FloorPlans() {
             </div>
 
             <h2
-              className="
-              text-[42px]
-              sm:text-[54px]
-              lg:text-[72px]
-              leading-[0.92]
-              tracking-[-2px]
-              text-[#1f1f1f]
-              "
+              className="leading-[0.88] tracking-[-2px]"
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
                 fontWeight: 400,
               }}
             >
-              MASTER
-              <br />
-              FLOOR PLANS
+              <span className="block text-[34px] sm:text-[46px] lg:text-[60px] text-[#1f1f1f]">
+                MASTER
+              </span>
+
+              <span className="block text-[34px] sm:text-[46px] lg:text-[60px] text-[#d69073]">
+                FLOOR PLANS
+              </span>
+
             </h2>
 
           </div>
 
           <div
-            className="
-            lg:max-w-[420px]
-            text-[#5f5953]
-            text-[15px]
-            leading-[1.9]
-            "
+            className="lg:max-w-[360px] text-[#5f5953] text-[13px] leading-[1.7]"
             style={{
               fontFamily: "'Josefin Sans', sans-serif",
               fontWeight: 300,
             }}
           >
-            Explore beautifully crafted residential layouts
-            designed with functional luxury, open living,
-            premium ventilation and refined architectural flow.
+            Explore beautifully crafted residential layouts designed with functional luxury and refined architectural flow.
           </div>
 
         </div>
@@ -227,23 +120,26 @@ export default function FloorPlans() {
         <div
           className="
           grid
-          lg:grid-cols-[300px_1fr]
+          lg:grid-cols-[280px_1fr]
 
           overflow-hidden
+
+          rounded-[28px]
 
           border
           border-[#e5d8cf]
 
-          bg-[#fdf9f6]
+          bg-[#fcf8f4]
 
-          shadow-[0_35px_80px_rgba(0,0,0,0.08)]
+          shadow-[0_20px_60px_rgba(0,0,0,0.06)]
           "
         >
 
-          {/* LEFT */}
+          {/* LEFT MENU */}
           <div
             className="
             relative
+
             border-r
             border-[#e5d8cf]
 
@@ -253,21 +149,7 @@ export default function FloorPlans() {
             "
           >
 
-            {/* DOTS */}
-            <div
-              className="
-              absolute
-              inset-0
-              opacity-[0.10]
-              "
-              style={{
-                backgroundImage:
-                  "radial-gradient(#b79e8d 1px, transparent 1px)",
-                backgroundSize: "15px 15px",
-              }}
-            />
-
-            <div className="relative z-10 p-4">
+            <div className="p-3 lg:p-4">
 
               {plans.map((item, index) => (
                 <button
@@ -276,8 +158,13 @@ export default function FloorPlans() {
                   className={`
                   w-full
                   text-left
+
                   mb-3
-                  p-4
+
+                  px-5
+                  py-4
+
+                  rounded-[18px]
 
                   border
 
@@ -289,7 +176,7 @@ export default function FloorPlans() {
                       ? `
                         bg-[#1f1f1f]
                         border-[#1f1f1f]
-                        shadow-[0_12px_25px_rgba(0,0,0,0.12)]
+                        shadow-[0_10px_30px_rgba(0,0,0,0.12)]
                       `
                       : `
                         bg-[#fcfaf8]
@@ -300,13 +187,13 @@ export default function FloorPlans() {
                   `}
                 >
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-4">
 
                     <div>
 
                       <p
                         className={`
-                        text-[11px]
+                        text-[10px]
                         uppercase
                         tracking-[0.25em]
                         mb-2
@@ -321,7 +208,7 @@ export default function FloorPlans() {
                           fontFamily: "'Raleway', sans-serif",
                         }}
                       >
-                        Plan {index + 1}
+                        PLAN {index + 1}
                       </p>
 
                       <h3
@@ -349,6 +236,7 @@ export default function FloorPlans() {
                       className={`
                       w-5
                       h-5
+                      shrink-0
 
                       ${
                         active.id === item.id
@@ -368,86 +256,84 @@ export default function FloorPlans() {
           </div>
 
           {/* RIGHT */}
-          <div className="relative p-5 lg:p-8">
+          <div
+            className="
+            relative
+
+            bg-[#f3eee8]
+
+            p-4
+            lg:p-6
+            "
+          >
 
             <AnimatePresence mode="wait">
 
               <motion.div
                 key={active.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.35 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
               >
 
                 {/* TOP */}
-                <div
-                  className="
-                  flex
-                  flex-col
-                  lg:flex-row
-                  lg:items-center
-                  lg:justify-between
-                  gap-6
-                  mb-8
-                  "
-                >
+                <div className="mb-5">
 
-                  <div>
+                  <div className="flex items-center gap-2 mb-2">
 
-                    <div className="flex items-center gap-3 mb-3">
+                    <Sparkles className="w-4 h-4 text-[#d69073]" />
 
-                      <Sparkles className="w-4 h-4 text-[#d69073]" />
-
-                      <p
-                        className="
-                        uppercase
-                        tracking-[0.25em]
-                        text-[11px]
-                        text-[#b58671]
-                        "
-                        style={{
-                          fontFamily: "'Raleway', sans-serif",
-                        }}
-                      >
-                        Selected Layout
-                      </p>
-
-                    </div>
-
-                    <h3
+                    <p
                       className="
-                      text-[36px]
-                      lg:text-[48px]
-                      leading-none
-                      text-[#1f1f1f]
+                      uppercase
+                      tracking-[0.22em]
+                      text-[10px]
+                      text-[#b58671]
                       "
                       style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                        fontWeight: 400,
+                        fontFamily: "'Raleway', sans-serif",
                       }}
                     >
-                      {active.title}
-                    </h3>
+                      Selected Layout
+                    </p>
 
                   </div>
 
+                  <h3
+                    className="
+                    text-[28px]
+                    lg:text-[38px]
+                    leading-none
+                    text-[#1f1f1f]
+                    "
+                    style={{
+                      fontFamily: "'Cinzel Decorative', serif",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {active.title}
+                  </h3>
+
                 </div>
 
-                {/* IMAGE */}
+                {/* IMAGE FRAME */}
                 <div
+                  onClick={() => setImageOpen(true)}
                   className="
                   relative
                   overflow-hidden
 
-                  border
-                  border-[#ddd3cb]
+                  rounded-[18px]
 
-                  bg-[#f8f5f1]
+                  bg-white
 
                   p-3
 
-                  shadow-[0_15px_35px_rgba(0,0,0,0.06)]
+                  shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+
+                  cursor-pointer
+                  group
                   "
                 >
 
@@ -456,64 +342,17 @@ export default function FloorPlans() {
                     alt={active.title}
                     className="
                     w-full
+
+                    rounded-[12px]
+
                     object-cover
+
+                    transition-transform
+                    duration-500
+
+                    group-hover:scale-[1.01]
                     "
                   />
-
-                </div>
-
-                {/* BOTTOM */}
-                <div
-                  className="
-                  mt-7
-                  flex
-                  flex-col
-                  lg:flex-row
-                  lg:items-center
-                  lg:justify-between
-                  gap-6
-                  "
-                >
-
-                  <p
-                    className="
-                    max-w-[720px]
-                    text-[15px]
-                    leading-[1.9]
-                    text-[#5f5953]
-                    "
-                    style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                      fontWeight: 300,
-                    }}
-                  >
-                    {active.desc}
-                  </p>
-
-                  <button
-                    onClick={() => setOpen(true)}
-                    className="
-                    px-7
-                    py-3
-
-                    bg-[#1f1f1f]
-                    hover:bg-[#d69073]
-
-                    text-white
-
-                    text-[13px]
-                    uppercase
-                    tracking-[0.2em]
-
-                    transition-all
-                    duration-300
-                    "
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                    }}
-                  >
-                    View Details
-                  </button>
 
                 </div>
 
@@ -530,7 +369,7 @@ export default function FloorPlans() {
       {/* MODAL */}
       <AnimatePresence>
 
-        {open && (
+        {imageOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -540,7 +379,7 @@ export default function FloorPlans() {
             inset-0
             z-50
 
-            bg-black/80
+            bg-black/90
 
             flex
             items-center
@@ -551,21 +390,25 @@ export default function FloorPlans() {
           >
 
             <motion.div
-              initial={{ scale: 0.92 }}
+              initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.92 }}
+              exit={{ scale: 0.95 }}
               className="
               relative
+
               max-w-6xl
               w-full
 
-              bg-white
+              rounded-[22px]
+
               overflow-hidden
+
+              bg-white
               "
             >
 
               <button
-                onClick={() => setOpen(false)}
+                onClick={() => setImageOpen(false)}
                 className="
                 absolute
                 top-4
@@ -574,6 +417,8 @@ export default function FloorPlans() {
 
                 w-10
                 h-10
+
+                rounded-full
 
                 bg-[#1f1f1f]
                 text-white
@@ -592,7 +437,9 @@ export default function FloorPlans() {
                 className="
                 w-full
                 max-h-[90vh]
+
                 object-contain
+
                 bg-[#f8f5f1]
                 "
               />

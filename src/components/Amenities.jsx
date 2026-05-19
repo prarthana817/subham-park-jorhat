@@ -14,326 +14,351 @@ import {
   Sparkles,
   Camera,
   Leaf,
+  ArrowUpRight,
 } from "lucide-react";
 
 const amenities = [
   {
-    title: "Indoor",
-    subtitle: "Games",
-    desc: "A dedicated indoor gaming zone for fun and relaxation.",
+    title: "Indoor Games",
+    desc: "Luxury indoor gaming experience.",
     icon: Gamepad2,
   },
   {
-    title: "Vastu",
-    subtitle: "Compliant",
-    desc: "Designed according to vastu principles and harmony.",
+    title: "Vastu Living",
+    desc: "Positive vastu compliant homes.",
     icon: Sparkles,
   },
   {
-    title: "Badminton",
-    subtitle: "Court",
-    desc: "Professional badminton court for active lifestyle.",
+    title: "Badminton Court",
+    desc: "Premium active lifestyle space.",
     icon: Trophy,
   },
   {
-    title: "Community",
-    subtitle: "Hall",
-    desc: "Elegant community hall for celebrations and events.",
+    title: "Community Hall",
+    desc: "Elegant celebration & events zone.",
     icon: Building2,
   },
   {
-    title: "Modern",
-    subtitle: "Gymnasium",
-    desc: "Modern fitness zone with premium workout equipment.",
+    title: "Modern Gym",
+    desc: "Advanced fitness & wellness area.",
     icon: Dumbbell,
   },
   {
-    title: "Swimming",
-    subtitle: "Pool",
-    desc: "Luxury swimming pool with peaceful surroundings.",
+    title: "Swimming Pool",
+    desc: "Refreshing luxury swimming zone.",
     icon: Waves,
   },
   {
-    title: "Landscaped",
-    subtitle: "Garden",
-    desc: "Beautiful landscaped gardens with green open spaces.",
+    title: "Landscape Garden",
+    desc: "Beautiful green peaceful spaces.",
     icon: Trees,
   },
   {
-    title: "24/7",
-    subtitle: "Security",
-    desc: "Round-the-clock security and gated safety system.",
+    title: "24/7 Security",
+    desc: "Secure gated community living.",
     icon: ShieldCheck,
   },
   {
-    title: "Visitor",
-    subtitle: "Parking",
-    desc: "Dedicated visitor parking with spacious access.",
+    title: "Visitor Parking",
+    desc: "Spacious dedicated parking area.",
     icon: CarFront,
   },
   {
     title: "CCTV Camera",
-    subtitle: "Surveillance",
-    desc: "Advanced CCTV monitoring for secure living.",
+    desc: "Advanced surveillance protection.",
     icon: Camera,
   },
 ];
 
-export default function Amenities() {
+export default function Amenities({ setOpen }) {
   return (
     <section
       id="amenities"
       className="
       relative
       overflow-hidden
-      py-10
+
+      py-12
+      lg:py-16
+
       bg-[#b96f4c]
       "
     >
-      {/* TEXTURE */}
+
+      {/* BG TEXTURE */}
       <div
         className="
         absolute
         inset-0
-        opacity-[0.08]
+        opacity-[0.05]
         "
         style={{
           backgroundImage:
-            "radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)",
+            "radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px)",
           backgroundSize: "18px 18px",
         }}
       />
 
-      {/* LEFT STRIP */}
-      <div
-        className="
-        absolute
-        left-0
-        top-0
-        w-[80px]
-        h-full
-        opacity-[0.12]
-        "
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(to right,#ffffff 0px,#ffffff 2px,transparent 2px,transparent 10px)",
-        }}
-      />
+      <div className="relative z-10 max-w-[1450px] mx-auto px-4">
 
-      <div className="relative z-10 max-w-[1450px] mx-auto px-2 lg:px-3">
-
-        {/* TOP */}
+        {/* TOP SECTION */}
         <div
           className="
           relative
-          grid
-          lg:grid-cols-[1.15fr_0.85fr]
+
+          rounded-[34px]
+          lg:rounded-[42px]
+
+          overflow-hidden
+
+          bg-[#fffaf6]
+
           border
-          border-[#d6a58c]
-          bg-transparent
+          border-[#ddb59f]
+
+          mb-7
           "
         >
 
-          {/* BIG LEAF */}
-          <Leaf
+          {/* SIDE LINES */}
+          <div
             className="
             absolute
-            right-[20px]
-            top-[10px]
-            w-[230px]
-            h-[230px]
-            text-[#f0c7b3]
-            opacity-20
-            "
-            strokeWidth={1}
-          />
-
-          {/* LEFT */}
-          <div
-            className="
-            relative
-            p-8
-            lg:p-12
-            border-r
-            border-[#d6a58c]
+            inset-0
+            pointer-events-none
+            hidden lg:block
             "
           >
-
-            <p
+            <div
               className="
-              uppercase
-              tracking-[0.32em]
-              text-[11px]
-              text-[#ffe5d7]
+              absolute
+              left-[24px]
+              top-[24px]
+
+              w-[1px]
+              h-[calc(100%-48px)]
+
+              bg-[#ecdcd2]
               "
-              style={{
-                fontFamily: "'Raleway', sans-serif",
-              }}
-            >
-              Premium Amenities
-            </p>
-
-            <h2
-              className="
-              mt-4
-              leading-[0.9]
-              "
-              style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontWeight: 400,
-              }}
-            >
-
-              <span className="block text-[58px] text-[#fff8f3]">
-                ASPIRATIONAL
-              </span>
-
-              <span className="block text-[58px] text-[#fff8f3]">
-                LIVING
-              </span>
-
-              <div className="flex items-end gap-4 mt-1">
-
-                <span className="text-[46px] text-[#fff8f3]">
-                  IN
-                </span>
-
-                <div
-                  className="
-                  flex
-                  items-end
-                  text-[74px]
-                  leading-none
-                  tracking-[-4px]
-                  "
-                >
-
-                  <span
-                    style={{
-                      color: "#f08b57",
-                    }}
-                  >
-                    J
-                  </span>
-
-                  <span
-                    style={{
-                      color: "#f4d8c7",
-                    }}
-                  >
-                    O
-                  </span>
-
-                  <span
-                    style={{
-                      color: "#43d6cf",
-                    }}
-                  >
-                    R
-                  </span>
-
-                  <span
-                    style={{
-                      color: "#f4d8c7",
-                    }}
-                  >
-                    H
-                  </span>
-
-                  <span
-                    style={{
-                      color: "#f0b09a",
-                    }}
-                  >
-                    A
-                  </span>
-
-                  <span
-                    style={{
-                      color: "#8fb8e6",
-                    }}
-                  >
-                    T
-                  </span>
-
-                </div>
-
-              </div>
-
-            </h2>
-
-          </div>
-
-          {/* RIGHT */}
-          <div
-            className="
-            relative
-            flex
-            items-center
-            overflow-hidden
-            px-8
-            py-10
-            lg:px-12
-            "
-          >
+            />
 
             <div
               className="
               absolute
-              left-0
-              top-1/2
-              -translate-y-1/2
+              right-[24px]
+              top-[24px]
+
               w-[1px]
-              h-[180px]
-              bg-[#e4b59c]
+              h-[calc(100%-48px)]
+
+              bg-[#ecdcd2]
               "
             />
+          </div>
 
-            <div className="relative z-10 max-w-[430px]">
+          <div
+            className="
+            grid
+            lg:grid-cols-[1fr_0.9fr]
+            "
+          >
 
+            {/* LEFT */}
+            <div className="relative p-6 lg:p-10">
+
+              <p
+                className="
+                uppercase
+                tracking-[0.3em]
+
+                text-[10px]
+                lg:text-[11px]
+
+                text-[#c68463]
+                "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                }}
+              >
+                Premium Amenities
+              </p>
+
+              <h2
+                className="
+                mt-3
+
+                leading-[0.92]
+
+                text-[#221d1a]
+                "
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 600,
+                }}
+              >
+                <span className="block text-[34px] sm:text-[48px] lg:text-[68px]">
+                  ASPIRATIONAL
+                </span>
+
+                <span className="block text-[34px] sm:text-[48px] lg:text-[68px]">
+                  LIVING
+                </span>
+
+                {/* JORHAT */}
+                <div className="flex items-end gap-2 lg:gap-4 mt-1 lg:mt-2">
+
+                  <span className="text-[24px] sm:text-[30px] lg:text-[42px] text-[#1f1f1f]">
+                    IN
+                  </span>
+
+                  <div
+                    className="
+                    flex
+                    items-end
+
+                    text-[38px]
+                    sm:text-[54px]
+                    lg:text-[74px]
+
+                    leading-none
+
+                    tracking-[-2px]
+                    lg:tracking-[-4px]
+                    "
+                  >
+                    <span style={{ color: "#f08b57" }}>J</span>
+
+                    <span style={{ color: "#f4d8c7" }}>O</span>
+
+                    <span style={{ color: "#43d6cf" }}>R</span>
+
+                    <span style={{ color: "#f4d8c7" }}>H</span>
+
+                    <span style={{ color: "#f0b09a" }}>A</span>
+
+                    <span style={{ color: "#8fb8e6" }}>T</span>
+                  </div>
+
+                </div>
+              </h2>
+
+              <div
+                className="
+                mt-5
+
+                w-[70px]
+                lg:w-[90px]
+
+                h-[2px]
+
+                rounded-full
+
+                bg-[#43d6cf]
+                "
+              />
+            </div>
+
+            {/* RIGHT */}
+            <div
+              className="
+              relative
+
+              flex
+              flex-col
+              justify-center
+
+              p-6
+              lg:p-10
+              "
+            >
               <Leaf
                 className="
-                w-7
-                h-7
-                text-[#ffd8c3]
+                w-6
+                h-6
+
+                text-[#43d6cf]
                 "
                 strokeWidth={1.8}
               />
 
               <p
                 className="
-                mt-6
-                text-[20px]
+                mt-4
+
+                max-w-[480px]
+
+                text-[14px]
+                lg:text-[16px]
+
                 leading-[1.9]
-                text-[#fff3eb]
+
+                text-[#6c655f]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
                   fontWeight: 300,
                 }}
               >
-                Crafted with thoughtfully designed
-                amenities, peaceful green spaces and
-                refined experiences for a premium
-                lifestyle in Jorhat.
+                Crafted with thoughtfully designed amenities,
+                landscaped greens and premium lifestyle
+                experiences for elegant living in Jorhat.
               </p>
 
+              <button
+                onClick={() => setOpen(true)}
+                className="
+                mt-6
+
+                w-fit
+
+                flex
+                items-center
+                gap-3
+
+                px-6
+                py-3.5
+
+                rounded-full
+
+                bg-[#b96f4c]
+                hover:bg-[#a85c39]
+
+                text-white
+
+                uppercase
+                tracking-[0.18em]
+
+                text-[10px]
+                lg:text-[11px]
+
+                transition-all
+                duration-300
+                "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                Book Site Visit
+
+                <ArrowUpRight size={15} />
+              </button>
             </div>
 
           </div>
 
         </div>
 
-        {/* GRID */}
+        {/* CARDS */}
         <div
           className="
           grid
+
           grid-cols-2
-          md:grid-cols-3
+          sm:grid-cols-3
           lg:grid-cols-5
-          border-l
-          border-t
-          border-[#d6a58c]
+
+          gap-4
           "
         >
 
@@ -346,154 +371,159 @@ export default function Amenities() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.45,
-                  delay: index * 0.04,
+                  duration: 0.4,
+                  delay: index * 0.03,
                 }}
                 viewport={{ once: true }}
                 whileHover={{
                   y: -4,
                 }}
                 className="
+                group
                 relative
+
+                rounded-[28px]
+
+                border
+                border-[#ddb59f]
+
+                bg-[#fffaf6]
+
                 overflow-hidden
-                border-r
-                border-b
-                border-[#d6a58c]
-                bg-[#fffdfa]
+
                 p-5
-                min-h-[300px]
+
+                min-h-[215px]
+
                 transition-all
-                duration-300
+                duration-500
+
+                hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]
                 "
               >
-
-                {/* BG */}
-                <div
-                  className="
-                  absolute
-                  inset-0
-                  opacity-[0.05]
-                  "
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(#d8c7bb 1px, transparent 1px)",
-                    backgroundSize: "16px 16px",
-                  }}
-                />
 
                 {/* NUMBER */}
                 <div
                   className="
                   absolute
-                  top-5
-                  right-5
-                  text-[32px]
-                  leading-none
+                  top-4
+                  right-4
+
+                  text-[22px]
+
+                  text-[#d88963]
+                  opacity-80
                   "
                   style={{
                     fontFamily: "'Cinzel Decorative', serif",
-                    color: index % 2 === 0 ? "#43d6cf" : "#d88963",
                     fontWeight: 400,
-                    opacity: 0.8,
                   }}
                 >
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                {/* DOTS */}
-                <div className="absolute top-4 left-4 grid grid-cols-3 gap-[4px]">
-                  {[...Array(9)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-[3px] h-[3px] rounded-full bg-[#d89b7a]"
-                    />
-                  ))}
+                {/* ICON */}
+                <div
+                  className="
+                  relative
+                  z-10
+
+                  w-[64px]
+                  h-[64px]
+
+                  rounded-full
+
+                  bg-white
+
+                  border
+                  border-[#ece2db]
+
+                  flex
+                  items-center
+                  justify-center
+
+                  shadow-[0_6px_16px_rgba(0,0,0,0.05)]
+
+                  transition-all
+                  duration-500
+
+                  group-hover:bg-[#43d6cf]
+                  "
+                >
+
+                  <Icon
+                    className="
+                    w-7
+                    h-7
+
+                    text-[#43d6cf]
+
+                    transition-all
+                    duration-500
+
+                    group-hover:text-white
+                    "
+                  />
+
                 </div>
 
-                <div className="relative z-10">
+                {/* CONTENT */}
+                <div className="relative z-10 mt-6">
 
-                  {/* ICON */}
-                  <div
+                  <h3
                     className="
-                    mt-6
-                    w-16
-                    h-16
-                    rounded-t-[35px]
-                    border
-                    flex
-                    items-center
-                    justify-center
+                    text-[24px]
+
+                    leading-[1.08]
+
+                    text-[#241f1c]
                     "
                     style={{
-                      borderColor: "#43d6cf",
-                      backgroundColor: "rgba(67,214,207,0.06)",
+                      fontFamily:
+                        "'Cormorant Garamond', serif",
+                      fontWeight: 600,
                     }}
                   >
-                    <Icon
-                      className="w-7 h-7"
-                      style={{
-                        color: "#43d6cf",
-                      }}
-                    />
-                  </div>
+                    {item.title}
+                  </h3>
 
-                  {/* TEXT */}
-                  <div className="mt-6">
+                  <div
+                    className="
+                    mt-3
 
-                    <h3
-                      className="
-                      text-[23px]
-                      leading-[1]
-                      tracking-[-1px]
-                      text-[#222222]
-                      "
-                      style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                        fontWeight: 400,
-                      }}
-                    >
-                      {item.title}
-                    </h3>
+                    w-[42px]
+                    h-[2px]
 
-                    <p
-                      className="
-                      mt-2
-                      text-[16px]
-                      text-[#5f5953]
-                      "
-                      style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                        fontWeight: 300,
-                      }}
-                    >
-                      {item.subtitle}
-                    </p>
+                    rounded-full
 
-                    <div
-                      className="
-                      mt-4
-                      w-[44px]
-                      h-[2px]
-                      bg-[#43d6cf]
-                      "
-                    />
+                    bg-[#d8b18f]
 
-                    <p
-                      className="
-                      mt-4
-                      text-[13px]
-                      leading-[1.7]
-                      text-[#7d756e]
-                      "
-                      style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                        fontWeight: 300,
-                      }}
-                    >
-                      {item.desc}
-                    </p>
+                    transition-all
+                    duration-500
 
-                  </div>
+                    group-hover:w-[75px]
+                    group-hover:bg-[#43d6cf]
+                    "
+                  />
+
+                  <p
+                    className="
+                    mt-3
+
+                    text-[13px]
+
+                    leading-[1.7]
+
+                    text-[#726a63]
+                    "
+                    style={{
+                      fontFamily:
+                        "'Josefin Sans', sans-serif",
+                      fontWeight: 300,
+                    }}
+                  >
+                    {item.desc}
+                  </p>
 
                 </div>
 
@@ -503,7 +533,181 @@ export default function Amenities() {
 
         </div>
 
+        {/* LANDSCAPE FEATURE STRIP */}
+        <div
+          className="
+          mt-8
+
+          rounded-[34px]
+
+          bg-[#fffaf6]
+
+          border
+          border-[#ddb59f]
+
+          overflow-hidden
+          "
+        >
+
+          <div
+            className="
+            grid
+            lg:grid-cols-[0.9fr_1.1fr]
+            "
+          >
+
+            {/* LEFT */}
+            <div
+              className="
+              relative
+
+              bg-[#2e241f]
+
+              px-8
+              py-8
+
+              lg:px-10
+              "
+            >
+
+              <p
+                className="
+                uppercase
+
+                tracking-[0.28em]
+
+                text-[11px]
+
+                text-[#d8b18f]
+
+                mb-5
+                "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                Landscape Features
+              </p>
+
+              <h3
+                className="
+                text-white
+
+                text-[30px]
+                lg:text-[42px]
+
+                leading-[0.95]
+
+                mb-4
+                "
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 600,
+                }}
+              >
+                Open Green
+                <br />
+                Living Spaces
+              </h3>
+
+              <p
+                className="
+                max-w-[420px]
+
+                text-[14px]
+                leading-[1.9]
+
+                text-[#d8cec7]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 300,
+                }}
+              >
+                Outdoor spaces designed for peaceful walks,
+                gatherings and luxury lifestyle experiences.
+              </p>
+
+              <div
+                className="
+                mt-6
+
+                w-[90px]
+                h-[2px]
+
+                bg-[#43d6cf]
+                rounded-full
+                "
+              />
+
+            </div>
+
+            {/* RIGHT */}
+            <div
+              className="
+              px-6
+              py-6
+
+              lg:px-8
+
+              flex
+              flex-wrap
+              gap-3
+
+              items-center
+              content-center
+              "
+            >
+
+              {[
+                "Stepped Planter",
+                "Open Gym",
+                "Adda Corner",
+                "Senior Citizens Area",
+                "Shaded Sitting",
+                "Forest Orchard",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="
+                  px-5
+                  py-3
+
+                  rounded-full
+
+                  bg-[#f8f3ef]
+
+                  border
+                  border-[#ead8ce]
+
+                  text-[#5b514b]
+
+                  text-[13px]
+
+                  hover:bg-[#43d6cf]
+                  hover:text-white
+
+                  transition-all
+                  duration-300
+                  "
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                    fontWeight: 600,
+                  }}
+                >
+                  {item}
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
   );
 }

@@ -13,6 +13,7 @@ import logo from "../assests/images/logo.png";
 export default function Footer() {
   return (
     <footer
+      id="footer"
       className="
       relative
       overflow-hidden
@@ -22,8 +23,8 @@ export default function Footer() {
       via-[#a85b35]
       to-[#6f371d]
 
-      pt-14
-      pb-8
+      pt-12
+      pb-14
       "
     >
 
@@ -53,15 +54,15 @@ export default function Footer() {
         absolute
 
         left-1/2
-        top-[40%]
+        top-[42%]
 
         -translate-x-1/2
         -translate-y-1/2
 
-        w-[260px]
-        lg:w-[360px]
+        w-[220px]
+        lg:w-[300px]
 
-        opacity-[0.20]
+        opacity-[0.18]
 
         pointer-events-none
         select-none
@@ -76,12 +77,12 @@ export default function Footer() {
           grid
           lg:grid-cols-[1fr_0.8fr_0.7fr]
 
-          gap-10
+          gap-8 lg:gap-10
 
           border-b
           border-white/10
 
-          pb-10
+          pb-8
           "
         >
 
@@ -91,15 +92,15 @@ export default function Footer() {
             <img
               src={logo}
               alt="Subham Park"
-              className="w-[110px]"
+              className="w-[88px]"
             />
 
             <h2
               className="
-              mt-6
+              mt-4
 
-              text-[34px]
-              lg:text-[42px]
+              text-[28px]
+              lg:text-[38px]
 
               leading-[0.95]
 
@@ -117,7 +118,7 @@ export default function Footer() {
 
             <p
               className="
-              mt-5
+              mt-4
 
               max-w-[420px]
 
@@ -151,7 +152,7 @@ export default function Footer() {
 
               text-[#ffe0cf]
 
-              mb-6
+              mb-5
               "
               style={{
                 fontFamily: "'Raleway', sans-serif",
@@ -160,7 +161,7 @@ export default function Footer() {
               Quick Links
             </p>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
 
               {[
                 "Home",
@@ -214,7 +215,7 @@ export default function Footer() {
 
               text-[#ffe0cf]
 
-              mb-6
+              mb-5
               "
               style={{
                 fontFamily: "'Raleway', sans-serif",
@@ -223,7 +224,7 @@ export default function Footer() {
               Contact Info
             </p>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
 
               {/* PHONE */}
               <motion.div
@@ -233,7 +234,7 @@ export default function Footer() {
 
                 p-3
 
-                rounded-sm
+                rounded-[14px]
 
                 transition-all
                 duration-300
@@ -250,6 +251,8 @@ export default function Footer() {
                   flex
                   items-center
                   justify-center
+
+                  rounded-full
 
                   bg-white/10
 
@@ -281,7 +284,7 @@ export default function Footer() {
                     className="
                     mt-1
 
-                    text-[18px]
+                    text-[16px]
 
                     text-white
                     "
@@ -304,7 +307,7 @@ export default function Footer() {
 
                 p-3
 
-                rounded-sm
+                rounded-[14px]
 
                 transition-all
                 duration-300
@@ -321,6 +324,8 @@ export default function Footer() {
                   flex
                   items-center
                   justify-center
+
+                  rounded-full
 
                   bg-white/10
 
@@ -352,7 +357,7 @@ export default function Footer() {
                     className="
                     mt-1
 
-                    text-[18px]
+                    text-[16px]
 
                     text-white
                     break-all
@@ -376,7 +381,7 @@ export default function Footer() {
 
                 p-3
 
-                rounded-sm
+                rounded-[14px]
 
                 transition-all
                 duration-300
@@ -393,6 +398,8 @@ export default function Footer() {
                   flex
                   items-center
                   justify-center
+
+                  rounded-full
 
                   bg-white/10
 
@@ -424,7 +431,7 @@ export default function Footer() {
                     className="
                     mt-1
 
-                    text-[18px]
+                    text-[16px]
 
                     leading-[1.6]
 
@@ -451,7 +458,7 @@ export default function Footer() {
         {/* BOTTOM */}
         <div
           className="
-          pt-6
+          pt-5
 
           flex
           flex-col
@@ -460,7 +467,7 @@ export default function Footer() {
           items-center
           justify-between
 
-          gap-4
+          gap-3
           "
         >
 

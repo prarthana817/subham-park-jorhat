@@ -10,19 +10,12 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Overview", href: "#overview" },
-
     { name: "Amenities", href: "#amenities" },
-
     { name: "Walkthrough Video", href: "#walkthrough" },
-
     { name: "Gallery", href: "#gallery" },
-
     { name: "Floor Plans", href: "#planning" },
-
     { name: "Location", href: "#contact" },
-
     { name: "Contact", href: "#contact" },
-
     { name: "About", href: "#about" },
   ];
 
@@ -34,15 +27,14 @@ export default function Navbar() {
         mx-auto
         h-[78px]
 
-        rounded-[18px]
+        rounded-[22px]
 
-        bg-[#f5eee9]/92
-        backdrop-blur-xl
+        bg-[#f7f5f1]
 
         border
         border-[#ead9cf]
 
-        shadow-[0_8px_24px_rgba(198,162,143,0.12)]
+        shadow-[0_8px_24px_rgba(198,162,143,0.10)]
 
         px-4
         lg:px-5
@@ -56,16 +48,11 @@ export default function Navbar() {
             <div
               className="
               w-[68px]
-              h-[68px]
+              h-[72px]
 
               rounded-[18px]
 
-              bg-white
-
-              border
-              border-[#ead8ce]
-
-              shadow-[0_6px_16px_rgba(0,0,0,0.05)]
+              bg-[#f7f5f1]
 
               flex
               items-center
@@ -140,7 +127,7 @@ export default function Navbar() {
 
               flex
               items-center
-              gap-2
+              gap-5
 
               hover:scale-[1.02]
 
@@ -183,7 +170,7 @@ export default function Navbar() {
 
             rounded-[20px]
 
-            bg-[#f8f2ed]
+            bg-[#f7f5f1]
 
             border
             border-[#ead8ce]
@@ -194,7 +181,7 @@ export default function Navbar() {
 
             flex
             flex-col
-            gap-4
+            gap-5
             "
           >
             {navLinks.map((link) => (

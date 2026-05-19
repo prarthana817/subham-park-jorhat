@@ -47,7 +47,7 @@ const galleryImages = [
   },
 ];
 
-export default function Gallery() {
+export default function Gallery({ setOpen }) {
   return (
     <section
       id="gallery"
@@ -55,7 +55,8 @@ export default function Gallery() {
       relative
       overflow-hidden
 
-      py-20
+      py-16
+      lg:py-20
 
       bg-gradient-to-br
       from-[#b56f4e]
@@ -78,7 +79,7 @@ export default function Gallery() {
         className="
         absolute
         inset-0
-        opacity-[0.06]
+        opacity-[0.05]
         "
         style={{
           backgroundImage: `
@@ -97,7 +98,8 @@ export default function Gallery() {
         top-0
         h-full
         w-[85px]
-        opacity-[0.18]
+        opacity-[0.12]
+        hidden lg:block
         "
         style={{
           backgroundImage:
@@ -146,9 +148,13 @@ export default function Gallery() {
             <h2
               className="
               mt-4
-              text-[44px]
+
+              text-[40px]
+              md:text-[52px]
               lg:text-[72px]
+
               leading-[0.92]
+
               text-white
               "
               style={{
@@ -178,8 +184,10 @@ export default function Gallery() {
               absolute
               -top-10
               right-0
+
               w-24
               h-24
+
               text-white/20
               "
               strokeWidth={1}
@@ -187,9 +195,13 @@ export default function Gallery() {
 
             <p
               className="
-              text-[18px]
+              text-[16px]
+              lg:text-[18px]
+
               leading-[1.9]
+
               text-white/80
+
               relative
               z-10
               "
@@ -204,6 +216,46 @@ export default function Gallery() {
               experiences crafted for modern living.
             </p>
 
+            {/* CTA BUTTON */}
+            <button
+              onClick={() => setOpen(true)}
+              className="
+              mt-8
+
+              flex
+              items-center
+              gap-3
+
+              px-7
+              py-4
+
+              bg-white/10
+              hover:bg-white/20
+
+              border
+              border-white/20
+
+              backdrop-blur-md
+
+              text-white
+
+              uppercase
+              tracking-[0.18em]
+              text-[11px]
+
+              transition-all
+              duration-300
+              "
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 600,
+              }}
+            >
+              Schedule Visit
+
+              <ArrowUpRight size={16} />
+            </button>
+
           </div>
 
         </div>
@@ -215,6 +267,7 @@ export default function Gallery() {
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
+
           gap-5
           "
         >
@@ -232,7 +285,9 @@ export default function Gallery() {
               className={`
               group
               relative
+
               overflow-hidden
+
               h-[260px]
               lg:h-[340px]
 
@@ -257,27 +312,46 @@ export default function Gallery() {
                 className="
                 absolute
                 inset-0
+
                 w-full
                 h-full
+
                 object-cover
+
                 transition-transform
                 duration-700
-                group-hover:scale-110
+                ease-out
+
+                group-hover:scale-105
                 "
               />
 
-              {/* OVERLAY */}
+              {/* DARK OVERLAY */}
               <div
-                className={`
+                className="
                 absolute
                 inset-0
 
-                ${
-                  index % 2 === 0
-                    ? "bg-gradient-to-t from-black/75 via-black/20 to-transparent"
-                    : "bg-gradient-to-t from-[#3a2d25]/70 via-black/10 to-transparent"
-                }
-                `}
+                bg-gradient-to-t
+                from-black/75
+                via-black/30
+                to-transparent
+                "
+              />
+
+              {/* EXTRA SHADOW */}
+              <div
+                className="
+                absolute
+                inset-0
+
+                bg-black/10
+
+                group-hover:bg-black/5
+
+                transition-all
+                duration-500
+                "
               />
 
               {/* CONTENT */}
@@ -286,15 +360,18 @@ export default function Gallery() {
                 absolute
                 bottom-0
                 left-0
+
                 w-full
+
                 p-6
+                lg:p-7
                 "
               >
 
                 <div
                   className="
                   flex
-                  items-center
+                  items-end
                   justify-between
                   gap-4
                   "
@@ -304,9 +381,14 @@ export default function Gallery() {
 
                     <h3
                       className="
-                      text-[28px]
-                      leading-[1]
+                      text-[24px]
+                      lg:text-[28px]
+
+                      leading-[1.1]
+
                       text-white
+
+                      drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]
                       "
                       style={{
                         fontFamily: "'Cinzel Decorative', serif",
@@ -316,13 +398,36 @@ export default function Gallery() {
                       {item.title}
                     </h3>
 
-                    <p
+                    <div
                       className="
                       mt-3
+
+                      w-[60px]
+                      h-[2px]
+
+                      bg-[#ffe1d1]
+
+                      transition-all
+                      duration-500
+
+                      group-hover:w-[95px]
+                      "
+                    />
+
+                    <p
+                      className="
+                      mt-4
+
                       text-[13px]
+                      lg:text-[14px]
+
                       leading-[1.7]
-                      text-white/80
+
+                      text-white/90
+
                       max-w-[260px]
+
+                      drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]
                       "
                       style={{
                         fontFamily: "'Josefin Sans', sans-serif",
@@ -335,7 +440,8 @@ export default function Gallery() {
                   </div>
 
                   {/* ICON */}
-                  <div
+                  <button
+                    onClick={() => setOpen(true)}
                     className="
                     shrink-0
 
@@ -346,16 +452,23 @@ export default function Gallery() {
                     items-center
                     justify-center
 
+                    rounded-full
+
                     border
                     border-white/20
 
                     bg-white/10
 
                     backdrop-blur-md
+
+                    hover:bg-white/20
+
+                    transition-all
+                    duration-300
                     "
                   >
                     <ArrowUpRight className="w-5 h-5 text-white" />
-                  </div>
+                  </button>
 
                 </div>
 

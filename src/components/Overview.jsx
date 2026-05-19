@@ -1,23 +1,23 @@
 // src/components/Overview.jsx
 
 import { motion } from "framer-motion";
+
 import {
   ShieldCheck,
   Zap,
   LockKeyhole,
   Droplets,
+  ArrowUpRight,
 } from "lucide-react";
 
-export default function Overview() {
+export default function Overview({ setOpen }) {
   return (
     <section
       id="overview"
       className="
       relative
       overflow-hidden
-
       bg-[#f7f5f1]
-
       py-14
       "
     >
@@ -25,7 +25,6 @@ export default function Overview() {
         className="
         max-w-[1750px]
         mx-auto
-
         px-6
         lg:px-8
         "
@@ -34,11 +33,11 @@ export default function Overview() {
           className="
           grid
           lg:grid-cols-[1.05fr_0.95fr]
-
           gap-8
           items-start
           "
         >
+
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -46,6 +45,7 @@ export default function Overview() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+
             {/* TOP TEXT */}
             <div className="flex items-center gap-4 mb-5">
 
@@ -55,9 +55,7 @@ export default function Overview() {
                 className="
                 uppercase
                 tracking-[0.35em]
-
                 text-[11px]
-
                 text-[#c56d3d]
                 "
                 style={{
@@ -73,14 +71,10 @@ export default function Overview() {
             <h2
               className="
               text-[#111111]
-
               text-[42px]
               lg:text-[58px]
-
               leading-[0.95]
-
               tracking-[-2px]
-
               mb-5
               "
               style={{
@@ -91,20 +85,18 @@ export default function Overview() {
               The{" "}
 
               <span
-  className="
-  italic
-
-  bg-gradient-to-r
-  from-[#ffb36b]
-  via-[#ff8c42]
-  to-[#d97745]
-
-  bg-clip-text
-  text-transparent
-  "
->
-  Luxury
-</span>{" "}
+                className="
+                italic
+                bg-gradient-to-r
+                from-[#f7c58b]
+                via-[#d69073]
+                to-[#b86d4b]
+                bg-clip-text
+                text-transparent
+                "
+              >
+                Luxury
+              </span>{" "}
 
               Homes
               <br />
@@ -116,13 +108,9 @@ export default function Overview() {
             <p
               className="
               text-[15px]
-
               leading-[1.8]
-
               text-[#5a5a5a]
-
               max-w-[850px]
-
               mb-7
               "
               style={{
@@ -137,27 +125,52 @@ export default function Overview() {
               families in the heart of Jorhat.
             </p>
 
+            {/* CTA BUTTON */}
+            <button
+              onClick={() => setOpen(true)}
+              className="
+              inline-flex
+              items-center
+              gap-3
+              px-7
+              py-4
+              mb-8
+              bg-[#d97745]
+              hover:bg-[#c96b3c]
+              text-white
+              uppercase
+              tracking-[0.18em]
+              text-[11px]
+              transition-all
+              duration-300
+              "
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 600,
+              }}
+            >
+              Schedule A Visit
+
+              <ArrowUpRight className="w-4 h-4" />
+            </button>
+
             {/* FEATURES */}
             <div
               className="
               grid
               sm:grid-cols-2
-
               gap-3
               "
             >
+
               {/* CARD */}
               <div
                 className="
                 bg-white
-
                 rounded-[18px]
-
                 border
                 border-[#ece7df]
-
                 p-5
-
                 flex
                 items-start
                 gap-4
@@ -167,29 +180,21 @@ export default function Overview() {
                   className="
                   w-[46px]
                   h-[46px]
-
                   rounded-[14px]
-
                   bg-[#fff2ea]
-
                   flex
                   items-center
                   justify-center
                   "
                 >
-                  <ShieldCheck
-                    size={20}
-                    color="#d97745"
-                  />
+                  <ShieldCheck size={20} color="#d97745" />
                 </div>
 
                 <div>
                   <h4
                     className="
                     text-[18px]
-
                     text-[#111111]
-
                     mb-1
                     "
                     style={{
@@ -203,7 +208,6 @@ export default function Overview() {
                   <p
                     className="
                     text-[13px]
-
                     text-[#6a6a6a]
                     "
                     style={{
@@ -219,14 +223,10 @@ export default function Overview() {
               <div
                 className="
                 bg-white
-
                 rounded-[18px]
-
                 border
                 border-[#ece7df]
-
                 p-5
-
                 flex
                 items-start
                 gap-4
@@ -236,29 +236,21 @@ export default function Overview() {
                   className="
                   w-[46px]
                   h-[46px]
-
                   rounded-[14px]
-
                   bg-[#fff2ea]
-
                   flex
                   items-center
                   justify-center
                   "
                 >
-                  <Zap
-                    size={20}
-                    color="#d97745"
-                  />
+                  <Zap size={20} color="#d97745" />
                 </div>
 
                 <div>
                   <h4
                     className="
                     text-[18px]
-
                     text-[#111111]
-
                     mb-1
                     "
                     style={{
@@ -272,7 +264,6 @@ export default function Overview() {
                   <p
                     className="
                     text-[13px]
-
                     text-[#6a6a6a]
                     "
                     style={{
@@ -288,14 +279,10 @@ export default function Overview() {
               <div
                 className="
                 bg-white
-
                 rounded-[18px]
-
                 border
                 border-[#ece7df]
-
                 p-5
-
                 flex
                 items-start
                 gap-4
@@ -305,29 +292,21 @@ export default function Overview() {
                   className="
                   w-[46px]
                   h-[46px]
-
                   rounded-[14px]
-
                   bg-[#fff2ea]
-
                   flex
                   items-center
                   justify-center
                   "
                 >
-                  <LockKeyhole
-                    size={20}
-                    color="#d97745"
-                  />
+                  <LockKeyhole size={20} color="#d97745" />
                 </div>
 
                 <div>
                   <h4
                     className="
                     text-[18px]
-
                     text-[#111111]
-
                     mb-1
                     "
                     style={{
@@ -341,7 +320,6 @@ export default function Overview() {
                   <p
                     className="
                     text-[13px]
-
                     text-[#6a6a6a]
                     "
                     style={{
@@ -357,14 +335,10 @@ export default function Overview() {
               <div
                 className="
                 bg-white
-
                 rounded-[18px]
-
                 border
                 border-[#ece7df]
-
                 p-5
-
                 flex
                 items-start
                 gap-4
@@ -374,29 +348,21 @@ export default function Overview() {
                   className="
                   w-[46px]
                   h-[46px]
-
                   rounded-[14px]
-
                   bg-[#fff2ea]
-
                   flex
                   items-center
                   justify-center
                   "
                 >
-                  <Droplets
-                    size={20}
-                    color="#d97745"
-                  />
+                  <Droplets size={20} color="#d97745" />
                 </div>
 
                 <div>
                   <h4
                     className="
                     text-[18px]
-
                     text-[#111111]
-
                     mb-1
                     "
                     style={{
@@ -410,7 +376,6 @@ export default function Overview() {
                   <p
                     className="
                     text-[13px]
-
                     text-[#6a6a6a]
                     "
                     style={{
@@ -433,31 +398,25 @@ export default function Overview() {
             viewport={{ once: true }}
             className="relative"
           >
+
             {/* QUOTE CARD */}
             <div
               className="
               bg-white
-
               rounded-[28px]
-
               border
               border-[#ece7df]
-
               p-7
-
               shadow-[0_10px_40px_rgba(0,0,0,0.04)]
-
               mb-5
               "
             >
+
               <div
                 className="
                 text-[60px]
-
                 leading-none
-
                 text-[#f1c4aa]
-
                 mb-3
                 "
                 style={{
@@ -470,13 +429,9 @@ export default function Overview() {
               <p
                 className="
                 text-[20px]
-
                 leading-[1.8]
-
                 text-[#1d1d1d]
-
                 italic
-
                 mb-6
                 "
                 style={{
@@ -495,18 +450,13 @@ export default function Overview() {
                   className="
                   w-[50px]
                   h-[50px]
-
                   rounded-full
-
                   border
                   border-[#d97745]
-
                   flex
                   items-center
                   justify-center
-
                   text-[#d97745]
-
                   text-[20px]
                   "
                   style={{
@@ -521,7 +471,6 @@ export default function Overview() {
                   <h4
                     className="
                     text-[18px]
-
                     text-[#111111]
                     "
                     style={{
@@ -535,7 +484,6 @@ export default function Overview() {
                   <p
                     className="
                     text-[14px]
-
                     text-[#666666]
                     "
                     style={{
@@ -547,144 +495,9 @@ export default function Overview() {
                 </div>
 
               </div>
-            </div>
-
-            {/* INFO BAR */}
-            <div
-              className="
-              bg-white/90
-
-              backdrop-blur-sm
-
-              rounded-[22px]
-
-              border
-              border-[#ece7df]
-
-              px-6
-              py-5
-
-              grid
-              grid-cols-3
-
-              items-center
-              "
-            >
-              <div className="text-center">
-
-                <p
-                  className="
-                  uppercase
-                  tracking-[0.25em]
-
-                  text-[10px]
-
-                  text-[#9d9d9d]
-
-                  mb-1
-                  "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                  }}
-                >
-                  Type
-                </p>
-
-                <h4
-                  className="
-                  text-[18px]
-
-                  text-[#111111]
-                  "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                    fontWeight: 700,
-                  }}
-                >
-                  2 & 3 BHK
-                </h4>
-
-              </div>
-
-              <div
-                className="
-                text-center
-
-                border-x
-                border-[#ece7df]
-                "
-              >
-                <p
-                  className="
-                  uppercase
-                  tracking-[0.25em]
-
-                  text-[10px]
-
-                  text-[#9d9d9d]
-
-                  mb-1
-                  "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                  }}
-                >
-                  Location
-                </p>
-
-                <h4
-                  className="
-                  text-[18px]
-
-                  text-[#111111]
-                  "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                    fontWeight: 700,
-                  }}
-                >
-                  Jorhat
-                </h4>
-
-              </div>
-
-              <div className="text-center">
-
-                <p
-                  className="
-                  uppercase
-                  tracking-[0.25em]
-
-                  text-[10px]
-
-                  text-[#9d9d9d]
-
-                  mb-1
-                  "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                  }}
-                >
-                  Status
-                </p>
-
-                <h4
-                  className="
-                  text-[18px]
-
-                  text-[#111111]
-                  "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                    fontWeight: 700,
-                  }}
-                >
-                  Open
-                </h4>
-
-              </div>
 
             </div>
+
           </motion.div>
         </div>
       </div>

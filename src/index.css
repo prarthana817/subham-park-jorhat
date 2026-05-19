@@ -1,3 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ========================================
+   RESET
+======================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  background:#f7f3ee;
+
+  color:#1f1f1f;
+
+  overflow-x:hidden;
+
+  font-family:'Josefin Sans', sans-serif;
+
+  font-weight:300;
+
+  -webkit-font-smoothing:antialiased;
+}
+/* ========================================
+   GLOBAL RADIUS SYSTEM
+======================================== */
+
+/* CARDS */
+
+.card-radius{
+  border-radius:22px;
+}
+
+/* BUTTONS */
+
+.btn-radius{
+  border-radius:14px;
+}
+
+/* INPUTS */
+
+.input-radius{
+  border-radius:14px;
+}
+
+/* IMAGES */
+
+.image-radius{
+  border-radius:24px;
+}
+
+/* SECTIONS */
+
+.section-radius{
+  border-radius:28px;
+}
+
+/* ========================================
+   GLOBAL BUTTON STYLING
+======================================== */
+
+button{
+
+  border:none;
+
+  outline:none;
+
+  cursor:pointer;
+
+  border-radius:14px;
+
+  transition:all .3s ease;
+}
+
+/* ========================================
+   GLOBAL INPUT STYLING
+======================================== */
+
+input,
+textarea,
+select{
+
+  width:100%;
+
+  background:#faf7f3;
+
+  border:1px solid #ead9cf;
+
+  border-radius:14px;
+
+  padding:14px 18px;
+
+  outline:none;
+
+  transition:all .3s ease;
+
+  color:#1f1f1f;
+
+  font-size:14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+  border-color:#c78c6d;
+
+  box-shadow:
+    0 0 0 4px rgba(199,140,109,0.08);
+}
+
+textarea{
+  resize:none;
+}
+
+/* ========================================
+   GLOBAL IMAGE STYLING
+======================================== */
+
+img{
+
+  max-width:100%;
+
+  display:block;
+
+  border-radius:24px;
+}
+
+/* ========================================
+   LUXURY CARD
+======================================== */
+
+.luxury-card{
+
+  background:#fff;
+
+  border:1px solid rgba(0,0,0,0.06);
+
+  border-radius:22px;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.04);
+}
+
+/* ========================================
+   SECTION WRAPPER
+======================================== */
+
+.luxury-section{
+
+  border-radius:28px;
+
+  overflow:hidden;
+}
+
+/* ========================================
+   SHADOW SYSTEM
+======================================== */
+
+.luxury-shadow{
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08);
+}
+
+/* ========================================
+   GLASS EFFECT
+======================================== */
+
+.glass{
+
+  backdrop-filter:blur(14px);
+
+  -webkit-backdrop-filter:blur(14px);
+
+  background:rgba(255,255,255,0.65);
+}
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container-luxury{
+
+  width:100%;
+
+  max-width:1450px;
+
+  margin:0 auto;
+
+  padding-left:20px;
+  padding-right:20px;
+}
+
+/* ========================================
+   LINKS
+======================================== */
+
+a{
+  text-decoration:none;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#eee7e0;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#b67b5c;
+
+  border-radius:20px;
+}
+
+/* ========================================
+   TEXT SELECTION
+======================================== */
+
+::selection{
+
+  background:#c78c6d;
+
+  color:white;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width:768px){
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6{
+    line-height:1;
+  }
+
+  .container-luxury{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+}

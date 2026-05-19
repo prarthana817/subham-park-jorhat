@@ -18,7 +18,7 @@ export default function Contact() {
       className="
       relative
       overflow-hidden
-      py-14
+      py-16 lg:py-20
 
       bg-gradient-to-br
       from-[#d79a74]
@@ -57,13 +57,19 @@ export default function Contact() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1250px] mx-auto px-4 lg:px-5">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-4 lg:px-5">
 
         {/* HEADER */}
-        <div className="mb-8 text-left">
+        <div className="mb-10 lg:mb-12">
 
           <p
-            className="text-[11px] uppercase tracking-[0.35em] text-[#dffaf7] mb-3"
+            className="
+            text-[11px]
+            uppercase
+            tracking-[0.35em]
+            text-[#dffaf7]
+            mb-4
+            "
             style={{
               fontFamily: "'Raleway', sans-serif",
             }}
@@ -71,32 +77,63 @@ export default function Contact() {
             CONTACT US
           </p>
 
-          <h2
-            className="text-[34px] sm:text-[48px] lg:text-[60px] leading-[0.92] tracking-[-2px] text-white"
-            style={{
-              fontFamily: "'Cinzel Decorative', serif",
-              fontWeight: 400,
-            }}
+          <div
+            className="
+            flex
+            flex-col
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+            gap-6
+            "
           >
-            Book A
-            <br />
 
-            <span className="text-[#f7f1e8]">
-              Site Visit
-            </span>
+            <h2
+              className="
+              text-[42px]
+              sm:text-[52px]
+              lg:text-[64px]
 
-          </h2>
+              leading-[0.9]
+              tracking-[-2px]
 
-          <p
-            className="max-w-[700px] ml-auto mt-4 text-[14px] leading-[1.9] text-white/80"
-            style={{
-              fontFamily: "'Josefin Sans', sans-serif",
-            }}
-          >
-            Experience elegant urban living at Subham Park with
-            premium residences, modern amenities and excellent
-            connectivity across Jorhat.
-          </p>
+              text-white
+              "
+              style={{
+                fontFamily: "'Cinzel Decorative', serif",
+                fontWeight: 400,
+              }}
+            >
+              Book A
+              <br />
+
+              <span className="text-[#f7f1e8]">
+                Site Visit
+              </span>
+
+            </h2>
+
+            <p
+              className="
+              max-w-[620px]
+
+              text-[15px]
+              lg:text-[16px]
+
+              leading-[1.9]
+
+              text-white/80
+              "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+              }}
+            >
+              Experience elegant urban living at Subham Park with
+              premium residences, modern amenities and excellent
+              connectivity across Jorhat.
+            </p>
+
+          </div>
 
         </div>
 
@@ -105,6 +142,8 @@ export default function Contact() {
           className="
           grid
           lg:grid-cols-2
+
+          rounded-[28px]
 
           border
           border-[#ffffff20]
@@ -118,10 +157,29 @@ export default function Contact() {
         >
 
           {/* LEFT SIDE — FORM */}
-          <div className="p-5 lg:p-7 bg-white border-r border-[#e4d8cf]">
+          <div
+            className="
+            p-6
+            lg:p-8
+
+            bg-white
+
+            border-r
+            border-[#e4d8cf]
+            "
+          >
 
             <p
-              className="uppercase tracking-[0.32em] text-[10px] text-[#56bdb7] mb-2"
+              className="
+              uppercase
+              tracking-[0.32em]
+
+              text-[10px]
+
+              text-[#56bdb7]
+
+              mb-3
+              "
               style={{
                 fontFamily: "'Raleway', sans-serif",
               }}
@@ -130,7 +188,16 @@ export default function Contact() {
             </p>
 
             <h3
-              className="text-[34px] leading-none text-[#1f1f1f] mb-6"
+              className="
+              text-[38px]
+              lg:text-[48px]
+
+              leading-[0.92]
+
+              text-[#1f1f1f]
+
+              mb-8
+              "
               style={{
                 fontFamily: "'Cinzel Decorative', serif",
                 fontWeight: 400,
@@ -146,13 +213,26 @@ export default function Contact() {
                 placeholder="Your Name"
                 className="
                 w-full
+
                 border
-                border-[#ddd2ca]
-                bg-[#f8f4ef]
-                px-4
-                py-3
+                border-[#ead9cf]
+
+                bg-[#faf7f3]
+
+                rounded-[14px]
+
+                px-5
+                py-4
+
                 outline-none
+
                 text-[14px]
+
+                transition-all
+                duration-300
+
+                focus:border-[#d79a74]
+                focus:bg-white
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -164,13 +244,26 @@ export default function Contact() {
                 placeholder="Phone Number"
                 className="
                 w-full
+
                 border
-                border-[#ddd2ca]
-                bg-[#f8f4ef]
-                px-4
-                py-3
+                border-[#ead9cf]
+
+                bg-[#faf7f3]
+
+                rounded-[14px]
+
+                px-5
+                py-4
+
                 outline-none
+
                 text-[14px]
+
+                transition-all
+                duration-300
+
+                focus:border-[#d79a74]
+                focus:bg-white
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -182,13 +275,26 @@ export default function Contact() {
                 placeholder="Email Address"
                 className="
                 w-full
+
                 border
-                border-[#ddd2ca]
-                bg-[#f8f4ef]
-                px-4
-                py-3
+                border-[#ead9cf]
+
+                bg-[#faf7f3]
+
+                rounded-[14px]
+
+                px-5
+                py-4
+
                 outline-none
+
                 text-[14px]
+
+                transition-all
+                duration-300
+
+                focus:border-[#d79a74]
+                focus:bg-white
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -200,14 +306,27 @@ export default function Contact() {
                 placeholder="Write Your Message..."
                 className="
                 w-full
+
                 border
-                border-[#ddd2ca]
-                bg-[#f8f4ef]
-                px-4
-                py-3
+                border-[#ead9cf]
+
+                bg-[#faf7f3]
+
+                rounded-[14px]
+
+                px-5
+                py-4
+
                 outline-none
                 resize-none
+
                 text-[14px]
+
+                transition-all
+                duration-300
+
+                focus:border-[#d79a74]
+                focus:bg-white
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -217,12 +336,15 @@ export default function Contact() {
               <button
                 className="
                 w-full
+
                 flex
                 items-center
                 justify-center
                 gap-2
 
-                py-3
+                py-4
+
+                rounded-[14px]
 
                 bg-[#1f1f1f]
                 hover:bg-[#56bdb7]
@@ -231,6 +353,7 @@ export default function Contact() {
 
                 uppercase
                 tracking-[0.18em]
+
                 text-[10px]
 
                 transition-all
@@ -250,13 +373,33 @@ export default function Contact() {
 
           </div>
 
-          {/* RIGHT SIDE — CONTENT */}
-          <div className="p-5 lg:p-7 bg-[#fcfaf7] flex flex-col justify-between">
+          {/* RIGHT SIDE */}
+          <div
+            className="
+            p-6
+            lg:p-8
+
+            bg-[#fcfaf7]
+
+            flex
+            flex-col
+            justify-between
+            "
+          >
 
             <div>
 
               <p
-                className="uppercase tracking-[0.32em] text-[10px] text-[#56bdb7] mb-2"
+                className="
+                uppercase
+                tracking-[0.32em]
+
+                text-[10px]
+
+                text-[#56bdb7]
+
+                mb-3
+                "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
                 }}
@@ -265,7 +408,16 @@ export default function Contact() {
               </p>
 
               <h3
-                className="text-[34px] leading-[0.95] text-[#1f1f1f] mb-4"
+                className="
+                text-[38px]
+                lg:text-[48px]
+
+                leading-[0.92]
+
+                text-[#1f1f1f]
+
+                mb-5
+                "
                 style={{
                   fontFamily: "'Cinzel Decorative', serif",
                   fontWeight: 400,
@@ -278,7 +430,15 @@ export default function Contact() {
               </h3>
 
               <p
-                className="text-[14px] leading-[1.9] text-[#645d57] mb-6"
+                className="
+                text-[15px]
+
+                leading-[1.9]
+
+                text-[#645d57]
+
+                mb-8
+                "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
                 }}
@@ -289,226 +449,187 @@ export default function Contact() {
               </p>
 
               {/* FACILITIES */}
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-2 gap-4">
 
-                <div className="border border-[#e4d8cf] bg-white p-4 flex items-start gap-3">
+                {[
+                  {
+                    icon: School,
+                    title: "Education",
+                    text: "Nearby schools and colleges ensure excellent educational access.",
+                  },
+                  {
+                    icon: Hospital,
+                    title: "Hospitals",
+                    text: "Quick access to healthcare centers and emergency services.",
+                  },
+                  {
+                    icon: ShoppingBag,
+                    title: "Shopping",
+                    text: "Markets, malls and retail destinations are located nearby.",
+                  },
+                  {
+                    icon: Building2,
+                    title: "City Access",
+                    text: "Seamless connectivity to key business and commercial zones.",
+                  },
+                ].map((item, i) => {
+                  const Icon = item.icon;
 
-                  <div className="w-10 h-10 flex items-center justify-center bg-[#e8f5f4]">
+                  return (
+                    <div
+                      key={i}
+                      className="
+                      border
+                      border-[#ead9cf]
 
-                    <School className="w-5 h-5 text-[#56bdb7]" />
+                      bg-white
 
-                  </div>
+                      rounded-[18px]
 
-                  <div>
+                      p-5
 
-                    <h4
-                      className="text-[16px] text-[#1f1f1f] mb-1"
-                      style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                      }}
+                      flex
+                      items-start
+                      gap-4
+                      "
                     >
-                      Education
-                    </h4>
 
-                    <p
-                      className="text-[12px] leading-[1.7] text-[#655d57]"
-                      style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                      }}
-                    >
-                      Nearby schools and colleges ensure excellent educational access.
-                    </p>
+                      <div
+                        className="
+                        w-11
+                        h-11
 
-                  </div>
+                        shrink-0
 
-                </div>
+                        rounded-full
 
-                <div className="border border-[#e4d8cf] bg-white p-4 flex items-start gap-3">
+                        flex
+                        items-center
+                        justify-center
 
-                  <div className="w-10 h-10 flex items-center justify-center bg-[#e8f5f4]">
+                        bg-[#e8f5f4]
+                        "
+                      >
+                        <Icon className="w-5 h-5 text-[#56bdb7]" />
+                      </div>
 
-                    <Hospital className="w-5 h-5 text-[#56bdb7]" />
+                      <div>
 
-                  </div>
+                        <h4
+                          className="
+                          text-[18px]
+                          text-[#1f1f1f]
+                          mb-2
+                          "
+                          style={{
+                            fontFamily: "'Cinzel Decorative', serif",
+                          }}
+                        >
+                          {item.title}
+                        </h4>
 
-                  <div>
+                        <p
+                          className="
+                          text-[13px]
+                          leading-[1.8]
+                          text-[#655d57]
+                          "
+                          style={{
+                            fontFamily: "'Josefin Sans', sans-serif",
+                          }}
+                        >
+                          {item.text}
+                        </p>
 
-                    <h4
-                      className="text-[16px] text-[#1f1f1f] mb-1"
-                      style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                      }}
-                    >
-                      Hospitals
-                    </h4>
+                      </div>
 
-                    <p
-                      className="text-[12px] leading-[1.7] text-[#655d57]"
-                      style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                      }}
-                    >
-                      Quick access to healthcare centers and emergency services.
-                    </p>
-
-                  </div>
-
-                </div>
-
-                <div className="border border-[#e4d8cf] bg-white p-4 flex items-start gap-3">
-
-                  <div className="w-10 h-10 flex items-center justify-center bg-[#e8f5f4]">
-
-                    <ShoppingBag className="w-5 h-5 text-[#56bdb7]" />
-
-                  </div>
-
-                  <div>
-
-                    <h4
-                      className="text-[16px] text-[#1f1f1f] mb-1"
-                      style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                      }}
-                    >
-                      Shopping
-                    </h4>
-
-                    <p
-                      className="text-[12px] leading-[1.7] text-[#655d57]"
-                      style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                      }}
-                    >
-                      Markets, malls and retail destinations are located nearby.
-                    </p>
-
-                  </div>
-
-                </div>
-
-                <div className="border border-[#e4d8cf] bg-white p-4 flex items-start gap-3">
-
-                  <div className="w-10 h-10 flex items-center justify-center bg-[#e8f5f4]">
-
-                    <Building2 className="w-5 h-5 text-[#56bdb7]" />
-
-                  </div>
-
-                  <div>
-
-                    <h4
-                      className="text-[16px] text-[#1f1f1f] mb-1"
-                      style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                      }}
-                    >
-                      City Access
-                    </h4>
-
-                    <p
-                      className="text-[12px] leading-[1.7] text-[#655d57]"
-                      style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                      }}
-                    >
-                      Seamless connectivity to key business and commercial zones.
-                    </p>
-
-                  </div>
-
-                </div>
+                    </div>
+                  );
+                })}
 
               </div>
 
             </div>
 
             {/* CONTACT INFO */}
-            <div className="grid sm:grid-cols-3 gap-3 mt-6">
+            <div className="grid sm:grid-cols-3 gap-4 mt-8">
 
-              <div className="border border-[#e4d8cf] bg-white p-4">
+              {[
+                {
+                  icon: Phone,
+                  label: "Call",
+                  value: "+91 98765 43210",
+                },
+                {
+                  icon: Mail,
+                  label: "Email",
+                  value: "sales@subhampark.com",
+                },
+                {
+                  icon: MapPin,
+                  label: "Address",
+                  value: "Assam Trunk Road, Jorhat",
+                },
+              ].map((item, i) => {
+                const Icon = item.icon;
 
-                <div className="flex items-center gap-2">
+                return (
+                  <div
+                    key={i}
+                    className="
+                    border
+                    border-[#ead9cf]
 
-                  <Phone className="w-4 h-4 text-[#56bdb7]" />
+                    bg-white
 
-                  <span
-                    className="uppercase tracking-[0.2em] text-[10px] text-[#8d8178]"
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                    }}
+                    rounded-[18px]
+
+                    p-5
+                    "
                   >
-                    Call
-                  </span>
 
-                </div>
+                    <div className="flex items-center gap-2">
 
-                <p
-                  className="mt-2 text-[15px] text-[#1f1f1f]"
-                  style={{
-                    fontFamily: "'Josefin Sans', sans-serif",
-                  }}
-                >
-                  +91 98765 43210
-                </p>
+                      <Icon className="w-4 h-4 text-[#56bdb7]" />
 
-              </div>
+                      <span
+                        className="
+                        uppercase
+                        tracking-[0.2em]
 
-              <div className="border border-[#e4d8cf] bg-white p-4">
+                        text-[10px]
 
-                <div className="flex items-center gap-2">
+                        text-[#8d8178]
+                        "
+                        style={{
+                          fontFamily: "'Raleway', sans-serif",
+                        }}
+                      >
+                        {item.label}
+                      </span>
 
-                  <Mail className="w-4 h-4 text-[#56bdb7]" />
+                    </div>
 
-                  <span
-                    className="uppercase tracking-[0.2em] text-[10px] text-[#8d8178]"
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                    }}
-                  >
-                    Email
-                  </span>
+                    <p
+                      className="
+                      mt-3
 
-                </div>
+                      text-[14px]
 
-                <p
-                  className="mt-2 text-[13px] text-[#1f1f1f] break-all"
-                  style={{
-                    fontFamily: "'Josefin Sans', sans-serif",
-                  }}
-                >
-                  sales@subhampark.com
-                </p>
+                      leading-[1.7]
 
-              </div>
+                      text-[#1f1f1f]
+                      "
+                      style={{
+                        fontFamily: "'Josefin Sans', sans-serif",
+                      }}
+                    >
+                      {item.value}
+                    </p>
 
-              <div className="border border-[#e4d8cf] bg-white p-4">
-
-                <div className="flex items-center gap-2">
-
-                  <MapPin className="w-4 h-4 text-[#56bdb7]" />
-
-                  <span
-                    className="uppercase tracking-[0.2em] text-[10px] text-[#8d8178]"
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                    }}
-                  >
-                    Address
-                  </span>
-
-                </div>
-
-                <p
-                  className="mt-2 text-[13px] text-[#1f1f1f]"
-                  style={{
-                    fontFamily: "'Josefin Sans', sans-serif",
-                  }}
-                >
-                  Assam Trunk Road, Jorhat
-                </p>
-
-              </div>
+                  </div>
+                );
+              })}
 
             </div>
 
