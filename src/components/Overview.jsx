@@ -135,7 +135,7 @@ export default function Overview({ setOpen }) {
               px-7
               py-4
               mb-8
-              bg-[#d97745]
+              bg-[#d69073]
               hover:bg-[#c96b3c]
               text-white
               uppercase

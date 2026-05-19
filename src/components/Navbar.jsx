@@ -29,12 +29,17 @@ export default function Navbar() {
 
         rounded-[22px]
 
-        bg-[#f7f5f1]
+        bg-gradient-to-r
+        from-[#7d4328]
+        via-[#9b5a39]
+        to-[#7b4429]
 
         border
-        border-[#ead9cf]
+        border-[#c08a6b]/30
 
-        shadow-[0_8px_24px_rgba(198,162,143,0.10)]
+        shadow-[0_10px_30px_rgba(74,35,18,0.35)]
+
+        backdrop-blur-xl
 
         px-4
         lg:px-5
@@ -52,13 +57,18 @@ export default function Navbar() {
 
               rounded-[18px]
 
-              bg-[#f7f5f1]
+              bg-white/10
+
+              border
+              border-white/10
 
               flex
               items-center
               justify-center
 
               overflow-hidden
+
+              shadow-[0_0_35px_rgba(255,255,255,0.10)]
               "
             >
               <img
@@ -84,9 +94,9 @@ export default function Navbar() {
 
                 tracking-[0.18em]
 
-                text-[#1c2340]
+                text-[#fff4ec]
 
-                hover:text-[#d69073]
+                hover:text-[#ffe0cf]
 
                 transition-all
                 duration-300
@@ -113,11 +123,9 @@ export default function Navbar() {
 
               rounded-[14px]
 
-              bg-gradient-to-r
-              from-[#d69073]
-              to-[#c6a28f]
+              bg-white
 
-              text-white
+              text-[#8b4c2d]
 
               text-[10px]
 
@@ -134,13 +142,13 @@ export default function Navbar() {
               transition-all
               duration-300
 
-              shadow-[0_8px_18px_rgba(214,144,115,0.22)]
+              shadow-[0_10px_24px_rgba(255,255,255,0.16)]
 
               whitespace-nowrap
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 400,
+                fontWeight: 600,
               }}
             >
               Download Brochure
@@ -153,7 +161,7 @@ export default function Navbar() {
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-[#1c2340]"
+            className="lg:hidden text-white"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -170,14 +178,16 @@ export default function Navbar() {
 
             rounded-[20px]
 
-            bg-[#f7f5f1]
+            bg-gradient-to-br
+            from-[#8f4b2b]
+            to-[#6f371d]
 
             border
-            border-[#ead8ce]
+            border-white/10
 
             p-4
 
-            shadow-[0_10px_25px_rgba(0,0,0,0.08)]
+            shadow-[0_14px_35px_rgba(0,0,0,0.28)]
 
             flex
             flex-col
@@ -190,7 +200,7 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="
-                text-[#1c2340]
+                text-[#fff5ef]
 
                 uppercase
 
@@ -198,7 +208,7 @@ export default function Navbar() {
 
                 text-[13px]
 
-                hover:text-[#d69073]
+                hover:text-[#ffe0cf]
 
                 transition
                 "
@@ -216,11 +226,9 @@ export default function Navbar() {
               className="
               mt-1
 
-              bg-gradient-to-r
-              from-[#d69073]
-              to-[#c6a28f]
+              bg-white
 
-              text-white
+              text-[#8b4c2d]
 
               py-3
 
@@ -237,11 +245,11 @@ export default function Navbar() {
               justify-center
               gap-2
 
-              shadow-[0_10px_20px_rgba(214,144,115,0.22)]
+              shadow-[0_10px_20px_rgba(255,255,255,0.14)]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 400,
+                fontWeight: 600,
               }}
             >
               Download Brochure

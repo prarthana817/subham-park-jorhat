@@ -17,32 +17,32 @@ import {
 const galleryImages = [
   {
     img: gallery1,
-    title: "Sky High Homescape",
+    title: "Sky high homescape",
     desc: "Elegant aerial lifestyle with greenery and open spaces.",
   },
   {
     img: gallery2,
-    title: "Luxury Exterior",
+    title: "Luxury exterior",
     desc: "Premium architecture crafted with timeless elegance.",
   },
   {
     img: gallery3,
-    title: "Refined Interiors",
+    title: "Refined interiors",
     desc: "Warm sophisticated interiors with premium ambience.",
   },
   {
     img: gallery4,
-    title: "Modern Lifestyle",
+    title: "Modern lifestyle",
     desc: "Contemporary living blended with peaceful surroundings.",
   },
   {
     img: gallery5,
-    title: "Elegant Living",
+    title: "Elegant living",
     desc: "Luxury lifestyle spaces inspired by modern comfort.",
   },
   {
     img: gallery6,
-    title: "Nature & Serenity",
+    title: "Nature & serenity",
     desc: "Beautiful balance of greenery and refined experiences.",
   },
 ];
@@ -55,8 +55,8 @@ export default function Gallery({ setOpen }) {
       relative
       overflow-hidden
 
-      py-16
-      lg:py-20
+      py-14
+      lg:py-16
 
       bg-gradient-to-br
       from-[#b56f4e]
@@ -118,7 +118,7 @@ export default function Gallery({ setOpen }) {
           lg:items-end
           lg:justify-between
           gap-8
-          mb-12
+          mb-10
           "
         >
 
@@ -137,7 +137,8 @@ export default function Gallery({ setOpen }) {
                 text-[#fff2ea]
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 400,
                 }}
               >
                 Luxury Gallery
@@ -149,27 +150,28 @@ export default function Gallery({ setOpen }) {
               className="
               mt-4
 
-              text-[40px]
-              md:text-[52px]
+              text-[42px]
+              md:text-[56px]
               lg:text-[72px]
 
               leading-[0.92]
+              tracking-[-2px]
 
               text-white
               "
               style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontWeight: 400,
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 500,
               }}
             >
-              EXPERIENCE
+              Experience
               <br />
 
-              ELEVATED
+              Elevated
               <br />
 
-              <span className="text-[#ffe1d1]">
-                LIVING
+              <span className="text-[#ffe1d1] italic">
+                Living
               </span>
 
             </h2>
@@ -195,8 +197,8 @@ export default function Gallery({ setOpen }) {
 
             <p
               className="
-              text-[16px]
-              lg:text-[18px]
+              text-[15px]
+              lg:text-[16px]
 
               leading-[1.9]
 
@@ -220,16 +222,18 @@ export default function Gallery({ setOpen }) {
             <button
               onClick={() => setOpen(true)}
               className="
-              mt-8
+              mt-7
 
               flex
               items-center
               gap-3
 
-              px-7
-              py-4
+              px-6
+              py-3.5
 
-              bg-white/10
+              rounded-[14px]
+
+              bg-[#d69073]
               hover:bg-white/20
 
               border
@@ -240,15 +244,15 @@ export default function Gallery({ setOpen }) {
               text-white
 
               uppercase
-              tracking-[0.18em]
+              tracking-[0.16em]
               text-[11px]
 
               transition-all
               duration-300
               "
               style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 600,
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 500,
               }}
             >
               Schedule Visit
@@ -282,27 +286,19 @@ export default function Gallery({ setOpen }) {
                 delay: index * 0.08,
               }}
               viewport={{ once: true }}
-              className={`
+              className="
               group
               relative
 
               overflow-hidden
 
+              rounded-[24px]
+
               h-[260px]
               lg:h-[340px]
 
-              ${
-                index % 2 === 0
-                  ? "bg-[#e7ded6]"
-                  : "bg-[#f3ede7]"
-              }
-              `}
-              style={{
-                clipPath:
-                  index % 2 === 0
-                    ? "polygon(0 0,100% 0,100% 88%,92% 100%,0 100%)"
-                    : "polygon(8% 0,100% 0,100% 100%,0 100%,0 12%)",
-              }}
+              bg-[#f3ede7]
+              "
             >
 
               {/* IMAGE */}
@@ -381,18 +377,18 @@ export default function Gallery({ setOpen }) {
 
                     <h3
                       className="
-                      text-[24px]
-                      lg:text-[28px]
+                      text-[30px]
+                      lg:text-[36px]
 
-                      leading-[1.1]
+                      leading-[1]
 
                       text-white
 
                       drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]
                       "
                       style={{
-                        fontFamily: "'Cinzel Decorative', serif",
-                        fontWeight: 400,
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontWeight: 500,
                       }}
                     >
                       {item.title}

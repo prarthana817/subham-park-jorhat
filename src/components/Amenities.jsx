@@ -106,8 +106,8 @@ export default function Amenities({ setOpen }) {
           className="
           relative
 
-          rounded-[34px]
-          lg:rounded-[42px]
+          rounded-[28px]
+          lg:rounded-[32px]
 
           overflow-hidden
 
@@ -169,7 +169,7 @@ export default function Amenities({ setOpen }) {
               <p
                 className="
                 uppercase
-                tracking-[0.3em]
+                tracking-[0.28em]
 
                 text-[10px]
                 lg:text-[11px]
@@ -177,38 +177,41 @@ export default function Amenities({ setOpen }) {
                 text-[#c68463]
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 500,
                 }}
               >
                 Premium Amenities
               </p>
 
+              {/* HEADING */}
               <h2
                 className="
-                mt-3
-
-                leading-[0.92]
+                mt-4
 
                 text-[#221d1a]
+                leading-[0.95]
+                tracking-[-1.5px]
                 "
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
+                  fontWeight: 500,
                 }}
               >
-                <span className="block text-[34px] sm:text-[48px] lg:text-[68px]">
-                  ASPIRATIONAL
+
+                <span className="block text-[38px] sm:text-[52px] lg:text-[70px]">
+                  Aspirational
                 </span>
 
-                <span className="block text-[34px] sm:text-[48px] lg:text-[68px]">
-                  LIVING
+                <span className="block text-[38px] sm:text-[52px] lg:text-[70px]">
+                  Living
                 </span>
 
                 {/* JORHAT */}
                 <div className="flex items-end gap-2 lg:gap-4 mt-1 lg:mt-2">
 
-                  <span className="text-[24px] sm:text-[30px] lg:text-[42px] text-[#1f1f1f]">
-                    IN
+                  <span className="text-[24px] sm:text-[30px] lg:text-[40px] text-[#1f1f1f]">
+                    In
                   </span>
 
                   <div
@@ -216,9 +219,9 @@ export default function Amenities({ setOpen }) {
                     flex
                     items-end
 
-                    text-[38px]
-                    sm:text-[54px]
-                    lg:text-[74px]
+                    text-[40px]
+                    sm:text-[58px]
+                    lg:text-[78px]
 
                     leading-none
 
@@ -228,18 +231,19 @@ export default function Amenities({ setOpen }) {
                   >
                     <span style={{ color: "#f08b57" }}>J</span>
 
-                    <span style={{ color: "#f4d8c7" }}>O</span>
+                    <span style={{ color: "#f4d8c7" }}>o</span>
 
-                    <span style={{ color: "#43d6cf" }}>R</span>
+                    <span style={{ color: "#43d6cf" }}>r</span>
 
-                    <span style={{ color: "#f4d8c7" }}>H</span>
+                    <span style={{ color: "#f4d8c7" }}>h</span>
 
-                    <span style={{ color: "#f0b09a" }}>A</span>
+                    <span style={{ color: "#f0b09a" }}>a</span>
 
-                    <span style={{ color: "#8fb8e6" }}>T</span>
+                    <span style={{ color: "#8fb8e6" }}>t</span>
                   </div>
 
                 </div>
+
               </h2>
 
               <div
@@ -318,15 +322,15 @@ export default function Amenities({ setOpen }) {
                 px-6
                 py-3.5
 
-                rounded-full
+                rounded-[14px]
 
-                bg-[#b96f4c]
+                bg-[#d69073]
                 hover:bg-[#a85c39]
 
                 text-white
 
                 uppercase
-                tracking-[0.18em]
+                tracking-[0.16em]
 
                 text-[10px]
                 lg:text-[11px]
@@ -335,8 +339,8 @@ export default function Amenities({ setOpen }) {
                 duration-300
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 700,
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 600,
                 }}
               >
                 Book Site Visit
@@ -382,7 +386,7 @@ export default function Amenities({ setOpen }) {
                 group
                 relative
 
-                rounded-[28px]
+                rounded-[22px]
 
                 border
                 border-[#ddb59f]
@@ -409,14 +413,14 @@ export default function Amenities({ setOpen }) {
                   top-4
                   right-4
 
-                  text-[22px]
+                  text-[20px]
 
                   text-[#d88963]
                   opacity-80
                   "
                   style={{
-                    fontFamily: "'Cinzel Decorative', serif",
-                    fontWeight: 400,
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 500,
                   }}
                 >
                   {String(index + 1).padStart(2, "0")}
@@ -472,7 +476,7 @@ export default function Amenities({ setOpen }) {
 
                   <h3
                     className="
-                    text-[24px]
+                    text-[26px]
 
                     leading-[1.08]
 
@@ -481,7 +485,7 @@ export default function Amenities({ setOpen }) {
                     style={{
                       fontFamily:
                         "'Cormorant Garamond', serif",
-                      fontWeight: 600,
+                      fontWeight: 500,
                     }}
                   >
                     {item.title}
@@ -530,179 +534,6 @@ export default function Amenities({ setOpen }) {
               </motion.div>
             );
           })}
-
-        </div>
-
-        {/* LANDSCAPE FEATURE STRIP */}
-        <div
-          className="
-          mt-8
-
-          rounded-[34px]
-
-          bg-[#fffaf6]
-
-          border
-          border-[#ddb59f]
-
-          overflow-hidden
-          "
-        >
-
-          <div
-            className="
-            grid
-            lg:grid-cols-[0.9fr_1.1fr]
-            "
-          >
-
-            {/* LEFT */}
-            <div
-              className="
-              relative
-
-              bg-[#2e241f]
-
-              px-8
-              py-8
-
-              lg:px-10
-              "
-            >
-
-              <p
-                className="
-                uppercase
-
-                tracking-[0.28em]
-
-                text-[11px]
-
-                text-[#d8b18f]
-
-                mb-5
-                "
-                style={{
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 700,
-                }}
-              >
-                Landscape Features
-              </p>
-
-              <h3
-                className="
-                text-white
-
-                text-[30px]
-                lg:text-[42px]
-
-                leading-[0.95]
-
-                mb-4
-                "
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                }}
-              >
-                Open Green
-                <br />
-                Living Spaces
-              </h3>
-
-              <p
-                className="
-                max-w-[420px]
-
-                text-[14px]
-                leading-[1.9]
-
-                text-[#d8cec7]
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 300,
-                }}
-              >
-                Outdoor spaces designed for peaceful walks,
-                gatherings and luxury lifestyle experiences.
-              </p>
-
-              <div
-                className="
-                mt-6
-
-                w-[90px]
-                h-[2px]
-
-                bg-[#43d6cf]
-                rounded-full
-                "
-              />
-
-            </div>
-
-            {/* RIGHT */}
-            <div
-              className="
-              px-6
-              py-6
-
-              lg:px-8
-
-              flex
-              flex-wrap
-              gap-3
-
-              items-center
-              content-center
-              "
-            >
-
-              {[
-                "Stepped Planter",
-                "Open Gym",
-                "Adda Corner",
-                "Senior Citizens Area",
-                "Shaded Sitting",
-                "Forest Orchard",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="
-                  px-5
-                  py-3
-
-                  rounded-full
-
-                  bg-[#f8f3ef]
-
-                  border
-                  border-[#ead8ce]
-
-                  text-[#5b514b]
-
-                  text-[13px]
-
-                  hover:bg-[#43d6cf]
-                  hover:text-white
-
-                  transition-all
-                  duration-300
-                  "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                    fontWeight: 600,
-                  }}
-                >
-                  {item}
-                </div>
-              ))}
-
-            </div>
-
-          </div>
 
         </div>
 

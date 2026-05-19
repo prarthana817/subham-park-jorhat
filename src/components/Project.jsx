@@ -31,7 +31,7 @@ const projectData = {
       "Modern architecture",
     ],
 
-    icon: <Building2 size={28} />,
+    icon: <Building2 size={26} />,
   },
 
   completed: {
@@ -62,7 +62,7 @@ const projectData = {
       "High-quality construction",
     ],
 
-    icon: <Landmark size={28} />,
+    icon: <Landmark size={26} />,
   },
 
   commercial: {
@@ -91,7 +91,7 @@ const projectData = {
       "Modern infrastructure",
     ],
 
-    icon: <BriefcaseBusiness size={28} />,
+    icon: <BriefcaseBusiness size={26} />,
   },
 };
 
@@ -107,28 +107,27 @@ export default function ProjectOverview() {
       relative
       overflow-hidden
 
-      py-20
-      lg:py-24
+      py-16
+      lg:py-20
 
       bg-[#f5f1ec]
       "
     >
       {/* GRID BACKGROUND */}
-
-      <div
-        className="
-        absolute
-        inset-0
-        opacity-[0.06]
-        "
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
-          `,
-          backgroundSize: "70px 70px",
-        }}
-      />
+<div
+  className="
+  absolute
+  inset-0
+  opacity-[0.045]
+  "
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
+    `,
+    backgroundSize: "42px 42px",
+  }}
+/>
 
       {/* LEFT LINES */}
 
@@ -138,8 +137,8 @@ export default function ProjectOverview() {
         left-0
         top-0
         h-full
-        w-[260px]
-        opacity-[0.06]
+        w-[220px]
+        opacity-[0.05]
         "
         style={{
           backgroundImage:
@@ -149,96 +148,96 @@ export default function ProjectOverview() {
 
       {/* GLOW */}
 
-      <div className="absolute top-[-180px] right-[-150px] w-[500px] h-[500px] rounded-full bg-[#c58b6d]/10 blur-[140px]" />
+      <div className="absolute top-[-180px] right-[-150px] w-[450px] h-[450px] rounded-full bg-[#c58b6d]/10 blur-[140px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
 
-        {/* HEADING */}
+   {/* HEADING */}
 
-        <div className="text-center mb-14">
+<div className="text-center mb-14">
 
-          <p
-            className="
-            uppercase
-            tracking-[0.35em]
+  <p
+    className="
+    uppercase
+    tracking-[0.35em]
 
-            text-[11px]
-            lg:text-[12px]
+    text-[11px]
+    lg:text-[12px]
 
-            text-[#c58b6d]
+    text-[#c58b6d]
 
-            mb-5
-            "
-            style={{
-              fontFamily: "'Josefin Sans', sans-serif",
-            }}
-          >
-            PROJECT OVERVIEW
-          </p>
+    mb-5
+    "
+    style={{
+      fontFamily: "'Josefin Sans', sans-serif",
+    }}
+  >
+    PROJECT OVERVIEW
+  </p>
 
-          <h2
-            className="leading-[0.92]"
-            style={{
-              fontFamily: "'Cinzel Decorative', serif",
-              fontWeight: 400,
-            }}
-          >
+  {/* শুধু এই white box টা remove */}
+  <div className="relative inline-block">
 
-            <span
-              className="
-              block
+    <h2
+      className="
+      text-[#111111]
 
-              text-[46px]
-              sm:text-[72px]
-              lg:text-[88px]
+      text-[42px]
+      lg:text-[58px]
 
-              text-[#1f1f1f]
-              "
-            >
-              Our Landmark
-            </span>
+      leading-[0.95]
+      tracking-[-2px]
+      "
+      style={{
+        fontFamily: "'Cormorant Garamond', serif",
+        fontWeight: 500,
+      }}
+    >
+      Our{" "}
 
-            <span
-              className="
-              block
+      <span
+        className="
+        italic
+        bg-gradient-to-r
+        from-[#f7c58b]
+        via-[#d69073]
+        to-[#b86d4b]
+        bg-clip-text
+        text-transparent
+        "
+      >
+        Landmark
+      </span>{" "}
 
-              text-[44px]
-              sm:text-[68px]
-              lg:text-[84px]
+      Developments
+    </h2>
 
-              text-[#c58b6d]
-              "
-            >
-              Developments
-            </span>
+  </div>
 
-          </h2>
+  <p
+    className="
+    max-w-4xl
+    mx-auto
 
-          <p
-            className="
-            max-w-4xl
-            mx-auto
+    mt-6
 
-            mt-6
+    text-[15px]
+    lg:text-[17px]
 
-            text-[15px]
-            lg:text-[17px]
+    leading-[1.9]
 
-            leading-[1.9]
+    text-[#5f5a55]
+    "
+    style={{
+      fontFamily: "'Josefin Sans', sans-serif",
+    }}
+  >
+    Explore Subham Group’s premium residential and commercial
+    developments across Assam and Northeast India — thoughtfully
+    crafted with elegant architecture and refined urban lifestyles.
+  </p>
 
-            text-[#5f5a55]
-            "
-            style={{
-              fontFamily: "'Josefin Sans', sans-serif",
-            }}
-          >
-            Explore Subham Group’s premium residential and commercial
-            developments across Assam and Northeast India — thoughtfully
-            crafted with elegant architecture, modern infrastructure and
-            refined urban lifestyles.
-          </p>
-
-        </div>
+</div>
 
         {/* TOP BUTTONS */}
 
@@ -265,10 +264,10 @@ export default function ProjectOverview() {
                   relative
                   overflow-hidden
 
-                  min-w-[240px]
+                  min-w-[230px]
 
-                  px-6
-                  py-5
+                  px-5
+                  py-4
 
                   border
                   border-[#ddd2ca]
@@ -284,7 +283,7 @@ export default function ProjectOverview() {
                   ${
                     active === key
                       ? "bg-[#c58b6d] text-white border-[#c58b6d]"
-                      : "bg-transparent text-[#1f1f1f] hover:bg-[#f8f4ef]"
+                      : "bg-[#fbf8f5] text-[#1f1f1f] hover:bg-[#f8f4ef]"
                   }
                 `}
               >
@@ -292,7 +291,7 @@ export default function ProjectOverview() {
                 {/* GRID INSIDE BUTTON */}
 
                 <div
-                  className="absolute inset-0 opacity-[0.08]"
+                  className="absolute inset-0 opacity-[0.07]"
                   style={{
                     backgroundImage: `
                       linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
@@ -306,12 +305,14 @@ export default function ProjectOverview() {
 
                   <div
                     className={`
-                    w-[52px]
-                    h-[52px]
+                    w-[48px]
+                    h-[48px]
 
                     flex
                     items-center
                     justify-center
+
+                    rounded-full
 
                     ${
                       active === key
@@ -327,12 +328,13 @@ export default function ProjectOverview() {
 
                     <h3
                       className="
-                      text-[18px]
+                      text-[17px]
                       leading-[1.3]
                       text-left
                       "
                       style={{
                         fontFamily: "'Cormorant Garamond', serif",
+                        fontWeight: 500,
                       }}
                     >
                       {item.title}
@@ -362,7 +364,7 @@ export default function ProjectOverview() {
 
           shadow-[0_20px_60px_rgba(0,0,0,0.08)]
 
-          p-7
+          p-6
           lg:p-10
           "
         >
@@ -388,8 +390,8 @@ export default function ProjectOverview() {
 
             <h2
               className="
-              text-[42px]
-              lg:text-[70px]
+              text-[34px]
+              lg:text-[56px]
 
               leading-[0.95]
 
@@ -397,6 +399,7 @@ export default function ProjectOverview() {
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 500,
               }}
             >
               {current.title}
@@ -404,14 +407,15 @@ export default function ProjectOverview() {
 
             <p
               className="
-              mt-4
+              mt-3
 
               text-[#c58b6d]
 
-              text-[18px]
+              text-[16px]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 300,
               }}
             >
               {current.subtitle}
@@ -419,7 +423,7 @@ export default function ProjectOverview() {
 
             <p
               className="
-              mt-7
+              mt-6
 
               text-[#5f5a55]
 
@@ -427,10 +431,11 @@ export default function ProjectOverview() {
 
               max-w-4xl
 
-              text-[16px]
+              text-[15px]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 300,
               }}
             >
               {current.description}
@@ -486,6 +491,7 @@ export default function ProjectOverview() {
                     "
                     style={{
                       fontFamily: "'Josefin Sans', sans-serif",
+                      fontWeight: 300,
                     }}
                   >
                     {project}
@@ -558,6 +564,7 @@ export default function ProjectOverview() {
                     "
                     style={{
                       fontFamily: "'Josefin Sans', sans-serif",
+                      fontWeight: 300,
                     }}
                   >
                     {item}
@@ -580,12 +587,12 @@ export default function ProjectOverview() {
               text-white
 
               px-8
-              py-5
+              py-4
 
               uppercase
               tracking-[0.18em]
 
-              text-[13px]
+              text-[12px]
 
               flex
               items-center
@@ -596,6 +603,7 @@ export default function ProjectOverview() {
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 400,
               }}
             >
               Explore Projects

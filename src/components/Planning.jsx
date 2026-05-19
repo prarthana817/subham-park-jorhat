@@ -47,6 +47,7 @@ export default function FloorPlans() {
         `,
       }}
     >
+
       {/* GRID */}
       <div
         className="absolute inset-0 opacity-[0.05]"
@@ -61,6 +62,7 @@ export default function FloorPlans() {
 
       {/* BLURS */}
       <div className="absolute top-[-120px] right-[-120px] w-[380px] h-[380px] rounded-full bg-[#d8a285]/10 blur-[120px]" />
+
       <div className="absolute bottom-[-140px] left-[-100px] w-[320px] h-[320px] rounded-full bg-[#56bdb7]/10 blur-[120px]" />
 
       <div className="relative z-10 max-w-[1450px] mx-auto px-4 lg:px-6">
@@ -77,7 +79,8 @@ export default function FloorPlans() {
               <p
                 className="uppercase tracking-[0.32em] text-[10px] text-[#b58671]"
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 400,
                 }}
               >
                 Premium Floor Layouts
@@ -85,21 +88,38 @@ export default function FloorPlans() {
 
             </div>
 
+            {/* UPDATED HEADING */}
             <h2
-              className="leading-[0.88] tracking-[-2px]"
+              className="
+              text-[#111111]
+              text-[42px]
+              lg:text-[58px]
+              leading-[0.95]
+              tracking-[-2px]
+              mb-5
+              "
               style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontWeight: 400,
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 500,
               }}
             >
-              <span className="block text-[34px] sm:text-[46px] lg:text-[60px] text-[#1f1f1f]">
-                MASTER
-              </span>
+              Master{" "}
 
-              <span className="block text-[34px] sm:text-[46px] lg:text-[60px] text-[#d69073]">
-                FLOOR PLANS
-              </span>
+              <span
+                className="
+                italic
+                bg-gradient-to-r
+                from-[#f7c58b]
+                via-[#d69073]
+                to-[#b86d4b]
+                bg-clip-text
+                text-transparent
+                "
+              >
+                Floor
+              </span>{" "}
 
+              Plans
             </h2>
 
           </div>
@@ -205,7 +225,8 @@ export default function FloorPlans() {
                         }
                         `}
                         style={{
-                          fontFamily: "'Raleway', sans-serif",
+                          fontFamily: "'Josefin Sans', sans-serif",
+                          fontWeight: 400,
                         }}
                       >
                         PLAN {index + 1}
@@ -213,6 +234,7 @@ export default function FloorPlans() {
 
                       <h3
                         className={`
+                        capitalize
                         text-[22px]
                         leading-none
 
@@ -223,8 +245,8 @@ export default function FloorPlans() {
                         }
                         `}
                         style={{
-                          fontFamily: "'Cinzel Decorative', serif",
-                          fontWeight: 400,
+                          fontFamily: "'Cormorant Garamond', serif",
+                          fontWeight: 500,
                         }}
                       >
                         {item.title}
@@ -292,7 +314,8 @@ export default function FloorPlans() {
                       text-[#b58671]
                       "
                       style={{
-                        fontFamily: "'Raleway', sans-serif",
+                        fontFamily: "'Josefin Sans', sans-serif",
+                        fontWeight: 400,
                       }}
                     >
                       Selected Layout
@@ -302,14 +325,15 @@ export default function FloorPlans() {
 
                   <h3
                     className="
-                    text-[28px]
-                    lg:text-[38px]
-                    leading-none
-                    text-[#1f1f1f]
+                    text-[#111111]
+                    text-[32px]
+                    lg:text-[42px]
+                    leading-[0.95]
+                    tracking-[-1px]
                     "
                     style={{
-                      fontFamily: "'Cinzel Decorative', serif",
-                      fontWeight: 400,
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontWeight: 500,
                     }}
                   >
                     {active.title}
