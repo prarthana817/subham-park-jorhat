@@ -28,37 +28,37 @@ export default function Navbar() {
       w-full
       z-50
 
-      pt-2
+      pt-3
+      px-3
+      lg:px-5
       "
     >
       <nav
         className="
-        max-w-[1900px]
+        max-w-[1700px]
         mx-auto
 
-        h-[60px]
-        lg:h-[64px]
+        h-[64px]
 
-        rounded-[0px]
-        lg:rounded-[0px]
+        rounded-[22px]
 
         bg-gradient-to-r
         from-[#7d4328]
         via-[#9b5a39]
         to-[#7b4429]
 
-        shadow-[0_8px_24px_rgba(74,35,18,0.28)]
+        shadow-[0_10px_30px_rgba(74,35,18,0.22)]
 
         backdrop-blur-xl
 
-        px-3
-        lg:px-5
+        px-5
+        lg:px-7
         "
       >
         <div className="flex items-center justify-between h-full">
 
           {/* LEFT */}
-          <div className="flex items-center shrink-0">
+          <div className="flex items-center shrink-0 pr-5">
 
             <a
               href="#home"
@@ -67,22 +67,23 @@ export default function Navbar() {
               items-center
               justify-center
 
-              w-[74px]
-              h-[74px]
+              w-[82px]
+              h-[82px]
+
+              rounded-full
+
+              hover:bg-white/10
 
               transition-all
               duration-300
-
-              hover:bg-white/10
-              rounded-full
               "
             >
               <img
                 src={logo}
                 alt="Subham Park"
                 className="
-                w-[72px]
-                h-[72px]
+                w-[82px]
+                h-[82px]
 
                 object-contain
                 scale-[1.55]
@@ -93,7 +94,20 @@ export default function Navbar() {
           </div>
 
           {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
+          <div
+            className="
+            hidden
+            lg:flex
+
+            items-center
+            justify-center
+
+            flex-1
+
+            gap-5
+            xl:gap-7
+            "
+          >
 
             {navLinks.map((link) => (
               <a
@@ -124,12 +138,14 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* BUTTON */}
+          </div>
+
+          {/* BUTTON */}
+          <div className="hidden lg:flex items-center pl-5">
+
             <a
               href="#contact"
               className="
-              ml-2
-
               px-5
               py-[11px]
 
@@ -147,7 +163,7 @@ export default function Navbar() {
 
               flex
               items-center
-              gap-4
+              gap-3
 
               hover:scale-[1.02]
 
@@ -204,6 +220,7 @@ export default function Navbar() {
             gap-4
             "
           >
+
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -264,8 +281,10 @@ export default function Navbar() {
 
               <ArrowUpRight size={14} />
             </a>
+
           </div>
         )}
+
       </nav>
     </header>
   );

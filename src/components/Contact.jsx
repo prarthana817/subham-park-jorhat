@@ -39,9 +39,9 @@ export default function Contact() {
         <div
           className="
           grid
-          lg:grid-cols-[0.95fr_0.85fr]
+          lg:grid-cols-2
 
-          rounded-[26px]
+          rounded-[24px]
 
           overflow-hidden
 
@@ -66,7 +66,7 @@ export default function Contact() {
             flex-col
             justify-between
 
-            min-h-[520px]
+            min-h-[100%]
             "
           >
 
@@ -75,13 +75,13 @@ export default function Contact() {
               <p
                 className="
                 uppercase
-                tracking-[0.34em]
+                tracking-[0.30em]
 
                 text-[10px]
 
                 text-[#ffe2d1]
 
-                mb-4
+                mb-3
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
@@ -95,9 +95,9 @@ export default function Contact() {
                 className="
                 text-white
 
-                text-[46px]
-                md:text-[58px]
-                lg:text-[68px]
+                text-[44px]
+                md:text-[54px]
+                lg:text-[62px]
 
                 leading-[0.92]
                 tracking-[-2px]
@@ -107,28 +107,24 @@ export default function Contact() {
                   fontWeight: 500,
                 }}
               >
-                Your Dream
+                Your Dream Home
                 <br />
 
                 <span className="text-[#ffe2d1]">
-                  Home
+                  Awaits You
                 </span>
-
-                <br />
-
-                Awaits You
               </h2>
 
               <p
                 className="
-                mt-5
+                mt-4
 
-                max-w-[520px]
+                max-w-[560px]
 
-                text-[14px]
-                lg:text-[15px]
+                text-[15px]
+                lg:text-[16px]
 
-                leading-[1.9]
+                leading-[1.95]
 
                 text-white/80
                 "
@@ -137,23 +133,25 @@ export default function Contact() {
                   fontWeight: 400,
                 }}
               >
-                Talk to our team today. We'll walk you through
-                unit selection, pricing, site visits and every
-                important detail.
+                Discover a thoughtfully crafted lifestyle designed for
+                modern families with elegant architecture, premium
+                amenities, seamless connectivity and beautifully planned
+                living spaces that bring comfort, sophistication and
+                everyday convenience together.
               </p>
 
             </div>
 
-            {/* WHATSAPP */}
+            {/* CONTACT BOX */}
             <div
               className="
-              mt-6
+              mt-5
 
               flex
               items-center
               gap-4
 
-              rounded-[20px]
+              rounded-[18px]
 
               border
               border-[#ffffff12]
@@ -166,8 +164,8 @@ export default function Contact() {
 
               <div
                 className="
-                w-12
-                h-12
+                w-11
+                h-11
 
                 rounded-[14px]
 
@@ -186,7 +184,7 @@ export default function Contact() {
                 <p
                   className="
                   uppercase
-                  tracking-[0.18em]
+                  tracking-[0.16em]
 
                   text-[10px]
 
@@ -204,19 +202,20 @@ export default function Contact() {
 
                 <h3
                   className="
-                  text-[24px]
-                  lg:text-[30px]
+                  text-[18px]
+                  lg:text-[22px]
 
                   text-white
 
                   leading-none
                   "
                   style={{
-                    fontFamily: "'Cormorant Garamond', serif",
+                    fontFamily: "'Josefin Sans', sans-serif",
                     fontWeight: 600,
+                    letterSpacing: "0.04em",
                   }}
                 >
-                  Chat With Us Now
+                  +91 98765 43210
                 </h3>
 
               </div>
@@ -233,7 +232,11 @@ export default function Contact() {
 
             bg-black/10
 
-            border-l
+            border-t
+            lg:border-t-0
+
+            lg:border-l
+
             border-[#ffffff10]
             "
           >
@@ -242,8 +245,8 @@ export default function Contact() {
               className="
               text-white
 
-              text-[34px]
-              lg:text-[42px]
+              text-[32px]
+              lg:text-[40px]
 
               leading-[0.95]
 
@@ -259,17 +262,17 @@ export default function Contact() {
 
             <p
               className="
-              text-[13px]
+              text-[14px]
 
               text-white/65
 
-              mb-6
+              mb-5
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
               }}
             >
-              Our team will reach out within 24 hours
+              Our team will contact you shortly
             </p>
 
             {/* FORM */}
@@ -300,7 +303,7 @@ export default function Contact() {
                   className="
                   w-full
 
-                  h-[56px]
+                  h-[54px]
 
                   px-4
 
@@ -346,7 +349,7 @@ export default function Contact() {
                   className="
                   w-full
 
-                  h-[56px]
+                  h-[54px]
 
                   px-4
 
@@ -394,7 +397,7 @@ export default function Contact() {
                 className="
                 w-full
 
-                h-[56px]
+                h-[54px]
 
                 px-4
 
@@ -438,7 +441,7 @@ export default function Contact() {
                 className="
                 w-full
 
-                h-[56px]
+                h-[54px]
 
                 px-4
 
@@ -463,13 +466,13 @@ export default function Contact() {
 
             <button
               className="
-              mt-6
+              mt-5
 
               w-full
 
-              h-[60px]
+              h-[56px]
 
-              rounded-[16px]
+              rounded-[14px]
 
               bg-[#ffe2d1]
               hover:bg-white
@@ -479,7 +482,7 @@ export default function Contact() {
               uppercase
               tracking-[0.14em]
 
-              text-[12px]
+              text-[11px]
 
               transition-all
               duration-300
@@ -494,7 +497,7 @@ export default function Contact() {
 
             <p
               className="
-              mt-5
+              mt-4
 
               text-center
 
@@ -506,7 +509,7 @@ export default function Contact() {
                 fontFamily: "'Josefin Sans', sans-serif",
               }}
             >
-              Your information is secure. We never share your data.
+              Your information is secure and protected.
             </p>
 
           </div>

@@ -148,18 +148,18 @@ export default function Gallery({ setOpen }) {
           </h2>
 
           {/* PARAGRAPH + BUTTON */}
-          <div className="mt-4 lg:ml-[260px]">
+          <div className="mt-4">
 
             <p
               className="
-              text-[14px]
-              lg:text-[15px]
+              text-[15px]
+              lg:text-[16px]
 
               leading-[1.9]
 
               text-white/90
 
-              max-w-[980px]
+              max-w-[950px]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",

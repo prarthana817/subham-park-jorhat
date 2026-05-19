@@ -34,14 +34,10 @@ export default function FloorPlans() {
       className="relative overflow-hidden py-10 lg:py-12"
       style={{
         background: `
-          radial-gradient(circle at top left, rgba(214,144,115,0.08), transparent 24%),
-          radial-gradient(circle at bottom right, rgba(86,189,183,0.08), transparent 28%),
           linear-gradient(
             135deg,
             #faf7f3 0%,
-            #f6f1eb 22%,
-            #f3ece5 45%,
-            #efe5dc 70%,
+            #f4ede6 45%,
             #eadfd5 100%
           )
         `,
@@ -49,7 +45,7 @@ export default function FloorPlans() {
     >
       {/* GRID */}
       <div
-        className="absolute inset-0 opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
             linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
@@ -59,22 +55,17 @@ export default function FloorPlans() {
         }}
       />
 
-      {/* BLURS */}
-      <div className="absolute top-[-120px] right-[-120px] w-[380px] h-[380px] rounded-full bg-[#d8a285]/10 blur-[120px]" />
-
-      <div className="absolute bottom-[-140px] left-[-100px] w-[320px] h-[320px] rounded-full bg-[#56bdb7]/10 blur-[120px]" />
-
-      <div className="relative z-10 max-w-[1450px] mx-auto px-4 lg:px-6">
+      <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-5">
 
         {/* HEADER */}
-        <div className="mb-8">
+        <div className="mb-6">
 
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-3">
 
             <div className="w-10 h-[2px] bg-[#d69073]" />
 
             <p
-              className="uppercase tracking-[0.32em] text-[10px] text-[#b58671]"
+              className="uppercase tracking-[0.28em] text-[10px] text-[#b58671]"
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
                 fontWeight: 400,
@@ -86,217 +77,187 @@ export default function FloorPlans() {
           </div>
 
           {/* HEADING */}
-          <div className="max-w-[1200px]">
+          <h2
+            className="
+            text-[#111111]
+            text-[42px]
+            md:text-[54px]
+            lg:text-[64px]
 
-            <h2
+            leading-[0.95]
+            tracking-[-2px]
+            "
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 500,
+            }}
+          >
+            Elegant{" "}
+
+            <span
               className="
-              text-[#111111]
-              text-[42px]
-              md:text-[54px]
-              lg:text-[64px]
-              leading-[0.95]
-              tracking-[-2px]
+              italic
+              bg-gradient-to-r
+              from-[#f7c58b]
+              via-[#d69073]
+              to-[#b86d4b]
+              bg-clip-text
+              text-transparent
               "
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 500,
-              }}
             >
-              Elegant{" "}
+              Living
+            </span>{" "}
 
-              <span
-                className="
-                italic
-                bg-gradient-to-r
-                from-[#f7c58b]
-                via-[#d69073]
-                to-[#b86d4b]
-                bg-clip-text
-                text-transparent
-                "
-              >
-                Living
-              </span>{" "}
+            Layouts
+          </h2>
 
-              Layouts
-            </h2>
+          {/* TEXT */}
+          <p
+            className="
+            mt-3
 
-            {/* CONTENT */}
-            <div className="mt-4 lg:ml-[250px] max-w-[900px]">
+            text-[#6b625d]
+            text-[15px]
+            lg:text-[17px]
 
-              <p
-                className="
-                text-[#6b625d]
-                text-[14px]
-                lg:text-[15px]
-                leading-[1.9]
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 300,
-                }}
-              >
-                Discover thoughtfully designed residential layouts with spacious planning, elegant interiors and seamless spatial flow crafted for refined modern living.
-              </p>
+            leading-[1.9]
 
-            </div>
-
-          </div>
+            max-w-[760px]
+            "
+            style={{
+              fontFamily: "'Josefin Sans', sans-serif",
+              fontWeight: 300,
+            }}
+          >
+            Discover thoughtfully designed residential layouts with spacious planning, elegant interiors and seamless spatial flow crafted for refined modern living.
+          </p>
 
         </div>
 
-        {/* MAIN */}
+        {/* BUTTONS */}
         <div
           className="
-          grid
-          lg:grid-cols-[260px_1fr]
+          flex
+          flex-wrap
+          gap-3
 
-          overflow-hidden
+          mb-5
+          "
+        >
 
-          rounded-[28px]
+          {plans.map((item, index) => (
+            <button
+              key={item.id}
+              onClick={() => setActive(item)}
+              className={`
+              flex
+              items-center
+              gap-2
+
+              px-4
+              py-2.5
+
+              rounded-[14px]
+
+              border
+
+              transition-all
+              duration-300
+
+              ${
+                active.id === item.id
+                  ? `
+                    bg-[#1f1f1f]
+                    border-[#1f1f1f]
+                  `
+                  : `
+                    bg-[#fcfaf8]
+                    border-[#ddd3cb]
+                    hover:bg-[#f6eee7]
+                  `
+              }
+              `}
+            >
+
+              <div>
+
+                <p
+                  className={`
+                  text-[7px]
+                  uppercase
+                  tracking-[0.16em]
+                  mb-[2px]
+
+                  ${
+                    active.id === item.id
+                      ? "text-[#d6b09b]"
+                      : "text-[#b58a74]"
+                  }
+                  `}
+                  style={{
+                    fontFamily: "'Josefin Sans', sans-serif",
+                    fontWeight: 400,
+                  }}
+                >
+                  PLAN {index + 1}
+                </p>
+
+                <h3
+                  className={`
+                  text-[16px]
+                  leading-none
+
+                  ${
+                    active.id === item.id
+                      ? "text-white"
+                      : "text-[#1f1f1f]"
+                  }
+                  `}
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 500,
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+              </div>
+
+              <ArrowRight
+                className={`
+                w-3.5
+                h-3.5
+
+                ${
+                  active.id === item.id
+                    ? "text-[#d6b09b]"
+                    : "text-[#8f7b70]"
+                }
+                `}
+              />
+
+            </button>
+          ))}
+
+        </div>
+
+        {/* IMAGE BOX */}
+        <div
+          className="
+          bg-[#fcf8f4]
 
           border
           border-[#e5d8cf]
 
-          bg-[#fcf8f4]
+          rounded-[24px]
 
-          shadow-[0_20px_60px_rgba(0,0,0,0.06)]
+          overflow-hidden
+
+          shadow-[0_12px_35px_rgba(0,0,0,0.05)]
           "
         >
 
-          {/* LEFT MENU */}
-          <div
-            className="
-            relative
-
-            border-r
-            border-[#e5d8cf]
-
-            bg-gradient-to-b
-            from-[#f0e5dc]
-            to-[#e7d7ca]
-            "
-          >
-
-            <div className="p-3 lg:p-4">
-
-              {plans.map((item, index) => (
-                <button
-                  key={item.id}
-                  onClick={() => setActive(item)}
-                  className={`
-                  w-full
-                  text-left
-
-                  mb-3
-
-                  px-4
-                  py-3.5
-
-                  rounded-[18px]
-
-                  border
-
-                  transition-all
-                  duration-300
-
-                  ${
-                    active.id === item.id
-                      ? `
-                        bg-[#1f1f1f]
-                        border-[#1f1f1f]
-                        shadow-[0_10px_30px_rgba(0,0,0,0.12)]
-                      `
-                      : `
-                        bg-[#fcfaf8]
-                        border-[#ddd3cb]
-                        hover:bg-[#f6eee7]
-                      `
-                  }
-                  `}
-                >
-
-                  <div className="flex items-center justify-between gap-4">
-
-                    <div>
-
-                      <p
-                        className={`
-                        text-[9px]
-                        uppercase
-                        tracking-[0.25em]
-                        mb-2
-
-                        ${
-                          active.id === item.id
-                            ? "text-[#d6b09b]"
-                            : "text-[#b58a74]"
-                        }
-                        `}
-                        style={{
-                          fontFamily: "'Josefin Sans', sans-serif",
-                          fontWeight: 400,
-                        }}
-                      >
-                        PLAN {index + 1}
-                      </p>
-
-                      <h3
-                        className={`
-                        capitalize
-                        text-[20px]
-                        leading-none
-
-                        ${
-                          active.id === item.id
-                            ? "text-white"
-                            : "text-[#1f1f1f]"
-                        }
-                        `}
-                        style={{
-                          fontFamily: "'Cormorant Garamond', serif",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {item.title}
-                      </h3>
-
-                    </div>
-
-                    <ArrowRight
-                      className={`
-                      w-4
-                      h-4
-                      shrink-0
-
-                      ${
-                        active.id === item.id
-                          ? "text-[#d6b09b]"
-                          : "text-[#8f7b70]"
-                      }
-                      `}
-                    />
-
-                  </div>
-
-                </button>
-              ))}
-
-            </div>
-
-          </div>
-
-          {/* RIGHT */}
-          <div
-            className="
-            relative
-
-            bg-[#f3eee8]
-
-            p-4
-            lg:p-5
-            "
-          >
+          <div className="p-4">
 
             <AnimatePresence mode="wait">
 
@@ -305,21 +266,21 @@ export default function FloorPlans() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.25 }}
               >
 
                 {/* TOP */}
-                <div className="mb-4">
+                <div className="mb-3">
 
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-2 mb-1">
 
-                    <Sparkles className="w-4 h-4 text-[#d69073]" />
+                    <Sparkles className="w-3 h-3 text-[#d69073]" />
 
                     <p
                       className="
                       uppercase
-                      tracking-[0.22em]
-                      text-[9px]
+                      tracking-[0.18em]
+                      text-[8px]
                       text-[#b58671]
                       "
                       style={{
@@ -335,10 +296,10 @@ export default function FloorPlans() {
                   <h3
                     className="
                     text-[#111111]
-                    text-[28px]
-                    lg:text-[36px]
-                    leading-[0.95]
-                    tracking-[-1px]
+                    text-[26px]
+                    lg:text-[34px]
+
+                    leading-none
                     "
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
@@ -350,7 +311,7 @@ export default function FloorPlans() {
 
                 </div>
 
-                {/* IMAGE FRAME */}
+                {/* IMAGE */}
                 <div
                   onClick={() => setImageOpen(true)}
                   className="
@@ -363,8 +324,6 @@ export default function FloorPlans() {
 
                   p-3
 
-                  shadow-[0_20px_60px_rgba(0,0,0,0.08)]
-
                   cursor-pointer
                   group
                   "
@@ -376,9 +335,12 @@ export default function FloorPlans() {
                     className="
                     w-full
 
-                    rounded-[12px]
+                    max-h-[260px]
+                    lg:max-h-[340px]
 
-                    object-cover
+                    object-contain
+
+                    rounded-[12px]
 
                     transition-transform
                     duration-500
@@ -423,16 +385,16 @@ export default function FloorPlans() {
           >
 
             <motion.div
-              initial={{ scale: 0.95 }}
+              initial={{ scale: 0.96 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
+              exit={{ scale: 0.96 }}
               className="
               relative
 
-              max-w-6xl
+              max-w-5xl
               w-full
 
-              rounded-[22px]
+              rounded-[18px]
 
               overflow-hidden
 
@@ -448,8 +410,8 @@ export default function FloorPlans() {
                 right-4
                 z-20
 
-                w-10
-                h-10
+                w-9
+                h-9
 
                 rounded-full
 
@@ -461,7 +423,7 @@ export default function FloorPlans() {
                 justify-center
                 "
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
 
               <img
@@ -469,7 +431,7 @@ export default function FloorPlans() {
                 alt={active.title}
                 className="
                 w-full
-                max-h-[90vh]
+                max-h-[88vh]
 
                 object-contain
 

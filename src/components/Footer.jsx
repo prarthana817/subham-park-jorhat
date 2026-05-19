@@ -41,7 +41,7 @@ export default function Footer() {
         }}
       />
 
-      {/* BIG GLOW */}
+      {/* GLOW */}
       <div className="absolute top-[-120px] left-[5%] w-[320px] h-[320px] rounded-full bg-[#ff9b52]/35 blur-[120px]" />
 
       <div className="absolute bottom-[-120px] right-[8%] w-[320px] h-[320px] rounded-full bg-[#ff7b22]/25 blur-[120px]" />
@@ -67,29 +67,23 @@ export default function Footer() {
           items-center
           justify-between
 
-          gap-5
+          gap-6
           "
         >
           {/* LEFT */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
 
             {/* LOGO */}
             <div className="relative flex items-center justify-center">
 
-              {/* WHITE HOVER GLOW */}
               <div
                 className="
                 absolute
-
                 w-[95px]
                 h-[95px]
-
                 rounded-full
-
                 bg-white
-
                 opacity-90
-
                 blur-[38px]
                 "
               />
@@ -160,79 +154,100 @@ export default function Footer() {
             className="
             flex
             flex-col
-            lg:flex-row
+            sm:flex-row
 
             items-center
+            justify-center
 
-            gap-2
-            lg:gap-8
+            gap-8
+            lg:gap-14
 
             text-center
             "
           >
 
-            {/* ADDRESS */}
-            <div className="flex items-center gap-2 flex-wrap justify-center">
+            {/* SITE ADDRESS */}
+            <div>
 
               <h3
                 className="
                 text-[13px]
 
+                uppercase
+                tracking-[0.18em]
+
                 text-[#94481e]
+
+                mb-2
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
                   fontWeight: 700,
                 }}
               >
-                Project Address:
+                Site Address
               </h3>
 
               <p
                 className="
                 text-[13px]
+                lg:text-[14px]
 
                 text-[#3d2719]
+
+                leading-[1.8]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
                   fontWeight: 600,
                 }}
               >
-                Assam Trunk Road, Jorhat, Assam - 785001
+                Assam Trunk Road,
+                <br />
+                Jorhat, Assam - 785001
               </p>
 
             </div>
 
             {/* RERA */}
-            <div className="flex items-center gap-2 flex-wrap justify-center">
+            <div>
 
               <h4
                 className="
                 text-[13px]
 
+                uppercase
+                tracking-[0.18em]
+
                 text-[#94481e]
+
+                mb-2
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
                   fontWeight: 700,
                 }}
               >
-                RERA:
+                RERA Number
               </h4>
 
               <p
                 className="
                 text-[13px]
+                lg:text-[14px]
 
                 text-[#3d2719]
+
+                leading-[1.8]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
                   fontWeight: 600,
                 }}
               >
-                RERAA BO 167 of 2024-2025
+                RERAA BO 167
+                <br />
+                of 2024-2025
               </p>
 
             </div>

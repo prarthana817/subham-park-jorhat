@@ -156,138 +156,87 @@ export default function Amenities({ setOpen }) {
             />
           </div>
 
-          <div
-            className="
-            grid
-            lg:grid-cols-[1fr_0.9fr]
-            "
-          >
+          <div className="relative p-6 lg:p-10">
 
-            {/* LEFT */}
-            <div className="relative p-6 lg:p-10">
-
-              <p
-                className="
-                uppercase
-                tracking-[0.28em]
-
-                text-[10px]
-
-                text-[#c68463]
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 500,
-                }}
-              >
-                Premium Amenities
-              </p>
-
-              {/* HEADING */}
-              <h2
-                className="
-                mt-4
-
-                text-[#221d1a]
-                leading-[0.95]
-                tracking-[-1.5px]
-                "
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 500,
-                }}
-              >
-
-                <span className="block text-[44px] md:text-[54px] lg:text-[64px]">
-                  Aspirational
-                </span>
-
-                <span className="block text-[44px] md:text-[54px] lg:text-[64px]">
-                  Living In
-                </span>
-
-                {/* JORHAT */}
-                <div className="flex items-end gap-2 mt-1">
-
-                  <div
-                    className="
-                    flex
-                    items-end
-
-                    text-[44px]
-                    md:text-[54px]
-                    lg:text-[64px]
-
-                    leading-none
-
-                    tracking-[-2px]
-                    "
-                  >
-                    <span style={{ color: "#f08b57" }}>J</span>
-
-                    <span style={{ color: "#f4d8c7" }}>o</span>
-
-                    <span style={{ color: "#43d6cf" }}>r</span>
-
-                    <span style={{ color: "#f4d8c7" }}>h</span>
-
-                    <span style={{ color: "#f0b09a" }}>a</span>
-
-                    <span style={{ color: "#8fb8e6" }}>t</span>
-                  </div>
-
-                </div>
-
-              </h2>
-
-              <div
-                className="
-                mt-5
-
-                w-[70px]
-
-                h-[2px]
-
-                rounded-full
-
-                bg-[#43d6cf]
-                "
-              />
-            </div>
-
-            {/* RIGHT */}
-            <div
+            <p
               className="
-              relative
+              uppercase
+              tracking-[0.28em]
 
-              flex
-              flex-col
-              justify-center
+              text-[10px]
 
-              p-6
-              lg:p-10
+              text-[#c68463]
               "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 500,
+              }}
             >
+              Premium Amenities
+            </p>
+
+            {/* HEADING */}
+            <h2
+              className="
+              mt-4
+
+              text-[#221d1a]
+
+              text-[44px]
+              md:text-[58px]
+              lg:text-[72px]
+
+              leading-[0.92]
+              tracking-[-2px]
+
+              whitespace-nowrap
+              "
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 500,
+              }}
+            >
+              Aspirational Living In{" "}
+
+              <span className="inline-flex items-end tracking-[-3px]">
+
+                <span style={{ color: "#f08b57" }}>J</span>
+
+                <span style={{ color: "#f4d8c7" }}>o</span>
+
+                <span style={{ color: "#43d6cf" }}>r</span>
+
+                <span style={{ color: "#f4d8c7" }}>h</span>
+
+                <span style={{ color: "#f0b09a" }}>a</span>
+
+                <span style={{ color: "#8fb8e6" }}>t</span>
+
+              </span>
+
+            </h2>
+
+            {/* PARAGRAPH */}
+            <div className="mt-6 max-w-[760px]">
+
               <Leaf
                 className="
-                w-6
-                h-6
+                w-7
+                h-7
 
                 text-[#43d6cf]
+
+                mb-4
                 "
                 strokeWidth={1.8}
               />
 
               <p
                 className="
-                mt-4
+                text-[16px]
+                lg:text-[18px]
 
-                max-w-[480px]
-
-                text-[14px]
-                lg:text-[15px]
-
-                leading-[1.8]
+                leading-[1.9]
 
                 text-[#6c655f]
                 "
@@ -304,9 +253,7 @@ export default function Amenities({ setOpen }) {
               <button
                 onClick={() => setOpen(true)}
                 className="
-                mt-6
-
-                w-fit
+                mt-7
 
                 flex
                 items-center
@@ -339,6 +286,7 @@ export default function Amenities({ setOpen }) {
 
                 <ArrowUpRight size={15} />
               </button>
+
             </div>
 
           </div>
