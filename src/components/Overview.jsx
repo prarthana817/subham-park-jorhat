@@ -17,18 +17,62 @@ export default function Overview({ setOpen }) {
       className="
       relative
       overflow-hidden
-      bg-[#f7f5f1]
-      py-14
+      py-16
+      lg:py-20
+
+      bg-[#f8f4ef]
       "
     >
+
+      {/* GRID BG */}
       <div
         className="
+        absolute
+        inset-0
+        opacity-[0.04]
+        "
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: "65px 65px",
+        }}
+      />
+
+      {/* LEFT LINES */}
+      <div
+        className="
+        absolute
+        left-0
+        top-0
+        h-full
+        w-[240px]
+        opacity-[0.05]
+        "
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 8px)",
+        }}
+      />
+
+      {/* GLOW */}
+      <div className="absolute top-[-120px] left-[-120px] w-[300px] h-[300px] bg-[#d79a74]/10 blur-[120px] rounded-full" />
+
+      <div className="absolute bottom-[-120px] right-[-120px] w-[300px] h-[300px] bg-[#56bdb7]/10 blur-[120px] rounded-full" />
+
+      <div
+        className="
+        relative
+        z-10
+
         max-w-[1750px]
         mx-auto
         px-6
         lg:px-8
         "
       >
+
         <div
           className="
           grid
@@ -49,14 +93,14 @@ export default function Overview({ setOpen }) {
             {/* TOP TEXT */}
             <div className="flex items-center gap-4 mb-5">
 
-              <div className="w-[60px] h-[2px] bg-[#d97745]" />
+              <div className="w-[60px] h-[2px] bg-[#d79a74]" />
 
               <p
                 className="
                 uppercase
                 tracking-[0.35em]
                 text-[11px]
-                text-[#c56d3d]
+                text-[#b57a5a]
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
@@ -70,7 +114,7 @@ export default function Overview({ setOpen }) {
             {/* HEADING */}
             <h2
               className="
-              text-[#111111]
+              text-[#1f1f1f]
               text-[42px]
               lg:text-[58px]
               leading-[0.95]
@@ -82,34 +126,30 @@ export default function Overview({ setOpen }) {
                 fontWeight: 500,
               }}
             >
-              The{" "}
+              Elegant{" "}
 
               <span
                 className="
                 italic
-                bg-gradient-to-r
-                from-[#f7c58b]
-                via-[#d69073]
-                to-[#b86d4b]
-                bg-clip-text
-                text-transparent
+                text-[#d79a74]
                 "
               >
-                Luxury
+                Living
               </span>{" "}
 
-              Homes
+              Crafted
               <br />
 
-              You Deserve
+              For Modern
+              Homes
             </h2>
 
             {/* DESCRIPTION */}
             <p
               className="
               text-[15px]
-              leading-[1.8]
-              text-[#5a5a5a]
+              leading-[1.9]
+              text-[#655d57]
               max-w-[850px]
               mb-7
               "
@@ -118,11 +158,11 @@ export default function Overview({ setOpen }) {
                 fontWeight: 300,
               }}
             >
-              Experience thoughtfully designed living spaces at
-              Sonari Gaon where elegant architecture, spacious
-              layouts, greenery, and premium urban comfort come
-              together to create timeless homes for modern
-              families in the heart of Jorhat.
+              Experience thoughtfully designed living spaces
+              with elegant architecture, open green views,
+              refined interiors and premium urban comfort
+              crafted for families who value timeless design
+              and peaceful modern living.
             </p>
 
             {/* CTA BUTTON */}
@@ -135,18 +175,24 @@ export default function Overview({ setOpen }) {
               px-7
               py-4
               mb-8
-              bg-[#d69073]
-              hover:bg-[#c96b3c]
+
+              rounded-[14px]
+
+              bg-[#d79a74]
+              hover:bg-[#c68662]
+
               text-white
+
               uppercase
               tracking-[0.18em]
               text-[11px]
+
               transition-all
               duration-300
               "
               style={{
                 fontFamily: "'Raleway', sans-serif",
-                fontWeight: 600,
+                fontWeight: 700,
               }}
             >
               Schedule A Visit
@@ -159,233 +205,99 @@ export default function Overview({ setOpen }) {
               className="
               grid
               sm:grid-cols-2
-              gap-3
+              gap-4
               "
             >
 
-              {/* CARD */}
-              <div
-                className="
-                bg-white
-                rounded-[18px]
-                border
-                border-[#ece7df]
-                p-5
-                flex
-                items-start
-                gap-4
-                "
-              >
+              {[
+                {
+                  icon: <ShieldCheck size={20} color="#d79a74" />,
+                  title: "Earthquake Resistant",
+                  text: "RCC frame engineered",
+                },
+                {
+                  icon: <Zap size={20} color="#d79a74" />,
+                  title: "24×7 Power Backup",
+                  text: "Uninterrupted premium living",
+                },
+                {
+                  icon: <LockKeyhole size={20} color="#d79a74" />,
+                  title: "Smart Security",
+                  text: "Safe & secure community living",
+                },
+                {
+                  icon: <Droplets size={20} color="#d79a74" />,
+                  title: "Rainwater Harvesting",
+                  text: "Eco-friendly sustainable design",
+                },
+              ].map((item, index) => (
                 <div
+                  key={index}
                   className="
-                  w-[46px]
-                  h-[46px]
-                  rounded-[14px]
-                  bg-[#fff2ea]
+                  bg-white
+
+                  rounded-[22px]
+
+                  border
+                  border-[#eadfd7]
+
+                  p-5
+
                   flex
-                  items-center
-                  justify-center
+                  items-start
+                  gap-4
+
+                  shadow-[0_10px_30px_rgba(0,0,0,0.04)]
                   "
                 >
-                  <ShieldCheck size={20} color="#d97745" />
-                </div>
 
-                <div>
-                  <h4
+                  <div
                     className="
-                    text-[18px]
-                    text-[#111111]
-                    mb-1
-                    "
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Earthquake Resistant
-                  </h4>
+                    w-[46px]
+                    h-[46px]
 
-                  <p
-                    className="
-                    text-[13px]
-                    text-[#6a6a6a]
+                    rounded-[14px]
+
+                    bg-[#f5ebe5]
+
+                    flex
+                    items-center
+                    justify-center
                     "
-                    style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                    }}
                   >
-                    RCC frame engineered
-                  </p>
+                    {item.icon}
+                  </div>
+
+                  <div>
+                    <h4
+                      className="
+                      text-[18px]
+                      text-[#1f1f1f]
+                      mb-1
+                      "
+                      style={{
+                        fontFamily: "'Raleway', sans-serif",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {item.title}
+                    </h4>
+
+                    <p
+                      className="
+                      text-[13px]
+                      text-[#7a726c]
+                      "
+                      style={{
+                        fontFamily: "'Josefin Sans', sans-serif",
+                      }}
+                    >
+                      {item.text}
+                    </p>
+                  </div>
+
                 </div>
-              </div>
-
-              {/* CARD */}
-              <div
-                className="
-                bg-white
-                rounded-[18px]
-                border
-                border-[#ece7df]
-                p-5
-                flex
-                items-start
-                gap-4
-                "
-              >
-                <div
-                  className="
-                  w-[46px]
-                  h-[46px]
-                  rounded-[14px]
-                  bg-[#fff2ea]
-                  flex
-                  items-center
-                  justify-center
-                  "
-                >
-                  <Zap size={20} color="#d97745" />
-                </div>
-
-                <div>
-                  <h4
-                    className="
-                    text-[18px]
-                    text-[#111111]
-                    mb-1
-                    "
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    24×7 Power Backup
-                  </h4>
-
-                  <p
-                    className="
-                    text-[13px]
-                    text-[#6a6a6a]
-                    "
-                    style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                    }}
-                  >
-                    Uninterrupted premium living
-                  </p>
-                </div>
-              </div>
-
-              {/* CARD */}
-              <div
-                className="
-                bg-white
-                rounded-[18px]
-                border
-                border-[#ece7df]
-                p-5
-                flex
-                items-start
-                gap-4
-                "
-              >
-                <div
-                  className="
-                  w-[46px]
-                  h-[46px]
-                  rounded-[14px]
-                  bg-[#fff2ea]
-                  flex
-                  items-center
-                  justify-center
-                  "
-                >
-                  <LockKeyhole size={20} color="#d97745" />
-                </div>
-
-                <div>
-                  <h4
-                    className="
-                    text-[18px]
-                    text-[#111111]
-                    mb-1
-                    "
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Smart Security
-                  </h4>
-
-                  <p
-                    className="
-                    text-[13px]
-                    text-[#6a6a6a]
-                    "
-                    style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                    }}
-                  >
-                    Safe & secure community living
-                  </p>
-                </div>
-              </div>
-
-              {/* CARD */}
-              <div
-                className="
-                bg-white
-                rounded-[18px]
-                border
-                border-[#ece7df]
-                p-5
-                flex
-                items-start
-                gap-4
-                "
-              >
-                <div
-                  className="
-                  w-[46px]
-                  h-[46px]
-                  rounded-[14px]
-                  bg-[#fff2ea]
-                  flex
-                  items-center
-                  justify-center
-                  "
-                >
-                  <Droplets size={20} color="#d97745" />
-                </div>
-
-                <div>
-                  <h4
-                    className="
-                    text-[18px]
-                    text-[#111111]
-                    mb-1
-                    "
-                    style={{
-                      fontFamily: "'Raleway', sans-serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Rainwater Harvesting
-                  </h4>
-
-                  <p
-                    className="
-                    text-[13px]
-                    text-[#6a6a6a]
-                    "
-                    style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                    }}
-                  >
-                    Sustainable & eco-friendly design
-                  </p>
-                </div>
-              </div>
+              ))}
 
             </div>
           </motion.div>
@@ -403,11 +315,16 @@ export default function Overview({ setOpen }) {
             <div
               className="
               bg-white
-              rounded-[28px]
+
+              rounded-[30px]
+
               border
-              border-[#ece7df]
+              border-[#eadfd7]
+
               p-7
-              shadow-[0_10px_40px_rgba(0,0,0,0.04)]
+
+              shadow-[0_15px_50px_rgba(0,0,0,0.06)]
+
               mb-5
               "
             >
@@ -416,7 +333,7 @@ export default function Overview({ setOpen }) {
                 className="
                 text-[60px]
                 leading-none
-                text-[#f1c4aa]
+                text-[#d79a74]
                 mb-3
                 "
                 style={{
@@ -430,7 +347,9 @@ export default function Overview({ setOpen }) {
                 className="
                 text-[20px]
                 leading-[1.8]
-                text-[#1d1d1d]
+
+                text-[#1f1f1f]
+
                 italic
                 mb-6
                 "
@@ -438,9 +357,9 @@ export default function Overview({ setOpen }) {
                   fontFamily: "'Cormorant Garamond', serif",
                 }}
               >
-                Creating homes that blend elegance,
-                comfort, and timeless relationships for
-                modern families.
+                Creating elegant spaces that blend
+                luxury, comfort and timeless living
+                experiences for modern families.
               </p>
 
               {/* PROFILE */}
@@ -448,15 +367,20 @@ export default function Overview({ setOpen }) {
 
                 <div
                   className="
-                  w-[50px]
-                  h-[50px]
+                  w-[52px]
+                  h-[52px]
+
                   rounded-full
+
                   border
-                  border-[#d97745]
+                  border-[#d79a74]
+
                   flex
                   items-center
                   justify-center
-                  text-[#d97745]
+
+                  text-[#d79a74]
+
                   text-[20px]
                   "
                   style={{
@@ -471,7 +395,7 @@ export default function Overview({ setOpen }) {
                   <h4
                     className="
                     text-[18px]
-                    text-[#111111]
+                    text-[#1f1f1f]
                     "
                     style={{
                       fontFamily: "'Raleway', sans-serif",
@@ -484,7 +408,7 @@ export default function Overview({ setOpen }) {
                   <p
                     className="
                     text-[14px]
-                    text-[#666666]
+                    text-[#7a726c]
                     "
                     style={{
                       fontFamily: "'Josefin Sans', sans-serif",
@@ -499,6 +423,7 @@ export default function Overview({ setOpen }) {
             </div>
 
           </motion.div>
+
         </div>
       </div>
     </section>

@@ -20,28 +20,38 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-2 pt-2">
+    <header
+      className="
+      fixed
+      top-0
+      left-0
+      w-full
+      z-50
+
+      pt-2
+      "
+    >
       <nav
         className="
-        max-w-[1500px]
+        max-w-[1900px]
         mx-auto
-        h-[78px]
 
-        rounded-[22px]
+        h-[60px]
+        lg:h-[64px]
+
+        rounded-[0px]
+        lg:rounded-[0px]
 
         bg-gradient-to-r
         from-[#7d4328]
         via-[#9b5a39]
         to-[#7b4429]
 
-        border
-        border-[#c08a6b]/30
-
-        shadow-[0_10px_30px_rgba(74,35,18,0.35)]
+        shadow-[0_8px_24px_rgba(74,35,18,0.28)]
 
         backdrop-blur-xl
 
-        px-4
+        px-3
         lg:px-5
         "
       >
@@ -50,45 +60,47 @@ export default function Navbar() {
           {/* LEFT */}
           <div className="flex items-center shrink-0">
 
-            <div
+            <a
+              href="#home"
               className="
-              w-[68px]
-              h-[72px]
-
-              rounded-[18px]
-
-              bg-white/10
-
-              border
-              border-white/10
-
               flex
               items-center
               justify-center
 
-              overflow-hidden
+              w-[74px]
+              h-[74px]
 
-              shadow-[0_0_35px_rgba(255,255,255,0.10)]
+              transition-all
+              duration-300
+
+              hover:bg-white/10
+              rounded-full
               "
             >
               <img
                 src={logo}
                 alt="Subham Park"
-                className="w-[58px] h-[58px] object-contain scale-[1.35]"
+                className="
+                w-[72px]
+                h-[72px]
+
+                object-contain
+                scale-[1.55]
+                "
               />
-            </div>
+            </a>
 
           </div>
 
           {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6">
 
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className="
-                text-[11px]
+                text-[10px]
 
                 uppercase
 
@@ -105,7 +117,7 @@ export default function Navbar() {
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
+                  fontWeight: 500,
                 }}
               >
                 {link.name}
@@ -116,9 +128,9 @@ export default function Navbar() {
             <a
               href="#contact"
               className="
-              ml-1
+              ml-2
 
-              px-4
+              px-5
               py-[11px]
 
               rounded-[14px]
@@ -131,18 +143,16 @@ export default function Navbar() {
 
               uppercase
 
-              tracking-[0.15em]
+              tracking-[0.16em]
 
               flex
               items-center
-              gap-5
+              gap-4
 
               hover:scale-[1.02]
 
               transition-all
               duration-300
-
-              shadow-[0_10px_24px_rgba(255,255,255,0.16)]
 
               whitespace-nowrap
               "
@@ -153,7 +163,7 @@ export default function Navbar() {
             >
               Download Brochure
 
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={13} />
             </a>
 
           </div>
@@ -163,7 +173,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden text-white"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
 
         </div>
@@ -176,7 +186,7 @@ export default function Navbar() {
 
             mt-2
 
-            rounded-[20px]
+            rounded-[18px]
 
             bg-gradient-to-br
             from-[#8f4b2b]
@@ -191,7 +201,7 @@ export default function Navbar() {
 
             flex
             flex-col
-            gap-5
+            gap-4
             "
           >
             {navLinks.map((link) => (
@@ -206,7 +216,7 @@ export default function Navbar() {
 
                 tracking-[0.14em]
 
-                text-[13px]
+                text-[12px]
 
                 hover:text-[#ffe0cf]
 
@@ -232,11 +242,11 @@ export default function Navbar() {
 
               py-3
 
-              rounded-[16px]
+              rounded-[14px]
 
               uppercase
 
-              text-[11px]
+              text-[10px]
 
               tracking-[0.14em]
 
@@ -244,8 +254,6 @@ export default function Navbar() {
               items-center
               justify-center
               gap-2
-
-              shadow-[0_10px_20px_rgba(255,255,255,0.14)]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
@@ -254,7 +262,7 @@ export default function Navbar() {
             >
               Download Brochure
 
-              <ArrowUpRight size={15} />
+              <ArrowUpRight size={14} />
             </a>
           </div>
         )}

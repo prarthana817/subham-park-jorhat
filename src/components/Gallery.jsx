@@ -9,10 +9,7 @@ import gallery4 from "../assests/images/gallery-4.jpg";
 import gallery5 from "../assests/images/gallery-5.jpg";
 import gallery6 from "../assests/images/gallery-6.jpg";
 
-import {
-  ArrowUpRight,
-  Leaf,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const galleryImages = [
   {
@@ -55,25 +52,15 @@ export default function Gallery({ setOpen }) {
       relative
       overflow-hidden
 
-      py-14
-      lg:py-16
+      py-10
+      lg:py-12
 
       bg-gradient-to-br
-      from-[#b56f4e]
-      via-[#9c5e42]
-      to-[#7f4933]
+      from-[#bb7653]
+      via-[#a86547]
+      to-[#8a5238]
       "
     >
-
-      {/* TOP BORDER */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-[#d9b39d]/30" />
-
-      {/* TOP LEFT GLOW */}
-      <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-[#f0b08a]/20 blur-[120px] rounded-full" />
-
-      {/* BOTTOM RIGHT GLOW */}
-      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-[#5c2f20]/30 blur-[120px] rounded-full" />
-
       {/* GRID OVERLAY */}
       <div
         className="
@@ -90,14 +77,14 @@ export default function Gallery({ setOpen }) {
         }}
       />
 
-      {/* LEFT STRIP */}
+      {/* LEFT LINES */}
       <div
         className="
         absolute
         left-0
         top-0
         h-full
-        w-[85px]
+        w-[90px]
         opacity-[0.12]
         hidden lg:block
         "
@@ -107,164 +94,123 @@ export default function Gallery({ setOpen }) {
         }}
       />
 
-      <div className="relative z-10 max-w-[1450px] mx-auto px-4 lg:px-5">
+      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
 
         {/* TOP */}
-        <div
-          className="
-          flex
-          flex-col
-          lg:flex-row
-          lg:items-end
-          lg:justify-between
-          gap-8
-          mb-10
-          "
-        >
+        <div className="mb-8">
 
-          {/* LEFT */}
-          <div>
+          {/* LABEL */}
+          <div className="flex items-center gap-4 mb-4">
 
-            <div className="flex items-center gap-3">
-
-              <div className="w-10 h-[2px] bg-[#ffe1d1]" />
-
-              <p
-                className="
-                uppercase
-                tracking-[0.32em]
-                text-[11px]
-                text-[#fff2ea]
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
-                }}
-              >
-                Luxury Gallery
-              </p>
-
-            </div>
-
-            <h2
-              className="
-              mt-4
-
-              text-[42px]
-              md:text-[56px]
-              lg:text-[72px]
-
-              leading-[0.92]
-              tracking-[-2px]
-
-              text-white
-              "
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 500,
-              }}
-            >
-              Experience
-              <br />
-
-              Elevated
-              <br />
-
-              <span className="text-[#ffe1d1] italic">
-                Living
-              </span>
-
-            </h2>
-
-          </div>
-
-          {/* RIGHT */}
-          <div className="max-w-[470px] relative">
-
-            <Leaf
-              className="
-              absolute
-              -top-10
-              right-0
-
-              w-24
-              h-24
-
-              text-white/20
-              "
-              strokeWidth={1}
-            />
+            <div className="w-[55px] h-[2px] bg-[#ffe2d1]" />
 
             <p
               className="
-              text-[15px]
-              lg:text-[16px]
+              uppercase
+              tracking-[0.34em]
+              text-[10px]
+              text-[#fff3ea]
+              "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 600,
+              }}
+            >
+              Signature Spaces
+            </p>
+
+          </div>
+
+          {/* HEADING */}
+          <h2
+            className="
+            text-white
+
+            text-[42px]
+            md:text-[54px]
+            lg:text-[64px]
+
+            leading-[0.95]
+            tracking-[-2px]
+            "
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 500,
+            }}
+          >
+            Crafted{" "}
+
+            <span className="italic text-[#ffe2d1]">
+              Modern
+            </span>{" "}
+
+            Elegance
+          </h2>
+
+          {/* PARAGRAPH + BUTTON */}
+          <div className="mt-4 lg:ml-[260px]">
+
+            <p
+              className="
+              text-[14px]
+              lg:text-[15px]
 
               leading-[1.9]
 
-              text-white/80
+              text-white/90
 
-              relative
-              z-10
+              max-w-[980px]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
                 fontWeight: 300,
               }}
             >
-              Inspired by brochure aesthetics,
-              Subham Park blends luxury architecture,
-              green surroundings and refined lifestyle
-              experiences crafted for modern living.
+              Discover elegant architecture, serene green surroundings and beautifully curated spaces designed to elevate modern urban living with sophistication, comfort and timeless charm.
             </p>
 
-            {/* CTA BUTTON */}
+            {/* BUTTON */}
             <button
               onClick={() => setOpen(true)}
               className="
-              mt-7
+              mt-5
 
               flex
               items-center
               gap-3
 
-              px-6
+              px-7
               py-3.5
 
-              rounded-[14px]
+              rounded-[16px]
 
-              bg-[#d69073]
-              hover:bg-white/20
-
-              border
-              border-white/20
-
-              backdrop-blur-md
+              bg-[#dc9a79]
+              hover:bg-[#efb190]
 
               text-white
 
               uppercase
               tracking-[0.16em]
-              text-[11px]
+              text-[10px]
 
               transition-all
               duration-300
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 500,
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 700,
               }}
             >
-              Schedule Visit
+              Explore Lifestyle
 
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={15} />
             </button>
 
           </div>
 
         </div>
 
-        {/* GRID */}
+        {/* GALLERY GRID */}
         <div
           className="
           grid
@@ -275,7 +221,6 @@ export default function Gallery({ setOpen }) {
           gap-5
           "
         >
-
           {galleryImages.map((item, index) => (
             <motion.div
               key={index}
@@ -292,15 +237,12 @@ export default function Gallery({ setOpen }) {
 
               overflow-hidden
 
-              rounded-[24px]
+              rounded-[26px]
 
-              h-[260px]
+              h-[270px]
               lg:h-[340px]
-
-              bg-[#f3ede7]
               "
             >
-
               {/* IMAGE */}
               <img
                 src={item.img}
@@ -316,37 +258,21 @@ export default function Gallery({ setOpen }) {
 
                 transition-transform
                 duration-700
-                ease-out
 
                 group-hover:scale-105
                 "
               />
 
-              {/* DARK OVERLAY */}
+              {/* OVERLAY */}
               <div
                 className="
                 absolute
                 inset-0
 
                 bg-gradient-to-t
-                from-black/75
+                from-black/80
                 via-black/30
                 to-transparent
-                "
-              />
-
-              {/* EXTRA SHADOW */}
-              <div
-                className="
-                absolute
-                inset-0
-
-                bg-black/10
-
-                group-hover:bg-black/5
-
-                transition-all
-                duration-500
                 "
               />
 
@@ -363,28 +289,18 @@ export default function Gallery({ setOpen }) {
                 lg:p-7
                 "
               >
-
-                <div
-                  className="
-                  flex
-                  items-end
-                  justify-between
-                  gap-4
-                  "
-                >
+                <div className="flex items-end justify-between gap-4">
 
                   <div>
 
                     <h3
                       className="
                       text-[30px]
-                      lg:text-[36px]
+                      lg:text-[34px]
 
                       leading-[1]
 
                       text-white
-
-                      drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]
                       "
                       style={{
                         fontFamily: "'Cormorant Garamond', serif",
@@ -401,12 +317,12 @@ export default function Gallery({ setOpen }) {
                       w-[60px]
                       h-[2px]
 
-                      bg-[#ffe1d1]
+                      bg-[#ffe2d1]
 
                       transition-all
                       duration-500
 
-                      group-hover:w-[95px]
+                      group-hover:w-[90px]
                       "
                     />
 
@@ -421,9 +337,7 @@ export default function Gallery({ setOpen }) {
 
                       text-white/90
 
-                      max-w-[260px]
-
-                      drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]
+                      max-w-[250px]
                       "
                       style={{
                         fontFamily: "'Josefin Sans', sans-serif",
@@ -435,7 +349,6 @@ export default function Gallery({ setOpen }) {
 
                   </div>
 
-                  {/* ICON */}
                   <button
                     onClick={() => setOpen(true)}
                     className="
@@ -450,14 +363,13 @@ export default function Gallery({ setOpen }) {
 
                     rounded-full
 
+                    bg-white/10
+                    hover:bg-white/20
+
                     border
                     border-white/20
 
-                    bg-white/10
-
                     backdrop-blur-md
-
-                    hover:bg-white/20
 
                     transition-all
                     duration-300
@@ -472,11 +384,9 @@ export default function Gallery({ setOpen }) {
 
             </motion.div>
           ))}
-
         </div>
 
       </div>
-
     </section>
   );
 }

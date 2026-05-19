@@ -31,7 +31,7 @@ export default function FloorPlans() {
   return (
     <section
       id="planning"
-      className="relative overflow-hidden py-12 lg:py-16"
+      className="relative overflow-hidden py-10 lg:py-12"
       style={{
         background: `
           radial-gradient(circle at top left, rgba(214,144,115,0.08), transparent 24%),
@@ -47,7 +47,6 @@ export default function FloorPlans() {
         `,
       }}
     >
-
       {/* GRID */}
       <div
         className="absolute inset-0 opacity-[0.05]"
@@ -68,42 +67,42 @@ export default function FloorPlans() {
       <div className="relative z-10 max-w-[1450px] mx-auto px-4 lg:px-6">
 
         {/* HEADER */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
+        <div className="mb-8">
 
-          <div className="max-w-[720px]">
+          <div className="flex items-center gap-3 mb-4">
 
-            <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-[2px] bg-[#d69073]" />
 
-              <div className="w-10 h-[2px] bg-[#d69073]" />
+            <p
+              className="uppercase tracking-[0.32em] text-[10px] text-[#b58671]"
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 400,
+              }}
+            >
+              Premium Floor Layouts
+            </p>
 
-              <p
-                className="uppercase tracking-[0.32em] text-[10px] text-[#b58671]"
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
-                }}
-              >
-                Premium Floor Layouts
-              </p>
+          </div>
 
-            </div>
+          {/* HEADING */}
+          <div className="max-w-[1200px]">
 
-            {/* UPDATED HEADING */}
             <h2
               className="
               text-[#111111]
               text-[42px]
-              lg:text-[58px]
+              md:text-[54px]
+              lg:text-[64px]
               leading-[0.95]
               tracking-[-2px]
-              mb-5
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 500,
               }}
             >
-              Master{" "}
+              Elegant{" "}
 
               <span
                 className="
@@ -116,22 +115,32 @@ export default function FloorPlans() {
                 text-transparent
                 "
               >
-                Floor
+                Living
               </span>{" "}
 
-              Plans
+              Layouts
             </h2>
 
-          </div>
+            {/* CONTENT */}
+            <div className="mt-4 lg:ml-[250px] max-w-[900px]">
 
-          <div
-            className="lg:max-w-[360px] text-[#5f5953] text-[13px] leading-[1.7]"
-            style={{
-              fontFamily: "'Josefin Sans', sans-serif",
-              fontWeight: 300,
-            }}
-          >
-            Explore beautifully crafted residential layouts designed with functional luxury and refined architectural flow.
+              <p
+                className="
+                text-[#6b625d]
+                text-[14px]
+                lg:text-[15px]
+                leading-[1.9]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 300,
+                }}
+              >
+                Discover thoughtfully designed residential layouts with spacious planning, elegant interiors and seamless spatial flow crafted for refined modern living.
+              </p>
+
+            </div>
+
           </div>
 
         </div>
@@ -140,7 +149,7 @@ export default function FloorPlans() {
         <div
           className="
           grid
-          lg:grid-cols-[280px_1fr]
+          lg:grid-cols-[260px_1fr]
 
           overflow-hidden
 
@@ -181,8 +190,8 @@ export default function FloorPlans() {
 
                   mb-3
 
-                  px-5
-                  py-4
+                  px-4
+                  py-3.5
 
                   rounded-[18px]
 
@@ -213,7 +222,7 @@ export default function FloorPlans() {
 
                       <p
                         className={`
-                        text-[10px]
+                        text-[9px]
                         uppercase
                         tracking-[0.25em]
                         mb-2
@@ -235,7 +244,7 @@ export default function FloorPlans() {
                       <h3
                         className={`
                         capitalize
-                        text-[22px]
+                        text-[20px]
                         leading-none
 
                         ${
@@ -256,8 +265,8 @@ export default function FloorPlans() {
 
                     <ArrowRight
                       className={`
-                      w-5
-                      h-5
+                      w-4
+                      h-4
                       shrink-0
 
                       ${
@@ -285,7 +294,7 @@ export default function FloorPlans() {
             bg-[#f3eee8]
 
             p-4
-            lg:p-6
+            lg:p-5
             "
           >
 
@@ -300,7 +309,7 @@ export default function FloorPlans() {
               >
 
                 {/* TOP */}
-                <div className="mb-5">
+                <div className="mb-4">
 
                   <div className="flex items-center gap-2 mb-2">
 
@@ -310,7 +319,7 @@ export default function FloorPlans() {
                       className="
                       uppercase
                       tracking-[0.22em]
-                      text-[10px]
+                      text-[9px]
                       text-[#b58671]
                       "
                       style={{
@@ -326,8 +335,8 @@ export default function FloorPlans() {
                   <h3
                     className="
                     text-[#111111]
-                    text-[32px]
-                    lg:text-[42px]
+                    text-[28px]
+                    lg:text-[36px]
                     leading-[0.95]
                     tracking-[-1px]
                     "

@@ -1,15 +1,6 @@
 // src/components/Contact.jsx
 
-import {
-  Phone,
-  Mail,
-  MapPin,
-  ArrowUpRight,
-  School,
-  Hospital,
-  ShoppingBag,
-  Building2,
-} from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -18,7 +9,9 @@ export default function Contact() {
       className="
       relative
       overflow-hidden
-      py-16 lg:py-20
+
+      py-10
+      lg:py-12
 
       bg-gradient-to-br
       from-[#d79a74]
@@ -26,364 +19,54 @@ export default function Contact() {
       to-[#7a4b35]
       "
     >
+      {/* BG */}
+      <div className="absolute inset-0 bg-black/20" />
 
-      {/* TOP GLOW */}
-      <div className="absolute top-[-140px] right-[-120px] w-[340px] h-[340px] rounded-full bg-[#f3c2a4]/25 blur-[130px]" />
-
-      {/* BOTTOM GLOW */}
-      <div className="absolute bottom-[-160px] left-[-140px] w-[360px] h-[360px] rounded-full bg-[#5c3424]/35 blur-[130px]" />
-
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/10" />
-
-      {/* GRID */}
       <div
-        className="absolute inset-0 opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px)
+            linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
         }}
       />
 
-      {/* SIDE PATTERN */}
-      <div
-        className="absolute left-0 top-0 w-[70px] h-full opacity-[0.08]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(to right,rgba(255,255,255,0.3) 0px,rgba(255,255,255,0.3) 2px,transparent 2px,transparent 10px)",
-        }}
-      />
+      <div className="relative z-10 max-w-[1380px] mx-auto px-4">
 
-      <div className="relative z-10 max-w-[1280px] mx-auto px-4 lg:px-5">
-
-        {/* HEADER */}
-        <div className="mb-10 lg:mb-12">
-
-          <p
-            className="
-            text-[11px]
-            uppercase
-            tracking-[0.35em]
-            text-[#dffaf7]
-            mb-4
-            "
-            style={{
-              fontFamily: "'Raleway', sans-serif",
-            }}
-          >
-            CONTACT US
-          </p>
-
-          <div
-            className="
-            flex
-            flex-col
-            lg:flex-row
-            lg:items-end
-            lg:justify-between
-            gap-6
-            "
-          >
-
-            <h2
-              className="
-              text-[42px]
-              sm:text-[52px]
-              lg:text-[64px]
-
-              leading-[0.9]
-              tracking-[-2px]
-
-              text-white
-              "
-              style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontWeight: 400,
-              }}
-            >
-              Book A
-              <br />
-
-              <span className="text-[#f7f1e8]">
-                Site Visit
-              </span>
-
-            </h2>
-
-            <p
-              className="
-              max-w-[620px]
-
-              text-[15px]
-              lg:text-[16px]
-
-              leading-[1.9]
-
-              text-white/80
-              "
-              style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-              }}
-            >
-              Experience elegant urban living at Subham Park with
-              premium residences, modern amenities and excellent
-              connectivity across Jorhat.
-            </p>
-
-          </div>
-
-        </div>
-
-        {/* MAIN GRID */}
+        {/* MAIN */}
         <div
           className="
           grid
-          lg:grid-cols-2
+          lg:grid-cols-[0.95fr_0.85fr]
 
-          rounded-[28px]
-
-          border
-          border-[#ffffff20]
-
-          bg-[#fdfbf8]
+          rounded-[26px]
 
           overflow-hidden
 
-          shadow-[0_35px_90px_rgba(0,0,0,0.22)]
+          border
+          border-[#ffffff15]
+
+          bg-[#111111]/15
+
+          backdrop-blur-xl
+
+          shadow-[0_20px_60px_rgba(0,0,0,0.22)]
           "
         >
 
-          {/* LEFT SIDE — FORM */}
+          {/* LEFT */}
           <div
             className="
-            p-6
-            lg:p-8
-
-            bg-white
-
-            border-r
-            border-[#e4d8cf]
-            "
-          >
-
-            <p
-              className="
-              uppercase
-              tracking-[0.32em]
-
-              text-[10px]
-
-              text-[#56bdb7]
-
-              mb-3
-              "
-              style={{
-                fontFamily: "'Raleway', sans-serif",
-              }}
-            >
-              QUICK ENQUIRY
-            </p>
-
-            <h3
-              className="
-              text-[38px]
-              lg:text-[48px]
-
-              leading-[0.92]
-
-              text-[#1f1f1f]
-
-              mb-8
-              "
-              style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontWeight: 400,
-              }}
-            >
-              Get In Touch
-            </h3>
-
-            <div className="space-y-4">
-
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="
-                w-full
-
-                border
-                border-[#ead9cf]
-
-                bg-[#faf7f3]
-
-                rounded-[14px]
-
-                px-5
-                py-4
-
-                outline-none
-
-                text-[14px]
-
-                transition-all
-                duration-300
-
-                focus:border-[#d79a74]
-                focus:bg-white
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                }}
-              />
-
-              <input
-                type="text"
-                placeholder="Phone Number"
-                className="
-                w-full
-
-                border
-                border-[#ead9cf]
-
-                bg-[#faf7f3]
-
-                rounded-[14px]
-
-                px-5
-                py-4
-
-                outline-none
-
-                text-[14px]
-
-                transition-all
-                duration-300
-
-                focus:border-[#d79a74]
-                focus:bg-white
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                }}
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="
-                w-full
-
-                border
-                border-[#ead9cf]
-
-                bg-[#faf7f3]
-
-                rounded-[14px]
-
-                px-5
-                py-4
-
-                outline-none
-
-                text-[14px]
-
-                transition-all
-                duration-300
-
-                focus:border-[#d79a74]
-                focus:bg-white
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                }}
-              />
-
-              <textarea
-                rows="5"
-                placeholder="Write Your Message..."
-                className="
-                w-full
-
-                border
-                border-[#ead9cf]
-
-                bg-[#faf7f3]
-
-                rounded-[14px]
-
-                px-5
-                py-4
-
-                outline-none
-                resize-none
-
-                text-[14px]
-
-                transition-all
-                duration-300
-
-                focus:border-[#d79a74]
-                focus:bg-white
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                }}
-              />
-
-              <button
-                className="
-                w-full
-
-                flex
-                items-center
-                justify-center
-                gap-2
-
-                py-4
-
-                rounded-[14px]
-
-                bg-[#1f1f1f]
-                hover:bg-[#56bdb7]
-
-                text-white
-
-                uppercase
-                tracking-[0.18em]
-
-                text-[10px]
-
-                transition-all
-                duration-300
-                "
-                style={{
-                  fontFamily: "'Raleway', sans-serif",
-                }}
-              >
-                Send Enquiry
-
-                <ArrowUpRight className="w-4 h-4" />
-
-              </button>
-
-            </div>
-
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div
-            className="
-            p-6
-            lg:p-8
-
-            bg-[#fcfaf7]
+            p-5
+            lg:p-7
 
             flex
             flex-col
             justify-between
+
+            min-h-[520px]
             "
           >
 
@@ -392,246 +75,439 @@ export default function Contact() {
               <p
                 className="
                 uppercase
-                tracking-[0.32em]
+                tracking-[0.34em]
 
                 text-[10px]
 
-                text-[#56bdb7]
+                text-[#ffe2d1]
 
-                mb-3
+                mb-4
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 600,
                 }}
               >
-                LOCATION ADVANTAGES
+                PREMIUM LIVING
               </p>
 
-              <h3
+              <h2
                 className="
-                text-[38px]
-                lg:text-[48px]
+                text-white
+
+                text-[46px]
+                md:text-[58px]
+                lg:text-[68px]
 
                 leading-[0.92]
-
-                text-[#1f1f1f]
-
-                mb-5
+                tracking-[-2px]
                 "
                 style={{
-                  fontFamily: "'Cinzel Decorative', serif",
-                  fontWeight: 400,
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 500,
                 }}
               >
-                Connected
+                Your Dream
                 <br />
 
-                Urban Living
-              </h3>
+                <span className="text-[#ffe2d1]">
+                  Home
+                </span>
+
+                <br />
+
+                Awaits You
+              </h2>
 
               <p
                 className="
-                text-[15px]
+                mt-5
+
+                max-w-[520px]
+
+                text-[14px]
+                lg:text-[15px]
 
                 leading-[1.9]
 
-                text-[#645d57]
-
-                mb-8
+                text-white/80
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 400,
                 }}
               >
-                Strategically located near major city landmarks,
-                Subham Park offers excellent access to schools,
-                hospitals, shopping destinations and transport hubs.
+                Talk to our team today. We'll walk you through
+                unit selection, pricing, site visits and every
+                important detail.
               </p>
 
-              {/* FACILITIES */}
-              <div className="grid sm:grid-cols-2 gap-4">
+            </div>
 
-                {[
-                  {
-                    icon: School,
-                    title: "Education",
-                    text: "Nearby schools and colleges ensure excellent educational access.",
-                  },
-                  {
-                    icon: Hospital,
-                    title: "Hospitals",
-                    text: "Quick access to healthcare centers and emergency services.",
-                  },
-                  {
-                    icon: ShoppingBag,
-                    title: "Shopping",
-                    text: "Markets, malls and retail destinations are located nearby.",
-                  },
-                  {
-                    icon: Building2,
-                    title: "City Access",
-                    text: "Seamless connectivity to key business and commercial zones.",
-                  },
-                ].map((item, i) => {
-                  const Icon = item.icon;
+            {/* WHATSAPP */}
+            <div
+              className="
+              mt-6
 
-                  return (
-                    <div
-                      key={i}
-                      className="
-                      border
-                      border-[#ead9cf]
+              flex
+              items-center
+              gap-4
 
-                      bg-white
+              rounded-[20px]
 
-                      rounded-[18px]
+              border
+              border-[#ffffff12]
 
-                      p-5
+              bg-white/5
 
-                      flex
-                      items-start
-                      gap-4
-                      "
-                    >
+              p-4
+              "
+            >
 
-                      <div
-                        className="
-                        w-11
-                        h-11
+              <div
+                className="
+                w-12
+                h-12
 
-                        shrink-0
+                rounded-[14px]
 
-                        rounded-full
+                bg-[#ffffff10]
 
-                        flex
-                        items-center
-                        justify-center
+                flex
+                items-center
+                justify-center
+                "
+              >
+                <Phone className="w-5 h-5 text-[#ffe2d1]" />
+              </div>
 
-                        bg-[#e8f5f4]
-                        "
-                      >
-                        <Icon className="w-5 h-5 text-[#56bdb7]" />
-                      </div>
+              <div>
 
-                      <div>
+                <p
+                  className="
+                  uppercase
+                  tracking-[0.18em]
 
-                        <h4
-                          className="
-                          text-[18px]
-                          text-[#1f1f1f]
-                          mb-2
-                          "
-                          style={{
-                            fontFamily: "'Cinzel Decorative', serif",
-                          }}
-                        >
-                          {item.title}
-                        </h4>
+                  text-[10px]
 
-                        <p
-                          className="
-                          text-[13px]
-                          leading-[1.8]
-                          text-[#655d57]
-                          "
-                          style={{
-                            fontFamily: "'Josefin Sans', sans-serif",
-                          }}
-                        >
-                          {item.text}
-                        </p>
+                  text-white/50
 
-                      </div>
+                  mb-1
+                  "
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                    fontWeight: 700,
+                  }}
+                >
+                  Whatsapp
+                </p>
 
-                    </div>
-                  );
-                })}
+                <h3
+                  className="
+                  text-[24px]
+                  lg:text-[30px]
+
+                  text-white
+
+                  leading-none
+                  "
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 600,
+                  }}
+                >
+                  Chat With Us Now
+                </h3>
 
               </div>
 
             </div>
 
-            {/* CONTACT INFO */}
-            <div className="grid sm:grid-cols-3 gap-4 mt-8">
+          </div>
 
-              {[
-                {
-                  icon: Phone,
-                  label: "Call",
-                  value: "+91 98765 43210",
-                },
-                {
-                  icon: Mail,
-                  label: "Email",
-                  value: "sales@subhampark.com",
-                },
-                {
-                  icon: MapPin,
-                  label: "Address",
-                  value: "Assam Trunk Road, Jorhat",
-                },
-              ].map((item, i) => {
-                const Icon = item.icon;
+          {/* RIGHT */}
+          <div
+            className="
+            p-5
+            lg:p-7
 
-                return (
-                  <div
-                    key={i}
-                    className="
-                    border
-                    border-[#ead9cf]
+            bg-black/10
 
-                    bg-white
+            border-l
+            border-[#ffffff10]
+            "
+          >
 
-                    rounded-[18px]
+            <h3
+              className="
+              text-white
 
-                    p-5
-                    "
-                  >
+              text-[34px]
+              lg:text-[42px]
 
-                    <div className="flex items-center gap-2">
+              leading-[0.95]
 
-                      <Icon className="w-4 h-4 text-[#56bdb7]" />
+              mb-1
+              "
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 600,
+              }}
+            >
+              Book Site Visit
+            </h3>
 
-                      <span
-                        className="
-                        uppercase
-                        tracking-[0.2em]
+            <p
+              className="
+              text-[13px]
 
-                        text-[10px]
+              text-white/65
 
-                        text-[#8d8178]
-                        "
-                        style={{
-                          fontFamily: "'Raleway', sans-serif",
-                        }}
-                      >
-                        {item.label}
-                      </span>
+              mb-6
+              "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+              }}
+            >
+              Our team will reach out within 24 hours
+            </p>
 
-                    </div>
+            {/* FORM */}
+            <div className="grid md:grid-cols-2 gap-4">
 
-                    <p
-                      className="
-                      mt-3
+              <div>
 
-                      text-[14px]
+                <label
+                  className="
+                  block
 
-                      leading-[1.7]
+                  mb-2
 
-                      text-[#1f1f1f]
-                      "
-                      style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                      }}
-                    >
-                      {item.value}
-                    </p>
+                  text-[10px]
 
-                  </div>
-                );
-              })}
+                  uppercase
+                  tracking-[0.16em]
+
+                  text-white/70
+                  "
+                >
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="
+                  w-full
+
+                  h-[56px]
+
+                  px-4
+
+                  rounded-[14px]
+
+                  border
+                  border-[#ffffff15]
+
+                  bg-white/5
+
+                  text-white
+
+                  outline-none
+
+                  placeholder:text-white/30
+                  "
+                />
+
+              </div>
+
+              <div>
+
+                <label
+                  className="
+                  block
+
+                  mb-2
+
+                  text-[10px]
+
+                  uppercase
+                  tracking-[0.16em]
+
+                  text-white/70
+                  "
+                >
+                  Phone Number
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="+91..."
+                  className="
+                  w-full
+
+                  h-[56px]
+
+                  px-4
+
+                  rounded-[14px]
+
+                  border
+                  border-[#ffffff15]
+
+                  bg-white/5
+
+                  text-white
+
+                  outline-none
+
+                  placeholder:text-white/30
+                  "
+                />
+
+              </div>
 
             </div>
+
+            <div className="mt-4">
+
+              <label
+                className="
+                block
+
+                mb-2
+
+                text-[10px]
+
+                uppercase
+                tracking-[0.16em]
+
+                text-white/70
+                "
+              >
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="
+                w-full
+
+                h-[56px]
+
+                px-4
+
+                rounded-[14px]
+
+                border
+                border-[#ffffff15]
+
+                bg-white/5
+
+                text-white
+
+                outline-none
+
+                placeholder:text-white/30
+                "
+              />
+
+            </div>
+
+            <div className="mt-4">
+
+              <label
+                className="
+                block
+
+                mb-2
+
+                text-[10px]
+
+                uppercase
+                tracking-[0.16em]
+
+                text-white/70
+                "
+              >
+                Preferred Unit Type
+              </label>
+
+              <select
+                className="
+                w-full
+
+                h-[56px]
+
+                px-4
+
+                rounded-[14px]
+
+                border
+                border-[#ffffff15]
+
+                bg-white/5
+
+                text-white
+
+                outline-none
+                "
+              >
+                <option>2 BHK Smart — 800 sq.ft</option>
+                <option>3 BHK Premium — 1200 sq.ft</option>
+                <option>Luxury Penthouse</option>
+              </select>
+
+            </div>
+
+            <button
+              className="
+              mt-6
+
+              w-full
+
+              h-[60px]
+
+              rounded-[16px]
+
+              bg-[#ffe2d1]
+              hover:bg-white
+
+              text-[#111111]
+
+              uppercase
+              tracking-[0.14em]
+
+              text-[12px]
+
+              transition-all
+              duration-300
+              "
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+              Book Site Visit
+            </button>
+
+            <p
+              className="
+              mt-5
+
+              text-center
+
+              text-[12px]
+
+              text-white/45
+              "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+              }}
+            >
+              Your information is secure. We never share your data.
+            </p>
 
           </div>
 

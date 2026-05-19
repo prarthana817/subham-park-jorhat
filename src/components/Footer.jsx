@@ -1,12 +1,5 @@
 // src/components/Footer.jsx
 
-import {
-  Phone,
-  Mail,
-  MapPin,
-  ArrowUpRight,
-} from "lucide-react";
-
 import logo from "../assests/images/logo.png";
 
 export default function Footer() {
@@ -17,209 +10,56 @@ export default function Footer() {
       relative
       overflow-hidden
 
-      bg-gradient-to-br
-      from-[#8f4b2b]
-      via-[#a85b35]
-      to-[#6f371d]
+      bg-gradient-to-r
+      from-[#fff1e4]
+      via-[#ffbf8a]
+      to-[#f08a42]
 
-      py-8
+      py-4
+      lg:py-5
+
+      border-t
+      border-[#f2a56f]
       "
     >
-
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-[#3b1d10]/40" />
+      <div className="absolute inset-0 bg-white/10" />
 
-      {/* GLOW */}
-      <div className="absolute top-[-120px] left-[10%] w-[320px] h-[320px] rounded-full bg-[#ffffff]/10 blur-[130px]" />
+      {/* LEFT LINES */}
+      <div
+        className="
+        absolute
+        left-0
+        top-0
+        h-full
+        w-[140px]
+        opacity-[0.06]
+        "
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to right,#b96535 0px,#b96535 1px,transparent 1px,transparent 8px)",
+        }}
+      />
 
-      <div className="absolute bottom-[-120px] right-[10%] w-[320px] h-[320px] rounded-full bg-[#ffcfb4]/10 blur-[120px]" />
+      {/* BIG GLOW */}
+      <div className="absolute top-[-120px] left-[5%] w-[320px] h-[320px] rounded-full bg-[#ff9b52]/35 blur-[120px]" />
 
-      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-7">
+      <div className="absolute bottom-[-120px] right-[8%] w-[320px] h-[320px] rounded-full bg-[#ff7b22]/25 blur-[120px]" />
 
-        {/* TOP */}
+      <div
+        className="
+        relative
+        z-10
+
+        max-w-[1500px]
+        mx-auto
+
+        px-4
+        lg:px-6
+        "
+      >
         <div
           className="
-          grid
-          lg:grid-cols-[1fr_1fr_0.8fr]
-
-          items-center
-
-          gap-6
-
-          border-b
-          border-white/10
-
-          pb-6
-          "
-        >
-
-          {/* LEFT */}
-          <div className="flex items-center gap-4">
-
-            {/* LOGO WRAP */}
-            <div
-              className="
-              relative
-
-              flex
-              items-center
-              justify-center
-              "
-            >
-
-              {/* WHITE GLOW */}
-              <div
-                className="
-                absolute
-
-                w-[120px]
-                h-[120px]
-
-                rounded-full
-
-                bg-white/10
-
-                blur-[35px]
-                "
-              />
-
-              <img
-                src={logo}
-                alt="Subham Park"
-                className="relative z-10 w-[92px] lg:w-[105px]"
-              />
-
-            </div>
-
-            <div>
-
-              <h2
-                className="
-                text-[42px]
-                lg:text-[52px]
-
-                leading-[0.9]
-
-                text-white
-                "
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                }}
-              >
-                Subham
-                <br />
-                Park
-              </h2>
-
-              <p
-                className="
-                mt-1
-
-                uppercase
-
-                tracking-[0.32em]
-
-                text-[12px]
-
-                text-[#ffe7d8]
-                "
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
-                }}
-              >
-                Jorhat
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* CENTER */}
-          <div className="text-center">
-
-            <h3
-              className="
-              text-[20px]
-
-              text-[#fff0e6]
-
-              mb-2
-              "
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 600,
-              }}
-            >
-              Site Address
-            </h3>
-
-            <p
-              className="
-              text-[14px]
-              leading-[1.8]
-
-              text-[#fff6f0]
-              "
-              style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 300,
-              }}
-            >
-              Assam Trunk Road, Jorhat, Assam - 785001
-            </p>
-
-            <p
-              className="
-              mt-3
-
-              text-[13px]
-
-              text-[#ffe8da]
-              "
-              style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 500,
-              }}
-            >
-              RERA No. — 2026-2027
-            </p>
-
-          </div>
-
-          {/* RIGHT */}
-          <div className="lg:text-right">
-
-            <h2
-              className="
-              text-[46px]
-              lg:text-[58px]
-
-              leading-[0.88]
-
-              text-[#fff3eb]
-              "
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 500,
-                fontStyle: "italic",
-              }}
-            >
-              Luxury
-              <br />
-              Living
-            </h2>
-
-          </div>
-
-        </div>
-
-        {/* BOTTOM */}
-        <div
-          className="
-          pt-5
-
           flex
           flex-col
           lg:flex-row
@@ -230,168 +70,197 @@ export default function Footer() {
           gap-5
           "
         >
+          {/* LEFT */}
+          <div className="flex items-center gap-3">
 
-          {/* CONTACT */}
-          <div className="flex flex-wrap items-center gap-3">
+            {/* LOGO */}
+            <div className="relative flex items-center justify-center">
 
-            <div
-              className="
-              flex
-              items-center
-              gap-3
-
-              px-5
-              py-3
-
-              rounded-[18px]
-
-              bg-white/10
-              border
-              border-white/10
-              "
-            >
-
-              <Phone className="w-4 h-4 text-[#ffe3d3]" />
-
-              <span
-                className="text-[#fff6f0] text-[13px]"
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
-                }}
-              >
-                +91 98765 43210
-              </span>
-
-            </div>
-
-            <div
-              className="
-              flex
-              items-center
-              gap-3
-
-              px-5
-              py-3
-
-              rounded-[18px]
-
-              bg-white/10
-              border
-              border-white/10
-              "
-            >
-
-              <Mail className="w-4 h-4 text-[#ffe3d3]" />
-
-              <span
-                className="text-[#fff6f0] text-[13px]"
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
-                }}
-              >
-                sales@subhampark.com
-              </span>
-
-            </div>
-
-            <div
-              className="
-              flex
-              items-center
-              gap-3
-
-              px-5
-              py-3
-
-              rounded-[18px]
-
-              bg-white/10
-              border
-              border-white/10
-              "
-            >
-
-              <MapPin className="w-4 h-4 text-[#ffe3d3]" />
-
-              <span
-                className="text-[#fff6f0] text-[13px]"
-                style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
-                }}
-              >
-                Jorhat, Assam
-              </span>
-
-            </div>
-
-          </div>
-
-          {/* LINKS */}
-          <div className="flex items-center gap-5 flex-wrap justify-center">
-
-            {[
-              "Home",
-              "About",
-              "Gallery",
-              "Plans",
-              "Contact",
-            ].map((item, index) => (
-              <a
-                key={index}
-                href={`#${item.toLowerCase()}`}
+              {/* WHITE HOVER GLOW */}
+              <div
                 className="
-                flex
-                items-center
-                gap-2
+                absolute
 
-                text-[#fff0e7]
-                hover:text-white
+                w-[95px]
+                h-[95px]
 
-                transition-all
-                duration-300
+                rounded-full
+
+                bg-white
+
+                opacity-90
+
+                blur-[38px]
+                "
+              />
+
+              <img
+                src={logo}
+                alt="Subham Park"
+                className="
+                relative
+                z-10
+
+                w-[58px]
+                lg:w-[68px]
+
+                object-contain
+                "
+              />
+
+            </div>
+
+            {/* BRAND */}
+            <div>
+
+              <h2
+                className="
+                text-[20px]
+                lg:text-[24px]
+
+                leading-[0.95]
+
+                tracking-[0.04em]
+
+                text-[#3b2417]
+                "
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 700,
+                }}
+              >
+                SUBHAM PARK
+              </h2>
+
+              <p
+                className="
+                mt-[2px]
+
+                uppercase
+                tracking-[0.3em]
+
+                text-[9px]
+
+                text-[#8e4419]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
+                  fontWeight: 700,
                 }}
               >
+                JORHAT
+              </p>
 
-                <ArrowUpRight className="w-4 h-4" />
+            </div>
 
-                {item}
+          </div>
 
-              </a>
-            ))}
+          {/* CENTER */}
+          <div
+            className="
+            flex
+            flex-col
+            lg:flex-row
+
+            items-center
+
+            gap-2
+            lg:gap-8
+
+            text-center
+            "
+          >
+
+            {/* ADDRESS */}
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+
+              <h3
+                className="
+                text-[13px]
+
+                text-[#94481e]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                Project Address:
+              </h3>
+
+              <p
+                className="
+                text-[13px]
+
+                text-[#3d2719]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                Assam Trunk Road, Jorhat, Assam - 785001
+              </p>
+
+            </div>
+
+            {/* RERA */}
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+
+              <h4
+                className="
+                text-[13px]
+
+                text-[#94481e]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                RERA:
+              </h4>
+
+              <p
+                className="
+                text-[13px]
+
+                text-[#3d2719]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                RERAA BO 167 of 2024-2025
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT */}
+          <div className="text-center lg:text-right">
+
+            <p
+              className="
+              text-[12px]
+              lg:text-[13px]
+
+              text-[#42291a]
+              "
+              style={{
+                fontFamily: "'Josefin Sans', sans-serif",
+                fontWeight: 600,
+              }}
+            >
+              © 2025 Subham Group. All rights reserved.
+            </p>
 
           </div>
 
         </div>
-
-        {/* COPYRIGHT */}
-        <div className="pt-5 text-center">
-
-          <p
-            className="
-            text-[13px]
-
-            text-[#ffe8da]
-            "
-            style={{
-              fontFamily: "'Josefin Sans', sans-serif",
-              fontWeight: 300,
-            }}
-          >
-            © 2026 Subham Park. All Rights Reserved.
-          </p>
-
-        </div>
-
       </div>
-
     </footer>
   );
 }

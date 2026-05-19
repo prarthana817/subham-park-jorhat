@@ -1,7 +1,13 @@
 // src/components/Hero.jsx
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  ShieldCheck,
+  Zap,
+  LockKeyhole,
+  Droplets,
+} from "lucide-react";
 
 import heroBg from "../assests/images/hero-bg.jpg";
 
@@ -13,183 +19,213 @@ export default function Hero({ setOpen }) {
       relative
       overflow-hidden
 
-      bg-[#f5f1ec]
+      h-screen
 
       flex
       items-center
 
-      py-4
+      bg-[#f7f3ef]
+
+      pt-[82px]
+      pb-2
       "
     >
+      {/* GRID BG */}
+      <div
+        className="
+        absolute
+        inset-0
+        opacity-[0.035]
+        "
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
 
-      {/* GLOW */}
-      <div className="absolute top-[-120px] left-[-120px] w-[260px] h-[260px] bg-[#d69073]/10 blur-[120px] rounded-full" />
+      {/* LEFT LINE DESIGN */}
+      <div
+        className="
+        absolute
+        left-0
+        top-0
 
-      <div className="absolute bottom-[-120px] right-[-120px] w-[260px] h-[260px] bg-[#d69073]/10 blur-[120px] rounded-full" />
+        h-full
+        w-[90px]
+
+        opacity-[0.05]
+        "
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 8px)",
+        }}
+      />
 
       <div
         className="
-        max-w-[1750px]
+        relative
+        z-10
+
+        max-w-[1420px]
         mx-auto
 
         w-full
 
-        px-6
-        lg:px-8
+        px-4
+        lg:px-5
         "
       >
-
-        {/* GRID */}
+        {/* MAIN GRID */}
         <div
           className="
           grid
-          lg:grid-cols-[0.92fr_1.08fr]
+          lg:grid-cols-[0.88fr_1.12fr]
 
           items-center
 
-          gap-6
-
-          pt-[90px]
-          pb-2
+          gap-5
           "
         >
-
-          {/* LEFT */}
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10"
           >
-
-            {/* TOP TEXT */}
-            <div className="flex items-center gap-4 mb-4">
-
-              <div className="w-[55px] h-[2px] bg-[#d69073]" />
+            {/* TOP LABEL */}
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-[50px] h-[2px] bg-[#c7815f]" />
 
               <p
                 className="
                 uppercase
-                tracking-[0.35em]
+                tracking-[0.3em]
 
-                text-[11px]
+                text-[10px]
 
-                text-[#c1886d]
+                text-[#b16d4e]
                 "
                 style={{
                   fontFamily: "'Raleway', sans-serif",
                 }}
               >
-                Premium Living
+                Quiet Luxury Living
               </p>
-
             </div>
 
             {/* HEADING */}
             <h1
               className="
-              text-[#171b30]
+              text-[#171717]
 
-              text-[72px]
-              lg:text-[82px]
+              text-[46px]
+              md:text-[58px]
+              lg:text-[66px]
 
-              leading-[0.9]
-
+              leading-[0.88]
               tracking-[-2px]
 
-              mb-5
+              mb-3
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 500,
               }}
             >
+              Elevate{" "}
 
-              Discover
+              <span className="italic text-[#cf8b67]">
+                Your
+              </span>
 
               <br />
 
-              <span className="flex items-end gap-4">
-
-                <span>
-                  Your
-                </span>
-
-                <span
-                  className="
-                  italic
-                  text-[#d69073]
-
-                  text-[66px]
-                  lg:text-[76px]
-                  "
-                >
-                  Dream
-                </span>
-
-              </span>
-
+              Lifestyle
             </h1>
 
             {/* LINE */}
-            <div
-              className="
-              w-[330px]
-              h-[4px]
+            <div className="w-[160px] h-[2px] bg-[#cf8b67] mb-4" />
 
-              rounded-full
-
-              bg-[#d69073]
-
-              mb-8
-              "
-            />
-
-            {/* TEXT */}
+            {/* DESCRIPTION */}
             <p
               className="
-              max-w-[650px]
+              max-w-[500px]
 
-              text-[15px]
+              text-[13px]
+              lg:text-[14px]
 
-              leading-[1.9]
+              leading-[1.75]
 
-              text-[#2b2b2b]
+              text-[#5f5a56]
 
-              mb-8
+              mb-5
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 300,
               }}
             >
-              Experience refined luxury living at
-              Subham Park with elegant architecture,
-              peaceful surroundings and premium urban
-              comfort in the heart of Jorhat.
+              Experience premium residences surrounded by
+              greenery and thoughtfully crafted architecture
+              designed for elevated modern living in the heart
+              of Jorhat.
             </p>
 
             {/* BUTTONS */}
-            <div className="flex items-center gap-8">
-
-              {/* BTN */}
+            <div className="flex flex-wrap items-center gap-5 mb-5">
+              {/* PRIMARY BUTTON */}
               <button
                 onClick={() => setOpen(true)}
                 className="
-                h-[54px]
+                h-[46px]
 
-                px-9
+                px-7
 
-                bg-[#d69073]
+                rounded-full
+
+                bg-[#cf8b67]
+                hover:bg-[#bb7654]
 
                 text-white
 
                 uppercase
                 tracking-[0.18em]
 
-                text-[11px]
+                text-[10px]
 
-                hover:bg-[#bf7c5f]
+                transition-all
+                duration-300
+                "
+                style={{
+                  fontFamily: "'Raleway', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                Book A Site Visit
+              </button>
+
+              {/* SECONDARY BUTTON */}
+              <button
+                className="
+                flex
+                items-center
+                gap-3
+
+                border-b
+                border-[#cf8b67]
+
+                pb-2
+
+                text-[#b16d4e]
+
+                uppercase
+                tracking-[0.16em]
+
+                text-[10px]
+
+                hover:text-black
 
                 transition-all
                 duration-300
@@ -199,112 +235,137 @@ export default function Hero({ setOpen }) {
                   fontWeight: 600,
                 }}
               >
-                Book A Site Visit
-              </button>
-
-              {/* BTN */}
-              <button
-                className="
-                flex
-                items-center
-                gap-4
-
-                border-b
-                border-[#171b30]
-
-                pb-3
-
-                text-[#171b30]
-
-                uppercase
-                tracking-[0.18em]
-
-                text-[11px]
-
-                hover:text-[#d69073]
-
-                transition-all
-                duration-300
-                "
-                style={{
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 500,
-                }}
-              >
                 Explore Project
 
-                <ArrowRight size={16} />
+                <ArrowRight size={15} />
               </button>
-
             </div>
 
+            {/* FEATURES */}
+            <div
+              className="
+              grid
+              grid-cols-2
+
+              gap-3
+              "
+            >
+              {[
+                {
+                  icon: <ShieldCheck size={17} />,
+                  title: "Earthquake Resistant",
+                },
+                {
+                  icon: <Zap size={17} />,
+                  title: "24×7 Backup",
+                },
+                {
+                  icon: <LockKeyhole size={17} />,
+                  title: "Smart Security",
+                },
+                {
+                  icon: <Droplets size={17} />,
+                  title: "Eco Friendly",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="
+                  flex
+                  items-center
+                  gap-3
+
+                  bg-white/90
+
+                  rounded-[14px]
+
+                  px-4
+                  py-3
+                  "
+                >
+                  {/* ICON */}
+                  <div
+                    className="
+                    w-9
+                    h-9
+
+                    rounded-full
+
+                    bg-[#f5ebe4]
+
+                    flex
+                    items-center
+                    justify-center
+
+                    text-[#c7815f]
+                    "
+                  >
+                    {item.icon}
+                  </div>
+
+                  {/* TEXT */}
+                  <h4
+                    className="
+                    text-[12px]
+
+                    text-[#222]
+                    "
+                    style={{
+                      fontFamily: "'Raleway', sans-serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {item.title}
+                  </h4>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* RIGHT IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="relative"
           >
-
-            {/* IMAGE BOX */}
             <div
               className="
               relative
 
               overflow-hidden
 
-              h-[470px]
+              rounded-[28px]
 
-              rounded-tr-[50px]
-              rounded-bl-[50px]
+              h-[360px]
+              md:h-[430px]
+              lg:h-[500px]
+
+              w-full
               "
-              style={{
-                clipPath:
-                  "polygon(12% 0%,100% 0%,100% 84%,90% 100%,16% 100%,0% 86%,0% 14%)",
-                WebkitClipPath:
-                  "polygon(12% 0%,100% 0%,100% 84%,90% 100%,16% 100%,0% 86%,0% 14%)",
-              }}
             >
-
               {/* IMAGE */}
               <img
                 src={heroBg}
                 alt="Subham Park"
-                className="
-                absolute
-                inset-0
 
+                className="
                 w-full
                 h-full
 
                 object-cover
-                object-center
-                scale-[1.16]
+                object-top
+
+                scale-[0.94]
+                translate-y-[10px]
+
+                rounded-[28px]
                 "
               />
-
-              {/* OVERLAY */}
-              <div
-                className="
-                absolute
-                inset-0
-
-                bg-gradient-to-t
-                from-black/[0.04]
-                to-transparent
-                "
-              />
-
             </div>
-
           </motion.div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

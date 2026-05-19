@@ -172,7 +172,6 @@ export default function Amenities({ setOpen }) {
                 tracking-[0.28em]
 
                 text-[10px]
-                lg:text-[11px]
 
                 text-[#c68463]
                 "
@@ -199,34 +198,29 @@ export default function Amenities({ setOpen }) {
                 }}
               >
 
-                <span className="block text-[38px] sm:text-[52px] lg:text-[70px]">
+                <span className="block text-[44px] md:text-[54px] lg:text-[64px]">
                   Aspirational
                 </span>
 
-                <span className="block text-[38px] sm:text-[52px] lg:text-[70px]">
-                  Living
+                <span className="block text-[44px] md:text-[54px] lg:text-[64px]">
+                  Living In
                 </span>
 
                 {/* JORHAT */}
-                <div className="flex items-end gap-2 lg:gap-4 mt-1 lg:mt-2">
-
-                  <span className="text-[24px] sm:text-[30px] lg:text-[40px] text-[#1f1f1f]">
-                    In
-                  </span>
+                <div className="flex items-end gap-2 mt-1">
 
                   <div
                     className="
                     flex
                     items-end
 
-                    text-[40px]
-                    sm:text-[58px]
-                    lg:text-[78px]
+                    text-[44px]
+                    md:text-[54px]
+                    lg:text-[64px]
 
                     leading-none
 
                     tracking-[-2px]
-                    lg:tracking-[-4px]
                     "
                   >
                     <span style={{ color: "#f08b57" }}>J</span>
@@ -251,7 +245,6 @@ export default function Amenities({ setOpen }) {
                 mt-5
 
                 w-[70px]
-                lg:w-[90px]
 
                 h-[2px]
 
@@ -292,9 +285,9 @@ export default function Amenities({ setOpen }) {
                 max-w-[480px]
 
                 text-[14px]
-                lg:text-[16px]
+                lg:text-[15px]
 
-                leading-[1.9]
+                leading-[1.8]
 
                 text-[#6c655f]
                 "
@@ -333,7 +326,6 @@ export default function Amenities({ setOpen }) {
                 tracking-[0.16em]
 
                 text-[10px]
-                lg:text-[11px]
 
                 transition-all
                 duration-300
@@ -413,7 +405,7 @@ export default function Amenities({ setOpen }) {
                   top-4
                   right-4
 
-                  text-[20px]
+                  text-[18px]
 
                   text-[#d88963]
                   opacity-80
@@ -432,8 +424,8 @@ export default function Amenities({ setOpen }) {
                   relative
                   z-10
 
-                  w-[64px]
-                  h-[64px]
+                  w-[60px]
+                  h-[60px]
 
                   rounded-full
 
@@ -457,8 +449,8 @@ export default function Amenities({ setOpen }) {
 
                   <Icon
                     className="
-                    w-7
-                    h-7
+                    w-6
+                    h-6
 
                     text-[#43d6cf]
 
@@ -472,11 +464,11 @@ export default function Amenities({ setOpen }) {
                 </div>
 
                 {/* CONTENT */}
-                <div className="relative z-10 mt-6">
+                <div className="relative z-10 mt-5">
 
                   <h3
                     className="
-                    text-[26px]
+                    text-[24px]
 
                     leading-[1.08]
 
