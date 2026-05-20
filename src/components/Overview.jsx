@@ -147,7 +147,7 @@ export default function Overview({ setOpen }) {
             {/* DESCRIPTION */}
             <p
               className="
-              text-[15px]
+              text-[16px]
               leading-[1.9]
               text-[#655d57]
               max-w-[850px]

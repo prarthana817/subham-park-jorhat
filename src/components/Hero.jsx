@@ -154,8 +154,8 @@ export default function Hero({ setOpen }) {
               className="
               max-w-[500px]
 
-              text-[13px]
-              lg:text-[14px]
+              text-[16px]
+              lg:text-[18px]
 
               leading-[1.75]
 

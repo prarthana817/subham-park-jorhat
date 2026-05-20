@@ -152,8 +152,8 @@ export default function Gallery({ setOpen }) {
 
             <p
               className="
-              text-[15px]
-              lg:text-[16px]
+              text-[16px]
+              lg:text-[18px]
 
               leading-[1.9]
 
