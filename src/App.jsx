@@ -18,50 +18,50 @@ import StickyLeadForm from "./components/StickyLeadForm";
 
 function App() {
 
-  // POPUP STATE
+  
   const [open, setOpen] = useState(false);
 
   return (
     <div className="overflow-x-hidden bg-[#f5f1ec]">
 
-      {/* POPUP FORM */}
+      
       <PopupForm open={open} setOpen={setOpen} />
 
-      {/* NAVBAR */}
+      
       <Navbar setOpen={setOpen} />
 
-      {/* HERO */}
+      
       <Hero setOpen={setOpen} />
 
-      {/* STATS */}
+    
       <StatsBar />
 
-      {/* OVERVIEW */}
+      
       <Overview setOpen={setOpen} />
 
-      {/* AMENITIES */}
+      
       <Amenities setOpen={setOpen} />
 
 
-      {/* GALLERY */}
+      
       <Gallery setOpen={setOpen} />
 
-      {/* FLOOR PLANS */}
+      
       <Planning setOpen={setOpen} />
 
-      {/* LOCATION + CONTACT */}
+      
       <Contact setOpen={setOpen} />
 
-      {/* ABOUT */}
+      
       <Project setOpen={setOpen} />
 
-      {/* STICKY LEAD FORM */}
+      
       <StickyLeadForm setOpen={setOpen} />
 
-      {/* FOOTER */}
+      
       <Footer />
 
-      {/* MOBILE STICKY CTA */}
+      
       <div
         className="
         fixed
