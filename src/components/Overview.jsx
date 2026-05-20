@@ -24,7 +24,7 @@ export default function Overview({ setOpen }) {
       bg-[#f8f5ed]
       "
     >
-      {/* GRID */}
+      
       <div
         className="
         absolute
@@ -40,7 +40,7 @@ export default function Overview({ setOpen }) {
         }}
       />
 
-      {/* LEFT STRIPES */}
+      
       <div
         className="
         absolute
@@ -58,7 +58,7 @@ export default function Overview({ setOpen }) {
         }}
       />
 
-      {/* GLOW */}
+      
       <div className="absolute top-[-100px] left-[-100px] w-[260px] h-[260px] bg-[#d7b56d]/10 blur-[120px] rounded-full" />
 
       <div className="absolute bottom-[-100px] right-[-100px] w-[260px] h-[260px] bg-[#2143b5]/10 blur-[120px] rounded-full" />
@@ -86,14 +86,14 @@ export default function Overview({ setOpen }) {
           items-start
           "
         >
-          {/* LEFT */}
+          
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* LABEL */}
+            
             <div className="flex items-center gap-4 mb-6">
               <div className="w-[65px] h-[2px] bg-[#d1a54d]" />
 
@@ -116,7 +116,7 @@ export default function Overview({ setOpen }) {
               </p>
             </div>
 
-            {/* HEADING */}
+            
             <h2
               className="
               text-[#111111]
@@ -154,7 +154,7 @@ export default function Overview({ setOpen }) {
               Homes
             </h2>
 
-            {/* DESCRIPTION */}
+          
             <p
               className="
               text-[17px]
@@ -179,7 +179,7 @@ export default function Overview({ setOpen }) {
               and peaceful modern living.
             </p>
 
-            {/* BUTTON */}
+            
             <button
               onClick={() => setOpen(true)}
               className="
@@ -221,7 +221,7 @@ export default function Overview({ setOpen }) {
               <ArrowUpRight className="w-4 h-4" />
             </button>
 
-            {/* FEATURES */}
+            
             <div
               className="
               grid
@@ -332,7 +332,7 @@ export default function Overview({ setOpen }) {
             </div>
           </motion.div>
 
-          {/* RIGHT */}
+          
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -358,10 +358,10 @@ export default function Overview({ setOpen }) {
               overflow-hidden
               "
             >
-              {/* GLOW */}
+              
               <div className="absolute top-0 right-0 w-[160px] h-[160px] bg-[#2143b5]/5 blur-[90px] rounded-full" />
 
-              {/* QUOTE */}
+              
               <div
                 className="
                 text-[70px]
@@ -401,7 +401,7 @@ export default function Overview({ setOpen }) {
                 experiences for modern families.
               </p>
 
-              {/* PROFILE */}
+              
               <div className="flex items-center gap-4">
                 <div
                   className="

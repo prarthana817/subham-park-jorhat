@@ -73,7 +73,7 @@ export default function Navbar() {
       >
         <div className="flex items-center h-full">
 
-          {/* LEFT */}
+          
           <div className="flex items-center shrink-0 pr-1">
             <a
               href="#home"
@@ -106,7 +106,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* DESKTOP MENU */}
           <div
             className="
             hidden
@@ -154,7 +153,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* BUTTON */}
+          
           <div className="hidden lg:flex items-center ml-2">
             <a
               href="#contact"
@@ -200,7 +199,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* MOBILE BUTTON */}
+          
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="
@@ -215,7 +214,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* MOBILE MENU */}
+        
         {isOpen && (
           <div
             className="

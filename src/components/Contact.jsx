@@ -18,7 +18,7 @@ export default function Contact() {
       bg-[#f6f0e4]
       "
     >
-      {/* GRID BG */}
+      
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -30,12 +30,12 @@ export default function Contact() {
         }}
       />
 
-      {/* SOFT GLOW */}
+      
       <div className="absolute top-[-120px] left-[-120px] w-[280px] h-[280px] bg-[#2143b5]/5 blur-[120px] rounded-full" />
 
       <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-5">
 
-        {/* MAIN */}
+        
         <div
           className="
           grid
@@ -54,7 +54,7 @@ export default function Contact() {
           "
         >
 
-          {/* LEFT */}
+          
           <div
             className="
             p-6
@@ -139,7 +139,7 @@ export default function Contact() {
 
             </div>
 
-            {/* LOCATION CARD */}
+            
             <div
               className="
               mt-7
@@ -157,7 +157,7 @@ export default function Contact() {
               "
             >
 
-              {/* IMAGE */}
+              
               <div className="relative h-[180px] md:h-[210px]">
 
                 <img
@@ -231,7 +231,7 @@ export default function Contact() {
 
           </div>
 
-          {/* RIGHT */}
+          
           <div
             className="
             p-6
@@ -287,7 +287,7 @@ export default function Contact() {
               Our team will contact you shortly
             </p>
 
-            {/* FORM */}
+            
             <div className="grid md:grid-cols-2 gap-4">
 
               <div>

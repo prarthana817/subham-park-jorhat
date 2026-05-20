@@ -41,7 +41,7 @@ export default function FloorPlans() {
       bg-[#14234b]
       "
     >
-      {/* GRID */}
+      
       <div
         className="absolute inset-0 opacity-[0.035]"
         style={{
@@ -53,15 +53,15 @@ export default function FloorPlans() {
         }}
       />
 
-      {/* GLOW */}
+      
       <div className="absolute top-[-120px] right-[-120px] w-[280px] h-[280px] bg-[#efe4cd]/10 blur-[120px] rounded-full" />
 
       <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
 
-        {/* HEADER */}
+        
         <div className="mb-10 lg:mb-12">
 
-          {/* LABEL */}
+          
           <div className="flex items-center gap-4 mb-5">
 
             <div className="w-[65px] h-[2px] bg-[#e8d9bb]" />
@@ -86,7 +86,7 @@ export default function FloorPlans() {
 
           </div>
 
-          {/* HEADING */}
+          
           <h2
             className="
             text-white
@@ -119,7 +119,7 @@ export default function FloorPlans() {
             Layouts
           </h2>
 
-          {/* TEXT */}
+          
           <p
             className="
             mt-5
@@ -146,7 +146,7 @@ export default function FloorPlans() {
 
         </div>
 
-        {/* MAIN BOX */}
+        
         <div
           className="
           relative
@@ -164,7 +164,7 @@ export default function FloorPlans() {
           "
         >
 
-          {/* INNER LINES */}
+          
           <div
             className="
             absolute
@@ -296,7 +296,7 @@ export default function FloorPlans() {
 
             </div>
 
-            {/* IMAGE BOX */}
+            
             <div
               className="
               bg-[#fbf6ec]
@@ -324,7 +324,7 @@ export default function FloorPlans() {
                     transition={{ duration: 0.25 }}
                   >
 
-                    {/* TOP */}
+                    
                     <div className="mb-5">
 
                       <div className="flex items-center gap-2 mb-2">
@@ -371,7 +371,7 @@ export default function FloorPlans() {
 
                     </div>
 
-                    {/* IMAGE */}
+                    
                     <div
                       onClick={() => setImageOpen(true)}
                       className="
@@ -431,7 +431,7 @@ export default function FloorPlans() {
 
       </div>
 
-      {/* MODAL */}
+      
       <AnimatePresence>
 
         {imageOpen && (

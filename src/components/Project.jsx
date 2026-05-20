@@ -134,7 +134,7 @@ export default function ProjectOverview() {
 
       <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-6">
 
-        {/* HEADING */}
+        
         <div className="mb-12 lg:mb-14">
 
           <p
@@ -226,7 +226,7 @@ export default function ProjectOverview() {
 
         </div>
 
-        {/* TOP BUTTONS */}
+        
         <div
           className="
           flex
@@ -334,7 +334,7 @@ export default function ProjectOverview() {
           })}
         </div>
 
-        {/* CONTENT BOX */}
+        
         <div
           className="
           relative
@@ -355,7 +355,7 @@ export default function ProjectOverview() {
           "
         >
 
-          {/* INNER GRID */}
+          
           <div
             className="
             absolute
@@ -429,7 +429,7 @@ export default function ProjectOverview() {
               {current.description}
             </p>
 
-            {/* PROJECT LIST */}
+            
             <div
               className="
               grid
@@ -488,7 +488,7 @@ export default function ProjectOverview() {
               ))}
             </div>
 
-            {/* HIGHLIGHTS */}
+            
             <div
               className="
               grid

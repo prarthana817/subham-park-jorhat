@@ -58,7 +58,7 @@ export default function Gallery({ setOpen }) {
       bg-[#f8f5ed]
       "
     >
-      {/* GRID BG */}
+      
       <div
         className="
         absolute
@@ -74,7 +74,7 @@ export default function Gallery({ setOpen }) {
         }}
       />
 
-      {/* LEFT LINES */}
+      
       <div
         className="
         absolute
@@ -94,13 +94,13 @@ export default function Gallery({ setOpen }) {
         }}
       />
 
-      {/* GLOW */}
+      
       <div className="absolute top-[-120px] right-[-120px] w-[260px] h-[260px] bg-[#2143b5]/5 blur-[120px] rounded-full" />
 
       <div className="relative z-10 max-w-[1700px] mx-auto px-5 lg:px-8">
-        {/* TOP */}
+        
         <div className="mb-10 lg:mb-14">
-          {/* LABEL */}
+          
           <div className="flex items-center gap-4 mb-5">
             <div className="w-[60px] h-[2px] bg-[#d1a54d]" />
 
@@ -123,7 +123,7 @@ export default function Gallery({ setOpen }) {
             </p>
           </div>
 
-          {/* HEADING */}
+          
           <h2
             className="
             text-[#111111]
@@ -152,7 +152,7 @@ export default function Gallery({ setOpen }) {
             Elegance
           </h2>
 
-          {/* PARAGRAPH */}
+          
           <div className="mt-6 max-w-[820px]">
             <p
               className="
@@ -173,7 +173,7 @@ export default function Gallery({ setOpen }) {
               sophistication, comfort and timeless charm.
             </p>
 
-            {/* BUTTON */}
+            
             <button
               onClick={() => setOpen(true)}
               className="
@@ -219,7 +219,7 @@ export default function Gallery({ setOpen }) {
           </div>
         </div>
 
-        {/* GALLERY GRID */}
+      
         <div
           className="
           grid
@@ -261,7 +261,7 @@ export default function Gallery({ setOpen }) {
               bg-white
               "
             >
-              {/* IMAGE */}
+              
               <img
                 src={item.img}
                 alt={item.title}
@@ -281,7 +281,7 @@ export default function Gallery({ setOpen }) {
                 "
               />
 
-              {/* OVERLAY */}
+              
               <div
                 className="
                 absolute
@@ -294,7 +294,7 @@ export default function Gallery({ setOpen }) {
                 "
               />
 
-              {/* CONTENT */}
+              
               <div
                 className="
                 absolute
@@ -327,7 +327,7 @@ export default function Gallery({ setOpen }) {
                       {item.title}
                     </h3>
 
-                    {/* LINE */}
+                    
                     <div
                       className="
                       mt-4
@@ -366,7 +366,7 @@ export default function Gallery({ setOpen }) {
                     </p>
                   </div>
 
-                  {/* BUTTON */}
+                  
                   <button
                     onClick={() => setOpen(true)}
                     className="
@@ -398,7 +398,7 @@ export default function Gallery({ setOpen }) {
                 </div>
               </div>
 
-              {/* SOFT GLOW */}
+              
               <div
                 className="
                 absolute

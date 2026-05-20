@@ -24,7 +24,7 @@ export default function PopupForm({ open, setOpen }) {
       "
     >
 
-      {/* POPUP */}
+      
       <div
         className="
         relative
@@ -45,12 +45,12 @@ export default function PopupForm({ open, setOpen }) {
         "
       >
 
-        {/* GLOW */}
+        
         <div className="absolute top-[-100px] left-[-100px] w-[220px] h-[220px] bg-[#d79a74]/10 blur-[100px] rounded-full" />
 
         <div className="absolute bottom-[-100px] right-[-100px] w-[220px] h-[220px] bg-[#d79a74]/10 blur-[100px] rounded-full" />
 
-        {/* CLOSE */}
+        
         <button
           onClick={() => setOpen(false)}
           className="
@@ -84,10 +84,10 @@ export default function PopupForm({ open, setOpen }) {
           <X size={22} />
         </button>
 
-        {/* CONTENT */}
+        
         <div className="relative z-10 p-6 lg:p-7">
 
-          {/* TOP */}
+          
           <div className="text-center mb-7">
 
             <p
@@ -133,10 +133,10 @@ export default function PopupForm({ open, setOpen }) {
 
           </div>
 
-          {/* FORM */}
+          
           <div className="space-y-4">
 
-            {/* NAME */}
+            
             <input
               type="text"
               placeholder="Full Name"
@@ -170,7 +170,7 @@ export default function PopupForm({ open, setOpen }) {
               }}
             />
 
-            {/* PHONE + EMAIL */}
+            
             <div className="grid md:grid-cols-2 gap-4">
 
               <input
@@ -241,10 +241,10 @@ export default function PopupForm({ open, setOpen }) {
 
             </div>
 
-            {/* SELECTS */}
+            
             <div className="grid md:grid-cols-2 gap-4">
 
-              {/* BHK */}
+              
               <div className="relative">
 
                 <select
@@ -299,7 +299,7 @@ export default function PopupForm({ open, setOpen }) {
 
               </div>
 
-              {/* LOCATION */}
+              
               <div className="relative">
 
                 <select
@@ -356,7 +356,7 @@ export default function PopupForm({ open, setOpen }) {
 
             </div>
 
-            {/* BUTTON */}
+            
             <button
               className="
               w-full

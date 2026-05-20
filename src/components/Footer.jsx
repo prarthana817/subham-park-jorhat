@@ -22,10 +22,10 @@ export default function Footer() {
       border-[#efe2d3]
       "
     >
-      {/* OVERLAY */}
+      
       <div className="absolute inset-0 bg-white/25" />
 
-      {/* LEFT LINES */}
+      
       <div
         className="
         absolute
@@ -41,7 +41,7 @@ export default function Footer() {
         }}
       />
 
-      {/* SOFT GLOW */}
+      
       <div className="absolute top-[-120px] left-[5%] w-[280px] h-[280px] rounded-full bg-[#ffffff]/50 blur-[120px]" />
 
       <div className="absolute bottom-[-120px] right-[8%] w-[280px] h-[280px] rounded-full bg-[#f4e4cf]/60 blur-[120px]" />
@@ -71,10 +71,10 @@ export default function Footer() {
           lg:gap-4
           "
         >
-          {/* LEFT */}
+          
           <div className="flex items-center gap-4">
 
-            {/* LOGO */}
+            
             <div className="relative flex items-center justify-center">
 
               <div
@@ -106,7 +106,7 @@ export default function Footer() {
 
             </div>
 
-            {/* BRAND */}
+            
             <div>
 
               <h2
@@ -153,7 +153,7 @@ export default function Footer() {
 
           </div>
 
-          {/* CENTER */}
+          
           <div
             className="
             flex
@@ -171,7 +171,7 @@ export default function Footer() {
             "
           >
 
-            {/* SITE ADDRESS */}
+          
             <div>
 
               <h3
@@ -214,7 +214,7 @@ export default function Footer() {
 
             </div>
 
-            {/* RERA */}
+            
             <div>
 
               <h4
@@ -259,7 +259,7 @@ export default function Footer() {
 
           </div>
 
-          {/* RIGHT */}
+          
           <div className="text-center lg:text-right">
 
             <p

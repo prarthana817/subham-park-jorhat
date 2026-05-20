@@ -57,7 +57,7 @@ export default function StatsBar() {
         border-[#e6d2a4]
         "
       >
-        {/* OVERLAY */}
+        
         <div
           className="
           absolute
@@ -71,7 +71,7 @@ export default function StatsBar() {
           "
         />
 
-        {/* CONTENT */}
+        
         <motion.div
           animate={{
             x: ["0%", "-50%"],
@@ -106,7 +106,7 @@ export default function StatsBar() {
                 border-white/15
                 "
               >
-                {/* ICON */}
+                
                 <div
                   className="
                   w-10
@@ -127,7 +127,7 @@ export default function StatsBar() {
                   <Icon className="w-[16px] h-[16px] text-white" />
                 </div>
 
-                {/* TEXT */}
+                
                 <div className="flex items-end gap-2.5">
                   <h3
                     className="

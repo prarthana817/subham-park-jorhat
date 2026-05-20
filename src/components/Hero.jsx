@@ -31,7 +31,7 @@ export default function Hero({ setOpen }) {
       pb-10
       "
     >
-      {/* GRID */}
+      
       <div
         className="
         absolute
@@ -47,7 +47,7 @@ export default function Hero({ setOpen }) {
         }}
       />
 
-      {/* LEFT LINES */}
+      
       <div
         className="
         absolute
@@ -90,13 +90,13 @@ export default function Hero({ setOpen }) {
           lg:gap-8
           "
         >
-          {/* LEFT */}
+          
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* TOP LABEL */}
+            
             <div className="flex items-center gap-3 mb-4">
               <div className="w-[54px] h-[2px] bg-[#d1a54d]" />
 
@@ -119,7 +119,7 @@ export default function Hero({ setOpen }) {
               </p>
             </div>
 
-            {/* HEADING */}
+            
             <h1
               className="
               text-[#111111]
@@ -150,10 +150,10 @@ export default function Hero({ setOpen }) {
               Lifestyle
             </h1>
 
-            {/* LINE */}
+            
             <div className="w-[150px] h-[2px] bg-[#d1a54d] mb-5" />
 
-            {/* DESCRIPTION */}
+            
             <p
               className="
               max-w-[520px]
@@ -177,9 +177,9 @@ export default function Hero({ setOpen }) {
               of Jorhat.
             </p>
 
-            {/* BUTTONS */}
+            
             <div className="flex flex-wrap items-center gap-5 mb-7">
-              {/* PRIMARY */}
+              
               <button
                 onClick={() => setOpen(true)}
                 className="
@@ -215,7 +215,7 @@ export default function Hero({ setOpen }) {
                 Book A Site Visit
               </button>
 
-              {/* SECONDARY */}
+              
               <button
                 className="
                 flex
@@ -251,7 +251,7 @@ export default function Hero({ setOpen }) {
               </button>
             </div>
 
-            {/* FEATURES */}
+            
             <div
               className="
               grid
@@ -299,7 +299,7 @@ export default function Hero({ setOpen }) {
                   shadow-[0_8px_25px_rgba(0,0,0,0.03)]
                   "
                 >
-                  {/* ICON */}
+                  
                   <div
                     className="
                     w-10
@@ -338,7 +338,7 @@ export default function Hero({ setOpen }) {
             </div>
           </motion.div>
 
-          {/* RIGHT IMAGE */}
+          
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}

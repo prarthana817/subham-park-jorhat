@@ -84,7 +84,7 @@ export default function Amenities({ setOpen }) {
       bg-[#14234b]
       "
     >
-      {/* GRID OVERLAY */}
+      
       <div
         className="
         absolute
@@ -100,12 +100,12 @@ export default function Amenities({ setOpen }) {
         }}
       />
 
-      {/* TOP GLOW */}
+      
       <div className="absolute top-[-140px] left-[-120px] w-[320px] h-[320px] bg-[#f8f5ed]/20 blur-[130px] rounded-full" />
 
       <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
 
-        {/* TOP SECTION */}
+        
         <div
           className="
           relative
@@ -126,7 +126,7 @@ export default function Amenities({ setOpen }) {
           "
         >
 
-          {/* INNER LINES */}
+          
           <div
             className="
             absolute
@@ -164,7 +164,7 @@ export default function Amenities({ setOpen }) {
 
           <div className="relative p-7 md:p-10 lg:p-14">
 
-            {/* LABEL */}
+            
             <div className="flex items-center gap-4 mb-5">
 
               <div className="w-[70px] h-[2px] bg-[#14234b]" />
@@ -189,7 +189,7 @@ export default function Amenities({ setOpen }) {
 
             </div>
 
-            {/* HEADING */}
+            
             <h2
               className="
               text-[#111111]
@@ -228,7 +228,7 @@ export default function Amenities({ setOpen }) {
 
             </h2>
 
-            {/* DESCRIPTION */}
+            
             <div className="mt-7 max-w-[760px]">
 
               <Leaf
@@ -262,7 +262,7 @@ export default function Amenities({ setOpen }) {
                 experiences for elegant living in Jorhat.
               </p>
 
-              {/* BUTTON */}
+              
               <button
                 onClick={() => setOpen(true)}
                 className="
@@ -310,7 +310,7 @@ export default function Amenities({ setOpen }) {
 
         </div>
 
-        {/* CARDS */}
+        
         <div
           className="
           grid
@@ -366,7 +366,7 @@ export default function Amenities({ setOpen }) {
                 "
               >
 
-                {/* NUMBER */}
+                
                 <div
                   className="
                   absolute
@@ -392,7 +392,7 @@ export default function Amenities({ setOpen }) {
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                {/* ICON */}
+                
                 <div
                   className="
                   w-[62px]
@@ -432,7 +432,7 @@ export default function Amenities({ setOpen }) {
 
                 </div>
 
-                {/* CONTENT */}
+                
                 <div className="mt-6">
 
                   <h3

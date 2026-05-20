@@ -84,7 +84,7 @@ export default function StickyLeadForm() {
         "
       >
 
-        {/* SITE VISIT */}
+        
         <button
           className="
           flex
@@ -117,7 +117,7 @@ export default function StickyLeadForm() {
           Site Visit
         </button>
 
-        {/* NAME */}
+        
         <input
           type="text"
           placeholder="Name"
@@ -148,7 +148,7 @@ export default function StickyLeadForm() {
           }}
         />
 
-        {/* PHONE */}
+        
         <input
           type="text"
           placeholder="Phone"
@@ -179,7 +179,7 @@ export default function StickyLeadForm() {
           }}
         />
 
-        {/* EMAIL */}
+        
         <input
           type="email"
           placeholder="Email"
@@ -210,7 +210,7 @@ export default function StickyLeadForm() {
           }}
         />
 
-        {/* BHK */}
+        
         <select
           className="
           w-[92px]
@@ -242,7 +242,7 @@ export default function StickyLeadForm() {
           <option>4 BHK</option>
         </select>
 
-        {/* LOCATION */}
+        
         <select
           className="
           w-[115px]
@@ -274,7 +274,7 @@ export default function StickyLeadForm() {
           <option>Dibrugarh</option>
         </select>
 
-        {/* BOOK BUTTON */}
+        
         <button
           className="
           flex
