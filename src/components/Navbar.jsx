@@ -51,7 +51,7 @@ export default function Navbar() {
 
         max-w-[1240px]
 
-        h-[74px]
+        h-[72px]
 
         rounded-[22px]
 
@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="flex items-center h-full">
 
           {/* LEFT */}
-          <div className="flex items-center shrink-0">
+          <div className="flex items-center shrink-0 pr-1">
             <a
               href="#home"
               className="
@@ -113,14 +113,12 @@ export default function Navbar() {
             lg:flex
 
             items-center
+            justify-center
 
-            ml-[110px]
-            mr-[18px]
+            ml-auto
+            mr-3
 
-            gap-8
-            xl:gap-9
-
-            flex-nowrap
+            gap-10
             "
           >
             {navLinks.map((link) => (
@@ -154,13 +152,13 @@ export default function Navbar() {
           </div>
 
           {/* BUTTON */}
-          <div className="hidden lg:flex items-center ml-auto">
+          <div className="hidden lg:flex items-center">
             <a
               href="#contact"
               className="
               h-[44px]
 
-              px-5
+              px-6
 
               rounded-full
 
@@ -169,7 +167,7 @@ export default function Navbar() {
 
               text-white
 
-              text-[10px]
+              text-[11px]
 
               uppercase
 
@@ -204,6 +202,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="
             ml-auto
+
             lg:hidden
 
             text-[#171717]
@@ -257,7 +256,7 @@ export default function Navbar() {
                 "
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 600,
+                  fontWeight: 500,
                 }}
               >
                 {link.name}
