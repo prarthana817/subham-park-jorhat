@@ -39,15 +39,18 @@ export default function Navbar() {
       w-full
       z-50
 
+      flex
+      justify-center
+
       px-3
-      pt-2
-      lg:px-5
+      pt-3
       "
     >
       <nav
         className={`
-        max-w-[1700px]
-        mx-auto
+        w-full
+
+        max-w-[1380px]
 
         h-[68px]
 
@@ -70,6 +73,7 @@ export default function Navbar() {
         `}
       >
         <div className="flex items-center justify-between h-full">
+          
           {/* LEFT */}
           <div className="flex items-center shrink-0 pr-4">
             <a
