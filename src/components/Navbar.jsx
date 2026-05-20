@@ -43,11 +43,11 @@ export default function Navbar() {
         rounded-[22px]
 
         bg-gradient-to-r
-        from-[#7d4328]
-        via-[#9b5a39]
-        to-[#7b4429]
+        from-[#b8734f]
+        via-[#cf8c67]
+        to-[#b56f4c]
 
-        shadow-[0_10px_30px_rgba(74,35,18,0.22)]
+        shadow-[0_10px_30px_rgba(181,111,76,0.18)]
 
         backdrop-blur-xl
 
@@ -120,9 +120,9 @@ export default function Navbar() {
 
                 tracking-[0.18em]
 
-                text-[#fff4ec]
+                text-[#fff8f3]
 
-                hover:text-[#ffe0cf]
+                hover:text-white
 
                 transition-all
                 duration-300
@@ -151,9 +151,9 @@ export default function Navbar() {
 
               rounded-[14px]
 
-              bg-white
+              bg-white/95
 
-              text-[#8b4c2d]
+              text-[#a15f3f]
 
               text-[10px]
 
@@ -165,6 +165,7 @@ export default function Navbar() {
               items-center
               gap-3
 
+              hover:bg-white
               hover:scale-[1.02]
 
               transition-all
@@ -205,15 +206,15 @@ export default function Navbar() {
             rounded-[18px]
 
             bg-gradient-to-br
-            from-[#8f4b2b]
-            to-[#6f371d]
+            from-[#c57f59]
+            to-[#ab6846]
 
             border
             border-white/10
 
             p-4
 
-            shadow-[0_14px_35px_rgba(0,0,0,0.28)]
+            shadow-[0_14px_35px_rgba(0,0,0,0.20)]
 
             flex
             flex-col
@@ -227,7 +228,7 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="
-                text-[#fff5ef]
+                text-[#fffaf6]
 
                 uppercase
 
@@ -235,7 +236,7 @@ export default function Navbar() {
 
                 text-[12px]
 
-                hover:text-[#ffe0cf]
+                hover:text-white
 
                 transition
                 "
@@ -255,7 +256,7 @@ export default function Navbar() {
 
               bg-white
 
-              text-[#8b4c2d]
+              text-[#9b5d3e]
 
               py-3
 
