@@ -22,7 +22,6 @@ export default function Navbar() {
   const navLinks = [
     { name: "Overview", href: "#overview" },
     { name: "Amenities", href: "#amenities" },
-    { name: "Walkthrough Video", href: "#walkthrough" },
     { name: "Gallery", href: "#gallery" },
     { name: "Floor Plans", href: "#planning" },
     { name: "Location", href: "#contact" },
@@ -43,7 +42,7 @@ export default function Navbar() {
       justify-center
 
       px-2
-      pt-2
+      pt-0
       "
     >
       <nav
@@ -52,7 +51,7 @@ export default function Navbar() {
 
         max-w-[1240px]
 
-        h-[66px]
+        h-[74px]
 
         rounded-[22px]
 
@@ -72,10 +71,10 @@ export default function Navbar() {
         lg:px-5
         `}
       >
-        <div className="flex items-center justify-between h-full">
+        <div className="flex items-center h-full">
 
           {/* LEFT */}
-          <div className="flex items-center shrink-0 pr-1">
+          <div className="flex items-center shrink-0">
             <a
               href="#home"
               className="
@@ -114,12 +113,14 @@ export default function Navbar() {
             lg:flex
 
             items-center
-            justify-center
 
-            flex-1
+            ml-[110px]
+            mr-[18px]
 
-            gap-3
-            xl:gap-5
+            gap-8
+            xl:gap-9
+
+            flex-nowrap
             "
           >
             {navLinks.map((link) => (
@@ -127,7 +128,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className="
-                text-[10px]
+                text-[11px]
 
                 uppercase
 
@@ -144,7 +145,7 @@ export default function Navbar() {
                 "
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 500,
+                  fontWeight: 600,
                 }}
               >
                 {link.name}
@@ -153,11 +154,11 @@ export default function Navbar() {
           </div>
 
           {/* BUTTON */}
-          <div className="hidden lg:flex items-center pl-1">
+          <div className="hidden lg:flex items-center ml-auto">
             <a
               href="#contact"
               className="
-              h-[41px]
+              h-[44px]
 
               px-5
 
@@ -202,6 +203,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="
+            ml-auto
             lg:hidden
 
             text-[#171717]
@@ -255,7 +257,7 @@ export default function Navbar() {
                 "
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 500,
+                  fontWeight: 600,
                 }}
               >
                 {link.name}

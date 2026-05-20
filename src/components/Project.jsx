@@ -4,7 +4,6 @@ import {
   Building2,
   BriefcaseBusiness,
   CheckCircle2,
-  ChevronRight,
   Landmark,
 } from "lucide-react";
 import { useState } from "react";
@@ -559,43 +558,6 @@ export default function ProjectOverview() {
                 </div>
               ))}
             </div>
-
-            {/* BUTTON */}
-            <button
-              className="
-              mt-8
-
-              inline-flex
-              items-center
-              gap-3
-
-              px-7
-              py-3.5
-
-              rounded-full
-
-              bg-[#14234b]
-              hover:bg-[#1e3470]
-
-              text-white
-
-              uppercase
-              tracking-[0.16em]
-
-              text-[10px]
-
-              transition-all
-              duration-300
-              "
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 600,
-              }}
-            >
-              Explore Projects
-
-              <ChevronRight size={16} />
-            </button>
 
           </div>
 

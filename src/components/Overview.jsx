@@ -147,7 +147,7 @@ export default function Overview({ setOpen }) {
                 Living
               </span>
 
-              Crafted
+              {" "}Crafted
               <br />
 
               For Modern
