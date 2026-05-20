@@ -1,12 +1,23 @@
 // src/components/Navbar.jsx
 
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import logo from "../assests/images/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 15);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Overview", href: "#overview" },
@@ -28,38 +39,39 @@ export default function Navbar() {
       w-full
       z-50
 
-      pt-3
       px-3
+      pt-2
       lg:px-5
       "
     >
       <nav
-        className="
+        className={`
         max-w-[1700px]
         mx-auto
 
-        h-[64px]
+        h-[68px]
 
-        rounded-[22px]
+        rounded-[24px]
 
-        bg-gradient-to-r
-        from-[#b8734f]
-        via-[#cf8c67]
-        to-[#b56f4c]
+        border
+        border-[#eadfcb]
 
-        shadow-[0_10px_30px_rgba(181,111,76,0.18)]
+        transition-all
+        duration-300
 
-        backdrop-blur-xl
+        ${
+          scrolled
+            ? "bg-[#f8f5ed] shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
+            : "bg-[#f8f5ed] shadow-[0_6px_25px_rgba(0,0,0,0.04)]"
+        }
 
         px-5
         lg:px-7
-        "
+        `}
       >
         <div className="flex items-center justify-between h-full">
-
           {/* LEFT */}
-          <div className="flex items-center shrink-0 pr-5">
-
+          <div className="flex items-center shrink-0 pr-4">
             <a
               href="#home"
               className="
@@ -71,8 +83,6 @@ export default function Navbar() {
               h-[82px]
 
               rounded-full
-
-              hover:bg-white/10
 
               transition-all
               duration-300
@@ -86,11 +96,11 @@ export default function Navbar() {
                 h-[82px]
 
                 object-contain
+
                 scale-[1.55]
                 "
               />
             </a>
-
           </div>
 
           {/* DESKTOP MENU */}
@@ -108,21 +118,20 @@ export default function Navbar() {
             xl:gap-7
             "
           >
-
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className="
-                text-[10px]
+                text-[11px]
 
                 uppercase
 
-                tracking-[0.18em]
+                tracking-[0.14em]
 
-                text-[#fff8f3]
+                text-[#171717]
 
-                hover:text-white
+                hover:text-[#c79d47]
 
                 transition-all
                 duration-300
@@ -130,30 +139,30 @@ export default function Navbar() {
                 whitespace-nowrap
                 "
                 style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 500,
                 }}
               >
                 {link.name}
               </a>
             ))}
-
           </div>
 
           {/* BUTTON */}
-          <div className="hidden lg:flex items-center pl-5">
-
+          <div className="hidden lg:flex items-center pl-4">
             <a
               href="#contact"
               className="
-              px-5
-              py-[11px]
+              h-[44px]
 
-              rounded-[14px]
+              px-6
 
-              bg-white/95
+              rounded-full
 
-              text-[#a15f3f]
+              bg-[#162a63]
+              hover:bg-[#10214f]
+
+              text-white
 
               text-[10px]
 
@@ -163,10 +172,11 @@ export default function Navbar() {
 
               flex
               items-center
-              gap-3
+              gap-2.5
 
-              hover:bg-white
-              hover:scale-[1.02]
+              hover:-translate-y-[2px]
+
+              shadow-[0_10px_25px_rgba(22,42,99,0.24)]
 
               transition-all
               duration-300
@@ -174,7 +184,7 @@ export default function Navbar() {
               whitespace-nowrap
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontWeight: 600,
               }}
             >
@@ -182,17 +192,19 @@ export default function Navbar() {
 
               <ArrowUpRight size={13} />
             </a>
-
           </div>
 
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-white"
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            className="
+            lg:hidden
 
+            text-[#171717]
+            "
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
         {/* MOBILE MENU */}
@@ -201,48 +213,45 @@ export default function Navbar() {
             className="
             lg:hidden
 
-            mt-2
+            mt-3
 
-            rounded-[18px]
+            rounded-[22px]
 
-            bg-gradient-to-br
-            from-[#c57f59]
-            to-[#ab6846]
+            bg-[#f8f5ed]
 
             border
-            border-white/10
+            border-[#eadfcb]
 
-            p-4
+            p-5
 
-            shadow-[0_14px_35px_rgba(0,0,0,0.20)]
+            shadow-[0_15px_40px_rgba(0,0,0,0.08)]
 
             flex
             flex-col
-            gap-4
+            gap-5
             "
           >
-
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="
-                text-[#fffaf6]
+                text-[#171717]
 
                 uppercase
 
                 tracking-[0.14em]
 
-                text-[12px]
+                text-[11px]
 
-                hover:text-white
+                hover:text-[#c79d47]
 
                 transition
                 "
                 style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 400,
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 500,
                 }}
               >
                 {link.name}
@@ -254,13 +263,14 @@ export default function Navbar() {
               className="
               mt-1
 
-              bg-white
+              bg-[#162a63]
+              hover:bg-[#10214f]
 
-              text-[#9b5d3e]
+              text-white
 
-              py-3
+              h-[46px]
 
-              rounded-[14px]
+              rounded-full
 
               uppercase
 
@@ -272,9 +282,12 @@ export default function Navbar() {
               items-center
               justify-center
               gap-2
+
+              transition-all
+              duration-300
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontWeight: 600,
               }}
             >
@@ -282,10 +295,8 @@ export default function Navbar() {
 
               <ArrowUpRight size={14} />
             </a>
-
           </div>
         )}
-
       </nav>
     </header>
   );

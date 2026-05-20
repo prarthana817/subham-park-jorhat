@@ -21,7 +21,6 @@ export default function StickyLeadForm() {
 
       const footerRect = footer.getBoundingClientRect();
 
-      // footer viewport e dhuklei hide
       if (footerRect.top <= window.innerHeight) {
         setHide(true);
       } else {
@@ -71,18 +70,17 @@ export default function StickyLeadForm() {
         items-center
         gap-2
 
-        bg-[#9a5735]/95
-        backdrop-blur-xl
+        bg-[#efe3c2]
 
         border
-        border-[#c48360]
+        border-[#d6c08a]
 
-        rounded-[22px]
+        rounded-[20px]
 
         px-3
         py-3
 
-        shadow-[0_18px_50px_rgba(0,0,0,0.28)]
+        shadow-[0_10px_30px_rgba(0,0,0,0.10)]
         "
       >
 
@@ -94,23 +92,23 @@ export default function StickyLeadForm() {
           gap-2
 
           px-4
-          h-[44px]
+          h-[42px]
 
-          rounded-[14px]
+          rounded-[12px]
 
-          bg-[#7a4327]
+          bg-[#d4ad57]
 
-          text-[#fff4ec]
+          text-[#111111]
 
           uppercase
-          tracking-[0.16em]
+          tracking-[0.14em]
 
           text-[9px]
 
           whitespace-nowrap
           "
           style={{
-            fontFamily: "'Raleway', sans-serif",
+            fontFamily: "'Inter', sans-serif",
             fontWeight: 700,
           }}
         >
@@ -124,26 +122,30 @@ export default function StickyLeadForm() {
           type="text"
           placeholder="Name"
           className="
-          w-[130px]
+          w-[125px]
 
-          h-[44px]
+          h-[42px]
 
-          bg-[#ad6d4a]
+          bg-[#f8efd7]
 
           border
-          border-[#d49a77]
+          border-[#d8c18c]
 
-          rounded-[12px]
+          rounded-[11px]
 
           px-3
 
           text-[12px]
-          text-white
+          text-[#1a1a1a]
 
-          placeholder:text-[#f4ddd0]
+          placeholder:text-[#7a6d4e]
 
           outline-none
           "
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 500,
+          }}
         />
 
         {/* PHONE */}
@@ -151,26 +153,30 @@ export default function StickyLeadForm() {
           type="text"
           placeholder="Phone"
           className="
-          w-[130px]
+          w-[125px]
 
-          h-[44px]
+          h-[42px]
 
-          bg-[#ad6d4a]
+          bg-[#f8efd7]
 
           border
-          border-[#d49a77]
+          border-[#d8c18c]
 
-          rounded-[12px]
+          rounded-[11px]
 
           px-3
 
           text-[12px]
-          text-white
+          text-[#1a1a1a]
 
-          placeholder:text-[#f4ddd0]
+          placeholder:text-[#7a6d4e]
 
           outline-none
           "
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 500,
+          }}
         />
 
         {/* EMAIL */}
@@ -178,49 +184,57 @@ export default function StickyLeadForm() {
           type="email"
           placeholder="Email"
           className="
-          w-[160px]
+          w-[150px]
 
-          h-[44px]
+          h-[42px]
 
-          bg-[#ad6d4a]
+          bg-[#f8efd7]
 
           border
-          border-[#d49a77]
+          border-[#d8c18c]
 
-          rounded-[12px]
+          rounded-[11px]
 
           px-3
 
           text-[12px]
-          text-white
+          text-[#1a1a1a]
 
-          placeholder:text-[#f4ddd0]
+          placeholder:text-[#7a6d4e]
 
           outline-none
           "
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 500,
+          }}
         />
 
         {/* BHK */}
         <select
           className="
-          w-[95px]
+          w-[92px]
 
-          h-[44px]
+          h-[42px]
 
-          bg-[#ad6d4a]
+          bg-[#f8efd7]
 
           border
-          border-[#d49a77]
+          border-[#d8c18c]
 
-          rounded-[12px]
+          rounded-[11px]
 
           px-3
 
           text-[12px]
-          text-white
+          text-[#1a1a1a]
 
           outline-none
           "
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 500,
+          }}
         >
           <option value="">BHK</option>
           <option>2 BHK</option>
@@ -231,24 +245,28 @@ export default function StickyLeadForm() {
         {/* LOCATION */}
         <select
           className="
-          w-[120px]
+          w-[115px]
 
-          h-[44px]
+          h-[42px]
 
-          bg-[#ad6d4a]
+          bg-[#f8efd7]
 
           border
-          border-[#d49a77]
+          border-[#d8c18c]
 
-          rounded-[12px]
+          rounded-[11px]
 
           px-3
 
           text-[12px]
-          text-white
+          text-[#1a1a1a]
 
           outline-none
           "
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 500,
+          }}
         >
           <option value="">Location</option>
           <option>Jorhat</option>
@@ -264,20 +282,20 @@ export default function StickyLeadForm() {
           justify-center
           gap-2
 
-          h-[44px]
+          h-[42px]
 
           px-5
 
-          rounded-[12px]
+          rounded-[11px]
 
-          bg-[#f6cfb5]
+          bg-[#1b3173]
 
-          hover:bg-[#ffe0cb]
+          hover:bg-[#16295f]
 
-          text-[#2a1a12]
+          text-white
 
           uppercase
-          tracking-[0.16em]
+          tracking-[0.14em]
 
           text-[10px]
 
@@ -285,7 +303,7 @@ export default function StickyLeadForm() {
           duration-300
           "
           style={{
-            fontFamily: "'Raleway', sans-serif",
+            fontFamily: "'Inter', sans-serif",
             fontWeight: 700,
           }}
         >

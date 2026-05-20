@@ -17,71 +17,75 @@ export default function Overview({ setOpen }) {
       className="
       relative
       overflow-hidden
-      py-16
-      lg:py-20
 
-      bg-[#f8f4ef]
+      py-16
+      lg:py-24
+
+      bg-[#f8f5ed]
       "
     >
-
-      {/* GRID BG */}
+      {/* GRID */}
       <div
         className="
         absolute
         inset-0
-        opacity-[0.04]
+        opacity-[0.028]
         "
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
           `,
-          backgroundSize: "65px 65px",
+          backgroundSize: "68px 68px",
         }}
       />
 
-      {/* LEFT LINES */}
+      {/* LEFT STRIPES */}
       <div
         className="
         absolute
         left-0
         top-0
+
         h-full
-        w-[240px]
-        opacity-[0.05]
+        w-[250px]
+
+        opacity-[0.035]
         "
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 8px)",
+            "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 9px)",
         }}
       />
 
       {/* GLOW */}
-      <div className="absolute top-[-120px] left-[-120px] w-[300px] h-[300px] bg-[#d79a74]/10 blur-[120px] rounded-full" />
+      <div className="absolute top-[-100px] left-[-100px] w-[260px] h-[260px] bg-[#d7b56d]/10 blur-[120px] rounded-full" />
 
-      <div className="absolute bottom-[-120px] right-[-120px] w-[300px] h-[300px] bg-[#56bdb7]/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-[-100px] right-[-100px] w-[260px] h-[260px] bg-[#2143b5]/10 blur-[120px] rounded-full" />
 
       <div
         className="
         relative
         z-10
 
-        max-w-[1750px]
+        max-w-[1700px]
         mx-auto
-        px-6
+
+        px-5
         lg:px-8
         "
       >
-
         <div
           className="
           grid
-          lg:grid-cols-[1.05fr_0.95fr]
-          gap-8
+          lg:grid-cols-[1.02fr_0.98fr]
+
+          gap-10
+          lg:gap-14
+
           items-start
           "
         >
-
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -89,37 +93,43 @@ export default function Overview({ setOpen }) {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-
-            {/* TOP TEXT */}
-            <div className="flex items-center gap-4 mb-5">
-
-              <div className="w-[60px] h-[2px] bg-[#d79a74]" />
+            {/* LABEL */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-[65px] h-[2px] bg-[#d1a54d]" />
 
               <p
                 className="
                 uppercase
-                tracking-[0.35em]
+
+                tracking-[0.34em]
+
                 text-[11px]
-                text-[#b57a5a]
+
+                text-[#c79d47]
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 500,
                 }}
               >
                 Overview
               </p>
-
             </div>
 
             {/* HEADING */}
             <h2
               className="
-              text-[#1f1f1f]
+              text-[#111111]
+
               text-[42px]
-              lg:text-[58px]
-              leading-[0.95]
+              md:text-[54px]
+              lg:text-[64px]
+
+              leading-[0.96]
+
               tracking-[-2px]
-              mb-5
+
+              mb-6
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -131,11 +141,11 @@ export default function Overview({ setOpen }) {
               <span
                 className="
                 italic
-                text-[#d79a74]
+                text-[#d1a54d]
                 "
               >
                 Living
-              </span>{" "}
+              </span>
 
               Crafted
               <br />
@@ -147,15 +157,19 @@ export default function Overview({ setOpen }) {
             {/* DESCRIPTION */}
             <p
               className="
-              text-[16px]
+              text-[17px]
+
               leading-[1.9]
-              text-[#655d57]
-              max-w-[850px]
-              mb-7
+
+              text-[#5f6674]
+
+              max-w-[760px]
+
+              mb-8
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 300,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 400,
               }}
             >
               Experience thoughtfully designed living spaces
@@ -165,34 +179,41 @@ export default function Overview({ setOpen }) {
               and peaceful modern living.
             </p>
 
-            {/* CTA BUTTON */}
+            {/* BUTTON */}
             <button
               onClick={() => setOpen(true)}
               className="
               inline-flex
               items-center
               gap-3
-              px-7
-              py-4
-              mb-8
 
-              rounded-[14px]
+              px-8
 
-              bg-[#d79a74]
-              hover:bg-[#c68662]
+              h-[54px]
+
+              rounded-full
+
+              bg-[#162a63]
+              hover:bg-[#10214f]
 
               text-white
 
               uppercase
-              tracking-[0.18em]
-              text-[11px]
+
+              tracking-[0.16em]
+
+              text-[10px]
+
+              shadow-[0_12px_28px_rgba(22,42,99,0.24)]
+
+              hover:-translate-y-[2px]
 
               transition-all
               duration-300
               "
               style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 700,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
               }}
             >
               Schedule A Visit
@@ -205,28 +226,30 @@ export default function Overview({ setOpen }) {
               className="
               grid
               sm:grid-cols-2
+
               gap-4
+
+              mt-10
               "
             >
-
               {[
                 {
-                  icon: <ShieldCheck size={20} color="#d79a74" />,
+                  icon: <ShieldCheck size={20} color="#d1a54d" />,
                   title: "Earthquake Resistant",
                   text: "RCC frame engineered",
                 },
                 {
-                  icon: <Zap size={20} color="#d79a74" />,
+                  icon: <Zap size={20} color="#d1a54d" />,
                   title: "24×7 Power Backup",
                   text: "Uninterrupted premium living",
                 },
                 {
-                  icon: <LockKeyhole size={20} color="#d79a74" />,
+                  icon: <LockKeyhole size={20} color="#d1a54d" />,
                   title: "Smart Security",
                   text: "Safe & secure community living",
                 },
                 {
-                  icon: <Droplets size={20} color="#d79a74" />,
+                  icon: <Droplets size={20} color="#d1a54d" />,
                   title: "Rainwater Harvesting",
                   text: "Eco-friendly sustainable design",
                 },
@@ -234,12 +257,12 @@ export default function Overview({ setOpen }) {
                 <div
                   key={index}
                   className="
-                  bg-white
+                  bg-[#fffdfa]
 
-                  rounded-[22px]
+                  rounded-[24px]
 
                   border
-                  border-[#eadfd7]
+                  border-[#ece2d2]
 
                   p-5
 
@@ -247,18 +270,22 @@ export default function Overview({ setOpen }) {
                   items-start
                   gap-4
 
-                  shadow-[0_10px_30px_rgba(0,0,0,0.04)]
+                  shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+
+                  hover:-translate-y-[3px]
+
+                  transition-all
+                  duration-300
                   "
                 >
-
                   <div
                     className="
-                    w-[46px]
-                    h-[46px]
+                    w-[48px]
+                    h-[48px]
 
-                    rounded-[14px]
+                    rounded-[15px]
 
-                    bg-[#f5ebe5]
+                    bg-[#f8efd8]
 
                     flex
                     items-center
@@ -272,11 +299,13 @@ export default function Overview({ setOpen }) {
                     <h4
                       className="
                       text-[18px]
-                      text-[#1f1f1f]
-                      mb-1
+
+                      text-[#171717]
+
+                      mb-1.5
                       "
                       style={{
-                        fontFamily: "'Raleway', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontWeight: 600,
                       }}
                     >
@@ -285,20 +314,21 @@ export default function Overview({ setOpen }) {
 
                     <p
                       className="
-                      text-[13px]
-                      text-[#7a726c]
+                      text-[14px]
+
+                      leading-[1.7]
+
+                      text-[#707887]
                       "
                       style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
+                        fontFamily: "'Inter', sans-serif",
                       }}
                     >
                       {item.text}
                     </p>
                   </div>
-
                 </div>
               ))}
-
             </div>
           </motion.div>
 
@@ -308,33 +338,38 @@ export default function Overview({ setOpen }) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="relative"
           >
-
-            {/* QUOTE CARD */}
             <div
               className="
-              bg-white
+              relative
 
-              rounded-[30px]
+              bg-[#fffdfa]
+
+              rounded-[34px]
 
               border
-              border-[#eadfd7]
+              border-[#ede2d3]
 
               p-7
+              md:p-10
 
-              shadow-[0_15px_50px_rgba(0,0,0,0.06)]
+              shadow-[0_20px_60px_rgba(0,0,0,0.05)]
 
-              mb-5
+              overflow-hidden
               "
             >
+              {/* GLOW */}
+              <div className="absolute top-0 right-0 w-[160px] h-[160px] bg-[#2143b5]/5 blur-[90px] rounded-full" />
 
+              {/* QUOTE */}
               <div
                 className="
-                text-[60px]
+                text-[70px]
                 leading-none
-                text-[#d79a74]
-                mb-3
+
+                text-[#d1a54d]
+
+                mb-2
                 "
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
@@ -345,16 +380,20 @@ export default function Overview({ setOpen }) {
 
               <p
                 className="
-                text-[20px]
-                leading-[1.8]
+                text-[24px]
+                md:text-[28px]
 
-                text-[#1f1f1f]
+                leading-[1.7]
+
+                text-[#202020]
 
                 italic
-                mb-6
+
+                mb-10
                 "
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 400,
                 }}
               >
                 Creating elegant spaces that blend
@@ -364,28 +403,29 @@ export default function Overview({ setOpen }) {
 
               {/* PROFILE */}
               <div className="flex items-center gap-4">
-
                 <div
                   className="
-                  w-[52px]
-                  h-[52px]
+                  w-[60px]
+                  h-[60px]
 
                   rounded-full
 
                   border
-                  border-[#d79a74]
+                  border-[#d8bb82]
+
+                  bg-[#fbf4e6]
 
                   flex
                   items-center
                   justify-center
 
-                  text-[#d79a74]
+                  text-[#d1a54d]
 
-                  text-[20px]
+                  text-[22px]
                   "
                   style={{
-                    fontFamily: "'Raleway', sans-serif",
-                    fontWeight: 600,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 700,
                   }}
                 >
                   S
@@ -394,11 +434,14 @@ export default function Overview({ setOpen }) {
                 <div>
                   <h4
                     className="
-                    text-[18px]
-                    text-[#1f1f1f]
+                    text-[24px]
+
+                    text-[#171717]
+
+                    mb-[2px]
                     "
                     style={{
-                      fontFamily: "'Raleway', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontWeight: 700,
                     }}
                   >
@@ -407,23 +450,20 @@ export default function Overview({ setOpen }) {
 
                   <p
                     className="
-                    text-[14px]
-                    text-[#7a726c]
+                    text-[15px]
+
+                    text-[#727b88]
                     "
                     style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
+                      fontFamily: "'Inter', sans-serif",
                     }}
                   >
                     Trusted Real Estate Developer
                   </p>
                 </div>
-
               </div>
-
             </div>
-
           </motion.div>
-
         </div>
       </div>
     </section>

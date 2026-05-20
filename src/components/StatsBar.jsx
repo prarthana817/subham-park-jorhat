@@ -33,51 +33,56 @@ export default function StatsBar() {
   const repeatedStats = [...stats, ...stats];
 
   return (
-    <section className="relative overflow-hidden py-[6px] bg-transparent">
+    <section
+      className="
+      relative
+      overflow-hidden
 
-      {/* MAIN BAR */}
+      py-[4px]
+
+      bg-[#f8f5ed]
+      "
+    >
       <div
         className="
         relative
         overflow-hidden
 
         bg-gradient-to-r
-        from-[#cf9477]
-        via-[#dca287]
-        to-[#e0ad92]
+        from-[#d5b166]
+        via-[#dfc07a]
+        to-[#d4ad60]
 
-        border
-        border-[#ffffff15]
+        border-y
+        border-[#e6d2a4]
         "
       >
-
-        {/* SOFT OVERLAY */}
+        {/* OVERLAY */}
         <div
           className="
           absolute
           inset-0
 
-          bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)]
+          bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px)]
 
-          bg-[size:120px_100%]
+          bg-[size:130px_100%]
 
           opacity-40
           "
         />
 
-        {/* MOVING CONTENT */}
+        {/* CONTENT */}
         <motion.div
           animate={{
             x: ["0%", "-50%"],
           }}
           transition={{
             repeat: Infinity,
-            duration: 22,
+            duration: 24,
             ease: "linear",
           }}
           className="flex w-max relative z-10"
         >
-
           {repeatedStats.map((item, index) => {
             const Icon = item.icon;
 
@@ -87,53 +92,55 @@ export default function StatsBar() {
                 className="
                 flex
                 items-center
-                gap-3
+                gap-4
 
                 px-7
-                py-3
+                md:px-9
 
-                min-w-[270px]
+                py-2.5
+
+                min-w-[260px]
+                md:min-w-[300px]
 
                 border-r
-                border-white/10
+                border-white/15
                 "
               >
-
                 {/* ICON */}
                 <div
                   className="
-                  w-9
-                  h-9
+                  w-10
+                  h-10
 
                   rounded-full
 
-                  bg-white/10
+                  bg-white/15
 
                   border
-                  border-white/15
+                  border-white/20
 
                   flex
                   items-center
                   justify-center
-
-                  shrink-0
                   "
                 >
-                  <Icon className="w-[15px] h-[15px] text-white" />
+                  <Icon className="w-[16px] h-[16px] text-white" />
                 </div>
 
                 {/* TEXT */}
                 <div className="flex items-end gap-2.5">
-
                   <h3
                     className="
                     text-[28px]
+                    md:text-[30px]
+
                     leading-none
+
                     text-white
                     "
                     style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                      fontWeight: 600,
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 700,
                     }}
                   >
                     {item.value}
@@ -145,32 +152,27 @@ export default function StatsBar() {
 
                     uppercase
 
-                    tracking-[0.30em]
+                    tracking-[0.28em]
 
-                    text-[#fffaf6]
+                    text-[#fffdf7]
 
-                    mb-[3px]
+                    mb-[4px]
 
                     whitespace-nowrap
                     "
                     style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                      fontWeight: 400,
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 500,
                     }}
                   >
                     {item.label}
                   </p>
-
                 </div>
-
               </div>
             );
           })}
-
         </motion.div>
-
       </div>
-
     </section>
   );
 }

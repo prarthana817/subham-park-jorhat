@@ -1,6 +1,7 @@
 // src/components/Hero.jsx
 
 import { motion } from "framer-motion";
+
 import {
   ArrowRight,
   ShieldCheck,
@@ -19,34 +20,34 @@ export default function Hero({ setOpen }) {
       relative
       overflow-hidden
 
-      h-screen
+      min-h-screen
 
       flex
       items-center
 
-      bg-[#f7f3ef]
+      bg-[#f8f5ed]
 
-      pt-[82px]
-      pb-2
+      pt-[105px]
+      pb-10
       "
     >
-      {/* GRID BG */}
+      {/* GRID */}
       <div
         className="
         absolute
         inset-0
-        opacity-[0.035]
+        opacity-[0.03]
         "
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
           `,
-          backgroundSize: "60px 60px",
+          backgroundSize: "65px 65px",
         }}
       />
 
-      {/* LEFT LINE DESIGN */}
+      {/* LEFT LINES */}
       <div
         className="
         absolute
@@ -56,7 +57,7 @@ export default function Hero({ setOpen }) {
         h-full
         w-[90px]
 
-        opacity-[0.05]
+        opacity-[0.04]
         "
         style={{
           backgroundImage:
@@ -74,42 +75,44 @@ export default function Hero({ setOpen }) {
 
         w-full
 
-        px-4
-        lg:px-5
+        px-5
+        lg:px-6
         "
       >
-        {/* MAIN GRID */}
         <div
           className="
           grid
-          lg:grid-cols-[0.88fr_1.12fr]
+          lg:grid-cols-[0.92fr_1.08fr]
 
           items-center
 
-          gap-5
+          gap-10
+          lg:gap-8
           "
         >
-          {/* LEFT CONTENT */}
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
             {/* TOP LABEL */}
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-[50px] h-[2px] bg-[#c7815f]" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-[54px] h-[2px] bg-[#d1a54d]" />
 
               <p
                 className="
                 uppercase
-                tracking-[0.3em]
+
+                tracking-[0.28em]
 
                 text-[10px]
 
-                text-[#b16d4e]
+                text-[#c79d47]
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 500,
                 }}
               >
                 Quiet Luxury Living
@@ -119,16 +122,17 @@ export default function Hero({ setOpen }) {
             {/* HEADING */}
             <h1
               className="
-              text-[#171717]
+              text-[#111111]
 
-              text-[46px]
+              text-[48px]
               md:text-[58px]
-              lg:text-[66px]
+              lg:text-[68px]
 
-              leading-[0.88]
+              leading-[0.92]
+
               tracking-[-2px]
 
-              mb-3
+              mb-4
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -137,7 +141,7 @@ export default function Hero({ setOpen }) {
             >
               Elevate{" "}
 
-              <span className="italic text-[#cf8b67]">
+              <span className="italic text-[#d1a54d]">
                 Your
               </span>
 
@@ -147,24 +151,24 @@ export default function Hero({ setOpen }) {
             </h1>
 
             {/* LINE */}
-            <div className="w-[160px] h-[2px] bg-[#cf8b67] mb-4" />
+            <div className="w-[150px] h-[2px] bg-[#d1a54d] mb-5" />
 
             {/* DESCRIPTION */}
             <p
               className="
-              max-w-[500px]
+              max-w-[520px]
 
-              text-[16px]
-              lg:text-[18px]
+              text-[17px]
 
-              leading-[1.75]
+              leading-[1.9]
 
-              text-[#5f5a56]
+              text-[#5f6674]
 
-              mb-5
+              mb-7
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 400,
               }}
             >
               Experience premium residences surrounded by
@@ -174,39 +178,44 @@ export default function Hero({ setOpen }) {
             </p>
 
             {/* BUTTONS */}
-            <div className="flex flex-wrap items-center gap-5 mb-5">
-              {/* PRIMARY BUTTON */}
+            <div className="flex flex-wrap items-center gap-5 mb-7">
+              {/* PRIMARY */}
               <button
                 onClick={() => setOpen(true)}
                 className="
-                h-[46px]
+                h-[52px]
 
-                px-7
+                px-8
 
                 rounded-full
 
-                bg-[#cf8b67]
-                hover:bg-[#bb7654]
+                bg-[#162a63]
+                hover:bg-[#10214f]
 
                 text-white
 
                 uppercase
-                tracking-[0.18em]
+
+                tracking-[0.16em]
 
                 text-[10px]
+
+                shadow-[0_12px_28px_rgba(22,42,99,0.24)]
+
+                hover:-translate-y-[2px]
 
                 transition-all
                 duration-300
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 700,
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 600,
                 }}
               >
                 Book A Site Visit
               </button>
 
-              {/* SECONDARY BUTTON */}
+              {/* SECONDARY */}
               <button
                 className="
                 flex
@@ -214,24 +223,25 @@ export default function Hero({ setOpen }) {
                 gap-3
 
                 border-b
-                border-[#cf8b67]
+                border-[#171717]
 
                 pb-2
 
-                text-[#b16d4e]
+                text-[#171717]
 
                 uppercase
-                tracking-[0.16em]
+
+                tracking-[0.15em]
 
                 text-[10px]
 
-                hover:text-black
+                hover:text-[#162a63]
 
                 transition-all
                 duration-300
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 600,
                 }}
               >
@@ -245,9 +255,10 @@ export default function Hero({ setOpen }) {
             <div
               className="
               grid
-              grid-cols-2
+              grid-cols-1
+              sm:grid-cols-2
 
-              gap-3
+              gap-4
               "
             >
               {[
@@ -275,29 +286,34 @@ export default function Hero({ setOpen }) {
                   items-center
                   gap-3
 
-                  bg-white/90
+                  bg-[#fffdfa]
 
-                  rounded-[14px]
+                  rounded-[18px]
+
+                  border
+                  border-[#ece2d2]
 
                   px-4
                   py-3
+
+                  shadow-[0_8px_25px_rgba(0,0,0,0.03)]
                   "
                 >
                   {/* ICON */}
                   <div
                     className="
-                    w-9
-                    h-9
+                    w-10
+                    h-10
 
                     rounded-full
 
-                    bg-[#f5ebe4]
+                    bg-[#f8efd8]
 
                     flex
                     items-center
                     justify-center
 
-                    text-[#c7815f]
+                    text-[#d1a54d]
                     "
                   >
                     {item.icon}
@@ -306,12 +322,12 @@ export default function Hero({ setOpen }) {
                   {/* TEXT */}
                   <h4
                     className="
-                    text-[12px]
+                    text-[13px]
 
-                    text-[#222]
+                    text-[#171717]
                     "
                     style={{
-                      fontFamily: "'Raleway', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontWeight: 600,
                     }}
                   >
@@ -335,16 +351,17 @@ export default function Hero({ setOpen }) {
 
               overflow-hidden
 
-              rounded-[28px]
+              rounded-[34px]
 
               h-[360px]
-              md:h-[430px]
-              lg:h-[500px]
+              md:h-[470px]
+              lg:h-[560px]
 
               w-full
+
+              shadow-[0_25px_80px_rgba(0,0,0,0.10)]
               "
             >
-              {/* IMAGE */}
               <img
                 src={heroBg}
                 alt="Subham Park"
@@ -356,10 +373,10 @@ export default function Hero({ setOpen }) {
                 object-cover
                 object-top
 
-                scale-[0.94]
-                translate-y-[10px]
+                scale-[1.02]
 
-                rounded-[28px]
+                transition-transform
+                duration-700
                 "
               />
             </div>

@@ -1,6 +1,8 @@
 // src/components/Contact.jsx
 
-import { Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
+
+import locationImg from "../assests/images/location.jpg";
 
 export default function Contact() {
   return (
@@ -10,30 +12,28 @@ export default function Contact() {
       relative
       overflow-hidden
 
-      py-10
-      lg:py-12
+      py-12
+      lg:py-16
 
-      bg-gradient-to-br
-      from-[#d79a74]
-      via-[#b87452]
-      to-[#7a4b35]
+      bg-[#f6f0e4]
       "
     >
-      {/* BG */}
-      <div className="absolute inset-0 bg-black/20" />
-
+      {/* GRID BG */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
         }}
       />
 
-      <div className="relative z-10 max-w-[1380px] mx-auto px-4">
+      {/* SOFT GLOW */}
+      <div className="absolute top-[-120px] left-[-120px] w-[280px] h-[280px] bg-[#2143b5]/5 blur-[120px] rounded-full" />
+
+      <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-5">
 
         {/* MAIN */}
         <div
@@ -41,32 +41,29 @@ export default function Contact() {
           grid
           lg:grid-cols-2
 
-          rounded-[24px]
+          rounded-[28px]
 
           overflow-hidden
 
           border
-          border-[#ffffff15]
+          border-[#e8dcc8]
 
-          bg-[#111111]/15
+          bg-[#fbf8f2]
 
-          backdrop-blur-xl
-
-          shadow-[0_20px_60px_rgba(0,0,0,0.22)]
+          shadow-[0_20px_60px_rgba(0,0,0,0.08)]
           "
         >
 
           {/* LEFT */}
           <div
             className="
-            p-5
-            lg:p-7
+            p-6
+            md:p-8
+            lg:p-10
 
             flex
             flex-col
             justify-between
-
-            min-h-[100%]
             "
           >
 
@@ -79,12 +76,12 @@ export default function Contact() {
 
                 text-[10px]
 
-                text-[#ffe2d1]
+                text-[#c9a14a]
 
-                mb-3
+                mb-4
                 "
                 style={{
-                  fontFamily: "'Raleway', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 600,
                 }}
               >
@@ -93,13 +90,13 @@ export default function Contact() {
 
               <h2
                 className="
-                text-white
+                text-[#111111]
 
-                text-[44px]
-                md:text-[54px]
-                lg:text-[62px]
+                text-[38px]
+                md:text-[52px]
+                lg:text-[60px]
 
-                leading-[0.92]
+                leading-[0.94]
                 tracking-[-2px]
                 "
                 style={{
@@ -110,26 +107,26 @@ export default function Contact() {
                 Your Dream Home
                 <br />
 
-                <span className="text-[#ffe2d1]">
+                <span className="text-[#d1a54d]">
                   Awaits You
                 </span>
               </h2>
 
               <p
                 className="
-                mt-4
+                mt-5
 
                 max-w-[560px]
 
                 text-[15px]
-                lg:text-[16px]
+                lg:text-[17px]
 
-                leading-[1.95]
+                leading-[1.9]
 
-                text-white/80
+                text-[#5f6674]
                 "
                 style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 400,
                 }}
               >
@@ -142,81 +139,91 @@ export default function Contact() {
 
             </div>
 
-            {/* CONTACT BOX */}
+            {/* LOCATION CARD */}
             <div
               className="
-              mt-5
+              mt-7
 
-              flex
-              items-center
-              gap-4
+              rounded-[22px]
 
-              rounded-[18px]
+              overflow-hidden
 
               border
-              border-[#ffffff12]
+              border-[#e7dccb]
 
-              bg-white/5
+              bg-[#f4ecdf]
 
-              p-4
+              shadow-[0_10px_30px_rgba(0,0,0,0.04)]
               "
             >
 
-              <div
-                className="
-                w-11
-                h-11
+              {/* IMAGE */}
+              <div className="relative h-[180px] md:h-[210px]">
 
-                rounded-[14px]
-
-                bg-[#ffffff10]
-
-                flex
-                items-center
-                justify-center
-                "
-              >
-                <Phone className="w-5 h-5 text-[#ffe2d1]" />
-              </div>
-
-              <div>
-
-                <p
+                <img
+                  src={locationImg}
+                  alt="Location"
                   className="
-                  uppercase
-                  tracking-[0.16em]
+                  w-full
+                  h-full
 
-                  text-[10px]
-
-                  text-white/50
-
-                  mb-1
+                  object-cover
                   "
-                  style={{
-                    fontFamily: "'Raleway', sans-serif",
-                    fontWeight: 700,
-                  }}
-                >
-                  Whatsapp
-                </p>
+                />
 
-                <h3
+                <div
                   className="
-                  text-[18px]
-                  lg:text-[22px]
+                  absolute
+                  inset-0
 
-                  text-white
-
-                  leading-none
+                  bg-gradient-to-t
+                  from-black/45
+                  via-black/10
+                  to-transparent
                   "
-                  style={{
-                    fontFamily: "'Josefin Sans', sans-serif",
-                    fontWeight: 600,
-                    letterSpacing: "0.04em",
-                  }}
+                />
+
+                <div
+                  className="
+                  absolute
+                  bottom-4
+                  left-4
+
+                  flex
+                  items-center
+                  gap-2
+
+                  px-4
+                  py-2
+
+                  rounded-full
+
+                  bg-white/90
+
+                  backdrop-blur-md
+                  "
                 >
-                  +91 98765 43210
-                </h3>
+
+                  <MapPin className="w-4 h-4 text-[#2143b5]" />
+
+                  <p
+                    className="
+                    text-[11px]
+
+                    uppercase
+                    tracking-[0.14em]
+
+                    text-[#111111]
+                    "
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Prime Jorhat Location
+                  </p>
+
+                </div>
 
               </div>
 
@@ -227,49 +234,54 @@ export default function Contact() {
           {/* RIGHT */}
           <div
             className="
-            p-5
-            lg:p-7
+            p-6
+            md:p-8
+            lg:p-10
 
-            bg-black/10
+            bg-[#fffaf2]
 
             border-t
             lg:border-t-0
 
             lg:border-l
 
-            border-[#ffffff10]
+            border-[#e8dcc8]
             "
           >
 
             <h3
               className="
-              text-white
+              text-[#111111]
 
-              text-[32px]
-              lg:text-[40px]
+              text-[30px]
+              lg:text-[38px]
 
               leading-[0.95]
 
-              mb-1
+              mb-2
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 600,
               }}
             >
-              Book Site Visit
+              <span className="text-[#d1a54d]">
+                Book
+              </span>{" "}
+              Site Visit
             </h3>
 
             <p
               className="
-              text-[14px]
+              text-[15px]
 
-              text-white/65
+              text-[#6d7482]
 
-              mb-5
+              mb-6
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 400,
               }}
             >
               Our team will contact you shortly
@@ -291,8 +303,12 @@ export default function Contact() {
                   uppercase
                   tracking-[0.16em]
 
-                  text-white/70
+                  text-[#5f6674]
                   "
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 600,
+                  }}
                 >
                   Full Name
                 </label>
@@ -310,15 +326,18 @@ export default function Contact() {
                   rounded-[14px]
 
                   border
-                  border-[#ffffff15]
+                  border-[#e6dac8]
 
-                  bg-white/5
+                  bg-[#f8f2e8]
 
-                  text-white
+                  text-[#111111]
 
                   outline-none
 
-                  placeholder:text-white/30
+                  placeholder:text-[#8f96a3]
+
+                  focus:border-[#2143b5]
+                  transition-all
                   "
                 />
 
@@ -337,8 +356,12 @@ export default function Contact() {
                   uppercase
                   tracking-[0.16em]
 
-                  text-white/70
+                  text-[#5f6674]
                   "
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 600,
+                  }}
                 >
                   Phone Number
                 </label>
@@ -356,15 +379,18 @@ export default function Contact() {
                   rounded-[14px]
 
                   border
-                  border-[#ffffff15]
+                  border-[#e6dac8]
 
-                  bg-white/5
+                  bg-[#f8f2e8]
 
-                  text-white
+                  text-[#111111]
 
                   outline-none
 
-                  placeholder:text-white/30
+                  placeholder:text-[#8f96a3]
+
+                  focus:border-[#2143b5]
+                  transition-all
                   "
                 />
 
@@ -385,8 +411,12 @@ export default function Contact() {
                 uppercase
                 tracking-[0.16em]
 
-                text-white/70
+                text-[#5f6674]
                 "
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 600,
+                }}
               >
                 Email Address
               </label>
@@ -404,15 +434,18 @@ export default function Contact() {
                 rounded-[14px]
 
                 border
-                border-[#ffffff15]
+                border-[#e6dac8]
 
-                bg-white/5
+                bg-[#f8f2e8]
 
-                text-white
+                text-[#111111]
 
                 outline-none
 
-                placeholder:text-white/30
+                placeholder:text-[#8f96a3]
+
+                focus:border-[#2143b5]
+                transition-all
                 "
               />
 
@@ -431,8 +464,12 @@ export default function Contact() {
                 uppercase
                 tracking-[0.16em]
 
-                text-white/70
+                text-[#5f6674]
                 "
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 600,
+                }}
               >
                 Preferred Unit Type
               </label>
@@ -448,13 +485,16 @@ export default function Contact() {
                 rounded-[14px]
 
                 border
-                border-[#ffffff15]
+                border-[#e6dac8]
 
-                bg-white/5
+                bg-[#f8f2e8]
 
-                text-white
+                text-[#111111]
 
                 outline-none
+
+                focus:border-[#2143b5]
+                transition-all
                 "
               >
                 <option>2 BHK Smart — 800 sq.ft</option>
@@ -466,7 +506,7 @@ export default function Contact() {
 
             <button
               className="
-              mt-5
+              mt-6
 
               w-full
 
@@ -474,10 +514,10 @@ export default function Contact() {
 
               rounded-[14px]
 
-              bg-[#ffe2d1]
-              hover:bg-white
+              bg-[#14234b]
+              hover:bg-[#0f1c3d]
 
-              text-[#111111]
+              text-white
 
               uppercase
               tracking-[0.14em]
@@ -486,9 +526,13 @@ export default function Contact() {
 
               transition-all
               duration-300
+
+              hover:-translate-y-[2px]
+
+              shadow-[0_14px_34px_rgba(20,35,75,0.18)]
               "
               style={{
-                fontFamily: "'Raleway', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontWeight: 700,
               }}
             >
@@ -503,10 +547,10 @@ export default function Contact() {
 
               text-[12px]
 
-              text-white/45
+              text-[#7b8390]
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
               }}
             >
               Your information is secure and protected.

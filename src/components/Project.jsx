@@ -12,7 +12,8 @@ import { useState } from "react";
 const projectData = {
   ongoing: {
     title: "Ongoing Projects",
-    subtitle: "Premium developments currently shaping modern lifestyles.",
+    subtitle:
+      "Premium developments currently shaping modern lifestyles.",
 
     description:
       "Subham Group’s ongoing projects are thoughtfully designed with elegant architecture, modern amenities and strategic locations across Northeast India.",
@@ -31,7 +32,7 @@ const projectData = {
       "Modern architecture",
     ],
 
-    icon: <Building2 size={26} />,
+    icon: <Building2 size={22} />,
   },
 
   completed: {
@@ -62,7 +63,7 @@ const projectData = {
       "High-quality construction",
     ],
 
-    icon: <Landmark size={26} />,
+    icon: <Landmark size={22} />,
   },
 
   commercial: {
@@ -91,7 +92,7 @@ const projectData = {
       "Modern infrastructure",
     ],
 
-    icon: <BriefcaseBusiness size={26} />,
+    icon: <BriefcaseBusiness size={22} />,
   },
 };
 
@@ -107,152 +108,136 @@ export default function ProjectOverview() {
       relative
       overflow-hidden
 
-      py-16
+      py-14
       lg:py-20
 
-      bg-[#f5f1ec]
+      bg-[#14234b]
       "
     >
-      {/* GRID BACKGROUND */}
-<div
-  className="
-  absolute
-  inset-0
-  opacity-[0.045]
-  "
-  style={{
-    backgroundImage: `
-      linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
-    `,
-    backgroundSize: "42px 42px",
-  }}
-/>
-
-      {/* LEFT LINES */}
-
+      {/* GRID BG */}
       <div
         className="
         absolute
-        left-0
-        top-0
-        h-full
-        w-[220px]
-        opacity-[0.05]
+        inset-0
+        opacity-[0.03]
         "
         style={{
-          backgroundImage:
-            "repeating-linear-gradient(to right, #c58b6d 0px, #c58b6d 1px, transparent 1px, transparent 8px)",
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "58px 58px",
         }}
       />
 
       {/* GLOW */}
+      <div className="absolute top-[-160px] right-[-120px] w-[380px] h-[380px] rounded-full bg-[#e8d7b7]/10 blur-[120px]" />
 
-      <div className="absolute top-[-180px] right-[-150px] w-[450px] h-[450px] rounded-full bg-[#c58b6d]/10 blur-[140px]" />
+      <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-6">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
+        {/* HEADING */}
+        <div className="mb-12 lg:mb-14">
 
-   {/* HEADING */}
+          <p
+            className="
+            uppercase
+            tracking-[0.32em]
 
-<div className="text-center mb-14">
+            text-[10px]
+            lg:text-[11px]
 
-  <p
-    className="
-    uppercase
-    tracking-[0.35em]
+            text-[#e7d5b2]
 
-    text-[11px]
-    lg:text-[12px]
+            mb-4
+            "
+            style={{
+              fontFamily: "'Josefin Sans', sans-serif",
+              fontWeight: 500,
+            }}
+          >
+            PROJECT OVERVIEW
+          </p>
 
-    text-[#c58b6d]
+          <h2
+            className="
+            text-left
 
-    mb-5
-    "
-    style={{
-      fontFamily: "'Josefin Sans', sans-serif",
-    }}
-  >
-    PROJECT OVERVIEW
-  </p>
+            text-[38px]
+            md:text-[48px]
+            lg:text-[62px]
 
-  {/* শুধু এই white box টা remove */}
-  <div className="relative inline-block">
+            leading-[0.95]
+            tracking-[-2px]
 
-    <h2
-      className="
-      text-[#111111]
+            max-w-[1000px]
+            "
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 500,
+            }}
+          >
+            <span className="text-white">
+              Our{" "}
+            </span>
 
-      text-[42px]
-      lg:text-[58px]
+            <span
+              className="
+              italic
 
-      leading-[0.95]
-      tracking-[-2px]
-      "
-      style={{
-        fontFamily: "'Cormorant Garamond', serif",
-        fontWeight: 500,
-      }}
-    >
-      Our{" "}
+              bg-gradient-to-r
+              from-[#fff2d8]
+              via-[#ecd6a8]
+              to-[#d8b36f]
 
-      <span
-        className="
-        italic
-        bg-gradient-to-r
-        from-[#f7c58b]
-        via-[#d69073]
-        to-[#b86d4b]
-        bg-clip-text
-        text-transparent
-        "
-      >
-        Landmark
-      </span>{" "}
+              bg-clip-text
+              text-transparent
+              "
+            >
+              Landmark
+            </span>{" "}
 
-      Developments
-    </h2>
+            <span className="text-white">
+              Developments
+            </span>
+          </h2>
 
-  </div>
+          <p
+            className="
+            max-w-3xl
 
-  <p
-    className="
-    max-w-4xl
-    mx-auto
+            mt-5
 
-    mt-6
+            text-[14px]
+            lg:text-[16px]
 
-    text-[15px]
-    lg:text-[17px]
+            leading-[1.9]
 
-    leading-[1.9]
+            text-[#e4e7ef]
+            "
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 300,
+            }}
+          >
+            Explore Subham Group’s premium residential and
+            commercial developments across Assam and Northeast
+            India with elegant architecture and refined
+            urban living experiences.
+          </p>
 
-    text-[#5f5a55]
-    "
-    style={{
-      fontFamily: "'Josefin Sans', sans-serif",
-    }}
-  >
-    Explore Subham Group’s premium residential and commercial
-    developments across Assam and Northeast India — thoughtfully
-    crafted with elegant architecture and refined urban lifestyles.
-  </p>
-
-</div>
+        </div>
 
         {/* TOP BUTTONS */}
-
         <div
           className="
           flex
           flex-wrap
-          justify-center
 
           gap-4
 
           mb-10
           "
         >
-
           {Object.keys(projectData).map((key) => {
             const item = projectData[key];
 
@@ -261,116 +246,117 @@ export default function ProjectOverview() {
                 key={key}
                 onClick={() => setActive(key)}
                 className={`
-                  relative
-                  overflow-hidden
+                relative
 
-                  min-w-[230px]
+                min-w-[230px]
 
-                  px-5
-                  py-4
+                px-5
+                py-4
 
-                  border
-                  border-[#ddd2ca]
+                rounded-[22px]
+
+                border
+
+                flex
+                items-center
+                gap-3
+
+                transition-all
+                duration-300
+
+                ${
+                  active === key
+                    ? `
+                    bg-[#efe3c8]
+                    border-[#efe3c8]
+                    `
+                    : `
+                    bg-[#1c2f65]
+                    border-[#253d7c]
+                    hover:bg-[#223872]
+                    `
+                }
+                `}
+              >
+
+                <div
+                  className={`
+                  w-[48px]
+                  h-[48px]
+
+                  rounded-full
 
                   flex
                   items-center
                   justify-center
-                  gap-4
-
-                  transition-all
-                  duration-300
 
                   ${
                     active === key
-                      ? "bg-[#c58b6d] text-white border-[#c58b6d]"
-                      : "bg-[#fbf8f5] text-[#1f1f1f] hover:bg-[#f8f4ef]"
+                      ? `
+                      bg-[#14234b]
+                      text-[#efe3c8]
+                      `
+                      : `
+                      bg-[#2a4489]
+                      text-[#efe3c8]
+                      `
                   }
-                `}
-              >
+                  `}
+                >
+                  {item.icon}
+                </div>
 
-                {/* GRID INSIDE BUTTON */}
+                <div className="text-left">
 
-                <div
-                  className="absolute inset-0 opacity-[0.07]"
-                  style={{
-                    backgroundImage: `
-                      linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
-                    `,
-                    backgroundSize: "28px 28px",
-                  }}
-                />
-
-                <div className="relative z-10 flex items-center gap-4">
-
-                  <div
+                  <h3
                     className={`
-                    w-[48px]
-                    h-[48px]
-
-                    flex
-                    items-center
-                    justify-center
-
-                    rounded-full
+                    text-[18px]
+                    leading-[1.2]
 
                     ${
                       active === key
-                        ? "bg-[#ffffff20]"
-                        : "bg-[#f1e5dc]"
+                        ? "text-[#111111]"
+                        : "text-[#f5f3ef]"
                     }
                     `}
+                    style={{
+                      fontFamily:
+                        "'Cormorant Garamond', serif",
+                      fontWeight: 500,
+                    }}
                   >
-                    {item.icon}
-                  </div>
-
-                  <div>
-
-                    <h3
-                      className="
-                      text-[17px]
-                      leading-[1.3]
-                      text-left
-                      "
-                      style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontWeight: 500,
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-
-                  </div>
+                    {item.title}
+                  </h3>
 
                 </div>
 
               </button>
             );
           })}
-
         </div>
 
-        {/* CONTENT */}
-
+        {/* CONTENT BOX */}
         <div
           className="
           relative
           overflow-hidden
 
+          rounded-[30px]
+
           border
-          border-[#e4d8cf]
+          border-[#f2e7d2]
 
-          bg-white
-
-          shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+          bg-[#efe3c8]
 
           p-6
+          md:p-8
           lg:p-10
+
+          shadow-[0_20px_60px_rgba(0,0,0,0.18)]
           "
         >
 
           {/* INNER GRID */}
-
           <div
             className="
             absolute
@@ -379,10 +365,10 @@ export default function ProjectOverview() {
             "
             style={{
               backgroundImage: `
-                linear-gradient(#000000 1px, transparent 1px),
-                linear-gradient(90deg, #000000 1px, transparent 1px)
+                linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
               `,
-              backgroundSize: "60px 60px",
+              backgroundSize: "58px 58px",
             }}
           />
 
@@ -390,12 +376,13 @@ export default function ProjectOverview() {
 
             <h2
               className="
-              text-[34px]
-              lg:text-[56px]
+              text-[30px]
+              md:text-[40px]
+              lg:text-[52px]
 
               leading-[0.95]
 
-              text-[#1f1f1f]
+              text-[#111111]
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -409,13 +396,14 @@ export default function ProjectOverview() {
               className="
               mt-3
 
-              text-[#c58b6d]
+              text-[#9d6f4f]
 
-              text-[16px]
+              text-[14px]
+              lg:text-[15px]
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 300,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 500,
               }}
             >
               {current.subtitle}
@@ -423,18 +411,19 @@ export default function ProjectOverview() {
 
             <p
               className="
-              mt-6
+              mt-5
 
-              text-[#5f5a55]
+              text-[#444444]
 
-              leading-[2]
+              text-[14px]
+              lg:text-[15px]
 
-              max-w-4xl
+              leading-[1.9]
 
-              text-[15px]
+              max-w-3xl
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontWeight: 300,
               }}
             >
@@ -442,68 +431,6 @@ export default function ProjectOverview() {
             </p>
 
             {/* PROJECT LIST */}
-
-            <div
-              className="
-              grid
-              md:grid-cols-2
-
-              gap-4
-
-              mt-10
-              "
-            >
-
-              {current.projects.map((project, index) => (
-                <div
-                  key={index}
-                  className="
-                  border
-                  border-[#e4d8cf]
-
-                  bg-[#fbf8f5]
-
-                  px-5
-                  py-4
-
-                  flex
-                  items-start
-                  gap-3
-
-                  hover:border-[#c58b6d]
-
-                  transition-all
-                  duration-300
-                  "
-                >
-
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#c58b6d] mt-[2px]"
-                  />
-
-                  <p
-                    className="
-                    text-[15px]
-                    leading-[1.7]
-
-                    text-[#1f1f1f]
-                    "
-                    style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                      fontWeight: 300,
-                    }}
-                  >
-                    {project}
-                  </p>
-
-                </div>
-              ))}
-
-            </div>
-
-            {/* HIGHLIGHTS */}
-
             <div
               className="
               grid
@@ -514,22 +441,82 @@ export default function ProjectOverview() {
               mt-8
               "
             >
+              {current.projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="
+                  rounded-[18px]
 
+                  border
+                  border-[#e4d7c2]
+
+                  bg-[#f8f1e5]
+
+                  px-4
+                  py-4
+
+                  flex
+                  items-start
+                  gap-3
+
+                  transition-all
+                  duration-300
+                  "
+                >
+
+                  <CheckCircle2
+                    size={18}
+                    className="text-[#14234b] mt-[2px]"
+                  />
+
+                  <p
+                    className="
+                    text-[14px]
+
+                    leading-[1.7]
+
+                    text-[#1f1f1f]
+                    "
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {project}
+                  </p>
+
+                </div>
+              ))}
+            </div>
+
+            {/* HIGHLIGHTS */}
+            <div
+              className="
+              grid
+              md:grid-cols-2
+
+              gap-4
+
+              mt-7
+              "
+            >
               {current.highlights.map((item, index) => (
                 <div
                   key={index}
                   className="
+                  rounded-[18px]
+
                   border
-                  border-[#e4d8cf]
+                  border-[#e4d7c2]
 
-                  bg-[#f8f4ef]
+                  bg-[#f7efe1]
 
-                  px-5
-                  py-5
+                  px-4
+                  py-4
 
                   flex
                   items-center
-                  gap-4
+                  gap-3
                   "
                 >
 
@@ -540,8 +527,7 @@ export default function ProjectOverview() {
 
                     rounded-full
 
-                    border-2
-                    border-[#c58b6d]
+                    bg-[#14234b]
 
                     flex
                     items-center
@@ -550,21 +536,21 @@ export default function ProjectOverview() {
                   >
 
                     <CheckCircle2
-                      size={16}
-                      className="text-[#c58b6d]"
+                      size={14}
+                      className="text-[#efe3c8]"
                     />
 
                   </div>
 
                   <p
                     className="
-                    text-[15px]
+                    text-[14px]
 
                     text-[#1f1f1f]
                     "
                     style={{
-                      fontFamily: "'Josefin Sans', sans-serif",
-                      fontWeight: 300,
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 400,
                     }}
                   >
                     {item}
@@ -572,43 +558,43 @@ export default function ProjectOverview() {
 
                 </div>
               ))}
-
             </div>
 
             {/* BUTTON */}
-
             <button
               className="
-              mt-10
+              mt-8
 
-              bg-[#c58b6d]
-              hover:bg-[#d89d7d]
+              inline-flex
+              items-center
+              gap-3
+
+              px-7
+              py-3.5
+
+              rounded-full
+
+              bg-[#14234b]
+              hover:bg-[#1e3470]
 
               text-white
 
-              px-8
-              py-4
-
               uppercase
-              tracking-[0.18em]
+              tracking-[0.16em]
 
-              text-[12px]
-
-              flex
-              items-center
-              gap-3
+              text-[10px]
 
               transition-all
               duration-300
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 400,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
               }}
             >
               Explore Projects
 
-              <ChevronRight size={18} />
+              <ChevronRight size={16} />
             </button>
 
           </div>
@@ -616,7 +602,6 @@ export default function ProjectOverview() {
         </div>
 
       </div>
-
     </section>
   );
 }

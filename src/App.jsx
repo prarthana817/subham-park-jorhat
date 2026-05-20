@@ -8,7 +8,6 @@ import StatsBar from "./components/StatsBar";
 import Overview from "./components/Overview";
 import Project from "./components/Project";
 import Amenities from "./components/Amenities";
-import Walkthrough from "./components/Walkthrough";
 import Gallery from "./components/Gallery";
 import Planning from "./components/Planning";
 import Contact from "./components/Contact";
@@ -43,8 +42,6 @@ function App() {
       {/* AMENITIES */}
       <Amenities setOpen={setOpen} />
 
-      {/* WALKTHROUGH */}
-      <Walkthrough setOpen={setOpen} />
 
       {/* GALLERY */}
       <Gallery setOpen={setOpen} />

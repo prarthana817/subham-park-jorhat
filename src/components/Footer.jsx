@@ -11,19 +11,19 @@ export default function Footer() {
       overflow-hidden
 
       bg-gradient-to-r
-      from-[#fff1e4]
-      via-[#ffbf8a]
-      to-[#f08a42]
+      from-[#f9f4ec]
+      via-[#f4e6d4]
+      to-[#ead8c4]
 
-      py-4
-      lg:py-5
+      py-5
+      lg:py-6
 
       border-t
-      border-[#f2a56f]
+      border-[#efe2d3]
       "
     >
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-white/10" />
+      <div className="absolute inset-0 bg-white/25" />
 
       {/* LEFT LINES */}
       <div
@@ -33,18 +33,18 @@ export default function Footer() {
         top-0
         h-full
         w-[140px]
-        opacity-[0.06]
+        opacity-[0.035]
         "
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to right,#b96535 0px,#b96535 1px,transparent 1px,transparent 8px)",
+            "repeating-linear-gradient(to right,#b8a08c 0px,#b8a08c 1px,transparent 1px,transparent 8px)",
         }}
       />
 
-      {/* GLOW */}
-      <div className="absolute top-[-120px] left-[5%] w-[320px] h-[320px] rounded-full bg-[#ff9b52]/35 blur-[120px]" />
+      {/* SOFT GLOW */}
+      <div className="absolute top-[-120px] left-[5%] w-[280px] h-[280px] rounded-full bg-[#ffffff]/50 blur-[120px]" />
 
-      <div className="absolute bottom-[-120px] right-[8%] w-[320px] h-[320px] rounded-full bg-[#ff7b22]/25 blur-[120px]" />
+      <div className="absolute bottom-[-120px] right-[8%] w-[280px] h-[280px] rounded-full bg-[#f4e4cf]/60 blur-[120px]" />
 
       <div
         className="
@@ -68,6 +68,7 @@ export default function Footer() {
           justify-between
 
           gap-6
+          lg:gap-4
           "
         >
           {/* LEFT */}
@@ -79,12 +80,12 @@ export default function Footer() {
               <div
                 className="
                 absolute
-                w-[95px]
-                h-[95px]
+                w-[82px]
+                h-[82px]
                 rounded-full
                 bg-white
                 opacity-90
-                blur-[38px]
+                blur-[34px]
                 "
               />
 
@@ -95,8 +96,9 @@ export default function Footer() {
                 relative
                 z-10
 
-                w-[58px]
-                lg:w-[68px]
+                w-[52px]
+                sm:w-[58px]
+                lg:w-[64px]
 
                 object-contain
                 "
@@ -109,14 +111,15 @@ export default function Footer() {
 
               <h2
                 className="
-                text-[20px]
-                lg:text-[24px]
+                text-[18px]
+                sm:text-[20px]
+                lg:text-[22px]
 
                 leading-[0.95]
 
                 tracking-[0.04em]
 
-                text-[#3b2417]
+                text-[#2b1b12]
                 "
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
@@ -128,14 +131,15 @@ export default function Footer() {
 
               <p
                 className="
-                mt-[2px]
+                mt-[3px]
 
                 uppercase
-                tracking-[0.3em]
+                tracking-[0.28em]
 
-                text-[9px]
+                text-[8px]
+                sm:text-[9px]
 
-                text-[#8e4419]
+                text-[#8d6c55]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -159,7 +163,8 @@ export default function Footer() {
             items-center
             justify-center
 
-            gap-8
+            gap-6
+            sm:gap-10
             lg:gap-14
 
             text-center
@@ -171,12 +176,12 @@ export default function Footer() {
 
               <h3
                 className="
-                text-[13px]
+                text-[11px]
 
                 uppercase
                 tracking-[0.18em]
 
-                text-[#94481e]
+                text-[#8d6c55]
 
                 mb-2
                 "
@@ -190,12 +195,12 @@ export default function Footer() {
 
               <p
                 className="
-                text-[13px]
-                lg:text-[14px]
+                text-[12px]
+                lg:text-[13px]
 
-                text-[#3d2719]
+                text-[#34231a]
 
-                leading-[1.8]
+                leading-[1.7]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -214,12 +219,12 @@ export default function Footer() {
 
               <h4
                 className="
-                text-[13px]
+                text-[11px]
 
                 uppercase
                 tracking-[0.18em]
 
-                text-[#94481e]
+                text-[#8d6c55]
 
                 mb-2
                 "
@@ -233,12 +238,12 @@ export default function Footer() {
 
               <p
                 className="
-                text-[13px]
-                lg:text-[14px]
+                text-[12px]
+                lg:text-[13px]
 
-                text-[#3d2719]
+                text-[#34231a]
 
-                leading-[1.8]
+                leading-[1.7]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -259,10 +264,10 @@ export default function Footer() {
 
             <p
               className="
-              text-[12px]
-              lg:text-[13px]
+              text-[11px]
+              lg:text-[12px]
 
-              text-[#42291a]
+              text-[#463226]
               "
               style={{
                 fontFamily: "'Josefin Sans', sans-serif",

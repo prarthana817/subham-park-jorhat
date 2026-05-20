@@ -14,32 +14,32 @@ import { ArrowUpRight } from "lucide-react";
 const galleryImages = [
   {
     img: gallery1,
-    title: "Sky high homescape",
+    title: "Sky High Homescape",
     desc: "Elegant aerial lifestyle with greenery and open spaces.",
   },
   {
     img: gallery2,
-    title: "Luxury exterior",
+    title: "Luxury Exterior",
     desc: "Premium architecture crafted with timeless elegance.",
   },
   {
     img: gallery3,
-    title: "Refined interiors",
+    title: "Refined Interiors",
     desc: "Warm sophisticated interiors with premium ambience.",
   },
   {
     img: gallery4,
-    title: "Modern lifestyle",
+    title: "Modern Lifestyle",
     desc: "Contemporary living blended with peaceful surroundings.",
   },
   {
     img: gallery5,
-    title: "Elegant living",
+    title: "Elegant Living",
     desc: "Luxury lifestyle spaces inspired by modern comfort.",
   },
   {
     img: gallery6,
-    title: "Nature & serenity",
+    title: "Nature & Serenity",
     desc: "Beautiful balance of greenery and refined experiences.",
   },
 ];
@@ -52,28 +52,25 @@ export default function Gallery({ setOpen }) {
       relative
       overflow-hidden
 
-      py-10
-      lg:py-12
+      py-16
+      lg:py-24
 
-      bg-gradient-to-br
-      from-[#bb7653]
-      via-[#a86547]
-      to-[#8a5238]
+      bg-[#f8f5ed]
       "
     >
-      {/* GRID OVERLAY */}
+      {/* GRID BG */}
       <div
         className="
         absolute
         inset-0
-        opacity-[0.05]
+        opacity-[0.03]
         "
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
           `,
-          backgroundSize: "60px 60px",
+          backgroundSize: "68px 68px",
         }}
       />
 
@@ -83,55 +80,63 @@ export default function Gallery({ setOpen }) {
         absolute
         left-0
         top-0
+
         h-full
-        w-[90px]
-        opacity-[0.12]
+        w-[220px]
+
+        opacity-[0.035]
+
         hidden lg:block
         "
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to right,#ffffff 0px,#ffffff 2px,transparent 2px,transparent 10px)",
+            "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 9px)",
         }}
       />
 
-      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
+      {/* GLOW */}
+      <div className="absolute top-[-120px] right-[-120px] w-[260px] h-[260px] bg-[#2143b5]/5 blur-[120px] rounded-full" />
 
+      <div className="relative z-10 max-w-[1700px] mx-auto px-5 lg:px-8">
         {/* TOP */}
-        <div className="mb-8">
-
+        <div className="mb-10 lg:mb-14">
           {/* LABEL */}
-          <div className="flex items-center gap-4 mb-4">
-
-            <div className="w-[55px] h-[2px] bg-[#ffe2d1]" />
+          <div className="flex items-center gap-4 mb-5">
+            <div className="w-[60px] h-[2px] bg-[#d1a54d]" />
 
             <p
               className="
               uppercase
-              tracking-[0.34em]
-              text-[10px]
-              text-[#fff3ea]
+
+              tracking-[0.32em]
+
+              text-[11px]
+
+              text-[#c79d47]
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 600,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 500,
               }}
             >
               Signature Spaces
             </p>
-
           </div>
 
           {/* HEADING */}
           <h2
             className="
-            text-white
+            text-[#111111]
 
             text-[42px]
             md:text-[54px]
             lg:text-[64px]
 
             leading-[0.95]
+
             tracking-[-2px]
+
+            max-w-[900px]
             "
             style={{
               fontFamily: "'Cormorant Garamond', serif",
@@ -140,85 +145,90 @@ export default function Gallery({ setOpen }) {
           >
             Crafted{" "}
 
-            <span className="italic text-[#ffe2d1]">
+            <span className="italic text-[#d1a54d]">
               Modern
             </span>{" "}
 
             Elegance
           </h2>
 
-          {/* PARAGRAPH + BUTTON */}
-          <div className="mt-4">
-
+          {/* PARAGRAPH */}
+          <div className="mt-6 max-w-[820px]">
             <p
               className="
-              text-[16px]
-              lg:text-[18px]
+              text-[17px]
 
               leading-[1.9]
 
-              text-white/90
-
-              max-w-[950px]
+              text-[#5f6674]
               "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 300,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 400,
               }}
             >
-              Discover elegant architecture, serene green surroundings and beautifully curated spaces designed to elevate modern urban living with sophistication, comfort and timeless charm.
+              Discover elegant architecture, serene green
+              surroundings and beautifully curated spaces
+              designed to elevate modern urban living with
+              sophistication, comfort and timeless charm.
             </p>
 
             {/* BUTTON */}
             <button
               onClick={() => setOpen(true)}
               className="
-              mt-5
+              mt-7
 
-              flex
+              inline-flex
               items-center
               gap-3
 
-              px-7
-              py-3.5
+              h-[54px]
 
-              rounded-[16px]
+              px-8
 
-              bg-[#dc9a79]
-              hover:bg-[#efb190]
+              rounded-full
+
+              bg-[#14234b]
+              hover:bg-[#1b2f63]
 
               text-white
 
               uppercase
+
               tracking-[0.16em]
+
               text-[10px]
+
+              shadow-[0_12px_28px_rgba(20,35,75,0.22)]
+
+              hover:-translate-y-[2px]
 
               transition-all
               duration-300
               "
               style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 700,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
               }}
             >
               Explore Lifestyle
 
               <ArrowUpRight size={15} />
             </button>
-
           </div>
-
         </div>
 
         {/* GALLERY GRID */}
         <div
           className="
           grid
+
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
 
-          gap-5
+          gap-6
           "
         >
           {galleryImages.map((item, index) => (
@@ -228,7 +238,7 @@ export default function Gallery({ setOpen }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.6,
-                delay: index * 0.08,
+                delay: index * 0.06,
               }}
               viewport={{ once: true }}
               className="
@@ -237,10 +247,18 @@ export default function Gallery({ setOpen }) {
 
               overflow-hidden
 
-              rounded-[26px]
+              rounded-[30px]
 
-              h-[270px]
-              lg:h-[340px]
+              h-[300px]
+              md:h-[340px]
+              lg:h-[390px]
+
+              border
+              border-[#e9dfcf]
+
+              shadow-[0_18px_45px_rgba(0,0,0,0.05)]
+
+              bg-white
               "
             >
               {/* IMAGE */}
@@ -270,8 +288,8 @@ export default function Gallery({ setOpen }) {
                 inset-0
 
                 bg-gradient-to-t
-                from-black/80
-                via-black/30
+                from-black/75
+                via-black/20
                 to-transparent
                 "
               />
@@ -290,9 +308,7 @@ export default function Gallery({ setOpen }) {
                 "
               >
                 <div className="flex items-end justify-between gap-4">
-
                   <div>
-
                     <h3
                       className="
                       text-[30px]
@@ -303,21 +319,23 @@ export default function Gallery({ setOpen }) {
                       text-white
                       "
                       style={{
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
                         fontWeight: 500,
                       }}
                     >
                       {item.title}
                     </h3>
 
+                    {/* LINE */}
                     <div
                       className="
-                      mt-3
+                      mt-4
 
-                      w-[60px]
+                      w-[58px]
                       h-[2px]
 
-                      bg-[#ffe2d1]
+                      bg-[#d1a54d]
 
                       transition-all
                       duration-500
@@ -330,25 +348,25 @@ export default function Gallery({ setOpen }) {
                       className="
                       mt-4
 
-                      text-[13px]
-                      lg:text-[14px]
+                      text-[14px]
 
-                      leading-[1.7]
+                      leading-[1.8]
 
                       text-white/90
 
-                      max-w-[250px]
+                      max-w-[260px]
                       "
                       style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                        fontWeight: 300,
+                        fontFamily:
+                          "'Inter', sans-serif",
+                        fontWeight: 400,
                       }}
                     >
                       {item.desc}
                     </p>
-
                   </div>
 
+                  {/* BUTTON */}
                   <button
                     onClick={() => setOpen(true)}
                     className="
@@ -363,11 +381,11 @@ export default function Gallery({ setOpen }) {
 
                     rounded-full
 
-                    bg-white/10
-                    hover:bg-white/20
+                    bg-[#14234b]
+                    hover:bg-[#1b2f63]
 
                     border
-                    border-white/20
+                    border-[#24396f]
 
                     backdrop-blur-md
 
@@ -377,15 +395,36 @@ export default function Gallery({ setOpen }) {
                   >
                     <ArrowUpRight className="w-5 h-5 text-white" />
                   </button>
-
                 </div>
-
               </div>
 
+              {/* SOFT GLOW */}
+              <div
+                className="
+                absolute
+                bottom-[-60px]
+                right-[-60px]
+
+                w-[160px]
+                h-[160px]
+
+                rounded-full
+
+                bg-[#2143b5]/10
+
+                blur-[70px]
+
+                opacity-0
+
+                transition-all
+                duration-500
+
+                group-hover:opacity-100
+                "
+              />
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -31,44 +31,54 @@ export default function FloorPlans() {
   return (
     <section
       id="planning"
-      className="relative overflow-hidden py-10 lg:py-12"
-      style={{
-        background: `
-          linear-gradient(
-            135deg,
-            #faf7f3 0%,
-            #f4ede6 45%,
-            #eadfd5 100%
-          )
-        `,
-      }}
+      className="
+      relative
+      overflow-hidden
+
+      py-16
+      lg:py-24
+
+      bg-[#14234b]
+      "
     >
       {/* GRID */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
+            linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)
           `,
-          backgroundSize: "60px 60px",
+          backgroundSize: "62px 62px",
         }}
       />
 
-      <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-5">
+      {/* GLOW */}
+      <div className="absolute top-[-120px] right-[-120px] w-[280px] h-[280px] bg-[#efe4cd]/10 blur-[120px] rounded-full" />
+
+      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
 
         {/* HEADER */}
-        <div className="mb-6">
+        <div className="mb-10 lg:mb-12">
 
-          <div className="flex items-center gap-3 mb-3">
+          {/* LABEL */}
+          <div className="flex items-center gap-4 mb-5">
 
-            <div className="w-10 h-[2px] bg-[#d69073]" />
+            <div className="w-[65px] h-[2px] bg-[#e8d9bb]" />
 
             <p
-              className="uppercase tracking-[0.28em] text-[10px] text-[#b58671]"
+              className="
+              uppercase
+              tracking-[0.30em]
+
+              text-[10px]
+              md:text-[11px]
+
+              text-[#efe4cd]
+              "
               style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 400,
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 500,
               }}
             >
               Premium Floor Layouts
@@ -79,13 +89,16 @@ export default function FloorPlans() {
           {/* HEADING */}
           <h2
             className="
-            text-[#111111]
+            text-white
+
             text-[42px]
-            md:text-[54px]
-            lg:text-[64px]
+            md:text-[56px]
+            lg:text-[68px]
 
             leading-[0.95]
             tracking-[-2px]
+
+            max-w-[920px]
             "
             style={{
               fontFamily: "'Cormorant Garamond', serif",
@@ -97,12 +110,7 @@ export default function FloorPlans() {
             <span
               className="
               italic
-              bg-gradient-to-r
-              from-[#f7c58b]
-              via-[#d69073]
-              to-[#b86d4b]
-              bg-clip-text
-              text-transparent
+              text-[#efe4cd]
               "
             >
               Living
@@ -114,9 +122,10 @@ export default function FloorPlans() {
           {/* TEXT */}
           <p
             className="
-            mt-3
+            mt-5
 
-            text-[#6b625d]
+            text-[#d7ddeb]
+
             text-[15px]
             lg:text-[17px]
 
@@ -125,235 +134,296 @@ export default function FloorPlans() {
             max-w-[760px]
             "
             style={{
-              fontFamily: "'Josefin Sans', sans-serif",
-              fontWeight: 300,
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 400,
             }}
           >
-            Discover thoughtfully designed residential layouts with spacious planning, elegant interiors and seamless spatial flow crafted for refined modern living.
+            Discover thoughtfully designed residential layouts
+            with spacious planning, elegant interiors and
+            seamless spatial flow crafted for refined modern
+            living.
           </p>
 
         </div>
 
-        {/* BUTTONS */}
+        {/* MAIN BOX */}
         <div
           className="
-          flex
-          flex-wrap
-          gap-3
+          relative
 
-          mb-5
-          "
-        >
-
-          {plans.map((item, index) => (
-            <button
-              key={item.id}
-              onClick={() => setActive(item)}
-              className={`
-              flex
-              items-center
-              gap-2
-
-              px-4
-              py-2.5
-
-              rounded-[14px]
-
-              border
-
-              transition-all
-              duration-300
-
-              ${
-                active.id === item.id
-                  ? `
-                    bg-[#1f1f1f]
-                    border-[#1f1f1f]
-                  `
-                  : `
-                    bg-[#fcfaf8]
-                    border-[#ddd3cb]
-                    hover:bg-[#f6eee7]
-                  `
-              }
-              `}
-            >
-
-              <div>
-
-                <p
-                  className={`
-                  text-[7px]
-                  uppercase
-                  tracking-[0.16em]
-                  mb-[2px]
-
-                  ${
-                    active.id === item.id
-                      ? "text-[#d6b09b]"
-                      : "text-[#b58a74]"
-                  }
-                  `}
-                  style={{
-                    fontFamily: "'Josefin Sans', sans-serif",
-                    fontWeight: 400,
-                  }}
-                >
-                  PLAN {index + 1}
-                </p>
-
-                <h3
-                  className={`
-                  text-[16px]
-                  leading-none
-
-                  ${
-                    active.id === item.id
-                      ? "text-white"
-                      : "text-[#1f1f1f]"
-                  }
-                  `}
-                  style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontWeight: 500,
-                  }}
-                >
-                  {item.title}
-                </h3>
-
-              </div>
-
-              <ArrowRight
-                className={`
-                w-3.5
-                h-3.5
-
-                ${
-                  active.id === item.id
-                    ? "text-[#d6b09b]"
-                    : "text-[#8f7b70]"
-                }
-                `}
-              />
-
-            </button>
-          ))}
-
-        </div>
-
-        {/* IMAGE BOX */}
-        <div
-          className="
-          bg-[#fcf8f4]
+          bg-[#f4ead6]
 
           border
-          border-[#e5d8cf]
+          border-[#f0e2c8]
 
-          rounded-[24px]
+          rounded-[32px]
 
           overflow-hidden
 
-          shadow-[0_12px_35px_rgba(0,0,0,0.05)]
+          shadow-[0_22px_60px_rgba(0,0,0,0.20)]
           "
         >
 
-          <div className="p-4">
+          {/* INNER LINES */}
+          <div
+            className="
+            absolute
+            inset-0
 
-            <AnimatePresence mode="wait">
+            opacity-[0.04]
+            pointer-events-none
+            "
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 10px)",
+            }}
+          />
 
-              <motion.div
-                key={active.id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-              >
+          <div className="relative p-5 md:p-7 lg:p-10">
 
-                {/* TOP */}
-                <div className="mb-3">
+            {/* BUTTONS */}
+            <div
+              className="
+              flex
+              flex-wrap
 
-                  <div className="flex items-center gap-2 mb-1">
+              gap-3
 
-                    <Sparkles className="w-3 h-3 text-[#d69073]" />
+              mb-7
+              "
+            >
+
+              {plans.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => setActive(item)}
+                  className={`
+                  flex
+                  items-center
+                  gap-2
+
+                  px-4
+                  py-3
+
+                  rounded-[16px]
+
+                  border
+
+                  transition-all
+                  duration-300
+
+                  ${
+                    active.id === item.id
+                      ? `
+                        bg-[#14234b]
+                        border-[#14234b]
+
+                        shadow-[0_10px_25px_rgba(20,35,75,0.22)]
+                      `
+                      : `
+                        bg-[#fbf6ec]
+                        border-[#e5d6bb]
+
+                        hover:bg-[#efe2c7]
+                      `
+                  }
+                  `}
+                >
+
+                  <div>
 
                     <p
-                      className="
-                      uppercase
-                      tracking-[0.18em]
+                      className={`
                       text-[8px]
-                      text-[#b58671]
-                      "
+
+                      uppercase
+                      tracking-[0.16em]
+
+                      mb-[3px]
+
+                      ${
+                        active.id === item.id
+                          ? "text-[#efe4cd]"
+                          : "text-[#9a866d]"
+                      }
+                      `}
                       style={{
-                        fontFamily: "'Josefin Sans', sans-serif",
-                        fontWeight: 400,
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 500,
                       }}
                     >
-                      Selected Layout
+                      PLAN {index + 1}
                     </p>
+
+                    <h3
+                      className={`
+                      text-[17px]
+
+                      leading-none
+
+                      ${
+                        active.id === item.id
+                          ? "text-white"
+                          : "text-[#111111]"
+                      }
+                      `}
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
 
                   </div>
 
-                  <h3
-                    className="
-                    text-[#111111]
-                    text-[26px]
-                    lg:text-[34px]
+                  <ArrowRight
+                    className={`
+                    w-4
+                    h-4
 
-                    leading-none
-                    "
-                    style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {active.title}
-                  </h3>
-
-                </div>
-
-                {/* IMAGE */}
-                <div
-                  onClick={() => setImageOpen(true)}
-                  className="
-                  relative
-                  overflow-hidden
-
-                  rounded-[18px]
-
-                  bg-white
-
-                  p-3
-
-                  cursor-pointer
-                  group
-                  "
-                >
-
-                  <img
-                    src={active.image}
-                    alt={active.title}
-                    className="
-                    w-full
-
-                    max-h-[260px]
-                    lg:max-h-[340px]
-
-                    object-contain
-
-                    rounded-[12px]
-
-                    transition-transform
-                    duration-500
-
-                    group-hover:scale-[1.01]
-                    "
+                    ${
+                      active.id === item.id
+                        ? "text-[#efe4cd]"
+                        : "text-[#7f715e]"
+                    }
+                    `}
                   />
 
-                </div>
+                </button>
+              ))}
 
-              </motion.div>
+            </div>
 
-            </AnimatePresence>
+            {/* IMAGE BOX */}
+            <div
+              className="
+              bg-[#fbf6ec]
+
+              border
+              border-[#eadcc2]
+
+              rounded-[28px]
+
+              overflow-hidden
+
+              shadow-[0_12px_35px_rgba(0,0,0,0.06)]
+              "
+            >
+
+              <div className="p-4 lg:p-6">
+
+                <AnimatePresence mode="wait">
+
+                  <motion.div
+                    key={active.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+
+                    {/* TOP */}
+                    <div className="mb-5">
+
+                      <div className="flex items-center gap-2 mb-2">
+
+                        <Sparkles className="w-3.5 h-3.5 text-[#14234b]" />
+
+                        <p
+                          className="
+                          uppercase
+                          tracking-[0.18em]
+
+                          text-[8px]
+
+                          text-[#7f715e]
+                          "
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontWeight: 500,
+                          }}
+                        >
+                          Selected Layout
+                        </p>
+
+                      </div>
+
+                      <h3
+                        className="
+                        text-[#111111]
+
+                        text-[28px]
+                        lg:text-[38px]
+
+                        leading-none
+                        "
+                        style={{
+                          fontFamily:
+                            "'Cormorant Garamond', serif",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {active.title}
+                      </h3>
+
+                    </div>
+
+                    {/* IMAGE */}
+                    <div
+                      onClick={() => setImageOpen(true)}
+                      className="
+                      relative
+
+                      overflow-hidden
+
+                      rounded-[22px]
+
+                      bg-white
+
+                      border
+                      border-[#efe1c7]
+
+                      p-3
+                      lg:p-5
+
+                      cursor-pointer
+                      group
+                      "
+                    >
+
+                      <img
+                        src={active.image}
+                        alt={active.title}
+                        className="
+                        w-full
+
+                        max-h-[280px]
+                        md:max-h-[420px]
+                        lg:max-h-[520px]
+
+                        object-contain
+
+                        rounded-[14px]
+
+                        transition-transform
+                        duration-500
+
+                        group-hover:scale-[1.015]
+                        "
+                      />
+
+                    </div>
+
+                  </motion.div>
+
+                </AnimatePresence>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -391,14 +461,14 @@ export default function FloorPlans() {
               className="
               relative
 
-              max-w-5xl
+              max-w-6xl
               w-full
 
-              rounded-[18px]
+              rounded-[22px]
 
               overflow-hidden
 
-              bg-white
+              bg-[#f8f3ea]
               "
             >
 
@@ -410,17 +480,22 @@ export default function FloorPlans() {
                 right-4
                 z-20
 
-                w-9
-                h-9
+                w-10
+                h-10
 
                 rounded-full
 
-                bg-[#1f1f1f]
+                bg-[#14234b]
+                hover:bg-[#1d3369]
+
                 text-white
 
                 flex
                 items-center
                 justify-center
+
+                transition-all
+                duration-300
                 "
               >
                 <X className="w-4 h-4" />
@@ -431,11 +506,12 @@ export default function FloorPlans() {
                 alt={active.title}
                 className="
                 w-full
+
                 max-h-[88vh]
 
                 object-contain
 
-                bg-[#f8f5f1]
+                bg-[#f8f3ea]
                 "
               />
 

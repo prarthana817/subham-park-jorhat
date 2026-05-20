@@ -78,118 +78,130 @@ export default function Amenities({ setOpen }) {
       relative
       overflow-hidden
 
-      py-12
-      lg:py-16
+      py-16
+      lg:py-24
 
-      bg-[#b96f4c]
+      bg-[#14234b]
       "
     >
-
-      {/* BG TEXTURE */}
+      {/* GRID OVERLAY */}
       <div
         className="
         absolute
         inset-0
-        opacity-[0.05]
+        opacity-[0.035]
         "
         style={{
-          backgroundImage:
-            "radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px)",
-          backgroundSize: "18px 18px",
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: "65px 65px",
         }}
       />
 
-      <div className="relative z-10 max-w-[1450px] mx-auto px-4">
+      {/* TOP GLOW */}
+      <div className="absolute top-[-140px] left-[-120px] w-[320px] h-[320px] bg-[#f8f5ed]/20 blur-[130px] rounded-full" />
+
+      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
 
         {/* TOP SECTION */}
         <div
           className="
           relative
 
-          rounded-[28px]
-          lg:rounded-[32px]
-
           overflow-hidden
 
-          bg-[#fffaf6]
+          rounded-[30px]
+          lg:rounded-[34px]
+
+          bg-[#f8f5ed]
 
           border
-          border-[#ddb59f]
+          border-[#ece2d2]
 
-          mb-7
+          mb-10
+
+          shadow-[0_20px_60px_rgba(0,0,0,0.18)]
           "
         >
 
-          {/* SIDE LINES */}
+          {/* INNER LINES */}
           <div
             className="
             absolute
             inset-0
-            pointer-events-none
             hidden lg:block
+            pointer-events-none
             "
           >
             <div
               className="
               absolute
-              left-[24px]
-              top-[24px]
+              left-[34px]
+              top-[38px]
 
               w-[1px]
-              h-[calc(100%-48px)]
+              h-[calc(100%-76px)]
 
-              bg-[#ecdcd2]
+              bg-black/10
               "
             />
 
             <div
               className="
               absolute
-              right-[24px]
-              top-[24px]
+              right-[34px]
+              top-[38px]
 
               w-[1px]
-              h-[calc(100%-48px)]
+              h-[calc(100%-76px)]
 
-              bg-[#ecdcd2]
+              bg-black/10
               "
             />
           </div>
 
-          <div className="relative p-6 lg:p-10">
+          <div className="relative p-7 md:p-10 lg:p-14">
 
-            <p
-              className="
-              uppercase
-              tracking-[0.28em]
+            {/* LABEL */}
+            <div className="flex items-center gap-4 mb-5">
 
-              text-[10px]
+              <div className="w-[70px] h-[2px] bg-[#14234b]" />
 
-              text-[#c68463]
-              "
-              style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 500,
-              }}
-            >
-              Premium Amenities
-            </p>
+              <p
+                className="
+                uppercase
+                tracking-[0.32em]
+
+                text-[10px]
+                md:text-[11px]
+
+                text-[#14234b]
+                "
+                style={{
+                  fontFamily: "'Josefin Sans', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                Premium Amenities
+              </p>
+
+            </div>
 
             {/* HEADING */}
             <h2
               className="
-              mt-4
+              text-[#111111]
 
-              text-[#221d1a]
-
-              text-[44px]
+              text-[40px]
               md:text-[58px]
               lg:text-[72px]
 
-              leading-[0.92]
+              leading-[0.95]
               tracking-[-2px]
 
-              whitespace-nowrap
+              max-w-[1050px]
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -200,49 +212,49 @@ export default function Amenities({ setOpen }) {
 
               <span className="inline-flex items-end tracking-[-3px]">
 
-                <span style={{ color: "#f08b57" }}>J</span>
+                <span style={{ color: "#d86d3b" }}>J</span>
 
-                <span style={{ color: "#f4d8c7" }}>o</span>
+                <span style={{ color: "#b89f97" }}>o</span>
 
-                <span style={{ color: "#43d6cf" }}>r</span>
+                <span style={{ color: "#159d98" }}>r</span>
 
-                <span style={{ color: "#f4d8c7" }}>h</span>
+                <span style={{ color: "#bf7f76" }}>h</span>
 
-                <span style={{ color: "#f0b09a" }}>a</span>
+                <span style={{ color: "#c17062" }}>a</span>
 
-                <span style={{ color: "#8fb8e6" }}>t</span>
+                <span style={{ color: "#4f7ec2" }}>t</span>
 
               </span>
 
             </h2>
 
-            {/* PARAGRAPH */}
-            <div className="mt-6 max-w-[760px]">
+            {/* DESCRIPTION */}
+            <div className="mt-7 max-w-[760px]">
 
               <Leaf
                 className="
                 w-7
                 h-7
 
-                text-[#43d6cf]
+                text-[#14234b]
 
-                mb-4
+                mb-5
                 "
                 strokeWidth={1.8}
               />
 
               <p
                 className="
-                text-[16px]
-                lg:text-[18px]
+                text-[15px]
+                lg:text-[17px]
 
                 leading-[1.9]
 
-                text-[#6c655f]
+                text-[#1f1f1f]
                 "
                 style={{
-                  fontFamily: "'Josefin Sans', sans-serif",
-                  fontWeight: 300,
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 400,
                 }}
               >
                 Crafted with thoughtfully designed amenities,
@@ -250,32 +262,37 @@ export default function Amenities({ setOpen }) {
                 experiences for elegant living in Jorhat.
               </p>
 
+              {/* BUTTON */}
               <button
                 onClick={() => setOpen(true)}
                 className="
-                mt-7
+                mt-8
 
-                flex
+                inline-flex
                 items-center
                 gap-3
 
-                px-6
-                py-3.5
+                px-7
+                py-4
 
-                rounded-[14px]
+                rounded-full
 
-                bg-[#d69073]
-                hover:bg-[#a85c39]
+                bg-[#14234b]
+                hover:bg-[#0f1c3f]
 
                 text-white
 
                 uppercase
-                tracking-[0.16em]
+                tracking-[0.18em]
 
                 text-[10px]
 
                 transition-all
                 duration-300
+
+                hover:-translate-y-[2px]
+
+                shadow-[0_14px_34px_rgba(20,35,75,0.22)]
                 "
                 style={{
                   fontFamily: "'Josefin Sans', sans-serif",
@@ -298,11 +315,11 @@ export default function Amenities({ setOpen }) {
           className="
           grid
 
-          grid-cols-2
-          sm:grid-cols-3
+          grid-cols-1
+          sm:grid-cols-2
           lg:grid-cols-5
 
-          gap-4
+          gap-5
           "
         >
 
@@ -312,37 +329,40 @@ export default function Amenities({ setOpen }) {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.4,
-                  delay: index * 0.03,
+                  duration: 0.45,
+                  delay: index * 0.04,
                 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  y: -4,
+                  y: -6,
                 }}
                 className="
                 group
                 relative
 
-                rounded-[22px]
-
-                border
-                border-[#ddb59f]
-
-                bg-[#fffaf6]
-
                 overflow-hidden
 
-                p-5
+                rounded-[24px]
 
-                min-h-[215px]
+                bg-[#f8f5ed]
+
+                border
+                border-[#ece2d2]
+
+                p-6
+
+                min-h-[235px]
 
                 transition-all
                 duration-500
 
-                hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]
+                hover:bg-[#14234b]
+                hover:border-[#2a3f78]
+
+                hover:shadow-[0_18px_40px_rgba(0,0,0,0.28)]
                 "
               >
 
@@ -350,13 +370,19 @@ export default function Amenities({ setOpen }) {
                 <div
                   className="
                   absolute
-                  top-4
-                  right-4
+                  top-5
+                  right-5
 
-                  text-[18px]
+                  text-[20px]
 
-                  text-[#d88963]
+                  text-[#14234b]
+
                   opacity-80
+
+                  transition-all
+                  duration-500
+
+                  group-hover:text-[#f8f5ed]
                   "
                   style={{
                     fontFamily: "'Cormorant Garamond', serif",
@@ -369,29 +395,24 @@ export default function Amenities({ setOpen }) {
                 {/* ICON */}
                 <div
                   className="
-                  relative
-                  z-10
-
-                  w-[60px]
-                  h-[60px]
+                  w-[62px]
+                  h-[62px]
 
                   rounded-full
 
-                  bg-white
+                  bg-[#14234b]
 
                   border
-                  border-[#ece2db]
+                  border-[#20366d]
 
                   flex
                   items-center
                   justify-center
 
-                  shadow-[0_6px_16px_rgba(0,0,0,0.05)]
-
                   transition-all
                   duration-500
 
-                  group-hover:bg-[#43d6cf]
+                  group-hover:bg-[#f8f5ed]
                   "
                 >
 
@@ -400,27 +421,32 @@ export default function Amenities({ setOpen }) {
                     w-6
                     h-6
 
-                    text-[#43d6cf]
+                    text-[#f8f5ed]
 
                     transition-all
                     duration-500
 
-                    group-hover:text-white
+                    group-hover:text-[#14234b]
                     "
                   />
 
                 </div>
 
                 {/* CONTENT */}
-                <div className="relative z-10 mt-5">
+                <div className="mt-6">
 
                   <h3
                     className="
-                    text-[24px]
+                    text-[26px]
 
                     leading-[1.08]
 
-                    text-[#241f1c]
+                    text-[#111111]
+
+                    transition-all
+                    duration-500
+
+                    group-hover:text-white
                     "
                     style={{
                       fontFamily:
@@ -435,35 +461,39 @@ export default function Amenities({ setOpen }) {
                     className="
                     mt-3
 
-                    w-[42px]
+                    w-[48px]
                     h-[2px]
 
                     rounded-full
 
-                    bg-[#d8b18f]
+                    bg-[#14234b]
 
                     transition-all
                     duration-500
 
-                    group-hover:w-[75px]
-                    group-hover:bg-[#43d6cf]
+                    group-hover:w-[80px]
+                    group-hover:bg-[#f8f5ed]
                     "
                   />
 
                   <p
                     className="
-                    mt-3
+                    mt-4
 
-                    text-[13px]
+                    text-[14px]
 
-                    leading-[1.7]
+                    leading-[1.8]
 
-                    text-[#726a63]
+                    text-[#2f2f2f]
+
+                    transition-all
+                    duration-500
+
+                    group-hover:text-[#e5e7ef]
                     "
                     style={{
-                      fontFamily:
-                        "'Josefin Sans', sans-serif",
-                      fontWeight: 300,
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 400,
                     }}
                   >
                     {item.desc}
@@ -478,7 +508,6 @@ export default function Amenities({ setOpen }) {
         </div>
 
       </div>
-
     </section>
   );
 }
