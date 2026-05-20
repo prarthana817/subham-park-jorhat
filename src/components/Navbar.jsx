@@ -42,19 +42,19 @@ export default function Navbar() {
       flex
       justify-center
 
-      px-3
-      pt-3
+      px-2
+      pt-2
       "
     >
       <nav
         className={`
         w-full
 
-        max-w-[1380px]
+        max-w-[1240px]
 
-        h-[68px]
+        h-[66px]
 
-        rounded-[24px]
+        rounded-[22px]
 
         border
         border-[#eadfcb]
@@ -68,14 +68,14 @@ export default function Navbar() {
             : "bg-[#f8f5ed] shadow-[0_6px_25px_rgba(0,0,0,0.04)]"
         }
 
-        px-5
-        lg:px-7
+        px-4
+        lg:px-5
         `}
       >
         <div className="flex items-center justify-between h-full">
-          
+
           {/* LEFT */}
-          <div className="flex items-center shrink-0 pr-4">
+          <div className="flex items-center shrink-0 pr-1">
             <a
               href="#home"
               className="
@@ -83,8 +83,8 @@ export default function Navbar() {
               items-center
               justify-center
 
-              w-[82px]
-              h-[82px]
+              w-[74px]
+              h-[74px]
 
               rounded-full
 
@@ -96,12 +96,12 @@ export default function Navbar() {
                 src={logo}
                 alt="Subham Park"
                 className="
-                w-[82px]
-                h-[82px]
+                w-[74px]
+                h-[74px]
 
                 object-contain
 
-                scale-[1.55]
+                scale-[1.42]
                 "
               />
             </a>
@@ -118,8 +118,8 @@ export default function Navbar() {
 
             flex-1
 
-            gap-5
-            xl:gap-7
+            gap-3
+            xl:gap-5
             "
           >
             {navLinks.map((link) => (
@@ -127,11 +127,11 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className="
-                text-[11px]
+                text-[10px]
 
                 uppercase
 
-                tracking-[0.14em]
+                tracking-[0.13em]
 
                 text-[#171717]
 
@@ -153,13 +153,13 @@ export default function Navbar() {
           </div>
 
           {/* BUTTON */}
-          <div className="hidden lg:flex items-center pl-4">
+          <div className="hidden lg:flex items-center pl-1">
             <a
               href="#contact"
               className="
-              h-[44px]
+              h-[41px]
 
-              px-6
+              px-5
 
               rounded-full
 
@@ -172,11 +172,11 @@ export default function Navbar() {
 
               uppercase
 
-              tracking-[0.16em]
+              tracking-[0.14em]
 
               flex
               items-center
-              gap-2.5
+              gap-2
 
               hover:-translate-y-[2px]
 
@@ -194,7 +194,7 @@ export default function Navbar() {
             >
               Download Brochure
 
-              <ArrowUpRight size={13} />
+              <ArrowUpRight size={12} />
             </a>
           </div>
 
@@ -207,7 +207,7 @@ export default function Navbar() {
             text-[#171717]
             "
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={23} /> : <Menu size={23} />}
           </button>
         </div>
 
@@ -219,7 +219,7 @@ export default function Navbar() {
 
             mt-3
 
-            rounded-[22px]
+            rounded-[20px]
 
             bg-[#f8f5ed]
 
@@ -247,7 +247,7 @@ export default function Navbar() {
 
                 tracking-[0.14em]
 
-                text-[11px]
+                text-[10px]
 
                 hover:text-[#c79d47]
 
@@ -272,7 +272,7 @@ export default function Navbar() {
 
               text-white
 
-              h-[46px]
+              h-[44px]
 
               rounded-full
 
@@ -297,7 +297,7 @@ export default function Navbar() {
             >
               Download Brochure
 
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={13} />
             </a>
           </div>
         )}
