@@ -113,10 +113,13 @@ export default function Navbar() {
             lg:flex
 
             items-center
-            justify-center
+            justify-end
 
-            ml-auto
-            mr-3
+            w-full
+
+            pr-6
+            xl:pr-10
+            2xl:pr-16
 
             gap-10
             "
@@ -152,7 +155,7 @@ export default function Navbar() {
           </div>
 
           {/* BUTTON */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center ml-2">
             <a
               href="#contact"
               className="
