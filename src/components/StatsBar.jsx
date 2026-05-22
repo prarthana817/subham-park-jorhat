@@ -36,6 +36,9 @@ export default function StatsBar() {
     <section
       className="
       relative
+      w-screen
+      left-1/2
+      -translate-x-1/2
       overflow-hidden
 
       py-[4px]
@@ -46,6 +49,9 @@ export default function StatsBar() {
       <div
         className="
         relative
+        left-1/2
+        w-screen
+        -translate-x-1/2
         overflow-hidden
 
         bg-gradient-to-r
