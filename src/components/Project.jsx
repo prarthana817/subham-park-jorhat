@@ -1,69 +1,59 @@
 // src/components/ProjectOverview.jsx
 
-import {
-  Building2,
-  BriefcaseBusiness,
-  CheckCircle2,
-  Landmark,
-} from "lucide-react";
-import { useState } from "react";
+import { Building2, BriefcaseBusiness, Landmark } from "lucide-react";
 
-const projectData = {
-  ongoing: {
+const stats = [
+  { value: "16", label: "Completed Projects" },
+  { value: "28 Lac", label: "Sq. Ft. Constructed" },
+  { value: "15 Lac", label: "Sq. Ft. Ongoing" },
+  { value: "6000+", label: "Happy Residents" },
+];
+
+const categories = [
+  {
     title: "Ongoing Projects",
-    subtitle: "Premium developments currently shaping modern lifestyles.",
-    description:
-      "Subham Group's ongoing projects are thoughtfully designed with elegant architecture, modern amenities and strategic locations across Northeast India.",
+    subtitle: "Premium developments shaping modern lifestyles.",
+    icon: <Building2 size={15} />,
     projects: [
-      "Subham Garden — Jorhat",
-      "Subham Solitaire — Agartala",
-      "Subham Ashray — Goral",
-      "Subham Park — Bongaigaon",
+      { name: "Subham Garden", location: "Jorhat" },
+      { name: "Subham Solitaire", location: "Agartala" },
+      { name: "Subham Ashray", location: "Goral" },
+      { name: "Subham Park", location: "Bongaigaon" },
     ],
-    icon: <Building2 size={16} />,
   },
-
-  completed: {
-    title: "Completed Residential Projects",
-    subtitle: "Elegant residential communities successfully delivered across Assam.",
-    description:
-      "Subham Group has successfully delivered landmark residential developments designed for comfortable family living and refined city lifestyles.",
+  {
+    title: "Completed Residential",
+    subtitle: "Landmark communities delivered across Assam.",
+    icon: <Landmark size={15} />,
     projects: [
-      "Subham Heights — Kahilipara",
-      "Subham Enclave — Hatigaon",
-      "Subham Park View — Fatasil",
-      "Subham Elite — Ganeshguri",
-      "Subham Classic — Ambikagiri Nagar",
-      "Subham Manjushree — Datalpara",
-      "Subham Regency — Hengrabari",
-      "Subham Residency — Kharguli",
-      "Subham Sapphire — Malapara",
+      { name: "Subham Heights", location: "Kahilipara" },
+      { name: "Subham Enclave", location: "Hatigaon" },
+      { name: "Subham Park View", location: "Fatasil" },
+      { name: "Subham Elite", location: "Ganeshguri" },
+      { name: "Subham Classic", location: "Ambikagiri Nagar" },
+      { name: "Subham Manjushree", location: "Datalpara" },
+      { name: "Subham Regency", location: "Hengrabari" },
+      { name: "Subham Residency", location: "Kharguli" },
+      { name: "Subham Sapphire", location: "Malapara" },
     ],
-    icon: <Landmark size={16} />,
   },
-
-  commercial: {
+  {
     title: "Commercial Projects",
-    subtitle: "Modern business spaces crafted for productivity and growth.",
-    description:
-      "Subham Group's commercial developments combine premium office infrastructure with strategic locations to create dynamic business environments.",
+    subtitle: "Dynamic business spaces in prime locations.",
+    icon: <BriefcaseBusiness size={15} />,
     projects: [
-      "Subham Velocity — GS Road",
-      "Subham Redstone — Downtown",
-      "Bijay Crescent — Pibco",
-      "Subham Square — Lokhra",
-      "Subham Greens — Lokhra",
-      "Subham Buildwell — Zoo Road",
-      "Subham Garden — Kalapahar",
+      { name: "Subham Velocity", location: "GS Road" },
+      { name: "Subham Redstone", location: "Downtown" },
+      { name: "Bijay Crescent", location: "Pibco" },
+      { name: "Subham Square", location: "Lokhra" },
+      { name: "Subham Greens", location: "Lokhra" },
+      { name: "Subham Buildwell", location: "Zoo Road" },
+      { name: "Subham Garden", location: "Kalapahar" },
     ],
-    icon: <BriefcaseBusiness size={16} />,
   },
-};
+];
 
 export default function ProjectOverview() {
-  const [active, setActive] = useState("ongoing");
-  const current = projectData[active];
-
   return (
     <section
       id="about"
@@ -84,7 +74,7 @@ export default function ProjectOverview() {
 
       <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-6">
 
-        {/* ── Header row ── */}
+        {/* ── Header ── */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8 lg:mb-10">
           <div>
             <p
@@ -98,15 +88,12 @@ export default function ProjectOverview() {
               style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}
             >
               <span className="text-white">Our </span>
-              <span
-                className="italic bg-gradient-to-r from-[#fff2d8] via-[#ecd6a8] to-[#d8b36f] bg-clip-text text-transparent"
-              >
+              <span className="italic bg-gradient-to-r from-[#fff2d8] via-[#ecd6a8] to-[#d8b36f] bg-clip-text text-transparent">
                 Landmark
               </span>{" "}
               <span className="text-white">Developments</span>
             </h2>
           </div>
-
           <p
             className="text-[14px] lg:text-[16px] leading-[1.9] text-[#e4e7ef] max-w-sm lg:text-right"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
@@ -115,42 +102,8 @@ export default function ProjectOverview() {
           </p>
         </div>
 
-        {/* ── Tab pills ── */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {Object.keys(projectData).map((key) => {
-            const item = projectData[key];
-            const isActive = active === key;
-            return (
-              <button
-                key={key}
-                onClick={() => setActive(key)}
-                className={`
-                  flex items-center gap-2 px-4 py-2.5 rounded-full border
-                  transition-all duration-300 text-[13px]
-                  ${isActive
-                    ? "bg-[#efe3c8] border-[#efe3c8] text-[#111]"
-                    : "bg-[#1c2f65] border-[#253d7c] text-[#f5f3ef] hover:bg-[#223872]"
-                  }
-                `}
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
-              >
-                <span
-                  className={`flex items-center justify-center w-6 h-6 rounded-full
-                    ${isActive ? "bg-[#14234b] text-[#efe3c8]" : "bg-[#2a4489] text-[#efe3c8]"}`}
-                >
-                  {item.icon}
-                </span>
-                {item.title}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* ── Content card ── */}
-        <div
-          className="relative overflow-hidden rounded-[24px] border border-[#f2e7d2] bg-[#efe3c8] shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
-        >
-          {/* Card grid bg */}
+        {/* ── Main card ── */}
+        <div className="relative overflow-hidden rounded-[24px] border border-[#f2e7d2] bg-[#efe3c8] shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
@@ -162,89 +115,101 @@ export default function ProjectOverview() {
             }}
           />
 
-          <div className="relative z-10 p-5 md:p-7 lg:p-8">
+          <div className="relative z-10">
 
-            {/* Card header */}
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 pb-5 border-b border-[#e4d7c2] mb-6">
-              <div>
-                <h2
-                  className="text-[30px] md:text-[40px] lg:text-[52px] leading-[0.95] text-[#111]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}
+            {/* ── Stats bar ── */}
+            <div className="grid grid-cols-2 md:grid-cols-4 border-b border-[#e4d7c2]">
+              {stats.map((stat, i) => (
+                <div
+                  key={i}
+                  className={`
+                    px-5 py-4 flex flex-col gap-0.5 bg-[#14234b]
+                    ${i < stats.length - 1 ? "border-r border-[#1e3470]" : ""}
+                  `}
                 >
-                  {current.title}
-                </h2>
-                <p
-                  className="mt-1.5 text-[#9d6f4f] text-[14px] lg:text-[15px]"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
-                >
-                  {current.subtitle}
-                </p>
-              </div>
-              <p
-                className="text-[#444] text-[14px] lg:text-[15px] leading-[1.9] md:max-w-xs md:text-right"
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
-              >
-                {current.description}
-              </p>
+                  <span
+                    className="text-[26px] lg:text-[30px] leading-none text-[#efe3c8]"
+                    style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
+                  >
+                    {stat.value}
+                  </span>
+                  <span
+                    className="text-[11px] leading-[1.4] text-[#a8b8d8]"
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                  >
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
             </div>
 
-            {/* Two-column body: projects + highlights */}
-            <div className="grid lg:grid-cols-[1fr_auto] gap-6">
+            {/* ── Three project columns ── */}
+            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#e4d7c2]">
+              {categories.map((cat, ci) => (
+                <div key={ci} className="p-5 lg:p-6 flex flex-col gap-4">
 
-              {/* Projects grid */}
-              <div
-                className="grid sm:grid-cols-2 gap-2.5"
-                style={{ gridAutoRows: "min-content" }}
-              >
-                {current.projects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="rounded-[14px] border border-[#e4d7c2] bg-[#f8f1e5] px-3.5 py-3 flex items-center gap-2.5"
-                  >
-                    <CheckCircle2 size={15} className="text-[#14234b] shrink-0" />
-                    <p
-                      className="text-[14px] leading-[1.7] text-[#1f1f1f]"
-                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
-                    >
-                      {project}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Highlights — vertical strip */}
-              <div className="flex lg:flex-col gap-2.5 flex-wrap">
-
-                {/* Stats block */}
-                <div className="w-full grid grid-cols-2 gap-2.5 mb-0.5">
-                  {[
-                    { value: "16", label: "Completed Projects" },
-                    { value: "28 Lac", label: "Sq. Ft. Constructed" },
-                    { value: "15 Lac", label: "Sq. Ft. Ongoing" },
-                    { value: "6000+", label: "Happy Residents" },
-                  ].map((stat, i) => (
-                    <div
-                      key={i}
-                      className="rounded-[14px] border border-[#e4d7c2] bg-[#14234b] px-3 py-3 flex flex-col items-start gap-0.5"
-                    >
-                      <span
-                        className="text-[20px] leading-none text-[#efe3c8]"
+                  {/* Column header */}
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-full bg-[#14234b] flex items-center justify-center text-[#efe3c8] shrink-0">
+                      {cat.icon}
+                    </div>
+                    <div>
+                      <h3
+                        className="text-[16px] lg:text-[18px] leading-[1.1] text-[#111]"
                         style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
                       >
-                        {stat.value}
-                      </span>
-                      <span
-                        className="text-[11px] leading-[1.3] text-[#a8b8d8]"
+                        {cat.title}
+                      </h3>
+                      <p
+                        className="text-[11px] text-[#9d6f4f] leading-[1.3] mt-0.5"
                         style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
                       >
-                        {stat.label}
-                      </span>
+                        {cat.subtitle}
+                      </p>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
+                  {/* Divider */}
+                  <div className="h-px bg-[#e4d7c2]" />
+
+                  {/* Project list */}
+                  <div className="flex flex-col">
+                    {cat.projects.map((proj, pi) => (
+                      <div
+                        key={pi}
+                        className={`
+                          flex items-center justify-between py-2
+                          ${pi < cat.projects.length - 1 ? "border-b border-[#e8dece]" : ""}
+                        `}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="text-[10px] text-[#9d6f4f] w-4 shrink-0"
+                            style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 500 }}
+                          >
+                            {String(pi + 1).padStart(2, "0")}
+                          </span>
+                          <span
+                            className="text-[14px] text-[#1f1f1f]"
+                            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                          >
+                            {proj.name}
+                          </span>
+                        </div>
+                        <span
+                          className="text-[11px] text-[#9d6f4f] bg-[#f2e7d6] border border-[#e4d7c2] rounded-full px-2 py-0.5 shrink-0 ml-2"
+                          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                        >
+                          {proj.location}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
 
