@@ -207,9 +207,9 @@ export default function Footer() {
                   fontWeight: 600,
                 }}
               >
-                Assam Trunk Road,
+                1, Sonari Gaon, Tarajan, Jorhat Bhatemora Gaon
                 <br />
-                Jorhat, Assam - 785001
+                Assam - 785001
               </p>
 
             </div>
@@ -251,7 +251,6 @@ export default function Footer() {
                 }}
               >
                 RERAA JO 230
-                <br />
                 OF 2024-2025
               </p>
 
