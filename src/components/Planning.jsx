@@ -74,7 +74,7 @@ const bhk2Plans = [
 const bhk3Plans = [
   {
     id: "3bhk-unit-1",
-    title: "3 BHK – Unit 1",
+    title: "3 BHK – Unit 1 - 1st & 4th Floor",
     image: bhk3_unit_1,
     details: "Grand 3 BHK Unit 1 layout with wide corridors, expansive living lounge, and three master suites for elegant living.",
   },
@@ -110,13 +110,13 @@ const bhk3Plans = [
   },
   {
     id: "3bhk-unit-3",
-    title: "3 BHK – Unit 3",
+    title: "3 BHK – Unit 3 - 4th Floor",
     image: bhk3_unit_3,
     details: "Classic 3 BHK design for Unit 3 with integrated luxury dining and smart modular kitchen space.",
   },
   {
     id: "3bhk-study-3",
-    title: "3 BHK + Study – Unit 3",
+    title: "3 BHK + Study – Unit 3 - 6th Floor",
     image: bhk3_study_3,
     details: "Enhanced 3 BHK plan for Unit 3 incorporating a study room, ideal for a private office space.",
   },
@@ -134,25 +134,25 @@ const bhk3Plans = [
   },
   {
     id: "3bhk-unit-4",
-    title: "3 BHK – Unit 4",
+    title: "3 BHK – Unit 4 - 2nd & 5th Floor",
     image: bhk3_unit_4,
     details: "Lavish 3 BHK planning for Unit 4, displaying grand entrance foyer and smart cross-ventilation.",
   },
   {
     id: "3bhk-study-4",
-    title: "3 BHK + Study – Unit 4",
+    title: "3 BHK + Study – Unit 4 - 6th Floor",
     image: bhk3_study_4,
     details: "Luxurious Unit 4 layout adding a highly productive private study/library space.",
   },
   {
     id: "3bhk-study-4-5",
-    title: "3 BHK + Study – Unit 4 & 5",
+    title: "3 BHK + Study – Unit 4 & 5 - 1st & 4th Floor",
     image: bhk3_study_4_5,
     details: "Grand combo layouts for Unit 4 and 5 featuring elegant private wings and double balconies.",
   },
   {
     id: "3bhk-unit-5-7",
-    title: "3 BHK – Unit 5 & 7",
+    title: "3 BHK – Unit 5 & 7 - 3rd & 6th Floor",
     image: bhk3_unit_5_7,
     details: "Beautiful symmetrical layouts for Units 5 and 7 with dynamic living zones and elegant layouts.",
   },
@@ -164,7 +164,7 @@ const bhk3Plans = [
   },
   {
     id: "3bhk-unit-6",
-    title: "3 BHK – Unit 6",
+    title: "3 BHK – Unit 6 - 3rd Floor",
     image: bhk3_unit_6,
     details: "Elegant 3 BHK layout for Unit 6, featuring master bedroom privacy and large dining area.",
   },
@@ -182,7 +182,7 @@ const bhk3Plans = [
   },
   {
     id: "3bhk-unit-6-8",
-    title: "3 BHK – Unit 6 & 8",
+    title: "3 BHK – Unit 6 & 8 - 3rd & 6th Floor",
     image: bhk3_unit_6_8,
     details: "Magnificent dual unit mapping for Unit 6 & 8, emphasizing premium luxury and maximum privacy.",
   },
@@ -194,13 +194,13 @@ const bhk3Plans = [
   },
   {
     id: "3bhk-unit-7",
-    title: "3 BHK – Unit 7",
+    title: "3 BHK – Unit 7 - 2nd & 5th Floor",
     image: bhk3_unit_7,
     details: "Charming 3 BHK design for Unit 7 with a warm living aesthetic and beautifully placed kitchen setup.",
   },
   {
     id: "3bhk-unit-8",
-    title: "3 BHK – Unit 8",
+    title: "3 BHK – Unit 8 - 2nd & 5th Floor",
     image: bhk3_unit_8,
     details: "Exquisite 3 BHK plan for Unit 8 with three large bedrooms, dual toilets and private entrance.",
   },
@@ -615,4 +615,4 @@ export default function FloorPlans() {
       )}
     </section>
   );
-}
+}
