@@ -1,31 +1,25 @@
 import { motion } from "framer-motion";
 import {
   Trees,
-  Building2,
   Home,
   Sparkles,
 } from "lucide-react";
 
 const stats = [
   {
-    icon: Trees,
-    value: "70%",
-    label: "OPEN GREEN AREA",
+    icon: Sparkles,
+    value: "2030",
+    label: "COMPLETION",
   },
   {
-    icon: Building2,
-    value: "1535",
-    label: "SQM CLUBHOUSE",
+    icon: Trees,
+    value: "63%",
+    label: "OPEN AREA",
   },
   {
     icon: Home,
-    value: "257",
+    value: "44",
     label: "TOTAL UNITS",
-  },
-  {
-    icon: Sparkles,
-    value: "2031",
-    label: "COMPLETION",
   },
 ];
 
@@ -40,9 +34,7 @@ export default function StatsBar() {
       left-1/2
       -translate-x-1/2
       overflow-hidden
-
       py-[4px]
-
       bg-[#f8f5ed]
       "
     >
@@ -68,11 +60,8 @@ export default function StatsBar() {
           className="
           absolute
           inset-0
-
           bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px)]
-
           bg-[size:130px_100%]
-
           opacity-40
           "
         />
