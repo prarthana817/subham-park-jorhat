@@ -47,13 +47,13 @@ const mainTabs = [
 const bhk2Plans = [
   {
     id: "2bhk-study-3-4",
-    title: "2 BHK + Study – Unit 3 & 4",
+    title: "2 BHK + Study – Unit 3 & 4 - 1st & 4th Floor",
     image: bhk2_study_3_4,
     details: "Spacious 2 BHK layouts with a designated study room, ideal for modern work-from-home needs, occupying unit numbers 3 and 4.",
   },
   {
     id: "2bhk-study-4",
-    title: "2 BHK + Study – Unit 4",
+    title: "2 BHK + Study – Unit 4 - 3rd Floor",
     image: bhk2_study_4,
     details: "Premium layout design for Unit 4, optimized for maximum spatial efficiency, natural light, and premium corner integration.",
   },
@@ -65,7 +65,7 @@ const bhk2Plans = [
   },
   {
     id: "2bhk-study-5",
-    title: "2 BHK + Study – Unit 5",
+    title: "2 BHK + Study – Unit 5 - 2nd & 5th Floor",
     image: bhk2_study_5,
     details: "Standard luxury layout for Unit 5, showcasing comfortable bedrooms, contemporary kitchen, and cozy balcony attachments.",
   },
