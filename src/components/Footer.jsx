@@ -22,10 +22,10 @@ export default function Footer() {
       border-[#efe2d3]
       "
     >
-      
+
       <div className="absolute inset-0 bg-white/25" />
 
-      
+
       <div
         className="
         absolute
@@ -41,7 +41,7 @@ export default function Footer() {
         }}
       />
 
-      
+
       <div className="absolute top-[-120px] left-[5%] w-[280px] h-[280px] rounded-full bg-[#ffffff]/50 blur-[120px]" />
 
       <div className="absolute bottom-[-120px] right-[8%] w-[280px] h-[280px] rounded-full bg-[#f4e4cf]/60 blur-[120px]" />
@@ -71,10 +71,10 @@ export default function Footer() {
           lg:gap-4
           "
         >
-          
+
           <div className="flex items-center gap-4">
 
-            
+
             <div className="relative flex items-center justify-center">
 
               <div
@@ -106,7 +106,7 @@ export default function Footer() {
 
             </div>
 
-            
+
             <div>
 
               <h2
@@ -153,7 +153,7 @@ export default function Footer() {
 
           </div>
 
-          
+
           <div
             className="
             flex
@@ -171,7 +171,7 @@ export default function Footer() {
             "
           >
 
-          
+
             <div>
 
               <h3
@@ -214,7 +214,7 @@ export default function Footer() {
 
             </div>
 
-            
+
             <div>
 
               <h4
@@ -250,16 +250,16 @@ export default function Footer() {
                   fontWeight: 600,
                 }}
               >
-                RERAA BO 167
+                RERAA JO 230
                 <br />
-                of 2024-2025
+                OF 2024-2025
               </p>
 
             </div>
 
           </div>
 
-          
+
           <div className="text-center lg:text-right">
 
             <p

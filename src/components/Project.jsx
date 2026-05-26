@@ -14,20 +14,21 @@ const stats = [
 const ongoingProjects = [
   { name: "Subham Garden", location: "Jorhat" },
   { name: "Subham Solitaire", location: "Agartala" },
-  { name: "Subham Ashray", location: "Goral" },
+  { name: "Subham Ashray", location: "Garal" },
   { name: "Subham Park", location: "Bongaigaon" },
+  { name: "Subham Kishori Heights", location: "Dibrugarh" },
 ];
 
 const completedProjects = [
   { name: "Subham Heights", location: "Kahilipara" },
   { name: "Subham Enclave", location: "Hatigaon" },
   { name: "Subham Park View", location: "Fatasil" },
-  { name: "Subham Elite", location: "Ganeshguri" },
+  { name: "Subham Elite", location: "Gandhibasti" },
   { name: "Subham Classic", location: "Ambikagiri Nagar" },
   { name: "Subham Manjushree", location: "Datalpara" },
   { name: "Subham Regency", location: "Hengrabari" },
   { name: "Subham Residency", location: "Kharguli" },
-  { name: "Subham Sapphire", location: "Malapara" },
+  { name: "Subham Sapphire", location: "Nalapara" },
   { name: "Subham Velocity", location: "GS Road" },
   { name: "Subham Redstone", location: "Downtown" },
   { name: "Bijay Crescent", location: "Pibco" },
@@ -75,7 +76,7 @@ export default function ProjectOverview() {
       <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-6">
 
         {/* ── Header ── */}
-        <motion.div 
+        <motion.div
           {...fadeInUp}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8 lg:mb-10"
         >
@@ -106,7 +107,7 @@ export default function ProjectOverview() {
         </motion.div>
 
         {/* ── Main card ── */}
-        <motion.div 
+        <motion.div
           {...fadeInUp}
           className="relative overflow-hidden rounded-[24px] border border-[#f2e7d2] bg-[#efe3c8] shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
         >
@@ -152,15 +153,15 @@ export default function ProjectOverview() {
             {/* ── Compact Premium Project Layout ── */}
             <div className="p-6 lg:p-10 flex flex-col justify-between">
               <div>
-                <p 
+                <p
                   className="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-[#9d6f4f] opacity-80"
                   style={{ fontFamily: "'Josefin Sans', sans-serif" }}
                 >
                   The Subham Portfolio
                 </p>
-                
+
                 {/* Ongoing Projects Section */}
-                <p 
+                <p
                   className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 text-[#9d6f4f] opacity-80"
                   style={{ fontFamily: "'Josefin Sans', sans-serif" }}
                 >
@@ -195,7 +196,7 @@ export default function ProjectOverview() {
                 </div>
 
                 {/* Completed Projects Section */}
-                <p 
+                <p
                   className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 text-[#9d6f4f] opacity-80"
                   style={{ fontFamily: "'Josefin Sans', sans-serif" }}
                 >
@@ -229,10 +230,10 @@ export default function ProjectOverview() {
                   ))}
                 </div>
               </div>
-              
+
               {/* Footer displaying the selected project's location */}
               <div className="mt-12 flex items-center justify-between opacity-60">
-                <div 
+                <div
                   className="flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-[#14234b]"
                   style={{ fontFamily: "'Josefin Sans', sans-serif" }}
                 >
