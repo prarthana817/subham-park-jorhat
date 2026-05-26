@@ -18,7 +18,6 @@ export default function Contact() {
       bg-[#f6f0e4]
       "
     >
-
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -30,12 +29,9 @@ export default function Contact() {
         }}
       />
 
-
       <div className="absolute top-[-120px] left-[-120px] w-[280px] h-[280px] bg-[#2143b5]/5 blur-[120px] rounded-full" />
 
       <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-5">
-
-
         <div
           className="
           grid
@@ -53,8 +49,6 @@ export default function Contact() {
           shadow-[0_20px_60px_rgba(0,0,0,0.08)]
           "
         >
-
-
           <div
             className="
             p-6
@@ -66,9 +60,7 @@ export default function Contact() {
             justify-between
             "
           >
-
             <div>
-
               <p
                 className="
                 uppercase
@@ -136,9 +128,7 @@ export default function Contact() {
                 living spaces that bring comfort, sophistication and
                 everyday convenience together.
               </p>
-
             </div>
-
 
             <div
               className="
@@ -156,10 +146,7 @@ export default function Contact() {
               shadow-[0_10px_30px_rgba(0,0,0,0.04)]
               "
             >
-
-
               <div className="relative h-[180px] md:h-[210px]">
-
                 <img
                   src={locationImg}
                   alt="Location"
@@ -183,6 +170,7 @@ export default function Contact() {
                   "
                 />
 
+                {/* LOCATION BADGE */}
                 <div
                   className="
                   absolute
@@ -203,7 +191,6 @@ export default function Contact() {
                   backdrop-blur-md
                   "
                 >
-
                   <MapPin className="w-4 h-4 text-[#2143b5]" />
 
                   <p
@@ -222,15 +209,45 @@ export default function Contact() {
                   >
                     Prime Jorhat Location
                   </p>
-
                 </div>
 
+                {/* GOOGLE MAP BUTTON */}
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=1,+Sonari+Gaon,+Tarajan,+Jorhat+Bhatemora+Gaon+Assam+-+785001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                  absolute
+                  top-4
+                  right-4
+
+                  px-5
+                  py-2.5
+
+                  rounded-full
+
+                  bg-[#d1a54d]
+                  hover:bg-[#be9137]
+
+                  text-white
+
+                  text-[11px]
+                  uppercase
+                  tracking-[0.14em]
+
+                  transition-all
+                  duration-300
+                  "
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 700,
+                  }}
+                >
+                  View Location
+                </a>
               </div>
-
             </div>
-
           </div>
-
 
           <div
             className="
@@ -248,7 +265,6 @@ export default function Contact() {
             border-[#e8dcc8]
             "
           >
-
             <h3
               className="
               text-[#111111]
@@ -287,11 +303,8 @@ export default function Contact() {
               Our team will contact you shortly
             </p>
 
-
             <div className="grid md:grid-cols-2 gap-4">
-
               <div>
-
                 <label
                   className="
                   block
@@ -340,11 +353,9 @@ export default function Contact() {
                   transition-all
                   "
                 />
-
               </div>
 
               <div>
-
                 <label
                   className="
                   block
@@ -393,13 +404,10 @@ export default function Contact() {
                   transition-all
                   "
                 />
-
               </div>
-
             </div>
 
             <div className="mt-4">
-
               <label
                 className="
                 block
@@ -448,11 +456,9 @@ export default function Contact() {
                 transition-all
                 "
               />
-
             </div>
 
             <div className="mt-4">
-
               <label
                 className="
                 block
@@ -503,7 +509,6 @@ export default function Contact() {
                 <option>3 BHK — 1339 sq.ft & 1530 sq.ft </option>
                 <option>3.5 BHK — 1684 sq.ft </option>
               </select>
-
             </div>
 
             <button
@@ -557,13 +562,9 @@ export default function Contact() {
             >
               Your information is secure and protected.
             </p>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

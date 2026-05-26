@@ -31,7 +31,6 @@ export default function Hero({ setOpen }) {
       pb-10
       "
     >
-      
       <div
         className="
         absolute
@@ -47,7 +46,6 @@ export default function Hero({ setOpen }) {
         }}
       />
 
-      
       <div
         className="
         absolute
@@ -90,13 +88,11 @@ export default function Hero({ setOpen }) {
           lg:gap-8
           "
         >
-          
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            
             <div className="flex items-center gap-3 mb-4">
               <div className="w-[54px] h-[2px] bg-[#d1a54d]" />
 
@@ -119,7 +115,6 @@ export default function Hero({ setOpen }) {
               </p>
             </div>
 
-            
             <h1
               className="
               text-[#111111]
@@ -150,10 +145,8 @@ export default function Hero({ setOpen }) {
               Lifestyle
             </h1>
 
-            
             <div className="w-[150px] h-[2px] bg-[#d1a54d] mb-5" />
 
-            
             <p
               className="
               max-w-[520px]
@@ -177,9 +170,7 @@ export default function Hero({ setOpen }) {
               of Jorhat.
             </p>
 
-            
             <div className="flex flex-wrap items-center gap-5 mb-7">
-              
               <button
                 onClick={() => setOpen(true)}
                 className="
@@ -215,8 +206,9 @@ export default function Hero({ setOpen }) {
                 Book A Site Visit
               </button>
 
-              
-              <button
+              {/* EXPLORE PROJECT BUTTON */}
+              <a
+                href="#project"
                 className="
                 flex
                 items-center
@@ -248,10 +240,9 @@ export default function Hero({ setOpen }) {
                 Explore Project
 
                 <ArrowRight size={15} />
-              </button>
+              </a>
             </div>
 
-            
             <div
               className="
               grid
@@ -299,7 +290,6 @@ export default function Hero({ setOpen }) {
                   shadow-[0_8px_25px_rgba(0,0,0,0.03)]
                   "
                 >
-                  
                   <div
                     className="
                     w-10
@@ -319,7 +309,6 @@ export default function Hero({ setOpen }) {
                     {item.icon}
                   </div>
 
-                  {/* TEXT */}
                   <h4
                     className="
                     text-[13px]
@@ -338,7 +327,6 @@ export default function Hero({ setOpen }) {
             </div>
           </motion.div>
 
-          
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
