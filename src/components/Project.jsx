@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
+import logo from "../assests/images/logo.png";
+
 const stats = [
   { value: "16+", label: "Completed Projects" },
   { value: "28 Lac", label: "Sq. Ft. Constructed" },
@@ -46,229 +48,347 @@ const fadeInUp = {
 };
 
 export default function ProjectOverview() {
-  const [selectedLocation, setSelectedLocation] = useState("Jorhat");
+  const [selectedLocation, setSelectedLocation] =
+    useState("Jorhat");
 
   const colors = {
-    blackish: "#14234b",
-    brightOrange: "#efe3c8",
-    mediumOrange: "#9d6f4f",
-    darkOrange: "#d8b36f",
+    navy: "#14234b",
+    lightBg: "#f7f5ef",
+    border: "#e6e0d5",
+    gold: "#c79d47",
+    text: "#5f6674",
   };
 
   return (
     <section
       id="project"
-      className="relative overflow-hidden py-10 lg:py-14 bg-[#14234b]"
+      className="
+      relative
+      overflow-hidden
+      py-10
+      lg:py-14
+      bg-[#f7f5ef]
+      "
     >
-      {/* Grid BG */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: "58px 58px",
-        }}
-      />
-
-      <div className="absolute top-[-160px] right-[-120px] w-[380px] h-[380px] rounded-full bg-[#e8d7b7]/10 blur-[120px]" />
-
       <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-6">
+        {/* SMALL HEADING */}
+        <motion.div
+          {...fadeInUp}
+          className="mb-4"
+        >
+          <p
+            className="
+            uppercase
+            tracking-[0.30em]
+            text-[10px]
+            text-[#b68a3f]
+            "
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+            }}
+          >
+            PROJECT OVERVIEW
+          </p>
+        </motion.div>
+
         {/* HEADER */}
         <motion.div
           {...fadeInUp}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8 lg:mb-10"
+          className="
+          flex
+          flex-col
+          lg:flex-row
+          lg:items-end
+          lg:justify-between
+          gap-6
+          mb-8
+          "
         >
-          <div>
-            <p
-              className="uppercase tracking-[0.32em] text-[10px] lg:text-[11px] text-[#e7d5b2] mb-3"
-              style={{
-                fontFamily: "'Josefin Sans', sans-serif",
-                fontWeight: 500,
-              }}
+          <div className="flex items-center gap-5">
+            {/* LOGO */}
+            <div
+              className="
+              w-[95px]
+              h-[95px]
+              rounded-[24px]
+              bg-white
+              border
+              border-[#ebe5d8]
+              flex
+              items-center
+              justify-center
+              shadow-[0_10px_30px_rgba(0,0,0,0.04)]
+              shrink-0
+              "
             >
-              PROJECT OVERVIEW
-            </p>
+              <img
+                src={logo}
+                alt="Subham Logo"
+                className="
+                w-[68px]
+                object-contain
+                "
+              />
+            </div>
 
-            <h2
-              className="text-[38px] md:text-[48px] lg:text-[62px] leading-[0.95] tracking-[-2px]"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 500,
-              }}
-            >
-              <span className="text-white">Our </span>
+            {/* TITLE */}
+            <div>
+              <p
+                className="
+                uppercase
+                tracking-[0.32em]
+                text-[10px]
+                text-[#a07a44]
+                mb-2
+                "
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                SUBHAM GROUP
+              </p>
 
-              <span className="italic bg-gradient-to-r from-[#fff2d8] via-[#ecd6a8] to-[#d8b36f] bg-clip-text text-transparent">
-                Landmark
-              </span>{" "}
-              <span className="text-white">Developments</span>
-            </h2>
+              <h2
+                className="
+                text-[38px]
+                md:text-[52px]
+                lg:text-[68px]
+                leading-[0.92]
+                tracking-[-2px]
+                "
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', serif",
+                  fontWeight: 500,
+                }}
+              >
+                <span className="text-[#14234b]">
+                  Landmark
+                </span>{" "}
+
+                <span className="italic text-[#c79d47]">
+                  Projects
+                </span>
+              </h2>
+            </div>
           </div>
 
           <p
-            className="text-[14px] lg:text-[16px] leading-[1.9] text-[#e4e7ef] max-w-sm lg:text-right"
+            className="
+            text-[14px]
+            lg:text-[15px]
+            leading-[1.9]
+            text-[#5f6674]
+            max-w-sm
+            lg:text-right
+            "
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontWeight: 300,
+              fontWeight: 400,
             }}
           >
-            Premium residential and commercial developments across Assam and
-            Northeast India.
+            Premium residential and commercial
+            developments across Assam and Northeast
+            India.
           </p>
         </motion.div>
 
         {/* MAIN CARD */}
         <motion.div
           {...fadeInUp}
-          className="relative overflow-hidden rounded-[24px] border border-[#f2e7d2] bg-[#efe3c8] shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
+          className="
+          rounded-[28px]
+          border
+          border-[#e6e0d5]
+          bg-white
+          overflow-hidden
+          shadow-[0_18px_50px_rgba(0,0,0,0.05)]
+          "
         >
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
-              `,
-              backgroundSize: "58px 58px",
-            }}
-          />
+          {/* STATS */}
+          <div className="grid grid-cols-2 md:grid-cols-4 border-b border-[#ece6db]">
+            {stats.map((stat, i) => (
+              <div
+                key={i}
+                className={`
+                  px-5
+                  py-5
+                  bg-[#faf8f3]
 
-          <div className="relative z-10">
-            {/* STATS */}
-            <div className="grid grid-cols-2 md:grid-cols-4 border-b border-[#e4d7c2]">
-              {stats.map((stat, i) => (
-                <div
-                  key={i}
-                  className={`
-                    px-5 py-4 flex flex-col gap-0.5 bg-[#14234b]
-                    ${
-                      i < stats.length - 1
-                        ? "border-r border-[#1e3470]"
-                        : ""
-                    }
-                  `}
+                  ${
+                    i < stats.length - 1
+                      ? "border-r border-[#ece6db]"
+                      : ""
+                  }
+                `}
+              >
+                <span
+                  className="
+                  text-[28px]
+                  lg:text-[32px]
+                  leading-none
+                  text-[#14234b]
+                  "
+                  style={{
+                    fontFamily:
+                      "'Cormorant Garamond', serif",
+                    fontWeight: 600,
+                  }}
                 >
+                  {stat.value}
+                </span>
+
+                <p
+                  className="
+                  mt-1
+                  text-[11px]
+                  text-[#6f7786]
+                  "
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 500,
+                  }}
+                >
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* CONTENT */}
+          <div className="p-6 lg:p-10">
+            {/* ONGOING */}
+            <div className="mb-10">
+              <p
+                className="
+                text-[10px]
+                uppercase
+                tracking-[0.28em]
+                mb-4
+                text-[#a07a44]
+                "
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                Ongoing Projects
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-3">
+                {ongoingProjects.map((project, idx) => (
                   <span
-                    className="text-[26px] lg:text-[30px] leading-none text-[#efe3c8]"
+                    key={idx}
+                    onClick={() =>
+                      setSelectedLocation(
+                        project.location
+                      )
+                    }
+                    className="
+                    px-5
+                    py-2.5
+                    rounded-full
+                    border
+                    border-[#e4ddd0]
+                    bg-[#faf8f3]
+                    text-[#14234b]
+                    text-[10px]
+                    uppercase
+                    tracking-[0.15em]
+                    cursor-pointer
+                    transition-all
+                    duration-300
+                    hover:bg-[#14234b]
+                    hover:text-white
+                    "
                     style={{
-                      fontFamily: "'Cormorant Garamond', serif",
+                      fontFamily:
+                        "'Inter', sans-serif",
                       fontWeight: 600,
                     }}
                   >
-                    {stat.value}
+                    {project.name}
                   </span>
-
-                  <span
-                    className="text-[11px] leading-[1.4] text-[#a8b8d8]"
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: 400,
-                    }}
-                  >
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* CONTENT */}
-            <div className="p-6 lg:p-10 flex flex-col justify-between">
-              <div>
-                <p
-                  className="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-[#9d6f4f] opacity-80"
-                  style={{ fontFamily: "'Josefin Sans', sans-serif" }}
-                >
-                  The Subham Portfolio
-                </p>
+            {/* COMPLETED */}
+            <div>
+              <p
+                className="
+                text-[10px]
+                uppercase
+                tracking-[0.28em]
+                mb-4
+                text-[#a07a44]
+                "
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                Completed Projects
+              </p>
 
-                {/* ONGOING */}
-                <p
-                  className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 text-[#9d6f4f] opacity-80"
-                  style={{ fontFamily: "'Josefin Sans', sans-serif" }}
-                >
-                  Ongoing
-                </p>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-2 mb-8">
-                  {ongoingProjects.map((project, idx) => (
-                    <span
-                      key={idx}
-                      onClick={() => setSelectedLocation(project.location)}
-                      className="px-5 py-2.5 rounded-full border text-[9px] font-bold uppercase tracking-widest transition-all cursor-pointer text-center select-none"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        borderColor: `${colors.blackish}15`,
-                        color: colors.blackish,
-                        fontFamily: "'Inter', sans-serif",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.backgroundColor = colors.blackish;
-                        e.target.style.color = "#efe3c8";
-                        e.target.style.borderColor = colors.blackish;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.backgroundColor = "#ffffff";
-                        e.target.style.color = colors.blackish;
-                        e.target.style.borderColor = `${colors.blackish}15`;
-                      }}
-                    >
-                      {project.name}
-                    </span>
-                  ))}
-                </div>
-
-                {/* COMPLETED */}
-                <p
-                  className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 text-[#9d6f4f] opacity-80"
-                  style={{ fontFamily: "'Josefin Sans', sans-serif" }}
-                >
-                  Completed
-                </p>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-2">
-                  {completedProjects.map((project, idx) => (
-                    <span
-                      key={idx}
-                      onClick={() => setSelectedLocation(project.location)}
-                      className="px-5 py-2.5 rounded-full border text-[9px] font-bold uppercase tracking-widest transition-all cursor-pointer text-center select-none"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        borderColor: `${colors.blackish}15`,
-                        color: colors.blackish,
-                        fontFamily: "'Inter', sans-serif",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.backgroundColor = colors.blackish;
-                        e.target.style.color = "#efe3c8";
-                        e.target.style.borderColor = colors.blackish;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.backgroundColor = "#ffffff";
-                        e.target.style.color = colors.blackish;
-                        e.target.style.borderColor = `${colors.blackish}15`;
-                      }}
-                    >
-                      {project.name}
-                    </span>
-                  ))}
-                </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-3">
+                {completedProjects.map((project, idx) => (
+                  <span
+                    key={idx}
+                    onClick={() =>
+                      setSelectedLocation(
+                        project.location
+                      )
+                    }
+                    className="
+                    px-5
+                    py-2.5
+                    rounded-full
+                    border
+                    border-[#e4ddd0]
+                    bg-[#faf8f3]
+                    text-[#14234b]
+                    text-[10px]
+                    uppercase
+                    tracking-[0.15em]
+                    cursor-pointer
+                    transition-all
+                    duration-300
+                    hover:bg-[#14234b]
+                    hover:text-white
+                    "
+                    style={{
+                      fontFamily:
+                        "'Inter', sans-serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {project.name}
+                  </span>
+                ))}
               </div>
+            </div>
 
-              {/* FOOTER */}
-              <div className="mt-12 flex items-center justify-between opacity-60">
-                <div
-                  className="flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-[#14234b]"
-                  style={{ fontFamily: "'Josefin Sans', sans-serif" }}
-                >
-                  <MapPin className="w-4 h-4 text-[#9d6f4f]" />
+            {/* FOOTER */}
+            <div className="mt-10 flex items-center gap-3">
+              <MapPin className="w-4 h-4 text-[#c79d47]" />
 
-                  {selectedLocation}
-                </div>
-
-                <div className="w-12 h-[1px] bg-[#14234b]/20" />
-              </div>
+              <p
+                className="
+                text-[11px]
+                uppercase
+                tracking-[0.18em]
+                text-[#14234b]
+                "
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 700,
+                }}
+              >
+                {selectedLocation}
+              </p>
             </div>
           </div>
         </motion.div>

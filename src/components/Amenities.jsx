@@ -44,7 +44,7 @@ const amenities = [
     icon: Dumbbell,
   },
   {
-    title: "Swimming Pool",
+    title: "Splash Pool",
     desc: "Refreshing luxury swimming zone.",
     icon: Waves,
   },
@@ -160,7 +160,7 @@ export default function Amenities({ setOpen }) {
             className="uppercase tracking-[0.3em] text-[9px] text-[#c9a84c]/70"
             style={{ fontFamily: "'Josefin Sans', sans-serif" }}
           >
-            10 Curated Features
+            Amenities & Lifestyle
           </span>
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
         </div>

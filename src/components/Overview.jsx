@@ -1,6 +1,7 @@
 // src/components/Overview.jsx
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import {
   ShieldCheck,
@@ -8,9 +9,12 @@ import {
   LockKeyhole,
   Droplets,
   ArrowUpRight,
+  ChevronDown,
 } from "lucide-react";
 
 export default function Overview({ setOpen }) {
+  const [showConfig, setShowConfig] = useState(false);
+
   return (
     <section
       id="overview"
@@ -24,7 +28,6 @@ export default function Overview({ setOpen }) {
       bg-[#f8f5ed]
       "
     >
-      
       <div
         className="
         absolute
@@ -40,7 +43,6 @@ export default function Overview({ setOpen }) {
         }}
       />
 
-      
       <div
         className="
         absolute
@@ -58,7 +60,6 @@ export default function Overview({ setOpen }) {
         }}
       />
 
-      
       <div className="absolute top-[-100px] left-[-100px] w-[260px] h-[260px] bg-[#d7b56d]/10 blur-[120px] rounded-full" />
 
       <div className="absolute bottom-[-100px] right-[-100px] w-[260px] h-[260px] bg-[#2143b5]/10 blur-[120px] rounded-full" />
@@ -86,25 +87,20 @@ export default function Overview({ setOpen }) {
           items-start
           "
         >
-          
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            
             <div className="flex items-center gap-4 mb-6">
               <div className="w-[65px] h-[2px] bg-[#d1a54d]" />
 
               <p
                 className="
                 uppercase
-
                 tracking-[0.34em]
-
                 text-[11px]
-
                 text-[#c79d47]
                 "
                 style={{
@@ -116,7 +112,6 @@ export default function Overview({ setOpen }) {
               </p>
             </div>
 
-            
             <h2
               className="
               text-[#111111]
@@ -154,7 +149,6 @@ export default function Overview({ setOpen }) {
               Homes
             </h2>
 
-          
             <p
               className="
               text-[17px]
@@ -179,7 +173,6 @@ export default function Overview({ setOpen }) {
               and peaceful modern living.
             </p>
 
-            
             <button
               onClick={() => setOpen(true)}
               className="
@@ -221,7 +214,6 @@ export default function Overview({ setOpen }) {
               <ArrowUpRight className="w-4 h-4" />
             </button>
 
-            
             <div
               className="
               grid
@@ -232,52 +224,30 @@ export default function Overview({ setOpen }) {
               mt-10
               "
             >
-              {[
-                {
-                  icon: <ShieldCheck size={20} color="#d1a54d" />,
-                  title: "Earthquake Resistant",
-                  text: "RCC frame engineered",
-                },
-                {
-                  icon: <Zap size={20} color="#d1a54d" />,
-                  title: "24×7 Power Backup",
-                  text: "Uninterrupted premium living",
-                },
-                {
-                  icon: <LockKeyhole size={20} color="#d1a54d" />,
-                  title: "Smart Security",
-                  text: "Safe & secure community living",
-                },
-                {
-                  icon: <Droplets size={20} color="#d1a54d" />,
-                  title: "Rainwater Harvesting",
-                  text: "Eco-friendly sustainable design",
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                  bg-[#fffdfa]
+              {/* CONFIGURATION */}
+              <div
+                onClick={() => setShowConfig(!showConfig)}
+                className="
+                cursor-pointer
 
-                  rounded-[24px]
+                bg-[#fffdfa]
 
-                  border
-                  border-[#ece2d2]
+                rounded-[24px]
 
-                  p-5
+                border
+                border-[#ece2d2]
 
-                  flex
-                  items-start
-                  gap-4
+                p-5
 
-                  shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
 
-                  hover:-translate-y-[3px]
+                hover:-translate-y-[3px]
 
-                  transition-all
-                  duration-300
-                  "
-                >
+                transition-all
+                duration-300
+                "
+              >
+                <div className="flex items-start gap-4">
                   <div
                     className="
                     w-[48px]
@@ -292,10 +262,10 @@ export default function Overview({ setOpen }) {
                     justify-center
                     "
                   >
-                    {item.icon}
+                    <ShieldCheck size={20} color="#d1a54d" />
                   </div>
 
-                  <div>
+                  <div className="flex-1">
                     <h4
                       className="
                       text-[18px]
@@ -305,11 +275,12 @@ export default function Overview({ setOpen }) {
                       mb-1.5
                       "
                       style={{
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontFamily:
+                          "'Plus Jakarta Sans', sans-serif",
                         fontWeight: 600,
                       }}
                     >
-                      {item.title}
+                      Configuration
                     </h4>
 
                     <p
@@ -324,15 +295,279 @@ export default function Overview({ setOpen }) {
                         fontFamily: "'Inter', sans-serif",
                       }}
                     >
-                      {item.text}
+                      Click to view configurations
                     </p>
                   </div>
+
+                  <ChevronDown
+                    size={18}
+                    className={`transition-transform duration-300 ${
+                      showConfig ? "rotate-180" : ""
+                    }`}
+                  />
                 </div>
-              ))}
+
+                {showConfig && (
+                  <div
+                    className="
+                    mt-5
+                    pt-4
+
+                    border-t
+                    border-[#ece2d2]
+
+                    space-y-3
+                    "
+                  >
+                    <div className="text-[14px] text-[#171717]">
+                      2 BHK Smart — 800 sq.ft
+                    </div>
+
+                    <div className="text-[14px] text-[#171717]">
+                      2.5 BHK — 1096 sq.ft
+                    </div>
+
+                    <div className="text-[14px] text-[#171717]">
+                      3 BHK — 1339 sq.ft & 1530 sq.ft
+                    </div>
+
+                    <div className="text-[14px] text-[#171717]">
+                      3.5 BHK — 1684 sq.ft
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* POWER BACKUP */}
+              <div
+                className="
+                bg-[#fffdfa]
+
+                rounded-[24px]
+
+                border
+                border-[#ece2d2]
+
+                p-5
+
+                flex
+                items-start
+                gap-4
+
+                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+
+                hover:-translate-y-[3px]
+
+                transition-all
+                duration-300
+                "
+              >
+                <div
+                  className="
+                  w-[48px]
+                  h-[48px]
+
+                  rounded-[15px]
+
+                  bg-[#f8efd8]
+
+                  flex
+                  items-center
+                  justify-center
+                  "
+                >
+                  <Zap size={20} color="#d1a54d" />
+                </div>
+
+                <div>
+                  <h4
+                    className="
+                    text-[18px]
+
+                    text-[#171717]
+
+                    mb-1.5
+                    "
+                    style={{
+                      fontFamily:
+                        "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    24×7 Power Backup
+                  </h4>
+
+                  <p
+                    className="
+                    text-[14px]
+
+                    leading-[1.7]
+
+                    text-[#707887]
+                    "
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                    }}
+                  >
+                    Uninterrupted premium living
+                  </p>
+                </div>
+              </div>
+
+              {/* SMART SECURITY */}
+              <div
+                className="
+                bg-[#fffdfa]
+
+                rounded-[24px]
+
+                border
+                border-[#ece2d2]
+
+                p-5
+
+                flex
+                items-start
+                gap-4
+
+                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+
+                hover:-translate-y-[3px]
+
+                transition-all
+                duration-300
+                "
+              >
+                <div
+                  className="
+                  w-[48px]
+                  h-[48px]
+
+                  rounded-[15px]
+
+                  bg-[#f8efd8]
+
+                  flex
+                  items-center
+                  justify-center
+                  "
+                >
+                  <LockKeyhole size={20} color="#d1a54d" />
+                </div>
+
+                <div>
+                  <h4
+                    className="
+                    text-[18px]
+
+                    text-[#171717]
+
+                    mb-1.5
+                    "
+                    style={{
+                      fontFamily:
+                        "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Smart Security
+                  </h4>
+
+                  <p
+                    className="
+                    text-[14px]
+
+                    leading-[1.7]
+
+                    text-[#707887]
+                    "
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                    }}
+                  >
+                    Safe & secure community living
+                  </p>
+                </div>
+              </div>
+
+              {/* TOTAL UNITS */}
+              <div
+                className="
+                bg-[#fffdfa]
+
+                rounded-[24px]
+
+                border
+                border-[#ece2d2]
+
+                p-5
+
+                flex
+                items-start
+                gap-4
+
+                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+
+                hover:-translate-y-[3px]
+
+                transition-all
+                duration-300
+                "
+              >
+                <div
+                  className="
+                  w-[48px]
+                  h-[48px]
+
+                  rounded-[15px]
+
+                  bg-[#f8efd8]
+
+                  flex
+                  items-center
+                  justify-center
+                  "
+                >
+                  <Droplets size={20} color="#d1a54d" />
+                </div>
+
+                <div>
+                  <h4
+                    className="
+                    text-[18px]
+
+                    text-[#171717]
+
+                    mb-1.5
+                    "
+                    style={{
+                      fontFamily:
+                        "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Total Units
+                  </h4>
+
+                  <p
+                    className="
+                    text-[14px]
+
+                    leading-[1.7]
+
+                    text-[#707887]
+                    "
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                    }}
+                  >
+                    Total 8 premium units available
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
-          
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -358,10 +593,8 @@ export default function Overview({ setOpen }) {
               overflow-hidden
               "
             >
-              
               <div className="absolute top-0 right-0 w-[160px] h-[160px] bg-[#2143b5]/5 blur-[90px] rounded-full" />
 
-              
               <div
                 className="
                 text-[70px]
@@ -401,7 +634,6 @@ export default function Overview({ setOpen }) {
                 experiences for modern families.
               </p>
 
-              
               <div className="flex items-center gap-4">
                 <div
                   className="
@@ -424,7 +656,8 @@ export default function Overview({ setOpen }) {
                   text-[22px]
                   "
                   style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontFamily:
+                      "'Plus Jakarta Sans', sans-serif",
                     fontWeight: 700,
                   }}
                 >
@@ -441,7 +674,8 @@ export default function Overview({ setOpen }) {
                     mb-[2px]
                     "
                     style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontFamily:
+                        "'Plus Jakarta Sans', sans-serif",
                       fontWeight: 700,
                     }}
                   >

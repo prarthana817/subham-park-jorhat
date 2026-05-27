@@ -1,18 +1,19 @@
 // src/components/Hero.jsx
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import {
-  ArrowRight,
   ShieldCheck,
   Zap,
-  LockKeyhole,
-  Droplets,
+  ChevronDown,
 } from "lucide-react";
 
 import heroBg from "../assests/images/hero-bg.jpg";
 
-export default function Hero({ setOpen }) {
+export default function Hero() {
+  const [showPrice, setShowPrice] = useState(false);
+
   return (
     <section
       id="home"
@@ -99,11 +100,8 @@ export default function Hero({ setOpen }) {
               <p
                 className="
                 uppercase
-
                 tracking-[0.28em]
-
                 text-[10px]
-
                 text-[#c79d47]
                 "
                 style={{
@@ -170,79 +168,6 @@ export default function Hero({ setOpen }) {
               of Jorhat.
             </p>
 
-            <div className="flex flex-wrap items-center gap-5 mb-7">
-              <button
-                onClick={() => setOpen(true)}
-                className="
-                h-[52px]
-
-                px-8
-
-                rounded-full
-
-                bg-[#162a63]
-                hover:bg-[#10214f]
-
-                text-white
-
-                uppercase
-
-                tracking-[0.16em]
-
-                text-[10px]
-
-                shadow-[0_12px_28px_rgba(22,42,99,0.24)]
-
-                hover:-translate-y-[2px]
-
-                transition-all
-                duration-300
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 600,
-                }}
-              >
-                Book A Site Visit
-              </button>
-
-              {/* EXPLORE PROJECT BUTTON */}
-              <a
-                href="#project"
-                className="
-                flex
-                items-center
-                gap-3
-
-                border-b
-                border-[#171717]
-
-                pb-2
-
-                text-[#171717]
-
-                uppercase
-
-                tracking-[0.15em]
-
-                text-[10px]
-
-                hover:text-[#162a63]
-
-                transition-all
-                duration-300
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 600,
-                }}
-              >
-                Explore Project
-
-                <ArrowRight size={15} />
-              </a>
-            </div>
-
             <div
               className="
               grid
@@ -252,44 +177,87 @@ export default function Hero({ setOpen }) {
               gap-4
               "
             >
-              {[
-                {
-                  icon: <ShieldCheck size={17} />,
-                  title: "Earthquake Resistant",
-                },
-                {
-                  icon: <Zap size={17} />,
-                  title: "24×7 Backup",
-                },
-                {
-                  icon: <LockKeyhole size={17} />,
-                  title: "Smart Security",
-                },
-                {
-                  icon: <Droplets size={17} />,
-                  title: "Eco Friendly",
-                },
-              ].map((item, i) => (
+              {/* LOCATION */}
+              <div
+                className="
+                flex
+                items-center
+                gap-3
+
+                bg-[#fffdfa]
+
+                rounded-[18px]
+
+                border
+                border-[#ece2d2]
+
+                px-4
+                py-3
+
+                shadow-[0_8px_25px_rgba(0,0,0,0.03)]
+                "
+              >
                 <div
-                  key={i}
                   className="
+                  w-10
+                  h-10
+
+                  rounded-full
+
+                  bg-[#f8efd8]
+
                   flex
                   items-center
-                  gap-3
+                  justify-center
 
-                  bg-[#fffdfa]
-
-                  rounded-[18px]
-
-                  border
-                  border-[#ece2d2]
-
-                  px-4
-                  py-3
-
-                  shadow-[0_8px_25px_rgba(0,0,0,0.03)]
+                  text-[#d1a54d]
                   "
                 >
+                  <ShieldCheck size={17} />
+                </div>
+
+                <h4
+                  className="
+                  text-[13px]
+                  text-[#171717]
+                  leading-[1.5]
+                  "
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 600,
+                  }}
+                >
+                  1, Sonari Gaon, Tarajan,
+                  <br />
+                  Jorhat Bhatemora Gaon
+                  <br />
+                  Assam - 785001
+                </h4>
+              </div>
+
+              {/* PRICE */}
+              <div
+                onClick={() => setShowPrice(!showPrice)}
+                className="
+                cursor-pointer
+
+                bg-[#fffdfa]
+
+                rounded-[18px]
+
+                border
+                border-[#ece2d2]
+
+                px-4
+                py-3
+
+                shadow-[0_8px_25px_rgba(0,0,0,0.03)]
+
+                transition-all
+                duration-300
+                "
+              >
+                <div className="flex items-center gap-3">
                   <div
                     className="
                     w-10
@@ -306,24 +274,62 @@ export default function Hero({ setOpen }) {
                     text-[#d1a54d]
                     "
                   >
-                    {item.icon}
+                    <Zap size={17} />
                   </div>
 
-                  <h4
-                    className="
-                    text-[13px]
+                  <div className="flex-1">
+                    <h4
+                      className="
+                      text-[13px]
+                      text-[#171717]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Plus Jakarta Sans', sans-serif",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Price
+                    </h4>
+                  </div>
 
-                    text-[#171717]
-                    "
-                    style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {item.title}
-                  </h4>
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-300 ${
+                      showPrice ? "rotate-180" : ""
+                    }`}
+                  />
                 </div>
-              ))}
+
+                {showPrice && (
+                  <div
+                    className="
+                    mt-4
+                    pt-4
+
+                    border-t
+                    border-[#ece2d2]
+
+                    space-y-3
+                    "
+                  >
+                    <div className="flex justify-between text-[13px] text-[#171717]">
+                      <span>1 BHK</span>
+                      <span>₹25 Lakhs</span>
+                    </div>
+
+                    <div className="flex justify-between text-[13px] text-[#171717]">
+                      <span>2 BHK</span>
+                      <span>₹42 Lakhs</span>
+                    </div>
+
+                    <div className="flex justify-between text-[13px] text-[#171717]">
+                      <span>3 BHK</span>
+                      <span>₹65 Lakhs</span>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
 

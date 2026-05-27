@@ -6,140 +6,136 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
 import Overview from "./components/Overview";
-import Project from "./components/Project";
 import Amenities from "./components/Amenities";
 import Gallery from "./components/Gallery";
 import Planning from "./components/Planning";
+import Location from "./components/Location";
 import Contact from "./components/Contact";
+import Project from "./components/Project";
 import Footer from "./components/Footer";
 
 import PopupForm from "./components/PopupForm";
 import StickyLeadForm from "./components/StickyLeadForm";
+import Preloader from "./components/Preloader";
 
 function App() {
-
-  
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="overflow-x-hidden bg-[#f5f1ec]">
+    <>
+      {/* PRELOADER */}
+      <Preloader />
 
-      
-      <PopupForm open={open} setOpen={setOpen} />
+      <div className="overflow-x-hidden bg-[#f5f1ec]">
+        
+        {/* POPUP */}
+        <PopupForm open={open} setOpen={setOpen} />
 
-      
-      <Navbar setOpen={setOpen} />
+        {/* NAVBAR */}
+        <Navbar setOpen={setOpen} />
 
-      
-      <Hero setOpen={setOpen} />
+        {/* HERO */}
+        <Hero setOpen={setOpen} />
 
-    
-      <StatsBar />
+        {/* STATS */}
+        <StatsBar />
 
-      
-      <Overview setOpen={setOpen} />
+        {/* OVERVIEW */}
+        <Overview setOpen={setOpen} />
 
-      
-      <Amenities setOpen={setOpen} />
+        {/* AMENITIES */}
+        <Amenities setOpen={setOpen} />
 
+        {/* GALLERY */}
+        <Gallery setOpen={setOpen} />
 
-      
-      <Gallery setOpen={setOpen} />
+        {/* PLANNING */}
+        <Planning setOpen={setOpen} />
 
-      
-      <Planning setOpen={setOpen} />
+        {/* LOCATION */}
+        <Location setOpen={setOpen} />
 
-      
-      <Contact setOpen={setOpen} />
+        {/* CONTACT */}
+        <Contact setOpen={setOpen} />
 
-      
-      <Project setOpen={setOpen} />
+        {/* PROJECT */}
+        <Project setOpen={setOpen} />
 
-      
-      <StickyLeadForm setOpen={setOpen} />
+        {/* STICKY FORM */}
+        <StickyLeadForm setOpen={setOpen} />
 
-      
-      <Footer />
+        {/* FOOTER */}
+        <Footer />
 
-      
-      <div
-        className="
-        fixed
-        bottom-0
-        left-0
-        right-0
-
-        z-50
-
-        bg-[#1f1f1f]/95
-        backdrop-blur-md
-
-        p-3
-
-        flex
-        gap-3
-
-        lg:hidden
-        "
-      >
-
-        <button
-          onClick={() => setOpen(true)}
+        {/* MOBILE CTA */}
+        <div
           className="
-          flex-1
-
+          fixed
+          bottom-0
+          left-0
+          right-0
+          z-50
+          bg-[#14234b]/95
+          backdrop-blur-md
+          px-3
           py-3
-
-          bg-[#d79a74]
-          hover:bg-[#b87452]
-
-          text-white
-
-          uppercase
-          tracking-[0.15em]
-          text-[11px]
-
-          transition-all
-          duration-300
+          flex
+          gap-3
+          lg:hidden
           "
-          style={{
-            fontFamily: "'Raleway', sans-serif",
-            fontWeight: 600,
-          }}
         >
-          Book Visit
-        </button>
+          <button
+            onClick={() => setOpen(true)}
+            className="
+            flex-1
+            h-[48px]
+            rounded-full
+            bg-[#d1a54d]
+            hover:bg-[#be9339]
+            text-[#111111]
+            uppercase
+            tracking-[0.14em]
+            text-[10px]
+            transition-all
+            duration-300
+            "
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+            }}
+          >
+            Book Visit
+          </button>
 
-        <a
-          href="tel:+919876543210"
-          className="
-          flex-1
-
-          py-3
-
-          bg-white
-
-          text-black
-          text-center
-
-          uppercase
-          tracking-[0.15em]
-          text-[11px]
-
-          transition-all
-          duration-300
-          "
-          style={{
-            fontFamily: "'Raleway', sans-serif",
-            fontWeight: 600,
-          }}
-        >
-          Call Now
-        </a>
-
+          <a
+            href="tel:+919876543210"
+            className="
+            flex-1
+            h-[48px]
+            rounded-full
+            border
+            border-white/15
+            bg-white/10
+            text-white
+            flex
+            items-center
+            justify-center
+            uppercase
+            tracking-[0.14em]
+            text-[10px]
+            transition-all
+            duration-300
+            "
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+            }}
+          >
+            Call Now
+          </a>
+        </div>
       </div>
-
-    </div>
+    </>
   );
 }
 

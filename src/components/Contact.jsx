@@ -11,25 +11,13 @@ export default function Contact() {
       className="
       relative
       overflow-hidden
-
       py-12
       lg:py-16
-
-      bg-[#f6f0e4]
+      bg-[#0d1b46]
       "
     >
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
-          `,
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="absolute top-[-120px] left-[-120px] w-[280px] h-[280px] bg-[#2143b5]/5 blur-[120px] rounded-full" />
+      {/* DEEP NAVY BACKGROUND */}
+      <div className="absolute inset-0 bg-[#0d1b46]" />
 
       <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-5">
         <div
@@ -37,18 +25,19 @@ export default function Contact() {
           grid
           lg:grid-cols-2
 
-          rounded-[28px]
+          rounded-[30px]
 
           overflow-hidden
 
           border
-          border-[#e8dcc8]
+          border-[#d8c79d]
 
-          bg-[#fbf8f2]
+          bg-[#f8f5ee]
 
-          shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+          shadow-[0_25px_80px_rgba(0,0,0,0.35)]
           "
         >
+          {/* LEFT SIDE */}
           <div
             className="
             p-6
@@ -58,6 +47,8 @@ export default function Contact() {
             flex
             flex-col
             justify-between
+
+            bg-[#fcfaf5]
             "
           >
             <div>
@@ -65,11 +56,8 @@ export default function Contact() {
                 className="
                 uppercase
                 tracking-[0.30em]
-
                 text-[10px]
-
                 text-[#c9a14a]
-
                 mb-4
                 "
                 style={{
@@ -122,14 +110,15 @@ export default function Contact() {
                   fontWeight: 400,
                 }}
               >
-                Discover a thoughtfully crafted lifestyle designed for
-                modern families with elegant architecture, premium
-                amenities, seamless connectivity and beautifully planned
-                living spaces that bring comfort, sophistication and
-                everyday convenience together.
+                Discover a thoughtfully crafted lifestyle designed
+                for modern families with elegant architecture,
+                premium amenities, seamless connectivity and
+                beautifully planned living spaces that bring comfort,
+                sophistication and everyday convenience together.
               </p>
             </div>
 
+            {/* MAP CARD */}
             <div
               className="
               mt-7
@@ -143,7 +132,7 @@ export default function Contact() {
 
               bg-[#f4ecdf]
 
-              shadow-[0_10px_30px_rgba(0,0,0,0.04)]
+              shadow-[0_10px_30px_rgba(0,0,0,0.06)]
               "
             >
               <div className="relative h-[180px] md:h-[210px]">
@@ -153,7 +142,6 @@ export default function Contact() {
                   className="
                   w-full
                   h-full
-
                   object-cover
                   "
                 />
@@ -207,7 +195,7 @@ export default function Contact() {
                       fontWeight: 700,
                     }}
                   >
-                    Prime Jorhat Location
+                    PRIME JORHAT LOCATION
                   </p>
                 </div>
 
@@ -243,26 +231,27 @@ export default function Contact() {
                     fontWeight: 700,
                   }}
                 >
-                  View Location
+                  VIEW LOCATION
                 </a>
               </div>
             </div>
           </div>
 
+          {/* RIGHT SIDE */}
           <div
             className="
             p-6
             md:p-8
             lg:p-10
 
-            bg-[#fffaf2]
+            bg-[#f4eee0]
 
             border-t
             lg:border-t-0
 
             lg:border-l
 
-            border-[#e8dcc8]
+            border-[#e1d2b3]
             "
           >
             <h3
@@ -303,12 +292,12 @@ export default function Contact() {
               Our team will contact you shortly
             </p>
 
+            {/* FORM */}
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label
                   className="
                   block
-
                   mb-2
 
                   text-[10px]
@@ -323,7 +312,7 @@ export default function Contact() {
                     fontWeight: 600,
                   }}
                 >
-                  Full Name
+                  FULL NAME
                 </label>
 
                 <input
@@ -331,7 +320,6 @@ export default function Contact() {
                   placeholder="Your name"
                   className="
                   w-full
-
                   h-[54px]
 
                   px-4
@@ -339,9 +327,9 @@ export default function Contact() {
                   rounded-[14px]
 
                   border
-                  border-[#e6dac8]
+                  border-[#dbc8a2]
 
-                  bg-[#f8f2e8]
+                  bg-[#fffaf2]
 
                   text-[#111111]
 
@@ -349,7 +337,8 @@ export default function Contact() {
 
                   placeholder:text-[#8f96a3]
 
-                  focus:border-[#2143b5]
+                  focus:border-[#14234b]
+
                   transition-all
                   "
                 />
@@ -359,7 +348,6 @@ export default function Contact() {
                 <label
                   className="
                   block
-
                   mb-2
 
                   text-[10px]
@@ -374,7 +362,7 @@ export default function Contact() {
                     fontWeight: 600,
                   }}
                 >
-                  Phone Number
+                  PHONE NUMBER
                 </label>
 
                 <input
@@ -382,7 +370,6 @@ export default function Contact() {
                   placeholder="+91..."
                   className="
                   w-full
-
                   h-[54px]
 
                   px-4
@@ -390,9 +377,9 @@ export default function Contact() {
                   rounded-[14px]
 
                   border
-                  border-[#e6dac8]
+                  border-[#dbc8a2]
 
-                  bg-[#f8f2e8]
+                  bg-[#fffaf2]
 
                   text-[#111111]
 
@@ -400,7 +387,8 @@ export default function Contact() {
 
                   placeholder:text-[#8f96a3]
 
-                  focus:border-[#2143b5]
+                  focus:border-[#14234b]
+
                   transition-all
                   "
                 />
@@ -411,7 +399,6 @@ export default function Contact() {
               <label
                 className="
                 block
-
                 mb-2
 
                 text-[10px]
@@ -426,7 +413,7 @@ export default function Contact() {
                   fontWeight: 600,
                 }}
               >
-                Email Address
+                EMAIL ADDRESS
               </label>
 
               <input
@@ -434,7 +421,6 @@ export default function Contact() {
                 placeholder="your@email.com"
                 className="
                 w-full
-
                 h-[54px]
 
                 px-4
@@ -442,9 +428,9 @@ export default function Contact() {
                 rounded-[14px]
 
                 border
-                border-[#e6dac8]
+                border-[#dbc8a2]
 
-                bg-[#f8f2e8]
+                bg-[#fffaf2]
 
                 text-[#111111]
 
@@ -452,7 +438,8 @@ export default function Contact() {
 
                 placeholder:text-[#8f96a3]
 
-                focus:border-[#2143b5]
+                focus:border-[#14234b]
+
                 transition-all
                 "
               />
@@ -462,7 +449,6 @@ export default function Contact() {
               <label
                 className="
                 block
-
                 mb-2
 
                 text-[10px]
@@ -477,13 +463,12 @@ export default function Contact() {
                   fontWeight: 600,
                 }}
               >
-                Preferred Unit Type
+                PREFERRED UNIT TYPE
               </label>
 
               <select
                 className="
                 w-full
-
                 h-[54px]
 
                 px-4
@@ -491,26 +476,28 @@ export default function Contact() {
                 rounded-[14px]
 
                 border
-                border-[#e6dac8]
+                border-[#dbc8a2]
 
-                bg-[#f8f2e8]
+                bg-[#fffaf2]
 
                 text-[#111111]
 
                 outline-none
 
-                focus:border-[#2143b5]
+                focus:border-[#14234b]
+
                 transition-all
                 "
               >
-                <option>Select Unit</option>
+                <option>Select Configuration</option>
                 <option>2 BHK Smart — 800 sq.ft</option>
                 <option>2.5 BHK — 1096 sq.ft</option>
-                <option>3 BHK — 1339 sq.ft & 1530 sq.ft </option>
-                <option>3.5 BHK — 1684 sq.ft </option>
+                <option>3 BHK — 1339 sq.ft & 1530 sq.ft</option>
+                <option>3.5 BHK — 1684 sq.ft</option>
               </select>
             </div>
 
+            {/* BUTTON */}
             <button
               className="
               mt-6
@@ -536,14 +523,14 @@ export default function Contact() {
 
               hover:-translate-y-[2px]
 
-              shadow-[0_14px_34px_rgba(20,35,75,0.18)]
+              shadow-[0_14px_34px_rgba(20,35,75,0.20)]
               "
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontWeight: 700,
               }}
             >
-              Book Site Visit
+              BOOK SITE VISIT
             </button>
 
             <p
