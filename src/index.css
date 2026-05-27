@@ -43,11 +43,7 @@ body{
   --site-gutter:clamp(1.25rem,6vw,6rem);
   --section-y:clamp(4.75rem,7vw,6.75rem);
   --section-y-compact:clamp(4rem,6vw,5.75rem);
-  --wave-h:clamp(5rem,7vw,6.25rem);
   --linen-texture:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='64' height='64' filter='url(%23n)' opacity='.28'/%3E%3Cpath d='M0 16h64M0 32h64M0 48h64M16 0v64M32 0v64M48 0v64' stroke='%23000' stroke-opacity='.16' stroke-width='.5'/%3E%3C/svg%3E");
-  --wave-dark:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%2314234b' d='M0 44L80 50C160 56 320 68 480 57C640 46 800 12 960 11C1120 10 1280 42 1360 58L1440 74V100H0Z'/%3E%3C/svg%3E");
-  --wave-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23f8f5ed' d='M0 56L80 50C160 44 320 32 480 43C640 54 800 88 960 89C1120 90 1280 58 1360 42L1440 26V100H0Z'/%3E%3C/svg%3E");
-  --wave-footer:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23fbf7f1' d='M0 56L80 50C160 44 320 32 480 43C640 54 800 88 960 89C1120 90 1280 58 1360 42L1440 26V100H0Z'/%3E%3C/svg%3E");
 }
 
 
@@ -187,30 +183,24 @@ body{
 #gallery::after,
 #contact::after{
   bottom:-1px;
-  height:var(--wave-h);
-  background:var(--wave-dark) bottom center/100% 100% no-repeat;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,0.35),transparent);
 }
 
 #amenities::before,
 #planning::before,
 #about::before{
   top:-1px;
-  height:var(--wave-h);
-  background:var(--wave-dark) top center/100% 100% no-repeat;
-  transform:rotate(180deg);
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.32),transparent);
 }
 
 #amenities::after,
-#planning::after{
-  bottom:-1px;
-  height:var(--wave-h);
-  background:var(--wave-light) bottom center/100% 100% no-repeat;
-}
-
+#planning::after,
 #about::after{
-  bottom:-2px;
-  height:var(--wave-h);
-  background:var(--wave-footer) bottom center/100% 100% no-repeat;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.24),transparent);
 }
 
 #footer::before{
@@ -319,7 +309,6 @@ button:hover{
 
   :root{
     --site-gutter:clamp(1rem,5vw,1.5rem);
-    --wave-h:4.75rem;
   }
 
 }
