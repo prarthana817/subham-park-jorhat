@@ -15,10 +15,22 @@ const locationCards = [
     icon: <HeartPulse size={17} />,
     title: "Healthcare",
     points: [
-      "AG Nursing Home – 350 m",
-      "Jorhat Medical – 3.4 kms",
-      "Ayush Hospital – 2.1 kms",
-      "Apollo Pharmacy Nearby",
+      {
+        name: "AG Nursing Home",
+        distance: "350 m",
+      },
+      {
+        name: "Jorhat Medical",
+        distance: "3.4 kms",
+      },
+      {
+        name: "Ayush Hospital",
+        distance: "2.1 kms",
+      },
+      {
+        name: "Apollo Pharmacy Nearby",
+        distance: "Nearby",
+      },
     ],
   },
 
@@ -26,10 +38,22 @@ const locationCards = [
     icon: <GraduationCap size={17} />,
     title: "Education",
     points: [
-      "DCB Girls College – 1.6 kms",
-      "JB College – 2.1 kms",
-      "AAU – 3.3 kms",
-      "DPS Jorhat – 7.7 kms",
+      {
+        name: "DCB Girls College",
+        distance: "1.6 kms",
+      },
+      {
+        name: "JB College",
+        distance: "2.1 kms",
+      },
+      {
+        name: "AAU",
+        distance: "3.3 kms",
+      },
+      {
+        name: "DPS Jorhat",
+        distance: "7.7 kms",
+      },
     ],
   },
 
@@ -37,10 +61,22 @@ const locationCards = [
     icon: <Plane size={17} />,
     title: "Airport & Leisure",
     points: [
-      "Jorhat Airport – 4.5 kms",
-      "Gymkhana Club – 3.5 kms",
-      "Jorhat Stadium – 2.2 kms",
-      "Hotels & Cafes Nearby",
+      {
+        name: "Jorhat Airport",
+        distance: "4.5 kms",
+      },
+      {
+        name: "Gymkhana Club",
+        distance: "3.5 kms",
+      },
+      {
+        name: "Jorhat Stadium",
+        distance: "2.2 kms",
+      },
+      {
+        name: "Hotels & Cafes",
+        distance: "Nearby",
+      },
     ],
   },
 
@@ -48,10 +84,22 @@ const locationCards = [
     icon: <Train size={17} />,
     title: "Connectivity",
     points: [
-      "ISBT – 600 m",
-      "Town Station – 4.2 kms",
-      "Petrol Pump – 500 m",
-      "Smooth City Access",
+      {
+        name: "ISBT",
+        distance: "600 m",
+      },
+      {
+        name: "Town Station",
+        distance: "4.2 kms",
+      },
+      {
+        name: "Petrol Pump",
+        distance: "500 m",
+      },
+      {
+        name: "Smooth City Access",
+        distance: "Easy",
+      },
     ],
   },
 ];
@@ -524,7 +572,8 @@ export default function Location() {
                       key={i}
                       className="
                       flex
-                      items-start
+                      items-center
+                      justify-between
                       gap-3
 
                       border-b
@@ -533,37 +582,56 @@ export default function Location() {
                       pb-3
                       "
                     >
-                      <div
+                      {/* LEFT */}
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="
+                          w-[6px]
+                          h-[6px]
+
+                          rounded-full
+
+                          bg-[#d1a54d]
+
+                          shrink-0
+                          "
+                        />
+
+                        <p
+                          className="
+                          text-[13px]
+
+                          leading-[1.6]
+
+                          text-[#5d6470]
+                          "
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontWeight: 400,
+                          }}
+                        >
+                          {point.name}
+                        </p>
+                      </div>
+
+                      {/* RIGHT */}
+                      <span
                         className="
-                        w-[6px]
-                        h-[6px]
+                        text-[12px]
 
-                        rounded-full
+                        text-[#111111]
 
-                        bg-[#d1a54d]
-
-                        mt-[8px]
-
-                        shrink-0
-                        "
-                      />
-
-                      <p
-                        className="
-                        text-[13px]
-
-                        leading-[1.7]
-
-                        text-[#5d6470]
+                        whitespace-nowrap
                         "
                         style={{
                           fontFamily:
                             "'Inter', sans-serif",
-                          fontWeight: 400,
+                          fontWeight: 600,
                         }}
                       >
-                        {point}
-                      </p>
+                        {point.distance}
+                      </span>
                     </div>
                   ))}
                 </div>

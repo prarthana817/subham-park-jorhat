@@ -159,7 +159,7 @@ export default function Gallery({
             className="
             fixed
             inset-0
-            z-[999999]
+            z-[999999999]
 
             bg-black/95
 
@@ -171,6 +171,8 @@ export default function Gallery({
             sm:p-6
 
             overflow-hidden
+
+            isolation-isolate
             "
           >
             {/* CLOSE BUTTON */}
@@ -199,7 +201,7 @@ export default function Gallery({
               top-5
               right-5
 
-              z-[9999999]
+              z-[9999999999]
 
               h-[56px]
               px-7
@@ -260,7 +262,7 @@ export default function Gallery({
               alt="Preview"
               className="
               relative
-              z-10
+              z-[999999999]
 
               max-w-[96vw]
               max-h-[92vh]

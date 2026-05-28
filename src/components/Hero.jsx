@@ -167,12 +167,12 @@ export default function Hero() {
 
                 rounded-[20px]
 
-                bg-gradient-to-br
-                from-[#f4ead3]
-                via-[#f0e2bc]
-                to-[#ead7a4]
+                border
+                border-[#dcc89b]
 
-                shadow-[0_10px_24px_rgba(209,165,77,0.12)]
+                bg-[#e8d6ab]
+
+                shadow-[0_10px_24px_rgba(209,165,77,0.10)]
 
                 overflow-hidden
                 "
@@ -189,7 +189,7 @@ export default function Hero() {
                   before:inset-0
                   before:rounded-[20px]
 
-                  before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#fff3c9,#d1a54d)]
+                  before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)]
 
                   before:animate-[spin_6s_linear_infinite]
 
@@ -205,10 +205,7 @@ export default function Hero() {
 
                   rounded-[19px]
 
-                  bg-gradient-to-br
-                  from-[#f4ead3]
-                  via-[#f0e2bc]
-                  to-[#ead7a4]
+                  bg-[#e8d6ab]
                   "
                 />
 
@@ -231,13 +228,13 @@ export default function Hero() {
 
                     rounded-full
 
-                    bg-[#f7edd4]
+                    bg-[#e2cca0]
 
                     flex
                     items-center
                     justify-center
 
-                    text-[#c79d47]
+                    text-[#b78528]
 
                     shadow-inner
                     "
@@ -254,7 +251,7 @@ export default function Hero() {
 
                       text-[10px]
 
-                      text-[#b88b34]
+                      text-[#9e7426]
 
                       mb-[3px]
                       "
@@ -326,12 +323,12 @@ export default function Hero() {
 
                 rounded-[18px]
 
-                bg-gradient-to-br
-                from-[#f4ead3]
-                via-[#f0e2bc]
-                to-[#ead7a4]
+                border
+                border-[#dcc89b]
 
-                shadow-[0_10px_24px_rgba(209,165,77,0.12)]
+                bg-[#e8d6ab]
+
+                shadow-[0_10px_24px_rgba(209,165,77,0.10)]
 
                 overflow-hidden
                 "
@@ -348,7 +345,7 @@ export default function Hero() {
                   before:inset-0
                   before:rounded-[18px]
 
-                  before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#fff3c9,#d1a54d)]
+                  before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)]
 
                   before:animate-[spin_4s_linear_infinite]
 
@@ -364,10 +361,7 @@ export default function Hero() {
 
                   rounded-[17px]
 
-                  bg-gradient-to-br
-                  from-[#f4ead3]
-                  via-[#f0e2bc]
-                  to-[#ead7a4]
+                  bg-[#e8d6ab]
                   "
                 />
 
@@ -380,7 +374,7 @@ export default function Hero() {
 
                     text-[9px]
 
-                    text-[#b88b34]
+                    text-[#9e7426]
 
                     mb-[4px]
                     "
@@ -405,7 +399,7 @@ export default function Hero() {
 
                       leading-none
 
-                      text-[#b88b34]
+                      text-[#9e7426]
 
                       mb-[4px]
                       "

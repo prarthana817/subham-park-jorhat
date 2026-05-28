@@ -18,25 +18,25 @@ const stats = [
   {
     value: "16+",
     label: "Completed Projects",
-    icon: <Building2 size={20} />,
+    icon: <Building2 size={18} />,
   },
 
   {
     value: "28 Lac",
     label: "Sq. Ft. Constructed",
-    icon: <Ruler size={20} />,
+    icon: <Ruler size={18} />,
   },
 
   {
     value: "15 Lac",
     label: "Sq. Ft. Ongoing",
-    icon: <Construction size={20} />,
+    icon: <Construction size={18} />,
   },
 
   {
     value: "6000+",
     label: "Happy Residents",
-    icon: <Users size={20} />,
+    icon: <Users size={18} />,
   },
 ];
 
@@ -122,8 +122,8 @@ export default function ProjectOverview() {
       relative
       overflow-hidden
 
-      py-10
-      md:py-12
+      py-12
+      md:py-14
 
       bg-[#f7f5ef]
       "
@@ -149,11 +149,11 @@ export default function ProjectOverview() {
         relative
         z-10
 
-        max-w-[1280px]
+        max-w-[1220px]
         mx-auto
 
         px-4
-        lg:px-6
+        lg:px-5
         "
       >
         {/* TOP TAG */}
@@ -162,15 +162,15 @@ export default function ProjectOverview() {
           className="mb-2"
         >
           <div className="flex items-center gap-3">
-            <div className="w-[52px] h-[2px] bg-[#d1a54d]" />
+            <div className="w-[48px] h-[2px] bg-[#d1a54d]" />
 
             <p
               className="
               uppercase
 
-              tracking-[0.28em]
+              tracking-[0.26em]
 
-              text-[10px]
+              text-[9px]
 
               text-[#c79d47]
               "
@@ -180,7 +180,7 @@ export default function ProjectOverview() {
                 fontWeight: 700,
               }}
             >
-              SUBHAM GROUP
+              DEVELOPER PROFILE
             </p>
           </div>
         </motion.div>
@@ -225,7 +225,7 @@ export default function ProjectOverview() {
 
           gap-3
 
-          mb-6
+          mb-7
           "
         >
           {stats.map((item, index) => (
@@ -245,14 +245,14 @@ export default function ProjectOverview() {
               items-center
               gap-3
 
-              shadow-[0_8px_24px_rgba(0,0,0,0.03)]
+              shadow-[0_8px_24px_rgba(0,0,0,0.025)]
               "
             >
               {/* ICON */}
               <div
                 className="
-                w-14
-                h-14
+                w-12
+                h-12
 
                 rounded-full
 
@@ -274,8 +274,8 @@ export default function ProjectOverview() {
               <div>
                 <h3
                   className="
-                  text-[24px]
-                  md:text-[32px]
+                  text-[22px]
+                  md:text-[28px]
 
                   leading-none
 
@@ -294,7 +294,7 @@ export default function ProjectOverview() {
                   className="
                   mt-1
 
-                  text-[9px]
+                  text-[8px]
 
                   uppercase
 
@@ -324,11 +324,11 @@ export default function ProjectOverview() {
           grid
           lg:grid-cols-[220px_1fr]
 
-          gap-4
+          gap-6
 
-          items-center
+          items-start
 
-          mb-4
+          mb-6
           "
         >
           {/* LOGO */}
@@ -345,9 +345,7 @@ export default function ProjectOverview() {
               src={logo}
               alt="Subham Group"
               className="
-              w-[150px]
-              md:w-[170px]
-
+              w-[160px]
               object-contain
               "
             />
@@ -359,7 +357,7 @@ export default function ProjectOverview() {
             lg:border-l
             lg:border-[#e5dccd]
 
-            lg:pl-6
+            lg:pl-8
             "
           >
             <p
@@ -393,7 +391,7 @@ export default function ProjectOverview() {
         <motion.div
           {...fadeInUp}
           className="
-          rounded-[30px]
+          rounded-[28px]
 
           border
           border-[#e8dfd0]
@@ -403,18 +401,18 @@ export default function ProjectOverview() {
           p-5
           md:p-6
 
-          shadow-[0_10px_28px_rgba(0,0,0,0.03)]
+          shadow-[0_10px_28px_rgba(0,0,0,0.025)]
           "
         >
           {/* ONGOING */}
-          <div className="mb-7">
+          <div className="mb-8">
             <p
               className="
               uppercase
 
-              tracking-[0.28em]
+              tracking-[0.26em]
 
-              text-[10px]
+              text-[9px]
 
               text-[#b58d45]
 
@@ -429,7 +427,7 @@ export default function ProjectOverview() {
               Ongoing Projects
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2.5">
               {ongoingProjects.map(
                 (project, idx) => (
                   <button
@@ -440,7 +438,7 @@ export default function ProjectOverview() {
                       )
                     }
                     className="
-                    h-[36px]
+                    h-[34px]
 
                     px-4
 
@@ -457,7 +455,7 @@ export default function ProjectOverview() {
 
                     uppercase
 
-                    tracking-[0.15em]
+                    tracking-[0.14em]
 
                     hover:bg-[#14234b]
                     hover:text-white
@@ -484,9 +482,9 @@ export default function ProjectOverview() {
               className="
               uppercase
 
-              tracking-[0.28em]
+              tracking-[0.26em]
 
-              text-[10px]
+              text-[9px]
 
               text-[#b58d45]
 
@@ -501,7 +499,7 @@ export default function ProjectOverview() {
               Completed Projects
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2.5">
               {completedProjects.map(
                 (project, idx) => (
                   <button
@@ -512,7 +510,7 @@ export default function ProjectOverview() {
                       )
                     }
                     className="
-                    h-[36px]
+                    h-[34px]
 
                     px-4
 
@@ -529,7 +527,7 @@ export default function ProjectOverview() {
 
                     uppercase
 
-                    tracking-[0.15em]
+                    tracking-[0.14em]
 
                     hover:bg-[#14234b]
                     hover:text-white
@@ -568,7 +566,7 @@ export default function ProjectOverview() {
 
               uppercase
 
-              tracking-[0.18em]
+              tracking-[0.16em]
 
               text-[#14234b]
               "

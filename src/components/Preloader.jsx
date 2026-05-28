@@ -95,7 +95,7 @@ export default function Preloader() {
                 duration: 1.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mb-0"
+              className="mb-[-34px]"
             >
               <img
                 src={logo}
