@@ -180,7 +180,7 @@ export default function ProjectOverview() {
                 fontWeight: 700,
               }}
             >
-              DEVELOPER PROFILE
+              PROJECT OVERVIEW
             </p>
           </div>
         </motion.div>
@@ -188,7 +188,7 @@ export default function ProjectOverview() {
         {/* HEADING */}
         <motion.div
           {...fadeInUp}
-          className="mb-7"
+          className="mb-7 lg:ml-6"
         >
           <h2
             className="
@@ -225,7 +225,7 @@ export default function ProjectOverview() {
 
           gap-3
 
-          mb-7
+          mb-8
           "
         >
           {stats.map((item, index) => (
@@ -322,13 +322,13 @@ export default function ProjectOverview() {
           {...fadeInUp}
           className="
           grid
-          lg:grid-cols-[220px_1fr]
+          lg:grid-cols-[240px_1fr]
 
-          gap-6
+          gap-8
 
-          items-start
+          items-center
 
-          mb-6
+          mb-7
           "
         >
           {/* LOGO */}
@@ -339,13 +339,15 @@ export default function ProjectOverview() {
             justify-center
 
             lg:justify-start
+            lg:-mt-3
             "
           >
             <img
               src={logo}
               alt="Subham Group"
               className="
-              w-[160px]
+              w-[165px]
+
               object-contain
               "
             />
@@ -357,7 +359,10 @@ export default function ProjectOverview() {
             lg:border-l
             lg:border-[#e5dccd]
 
-            lg:pl-8
+            lg:pl-10
+
+            flex
+            items-center
             "
           >
             <p
