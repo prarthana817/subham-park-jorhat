@@ -9,7 +9,10 @@ import Overview from "./components/Overview";
 import Amenities from "./components/Amenities";
 import Gallery from "./components/Gallery";
 import Planning from "./components/Planning";
-import Location from "./components/Location";
+
+// RENAMED FILE IMPORT
+import Temp from "./components/Temp";
+
 import Contact from "./components/Contact";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
@@ -52,8 +55,8 @@ function App() {
         {/* PLANNING */}
         <Planning setOpen={setOpen} />
 
-        {/* LOCATION */}
-        <Location setOpen={setOpen} />
+        {/* TEMP SECTION */}
+        <Temp setOpen={setOpen} />
 
         {/* CONTACT */}
         <Contact setOpen={setOpen} />

@@ -37,21 +37,16 @@ export default function Navbar() {
       left-0
       w-full
       z-50
-
       flex
       justify-center
-
-      px-2
-      pt-0
+      px-3
+      pt-3
       "
     >
       <nav
         className={`
         w-full
-
         max-w-[1240px]
-
-        h-[72px]
 
         rounded-[22px]
 
@@ -63,18 +58,25 @@ export default function Navbar() {
 
         ${
           scrolled
-            ? "bg-[#f8f5ed] shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
+            ? "bg-[#f8f5ed]/95 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
             : "bg-[#f8f5ed] shadow-[0_6px_25px_rgba(0,0,0,0.04)]"
         }
-
-        px-4
-        lg:px-5
         `}
       >
-        <div className="flex items-center h-full">
-          
+        {/* NAVBAR INNER */}
+        <div
+          className="
+          h-[72px]
+
+          px-4
+          lg:px-6
+
+          flex
+          items-center
+          "
+        >
           {/* LOGO */}
-          <div className="flex items-center shrink-0 pr-1">
+          <div className="flex items-center shrink-0">
             <a
               href="#home"
               className="
@@ -82,25 +84,18 @@ export default function Navbar() {
               items-center
               justify-center
 
-              w-[74px]
-              h-[74px]
-
-              rounded-full
-
-              transition-all
-              duration-300
+              w-[72px]
+              h-[72px]
               "
             >
               <img
                 src={logo}
                 alt="Subham Park"
                 className="
-                w-[74px]
-                h-[74px]
-
+                w-[72px]
+                h-[72px]
                 object-contain
-
-                scale-[1.42]
+                scale-[1.35]
                 "
               />
             </a>
@@ -113,15 +108,12 @@ export default function Navbar() {
             lg:flex
 
             items-center
-            justify-end
+            justify-center
 
-            w-full
+            flex-1
 
-            pr-6
-            xl:pr-10
-            2xl:pr-16
-
-            gap-10
+            gap-8
+            xl:gap-10
             "
           >
             {navLinks.map((link) => (
@@ -129,14 +121,13 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className="
+                relative
+
                 text-[11px]
-
                 uppercase
-
-                tracking-[0.13em]
+                tracking-[0.14em]
 
                 text-[#171717]
-
                 hover:text-[#c79d47]
 
                 transition-all
@@ -155,7 +146,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA BUTTON */}
-          <div className="hidden lg:flex items-center ml-2">
+          <div className="hidden lg:flex items-center">
             <a
               href="#contact"
               className="
@@ -208,10 +199,21 @@ export default function Navbar() {
 
             lg:hidden
 
-            text-[#171717]
+            w-[42px]
+            h-[42px]
+
+            rounded-full
+
+            bg-[#162a63]
+
+            text-white
+
+            flex
+            items-center
+            justify-center
             "
           >
-            {isOpen ? <X size={23} /> : <Menu size={23} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
@@ -221,88 +223,96 @@ export default function Navbar() {
             className="
             lg:hidden
 
-            mt-3
-
-            rounded-[20px]
-
-            bg-[#f8f5ed]
-
-            border
-            border-[#eadfcb]
-
-            p-5
-
-            shadow-[0_15px_40px_rgba(0,0,0,0.08)]
-
-            flex
-            flex-col
-            gap-5
+            px-4
+            pb-5
             "
           >
-            {navLinks.map((link) => (
+            <div
+              className="
+              rounded-[20px]
+
+              bg-[#f8f5ed]
+
+              border
+              border-[#eadfcb]
+
+              p-5
+
+              shadow-[0_15px_40px_rgba(0,0,0,0.08)]
+
+              flex
+              flex-col
+              gap-5
+              "
+            >
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="
+                  text-[#171717]
+
+                  uppercase
+
+                  tracking-[0.14em]
+
+                  text-[10px]
+
+                  hover:text-[#c79d47]
+
+                  transition-all
+                  duration-300
+                  "
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 600,
+                  }}
+                >
+                  {link.name}
+                </a>
+              ))}
+
+              {/* MOBILE CTA */}
               <a
-                key={link.name}
-                href={link.href}
+                href="#contact"
                 onClick={() => setIsOpen(false)}
                 className="
-                text-[#171717]
+                mt-2
+
+                bg-[#162a63]
+                hover:bg-[#10214f]
+
+                text-white
+
+                h-[46px]
+
+                rounded-full
 
                 uppercase
 
-                tracking-[0.14em]
-
                 text-[10px]
 
-                hover:text-[#c79d47]
+                tracking-[0.14em]
 
-                transition
+                flex
+                items-center
+                justify-center
+                gap-2
+
+                transition-all
+                duration-300
                 "
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 500,
+                  fontWeight: 600,
                 }}
               >
-                {link.name}
+                Download Brochure
+
+                <ArrowUpRight size={13} />
               </a>
-            ))}
-
-            <a
-              href="#contact"
-              className="
-              mt-1
-
-              bg-[#162a63]
-              hover:bg-[#10214f]
-
-              text-white
-
-              h-[44px]
-
-              rounded-full
-
-              uppercase
-
-              text-[10px]
-
-              tracking-[0.14em]
-
-              flex
-              items-center
-              justify-center
-              gap-2
-
-              transition-all
-              duration-300
-              "
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 600,
-              }}
-            >
-              Download Brochure
-
-              <ArrowUpRight size={13} />
-            </a>
+            </div>
           </div>
         )}
       </nav>
