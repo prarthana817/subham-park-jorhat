@@ -13,92 +13,104 @@ import {
 const locationCards = [
   {
     icon: <HeartPulse size={17} />,
-    title: "Healthcare",
+    title: "EDUCATION",
     points: [
       {
-        name: "AG Nursing Home",
-        distance: "350 m",
+        name: "DCB Girls College",
+        distance: "1.6kms(5 mins)",
       },
       {
-        name: "Jorhat Medical",
-        distance: "3.4 kms",
+        name: "Jagannath Barooah University",
+        distance: "2.1kms(7mins)",
       },
       {
-        name: "Ayush Hospital",
-        distance: "2.1 kms",
+        name: "Assam Agriculture University",
+        distance: "3.3kms(8 mins)",
       },
       {
-        name: "Apollo Pharmacy Nearby",
-        distance: "Nearby",
+        name: "Don Bosco Higher Secondary School, Lichubari",
+        distance: "5.1kms(10 mins)",
+      },
+      {
+        name: "DPS Jorhat",
+        distance: "7.7kms(16 mins)",
+      },
+      {
+        name: "Carmel School",
+        distance: "7.4kms(16 mins)",
       },
     ],
   },
 
   {
     icon: <GraduationCap size={17} />,
-    title: "Education",
+    title: "HOSPITALS",
     points: [
       {
-        name: "DCB Girls College",
-        distance: "1.6 kms",
+        name: "AG Nursing Home",
+        distance: "350m(1 min)",
       },
       {
-        name: "JB College",
-        distance: "2.1 kms",
+        name: "Jorhat Medical College",
+        distance: "3.4kms(8 mins)",
       },
       {
-        name: "AAU",
-        distance: "3.3 kms",
+        name: "Hotel Manor Medical Point",
+        distance: "300m(1 min)",
       },
       {
-        name: "DPS Jorhat",
-        distance: "7.7 kms",
+        name: "Healthcare Clinics Nearby",
+        distance: "2mins(radius)",
       },
     ],
   },
 
   {
     icon: <Plane size={17} />,
-    title: "Airport & Leisure",
+    title: "MALLS",
     points: [
       {
-        name: "Jorhat Airport",
-        distance: "4.5 kms",
+        name: "Smart Bazaar",
+        distance: "2.7kms(8 mins)",
       },
       {
-        name: "Gymkhana Club",
-        distance: "3.5 kms",
+        name: "Schum Shoppe",
+        distance: "300m(1 min)",
       },
       {
-        name: "Jorhat Stadium",
-        distance: "2.2 kms",
+        name: "Jorhat Stadium Market Area",
+        distance: "2.2kms(7 mins)",
       },
       {
-        name: "Hotels & Cafes",
-        distance: "Nearby",
+        name: "Bharat Petroleum Retail Zone",
+        distance: "500m(2 mins)",
       },
     ],
   },
 
   {
     icon: <Train size={17} />,
-    title: "Connectivity",
+    title: "OTHERS",
     points: [
       {
-        name: "ISBT",
-        distance: "600 m",
+        name: "ISBT Jorhat",
+        distance: "600m(2 mins)",
       },
       {
-        name: "Town Station",
-        distance: "4.2 kms",
+        name: "Jorhat Town Railway Station",
+        distance: "4.2kms(13 mins)",
       },
       {
-        name: "Petrol Pump",
-        distance: "500 m",
+        name: "Jorhat Airport",
+        distance: "4.5kms(11 mins)",
       },
       {
-        name: "Smooth City Access",
-        distance: "Easy",
+        name: "Don Bosco Baghchung",
+        distance: "5.9kms(13 mins)",
+      },
+      {
+        name: "Major Transport Connectivity",
+        distance: "Nearby",
       },
     ],
   },
