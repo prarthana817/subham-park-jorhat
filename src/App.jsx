@@ -11,7 +11,7 @@ import Gallery from "./components/Gallery";
 import Planning from "./components/Planning";
 
 // RENAMED FILE IMPORT
-import Temp from "./components/Temp";
+import Location from "./components/Location";
 
 import Contact from "./components/Contact";
 import Project from "./components/Project";
@@ -56,8 +56,7 @@ function App() {
         <Planning setOpen={setOpen} />
 
         {/* TEMP SECTION */}
-        <Temp setOpen={setOpen} />
-
+        <Location setOpen={setOpen} />
         {/* CONTACT */}
         <Contact setOpen={setOpen} />
 
