@@ -86,7 +86,7 @@ export default function Location({ setOpen }) {
           lg:grid-cols-[1fr_1fr]
           gap-6
           xl:gap-8
-          items-stretch
+          items-center
           "
         >
           {/* LEFT CONTENT */}
@@ -107,8 +107,6 @@ export default function Location({ setOpen }) {
 
             flex
             flex-col
-
-            min-h-[100%]
             "
           >
             {/* GOLD GLOW */}
@@ -441,7 +439,7 @@ export default function Location({ setOpen }) {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex flex-col gap-5 h-full">
+          <div className="flex flex-col gap-5">
             
             {/* MAP */}
             <div
@@ -455,8 +453,8 @@ export default function Location({ setOpen }) {
 
               h-[320px]
               sm:h-[380px]
-              lg:h-[100%]
-              min-h-[420px]
+              lg:h-[520px]
+              xl:h-[560px]
 
               shadow-[0_12px_35px_rgba(0,0,0,0.05)]
               "
