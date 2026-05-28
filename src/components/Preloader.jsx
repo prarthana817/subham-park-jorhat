@@ -16,6 +16,15 @@ export default function Preloader() {
     return () => clearTimeout(timer);
   }, []);
 
+  const letters = [
+    { char: "J", color: "#e3a17b" },
+    { char: "O", color: "#d8b5a7" },
+    { char: "R", color: "#79cfc1" },
+    { char: "H", color: "#b8b1a7" },
+    { char: "A", color: "#d8c7ba" },
+    { char: "T", color: "#aeb9be" },
+  ];
+
   return (
     <AnimatePresence>
       {loading && (
@@ -75,7 +84,7 @@ export default function Preloader() {
             {/* LOGO */}
             <motion.div
               initial={{
-                scale: 2,
+                scale: 1.8,
                 opacity: 0,
               }}
               animate={{
@@ -83,21 +92,21 @@ export default function Preloader() {
                 opacity: 1,
               }}
               transition={{
-                duration: 1.2,
+                duration: 1.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mb-5"
+              className="mb-0"
             >
               <img
                 src={logo}
                 alt="Logo"
                 className="
-                w-[180px]
-                md:w-[220px]
+                w-[155px]
+                md:w-[190px]
 
                 object-contain
 
-                drop-shadow-[0_18px_40px_rgba(0,0,0,0.12)]
+                drop-shadow-[0_18px_40px_rgba(0,0,0,0.10)]
                 "
               />
             </motion.div>
@@ -106,119 +115,104 @@ export default function Preloader() {
             <motion.p
               initial={{
                 opacity: 0,
-                y: -20,
               }}
               animate={{
                 opacity: 1,
-                y: 0,
               }}
               transition={{
-                duration: 0.8,
-                delay: 0.4,
+                duration: 0.7,
+                delay: 0.3,
               }}
               className="
               uppercase
 
-              tracking-[0.28em]
-
-              text-[11px]
-              md:text-[12px]
-
-              text-[#b9b0a2]
-
-              mb-2
-              "
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 700,
-              }}
-            >
-
-            </motion.p>
-
-            {/* JORHAT MULTICOLOR */}
-            <motion.h1
-              initial={{
-                y: 100,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{
-                duration: 1,
-                delay: 0.6,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="
-              flex
-
-              text-[72px]
-              md:text-[110px]
-
-              leading-none
-
-              tracking-[-6px]
-
-              select-none
-              "
-              style={{
-                fontFamily:
-                  "'Cormorant Garamond', serif",
-                fontWeight: 700,
-              }}
-            >
-              <span className="text-[#e3a17b]">
-                J
-              </span>
-
-              <span className="text-[#d8b5a7]">
-                O
-              </span>
-
-              <span className="text-[#79cfc1]">
-                R
-              </span>
-
-              <span className="text-[#b8b1a7]">
-                H
-              </span>
-
-              <span className="text-[#d8c7ba]">
-                A
-              </span>
-
-              <span className="text-[#aeb9be]">
-                T
-              </span>
-            </motion.h1>
-
-            {/* BOTTOM TEXT */}
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.8,
-                delay: 1,
-              }}
-              className="
-              uppercase
-
-              tracking-[0.42em]
+              tracking-[0.24em]
 
               text-[10px]
               md:text-[11px]
 
               text-[#b9b0a2]
 
-              mt-2
+              mb-[-4px]
+              "
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+              Aspirational Living In
+            </motion.p>
+
+            {/* JORHAT MULTICOLOR */}
+            <div
+              className="
+              flex
+              items-center
+
+              leading-[0.82]
+
+              select-none
+              "
+            >
+              {letters.map((item, index) => (
+                <motion.span
+                  key={index}
+                  initial={{
+                    x: -80,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    x: 0,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.45 + index * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="
+                  text-[74px]
+                  md:text-[112px]
+
+                  tracking-[-5px]
+                  "
+                  style={{
+                    color: item.color,
+                    fontFamily:
+                      "'Cormorant Garamond', serif",
+                    fontWeight: 700,
+                  }}
+                >
+                  {item.char}
+                </motion.span>
+              ))}
+            </div>
+
+            {/* BOTTOM TEXT */}
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 10,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 1.15,
+              }}
+              className="
+              uppercase
+
+              tracking-[0.40em]
+
+              text-[9px]
+              md:text-[10px]
+
+              text-[#b9b0a2]
+
+              mt-[-2px]
               "
               style={{
                 fontFamily: "'Inter', sans-serif",
@@ -235,12 +229,12 @@ export default function Preloader() {
                 opacity: 0,
               }}
               animate={{
-                width: "90px",
+                width: "78px",
                 opacity: 1,
               }}
               transition={{
-                duration: 0.8,
-                delay: 1.3,
+                duration: 0.7,
+                delay: 1.35,
                 ease: "easeOut",
               }}
               className="
@@ -248,8 +242,8 @@ export default function Preloader() {
 
               bg-[#d1a54d]
 
-              mt-6
-              mb-4
+              mt-4
+              mb-3
 
               rounded-full
               "
@@ -259,24 +253,24 @@ export default function Preloader() {
             <motion.p
               initial={{
                 opacity: 0,
-                y: 20,
+                y: 12,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
               }}
               transition={{
-                duration: 0.8,
+                duration: 0.7,
                 delay: 1.5,
               }}
               className="
-              text-[#b88a33]
+              text-[#c59b45]
 
               uppercase
 
-              tracking-[0.32em]
+              tracking-[0.28em]
 
-              text-[10px]
+              text-[9px]
               "
               style={{
                 fontFamily: "'Inter', sans-serif",
@@ -289,9 +283,9 @@ export default function Preloader() {
             {/* LOADING BAR */}
             <div
               className="
-              mt-9
+              mt-7
 
-              w-[220px]
+              w-[200px]
               h-[2px]
 
               rounded-full
@@ -306,7 +300,7 @@ export default function Preloader() {
                 animate={{ x: "250%" }}
                 transition={{
                   repeat: Infinity,
-                  duration: 1.3,
+                  duration: 1.2,
                   ease: "easeInOut",
                 }}
                 className="

@@ -154,79 +154,184 @@ export default function Hero() {
               flex
               flex-wrap
               items-center
-              gap-7
+              gap-5
               "
             >
-              {/* LOCATION */}
-              <div className="flex items-center gap-4">
+              {/* LOCATION CARD */}
+              <div
+                className="
+                relative
+
+                px-5
+                py-[14px]
+
+                rounded-[20px]
+
+                bg-gradient-to-br
+                from-[#f4ead3]
+                via-[#f0e2bc]
+                to-[#ead7a4]
+
+                shadow-[0_10px_24px_rgba(209,165,77,0.12)]
+
+                overflow-hidden
+                "
+              >
+                {/* ROTATING BORDER */}
                 <div
                   className="
-                  w-11
-                  h-11
-                  rounded-full
-                  bg-[#efe3c8]
+                  absolute
+                  inset-0
+
+                  rounded-[20px]
+
+                  before:absolute
+                  before:inset-0
+                  before:rounded-[20px]
+
+                  before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#fff3c9,#d1a54d)]
+
+                  before:animate-[spin_6s_linear_infinite]
+
+                  before:content-['']
+                  "
+                />
+
+                {/* INNER */}
+                <div
+                  className="
+                  absolute
+                  inset-[1px]
+
+                  rounded-[19px]
+
+                  bg-gradient-to-br
+                  from-[#f4ead3]
+                  via-[#f0e2bc]
+                  to-[#ead7a4]
+                  "
+                />
+
+                {/* GLOW */}
+                <div
+                  className="
+                  absolute
+                  inset-0
+
+                  bg-gradient-to-br
+                  from-white/20
+                  via-transparent
+                  to-transparent
+
+                  pointer-events-none
+                  "
+                />
+
+                {/* CONTENT */}
+                <div
+                  className="
+                  relative
+                  z-10
+
                   flex
                   items-center
-                  justify-center
-                  shrink-0
-                  text-[#c79d47]
+                  gap-4
                   "
                 >
-                  <MapPin size={18} />
-                </div>
-
-                <div>
-                  <p
+                  {/* ICON */}
+                  <div
                     className="
-                    uppercase
-                    tracking-[0.22em]
-                    text-[10px]
+                    w-11
+                    h-11
+
+                    rounded-full
+
+                    bg-[#f7edd4]
+
+                    flex
+                    items-center
+                    justify-center
+
                     text-[#c79d47]
-                    mb-[2px]
-                    "
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Prime Location
-                  </p>
 
-                  <h4
-                    className="
-                    text-[22px]
-                    md:text-[25px]
-                    leading-[1.2]
-                    text-[#111111]
+                    shadow-inner
                     "
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', serif",
-                      fontWeight: 600,
-                    }}
                   >
-                    Sonari Gaon
-                  </h4>
+                    <MapPin size={18} />
+                  </div>
+
+                  {/* TEXT */}
+                  <div>
+                    <p
+                      className="
+                      uppercase
+                      tracking-[0.22em]
+
+                      text-[10px]
+
+                      text-[#b88b34]
+
+                      mb-[3px]
+                      "
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Prime Location
+                    </p>
+
+                    <h4
+                      className="
+                      text-[22px]
+                      md:text-[24px]
+
+                      leading-none
+
+                      text-[#111111]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Sonari Gaon
+                    </h4>
+                  </div>
                 </div>
               </div>
 
-              {/* DIVIDER */}
-              <div
-                className="
-                hidden
-                md:block
+              {/* GOLD DASH */}
+<div
+  className="
+  hidden
+  md:flex
 
-                h-[58px]
-                w-[1px]
+  items-center
+  justify-center
 
-                bg-gradient-to-b
-                from-transparent
-                via-[#d1a54d]
-                to-transparent
-                "
-              />
+  h-[70px]
+  "
+>
+  <div
+    className="
+    w-[2px]
+    h-[42px]
 
-              {/* PRICE HIGHLIGHT */}
+    rounded-full
+
+    bg-gradient-to-b
+    from-transparent
+    via-[#d1a54d]
+    to-transparent
+
+    opacity-90
+    "
+  />
+</div>
+
+              {/* PRICE CARD */}
               <div
                 className="
                 relative
