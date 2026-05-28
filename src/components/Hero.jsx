@@ -212,21 +212,6 @@ export default function Hero() {
                   "
                 />
 
-                {/* GLOW */}
-                <div
-                  className="
-                  absolute
-                  inset-0
-
-                  bg-gradient-to-br
-                  from-white/20
-                  via-transparent
-                  to-transparent
-
-                  pointer-events-none
-                  "
-                />
-
                 {/* CONTENT */}
                 <div
                   className="
@@ -303,33 +288,33 @@ export default function Hero() {
               </div>
 
               {/* GOLD DASH */}
-<div
-  className="
-  hidden
-  md:flex
+              <div
+                className="
+                hidden
+                md:flex
 
-  items-center
-  justify-center
+                items-center
+                justify-center
 
-  h-[70px]
-  "
->
-  <div
-    className="
-    w-[2px]
-    h-[42px]
+                h-[70px]
+                "
+              >
+                <div
+                  className="
+                  w-[2px]
+                  h-[42px]
 
-    rounded-full
+                  rounded-full
 
-    bg-gradient-to-b
-    from-transparent
-    via-[#d1a54d]
-    to-transparent
+                  bg-gradient-to-b
+                  from-transparent
+                  via-[#d1a54d]
+                  to-transparent
 
-    opacity-90
-    "
-  />
-</div>
+                  opacity-90
+                  "
+                />
+              </div>
 
               {/* PRICE CARD */}
               <div
@@ -383,21 +368,6 @@ export default function Hero() {
                   from-[#f4ead3]
                   via-[#f0e2bc]
                   to-[#ead7a4]
-                  "
-                />
-
-                {/* SOFT GLOW */}
-                <div
-                  className="
-                  absolute
-                  inset-0
-
-                  bg-gradient-to-br
-                  from-white/25
-                  via-transparent
-                  to-transparent
-
-                  pointer-events-none
                   "
                 />
 

@@ -9,10 +9,7 @@ import Overview from "./components/Overview";
 import Amenities from "./components/Amenities";
 import Gallery from "./components/Gallery";
 import Planning from "./components/Planning";
-
-// RENAMED FILE IMPORT
 import Location from "./components/Location";
-
 import Contact from "./components/Contact";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
@@ -24,18 +21,26 @@ import Preloader from "./components/Preloader";
 function App() {
   const [open, setOpen] = useState(false);
 
+  // GALLERY POPUP STATE
+  const [galleryPopupOpen, setGalleryPopupOpen] =
+    useState(false);
+
   return (
     <>
-      {/* PRELOADER */}
       <Preloader />
 
       <div className="overflow-x-hidden bg-[#f5f1ec]">
-        
         {/* POPUP */}
-        <PopupForm open={open} setOpen={setOpen} />
+        <PopupForm
+          open={open}
+          setOpen={setOpen}
+        />
 
         {/* NAVBAR */}
-        <Navbar setOpen={setOpen} />
+        <Navbar
+          setOpen={setOpen}
+          galleryPopupOpen={galleryPopupOpen}
+        />
 
         {/* HERO */}
         <Hero setOpen={setOpen} />
@@ -50,13 +55,19 @@ function App() {
         <Amenities setOpen={setOpen} />
 
         {/* GALLERY */}
-        <Gallery setOpen={setOpen} />
+        <Gallery
+          setOpen={setOpen}
+          setGalleryPopupOpen={
+            setGalleryPopupOpen
+          }
+        />
 
         {/* PLANNING */}
         <Planning setOpen={setOpen} />
 
-        {/* TEMP SECTION */}
+        {/* LOCATION */}
         <Location setOpen={setOpen} />
+
         {/* CONTACT */}
         <Contact setOpen={setOpen} />
 
@@ -64,7 +75,10 @@ function App() {
         <Project setOpen={setOpen} />
 
         {/* STICKY FORM */}
-        <StickyLeadForm setOpen={setOpen} />
+        <StickyLeadForm
+          setOpen={setOpen}
+          galleryPopupOpen={galleryPopupOpen}
+        />
 
         {/* FOOTER */}
         <Footer />
@@ -102,7 +116,8 @@ function App() {
             duration-300
             "
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily:
+                "'Inter', sans-serif",
               fontWeight: 600,
             }}
           >
@@ -129,7 +144,8 @@ function App() {
             duration-300
             "
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily:
+                "'Inter', sans-serif",
               fontWeight: 600,
             }}
           >

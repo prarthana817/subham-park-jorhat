@@ -3,64 +3,102 @@
 import { motion } from "framer-motion";
 
 import {
-  MapPin,
-  Navigation,
+  GraduationCap,
   Plane,
+  HeartPulse,
   Train,
-  School,
   Building2,
-  ArrowUpRight,
 } from "lucide-react";
 
-const nearbyPlaces = [
+const locationCards = [
   {
-    icon: <Plane size={15} />,
-    title: "Airport",
-    value: "5.7 KM",
+    icon: <HeartPulse size={17} />,
+    title: "Healthcare",
+    points: [
+      "AG Nursing Home – 350 m",
+      "Jorhat Medical – 3.4 kms",
+      "Ayush Hospital – 2.1 kms",
+      "Apollo Pharmacy Nearby",
+    ],
   },
+
   {
-    icon: <Train size={15} />,
-    title: "Railway",
-    value: "3.2 KM",
+    icon: <GraduationCap size={17} />,
+    title: "Education",
+    points: [
+      "DCB Girls College – 1.6 kms",
+      "JB College – 2.1 kms",
+      "AAU – 3.3 kms",
+      "DPS Jorhat – 7.7 kms",
+    ],
   },
+
   {
-    icon: <School size={15} />,
-    title: "Schools",
-    value: "Nearby",
+    icon: <Plane size={17} />,
+    title: "Airport & Leisure",
+    points: [
+      "Jorhat Airport – 4.5 kms",
+      "Gymkhana Club – 3.5 kms",
+      "Jorhat Stadium – 2.2 kms",
+      "Hotels & Cafes Nearby",
+    ],
   },
+
   {
-    icon: <Building2 size={15} />,
-    title: "Hospitals",
-    value: "Nearby",
+    icon: <Train size={17} />,
+    title: "Connectivity",
+    points: [
+      "ISBT – 600 m",
+      "Town Station – 4.2 kms",
+      "Petrol Pump – 500 m",
+      "Smooth City Access",
+    ],
   },
 ];
 
-export default function Location({ setOpen }) {
+export default function Location() {
   return (
     <section
       id="location"
       className="
       relative
-      py-16
-      md:py-20
-      lg:py-24
-      bg-[#f8f5ed]
       overflow-hidden
-      scroll-mt-28
+      py-14
+      md:py-16
+      bg-[#f8f5ed]
       "
     >
-      {/* BACKGROUND GLOW */}
+      {/* GRID BACKGROUND */}
       <div
         className="
         absolute
-        top-[-120px]
-        right-[-120px]
-        w-[260px]
-        h-[260px]
-        rounded-full
-        bg-[#d1a54d]/10
-        blur-[100px]
+        inset-0
+        opacity-[0.03]
         "
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: "68px 68px",
+        }}
+      />
+
+      {/* SIDE LINES */}
+      <div
+        className="
+        absolute
+        left-0
+        top-0
+        h-full
+        w-[120px]
+        opacity-[0.03]
+        hidden lg:block
+        "
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 9px)",
+        }}
       />
 
       <div
@@ -68,442 +106,353 @@ export default function Location({ setOpen }) {
         relative
         z-10
 
-        max-w-[1240px]
+        max-w-[1260px]
         mx-auto
 
         px-4
-        sm:px-5
         lg:px-6
         "
       >
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+        {/* TOP SECTION */}
+        <div
           className="
           grid
-          lg:grid-cols-[1fr_1fr]
-          gap-6
-          xl:gap-8
+          lg:grid-cols-[0.9fr_1.1fr]
+
+          gap-10
+          lg:gap-14
+
           items-center
+
+          mb-12
           "
         >
-          {/* LEFT CONTENT */}
-          <div
-            className="
-            relative
-
-            rounded-[28px]
-
-            bg-[#14234b]
-
-            p-6
-            md:p-8
-            xl:p-10
-
-            text-white
-            overflow-hidden
-
-            flex
-            flex-col
-            "
+          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
           >
-            {/* GOLD GLOW */}
-            <div
-              className="
-              absolute
-              top-[-60px]
-              right-[-60px]
-              w-[180px]
-              h-[180px]
-              rounded-full
-              bg-[#d1a54d]/20
-              blur-[70px]
-              "
-            />
+            {/* TAG */}
+            <div className="flex items-center gap-4 mb-5">
+              <div className="w-[52px] h-[2px] bg-[#d1a54d]" />
 
-            <div className="relative z-10 flex flex-col h-full">
-              
-              {/* TAG */}
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-[40px] h-[2px] bg-[#d1a54d]" />
-
-                <p
-                  className="
-                  uppercase
-                  tracking-[0.18em]
-                  text-[10px]
-                  text-[#d1a54d]
-                  "
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 600,
-                  }}
-                >
-                  Prime Address
-                </p>
-              </div>
-
-              {/* TITLE */}
-              <h2
-                className="
-                text-[34px]
-                sm:text-[42px]
-                lg:text-[50px]
-                xl:text-[56px]
-
-                leading-[1.02]
-                tracking-[-1px]
-
-                mb-5
-                "
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 500,
-                }}
-              >
-                Luxury Living in
-                <span className="italic text-[#d1a54d]">
-                  {" "}Jorhat
-                </span>
-              </h2>
-
-              {/* DESCRIPTION */}
               <p
                 className="
-                text-[14px]
-                md:text-[15px]
-
-                leading-[1.9]
-
-                text-white/75
-
-                max-w-[560px]
-
-                mb-7
+                uppercase
+                tracking-[0.24em]
+                text-[10px]
+                text-[#c79d47]
                 "
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
+                  fontWeight: 600,
                 }}
               >
-                Strategically located with seamless access
-                to transport, schools, healthcare and
-                lifestyle conveniences for elevated
-                everyday living.
+                Prime Connectivity
               </p>
-
-              {/* ADDRESS CARD */}
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                flex
-                items-start
-                gap-4
-
-                rounded-[20px]
-
-                border
-                border-white/10
-
-                bg-white/5
-
-                p-5
-
-                hover:bg-white/10
-
-                transition-all
-                duration-300
-                "
-              >
-                <div
-                  className="
-                  w-11
-                  h-11
-
-                  shrink-0
-
-                  rounded-full
-
-                  bg-[#d1a54d]/15
-
-                  flex
-                  items-center
-                  justify-center
-
-                  text-[#d1a54d]
-                  "
-                >
-                  <MapPin size={18} />
-                </div>
-
-                <div>
-                  <p
-                    className="
-                    text-[10px]
-                    uppercase
-                    tracking-[0.14em]
-                    text-white/50
-                    mb-2
-                    "
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: 500,
-                    }}
-                  >
-                    Project Location
-                  </p>
-
-                  <p
-                    className="
-                    text-[15px]
-                    leading-[1.8]
-                    text-white/85
-                    "
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: 400,
-                    }}
-                  >
-                    1, Sonari Gaon, Tarajan, Jorhat
-                    Bhatemora Gaon, Assam - 785001
-                  </p>
-                </div>
-              </a>
-
-              {/* BUTTONS */}
-              <div className="mt-7 flex flex-wrap gap-4">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-
-                  h-[48px]
-                  px-7
-
-                  rounded-full
-
-                  bg-[#d1a54d]
-                  hover:bg-[#be9339]
-
-                  text-[#111111]
-
-                  uppercase
-                  tracking-[0.12em]
-                  text-[11px]
-
-                  transition-all
-                  duration-300
-                  "
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 600,
-                  }}
-                >
-                  Open Map
-                  <Navigation size={14} />
-                </a>
-
-                <button
-                  onClick={() => setOpen(true)}
-                  className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-
-                  h-[48px]
-                  px-7
-
-                  rounded-full
-
-                  border
-                  border-white/10
-
-                  bg-white/5
-                  hover:bg-white/10
-
-                  text-white
-
-                  uppercase
-                  tracking-[0.12em]
-                  text-[11px]
-
-                  transition-all
-                  duration-300
-                  "
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 600,
-                  }}
-                >
-                  Book Visit
-                  <ArrowUpRight size={14} />
-                </button>
-              </div>
-
-              {/* BOTTOM CARDS */}
-              <div
-                className="
-                mt-10
-
-                grid
-                grid-cols-1
-                sm:grid-cols-2
-
-                gap-4
-                "
-              >
-                {nearbyPlaces.slice(0, 2).map((item, index) => (
-                  <div
-                    key={index}
-                    className="
-                    rounded-[20px]
-
-                    bg-white/5
-
-                    border
-                    border-white/10
-
-                    px-5
-                    py-4
-
-                    flex
-                    items-center
-                    gap-4
-                    "
-                  >
-                    <div
-                      className="
-                      w-11
-                      h-11
-
-                      rounded-full
-
-                      bg-[#d1a54d]/15
-
-                      flex
-                      items-center
-                      justify-center
-
-                      text-[#d1a54d]
-
-                      shrink-0
-                      "
-                    >
-                      {item.icon}
-                    </div>
-
-                    <div>
-                      <p
-                        className="
-                        text-[10px]
-                        uppercase
-                        tracking-[0.12em]
-                        text-white/50
-                        "
-                        style={{
-                          fontFamily: "'Inter', sans-serif",
-                        }}
-                      >
-                        {item.title}
-                      </p>
-
-                      <h4
-                        className="
-                        mt-1
-                        text-[20px]
-                        text-white
-                        "
-                        style={{
-                          fontFamily:
-                            "'Cormorant Garamond', serif",
-                          fontWeight: 600,
-                        }}
-                      >
-                        {item.value}
-                      </h4>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
-          </div>
 
-          {/* RIGHT SIDE */}
-          <div className="flex flex-col gap-5">
-            
-            {/* MAP */}
+            {/* HEADING */}
+            <h2
+              className="
+              text-[#111111]
+
+              text-[38px]
+              sm:text-[48px]
+              lg:text-[58px]
+
+              leading-[0.95]
+
+              tracking-[-2px]
+
+              mb-5
+              "
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', serif",
+                fontWeight: 500,
+              }}
+            >
+              Everything{" "}
+              <span className="italic text-[#d1a54d]">
+                Within
+              </span>{" "}
+              Reach
+            </h2>
+
+            {/* TEXT */}
+            <p
+              className="
+              text-[14px]
+              sm:text-[15px]
+
+              leading-[1.9]
+
+              text-[#5f6674]
+
+              max-w-[540px]
+
+              mb-7
+              "
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 400,
+              }}
+            >
+              Subham Park offers seamless access to
+              healthcare, educational institutions,
+              transport hubs and lifestyle destinations
+              — creating a connected urban lifestyle in
+              the heart of Jorhat.
+            </p>
+
+            {/* ADDRESS CARD */}
             <div
               className="
+              relative
+
               overflow-hidden
 
-              rounded-[28px]
+              rounded-[24px]
 
               border
-              border-[#e7dccb]
+              border-[#eadfcb]
 
-              h-[320px]
-              sm:h-[380px]
-              lg:h-[520px]
-              xl:h-[560px]
+              bg-white
+              
+              px-5
+              py-5
 
               shadow-[0_12px_35px_rgba(0,0,0,0.05)]
               "
             >
-              <iframe
-                title="Subham Park Location"
-                src="https://www.google.com/maps?q=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001&output=embed"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                allowFullScreen=""
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
+              {/* SOFT GLOW */}
+              <div
+                className="
+                absolute
+                right-[-40px]
+                top-[-40px]
+
+                w-[120px]
+                h-[120px]
+
+                rounded-full
+
+                bg-[#d1a54d]/10
+
+                blur-[60px]
+                "
               />
-            </div>
 
-            {/* SMALL INFO CARDS */}
-            <div
-              className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              gap-4
-              "
-            >
-              {nearbyPlaces.slice(2, 4).map((item, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -3 }}
+              <div className="relative z-10 flex gap-4">
+                {/* ICON */}
+                <div
                   className="
-                  rounded-[20px]
+                  w-12
+                  h-12
 
-                  border
-                  border-[#e8dcc9]
+                  rounded-full
 
-                  bg-white
-
-                  px-5
-                  py-5
-
-                  min-h-[110px]
+                  bg-[#f6ecd2]
 
                   flex
                   items-center
-                  gap-4
+                  justify-center
 
-                  shadow-[0_5px_16px_rgba(0,0,0,0.04)]
+                  shrink-0
+
+                  text-[#c79d47]
                   "
                 >
+                  <Building2 size={20} />
+                </div>
+
+                {/* TEXT */}
+                <div>
+                  <p
+                    className="
+                    uppercase
+
+                    tracking-[0.22em]
+
+                    text-[9px]
+
+                    text-[#b89f73]
+
+                    mb-[6px]
+                    "
+                    style={{
+                      fontFamily:
+                        "'Inter', sans-serif",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Project Address
+                  </p>
+
+                  <h3
+                    className="
+                    text-[#111111]
+
+                    text-[22px]
+                    sm:text-[24px]
+
+                    leading-[1.1]
+
+                    mb-1
+                    "
+                    style={{
+                      fontFamily:
+                        "'Cormorant Garamond', serif",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Subham Park
+                  </h3>
+
+                  <p
+                    className="
+                    text-[#5f6674]
+
+                    text-[14px]
+
+                    leading-[1.8]
+                    "
+                    style={{
+                      fontFamily:
+                        "'Inter', sans-serif",
+                      fontWeight: 400,
+                    }}
+                  >
+                    1 Sonari Gaon, Tarajan,
+                    <br />
+                    Jorhat, Assam – 785001
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* MAP */}
+          <motion.div
+            initial={{ opacity: 0, x: 35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="
+            relative
+
+            overflow-hidden
+
+            rounded-[28px]
+
+            border
+            border-[#eadfcb]
+
+            h-[260px]
+            sm:h-[320px]
+            lg:h-[420px]
+
+            shadow-[0_22px_55px_rgba(0,0,0,0.07)]
+            "
+          >
+            <iframe
+              title="Subham Park Location"
+              src="https://www.google.com/maps?q=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001&output=embed"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              className="w-full h-full"
+            />
+
+            {/* BORDER OVERLAY */}
+            <div
+              className="
+              absolute
+              inset-0
+
+              border
+              border-white/20
+
+              pointer-events-none
+              "
+            />
+          </motion.div>
+        </div>
+
+        {/* LOCATION CARDS */}
+        <div
+          className="
+          grid
+          sm:grid-cols-2
+          xl:grid-cols-4
+
+          gap-4
+          "
+        >
+          {locationCards.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+              }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+              className="
+              group
+              relative
+
+              overflow-hidden
+
+              rounded-[26px]
+
+              border
+              border-[#eadfcb]
+
+              bg-white
+
+              p-5
+
+              min-h-[250px]
+
+              shadow-[0_12px_30px_rgba(0,0,0,0.04)]
+
+              transition-all
+              duration-300
+              "
+            >
+              {/* GLOW */}
+              <div
+                className="
+                absolute
+                right-[-35px]
+                bottom-[-35px]
+
+                w-[110px]
+                h-[110px]
+
+                rounded-full
+
+                bg-[#d1a54d]/10
+
+                blur-[55px]
+
+                opacity-0
+                group-hover:opacity-100
+
+                transition-all
+                duration-500
+                "
+              />
+
+              <div className="relative z-10">
+                {/* TOP */}
+                <div className="flex items-start gap-3 mb-5">
                   <div
                     className="
                     w-11
@@ -528,39 +477,100 @@ export default function Location({ setOpen }) {
                   <div>
                     <p
                       className="
-                      text-[10px]
                       uppercase
-                      tracking-[0.12em]
-                      text-[#8a8f98]
+
+                      tracking-[0.2em]
+
+                      text-[9px]
+
+                      text-[#b89f73]
+
+                      mb-[5px]
                       "
                       style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontWeight: 500,
+                        fontFamily:
+                          "'Inter', sans-serif",
+                        fontWeight: 700,
                       }}
                     >
-                      {item.title}
+                      Nearby Access
                     </p>
 
-                    <h4
+                    <h3
                       className="
-                      mt-1
-                      text-[20px]
+                      text-[24px]
+
+                      leading-[1]
+
+                      tracking-[-1px]
+
                       text-[#111111]
                       "
                       style={{
                         fontFamily:
                           "'Cormorant Garamond', serif",
-                        fontWeight: 600,
+                        fontWeight: 700,
                       }}
                     >
-                      {item.value}
-                    </h4>
+                      {item.title}
+                    </h3>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+                </div>
+
+                {/* LIST */}
+                <div className="space-y-3">
+                  {item.points.map((point, i) => (
+                    <div
+                      key={i}
+                      className="
+                      flex
+                      items-start
+                      gap-3
+
+                      border-b
+                      border-[#efe5d6]
+
+                      pb-3
+                      "
+                    >
+                      <div
+                        className="
+                        w-[6px]
+                        h-[6px]
+
+                        rounded-full
+
+                        bg-[#d1a54d]
+
+                        mt-[8px]
+
+                        shrink-0
+                        "
+                      />
+
+                      <p
+                        className="
+                        text-[13px]
+
+                        leading-[1.7]
+
+                        text-[#5d6470]
+                        "
+                        style={{
+                          fontFamily:
+                            "'Inter', sans-serif",
+                          fontWeight: 400,
+                        }}
+                      >
+                        {point}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

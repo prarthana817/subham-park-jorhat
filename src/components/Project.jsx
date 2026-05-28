@@ -1,50 +1,114 @@
 // src/components/Project.jsx
 
 import React, { useState } from "react";
-import { MapPin } from "lucide-react";
+
+import {
+  MapPin,
+  Building2,
+  Ruler,
+  Construction,
+  Users,
+} from "lucide-react";
+
 import { motion } from "framer-motion";
 
-import logo from "../assests/images/shubham_logo.png";
+import logo from "../assests/images/logo.png";
 
 const stats = [
-  { value: "16+", label: "Completed Projects" },
-  { value: "28 Lac", label: "Sq. Ft. Constructed" },
-  { value: "15 Lac", label: "Sq. Ft. Ongoing" },
-  { value: "6000+", label: "Happy Residents" },
+  {
+    value: "16+",
+    label: "Completed Projects",
+    icon: <Building2 size={20} />,
+  },
+
+  {
+    value: "28 Lac",
+    label: "Sq. Ft. Constructed",
+    icon: <Ruler size={20} />,
+  },
+
+  {
+    value: "15 Lac",
+    label: "Sq. Ft. Ongoing",
+    icon: <Construction size={20} />,
+  },
+
+  {
+    value: "6000+",
+    label: "Happy Residents",
+    icon: <Users size={20} />,
+  },
 ];
 
 const ongoingProjects = [
   { name: "Subham Garden", location: "Jorhat" },
+
   { name: "Subham Solitaire", location: "Agartala" },
+
   { name: "Subham Ashray", location: "Garal" },
+
   { name: "Subham Park", location: "Bongaigaon" },
-  { name: "Subham Kishori Heights", location: "Dibrugarh" },
+
+  {
+    name: "Subham Kishori Heights",
+    location: "Dibrugarh",
+  },
 ];
 
 const completedProjects = [
   { name: "Subham Heights", location: "Kahilipara" },
+
   { name: "Subham Enclave", location: "Hatigaon" },
-  { name: "Subham Park View", location: "Fatasil" },
+
+  {
+    name: "Subham Park View",
+    location: "Fatasil",
+  },
+
   { name: "Subham Elite", location: "Gandhibasti" },
-  { name: "Subham Classic", location: "Ambikagiri Nagar" },
-  { name: "Subham Manjushree", location: "Datalpara" },
+
+  {
+    name: "Subham Classic",
+    location: "Ambikagiri Nagar",
+  },
+
+  {
+    name: "Subham Manjushree",
+    location: "Datalpara",
+  },
+
   { name: "Subham Regency", location: "Hengrabari" },
-  { name: "Subham Residency", location: "Kharguli" },
+
+  {
+    name: "Subham Residency",
+    location: "Kharguli",
+  },
+
   { name: "Subham Sapphire", location: "Nalapara" },
+
   { name: "Subham Velocity", location: "GS Road" },
+
   { name: "Subham Redstone", location: "Downtown" },
+
   { name: "Bijay Crescent", location: "Pibco" },
+
   { name: "Subham Square", location: "Lokhra" },
+
   { name: "Subham Greens", location: "Lokhra" },
+
   { name: "Subham Buildwell", location: "Zoo Road" },
+
   { name: "Subham Garden", location: "Kalapahar" },
 ];
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 12 },
+  initial: { opacity: 0, y: 18 },
+
   whileInView: { opacity: 1, y: 0 },
+
   viewport: { once: true },
-  transition: { duration: 0.45 },
+
+  transition: { duration: 0.55 },
 };
 
 export default function ProjectOverview() {
@@ -57,220 +121,318 @@ export default function ProjectOverview() {
       className="
       relative
       overflow-hidden
-      py-4
-      lg:py-6
+
+      py-10
+      md:py-12
+
       bg-[#f7f5ef]
       "
     >
-      <div className="max-w-[1220px] mx-auto px-4">
-        {/* SMALL HEADING */}
+      {/* BACKGROUND */}
+      <div
+        className="
+        absolute
+        inset-0
+        opacity-[0.025]
+        "
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "72px 72px",
+        }}
+      />
+
+      <div
+        className="
+        relative
+        z-10
+
+        max-w-[1280px]
+        mx-auto
+
+        px-4
+        lg:px-6
+        "
+      >
+        {/* TOP TAG */}
         <motion.div
           {...fadeInUp}
           className="mb-2"
         >
-          <p
+          <div className="flex items-center gap-3">
+            <div className="w-[52px] h-[2px] bg-[#d1a54d]" />
+
+            <p
+              className="
+              uppercase
+
+              tracking-[0.28em]
+
+              text-[10px]
+
+              text-[#c79d47]
+              "
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+              SUBHAM GROUP
+            </p>
+          </div>
+        </motion.div>
+
+        {/* HEADING */}
+        <motion.div
+          {...fadeInUp}
+          className="mb-7"
+        >
+          <h2
             className="
-            uppercase
-            tracking-[0.24em]
-            text-[8px]
-            text-[#b68a3f]
+            text-[34px]
+            md:text-[46px]
+            lg:text-[56px]
+
+            leading-[0.9]
+
+            tracking-[-3px]
+
+            text-[#101010]
             "
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily:
+                "'Cormorant Garamond', serif",
               fontWeight: 600,
             }}
           >
-            PROJECT OVERVIEW
-          </p>
+            Landmark{" "}
+            <span className="italic text-[#d1a54d]">
+              Projects
+            </span>
+          </h2>
         </motion.div>
 
-        {/* HEADER */}
+        {/* STATS */}
         <motion.div
           {...fadeInUp}
           className="
-          flex
-          flex-col
-          lg:flex-row
-          lg:items-center
-          lg:justify-between
-          gap-4
-          mb-4
+          grid
+          grid-cols-2
+          lg:grid-cols-4
+
+          gap-3
+
+          mb-6
           "
         >
-          <div className="flex items-center gap-4">
-            {/* LOGO */}
+          {stats.map((item, index) => (
             <div
+              key={index}
               className="
-              w-[88px]
-              h-[88px]
+              rounded-[24px]
+
+              border
+              border-[#e8dfd0]
+
+              bg-white
+
+              p-4
+
               flex
               items-center
-              justify-center
-              shrink-0
+              gap-3
+
+              shadow-[0_8px_24px_rgba(0,0,0,0.03)]
               "
             >
-              <img
-                src={logo}
-                alt="Subham Logo"
-                className="
-                w-[78px]
-                object-contain
-                "
-              />
-            </div>
-
-            {/* TITLE */}
-            <div>
-              <p
-                className="
-                uppercase
-                tracking-[0.25em]
-                text-[8px]
-                text-[#a07a44]
-                mb-1
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 600,
-                }}
-              >
-                SUBHAM GROUP
-              </p>
-
-              <h2
-                className="
-                text-[28px]
-                md:text-[40px]
-                lg:text-[50px]
-                leading-[0.95]
-                tracking-[-1px]
-                "
-                style={{
-                  fontFamily:
-                    "'Cormorant Garamond', serif",
-                  fontWeight: 500,
-                }}
-              >
-                <span className="text-[#14234b]">
-                  Landmark
-                </span>{" "}
-                <span className="italic text-[#c79d47]">
-                  Projects
-                </span>
-              </h2>
-            </div>
-          </div>
-
-          <p
-            className="
-            text-[11px]
-            lg:text-[12px]
-            leading-[1.6]
-            text-[#5f6674]
-            max-w-[250px]
-            lg:text-right
-            "
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 400,
-            }}
-          >
-            Premium residential and commercial
-            developments across Assam and Northeast
-            India.
-          </p>
-        </motion.div>
-
-        {/* MAIN CARD */}
-        <motion.div
-          {...fadeInUp}
-          className="
-          rounded-[20px]
-          border
-          border-[#e6e0d5]
-          bg-white
-          overflow-hidden
-          "
-        >
-          {/* STATS */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 border-b border-[#ece6db]">
-            {stats.map((stat, i) => (
+              {/* ICON */}
               <div
-                key={i}
-                className={`
-                  py-4
-                  px-4
-                  bg-[#faf8f3]
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-                  text-center
+                className="
+                w-14
+                h-14
 
-                  ${
-                    i < stats.length - 1
-                      ? "border-r border-[#ece6db]"
-                      : ""
-                  }
-                `}
+                rounded-full
+
+                bg-[#f6edd9]
+
+                flex
+                items-center
+                justify-center
+
+                text-[#d1a54d]
+
+                shrink-0
+                "
               >
-                <span
+                {item.icon}
+              </div>
+
+              {/* TEXT */}
+              <div>
+                <h3
                   className="
                   text-[24px]
-                  lg:text-[28px]
+                  md:text-[32px]
+
                   leading-none
+
                   text-[#14234b]
                   "
                   style={{
                     fontFamily:
                       "'Cormorant Garamond', serif",
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
-                  {stat.value}
-                </span>
+                  {item.value}
+                </h3>
 
                 <p
                   className="
                   mt-1
+
                   text-[9px]
-                  text-[#6f7786]
+
+                  uppercase
+
+                  tracking-[0.16em]
+
+                  text-[#5f6674]
+
                   leading-[1.4]
                   "
                   style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 500,
+                    fontFamily:
+                      "'Inter', sans-serif",
+                    fontWeight: 600,
                   }}
                 >
-                  {stat.label}
+                  {item.label}
                 </p>
               </div>
-            ))}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* LOGO + CONTENT */}
+        <motion.div
+          {...fadeInUp}
+          className="
+          grid
+          lg:grid-cols-[220px_1fr]
+
+          gap-4
+
+          items-center
+
+          mb-4
+          "
+        >
+          {/* LOGO */}
+          <div
+            className="
+            flex
+            items-center
+            justify-center
+
+            lg:justify-start
+            "
+          >
+            <img
+              src={logo}
+              alt="Subham Group"
+              className="
+              w-[150px]
+              md:w-[170px]
+
+              object-contain
+              "
+            />
           </div>
 
           {/* CONTENT */}
-          <div className="p-4 lg:p-5">
-            {/* ONGOING */}
-            <div className="mb-5">
-              <p
-                className="
-                text-[8px]
-                uppercase
-                tracking-[0.24em]
-                mb-3
-                text-[#a07a44]
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 700,
-                }}
-              >
-                Ongoing Projects
-              </p>
+          <div
+            className="
+            lg:border-l
+            lg:border-[#e5dccd]
 
-              <div className="flex flex-wrap gap-2">
-                {ongoingProjects.map((project, idx) => (
-                  <span
+            lg:pl-6
+            "
+          >
+            <p
+              className="
+              text-[14px]
+              md:text-[15px]
+
+              leading-[1.9]
+
+              text-[#5f6674]
+
+              max-w-[760px]
+              "
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+                fontWeight: 400,
+              }}
+            >
+              Subham Group has crafted premium
+              residential and commercial landmarks
+              across Assam and Northeast India with a
+              focus on elevated lifestyle, timeless
+              architecture and trusted quality living
+              experiences for thousands of families.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* PROJECT LIST SECTION */}
+        <motion.div
+          {...fadeInUp}
+          className="
+          rounded-[30px]
+
+          border
+          border-[#e8dfd0]
+
+          bg-white
+
+          p-5
+          md:p-6
+
+          shadow-[0_10px_28px_rgba(0,0,0,0.03)]
+          "
+        >
+          {/* ONGOING */}
+          <div className="mb-7">
+            <p
+              className="
+              uppercase
+
+              tracking-[0.28em]
+
+              text-[10px]
+
+              text-[#b58d45]
+
+              mb-4
+              "
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+              Ongoing Projects
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              {ongoingProjects.map(
+                (project, idx) => (
+                  <button
                     key={idx}
                     onClick={() =>
                       setSelectedLocation(
@@ -278,55 +440,71 @@ export default function ProjectOverview() {
                       )
                     }
                     className="
-                    px-3
-                    py-1.5
+                    h-[36px]
+
+                    px-4
+
                     rounded-full
+
                     border
-                    border-[#e4ddd0]
-                    bg-[#faf8f3]
+                    border-[#ddd4c5]
+
+                    bg-[#f8f6f1]
+
                     text-[#14234b]
-                    text-[8px]
+
+                    text-[9px]
+
                     uppercase
-                    tracking-[0.12em]
-                    cursor-pointer
-                    transition-all
-                    duration-300
+
+                    tracking-[0.15em]
+
                     hover:bg-[#14234b]
                     hover:text-white
+
+                    transition-all
+                    duration-300
                     "
                     style={{
                       fontFamily:
                         "'Inter', sans-serif",
-                      fontWeight: 600,
+                      fontWeight: 700,
                     }}
                   >
                     {project.name}
-                  </span>
-                ))}
-              </div>
+                  </button>
+                )
+              )}
             </div>
+          </div>
 
-            {/* COMPLETED */}
-            <div>
-              <p
-                className="
-                text-[8px]
-                uppercase
-                tracking-[0.24em]
-                mb-3
-                text-[#a07a44]
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 700,
-                }}
-              >
-                Completed Projects
-              </p>
+          {/* COMPLETED */}
+          <div>
+            <p
+              className="
+              uppercase
 
-              <div className="flex flex-wrap gap-2">
-                {completedProjects.map((project, idx) => (
-                  <span
+              tracking-[0.28em]
+
+              text-[10px]
+
+              text-[#b58d45]
+
+              mb-4
+              "
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+              Completed Projects
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              {completedProjects.map(
+                (project, idx) => (
+                  <button
                     key={idx}
                     onClick={() =>
                       setSelectedLocation(
@@ -334,53 +512,74 @@ export default function ProjectOverview() {
                       )
                     }
                     className="
-                    px-3
-                    py-1.5
+                    h-[36px]
+
+                    px-4
+
                     rounded-full
+
                     border
-                    border-[#e4ddd0]
-                    bg-[#faf8f3]
+                    border-[#ddd4c5]
+
+                    bg-[#f8f6f1]
+
                     text-[#14234b]
-                    text-[8px]
+
+                    text-[9px]
+
                     uppercase
-                    tracking-[0.12em]
-                    cursor-pointer
-                    transition-all
-                    duration-300
+
+                    tracking-[0.15em]
+
                     hover:bg-[#14234b]
                     hover:text-white
+
+                    transition-all
+                    duration-300
                     "
                     style={{
                       fontFamily:
                         "'Inter', sans-serif",
-                      fontWeight: 600,
+                      fontWeight: 700,
                     }}
                   >
                     {project.name}
-                  </span>
-                ))}
-              </div>
+                  </button>
+                )
+              )}
             </div>
+          </div>
 
-            {/* FOOTER */}
-            <div className="mt-4 flex items-center gap-2">
-              <MapPin className="w-3 h-3 text-[#c79d47]" />
+          {/* LOCATION */}
+          <div
+            className="
+            mt-6
 
-              <p
-                className="
-                text-[9px]
-                uppercase
-                tracking-[0.14em]
-                text-[#14234b]
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 700,
-                }}
-              >
-                {selectedLocation}
-              </p>
-            </div>
+            flex
+            items-center
+            gap-2
+            "
+          >
+            <MapPin className="w-4 h-4 text-[#d1a54d]" />
+
+            <p
+              className="
+              text-[11px]
+
+              uppercase
+
+              tracking-[0.18em]
+
+              text-[#14234b]
+              "
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+              {selectedLocation}
+            </p>
           </div>
         </motion.div>
       </div>

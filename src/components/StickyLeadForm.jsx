@@ -7,36 +7,44 @@ import {
   Home,
 } from "lucide-react";
 
-export default function StickyLeadForm() {
-
+export default function StickyLeadForm({
+  galleryPopupOpen,
+}) {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-
     const handleScroll = () => {
-
-      const footer = document.getElementById("footer");
+      const footer =
+        document.getElementById("footer");
 
       if (!footer) return;
 
-      const footerRect = footer.getBoundingClientRect();
+      const footerRect =
+        footer.getBoundingClientRect();
 
-      if (footerRect.top <= window.innerHeight) {
+      if (
+        footerRect.top <=
+        window.innerHeight
+      ) {
         setHide(true);
       } else {
         setHide(false);
       }
-
     };
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
     };
-
   }, []);
 
   return (
@@ -57,13 +65,12 @@ export default function StickyLeadForm() {
       duration-500
 
       ${
-        hide
-          ? "opacity-0 pointer-events-none translate-y-16"
-          : "opacity-100 translate-y-0"
+        hide || galleryPopupOpen
+          ? "opacity-0 invisible pointer-events-none translate-y-16"
+          : "opacity-100 visible translate-y-0"
       }
       `}
     >
-
       <div
         className="
         flex
@@ -83,8 +90,8 @@ export default function StickyLeadForm() {
         shadow-[0_10px_30px_rgba(0,0,0,0.10)]
         "
       >
+        {/* SITE VISIT BUTTON */}
 
-        
         <button
           className="
           flex
@@ -117,7 +124,8 @@ export default function StickyLeadForm() {
           Site Visit
         </button>
 
-        
+        {/* NAME */}
+
         <input
           type="text"
           placeholder="Name"
@@ -148,7 +156,8 @@ export default function StickyLeadForm() {
           }}
         />
 
-        
+        {/* PHONE */}
+
         <input
           type="text"
           placeholder="Phone"
@@ -179,7 +188,8 @@ export default function StickyLeadForm() {
           }}
         />
 
-        
+        {/* EMAIL */}
+
         <input
           type="email"
           placeholder="Email"
@@ -210,7 +220,8 @@ export default function StickyLeadForm() {
           }}
         />
 
-        
+        {/* BHK */}
+
         <select
           className="
           w-[92px]
@@ -242,7 +253,8 @@ export default function StickyLeadForm() {
           <option>4 BHK</option>
         </select>
 
-        
+        {/* LOCATION */}
+
         <select
           className="
           w-[115px]
@@ -268,13 +280,17 @@ export default function StickyLeadForm() {
             fontWeight: 500,
           }}
         >
-          <option value="">Location</option>
+          <option value="">
+            Location
+          </option>
+
           <option>Jorhat</option>
           <option>Guwahati</option>
           <option>Dibrugarh</option>
         </select>
 
-        
+        {/* SUBMIT */}
+
         <button
           className="
           flex
@@ -311,9 +327,7 @@ export default function StickyLeadForm() {
 
           <Send size={13} />
         </button>
-
       </div>
-
     </div>
   );
 }
