@@ -96,18 +96,25 @@ export default function Contact() {
                 className="
                 mt-5
 
-                max-w-[560px]
+                max-w-[520px]
 
                 text-[15px]
-                lg:text-[17px]
+                lg:text-[16px]
 
-                leading-[1.9]
+                leading-[1.75]
+
+                tracking-[-0.01em]
 
                 text-[#5f6674]
+
+                text-justify
+
+                break-words
                 "
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontWeight: 400,
+                  textAlignLast: "left",
                 }}
               >
                 Discover a thoughtfully crafted lifestyle designed

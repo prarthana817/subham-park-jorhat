@@ -1,7 +1,6 @@
 // src/components/Overview.jsx
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 import {
   ShieldCheck,
@@ -9,12 +8,9 @@ import {
   LockKeyhole,
   Droplets,
   ArrowUpRight,
-  ChevronDown,
 } from "lucide-react";
 
 export default function Overview({ setOpen }) {
-  const [showConfig, setShowConfig] = useState(false);
-
   return (
     <section
       id="overview"
@@ -22,8 +18,8 @@ export default function Overview({ setOpen }) {
       relative
       overflow-hidden
 
-      py-16
-      lg:py-24
+      py-12
+      lg:py-16
 
       bg-[#f8f5ed]
       "
@@ -53,6 +49,7 @@ export default function Overview({ setOpen }) {
         w-[250px]
 
         opacity-[0.035]
+        hidden lg:block
         "
         style={{
           backgroundImage:
@@ -69,11 +66,11 @@ export default function Overview({ setOpen }) {
         relative
         z-10
 
-        max-w-[1700px]
+        max-w-[1500px]
         mx-auto
 
-        px-5
-        lg:px-8
+        px-4
+        lg:px-6
         "
       >
         <div
@@ -81,26 +78,27 @@ export default function Overview({ setOpen }) {
           grid
           lg:grid-cols-[1.02fr_0.98fr]
 
-          gap-10
-          lg:gap-14
+          gap-8
+          lg:gap-10
 
           items-start
           "
         >
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-[65px] h-[2px] bg-[#d1a54d]" />
+            <div className="flex items-center gap-4 mb-5">
+              <div className="w-[60px] h-[2px] bg-[#d1a54d]" />
 
               <p
                 className="
                 uppercase
-                tracking-[0.34em]
-                text-[11px]
+                tracking-[0.32em]
+                text-[10px]
                 text-[#c79d47]
                 "
                 style={{
@@ -116,15 +114,15 @@ export default function Overview({ setOpen }) {
               className="
               text-[#111111]
 
-              text-[42px]
-              md:text-[54px]
-              lg:text-[64px]
+              text-[38px]
+              md:text-[50px]
+              lg:text-[60px]
 
               leading-[0.96]
 
               tracking-[-2px]
 
-              mb-6
+              mb-5
               "
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -145,21 +143,23 @@ export default function Overview({ setOpen }) {
               {" "}Crafted
               <br />
 
-              For Modern
-              Homes
+              For Modern Homes
             </h2>
 
             <p
               className="
-              text-[17px]
+              text-[15px]
+              lg:text-[16px]
 
-              leading-[1.9]
+              leading-[1.75]
 
               text-[#5f6674]
 
-              max-w-[760px]
+              max-w-[720px]
 
-              mb-8
+              mb-7
+
+              text-justify
               "
               style={{
                 fontFamily: "'Inter', sans-serif",
@@ -180,9 +180,9 @@ export default function Overview({ setOpen }) {
               items-center
               gap-3
 
-              px-8
+              px-7
 
-              h-[54px]
+              h-[50px]
 
               rounded-full
 
@@ -214,65 +214,65 @@ export default function Overview({ setOpen }) {
               <ArrowUpRight className="w-4 h-4" />
             </button>
 
+            {/* FEATURES GRID */}
             <div
               className="
               grid
               sm:grid-cols-2
 
-              gap-4
+              gap-3
 
-              mt-10
+              mt-7
               "
             >
               {/* CONFIGURATION */}
               <div
-                onClick={() => setShowConfig(!showConfig)}
                 className="
-                cursor-pointer
-
                 bg-[#fffdfa]
 
-                rounded-[24px]
+                rounded-[20px]
 
                 border
                 border-[#ece2d2]
 
-                p-5
+                p-4
 
-                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+                shadow-[0_8px_24px_rgba(0,0,0,0.04)]
 
-                hover:-translate-y-[3px]
+                hover:-translate-y-[2px]
 
                 transition-all
                 duration-300
                 "
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
                   <div
                     className="
-                    w-[48px]
-                    h-[48px]
+                    w-[42px]
+                    h-[42px]
 
-                    rounded-[15px]
+                    rounded-[13px]
 
                     bg-[#f8efd8]
 
                     flex
                     items-center
                     justify-center
+
+                    shrink-0
                     "
                   >
-                    <ShieldCheck size={20} color="#d1a54d" />
+                    <ShieldCheck size={18} color="#d1a54d" />
                   </div>
 
                   <div className="flex-1">
                     <h4
                       className="
-                      text-[18px]
+                      text-[16px]
 
                       text-[#171717]
 
-                      mb-1.5
+                      mb-2.5
                       "
                       style={{
                         fontFamily:
@@ -283,59 +283,49 @@ export default function Overview({ setOpen }) {
                       Configuration
                     </h4>
 
-                    <p
-                      className="
-                      text-[14px]
+                    <div className="flex flex-wrap gap-2">
+                      <span
+                        className="
+                        px-3.5
+                        py-1.5
 
-                      leading-[1.7]
+                        rounded-full
 
-                      text-[#707887]
-                      "
-                      style={{
-                        fontFamily: "'Inter', sans-serif",
-                      }}
-                    >
-                      Click to view configurations
-                    </p>
+                        bg-[#14234b]
+
+                        text-white
+
+                        text-[10px]
+
+                        uppercase
+                        tracking-[0.10em]
+                        "
+                      >
+                        2 BHK
+                      </span>
+
+                      <span
+                        className="
+                        px-3.5
+                        py-1.5
+
+                        rounded-full
+
+                        bg-[#d1a54d]
+
+                        text-white
+
+                        text-[10px]
+
+                        uppercase
+                        tracking-[0.10em]
+                        "
+                      >
+                        3 BHK
+                      </span>
+                    </div>
                   </div>
-
-                  <ChevronDown
-                    size={18}
-                    className={`transition-transform duration-300 ${
-                      showConfig ? "rotate-180" : ""
-                    }`}
-                  />
                 </div>
-
-                {showConfig && (
-                  <div
-                    className="
-                    mt-5
-                    pt-4
-
-                    border-t
-                    border-[#ece2d2]
-
-                    space-y-3
-                    "
-                  >
-                    <div className="text-[14px] text-[#171717]">
-                      2 BHK Smart — 800 sq.ft
-                    </div>
-
-                    <div className="text-[14px] text-[#171717]">
-                      2.5 BHK — 1096 sq.ft
-                    </div>
-
-                    <div className="text-[14px] text-[#171717]">
-                      3 BHK — 1339 sq.ft & 1530 sq.ft
-                    </div>
-
-                    <div className="text-[14px] text-[#171717]">
-                      3.5 BHK — 1684 sq.ft
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* POWER BACKUP */}
@@ -343,20 +333,20 @@ export default function Overview({ setOpen }) {
                 className="
                 bg-[#fffdfa]
 
-                rounded-[24px]
+                rounded-[20px]
 
                 border
                 border-[#ece2d2]
 
-                p-5
+                p-4
 
                 flex
                 items-start
-                gap-4
+                gap-3
 
-                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+                shadow-[0_8px_24px_rgba(0,0,0,0.04)]
 
-                hover:-translate-y-[3px]
+                hover:-translate-y-[2px]
 
                 transition-all
                 duration-300
@@ -364,29 +354,31 @@ export default function Overview({ setOpen }) {
               >
                 <div
                   className="
-                  w-[48px]
-                  h-[48px]
+                  w-[42px]
+                  h-[42px]
 
-                  rounded-[15px]
+                  rounded-[13px]
 
                   bg-[#f8efd8]
 
                   flex
                   items-center
                   justify-center
+
+                  shrink-0
                   "
                 >
-                  <Zap size={20} color="#d1a54d" />
+                  <Zap size={18} color="#d1a54d" />
                 </div>
 
                 <div>
                   <h4
                     className="
-                    text-[18px]
+                    text-[16px]
 
                     text-[#171717]
 
-                    mb-1.5
+                    mb-1
                     "
                     style={{
                       fontFamily:
@@ -399,9 +391,9 @@ export default function Overview({ setOpen }) {
 
                   <p
                     className="
-                    text-[14px]
+                    text-[13px]
 
-                    leading-[1.7]
+                    leading-[1.6]
 
                     text-[#707887]
                     "
@@ -419,20 +411,20 @@ export default function Overview({ setOpen }) {
                 className="
                 bg-[#fffdfa]
 
-                rounded-[24px]
+                rounded-[20px]
 
                 border
                 border-[#ece2d2]
 
-                p-5
+                p-4
 
                 flex
                 items-start
-                gap-4
+                gap-3
 
-                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+                shadow-[0_8px_24px_rgba(0,0,0,0.04)]
 
-                hover:-translate-y-[3px]
+                hover:-translate-y-[2px]
 
                 transition-all
                 duration-300
@@ -440,29 +432,31 @@ export default function Overview({ setOpen }) {
               >
                 <div
                   className="
-                  w-[48px]
-                  h-[48px]
+                  w-[42px]
+                  h-[42px]
 
-                  rounded-[15px]
+                  rounded-[13px]
 
                   bg-[#f8efd8]
 
                   flex
                   items-center
                   justify-center
+
+                  shrink-0
                   "
                 >
-                  <LockKeyhole size={20} color="#d1a54d" />
+                  <LockKeyhole size={18} color="#d1a54d" />
                 </div>
 
                 <div>
                   <h4
                     className="
-                    text-[18px]
+                    text-[16px]
 
                     text-[#171717]
 
-                    mb-1.5
+                    mb-1
                     "
                     style={{
                       fontFamily:
@@ -475,9 +469,9 @@ export default function Overview({ setOpen }) {
 
                   <p
                     className="
-                    text-[14px]
+                    text-[13px]
 
-                    leading-[1.7]
+                    leading-[1.6]
 
                     text-[#707887]
                     "
@@ -495,20 +489,20 @@ export default function Overview({ setOpen }) {
                 className="
                 bg-[#fffdfa]
 
-                rounded-[24px]
+                rounded-[20px]
 
                 border
                 border-[#ece2d2]
 
-                p-5
+                p-4
 
                 flex
                 items-start
-                gap-4
+                gap-3
 
-                shadow-[0_10px_35px_rgba(0,0,0,0.04)]
+                shadow-[0_8px_24px_rgba(0,0,0,0.04)]
 
-                hover:-translate-y-[3px]
+                hover:-translate-y-[2px]
 
                 transition-all
                 duration-300
@@ -516,29 +510,31 @@ export default function Overview({ setOpen }) {
               >
                 <div
                   className="
-                  w-[48px]
-                  h-[48px]
+                  w-[42px]
+                  h-[42px]
 
-                  rounded-[15px]
+                  rounded-[13px]
 
                   bg-[#f8efd8]
 
                   flex
                   items-center
                   justify-center
+
+                  shrink-0
                   "
                 >
-                  <Droplets size={20} color="#d1a54d" />
+                  <Droplets size={18} color="#d1a54d" />
                 </div>
 
                 <div>
                   <h4
                     className="
-                    text-[18px]
+                    text-[16px]
 
                     text-[#171717]
 
-                    mb-1.5
+                    mb-1
                     "
                     style={{
                       fontFamily:
@@ -551,9 +547,9 @@ export default function Overview({ setOpen }) {
 
                   <p
                     className="
-                    text-[14px]
+                    text-[13px]
 
-                    leading-[1.7]
+                    leading-[1.6]
 
                     text-[#707887]
                     "
@@ -561,13 +557,14 @@ export default function Overview({ setOpen }) {
                       fontFamily: "'Inter', sans-serif",
                     }}
                   >
-                    Total 8 premium units available
+                    8 premium units
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
+          {/* RIGHT CARD */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -580,13 +577,13 @@ export default function Overview({ setOpen }) {
 
               bg-[#fffdfa]
 
-              rounded-[34px]
+              rounded-[30px]
 
               border
               border-[#ede2d3]
 
-              p-7
-              md:p-10
+              p-6
+              md:p-8
 
               shadow-[0_20px_60px_rgba(0,0,0,0.05)]
 
@@ -597,7 +594,7 @@ export default function Overview({ setOpen }) {
 
               <div
                 className="
-                text-[70px]
+                text-[60px]
                 leading-none
 
                 text-[#d1a54d]
@@ -613,8 +610,8 @@ export default function Overview({ setOpen }) {
 
               <p
                 className="
-                text-[24px]
-                md:text-[28px]
+                text-[22px]
+                md:text-[26px]
 
                 leading-[1.7]
 
@@ -622,7 +619,7 @@ export default function Overview({ setOpen }) {
 
                 italic
 
-                mb-10
+                mb-8
                 "
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
@@ -637,8 +634,8 @@ export default function Overview({ setOpen }) {
               <div className="flex items-center gap-4">
                 <div
                   className="
-                  w-[60px]
-                  h-[60px]
+                  w-[54px]
+                  h-[54px]
 
                   rounded-full
 
@@ -653,7 +650,7 @@ export default function Overview({ setOpen }) {
 
                   text-[#d1a54d]
 
-                  text-[22px]
+                  text-[20px]
                   "
                   style={{
                     fontFamily:
@@ -667,7 +664,7 @@ export default function Overview({ setOpen }) {
                 <div>
                   <h4
                     className="
-                    text-[24px]
+                    text-[22px]
 
                     text-[#171717]
 
@@ -684,7 +681,7 @@ export default function Overview({ setOpen }) {
 
                   <p
                     className="
-                    text-[15px]
+                    text-[14px]
 
                     text-[#727b88]
                     "

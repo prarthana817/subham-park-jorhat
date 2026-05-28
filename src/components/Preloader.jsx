@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import logo from "../assests/images/logo.png";
+import logo from "../assests/images/shubham_logo.png";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
@@ -16,6 +16,8 @@ export default function Preloader() {
     return () => clearTimeout(timer);
   }, []);
 
+  const text = ["Subham", "Jorhat"];
+
   return (
     <AnimatePresence>
       {loading && (
@@ -24,7 +26,7 @@ export default function Preloader() {
           exit={{
             opacity: 0,
             transition: {
-              duration: 0.8,
+              duration: 0.7,
               ease: "easeInOut",
             },
           }}
@@ -33,7 +35,7 @@ export default function Preloader() {
           inset-0
           z-[999999]
 
-          bg-[#0b1635]
+          bg-[#f8f5ed]
 
           flex
           items-center
@@ -42,25 +44,29 @@ export default function Preloader() {
           overflow-hidden
           "
         >
-          {/* BACKGROUND GLOW */}
+          {/* LIGHT GLOW */}
           <div
             className="
             absolute
+
             w-[420px]
             h-[420px]
+
             rounded-full
-            bg-[#d1a54d]/20
+
+            bg-[#d1a54d]/10
+
             blur-[120px]
             "
           />
 
-          {/* GRID */}
+          {/* SUBTLE GRID */}
           <div
-            className="absolute inset-0 opacity-[0.06]"
+            className="absolute inset-0 opacity-[0.03]"
             style={{
               backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+                linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
               `,
               backgroundSize: "60px 60px",
             }}
@@ -68,47 +74,10 @@ export default function Preloader() {
 
           {/* CONTENT */}
           <div className="relative z-10 flex flex-col items-center">
-            {/* ROTATING RING */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{
-                repeat: Infinity,
-                duration: 8,
-                ease: "linear",
-              }}
-              className="
-              absolute
-              w-[170px]
-              h-[170px]
-              rounded-full
-              border
-              border-dashed
-              border-[#d1a54d]/40
-              "
-            />
-
-            {/* SECOND RING */}
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{
-                repeat: Infinity,
-                duration: 12,
-                ease: "linear",
-              }}
-              className="
-              absolute
-              w-[220px]
-              h-[220px]
-              rounded-full
-              border
-              border-[#ffffff10]
-              "
-            />
-
-            {/* LOGO BOX */}
+            {/* LOGO */}
             <motion.div
               initial={{
-                scale: 0.8,
+                scale: 2,
                 opacity: 0,
               }}
               animate={{
@@ -116,124 +85,152 @@ export default function Preloader() {
                 opacity: 1,
               }}
               transition={{
-                duration: 1,
-                ease: "easeOut",
+                duration: 1.2,
+                ease: [0.22, 1, 0.36, 1],
               }}
-              className="
-              relative
-
-              w-[120px]
-              h-[120px]
-
-              rounded-[28px]
-
-              bg-white
-
-              shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-
-              flex
-              items-center
-              justify-center
-              "
+              className="mb-6"
             >
-              <motion.img
+              <img
                 src={logo}
                 alt="Logo"
-                animate={{
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 4,
-                  ease: "easeInOut",
-                }}
                 className="
-                w-[82px]
+                w-[180px]
+                md:w-[220px]
+
                 object-contain
+
+                drop-shadow-[0_18px_40px_rgba(0,0,0,0.12)]
                 "
               />
             </motion.div>
 
-            {/* TEXT */}
+            {/* TEXT REVEAL */}
+            <div className="flex items-center gap-4 overflow-hidden">
+              {text.map((word, index) => (
+                <div
+                  key={index}
+                  className="overflow-hidden"
+                >
+                  <motion.h2
+                    initial={{
+                      y: 120,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                    }}
+                    transition={{
+                      duration: 0.9,
+                      delay: 0.5 + index * 0.25,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="
+                    text-[#111111]
+
+                    text-[42px]
+                    md:text-[62px]
+
+                    leading-none
+
+                    tracking-[-2px]
+                    "
+                    style={{
+                      fontFamily:
+                        "'Cormorant Garamond', serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {word}
+                  </motion.h2>
+                </div>
+              ))}
+            </div>
+
+            {/* GOLD LINE */}
             <motion.div
               initial={{
+                width: 0,
                 opacity: 0,
-                y: 15,
+              }}
+              animate={{
+                width: "90px",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 1.2,
+                ease: "easeOut",
+              }}
+              className="
+              h-[2px]
+
+              bg-[#d1a54d]
+
+              mt-5
+              mb-4
+
+              rounded-full
+              "
+            />
+
+            {/* SUBTEXT */}
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 20,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
               }}
               transition={{
-                delay: 0.5,
                 duration: 0.8,
+                delay: 1.4,
               }}
-              className="mt-10 text-center"
+              className="
+              text-[#b88a33]
+
+              uppercase
+
+              tracking-[0.32em]
+
+              text-[10px]
+              "
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
+              }}
             >
-              <h2
-                className="
-                text-white
-
-                text-[34px]
-                md:text-[42px]
-
-                tracking-[-1px]
-                "
-                style={{
-                  fontFamily:
-                    "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                }}
-              >
-                Subham Group
-              </h2>
-
-              <p
-                className="
-                mt-2
-
-                text-[#d1a54d]
-
-                uppercase
-                tracking-[0.35em]
-
-                text-[10px]
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 600,
-                }}
-              >
-                Premium Living Experience
-              </p>
-            </motion.div>
+              Premium Living Experience
+            </motion.p>
 
             {/* LOADING BAR */}
             <div
               className="
-              mt-10
+              mt-9
 
               w-[220px]
-              h-[3px]
+              h-[2px]
 
               rounded-full
 
-              bg-white/10
+              bg-black/10
 
               overflow-hidden
               "
             >
               <motion.div
                 initial={{ x: "-100%" }}
-                animate={{ x: "100%" }}
+                animate={{ x: "250%" }}
                 transition={{
                   repeat: Infinity,
-                  duration: 1.4,
+                  duration: 1.3,
                   ease: "easeInOut",
                 }}
                 className="
                 h-full
-                w-[40%]
+                w-[30%]
 
                 rounded-full
 

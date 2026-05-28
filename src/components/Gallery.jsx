@@ -1,6 +1,6 @@
 // src/components/Gallery.jsx
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 import gallery1 from "../assests/images/location-map.jpg";
@@ -14,7 +14,11 @@ import gallery7 from "../assests/images/gallery-7.jpg";
 import gallery8 from "../assests/images/gallery-8.jpg";
 import gallery9 from "../assests/images/gallery-9.jpg";
 
-import { ArrowUpRight, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  X,
+  Search,
+} from "lucide-react";
 
 const galleryImages = [
   {
@@ -56,7 +60,8 @@ const galleryImages = [
 ];
 
 export default function Gallery({ setOpen }) {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] =
+    useState(null);
 
   return (
     <section
@@ -70,58 +75,74 @@ export default function Gallery({ setOpen }) {
       "
     >
       {/* IMAGE POPUP */}
-      {selectedImage && (
-        <div
-          className="
-          fixed
-          inset-0
-          z-[99999]
-          bg-black/90
-          flex
-          items-center
-          justify-center
-          p-4
-          "
-          onClick={() => setSelectedImage(null)}
-        >
-          {/* CLOSE BUTTON */}
-          <button
-            onClick={() => setSelectedImage(null)}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
             className="
-            absolute
-            top-5
-            right-5
-            w-11
-            h-11
-            rounded-full
-            bg-white/10
-            backdrop-blur-md
+            fixed
+            inset-0
+            z-[99999]
+            bg-black/92
+            backdrop-blur-sm
             flex
             items-center
             justify-center
-            border
-            border-white/20
-            z-[999999]
+            p-4
             "
+            onClick={() => setSelectedImage(null)}
           >
-            <X className="w-5 h-5 text-white" />
-          </button>
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() =>
+                setSelectedImage(null)
+              }
+              className="
+              absolute
+              top-5
+              right-5
+              w-12
+              h-12
+              rounded-full
+              bg-white/10
+              backdrop-blur-md
+              flex
+              items-center
+              justify-center
+              border
+              border-white/20
+              transition-all
+              duration-300
+              hover:bg-white/20
+              z-[999999]
+              "
+            >
+              <X className="w-5 h-5 text-white" />
+            </button>
 
-          {/* POPUP IMAGE */}
-          <img
-            src={selectedImage}
-            alt="Preview"
-            onClick={(e) => e.stopPropagation()}
-            className="
-            max-w-[95%]
-            max-h-[90vh]
-            object-contain
-            rounded-[20px]
-            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-            "
-          />
-        </div>
-      )}
+            {/* IMAGE */}
+            <motion.img
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              src={selectedImage}
+              alt="Preview"
+              onClick={(e) => e.stopPropagation()}
+              className="
+              max-w-[96%]
+              max-h-[90vh]
+              object-contain
+              rounded-[20px]
+              shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+              "
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* BACKGROUND */}
       <div
@@ -271,7 +292,9 @@ export default function Gallery({ setOpen }) {
                 delay: index * 0.05,
               }}
               viewport={{ once: true }}
-              onClick={() => setSelectedImage(item.img)}
+              onClick={() =>
+                setSelectedImage(item.img)
+              }
               className="
               group
               relative
@@ -322,6 +345,43 @@ export default function Gallery({ setOpen }) {
                 "
               />
 
+              {/* MAGNIFY ICON */}
+              <div
+                className="
+                absolute
+                inset-0
+                flex
+                items-center
+                justify-center
+                z-20
+                opacity-0
+                group-hover:opacity-100
+                transition-all
+                duration-300
+                "
+              >
+                <div
+                  className="
+                  w-16
+                  h-16
+                  rounded-full
+                  bg-white/15
+                  backdrop-blur-md
+                  border
+                  border-white/20
+                  flex
+                  items-center
+                  justify-center
+                  scale-75
+                  group-hover:scale-100
+                  transition-all
+                  duration-300
+                  "
+                >
+                  <Search className="w-6 h-6 text-white" />
+                </div>
+              </div>
+
               {/* CONTENT */}
               <div
                 className="
@@ -330,7 +390,7 @@ export default function Gallery({ setOpen }) {
                 left-0
                 w-full
                 p-5
-                z-20
+                z-30
                 "
               >
                 <div className="flex items-end justify-between gap-4">
@@ -364,8 +424,8 @@ export default function Gallery({ setOpen }) {
                     />
                   </div>
 
-                  {/* ZOOM BUTTON */}
-                  <div
+                  {/* OPEN BUTTON */}
+                  <button
                     onClick={(e) => {
                       e.stopPropagation();
                       setSelectedImage(item.img);
@@ -390,8 +450,8 @@ export default function Gallery({ setOpen }) {
                     z-50
                     "
                   >
-                    <ArrowUpRight className="w-4 h-4 text-white pointer-events-none" />
-                  </div>
+                    <ArrowUpRight className="w-4 h-4 text-white" />
+                  </button>
                 </div>
               </div>
 

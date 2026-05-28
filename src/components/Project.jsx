@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
-import logo from "../assests/images/logo.png";
+import logo from "../assests/images/shubham_logo.png";
 
 const stats = [
   { value: "16+", label: "Completed Projects" },
@@ -41,23 +41,15 @@ const completedProjects = [
 ];
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 12 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6 },
+  transition: { duration: 0.45 },
 };
 
 export default function ProjectOverview() {
   const [selectedLocation, setSelectedLocation] =
     useState("Jorhat");
-
-  const colors = {
-    navy: "#14234b",
-    lightBg: "#f7f5ef",
-    border: "#e6e0d5",
-    gold: "#c79d47",
-    text: "#5f6674",
-  };
 
   return (
     <section
@@ -65,22 +57,22 @@ export default function ProjectOverview() {
       className="
       relative
       overflow-hidden
-      py-10
-      lg:py-14
+      py-4
+      lg:py-6
       bg-[#f7f5ef]
       "
     >
-      <div className="relative z-10 max-w-[1380px] mx-auto px-4 lg:px-6">
+      <div className="max-w-[1220px] mx-auto px-4">
         {/* SMALL HEADING */}
         <motion.div
           {...fadeInUp}
-          className="mb-4"
+          className="mb-2"
         >
           <p
             className="
             uppercase
-            tracking-[0.30em]
-            text-[10px]
+            tracking-[0.24em]
+            text-[8px]
             text-[#b68a3f]
             "
             style={{
@@ -99,26 +91,21 @@ export default function ProjectOverview() {
           flex
           flex-col
           lg:flex-row
-          lg:items-end
+          lg:items-center
           lg:justify-between
-          gap-6
-          mb-8
+          gap-4
+          mb-4
           "
         >
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-4">
             {/* LOGO */}
             <div
               className="
-              w-[95px]
-              h-[95px]
-              rounded-[24px]
-              bg-white
-              border
-              border-[#ebe5d8]
+              w-[88px]
+              h-[88px]
               flex
               items-center
               justify-center
-              shadow-[0_10px_30px_rgba(0,0,0,0.04)]
               shrink-0
               "
             >
@@ -126,7 +113,7 @@ export default function ProjectOverview() {
                 src={logo}
                 alt="Subham Logo"
                 className="
-                w-[68px]
+                w-[78px]
                 object-contain
                 "
               />
@@ -137,10 +124,10 @@ export default function ProjectOverview() {
               <p
                 className="
                 uppercase
-                tracking-[0.32em]
-                text-[10px]
+                tracking-[0.25em]
+                text-[8px]
                 text-[#a07a44]
-                mb-2
+                mb-1
                 "
                 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -152,11 +139,11 @@ export default function ProjectOverview() {
 
               <h2
                 className="
-                text-[38px]
-                md:text-[52px]
-                lg:text-[68px]
-                leading-[0.92]
-                tracking-[-2px]
+                text-[28px]
+                md:text-[40px]
+                lg:text-[50px]
+                leading-[0.95]
+                tracking-[-1px]
                 "
                 style={{
                   fontFamily:
@@ -167,7 +154,6 @@ export default function ProjectOverview() {
                 <span className="text-[#14234b]">
                   Landmark
                 </span>{" "}
-
                 <span className="italic text-[#c79d47]">
                   Projects
                 </span>
@@ -177,11 +163,11 @@ export default function ProjectOverview() {
 
           <p
             className="
-            text-[14px]
-            lg:text-[15px]
-            leading-[1.9]
+            text-[11px]
+            lg:text-[12px]
+            leading-[1.6]
             text-[#5f6674]
-            max-w-sm
+            max-w-[250px]
             lg:text-right
             "
             style={{
@@ -199,23 +185,27 @@ export default function ProjectOverview() {
         <motion.div
           {...fadeInUp}
           className="
-          rounded-[28px]
+          rounded-[20px]
           border
           border-[#e6e0d5]
           bg-white
           overflow-hidden
-          shadow-[0_18px_50px_rgba(0,0,0,0.05)]
           "
         >
           {/* STATS */}
-          <div className="grid grid-cols-2 md:grid-cols-4 border-b border-[#ece6db]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 border-b border-[#ece6db]">
             {stats.map((stat, i) => (
               <div
                 key={i}
                 className={`
-                  px-5
-                  py-5
+                  py-4
+                  px-4
                   bg-[#faf8f3]
+                  flex
+                  flex-col
+                  items-center
+                  justify-center
+                  text-center
 
                   ${
                     i < stats.length - 1
@@ -226,8 +216,8 @@ export default function ProjectOverview() {
               >
                 <span
                   className="
-                  text-[28px]
-                  lg:text-[32px]
+                  text-[24px]
+                  lg:text-[28px]
                   leading-none
                   text-[#14234b]
                   "
@@ -243,8 +233,9 @@ export default function ProjectOverview() {
                 <p
                   className="
                   mt-1
-                  text-[11px]
+                  text-[9px]
                   text-[#6f7786]
+                  leading-[1.4]
                   "
                   style={{
                     fontFamily: "'Inter', sans-serif",
@@ -258,15 +249,15 @@ export default function ProjectOverview() {
           </div>
 
           {/* CONTENT */}
-          <div className="p-6 lg:p-10">
+          <div className="p-4 lg:p-5">
             {/* ONGOING */}
-            <div className="mb-10">
+            <div className="mb-5">
               <p
                 className="
-                text-[10px]
+                text-[8px]
                 uppercase
-                tracking-[0.28em]
-                mb-4
+                tracking-[0.24em]
+                mb-3
                 text-[#a07a44]
                 "
                 style={{
@@ -277,7 +268,7 @@ export default function ProjectOverview() {
                 Ongoing Projects
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 {ongoingProjects.map((project, idx) => (
                   <span
                     key={idx}
@@ -287,16 +278,16 @@ export default function ProjectOverview() {
                       )
                     }
                     className="
-                    px-5
-                    py-2.5
+                    px-3
+                    py-1.5
                     rounded-full
                     border
                     border-[#e4ddd0]
                     bg-[#faf8f3]
                     text-[#14234b]
-                    text-[10px]
+                    text-[8px]
                     uppercase
-                    tracking-[0.15em]
+                    tracking-[0.12em]
                     cursor-pointer
                     transition-all
                     duration-300
@@ -319,10 +310,10 @@ export default function ProjectOverview() {
             <div>
               <p
                 className="
-                text-[10px]
+                text-[8px]
                 uppercase
-                tracking-[0.28em]
-                mb-4
+                tracking-[0.24em]
+                mb-3
                 text-[#a07a44]
                 "
                 style={{
@@ -333,7 +324,7 @@ export default function ProjectOverview() {
                 Completed Projects
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 {completedProjects.map((project, idx) => (
                   <span
                     key={idx}
@@ -343,16 +334,16 @@ export default function ProjectOverview() {
                       )
                     }
                     className="
-                    px-5
-                    py-2.5
+                    px-3
+                    py-1.5
                     rounded-full
                     border
                     border-[#e4ddd0]
                     bg-[#faf8f3]
                     text-[#14234b]
-                    text-[10px]
+                    text-[8px]
                     uppercase
-                    tracking-[0.15em]
+                    tracking-[0.12em]
                     cursor-pointer
                     transition-all
                     duration-300
@@ -372,14 +363,14 @@ export default function ProjectOverview() {
             </div>
 
             {/* FOOTER */}
-            <div className="mt-10 flex items-center gap-3">
-              <MapPin className="w-4 h-4 text-[#c79d47]" />
+            <div className="mt-4 flex items-center gap-2">
+              <MapPin className="w-3 h-3 text-[#c79d47]" />
 
               <p
                 className="
-                text-[11px]
+                text-[9px]
                 uppercase
-                tracking-[0.18em]
+                tracking-[0.14em]
                 text-[#14234b]
                 "
                 style={{

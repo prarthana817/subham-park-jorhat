@@ -14,22 +14,22 @@ import {
 
 const nearbyPlaces = [
   {
-    icon: <Plane size={16} />,
+    icon: <Plane size={14} />,
     title: "Airport",
     value: "5.7 KM",
   },
   {
-    icon: <Train size={16} />,
+    icon: <Train size={14} />,
     title: "Railway",
     value: "3.2 KM",
   },
   {
-    icon: <School size={16} />,
+    icon: <School size={14} />,
     title: "Schools",
     value: "Nearby",
   },
   {
-    icon: <Building2 size={16} />,
+    icon: <Building2 size={14} />,
     title: "Hospitals",
     value: "Nearby",
   },
@@ -41,12 +41,9 @@ export default function Location({ setOpen }) {
       id="location"
       className="
       relative
-
-      py-10
-      lg:py-14
-
+      py-8
+      lg:py-10
       bg-[#f8f5ed]
-
       overflow-hidden
       "
     >
@@ -54,92 +51,76 @@ export default function Location({ setOpen }) {
       <div
         className="
         absolute
-        top-[-120px]
-        right-[-120px]
-
-        w-[260px]
-        h-[260px]
-
+        top-[-100px]
+        right-[-100px]
+        w-[200px]
+        h-[200px]
         rounded-full
-
         bg-[#d1a54d]/10
-
-        blur-[100px]
+        blur-[85px]
         "
       />
 
       <div
         className="
-        max-w-[1280px]
+        max-w-[1200px]
         mx-auto
-
         px-4
-        lg:px-6
+        lg:px-5
         "
       >
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
           className="
           grid
-          lg:grid-cols-[0.9fr_1.1fr]
-
-          gap-5
-          lg:gap-6
-
-          items-stretch
+          lg:grid-cols-[0.92fr_1.08fr]
+          gap-4
+          items-start
           "
         >
           {/* LEFT CONTENT */}
           <div
             className="
             relative
-
-            rounded-[28px]
-
+            rounded-[24px]
             bg-[#14234b]
-
             p-5
             md:p-6
-
             text-white
-
             overflow-hidden
+            flex
+            flex-col
+            lg:mt-[12px]
+            min-h-[520px]
             "
           >
             {/* GOLD GLOW */}
             <div
               className="
               absolute
-              top-[-60px]
-              right-[-60px]
-
-              w-[180px]
-              h-[180px]
-
+              top-[-40px]
+              right-[-40px]
+              w-[130px]
+              h-[130px]
               rounded-full
-
               bg-[#d1a54d]/20
-
-              blur-[70px]
+              blur-[60px]
               "
             />
 
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-col h-full">
               {/* TAG */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-[42px] h-[2px] bg-[#d1a54d]" />
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-[34px] h-[2px] bg-[#d1a54d]" />
 
                 <p
                   className="
                   uppercase
-
-                  tracking-[0.22em]
-
+                  tracking-[0.18em]
                   text-[9px]
-
                   text-[#d1a54d]
                   "
                   style={{
@@ -154,13 +135,10 @@ export default function Location({ setOpen }) {
               {/* TITLE */}
               <h2
                 className="
-                text-[30px]
-                md:text-[40px]
-
-                leading-[0.95]
-
+                text-[38px]
+                md:text-[48px]
+                leading-[1]
                 tracking-[-1px]
-
                 mb-4
                 "
                 style={{
@@ -177,15 +155,11 @@ export default function Location({ setOpen }) {
               {/* DESCRIPTION */}
               <p
                 className="
-                text-[13px]
-                md:text-[14px]
-
+                text-[14px]
+                md:text-[15px]
                 leading-[1.8]
-
                 text-white/75
-
-                max-w-[430px]
-
+                max-w-[500px]
                 mb-5
                 "
                 style={{
@@ -206,18 +180,12 @@ export default function Location({ setOpen }) {
                 flex
                 items-start
                 gap-3
-
-                rounded-[18px]
-
+                rounded-[16px]
                 border
                 border-white/10
-
                 bg-white/5
-
                 p-4
-
                 hover:bg-white/10
-
                 transition-all
                 duration-300
                 "
@@ -226,17 +194,12 @@ export default function Location({ setOpen }) {
                   className="
                   w-10
                   h-10
-
                   shrink-0
-
                   rounded-full
-
                   bg-[#d1a54d]/15
-
                   flex
                   items-center
                   justify-center
-
                   text-[#d1a54d]
                   "
                 >
@@ -247,13 +210,9 @@ export default function Location({ setOpen }) {
                   <p
                     className="
                     text-[10px]
-
                     uppercase
-
-                    tracking-[0.18em]
-
+                    tracking-[0.14em]
                     text-white/50
-
                     mb-1
                     "
                     style={{
@@ -265,25 +224,21 @@ export default function Location({ setOpen }) {
 
                   <p
                     className="
-                    text-[13px]
-
-                    leading-[1.7]
-
+                    text-[15px]
+                    leading-[1.6]
                     text-white/85
                     "
                     style={{
                       fontFamily: "'Inter', sans-serif",
                     }}
                   >
-                    1, Sonari Gaon, Tarajan,
-                    <br />
-                    Jorhat Bhatemora Gaon,
-                    Assam - 785001
+                    1, Sonari Gaon, Tarajan, Jorhat
+                    Bhatemora Gaon, Assam - 785001
                   </p>
                 </div>
               </a>
 
-              {/* BUTTON */}
+              {/* BUTTONS */}
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001"
@@ -292,25 +247,17 @@ export default function Location({ setOpen }) {
                   className="
                   inline-flex
                   items-center
+                  justify-center
                   gap-2
-
-                  h-[42px]
-
-                  px-5
-
+                  h-[46px]
+                  min-w-[145px]
                   rounded-full
-
                   bg-[#d1a54d]
                   hover:bg-[#be9339]
-
                   text-[#111111]
-
                   uppercase
-
-                  tracking-[0.14em]
-
-                  text-[9px]
-
+                  tracking-[0.12em]
+                  text-[11px]
                   transition-all
                   duration-300
                   "
@@ -320,7 +267,6 @@ export default function Location({ setOpen }) {
                   }}
                 >
                   Open Map
-
                   <Navigation size={14} />
                 </a>
 
@@ -329,28 +275,19 @@ export default function Location({ setOpen }) {
                   className="
                   inline-flex
                   items-center
+                  justify-center
                   gap-2
-
-                  h-[42px]
-
-                  px-5
-
+                  h-[46px]
+                  min-w-[145px]
                   rounded-full
-
                   border
                   border-white/10
-
                   bg-white/5
                   hover:bg-white/10
-
                   text-white
-
                   uppercase
-
-                  tracking-[0.14em]
-
-                  text-[9px]
-
+                  tracking-[0.12em]
+                  text-[11px]
                   transition-all
                   duration-300
                   "
@@ -360,9 +297,78 @@ export default function Location({ setOpen }) {
                   }}
                 >
                   Book Visit
-
                   <ArrowUpRight size={14} />
                 </button>
+              </div>
+
+              {/* EXTRA 2 CARDS INSIDE EMPTY SPACE */}
+              <div className="mt-auto grid grid-cols-2 gap-3 pt-6">
+                {nearbyPlaces.slice(0, 2).map((item, index) => (
+                  <div
+                    key={index}
+                    className="
+                    rounded-[18px]
+                    bg-white/5
+                    border
+                    border-white/10
+                    px-4
+                    py-3
+
+                    flex
+                    items-center
+                    gap-3
+                    "
+                  >
+                    <div
+                      className="
+                      w-10
+                      h-10
+                      rounded-full
+                      bg-[#d1a54d]/15
+                      flex
+                      items-center
+                      justify-center
+                      text-[#d1a54d]
+                      shrink-0
+                      "
+                    >
+                      {item.icon}
+                    </div>
+
+                    <div className="flex flex-col">
+                      <p
+                        className="
+                        text-[10px]
+                        uppercase
+                        tracking-[0.12em]
+                        text-white/50
+                        leading-none
+                        "
+                        style={{
+                          fontFamily: "'Inter', sans-serif",
+                        }}
+                      >
+                        {item.title}
+                      </p>
+
+                      <h4
+                        className="
+                        mt-1
+                        text-[18px]
+                        leading-none
+                        text-white
+                        "
+                        style={{
+                          fontFamily:
+                            "'Cormorant Garamond', serif",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {item.value}
+                      </h4>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -373,16 +379,13 @@ export default function Location({ setOpen }) {
             <div
               className="
               overflow-hidden
-
-              rounded-[28px]
-
+              rounded-[24px]
               border
               border-[#e7dccb]
-
-              h-[240px]
-              md:h-[280px]
-
-              shadow-[0_18px_50px_rgba(0,0,0,0.05)]
+              h-[330px]
+              md:h-[370px]
+              shadow-[0_12px_35px_rgba(0,0,0,0.05)]
+              lg:mt-[18px]
               "
             >
               <iframe
@@ -402,81 +405,78 @@ export default function Location({ setOpen }) {
               className="
               grid
               grid-cols-2
-
               gap-3
               "
             >
-              {nearbyPlaces.map((item, index) => (
+              {nearbyPlaces.slice(2, 4).map((item, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ y: -3 }}
                   className="
-                  rounded-[20px]
-
+                  rounded-[18px]
                   border
                   border-[#e8dcc9]
-
                   bg-white
+                  px-5
+                  py-4
 
-                  p-4
+                  min-h-[95px]
 
-                  shadow-[0_10px_30px_rgba(0,0,0,0.04)]
+                  flex
+                  items-center
+                  gap-3
+
+                  shadow-[0_5px_16px_rgba(0,0,0,0.04)]
                   "
                 >
                   <div
                     className="
-                    w-9
-                    h-9
-
+                    w-10
+                    h-10
                     rounded-full
-
                     bg-[#f7efdd]
-
                     flex
                     items-center
                     justify-center
-
                     text-[#c79d47]
-
-                    mb-3
+                    shrink-0
                     "
                   >
                     {item.icon}
                   </div>
 
-                  <p
-                    className="
-                    text-[10px]
+                  <div>
+                    <p
+                      className="
+                      text-[10px]
+                      uppercase
+                      tracking-[0.12em]
+                      text-[#8a8f98]
+                      leading-none
+                      "
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                      }}
+                    >
+                      {item.title}
+                    </p>
 
-                    uppercase
-
-                    tracking-[0.16em]
-
-                    text-[#8a8f98]
-                    "
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                    }}
-                  >
-                    {item.title}
-                  </p>
-
-                  <h4
-                    className="
-                    mt-1
-
-                    text-[20px]
-
-                    text-[#111111]
-                    "
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {item.value}
-                  </h4>
+                    <h4
+                      className="
+                      mt-1
+                      text-[18px]
+                      text-[#111111]
+                      leading-none
+                      "
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {item.value}
+                    </h4>
+                  </div>
                 </motion.div>
               ))}
             </div>
