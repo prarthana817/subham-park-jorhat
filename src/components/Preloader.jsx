@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import logo from "../assests/images/shubham_logo.png";
+import logo from "../assests/images/logo.png";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
@@ -15,8 +15,6 @@ export default function Preloader() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const text = ["Subham", "Jorhat"];
 
   return (
     <AnimatePresence>
@@ -88,7 +86,7 @@ export default function Preloader() {
                 duration: 1.2,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mb-6"
+              className="mb-5"
             >
               <img
                 src={logo}
@@ -104,48 +102,131 @@ export default function Preloader() {
               />
             </motion.div>
 
-            {/* TEXT REVEAL */}
-            <div className="flex items-center gap-4 overflow-hidden">
-              {text.map((word, index) => (
-                <div
-                  key={index}
-                  className="overflow-hidden"
-                >
-                  <motion.h2
-                    initial={{
-                      y: 120,
-                      opacity: 0,
-                    }}
-                    animate={{
-                      y: 0,
-                      opacity: 1,
-                    }}
-                    transition={{
-                      duration: 0.9,
-                      delay: 0.5 + index * 0.25,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="
-                    text-[#111111]
+            {/* TOP TEXT */}
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.4,
+              }}
+              className="
+              uppercase
 
-                    text-[42px]
-                    md:text-[62px]
+              tracking-[0.28em]
 
-                    leading-none
+              text-[11px]
+              md:text-[12px]
 
-                    tracking-[-2px]
-                    "
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {word}
-                  </motion.h2>
-                </div>
-              ))}
-            </div>
+              text-[#b9b0a2]
+
+              mb-2
+              "
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+
+            </motion.p>
+
+            {/* JORHAT MULTICOLOR */}
+            <motion.h1
+              initial={{
+                y: 100,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="
+              flex
+
+              text-[72px]
+              md:text-[110px]
+
+              leading-none
+
+              tracking-[-6px]
+
+              select-none
+              "
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', serif",
+                fontWeight: 700,
+              }}
+            >
+              <span className="text-[#e3a17b]">
+                J
+              </span>
+
+              <span className="text-[#d8b5a7]">
+                O
+              </span>
+
+              <span className="text-[#79cfc1]">
+                R
+              </span>
+
+              <span className="text-[#b8b1a7]">
+                H
+              </span>
+
+              <span className="text-[#d8c7ba]">
+                A
+              </span>
+
+              <span className="text-[#aeb9be]">
+                T
+              </span>
+            </motion.h1>
+
+            {/* BOTTOM TEXT */}
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 1,
+              }}
+              className="
+              uppercase
+
+              tracking-[0.42em]
+
+              text-[10px]
+              md:text-[11px]
+
+              text-[#b9b0a2]
+
+              mt-2
+              "
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 700,
+              }}
+            >
+              Is Now A Reality!
+            </motion.p>
 
             {/* GOLD LINE */}
             <motion.div
@@ -159,7 +240,7 @@ export default function Preloader() {
               }}
               transition={{
                 duration: 0.8,
-                delay: 1.2,
+                delay: 1.3,
                 ease: "easeOut",
               }}
               className="
@@ -167,7 +248,7 @@ export default function Preloader() {
 
               bg-[#d1a54d]
 
-              mt-5
+              mt-6
               mb-4
 
               rounded-full
@@ -186,7 +267,7 @@ export default function Preloader() {
               }}
               transition={{
                 duration: 0.8,
-                delay: 1.4,
+                delay: 1.5,
               }}
               className="
               text-[#b88a33]

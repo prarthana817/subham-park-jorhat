@@ -226,108 +226,81 @@ export default function Overview({ setOpen }) {
               "
             >
               {/* CONFIGURATION */}
-              <div
-                className="
-                bg-[#fffdfa]
+<div
+  className="
+  bg-[#fffdfa]
 
-                rounded-[20px]
+  rounded-[20px]
 
-                border
-                border-[#ece2d2]
+  border
+  border-[#ece2d2]
 
-                p-4
+  p-4
 
-                shadow-[0_8px_24px_rgba(0,0,0,0.04)]
+  shadow-[0_8px_24px_rgba(0,0,0,0.04)]
 
-                hover:-translate-y-[2px]
+  hover:-translate-y-[2px]
 
-                transition-all
-                duration-300
-                "
-              >
-                <div className="flex items-start gap-3">
-                  <div
-                    className="
-                    w-[42px]
-                    h-[42px]
+  transition-all
+  duration-300
+  "
+>
+  <div className="flex items-start gap-3">
+    <div
+      className="
+      w-[42px]
+      h-[42px]
 
-                    rounded-[13px]
+      rounded-[13px]
 
-                    bg-[#f8efd8]
+      bg-[#f8efd8]
 
-                    flex
-                    items-center
-                    justify-center
+      flex
+      items-center
+      justify-center
 
-                    shrink-0
-                    "
-                  >
-                    <ShieldCheck size={18} color="#d1a54d" />
-                  </div>
+      shrink-0
+      "
+    >
+      <ShieldCheck size={18} color="#d1a54d" />
+    </div>
 
-                  <div className="flex-1">
-                    <h4
-                      className="
-                      text-[16px]
+    <div className="flex-1">
+      <h4
+        className="
+        text-[16px]
 
-                      text-[#171717]
+        text-[#171717]
 
-                      mb-2.5
-                      "
-                      style={{
-                        fontFamily:
-                          "'Plus Jakarta Sans', sans-serif",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Configuration
-                    </h4>
+        mb-2
+        "
+        style={{
+          fontFamily:
+            "'Plus Jakarta Sans', sans-serif",
+          fontWeight: 600,
+        }}
+      >
+        Configuration
+      </h4>
 
-                    <div className="flex flex-wrap gap-2">
-                      <span
-                        className="
-                        px-3.5
-                        py-1.5
+      <p
+        className="
+        text-[14px]
 
-                        rounded-full
+        leading-[1.7]
 
-                        bg-[#14234b]
-
-                        text-white
-
-                        text-[10px]
-
-                        uppercase
-                        tracking-[0.10em]
-                        "
-                      >
-                        2 BHK
-                      </span>
-
-                      <span
-                        className="
-                        px-3.5
-                        py-1.5
-
-                        rounded-full
-
-                        bg-[#d1a54d]
-
-                        text-white
-
-                        text-[10px]
-
-                        uppercase
-                        tracking-[0.10em]
-                        "
-                      >
-                        3 BHK
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+        text-[#707887]
+        "
+        style={{
+          fontFamily: "'Inter', sans-serif",
+          fontWeight: 500,
+        }}
+      >
+        2 BHK & 3 BHK Apartments
+      </p>
+    </div>
+  </div>
+</div>
               {/* POWER BACKUP */}
               <div
                 className="

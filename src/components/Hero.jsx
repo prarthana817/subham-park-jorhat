@@ -1,10 +1,7 @@
 // src/components/Hero.jsx
 
 import { motion } from "framer-motion";
-
-import {
-  MapPin,
-} from "lucide-react";
+import { MapPin } from "lucide-react";
 
 import heroBg from "../assests/images/hero-bg.jpg";
 
@@ -15,15 +12,11 @@ export default function Hero() {
       className="
       relative
       overflow-hidden
-
       min-h-screen
-
       flex
       items-center
-
       bg-[#f8f5ed]
-
-      pt-[105px]
+      pt-[125px]
       pb-10
       "
     >
@@ -49,10 +42,8 @@ export default function Hero() {
         absolute
         left-0
         top-0
-
         h-full
         w-[90px]
-
         opacity-[0.04]
         "
         style={{
@@ -65,12 +56,9 @@ export default function Hero() {
         className="
         relative
         z-10
-
-        max-w-[1420px]
+        max-w-[1380px]
         mx-auto
-
         w-full
-
         px-5
         lg:px-6
         "
@@ -79,9 +67,7 @@ export default function Hero() {
           className="
           grid
           lg:grid-cols-[0.92fr_1.08fr]
-
           items-center
-
           gap-10
           lg:gap-8
           "
@@ -116,15 +102,11 @@ export default function Hero() {
             <h1
               className="
               text-[#111111]
-
               text-[48px]
               md:text-[58px]
-              lg:text-[68px]
-
+              lg:text-[70px]
               leading-[0.92]
-
               tracking-[-2px]
-
               mb-4
               "
               style={{
@@ -133,7 +115,6 @@ export default function Hero() {
               }}
             >
               Elevate{" "}
-
               <span className="italic text-[#d1a54d]">
                 Your
               </span>
@@ -143,28 +124,21 @@ export default function Hero() {
               Lifestyle
             </h1>
 
-            <div className="w-[150px] h-[2px] bg-[#d1a54d] mb-5" />
+            <div className="w-[150px] h-[2px] bg-[#d1a54d] mb-6" />
 
             {/* PARAGRAPH */}
             <p
               className="
-              max-w-[540px]
-
+              max-w-[520px]
               text-[16px]
               lg:text-[17px]
-
-              leading-[1.85]
-
+              leading-[1.9]
               text-[#5f6674]
-
-              text-justify
-
-              mb-7
+              mb-8
               "
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontWeight: 400,
-                textAlignLast: "left",
                 wordSpacing: "-1px",
               }}
             >
@@ -174,79 +148,242 @@ export default function Hero() {
               of Jorhat.
             </p>
 
-            {/* ADDRESS */}
-            <div className="flex items-center gap-4">
-              <div
-                className="
-                w-11
-                h-11
+            {/* LOCATION + PRICE */}
+            <div
+              className="
+              flex
+              flex-wrap
+              items-center
+              gap-7
+              "
+            >
+              {/* LOCATION */}
+              <div className="flex items-center gap-4">
+                <div
+                  className="
+                  w-11
+                  h-11
+                  rounded-full
+                  bg-[#efe3c8]
+                  flex
+                  items-center
+                  justify-center
+                  shrink-0
+                  text-[#c79d47]
+                  "
+                >
+                  <MapPin size={18} />
+                </div>
 
-                rounded-full
+                <div>
+                  <p
+                    className="
+                    uppercase
+                    tracking-[0.22em]
+                    text-[10px]
+                    text-[#c79d47]
+                    mb-[2px]
+                    "
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Prime Location
+                  </p>
 
-                bg-[#efe3c8]
-
-                flex
-                items-center
-                justify-center
-
-                shrink-0
-
-                text-[#c79d47]
-                "
-              >
-                <MapPin size={18} />
+                  <h4
+                    className="
+                    text-[22px]
+                    md:text-[25px]
+                    leading-[1.2]
+                    text-[#111111]
+                    "
+                    style={{
+                      fontFamily:
+                        "'Cormorant Garamond', serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Sonari Gaon
+                  </h4>
+                </div>
               </div>
 
-              <div>
-                <p
+              {/* DIVIDER */}
+              <div
+                className="
+                hidden
+                md:block
+
+                h-[58px]
+                w-[1px]
+
+                bg-gradient-to-b
+                from-transparent
+                via-[#d1a54d]
+                to-transparent
+                "
+              />
+
+              {/* PRICE HIGHLIGHT */}
+              <div
+                className="
+                relative
+
+                px-5
+                py-[14px]
+
+                rounded-[18px]
+
+                bg-gradient-to-br
+                from-[#f4ead3]
+                via-[#f0e2bc]
+                to-[#ead7a4]
+
+                shadow-[0_10px_24px_rgba(209,165,77,0.12)]
+
+                overflow-hidden
+                "
+              >
+                {/* ROTATING BORDER */}
+                <div
                   className="
-                  uppercase
-                  tracking-[0.22em]
+                  absolute
+                  inset-0
 
-                  text-[10px]
+                  rounded-[18px]
 
-                  text-[#c79d47]
+                  before:absolute
+                  before:inset-0
+                  before:rounded-[18px]
 
-                  mb-[2px]
+                  before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#fff3c9,#d1a54d)]
+
+                  before:animate-[spin_4s_linear_infinite]
+
+                  before:content-['']
                   "
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 600,
-                  }}
-                >
-                  Prime Location
-                </p>
+                />
 
-                <h4
+                {/* INNER LAYER */}
+                <div
                   className="
-                  text-[22px]
-                  md:text-[25px]
+                  absolute
+                  inset-[1px]
 
-                  leading-[1.2]
+                  rounded-[17px]
 
-                  text-[#111111]
+                  bg-gradient-to-br
+                  from-[#f4ead3]
+                  via-[#f0e2bc]
+                  to-[#ead7a4]
                   "
-                  style={{
-                    fontFamily:
-                      "'Cormorant Garamond', serif",
-                    fontWeight: 600,
-                  }}
-                >
-                  Sonari Gaon, Tarajan, Jorhat
-                </h4>
+                />
 
-                <p
+                {/* SOFT GLOW */}
+                <div
                   className="
-                  text-[13px]
+                  absolute
+                  inset-0
 
-                  text-[#6f7785]
+                  bg-gradient-to-br
+                  from-white/25
+                  via-transparent
+                  to-transparent
+
+                  pointer-events-none
                   "
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                  }}
-                >
-                  Assam — 785001
-                </p>
+                />
+
+                {/* CONTENT */}
+                <div className="relative z-10">
+                  <p
+                    className="
+                    uppercase
+                    tracking-[0.22em]
+
+                    text-[9px]
+
+                    text-[#b88b34]
+
+                    mb-[4px]
+                    "
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Starting At
+                  </p>
+
+                  <div
+                    className="
+                    flex
+                    items-end
+                    gap-[3px]
+                    "
+                  >
+                    <span
+                      className="
+                      text-[16px]
+
+                      leading-none
+
+                      text-[#b88b34]
+
+                      mb-[4px]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 600,
+                      }}
+                    >
+                      ₹
+                    </span>
+
+                    <h3
+                      className="
+                      text-[34px]
+                      md:text-[38px]
+
+                      leading-[0.9]
+
+                      tracking-[-1.5px]
+
+                      text-[#111111]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      53
+                    </h3>
+
+                    <span
+                      className="
+                      text-[12px]
+
+                      uppercase
+
+                      tracking-[0.08em]
+
+                      text-[#6d6758]
+
+                      mb-[5px]
+                      "
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Lac
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -261,17 +398,12 @@ export default function Hero() {
             <div
               className="
               relative
-
               overflow-hidden
-
               rounded-[34px]
-
               h-[360px]
               md:h-[470px]
               lg:h-[560px]
-
               w-full
-
               shadow-[0_25px_80px_rgba(0,0,0,0.10)]
               "
             >
@@ -279,19 +411,14 @@ export default function Hero() {
               <img
                 src={heroBg}
                 alt="Subham Park"
-
                 className="
                 w-full
                 h-full
-
                 object-cover
                 object-top
-
                 scale-[1.02]
-
                 transition-transform
                 duration-700
-
                 hover:scale-[1.06]
                 "
               />
@@ -301,109 +428,12 @@ export default function Hero() {
                 className="
                 absolute
                 inset-0
-
                 bg-gradient-to-t
                 from-black/30
                 via-black/5
                 to-transparent
                 "
               />
-
-              {/* FLOATING PRICE BADGE */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [-5, -3, -5],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                absolute
-
-                top-5
-                left-5
-
-                z-20
-                "
-              >
-                <div
-                  className="
-                  bg-[#d96a2c]
-
-                  w-[120px]
-                  h-[120px]
-
-                  rounded-[46%_54%_50%_50%]
-
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-
-                  shadow-[0_18px_35px_rgba(0,0,0,0.25)]
-
-                  border-[2px]
-                  border-white/10
-                  "
-                >
-                  <p
-                    className="
-                    uppercase
-
-                    tracking-[0.15em]
-
-                    text-[10px]
-
-                    text-white/90
-
-                    mb-[2px]
-                    "
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Starting At
-                  </p>
-
-                  <h3
-                    className="
-                    text-white
-
-                    text-[34px]
-
-                    leading-none
-                    "
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', serif",
-                      fontWeight: 700,
-                    }}
-                  >
-                    90
-                  </h3>
-
-                  <p
-                    className="
-                    text-white
-
-                    text-[17px]
-
-                    -mt-1
-                    "
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', serif",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Lakh
-                  </p>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>
