@@ -65,8 +65,8 @@ export default function Navbar({
       href: "#contact",
     },
     {
-      name: "About",
-      href: "#about",
+      name: "About The Developer",
+      href: "#project",
     },
   ];
 
