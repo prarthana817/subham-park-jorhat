@@ -8,109 +8,102 @@ import {
   HeartPulse,
   Train,
   Building2,
+  ShoppingBag,
 } from "lucide-react";
 
 const locationCards = [
   {
-    icon: <HeartPulse size={17} />,
-    title: "EDUCATION",
+    icon: <ShoppingBag size={17} />,
+    title: "DAILY ESSENTIALS",
     points: [
       {
-        name: "DCB Girls College",
-        distance: "1.6kms(5 mins)",
+        name: "Sohum Shoppe",
+        distance: "300 m",
       },
       {
-        name: "Jagannath Barooah University",
-        distance: "2.1kms(7mins)",
+        name: "Bharat Petroleum Retail Outlet",
+        distance: "500 m",
       },
       {
-        name: "Assam Agriculture University",
-        distance: "3.3kms(8 mins)",
+        name: "ISBT Jorhat",
+        distance: "600 m",
+
+      },
+    ],
+  },
+
+  {
+    icon: <HeartPulse size={17} />,
+    title: "HEALTHCARE",
+    points: [
+      {
+        name: "AG Nursing Home",
+        distance: "350 m",
       },
       {
-        name: "Don Bosco Higher Secondary School, Lichubari",
-        distance: "5.1kms(10 mins)",
+        name: "Hotel Manor Medical Point",
+        distance: "300 m",
       },
       {
-        name: "DPS Jorhat",
-        distance: "7.7kms(16 mins)",
-      },
-      {
-        name: "Carmel School",
-        distance: "7.4kms(16 mins)",
+        name: "Jorhat Medical College",
+        distance: "3.4 km",
       },
     ],
   },
 
   {
     icon: <GraduationCap size={17} />,
-    title: "HOSPITALS",
+    title: "EDUCATION",
     points: [
       {
-        name: "AG Nursing Home",
-        distance: "350m(1 min)",
+        name: "DCB Girls’ College",
+        distance: "1.6 km",
       },
       {
-        name: "Jorhat Medical College",
-        distance: "3.4kms(8 mins)",
+        name: "Jagannath Barooah University",
+        distance: "2.1 km",
       },
       {
-        name: "Hotel Manor Medical Point",
-        distance: "300m(1 min)",
+        name: "Assam Agricultural University",
+        distance: "3.3 km",
       },
       {
-        name: "Healthcare Clinics Nearby",
-        distance: "2mins(radius)",
+        name: "Don Bosco HS School, Lichubari",
+        distance: "5.1 km",
+      },
+      {
+        name: "DPS Jorhat",
+        distance: "7.7 km",
       },
     ],
   },
 
   {
-    icon: <Plane size={17} />,
-    title: "MALLS",
+    icon: <Building2 size={17} />,
+    title: "SHOPPING & ENTERTAINMENT",
     points: [
       {
-        name: "Smart Bazaar",
-        distance: "2.7kms(8 mins)",
-      },
-      {
-        name: "Schum Shoppe",
-        distance: "300m(1 min)",
-      },
-      {
         name: "Jorhat Stadium Market Area",
-        distance: "2.2kms(7 mins)",
+        distance: "2.2 km",
       },
       {
-        name: "Bharat Petroleum Retail Zone",
-        distance: "500m(2 mins)",
+        name: "Smart Bazaar",
+        distance: "2.7 km",
       },
     ],
   },
 
   {
     icon: <Train size={17} />,
-    title: "OTHERS",
+    title: "CONNECTIVITY",
     points: [
       {
-        name: "ISBT Jorhat",
-        distance: "600m(2 mins)",
-      },
-      {
         name: "Jorhat Town Railway Station",
-        distance: "4.2kms(13 mins)",
+        distance: "4.2 km",
       },
       {
         name: "Jorhat Airport",
-        distance: "4.5kms(11 mins)",
-      },
-      {
-        name: "Don Bosco Baghchung",
-        distance: "5.9kms(13 mins)",
-      },
-      {
-        name: "Major Transport Connectivity",
-        distance: "Nearby",
+        distance: "4.5 km",
       },
     ],
   },
@@ -179,12 +172,12 @@ export default function Location() {
           grid
           lg:grid-cols-[0.9fr_1.1fr]
 
-          gap-10
-          lg:gap-14
+          gap-6
+          lg:gap-8
 
-          items-center
+          items-stretch
 
-          mb-12
+          mb-8
           "
         >
           {/* LEFT */}
@@ -193,6 +186,7 @@ export default function Location() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
+            className="flex flex-col"
           >
             {/* TAG */}
             <div className="flex items-center gap-4 mb-5">
@@ -254,7 +248,7 @@ export default function Location() {
 
               max-w-[540px]
 
-              mb-7
+              mb-6
               "
               style={{
                 fontFamily: "'Inter', sans-serif",
@@ -268,128 +262,296 @@ export default function Location() {
               the heart of Jorhat.
             </p>
 
-            {/* ADDRESS CARD */}
+            {/* ADDRESS + CONNECTIVITY */}
             <div
               className="
-              relative
+              grid
+              md:grid-cols-2
 
-              overflow-hidden
+              gap-4
 
-              rounded-[24px]
-
-              border
-              border-[#eadfcb]
-
-              bg-white
-              
-              px-5
-              py-5
-
-              shadow-[0_12px_35px_rgba(0,0,0,0.05)]
+              mt-auto
               "
             >
-              {/* SOFT GLOW */}
+              {/* ADDRESS CARD */}
               <div
                 className="
-                absolute
-                right-[-40px]
-                top-[-40px]
+                relative
 
-                w-[120px]
-                h-[120px]
+                overflow-hidden
 
-                rounded-full
+                rounded-[24px]
 
-                bg-[#d1a54d]/10
+                border
+                border-[#eadfcb]
 
-                blur-[60px]
+                bg-white
+
+                px-5
+                py-5
+
+                shadow-[0_12px_35px_rgba(0,0,0,0.05)]
                 "
-              />
-
-              <div className="relative z-10 flex gap-4">
-                {/* ICON */}
+              >
                 <div
                   className="
-                  w-12
-                  h-12
+                  absolute
+                  right-[-40px]
+                  top-[-40px]
+
+                  w-[120px]
+                  h-[120px]
 
                   rounded-full
 
-                  bg-[#f6ecd2]
+                  bg-[#d1a54d]/10
 
-                  flex
-                  items-center
-                  justify-center
-
-                  shrink-0
-
-                  text-[#c79d47]
+                  blur-[60px]
                   "
-                >
-                  <Building2 size={20} />
+                />
+
+                <div className="relative z-10 flex gap-4">
+                  <div
+                    className="
+                    w-12
+                    h-12
+
+                    rounded-full
+
+                    bg-[#f6ecd2]
+
+                    flex
+                    items-center
+                    justify-center
+
+                    shrink-0
+
+                    text-[#c79d47]
+                    "
+                  >
+                    <Building2 size={20} />
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      uppercase
+                      tracking-[0.22em]
+                      text-[9px]
+                      text-[#b89f73]
+                      mb-[6px]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Inter', sans-serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Project Address
+                    </p>
+
+                    <h3
+                      className="
+                      text-[#111111]
+
+                      text-[22px]
+
+                      leading-[1.1]
+
+                      mb-2
+                      "
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Subham Park
+                    </h3>
+
+                    <p
+                      className="
+                      text-[#5f6674]
+                      text-[14px]
+                      leading-[1.8]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Inter', sans-serif",
+                        fontWeight: 400,
+                      }}
+                    >
+                      1 Sonari Gaon, Tarajan,
+                      <br />
+                      Jorhat, Assam – 785001
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CONNECTIVITY CARD */}
+              <div
+                className="
+                relative
+
+                overflow-hidden
+
+                rounded-[24px]
+
+                border
+                border-[#eadfcb]
+
+                bg-white
+
+                px-5
+                py-5
+
+                shadow-[0_12px_35px_rgba(0,0,0,0.05)]
+                "
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div
+                    className="
+                    w-12
+                    h-12
+
+                    rounded-full
+
+                    bg-[#f6ecd2]
+
+                    flex
+                    items-center
+                    justify-center
+
+                    shrink-0
+
+                    text-[#c79d47]
+                    "
+                  >
+                    <Train size={19} />
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      uppercase
+                      tracking-[0.22em]
+                      text-[9px]
+                      text-[#b89f73]
+                      mb-[6px]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Inter', sans-serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Nearby Access
+                    </p>
+
+                    <h3
+                      className="
+                      text-[#111111]
+
+                      text-[22px]
+
+                      leading-[1.1]
+                      "
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Connectivity
+                    </h3>
+                  </div>
                 </div>
 
-                {/* TEXT */}
-                <div>
-                  <p
-                    className="
-                    uppercase
+                <div className="space-y-3">
+                  {locationCards[4].points.map(
+                    (point, i) => (
+                      <div
+                        key={i}
+                        className="
+                        flex
+                        items-start
+                        justify-between
+                        gap-4
 
-                    tracking-[0.22em]
+                        border-b
+                        border-[#efe5d6]
 
-                    text-[9px]
+                        pb-3
+                        "
+                      >
+                        <div className="flex items-start gap-3">
+                          <div
+                            className="
+                            w-[6px]
+                            h-[6px]
 
-                    text-[#b89f73]
+                            rounded-full
 
-                    mb-[6px]
-                    "
-                    style={{
-                      fontFamily:
-                        "'Inter', sans-serif",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Project Address
-                  </p>
+                            bg-[#d1a54d]
 
-                  <h3
-                    className="
-                    text-[#111111]
+                            shrink-0
+                            mt-[7px]
+                            "
+                          />
 
-                    text-[22px]
-                    sm:text-[24px]
+                          <p
+                            className="
+                            text-[14px]
 
-                    leading-[1.1]
+                            leading-[1.6]
 
-                    mb-1
-                    "
-                    style={{
-                      fontFamily:
-                        "'Cormorant Garamond', serif",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Subham Park
-                  </h3>
+                            text-[#5d6470]
+                            "
+                            style={{
+                              fontFamily:
+                                "'Inter', sans-serif",
+                              fontWeight: 400,
+                            }}
+                          >
+                            {point.name}
+                          </p>
+                        </div>
 
-                  <p
-                    className="
-                    text-[#5f6674]
+                        <div className="text-right shrink-0">
+                          <p
+                            className="
+                            text-[14px]
 
-                    text-[14px]
+                            text-[#111111]
+                            "
+                            style={{
+                              fontFamily:
+                                "'Inter', sans-serif",
+                              fontWeight: 700,
+                            }}
+                          >
+                            {point.distance}
+                          </p>
 
-                    leading-[1.8]
-                    "
-                    style={{
-                      fontFamily:
-                        "'Inter', sans-serif",
-                      fontWeight: 400,
-                    }}
-                  >
-                    1 Sonari Gaon, Tarajan,
-                    <br />
-                    Jorhat, Assam – 785001
-                  </p>
+                          <span
+                            className="
+                            text-[12px]
+
+                            text-[#9b8f7b]
+                            "
+                            style={{
+                              fontFamily:
+                                "'Inter', sans-serif",
+                              fontWeight: 500,
+                            }}
+                          >
+                            {point.time}
+                          </span>
+                        </div>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -411,9 +573,9 @@ export default function Location() {
             border
             border-[#eadfcb]
 
-            h-[260px]
-            sm:h-[320px]
-            lg:h-[420px]
+            h-[300px]
+            lg:h-full
+            min-h-[420px]
 
             shadow-[0_22px_55px_rgba(0,0,0,0.07)]
             "
@@ -427,7 +589,6 @@ export default function Location() {
               className="w-full h-full"
             />
 
-            {/* BORDER OVERLAY */}
             <div
               className="
               absolute
@@ -442,17 +603,16 @@ export default function Location() {
           </motion.div>
         </div>
 
-        {/* LOCATION CARDS */}
+        {/* BOTTOM CARDS */}
         <div
           className="
           grid
-          sm:grid-cols-2
-          xl:grid-cols-4
+          lg:grid-cols-3
 
-          gap-4
+          gap-5
           "
         >
-          {locationCards.map((item, index) => (
+          {locationCards.slice(0, 3).map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 25 }}
@@ -469,7 +629,7 @@ export default function Location() {
 
               overflow-hidden
 
-              rounded-[26px]
+              rounded-[28px]
 
               border
               border-[#eadfcb]
@@ -477,8 +637,6 @@ export default function Location() {
               bg-white
 
               p-5
-
-              min-h-[250px]
 
               shadow-[0_12px_30px_rgba(0,0,0,0.04)]
 
@@ -512,7 +670,7 @@ export default function Location() {
 
               <div className="relative z-10">
                 {/* TOP */}
-                <div className="flex items-start gap-3 mb-5">
+                <div className="flex items-start gap-4 mb-5">
                   <div
                     className="
                     w-11
@@ -539,7 +697,7 @@ export default function Location() {
                       className="
                       uppercase
 
-                      tracking-[0.2em]
+                      tracking-[0.22em]
 
                       text-[9px]
 
@@ -578,24 +736,23 @@ export default function Location() {
                 </div>
 
                 {/* LIST */}
-                <div className="space-y-3">
+                <div className="space-y-1">
                   {item.points.map((point, i) => (
                     <div
                       key={i}
                       className="
                       flex
-                      items-center
+                      items-start
                       justify-between
-                      gap-3
+                      gap-4
 
                       border-b
                       border-[#efe5d6]
 
-                      pb-3
+                      py-[10px]
                       "
                     >
-                      {/* LEFT */}
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-start gap-3 min-w-0">
                         <div
                           className="
                           w-[6px]
@@ -606,14 +763,15 @@ export default function Location() {
                           bg-[#d1a54d]
 
                           shrink-0
+                          mt-[7px]
                           "
                         />
 
                         <p
                           className="
-                          text-[13px]
+                          text-[14px]
 
-                          leading-[1.6]
+                          leading-[1.55]
 
                           text-[#5d6470]
                           "
@@ -627,23 +785,37 @@ export default function Location() {
                         </p>
                       </div>
 
-                      {/* RIGHT */}
-                      <span
-                        className="
-                        text-[12px]
+                      <div className="text-right shrink-0">
+                        <p
+                          className="
+                          text-[14px]
 
-                        text-[#111111]
+                          text-[#111111]
+                          "
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontWeight: 700,
+                          }}
+                        >
+                          {point.distance}
+                        </p>
 
-                        whitespace-nowrap
-                        "
-                        style={{
-                          fontFamily:
-                            "'Inter', sans-serif",
-                          fontWeight: 600,
-                        }}
-                      >
-                        {point.distance}
-                      </span>
+                        <span
+                          className="
+                          text-[12px]
+
+                          text-[#9b8f7b]
+                          "
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {point.time}
+                        </span>
+                      </div>
                     </div>
                   ))}
                 </div>
