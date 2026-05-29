@@ -8,35 +8,11 @@ import { Sparkles, X, Maximize2, Compass, LayoutGrid, ZoomIn, ZoomOut } from "lu
 // Site Plan Image
 import sitePlan from "../assests/images/SITE PLAN WITH TERRACE FLOOR.webp";
 
-// 2 BHK Images
-import bhk2_study_3_4 from "../assests/images/2BHK + STUDY_UNIT NO 3 & 4.webp";
-import bhk2_study_4 from "../assests/images/2BHK + STUDY_UNIT NO 4.webp";
-import bhk2_study_5_3rd from "../assests/images/2BHK + STUDY_UNIT NO 5 _3RD FLOOR.webp";
-import bhk2_study_5 from "../assests/images/2BHK + STUDY_UNIT NO 5.webp";
-
-// 3 BHK Images
-import bhk3_unit_2_a from "../assests/images/3 BHK UNIT NO 2.webp";
-import bhk3_study_3 from "../assests/images/3BHK + STUDY_UNIT NO 3.webp";
-import bhk3_study_4_5 from "../assests/images/3BHK + STUDY_UNIT NO 4 & 5.webp";
-import bhk3_study_4 from "../assests/images/3BHK + STUDY_UNIT NO 4.webp";
-import bhk3_unit_1 from "../assests/images/3BHK _UNIT NO 1.webp";
-import bhk3_unit_1_2nd_5th from "../assests/images/3BHK _UNIT NO 1_2ND & 5TH FLOOR.webp";
-import bhk3_unit_1_3rd_6th from "../assests/images/3BHK _UNIT NO 1_THIRD&SIXTH FLOOR.webp";
-import bhk3_unit_2_b from "../assests/images/3BHK _UNIT NO 2.webp";
-import bhk3_unit_2_3rd_6th from "../assests/images/3BHK _UNIT NO 2_3RD & 6TH FLOOR.webp";
-import bhk3_unit_3_3rd from "../assests/images/3BHK _UNIT NO 3 _3RD FLOOR.webp";
-import bhk3_unit_3 from "../assests/images/3BHK _UNIT NO 3.webp";
-import bhk3_unit_4 from "../assests/images/3BHK _UNIT NO 4.webp";
-import bhk3_unit_5_7_1st_4th from "../assests/images/3BHK _UNIT NO 5 & 7_first & fourt floor.webp";
-import bhk3_unit_5_7 from "../assests/images/3BHK _UNIT NO 5&7.webp";
-import bhk3_unit_6_4th from "../assests/images/3BHK _UNIT NO 6 4TH FLOOR.webp";
-import bhk3_unit_6_8 from "../assests/images/3BHK _UNIT NO 6&8.webp";
-import bhk3_unit_6_8_1st_4th from "../assests/images/3BHK _UNIT NO 6&8_FIRST AND 4TH FLOOR.webp";
-import bhk3_unit_6 from "../assests/images/3BHK _UNIT NO 6.webp";
-import bhk3_unit_7 from "../assests/images/3BHK _UNIT NO 7.webp";
-import bhk3_unit_8 from "../assests/images/3BHK _UNIT NO 8.webp";
-import bhk3_unit_3_2nd_5th from "../assests/images/3BHK _UNIT NO3 2ND & 5TH FLOOR.webp";
-import bhk3_unit_6_2nd_5th from "../assests/images/3BHK_UNIT NO 6_2ND & FIFTH FLOOR.webp";
+// New Floor Plan Images
+import bhk2_5_sbua_1096 from "../assests/images/2.5 BHK - SBUA 1096 Sq Ft.jpeg";
+import bhk3_sbua_1339 from "../assests/images/3 BHK - SBUA 1339 Sq Ft.png";
+import bhk3_sbua_1530 from "../assests/images/3 BHK - SBUA 1530 Sq Ft.png";
+import bhk3_5_sbua_1684 from "../assests/images/3.5 BHK - SBUA 1684 Sq Ft.png";
 
 const mainTabs = [
   { id: "site-plan", label: "Site Plan" },
@@ -46,163 +22,31 @@ const mainTabs = [
 
 const bhk2Plans = [
   {
-    id: "2bhk-study-3-4",
-    title: "2 BHK + Study – Unit 3 & 4 - 1st & 4th Floor",
-    image: bhk2_study_3_4,
-    details: "Spacious 2 BHK layouts with a designated study room, ideal for modern work-from-home needs, occupying unit numbers 3 and 4.",
-  },
-  {
-    id: "2bhk-study-4",
-    title: "2 BHK + Study – Unit 4 - 3rd Floor",
-    image: bhk2_study_4,
-    details: "Premium layout design for Unit 4, optimized for maximum spatial efficiency, natural light, and premium corner integration.",
-  },
-  {
-    id: "2bhk-study-5-3rd",
-    title: "2 BHK + Study – Unit 5 – 3rd Floor",
-    image: bhk2_study_5_3rd,
-    details: "Exquisite third floor plan for Unit 5, offering high accessibility, grand views and beautifully portioned bedroom alignments.",
-  },
-  {
-    id: "2bhk-study-5",
-    title: "2 BHK + Study – Unit 5 - 2nd & 5th Floor",
-    image: bhk2_study_5,
-    details: "Standard luxury layout for Unit 5, showcasing comfortable bedrooms, contemporary kitchen, and cozy balcony attachments.",
+    id: "2.5-bhk-sbua-1096",
+    title: "2.5 BHK - SBUA 1096 Sq Ft",
+    image: bhk2_5_sbua_1096,
+    details: "Spacious 2.5 BHK apartment layout with a super built-up area of 1096 Sq Ft, carefully designed for modern living with optimal ventilation and spatial flow.",
   },
 ];
 
 const bhk3Plans = [
   {
-    id: "3bhk-unit-1",
-    title: "3 BHK – Unit 1 - 1st & 4th Floor",
-    image: bhk3_unit_1,
-    details: "Grand 3 BHK Unit 1 layout with wide corridors, expansive living lounge, and three master suites for elegant living.",
+    id: "3bhk-sbua-1339",
+    title: "3 BHK - SBUA 1339 Sq Ft",
+    image: bhk3_sbua_1339,
+    details: "Premium 3 BHK layout featuring a super built-up area of 1339 Sq Ft, beautifully optimized for space, natural light, and modern family living.",
   },
   {
-    id: "3bhk-unit-1-2nd-5th",
-    title: "3 BHK – Unit 1 – 2nd & 5th Floor",
-    image: bhk3_unit_1_2nd_5th,
-    details: "Premium corner apartment layout for Unit 1 across the 2nd and 5th floors with grand balconies.",
+    id: "3bhk-sbua-1530",
+    title: "3 BHK - SBUA 1530 Sq Ft",
+    image: bhk3_sbua_1530,
+    details: "Luxurious 3 BHK apartment plan offering a generous super built-up area of 1530 Sq Ft, showcasing spacious rooms and exquisite dining and living layouts.",
   },
   {
-    id: "3bhk-unit-1-3rd-6th",
-    title: "3 BHK – Unit 1 – 3rd & 6th Floor",
-    image: bhk3_unit_1_3rd_6th,
-    details: "Grand design for Unit 1 across the 3rd and 6th floors with airy layout and double side ventilation.",
-  },
-  {
-    id: "3bhk-unit-2-a",
-    title: "3 BHK – Unit 2 – 2nd & 5th Floor",
-    image: bhk3_unit_2_a,
-    details: "Sophisticated apartment plan for Unit 2 across the 2nd and 5th floors, curated with spacious layouts and premium dining design.",
-  },
-  {
-    id: "3bhk-unit-2-b",
-    title: "3 BHK – Unit 2 – 1st & 4th Floor",
-    image: bhk3_unit_2_b,
-    details: "Spacious apartment plan for Unit 2 on the 1st and 4th floors offering maximum space efficiency and premium cross ventilation.",
-  },
-  {
-    id: "3bhk-unit-2-3rd-6th",
-    title: "3 BHK – Unit 2 – 3rd & 6th Floor",
-    image: bhk3_unit_2_3rd_6th,
-    details: "Luxurious middle floor layouts for Unit 2 on the 3rd and 6th floors with gorgeous cityscape views.",
-  },
-  {
-    id: "3bhk-unit-3",
-    title: "3 BHK – Unit 3 - 4th Floor",
-    image: bhk3_unit_3,
-    details: "Classic 3 BHK design for Unit 3 with integrated luxury dining and smart modular kitchen space.",
-  },
-  {
-    id: "3bhk-study-3",
-    title: "3 BHK + Study – Unit 3 - 6th Floor",
-    image: bhk3_study_3,
-    details: "Enhanced 3 BHK plan for Unit 3 incorporating a study room, ideal for a private office space.",
-  },
-  {
-    id: "3bhk-unit-3-3rd",
-    title: "3 BHK – Unit 3 – 3rd Floor",
-    image: bhk3_unit_3_3rd,
-    details: "Third floor exclusive design for Unit 3, optimized for perfect morning sunlight and cozy bedroom views.",
-  },
-  {
-    id: "3bhk-unit-3-2nd-5th",
-    title: "3 BHK – Unit 3 – 2nd & 5th Floor",
-    image: bhk3_unit_3_2nd_5th,
-    details: "Special layout for Unit 3 on the 2nd and 5th floors with customized large bathrooms and walk-in dresser options.",
-  },
-  {
-    id: "3bhk-unit-4",
-    title: "3 BHK – Unit 4 - 2nd & 5th Floor",
-    image: bhk3_unit_4,
-    details: "Lavish 3 BHK planning for Unit 4, displaying grand entrance foyer and smart cross-ventilation.",
-  },
-  {
-    id: "3bhk-study-4",
-    title: "3 BHK + Study – Unit 4 - 6th Floor",
-    image: bhk3_study_4,
-    details: "Luxurious Unit 4 layout adding a highly productive private study/library space.",
-  },
-  {
-    id: "3bhk-study-4-5",
-    title: "3 BHK + Study – Unit 4 & 5 - 1st & 4th Floor",
-    image: bhk3_study_4_5,
-    details: "Grand combo layouts for Unit 4 and 5 featuring elegant private wings and double balconies.",
-  },
-  {
-    id: "3bhk-unit-5-7",
-    title: "3 BHK – Unit 5 & 7 - 3rd & 6th Floor",
-    image: bhk3_unit_5_7,
-    details: "Beautiful symmetrical layouts for Units 5 and 7 with dynamic living zones and elegant layouts.",
-  },
-  {
-    id: "3bhk-unit-5-7-1st-4th",
-    title: "3 BHK – Unit 5 & 7 – 1st & 4th Floor",
-    image: bhk3_unit_5_7_1st_4th,
-    details: "Specially tailored layouts for Units 5 & 7 on the 1st and 4th floors with beautiful terrace views.",
-  },
-  {
-    id: "3bhk-unit-6",
-    title: "3 BHK – Unit 6 - 3rd Floor",
-    image: bhk3_unit_6,
-    details: "Elegant 3 BHK layout for Unit 6, featuring master bedroom privacy and large dining area.",
-  },
-  {
-    id: "3bhk-unit-6-4th",
-    title: "3 BHK – Unit 6 – 4th Floor",
-    image: bhk3_unit_6_4th,
-    details: "Fourth floor custom layout for Unit 6, offering exclusive design with large windows.",
-  },
-  {
-    id: "3bhk-unit-6-2nd-5th",
-    title: "3 BHK – Unit 6 – 2nd & 5th Floor",
-    image: bhk3_unit_6_2nd_5th,
-    details: "Breathtaking middle floor layouts for Unit 6 on the 2nd and 5th floors with extensive kitchen utilities.",
-  },
-  {
-    id: "3bhk-unit-6-8",
-    title: "3 BHK – Unit 6 & 8 - 3rd & 6th Floor",
-    image: bhk3_unit_6_8,
-    details: "Magnificent dual unit mapping for Unit 6 & 8, emphasizing premium luxury and maximum privacy.",
-  },
-  {
-    id: "3bhk-unit-6-8-1st-4th",
-    title: "3 BHK – Unit 6 & 8 – 1st & 4th Floor",
-    image: bhk3_unit_6_8_1st_4th,
-    details: "Bespoke layouts for Units 6 & 8 on the 1st & 4th floors with modern layout refinements.",
-  },
-  {
-    id: "3bhk-unit-7",
-    title: "3 BHK – Unit 7 - 2nd & 5th Floor",
-    image: bhk3_unit_7,
-    details: "Charming 3 BHK design for Unit 7 with a warm living aesthetic and beautifully placed kitchen setup.",
-  },
-  {
-    id: "3bhk-unit-8",
-    title: "3 BHK – Unit 8 - 2nd & 5th Floor",
-    image: bhk3_unit_8,
-    details: "Exquisite 3 BHK plan for Unit 8 with three large bedrooms, dual toilets and private entrance.",
+    id: "3.5bhk-sbua-1684",
+    title: "3.5 BHK - SBUA 1684 Sq Ft",
+    image: bhk3_5_sbua_1684,
+    details: "Magnificent 3.5 BHK residential layout with a super built-up area of 1684 Sq Ft, combining grand interiors, separate study/servant wings, and premier cross-ventilation.",
   },
 ];
 
@@ -213,6 +57,12 @@ export default function FloorPlans() {
   const [imageOpen, setImageOpen] = useState(false);
   const [scale, setScale] = useState(1);
 
+  // Reset indices when main tab changes to avoid out-of-bounds index issues
+  useEffect(() => {
+    setActive2BHKIndex(0);
+    setActive3BHKIndex(0);
+  }, [activeMainTab]);
+
   // Get active layout based on current selections
   const getActiveLayout = () => {
     if (activeMainTab === "site-plan") {
@@ -222,9 +72,9 @@ export default function FloorPlans() {
         details: "Comprehensive architectural master plan of Subham Park, outlining tower positions, green zones, common amenities, parking configurations, and detailed terrace floor layouts.",
       };
     } else if (activeMainTab === "2bhk") {
-      return bhk2Plans[active2BHKIndex];
+      return bhk2Plans[active2BHKIndex] || bhk2Plans[0];
     } else {
-      return bhk3Plans[active3BHKIndex];
+      return bhk3Plans[active3BHKIndex] || bhk3Plans[0];
     }
   };
 
@@ -403,14 +253,14 @@ export default function FloorPlans() {
                     <LayoutGrid className="w-3.5 h-3.5" />
                     <span>Select 3 BHK Unit Layout</span>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-6xl mx-auto">
+                  <div className="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
                     {bhk3Plans.map((plan, index) => {
                       const isActive = active3BHKIndex === index;
                       return (
                         <button
                           key={plan.id}
                           onClick={() => setActive3BHKIndex(index)}
-                          className={`px-4 py-3 rounded-xl border text-center text-xs md:text-sm font-medium tracking-wide transition-all duration-300 flex items-center justify-center min-h-[52px] leading-snug ${
+                          className={`px-4 py-3 rounded-xl border text-center text-xs md:text-sm font-medium tracking-wide transition-all duration-300 flex items-center justify-center min-h-[48px] ${
                             isActive
                               ? "bg-[#14234b] border-[#14234b] text-white shadow-sm"
                               : "bg-white/60 border-[#e5d6bb] text-[#14234b] hover:bg-[#efe2c7]/40"
