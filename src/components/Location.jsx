@@ -30,7 +30,7 @@ const locationCards = [
 
       },
       {
-        name: "Hotel Manor Medical Point",
+        name: "Hotel Manor",
         distance: "300 m",
       },
     ],
