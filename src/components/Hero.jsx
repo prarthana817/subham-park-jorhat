@@ -126,28 +126,36 @@ export default function Hero() {
 
             <div className="w-[150px] h-[2px] bg-[#d1a54d] mb-6" />
 
-            {/* PARAGRAPH */}
-            <p
-              className="
-              max-w-[520px]
-              text-[16px]
-              lg:text-[17px]
-              leading-[1.9]
-              text-[#5f6674]
-              mb-8
-              "
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 400,
-                wordSpacing: "-1px",
-              }}
-            >
-              Experience premium residences surrounded by
-              greenery and thoughtfully crafted architecture
-              designed for elevated modern living in the heart
-              of Jorhat.
-            </p>
+            
+<p
+  className="
+  max-w-[720px]
+  text-[16px]
+  lg:text-[17px]
 
+  leading-[1.75]
+
+  tracking-[-0.01em]
+
+  text-[#5f6674]
+
+  mb-7
+
+  text-justify
+  "
+  style={{
+    fontFamily: "'Inter', sans-serif",
+    fontWeight: 400,
+    wordSpacing: "-2px",
+    textJustify: "inter-word",
+    hyphens: "auto",
+  }}
+>
+  Experience premium residences surrounded by
+  greenery and thoughtfully crafted architecture
+  designed for elevated modern living in the heart
+  of Jorhat.
+</p>
             {/* LOCATION + PRICE */}
             <div
               className="
