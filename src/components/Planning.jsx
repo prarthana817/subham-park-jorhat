@@ -9,10 +9,10 @@ import { Sparkles, X, Maximize2, Compass, LayoutGrid, ZoomIn, ZoomOut } from "lu
 import sitePlan from "../assests/images/SITE PLAN WITH TERRACE FLOOR.webp";
 
 // New Floor Plan Images
-import bhk2_5_sbua_1096 from "../assests/images/2.5 BHK - SBUA 1096 Sq Ft.jpeg";
-import bhk3_sbua_1339 from "../assests/images/3 BHK - SBUA 1339 Sq Ft.png";
-import bhk3_sbua_1530 from "../assests/images/3 BHK - SBUA 1530 Sq Ft.png";
-import bhk3_5_sbua_1684 from "../assests/images/3.5 BHK - SBUA 1684 Sq Ft.png";
+import bhk2_5_sbua_1096 from "../assests/images/2.5 BHK - SBUA 1096 Sq Ft.webp";
+import bhk3_sbua_1339 from "../assests/images/3 BHK - SBUA 1339 Sq Ft.webp";
+import bhk3_sbua_1530 from "../assests/images/3 BHK - SBUA 1530 Sq Ft.webp";
+import bhk3_5_sbua_1684 from "../assests/images/3.5 BHK - SBUA 1684 Sq Ft.webp";
 
 const mainTabs = [
   { id: "site-plan", label: "Site Plan" },
