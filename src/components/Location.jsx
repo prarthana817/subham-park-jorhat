@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 import {
   GraduationCap,
-  Plane,
   HeartPulse,
   Train,
   Building2,
@@ -14,7 +13,7 @@ import {
 const locationCards = [
   {
     icon: <ShoppingBag size={17} />,
-    title: "DAILY ESSENTIALS",
+    title: "Nearby Conveniences",
     points: [
       {
         name: "Sohum Shoppe",
@@ -27,7 +26,6 @@ const locationCards = [
       {
         name: "ISBT Jorhat",
         distance: "600 m",
-
       },
       {
         name: "Hotel Manor",
@@ -38,7 +36,7 @@ const locationCards = [
 
   {
     icon: <HeartPulse size={17} />,
-    title: "HEALTHCARE",
+    title: "Healthcare",
     points: [
       {
         name: "AG Nursing Home",
@@ -53,7 +51,7 @@ const locationCards = [
 
   {
     icon: <GraduationCap size={17} />,
-    title: "EDUCATION",
+    title: "Education",
     points: [
       {
         name: "DCB Girls’ College",
@@ -80,7 +78,7 @@ const locationCards = [
 
   {
     icon: <Building2 size={17} />,
-    title: "SHOPPING & ENTERTAINMENT",
+    title: "Shopping",
     points: [
       {
         name: "Jorhat Stadium Market Area",
@@ -95,7 +93,7 @@ const locationCards = [
 
   {
     icon: <Train size={17} />,
-    title: "CONNECTIVITY",
+    title: "Connectivity",
     points: [
       {
         name: "Jorhat Town Railway Station",
@@ -159,7 +157,7 @@ export default function Location() {
         relative
         z-10
 
-        max-w-[1260px]
+        max-w-[1320px]
         mx-auto
 
         px-4
@@ -170,10 +168,10 @@ export default function Location() {
         <div
           className="
           grid
-          lg:grid-cols-[0.9fr_1.1fr]
+          lg:grid-cols-[0.82fr_1.18fr]
 
-          gap-6
-          lg:gap-8
+          gap-5
+          lg:gap-6
 
           items-stretch
 
@@ -262,297 +260,154 @@ export default function Location() {
               the heart of Jorhat.
             </p>
 
-            {/* ADDRESS + CONNECTIVITY */}
+            {/* CONNECTIVITY CARD */}
             <div
               className="
-              grid
-              md:grid-cols-2
+              relative
 
-              gap-4
+              overflow-hidden
 
-              mt-auto
+              rounded-[24px]
+
+              border
+              border-[#eadfcb]
+
+              bg-white
+
+              px-5
+              py-5
+
+              shadow-[0_12px_35px_rgba(0,0,0,0.05)]
               "
             >
-              {/* ADDRESS CARD */}
-              <div
-                className="
-                relative
-
-                overflow-hidden
-
-                rounded-[24px]
-
-                border
-                border-[#eadfcb]
-
-                bg-white
-
-                px-5
-                py-5
-
-                shadow-[0_12px_35px_rgba(0,0,0,0.05)]
-                "
-              >
+              <div className="flex items-start gap-4 mb-4">
                 <div
                   className="
-                  absolute
-                  right-[-40px]
-                  top-[-40px]
-
-                  w-[120px]
-                  h-[120px]
+                  w-12
+                  h-12
 
                   rounded-full
 
-                  bg-[#d1a54d]/10
+                  bg-[#f6ecd2]
 
-                  blur-[60px]
+                  flex
+                  items-center
+                  justify-center
+
+                  shrink-0
+
+                  text-[#c79d47]
                   "
-                />
+                >
+                  <Train size={19} />
+                </div>
 
-                <div className="relative z-10 flex gap-4">
-                  <div
+                <div>
+                  <p
                     className="
-                    w-12
-                    h-12
-
-                    rounded-full
-
-                    bg-[#f6ecd2]
-
-                    flex
-                    items-center
-                    justify-center
-
-                    shrink-0
-
-                    text-[#c79d47]
+                    uppercase
+                    tracking-[0.22em]
+                    text-[9px]
+                    text-[#b89f73]
+                    mb-[6px]
                     "
+                    style={{
+                      fontFamily:
+                        "'Inter', sans-serif",
+                      fontWeight: 700,
+                    }}
                   >
-                    <Building2 size={20} />
-                  </div>
+                    Nearby Access
+                  </p>
 
-                  <div>
-                    <p
-                      className="
-                      uppercase
-                      tracking-[0.22em]
-                      text-[9px]
-                      text-[#b89f73]
-                      mb-[6px]
-                      "
-                      style={{
-                        fontFamily:
-                          "'Inter', sans-serif",
-                        fontWeight: 700,
-                      }}
-                    >
-                      Project Address
-                    </p>
+                  <h3
+                    className="
+                    text-[#111111]
 
-                    <h3
-                      className="
-                      text-[#111111]
+                    text-[22px]
 
-                      text-[22px]
-
-                      leading-[1.1]
-
-                      mb-2
-                      "
-                      style={{
-                        fontFamily:
-                          "'Cormorant Garamond', serif",
-                        fontWeight: 700,
-                      }}
-                    >
-                      Subham Park
-                    </h3>
-
-                    <p
-                      className="
-                      text-[#5f6674]
-                      text-[14px]
-                      leading-[1.8]
-                      "
-                      style={{
-                        fontFamily:
-                          "'Inter', sans-serif",
-                        fontWeight: 400,
-                      }}
-                    >
-                      1 Sonari Gaon, Tarajan,
-                      <br />
-                      Jorhat, Assam – 785001
-                    </p>
-                  </div>
+                    leading-[1.1]
+                    "
+                    style={{
+                      fontFamily:
+                        "'Cormorant Garamond', serif",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Connectivity
+                  </h3>
                 </div>
               </div>
 
-              {/* CONNECTIVITY CARD */}
-              <div
-                className="
-                relative
-
-                overflow-hidden
-
-                rounded-[24px]
-
-                border
-                border-[#eadfcb]
-
-                bg-white
-
-                px-5
-                py-5
-
-                shadow-[0_12px_35px_rgba(0,0,0,0.05)]
-                "
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div
-                    className="
-                    w-12
-                    h-12
-
-                    rounded-full
-
-                    bg-[#f6ecd2]
-
-                    flex
-                    items-center
-                    justify-center
-
-                    shrink-0
-
-                    text-[#c79d47]
-                    "
-                  >
-                    <Train size={19} />
-                  </div>
-
-                  <div>
-                    <p
+              <div className="space-y-3">
+                {locationCards[4].points.map(
+                  (point, i) => (
+                    <div
+                      key={i}
                       className="
-                      uppercase
-                      tracking-[0.22em]
-                      text-[9px]
-                      text-[#b89f73]
-                      mb-[6px]
+                      flex
+                      items-start
+                      justify-between
+                      gap-4
+
+                      border-b
+                      border-[#efe5d6]
+
+                      pb-3
                       "
-                      style={{
-                        fontFamily:
-                          "'Inter', sans-serif",
-                        fontWeight: 700,
-                      }}
                     >
-                      Nearby Access
-                    </p>
+                      <div className="flex items-start gap-3">
+                        <div
+                          className="
+                          w-[6px]
+                          h-[6px]
 
-                    <h3
-                      className="
-                      text-[#111111]
+                          rounded-full
 
-                      text-[22px]
+                          bg-[#d1a54d]
 
-                      leading-[1.1]
-                      "
-                      style={{
-                        fontFamily:
-                          "'Cormorant Garamond', serif",
-                        fontWeight: 700,
-                      }}
-                    >
-                      Connectivity
-                    </h3>
-                  </div>
-                </div>
+                          shrink-0
+                          mt-[7px]
+                          "
+                        />
 
-                <div className="space-y-3">
-                  {locationCards[4].points.map(
-                    (point, i) => (
-                      <div
-                        key={i}
-                        className="
-                        flex
-                        items-start
-                        justify-between
-                        gap-4
+                        <p
+                          className="
+                          text-[14px]
 
-                        border-b
-                        border-[#efe5d6]
+                          leading-[1.6]
 
-                        pb-3
-                        "
-                      >
-                        <div className="flex items-start gap-3">
-                          <div
-                            className="
-                            w-[6px]
-                            h-[6px]
-
-                            rounded-full
-
-                            bg-[#d1a54d]
-
-                            shrink-0
-                            mt-[7px]
-                            "
-                          />
-
-                          <p
-                            className="
-                            text-[14px]
-
-                            leading-[1.6]
-
-                            text-[#5d6470]
-                            "
-                            style={{
-                              fontFamily:
-                                "'Inter', sans-serif",
-                              fontWeight: 400,
-                            }}
-                          >
-                            {point.name}
-                          </p>
-                        </div>
-
-                        <div className="text-right shrink-0">
-                          <p
-                            className="
-                            text-[14px]
-
-                            text-[#111111]
-                            "
-                            style={{
-                              fontFamily:
-                                "'Inter', sans-serif",
-                              fontWeight: 700,
-                            }}
-                          >
-                            {point.distance}
-                          </p>
-
-                          <span
-                            className="
-                            text-[12px]
-
-                            text-[#9b8f7b]
-                            "
-                            style={{
-                              fontFamily:
-                                "'Inter', sans-serif",
-                              fontWeight: 500,
-                            }}
-                          >
-                            {point.time}
-                          </span>
-                        </div>
+                          text-[#5d6470]
+                          "
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontWeight: 400,
+                          }}
+                        >
+                          {point.name}
+                        </p>
                       </div>
-                    )
-                  )}
-                </div>
+
+                      <div className="text-right shrink-0">
+                        <p
+                          className="
+                          text-[14px]
+
+                          text-[#111111]
+                          "
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontWeight: 700,
+                          }}
+                        >
+                          {point.distance}
+                        </p>
+                      </div>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </motion.div>
@@ -612,216 +467,202 @@ export default function Location() {
           gap-5
           "
         >
-          {locationCards.slice(0, 3).map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
-              viewport={{ once: true }}
-              whileHover={{ y: -4 }}
-              className="
-              group
-              relative
-
-              overflow-hidden
-
-              rounded-[28px]
-
-              border
-              border-[#eadfcb]
-
-              bg-white
-
-              p-5
-
-              shadow-[0_12px_30px_rgba(0,0,0,0.04)]
-
-              transition-all
-              duration-300
-              "
-            >
-              {/* GLOW */}
-              <div
+          {[locationCards[2], locationCards[1], locationCards[0]].map(
+            (item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4 }}
                 className="
-                absolute
-                right-[-35px]
-                bottom-[-35px]
+                group
+                relative
 
-                w-[110px]
-                h-[110px]
+                overflow-hidden
 
-                rounded-full
+                rounded-[28px]
 
-                bg-[#d1a54d]/10
+                border
+                border-[#eadfcb]
 
-                blur-[55px]
+                bg-white
 
-                opacity-0
-                group-hover:opacity-100
+                p-5
+
+                shadow-[0_12px_30px_rgba(0,0,0,0.04)]
 
                 transition-all
-                duration-500
+                duration-300
                 "
-              />
+              >
+                <div
+                  className="
+                  absolute
+                  right-[-35px]
+                  bottom-[-35px]
 
-              <div className="relative z-10">
-                {/* TOP */}
-                <div className="flex items-start gap-4 mb-5">
-                  <div
-                    className="
-                    w-11
-                    h-11
+                  w-[110px]
+                  h-[110px]
 
-                    rounded-full
+                  rounded-full
 
-                    bg-[#f7efdd]
+                  bg-[#d1a54d]/10
 
-                    flex
-                    items-center
-                    justify-center
+                  blur-[55px]
 
-                    text-[#c79d47]
+                  opacity-0
+                  group-hover:opacity-100
 
-                    shrink-0
-                    "
-                  >
-                    {item.icon}
-                  </div>
+                  transition-all
+                  duration-500
+                  "
+                />
 
-                  <div>
-                    <p
-                      className="
-                      uppercase
-
-                      tracking-[0.22em]
-
-                      text-[9px]
-
-                      text-[#b89f73]
-
-                      mb-[5px]
-                      "
-                      style={{
-                        fontFamily:
-                          "'Inter', sans-serif",
-                        fontWeight: 700,
-                      }}
-                    >
-                      Nearby Access
-                    </p>
-
-                    <h3
-                      className="
-                      text-[24px]
-
-                      leading-[1]
-
-                      tracking-[-1px]
-
-                      text-[#111111]
-                      "
-                      style={{
-                        fontFamily:
-                          "'Cormorant Garamond', serif",
-                        fontWeight: 700,
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* LIST */}
-                <div className="space-y-1">
-                  {item.points.map((point, i) => (
+                <div className="relative z-10">
+                  {/* TOP */}
+                  <div className="flex items-start gap-4 mb-5">
                     <div
-                      key={i}
                       className="
+                      w-11
+                      h-11
+
+                      rounded-full
+
+                      bg-[#f7efdd]
+
                       flex
-                      items-start
-                      justify-between
-                      gap-4
+                      items-center
+                      justify-center
 
-                      border-b
-                      border-[#efe5d6]
+                      text-[#c79d47]
 
-                      py-[10px]
+                      shrink-0
                       "
                     >
-                      <div className="flex items-start gap-3 min-w-0">
-                        <div
-                          className="
-                          w-[6px]
-                          h-[6px]
-
-                          rounded-full
-
-                          bg-[#d1a54d]
-
-                          shrink-0
-                          mt-[7px]
-                          "
-                        />
-
-                        <p
-                          className="
-                          text-[14px]
-
-                          leading-[1.55]
-
-                          text-[#5d6470]
-                          "
-                          style={{
-                            fontFamily:
-                              "'Inter', sans-serif",
-                            fontWeight: 400,
-                          }}
-                        >
-                          {point.name}
-                        </p>
-                      </div>
-
-                      <div className="text-right shrink-0">
-                        <p
-                          className="
-                          text-[14px]
-
-                          text-[#111111]
-                          "
-                          style={{
-                            fontFamily:
-                              "'Inter', sans-serif",
-                            fontWeight: 700,
-                          }}
-                        >
-                          {point.distance}
-                        </p>
-
-                        <span
-                          className="
-                          text-[12px]
-
-                          text-[#9b8f7b]
-                          "
-                          style={{
-                            fontFamily:
-                              "'Inter', sans-serif",
-                            fontWeight: 500,
-                          }}
-                        >
-                          {point.time}
-                        </span>
-                      </div>
+                      {item.icon}
                     </div>
-                  ))}
+
+                    <div>
+                      <p
+                        className="
+                        uppercase
+
+                        tracking-[0.22em]
+
+                        text-[9px]
+
+                        text-[#b89f73]
+
+                        mb-[5px]
+                        "
+                        style={{
+                          fontFamily:
+                            "'Inter', sans-serif",
+                          fontWeight: 700,
+                        }}
+                      >
+                        Nearby Access
+                      </p>
+
+                      <h3
+                        className="
+                        text-[24px]
+
+                        leading-[1]
+
+                        tracking-[-1px]
+
+                        text-[#111111]
+                        "
+                        style={{
+                          fontFamily:
+                            "'Cormorant Garamond', serif",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* LIST */}
+                  <div className="space-y-1">
+                    {item.points.map((point, i) => (
+                      <div
+                        key={i}
+                        className="
+                        flex
+                        items-start
+                        justify-between
+                        gap-4
+
+                        border-b
+                        border-[#efe5d6]
+
+                        py-[10px]
+                        "
+                      >
+                        <div className="flex items-start gap-3 min-w-0">
+                          <div
+                            className="
+                            w-[6px]
+                            h-[6px]
+
+                            rounded-full
+
+                            bg-[#d1a54d]
+
+                            shrink-0
+                            mt-[7px]
+                            "
+                          />
+
+                          <p
+                            className="
+                            text-[14px]
+
+                            leading-[1.55]
+
+                            text-[#5d6470]
+                            "
+                            style={{
+                              fontFamily:
+                                "'Inter', sans-serif",
+                              fontWeight: 400,
+                            }}
+                          >
+                            {point.name}
+                          </p>
+                        </div>
+
+                        <div className="text-right shrink-0">
+                          <p
+                            className="
+                            text-[14px]
+
+                            text-[#111111]
+                            "
+                            style={{
+                              fontFamily:
+                                "'Inter', sans-serif",
+                              fontWeight: 700,
+                            }}
+                          >
+                            {point.distance}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            )
+          )}
         </div>
       </div>
     </section>

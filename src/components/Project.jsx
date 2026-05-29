@@ -12,7 +12,7 @@ import {
 
 import { motion } from "framer-motion";
 
-import logo from "../assests/images/logo.png";
+import logo from "../assests/images/shubham_logo.png";
 
 const stats = [
   {

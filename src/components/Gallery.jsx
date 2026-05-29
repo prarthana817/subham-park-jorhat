@@ -11,7 +11,6 @@ import {
 } from "react";
 
 import {
-  ArrowUpRight,
   X,
   Search,
 } from "lucide-react";
@@ -426,8 +425,6 @@ export default function Gallery({
               }}
             >
               Explore Lifestyle
-
-              <ArrowUpRight size={14} />
             </button>
           </div>
         </div>
@@ -462,11 +459,6 @@ export default function Gallery({
                   delay: index * 0.05,
                 }}
                 viewport={{ once: true }}
-                onClick={() =>
-                  setSelectedImage(
-                    item.img
-                  )
-                }
                 className="
                 group
                 relative
@@ -486,8 +478,6 @@ export default function Gallery({
                 shadow-[0_18px_45px_rgba(0,0,0,0.05)]
 
                 bg-[#f1f1f1]
-
-                cursor-pointer
                 "
               >
                 {/* IMAGE */}
@@ -547,7 +537,12 @@ export default function Gallery({
                   duration-300
                   "
                 >
-                  <div
+                  <button
+                    onClick={() =>
+                      setSelectedImage(
+                        item.img
+                      )
+                    }
                     className="
                     w-16
                     h-16
@@ -572,7 +567,7 @@ export default function Gallery({
                     "
                   >
                     <Search className="w-6 h-6 text-white" />
-                  </div>
+                  </button>
                 </div>
 
                 {/* CONTENT */}
@@ -590,84 +585,40 @@ export default function Gallery({
                   z-30
                   "
                 >
-                  <div className="flex items-end justify-between gap-4">
-                    <div>
-                      <h3
-                        className="
-                        text-[20px]
-                        md:text-[24px]
-
-                        leading-[1.1]
-
-                        text-white
-                        "
-                        style={{
-                          fontFamily:
-                            "'Cormorant Garamond', serif",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {item.title}
-                      </h3>
-
-                      <div
-                        className="
-                        mt-3
-
-                        w-[55px]
-                        h-[2px]
-
-                        bg-[#d1a54d]
-
-                        transition-all
-                        duration-500
-
-                        group-hover:w-[85px]
-                        "
-                      />
-                    </div>
-
-                    {/* OPEN BUTTON */}
-
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-
-                        setSelectedImage(
-                          item.img
-                        );
-                      }}
+                  <div>
+                    <h3
                       className="
-                      shrink-0
+                      text-[20px]
+                      md:text-[24px]
 
-                      w-11
-                      h-11
+                      leading-[1.1]
 
-                      flex
-                      items-center
-                      justify-center
+                      text-white
+                      "
+                      style={{
+                        fontFamily:
+                          "'Cormorant Garamond', serif",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
 
-                      rounded-full
+                    <div
+                      className="
+                      mt-3
 
-                      bg-[#14234b]
-                      hover:bg-[#1b2f63]
+                      w-[55px]
+                      h-[2px]
 
-                      border
-                      border-[#24396f]
+                      bg-[#d1a54d]
 
                       transition-all
-                      duration-300
+                      duration-500
 
-                      hover:scale-110
-
-                      cursor-pointer
-
-                      relative
-                      z-50
+                      group-hover:w-[85px]
                       "
-                    >
-                      <ArrowUpRight className="w-4 h-4 text-white" />
-                    </button>
+                    />
                   </div>
                 </div>
 
