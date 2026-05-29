@@ -29,6 +29,10 @@ const locationCards = [
         distance: "600 m",
 
       },
+      {
+        name: "Hotel Manor Medical Point",
+        distance: "300 m",
+      },
     ],
   },
 
@@ -39,10 +43,6 @@ const locationCards = [
       {
         name: "AG Nursing Home",
         distance: "350 m",
-      },
-      {
-        name: "Hotel Manor Medical Point",
-        distance: "300 m",
       },
       {
         name: "Jorhat Medical College",
