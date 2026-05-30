@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "../assests/images/shubham_logo.png";
+import StickyLeadForm from "./StickyLeadForm"; // Assuming this is where your form component is
 
 const stats = [
   {
@@ -87,11 +88,10 @@ export default function ProjectOverview() {
         }}
       />
 
-      {/* Main container with flex-col and uniform gap */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full flex flex-col gap-12">
         
-        {/* ================= HEADER SECTION ================= */}
-        <motion.div {...fadeInUp}>
+        {/* ================= HEADER SECTION (Updated Padding-Top) ================= */}
+        <motion.div {...fadeInUp} className="pt-8">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-[40px] h-[1.5px] bg-[#d1a54d]" />
             <p
@@ -110,6 +110,11 @@ export default function ProjectOverview() {
             </h2>
           </div>
         </motion.div>
+
+        {/* Site Visit Form Component */}
+        <div className="w-full -mt-10">
+           <StickyLeadForm />
+        </div>
 
         {/* ================= STATS MATRIX GRID ================= */}
         <motion.div
