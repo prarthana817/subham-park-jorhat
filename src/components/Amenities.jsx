@@ -119,7 +119,7 @@ export default function Amenities({ setOpen }) {
 
             {/* heading */}
             <h2
-              className="text-[#111111] text-[48px] md:text-[58px] lg:text-[70px] leading-[0.95] tracking-[-2px] max-w-[1050px]"
+              className="text-[#111111] text-[48px] md:text-[58px] lg:text-[58px] leading-[0.95] tracking-[-2px] max-w-[1050px]"
               style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}
             >
               Aspirational Living In{" "}
