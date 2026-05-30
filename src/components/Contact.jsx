@@ -1,6 +1,6 @@
 // src/components/Contact.jsx
 import React from 'react';
-// Folder er nam jodi 'assests' (ভুল বানান) hoy tahole otai rakhun, na hole 'assets' korun
+import { ChevronDown } from "lucide-react"; 
 import logo from "../assests/images/logo.png"; 
 
 export default function Contact() {
@@ -24,13 +24,26 @@ export default function Contact() {
       </div>
 
       <div className="relative z-10 max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        
+        {/* HEADER SECTION: FONT UPDATED TO SERIF AND BACKGROUND REMOVED */}
+        <div className="flex items-center gap-3 mb-8 pl-2">
+          <div className="w-[36px] h-[1.5px] bg-[#c9a14a]" />
+          <span 
+            className="text-white text-[28px] md:text-[32px] font-medium uppercase tracking-[0.05em]"
+            style={serifFont}
+          >
+            GET IN TOUCH
+          </span>
+        </div>
+
+        {/* MAIN CONTAINER CARD */}
         <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-[#d8c79d] bg-[#fcfaf5] shadow-[0_20px_50px_rgba(0,0,0,0.25)] w-full">
           
           {/* LEFT COLUMN: HERO INFORMATION */}
           <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between bg-[#fcfaf5] gap-8 w-full">
             <div>
               <p 
-                className="uppercase tracking-[0.25em] text-[10px] md:text-[11px] text-[#c9a14a] mb-2.5 font-semibold" 
+                className="uppercase tracking-[0.25em] text-[10px] md:text-[11px] text-[#c9a14a] mb-3 font-semibold" 
                 style={sansFont}
               >
                 PREMIUM LIVING
@@ -76,21 +89,36 @@ export default function Contact() {
 
               <div className="space-y-4 w-full">
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <input type="text" placeholder="FULL NAME" style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none placeholder:text-[#8f96a3] focus:border-[#14234b] transition-all" />
-                  <input type="text" placeholder="PHONE" style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none placeholder:text-[#8f96a3] focus:border-[#14234b] transition-all" />
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>FULL NAME</label>
+                    <input type="text" placeholder="Your name" style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none placeholder:text-[#8f96a3] focus:border-[#14234b] transition-all" />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>PHONE NUMBER</label>
+                    <input type="text" placeholder="+91..." style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none placeholder:text-[#8f96a3] focus:border-[#14234b] transition-all" />
+                  </div>
                 </div>
-                <input type="email" placeholder="EMAIL ADDRESS" style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none placeholder:text-[#8f96a3] focus:border-[#14234b] transition-all" />
-                
-                <select style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none focus:border-[#14234b] transition-all appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23707887%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E')] bg-[length:12px_12px] bg-[right_12px_center] bg-no-repeat">
-                  <option>Select Configuration</option>
-                  <option>2 BHK Smart</option>
-                  <option>3 BHK Luxe</option>
-                </select>
 
-                <button 
-                  style={sansFont}
-                  className="mt-2 w-full h-[48px] rounded-[10px] bg-[#14234b] hover:bg-[#0f1c3d] text-white uppercase tracking-[0.12em] text-[11px] transition-all duration-200 shadow-md font-bold cursor-pointer"
-                >
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>EMAIL ADDRESS</label>
+                  <input type="email" placeholder="your@email.com" style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none placeholder:text-[#8f96a3] focus:border-[#14234b] transition-all" />
+                </div>
+                
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>PREFERRED BHK</label>
+                  <div className="relative w-full">
+                    <select style={sansFont} className="w-full h-[46px] pl-3.5 pr-10 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] text-[#111111] outline-none focus:border-[#14234b] transition-all appearance-none cursor-pointer">
+                      <option value="">Select Configuration</option>
+                      <option value="2bhk">2 BHK Smart</option>
+                      <option value="3bhk">3 BHK Luxe</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-3.5 flex items-center pointer-events-none text-[#707887]">
+                      <ChevronDown size={16} />
+                    </div>
+                  </div>
+                </div>
+
+                <button style={sansFont} className="mt-4 w-full h-[48px] rounded-[10px] bg-[#14234b] hover:bg-[#0f1c3d] text-white uppercase tracking-[0.12em] text-[11px] transition-all duration-200 shadow-md font-bold cursor-pointer">
                   BOOK SITE VISIT
                 </button>
 

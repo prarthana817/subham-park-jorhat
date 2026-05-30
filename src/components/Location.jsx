@@ -132,7 +132,7 @@ export default function Location() {
             linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
             linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)
           `,
-          backgroundSize: "68px 68px",
+          backgroundSize: "60px 60px",
         }}
       />
 

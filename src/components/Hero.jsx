@@ -129,6 +129,7 @@ export default function Hero({ setOpen }) {
                 <div className="absolute inset-0 rounded-[16px] before:absolute before:inset-0 before:rounded-[16px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_4s_linear_infinite] before:content-['']" />
                 <div className="absolute inset-[1px] rounded-[15px] bg-[#e8d6ab]" />
                 
+                {/* CONTENT */}
                 <div className="relative z-10 min-w-[85px]">
                   <p
                     className="uppercase tracking-[0.18em] text-[8px] text-[#9e7426] mb-[3px]"
@@ -176,23 +177,21 @@ export default function Hero({ setOpen }) {
             {/* ================= BUTTONS CTA SECTION ================= */}
             <div className="mt-9 flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-8 w-full sm:w-auto">
               
-              {/* PRIMARY CTA: DOWNLOAD BROCHURE W/ EXTRACTED SPINNING GLOW & CARD COLORS */}
+              {/* NEW DESIGN: PRIMARY CTA - MATCHED WITH PRICE CARD DESIGN */}
               <motion.button
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setOpen(true)}
-                className="relative h-[48px] w-full sm:w-auto px-7 rounded-[4px] border border-[#dcc89b] bg-[#e8d6ab] text-[#111111] flex items-center justify-center overflow-hidden shadow-[0_8px_18px_rgba(209,165,77,0.08)] select-none cursor-pointer group"
+                className="relative h-[48px] w-full sm:w-auto px-7 rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden text-[#111111] flex items-center justify-center select-none cursor-pointer group"
               >
-                {/* MATCHED CONIC SPINNING GRADIENT BORDER */}
-                <div className="absolute inset-0 rounded-[4px] before:absolute before:inset-0 before:rounded-[4px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_4s_linear_infinite] before:content-['']" />
+                {/* Animated Border Background Effect */}
+                <div className="absolute inset-0 rounded-[16px] before:absolute before:inset-0 before:rounded-[16px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_4s_linear_infinite] before:content-['']" />
+                <div className="absolute inset-[1px] rounded-[15px] bg-[#e8d6ab] transition-colors duration-300 group-hover:bg-[#ebdcae]" />
                 
-                {/* INSIDE FILL LAYER */}
-                <div className="absolute inset-[1px] rounded-[3px] bg-[#e8d6ab] transition-colors duration-300 group-hover:bg-[#e2cca0]" />
-                
-                {/* TEXT & ICON CONTENT */}
-                <div className="relative z-10 flex items-center gap-2.5 text-[#9e7426] transition-colors duration-300 group-hover:text-[#845f1c]">
+                {/* Button Interactive Content */}
+                <div className="relative z-10 flex items-center justify-center gap-2.5">
                   <svg 
-                    className="w-3.5 h-3.5" 
+                    className="w-3.5 h-3.5 text-[#9e7426]" 
                     fill="none" 
                     stroke="currentColor" 
                     strokeWidth="2.5" 
@@ -201,7 +200,7 @@ export default function Hero({ setOpen }) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                   </svg>
                   <span 
-                    className="text-[10.5px] uppercase tracking-[0.22em] font-bold"
+                    className="text-[10.5px] uppercase tracking-[0.22em] font-bold text-[#111111]"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     Download Brochure
@@ -209,7 +208,7 @@ export default function Hero({ setOpen }) {
                 </div>
               </motion.button>
 
-              {/* SECONDARY CTA: EXPLORE MORE W/ ANIMATED GOLD UNDERLINE */}
+              {/* SECONDARY CTA: EXPLORE MORE */}
               <button
                 onClick={() => {
                   document.getElementById("overview")?.scrollIntoView({ 
