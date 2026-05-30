@@ -293,7 +293,7 @@ export default function ProjectOverview() {
                 className="uppercase tracking-[0.26em] text-[10px] text-[#b58d45]"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
               >
-                Completed Landscapes
+                Completed Projects
               </p>
               <motion.div
                 animate={{ rotate: activeAccordion === "completed" ? 180 : 0 }}
