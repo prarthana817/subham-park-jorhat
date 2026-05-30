@@ -4,13 +4,13 @@ export default function Contact() {
     <section id="contact" className="relative py-12 lg:py-20 bg-[#0d1b46]">
       <div className="absolute inset-0 bg-[#0d1b46]" />
       
-      {/* Reduced from 1380px to 1100px to bring components closer on large screens */}
-      <div className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Kept at a compact max-width to hold elements together */}
+      <div className="relative z-10 max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 rounded-[24px] overflow-hidden border border-[#d8c79d] bg-[#fcfaf5] shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
           
-          {/* LEFT SIDE — BALANCED & CENTER-COLLIGNED */}
-          <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-[#fcfaf5] gap-8">
-            <div className="max-w-[440px] lg:ml-auto w-full">
+          {/* LEFT SIDE — ALIGNED TO THE RIGHT INSIDE ITS COLUMN */}
+          <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-between bg-[#fcfaf5] gap-8">
+            <div className="lg:max-w-[460px] lg:ml-auto w-full">
               <p className="uppercase tracking-[0.25em] text-[10px] text-[#c9a14a] mb-2 font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>
                 PREMIUM LIVING
               </p>
@@ -25,7 +25,7 @@ export default function Contact() {
             </div>
 
             {/* ADDRESS BOX */}
-            <div className="max-w-[440px] lg:ml-auto w-full">
+            <div className="lg:max-w-[460px] lg:ml-auto w-full">
               <div className="rounded-[14px] border border-[#e7dccb] bg-[#f8f1e4] p-4 shadow-[0_6px_20px_rgba(0,0,0,0.02)] max-w-xs">
                 <p className="text-[9px] uppercase tracking-[0.22em] text-[#c9a14a] mb-1 font-bold" style={{ fontFamily: "'Inter', sans-serif" }}>
                   LOCATION
@@ -37,10 +37,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT SIDE — COMPACT CONSOLE */}
-          <div className="p-6 sm:p-8 lg:p-10 bg-[#f4eee0] border-t lg:border-t-0 lg:border-l border-[#e1d2b3] flex flex-col justify-center">
-            {/* Added container max-width to hold the form compact on massive monitors */}
-            <div className="max-w-[440px] w-full lg:mr-auto">
+          {/* RIGHT SIDE — ALIGNED TO THE LEFT INSIDE ITS COLUMN */}
+          <div className="p-6 sm:p-8 lg:p-12 bg-[#f4eee0] border-t lg:border-t-0 lg:border-l border-[#e1d2b3] flex flex-col justify-center">
+            <div className="lg:max-w-[460px] lg:mr-auto w-full">
               <h3 className="text-[#111111] text-[28px] lg:text-[32px] leading-[1] mb-1 font-semibold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 <span className="text-[#d1a54d]">Book</span> Site Visit
               </h3>
