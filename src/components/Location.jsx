@@ -1,6 +1,7 @@
 // src/components/Location.jsx
 
 import { motion } from "framer-motion";
+import locationMap from "../assests/images/location.jpg";
 
 import {
   GraduationCap,
@@ -412,50 +413,191 @@ export default function Location() {
             </div>
           </motion.div>
 
-          {/* MAP */}
-          <motion.div
-            initial={{ opacity: 0, x: 35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="
-            relative
+          {/* LOCATION IMAGE CARD */}
 
-            overflow-hidden
+<motion.div
+  initial={{ opacity: 0, x: 35 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  className="
+  relative
+  overflow-hidden
 
-            rounded-[28px]
+  rounded-[26px]
 
-            border
-            border-[#eadfcb]
+  border
+  border-[#eadfcb]
 
-            h-[300px]
-            lg:h-full
-            min-h-[420px]
+  h-[260px]
+  md:h-[320px]
+  lg:h-full
+  min-h-[360px]
 
-            shadow-[0_22px_55px_rgba(0,0,0,0.07)]
-            "
-          >
-            <iframe
-              title="Subham Park Location"
-              src="https://www.google.com/maps?q=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001&output=embed"
-              width="100%"
-              height="100%"
-              loading="lazy"
-              className="w-full h-full"
-            />
+  shadow-[0_20px_45px_rgba(0,0,0,0.06)]
+  group
+  "
+>
+  {/* IMAGE */}
+  <img
+    src={locationMap}
+    alt="Subham Park Location"
+    className="
+    absolute
+    inset-0
 
-            <div
-              className="
-              absolute
-              inset-0
+    w-full
+    h-full
 
-              border
-              border-white/20
+    object-cover
 
-              pointer-events-none
-              "
-            />
-          </motion.div>
+    transition-transform
+    duration-700
+
+    group-hover:scale-[1.03]
+    "
+  />
+
+  {/* DARK OVERLAY */}
+  <div
+    className="
+    absolute
+    inset-0
+
+    bg-gradient-to-t
+    from-black/75
+    via-black/20
+    to-transparent
+    "
+  />
+
+  {/* PRIME JORHAT BADGE */}
+  <div
+    className="
+    absolute
+    top-4
+    left-4
+
+    z-20
+
+    px-3
+    py-[6px]
+
+    rounded-full
+
+    bg-white/95
+    backdrop-blur-md
+
+    text-[#111]
+
+    text-[9px]
+    tracking-[0.18em]
+    uppercase
+
+    shadow-lg
+    "
+    style={{
+      fontFamily: "'Inter', sans-serif",
+      fontWeight: 700,
+    }}
+  >
+    Prime Jorhat Location
+  </div>
+
+  {/* CONTENT */}
+  <div
+    className="
+    absolute
+    bottom-0
+    left-0
+
+    w-full
+
+    p-5
+    md:p-6
+
+    z-20
+    "
+  >
+    <h3
+      className="
+      text-white
+
+      text-[26px]
+      md:text-[34px]
+
+      leading-[1]
+
+      mb-3
+      "
+      style={{
+        fontFamily:
+          "'Cormorant Garamond', serif",
+        fontWeight: 600,
+      }}
+    >
+      Strategic Location
+    </h3>
+
+    <p
+      className="
+      text-white/90
+
+      text-[13px]
+      md:text-[14px]
+
+      leading-[1.7]
+
+      max-w-[460px]
+
+      mb-4
+      "
+      style={{
+        fontFamily: "'Inter', sans-serif",
+        fontWeight: 400,
+      }}
+    >
+      Located in the heart of Jorhat with
+      effortless connectivity to schools,
+      hospitals, shopping centres and major
+      transportation hubs.
+    </p>
+
+    {/* VIEW LOCATION BUTTON */}
+    <a
+      href="https://maps.google.com/?q=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+      inline-flex
+      items-center
+
+      h-[42px]
+      px-5
+
+      rounded-full
+
+      bg-white
+      text-[#111]
+
+      text-[10px]
+      uppercase
+      tracking-[0.16em]
+
+      hover:-translate-y-[2px]
+
+      transition-all
+      duration-300
+      "
+      style={{
+        fontFamily: "'Inter', sans-serif",
+        fontWeight: 700,
+      }}
+    >
+      View Location
+    </a>
+  </div>
+</motion.div>
         </div>
 
         {/* BOTTOM CARDS */}

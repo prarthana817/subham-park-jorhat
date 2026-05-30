@@ -24,45 +24,22 @@ import gallery6 from "../assests/images/gallery-6.jpg";
 import gallery7 from "../assests/images/gallery-7.jpg";
 import gallery8 from "../assests/images/gallery-8.jpg";
 import gallery9 from "../assests/images/gallery-9.jpg";
-
+import gallery10 from "../assests/images/amenities-1.jpg";
+import gallery11 from "../assests/images/amenities-2.jpg";
 const galleryImages = [
-  {
-    img: gallery1,
-    title: "Community Hall View",
-  },
-  {
-    img: gallery2,
-    title: "Gymnasium View",
-  },
-  {
-    img: gallery3,
-    title: "Terrace Lawn View",
-  },
-  {
-    img: gallery4,
-    title: "Badminton Court View",
-  },
-  {
-    img: gallery5,
-    title: "Splash Pool View",
-  },
-  {
-    img: gallery6,
-    title: "Indoor Games View",
-  },
-  {
-    img: gallery7,
-    title: "Evening Gate View",
-  },
-  {
-    img: gallery8,
-    title: "Elevation Night View",
-  },
-  {
-    img: gallery9,
-    title: "Area View",
-  },
+  { img: gallery1, title: "Community Hall" },
+  { img: gallery2, title: "Gymnasium" },
+  { img: gallery3, title: "Terrace Lawn" },
+  { img: gallery4, title: "Badminton Court" },
+  { img: gallery5, title: "Splash Pool" },
+  { img: gallery6, title: "Indoor Games" },
+  { img: gallery7, title: "Evening Gate" },
+  { img: gallery8, title: "Elevation Night" },
+  { img: gallery9, title: "Sky-High" },
+  { img: gallery10, title: "Elevation" },
+  { img: gallery11, title: "Serenity" },
 ];
+
 
 export default function Gallery({
   setOpen,
@@ -132,15 +109,16 @@ export default function Gallery({
 
   return (
     <section
-      id="gallery"
-      className="
-      relative
-      overflow-hidden
-      py-14
-      lg:py-20
-      bg-[#f8f5ed]
-      "
-    >
+  id="gallery"
+  className="
+  relative
+  overflow-hidden
+  py-14
+  lg:py-20
+  pb-[180px]
+  bg-[#f8f5ed]
+  "
+>
       {/* ================================= */}
       {/* FULLSCREEN POPUP */}
       {/* ================================= */}
@@ -429,228 +407,200 @@ export default function Gallery({
           </div>
         </div>
 
-        {/* ================================= */}
-        {/* GRID */}
-        {/* ================================= */}
+    {/* ================================= */}
+{/* PINTEREST / MASONRY GALLERY */}
+{/* ================================= */}
+
+<div
+  className="
+  columns-1
+  sm:columns-2
+  lg:columns-3
+  gap-5
+  "
+>
+  {galleryImages.map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.05,
+      }}
+      viewport={{ once: true }}
+      className="
+      group
+      relative
+      overflow-hidden
+      rounded-[26px]
+      mb-5
+      break-inside-avoid
+      border
+      border-[#e9dfcf]
+      bg-[#f1f1f1]
+      shadow-[0_18px_45px_rgba(0,0,0,0.05)]
+      "
+    >
+      {/* IMAGE */}
+
+      <img
+        src={item.img}
+        alt={item.title}
+        loading="lazy"
+        className={`
+        w-full
+        object-cover
+        transition-all
+        duration-700
+        group-hover:scale-105
+
+        ${
+  index === 9
+    ? "h-[399px]"
+    : index === galleryImages.length - 1
+    ? "h-[630px]"
+    : index % 8 === 0
+    ? "h-[480px]"
+    : index % 8 === 1
+    ? "h-[320px]"
+    : index % 8 === 2
+    ? "h-[280px]"
+    : index % 8 === 3
+    ? "h-[430px]"
+    : index % 8 === 4
+    ? "h-[340px]"
+    : index % 8 === 5
+    ? "h-[500px]"
+    : index % 8 === 6
+    ? "h-[300px]"
+    : "h-[360px]"
+}
+        `}
+      />
+
+      {/* OVERLAY */}
+
+      <div
+        className="
+        absolute
+        inset-0
+        bg-gradient-to-t
+        from-black/70
+        via-black/10
+        to-transparent
+        "
+      />
+
+      {/* SEARCH ICON */}
+
+      <div
+        className="
+        absolute
+        inset-0
+        flex
+        items-center
+        justify-center
+        opacity-0
+        group-hover:opacity-100
+        transition-all
+        duration-300
+        z-20
+        "
+      >
+        <button
+          onClick={() =>
+            setSelectedImage(item.img)
+          }
+          className="
+          w-14
+          h-14
+          rounded-full
+          bg-white/15
+          backdrop-blur-md
+          border
+          border-white/20
+          flex
+          items-center
+          justify-center
+          scale-75
+          group-hover:scale-100
+          transition-all
+          duration-300
+          "
+        >
+          <Search className="w-5 h-5 text-white" />
+        </button>
+      </div>
+
+      {/* CONTENT */}
+
+      <div
+        className="
+        absolute
+        bottom-0
+        left-0
+        w-full
+        p-5
+        z-30
+        "
+      >
+        <h3
+          className="
+          text-white
+          text-[20px]
+          md:text-[24px]
+          leading-none
+          "
+          style={{
+            fontFamily:
+              "'Cormorant Garamond', serif",
+            fontWeight: 500,
+          }}
+        >
+          {item.title}
+        </h3>
 
         <div
           className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          lg:grid-cols-3
-          gap-5
+          mt-3
+          w-[55px]
+          h-[2px]
+          bg-[#d1a54d]
+          transition-all
+          duration-500
+          group-hover:w-[90px]
           "
-        >
-          {galleryImages.map(
-            (item, index) => (
-              <motion.div
-                key={index}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.05,
-                }}
-                viewport={{ once: true }}
-                className="
-                group
-                relative
+        />
+      </div>
 
-                overflow-hidden
+      {/* GLOW */}
 
-                rounded-[26px]
-
-                h-[240px]
-                sm:h-[260px]
-                md:h-[290px]
-                lg:h-[300px]
-
-                border
-                border-[#e9dfcf]
-
-                shadow-[0_18px_45px_rgba(0,0,0,0.05)]
-
-                bg-[#f1f1f1]
-                "
-              >
-                {/* IMAGE */}
-
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  loading="lazy"
-                  className="
-                  absolute
-                  inset-0
-
-                  w-full
-                  h-full
-
-                  object-cover
-                  object-center
-
-                  transition-transform
-                  duration-700
-
-                  group-hover:scale-105
-                  "
-                />
-
-                {/* OVERLAY */}
-
-                <div
-                  className="
-                  absolute
-                  inset-0
-
-                  bg-gradient-to-t
-                  from-black/70
-                  via-black/10
-                  to-transparent
-                  "
-                />
-
-                {/* SEARCH ICON */}
-
-                <div
-                  className="
-                  absolute
-                  inset-0
-
-                  flex
-                  items-center
-                  justify-center
-
-                  z-20
-
-                  opacity-0
-                  group-hover:opacity-100
-
-                  transition-all
-                  duration-300
-                  "
-                >
-                  <button
-                    onClick={() =>
-                      setSelectedImage(
-                        item.img
-                      )
-                    }
-                    className="
-                    w-16
-                    h-16
-
-                    rounded-full
-
-                    bg-white/15
-                    backdrop-blur-md
-
-                    border
-                    border-white/20
-
-                    flex
-                    items-center
-                    justify-center
-
-                    scale-75
-                    group-hover:scale-100
-
-                    transition-all
-                    duration-300
-                    "
-                  >
-                    <Search className="w-6 h-6 text-white" />
-                  </button>
-                </div>
-
-                {/* CONTENT */}
-
-                <div
-                  className="
-                  absolute
-                  bottom-0
-                  left-0
-
-                  w-full
-
-                  p-5
-
-                  z-30
-                  "
-                >
-                  <div>
-                    <h3
-                      className="
-                      text-[20px]
-                      md:text-[24px]
-
-                      leading-[1.1]
-
-                      text-white
-                      "
-                      style={{
-                        fontFamily:
-                          "'Cormorant Garamond', serif",
-                        fontWeight: 500,
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-
-                    <div
-                      className="
-                      mt-3
-
-                      w-[55px]
-                      h-[2px]
-
-                      bg-[#d1a54d]
-
-                      transition-all
-                      duration-500
-
-                      group-hover:w-[85px]
-                      "
-                    />
-                  </div>
-                </div>
-
-                {/* GLOW */}
-
-                <div
-                  className="
-                  absolute
-                  bottom-[-60px]
-                  right-[-60px]
-
-                  w-[140px]
-                  h-[140px]
-
-                  rounded-full
-
-                  bg-[#2143b5]/10
-
-                  blur-[70px]
-
-                  opacity-0
-
-                  transition-all
-                  duration-500
-
-                  group-hover:opacity-100
-                  "
-                />
-              </motion.div>
-            )
-          )}
-        </div>
+      <div
+        className="
+        absolute
+        bottom-[-60px]
+        right-[-60px]
+        w-[140px]
+        h-[140px]
+        rounded-full
+        bg-[#2143b5]/10
+        blur-[70px]
+        opacity-0
+        transition-all
+        duration-500
+        group-hover:opacity-100
+        "
+      />
+    </motion.div>
+  ))}
+</div>
       </div>
     </section>
   );

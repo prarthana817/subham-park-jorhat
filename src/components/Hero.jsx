@@ -115,9 +115,7 @@ export default function Hero() {
               }}
             >
               Elevate{" "}
-              <span className="italic text-[#d1a54d]">
-                Your
-              </span>
+              <span className="italic text-[#d1a54d]">Your</span>
 
               <br />
 
@@ -126,43 +124,39 @@ export default function Hero() {
 
             <div className="w-[150px] h-[2px] bg-[#d1a54d] mb-6" />
 
-            
-<p
-  className="
-  max-w-[720px]
-  text-[16px]
-  lg:text-[17px]
+            {/* DESCRIPTION */}
+            <p
+              className="
+              max-w-[720px]
+              text-[16px]
+              lg:text-[17px]
+              leading-[1.72]
+              tracking-[-0.01em]
+              text-[#5f6674]
+              mb-7
+              text-justify
+              "
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 400,
+                wordSpacing: "-2px",
+                textJustify: "inter-word",
+                hyphens: "auto",
+              }}
+            >
+              Experience premium residences surrounded by
+              greenery and thoughtfully crafted architecture
+              designed for elevated modern living in the heart
+              of Jorhat.
+            </p>
 
-  leading-[1.75]
-
-  tracking-[-0.01em]
-
-  text-[#5f6674]
-
-  mb-7
-
-  text-justify
-  "
-  style={{
-    fontFamily: "'Inter', sans-serif",
-    fontWeight: 400,
-    wordSpacing: "-2px",
-    textJustify: "inter-word",
-    hyphens: "auto",
-  }}
->
-  Experience premium residences surrounded by
-  greenery and thoughtfully crafted architecture
-  designed for elevated modern living in the heart
-  of Jorhat.
-</p>
             {/* LOCATION + PRICE */}
             <div
               className="
               flex
               flex-wrap
               items-center
-              gap-5
+              gap-4
               "
             >
               {/* LOCATION CARD */}
@@ -170,17 +164,17 @@ export default function Hero() {
                 className="
                 relative
 
-                px-5
-                py-[14px]
+                px-4
+                py-[11px]
 
-                rounded-[20px]
+                rounded-[16px]
 
                 border
                 border-[#dcc89b]
 
                 bg-[#e8d6ab]
 
-                shadow-[0_10px_24px_rgba(209,165,77,0.10)]
+                shadow-[0_8px_18px_rgba(209,165,77,0.08)]
 
                 overflow-hidden
                 "
@@ -191,11 +185,11 @@ export default function Hero() {
                   absolute
                   inset-0
 
-                  rounded-[20px]
+                  rounded-[16px]
 
                   before:absolute
                   before:inset-0
-                  before:rounded-[20px]
+                  before:rounded-[16px]
 
                   before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)]
 
@@ -211,7 +205,7 @@ export default function Hero() {
                   absolute
                   inset-[1px]
 
-                  rounded-[19px]
+                  rounded-[15px]
 
                   bg-[#e8d6ab]
                   "
@@ -225,14 +219,14 @@ export default function Hero() {
 
                   flex
                   items-center
-                  gap-4
+                  gap-3
                   "
                 >
                   {/* ICON */}
                   <div
                     className="
-                    w-11
-                    h-11
+                    w-9
+                    h-9
 
                     rounded-full
 
@@ -247,7 +241,7 @@ export default function Hero() {
                     shadow-inner
                     "
                   >
-                    <MapPin size={18} />
+                    <MapPin size={15} />
                   </div>
 
                   {/* TEXT */}
@@ -255,13 +249,13 @@ export default function Hero() {
                     <p
                       className="
                       uppercase
-                      tracking-[0.22em]
+                      tracking-[0.18em]
 
-                      text-[10px]
+                      text-[8px]
 
                       text-[#9e7426]
 
-                      mb-[3px]
+                      mb-[2px]
                       "
                       style={{
                         fontFamily: "'Inter', sans-serif",
@@ -273,8 +267,8 @@ export default function Hero() {
 
                     <h4
                       className="
-                      text-[22px]
-                      md:text-[24px]
+                      text-[18px]
+                      md:text-[20px]
 
                       leading-none
 
@@ -301,13 +295,13 @@ export default function Hero() {
                 items-center
                 justify-center
 
-                h-[70px]
+                h-[54px]
                 "
               >
                 <div
                   className="
                   w-[2px]
-                  h-[42px]
+                  h-[32px]
 
                   rounded-full
 
@@ -326,17 +320,17 @@ export default function Hero() {
                 className="
                 relative
 
-                px-5
-                py-[14px]
+                px-4
+                py-[11px]
 
-                rounded-[18px]
+                rounded-[16px]
 
                 border
                 border-[#dcc89b]
 
                 bg-[#e8d6ab]
 
-                shadow-[0_10px_24px_rgba(209,165,77,0.10)]
+                shadow-[0_8px_18px_rgba(209,165,77,0.08)]
 
                 overflow-hidden
                 "
@@ -347,11 +341,11 @@ export default function Hero() {
                   absolute
                   inset-0
 
-                  rounded-[18px]
+                  rounded-[16px]
 
                   before:absolute
                   before:inset-0
-                  before:rounded-[18px]
+                  before:rounded-[16px]
 
                   before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)]
 
@@ -367,7 +361,7 @@ export default function Hero() {
                   absolute
                   inset-[1px]
 
-                  rounded-[17px]
+                  rounded-[15px]
 
                   bg-[#e8d6ab]
                   "
@@ -378,13 +372,13 @@ export default function Hero() {
                   <p
                     className="
                     uppercase
-                    tracking-[0.22em]
+                    tracking-[0.18em]
 
-                    text-[9px]
+                    text-[8px]
 
                     text-[#9e7426]
 
-                    mb-[4px]
+                    mb-[2px]
                     "
                     style={{
                       fontFamily: "'Inter', sans-serif",
@@ -398,18 +392,18 @@ export default function Hero() {
                     className="
                     flex
                     items-end
-                    gap-[3px]
+                    gap-[2px]
                     "
                   >
                     <span
                       className="
-                      text-[16px]
+                      text-[13px]
 
                       leading-none
 
                       text-[#9e7426]
 
-                      mb-[4px]
+                      mb-[3px]
                       "
                       style={{
                         fontFamily:
@@ -422,12 +416,12 @@ export default function Hero() {
 
                     <h3
                       className="
-                      text-[34px]
-                      md:text-[38px]
+                      text-[28px]
+                      md:text-[31px]
 
                       leading-[0.9]
 
-                      tracking-[-1.5px]
+                      tracking-[-1px]
 
                       text-[#111111]
                       "
@@ -442,7 +436,7 @@ export default function Hero() {
 
                     <span
                       className="
-                      text-[12px]
+                      text-[10px]
 
                       uppercase
 
@@ -450,7 +444,7 @@ export default function Hero() {
 
                       text-[#6d6758]
 
-                      mb-[5px]
+                      mb-[4px]
                       "
                       style={{
                         fontFamily: "'Inter', sans-serif",

@@ -6,16 +6,17 @@ import {
   Dumbbell,
   Trees,
   Waves,
-  Building2,
   Gamepad2,
-  Trophy,
   ShieldCheck,
   CarFront,
-  Sparkles,
+  Compass,
   Camera,
   Leaf,
   ArrowUpRight,
 } from "lucide-react";
+
+import { GiShuttlecock } from "react-icons/gi";
+import { MdOutlineCelebration } from "react-icons/md";
 
 const amenities = [
   {
@@ -26,20 +27,20 @@ const amenities = [
   {
     title: "Vastu Living",
     desc: "Positive vastu compliant homes.",
-    icon: Sparkles,
+    icon: Compass,
   },
   {
     title: "Badminton Court",
     desc: "Premium active lifestyle space.",
-    icon: Trophy,
+    icon: GiShuttlecock,
   },
   {
     title: "Community Hall",
     desc: "Elegant celebration & events zone.",
-    icon: Building2,
+    icon: MdOutlineCelebration,
   },
   {
-    title: "Modern Gym",
+    title: "Gymnasium",
     desc: "Advanced fitness & wellness area.",
     icon: Dumbbell,
   },
@@ -214,7 +215,6 @@ export default function Amenities({ setOpen }) {
                 >
                   <Icon
                     className="w-[22px] h-[22px] text-[#c9a84c]/80 transition-all duration-500 group-hover:text-[#c9a84c]"
-                    strokeWidth={1.5}
                   />
                 </div>
 

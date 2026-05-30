@@ -1,8 +1,4 @@
-// src/components/Contact.jsx
-
-import { MapPin } from "lucide-react";
-
-import locationImg from "../assests/images/location.jpg";
+// src/components/Contact.jsx;
 
 export default function Contact() {
   return (
@@ -93,157 +89,97 @@ export default function Contact() {
               </h2>
 
               <p
-                className="
-                mt-5
+  className="
+  mt-5
 
-                max-w-[520px]
+  max-w-[520px]
 
-                text-[15px]
-                lg:text-[16px]
+  text-[15px]
+  lg:text-[16px]
 
-                leading-[1.75]
+  leading-[1.85]
 
-                tracking-[-0.01em]
+  tracking-[-0.01em]
 
-                text-[#5f6674]
+  text-[#5f6674]
 
-                text-justify
+  text-justify
 
-                break-words
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
-                  textAlignLast: "left",
-                }}
-              >
-                Discover a thoughtfully crafted lifestyle designed
-                for modern families with elegant architecture,
-                premium amenities, seamless connectivity and
-                beautifully planned living spaces that bring comfort,
-                sophistication and everyday convenience together.
-              </p>
+  break-words
+  "
+  style={{
+    fontFamily: "'Inter', sans-serif",
+    fontWeight: 400,
+    textAlignLast: "left",
+  }}
+>
+  Discover a thoughtfully crafted lifestyle
+  designed for modern families where elegant
+  architecture, premium amenities and serene
+  surroundings come together seamlessly.
+  Enjoy effortless connectivity, open green
+  spaces and carefully planned residences that
+  elevate comfort, convenience and everyday
+  living while creating a refined address in
+  the heart of Jorhat.
+</p>
             </div>
 
-            {/* MAP CARD */}
-            <div
-              className="
-              mt-7
+            {/* ADDRESS */}
+<div
+  className="
+  mt-7
 
-              rounded-[22px]
+  rounded-[18px]
 
-              overflow-hidden
+  border
+  border-[#e7dccb]
 
-              border
-              border-[#e7dccb]
+  bg-[#f8f1e4]
 
-              bg-[#f4ecdf]
+  p-5
 
-              shadow-[0_10px_30px_rgba(0,0,0,0.06)]
-              "
-            >
-              <div className="relative h-[180px] md:h-[210px]">
-                <img
-                  src={locationImg}
-                  alt="Location"
-                  className="
-                  w-full
-                  h-full
-                  object-cover
-                  "
-                />
+  shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+  "
+>
+  <p
+    className="
+    text-[11px]
 
-                <div
-                  className="
-                  absolute
-                  inset-0
+    uppercase
 
-                  bg-gradient-to-t
-                  from-black/45
-                  via-black/10
-                  to-transparent
-                  "
-                />
+    tracking-[0.22em]
 
-                {/* LOCATION BADGE */}
-                <div
-                  className="
-                  absolute
-                  bottom-4
-                  left-4
+    text-[#c9a14a]
 
-                  flex
-                  items-center
-                  gap-2
+    mb-2
+    "
+    style={{
+      fontFamily: "'Inter', sans-serif",
+      fontWeight: 700,
+    }}
+  >
+    LOCATION
+  </p>
 
-                  px-4
-                  py-2
+  <p
+    className="
+    text-[15px]
 
-                  rounded-full
+    leading-[1.8]
 
-                  bg-white/90
-
-                  backdrop-blur-md
-                  "
-                >
-                  <MapPin className="w-4 h-4 text-[#2143b5]" />
-
-                  <p
-                    className="
-                    text-[11px]
-
-                    uppercase
-                    tracking-[0.14em]
-
-                    text-[#111111]
-                    "
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: 700,
-                    }}
-                  >
-                    PRIME JORHAT LOCATION
-                  </p>
-                </div>
-
-                {/* GOOGLE MAP BUTTON */}
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=1,+Sonari+Gaon,+Tarajan,+Jorhat+Bhatemora+Gaon+Assam+-+785001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                  absolute
-                  top-4
-                  right-4
-
-                  px-5
-                  py-2.5
-
-                  rounded-full
-
-                  bg-[#d1a54d]
-                  hover:bg-[#be9137]
-
-                  text-white
-
-                  text-[11px]
-                  uppercase
-                  tracking-[0.14em]
-
-                  transition-all
-                  duration-300
-                  "
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: 700,
-                  }}
-                >
-                  VIEW LOCATION
-                </a>
-              </div>
-            </div>
+    text-[#111111]
+    "
+    style={{
+      fontFamily: "'Inter', sans-serif",
+      fontWeight: 500,
+    }}
+  >
+    1, Sonari Gaon,
+    Jorhat 
+  </p>
+</div>
           </div>
-
           {/* RIGHT SIDE */}
           <div
             className="
