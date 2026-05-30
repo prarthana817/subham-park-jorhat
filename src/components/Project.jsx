@@ -1,13 +1,36 @@
 import React, { useState } from "react";
-import { MapPin, Building2, Ruler, Construction, Users } from "lucide-react";
+import {
+  MapPin,
+  Building2,
+  Ruler,
+  Construction,
+  Users,
+  ChevronDown,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assests/images/shubham_logo.png";
 
 const stats = [
-  { value: "16+", label: "Completed Portfolios", icon: <Building2 size={15} strokeWidth={1.5} /> },
-  { value: "28 L", label: "Sq. Ft. Built", icon: <Ruler size={15} strokeWidth={1.5} /> },
-  { value: "15 L", label: "Sq. Ft. Progressing", icon: <Construction size={15} strokeWidth={1.5} /> },
-  { value: "6k+", label: "Elite Residents", icon: <Users size={15} strokeWidth={1.5} /> },
+  {
+    value: "16+",
+    label: "Completed Projects",
+    icon: <Building2 size={18} />,
+  },
+  {
+    value: "28 Lac",
+    label: "Sq. Ft. Constructed",
+    icon: <Ruler size={18} />,
+  },
+  {
+    value: "15 Lac",
+    label: "Sq. Ft. Ongoing",
+    icon: <Construction size={18} />,
+  },
+  {
+    value: "6000+",
+    label: "Happy Residents",
+    icon: <Users size={18} />,
+  },
 ];
 
 const ongoingProjects = [
@@ -33,214 +56,311 @@ const completedProjects = [
   { name: "Subham Garden", location: "Kalapahar" },
 ];
 
-const commercialProjects = [
-  { name: "Subham Velocity", location: "G.S. Road" },
-  { name: "Subham Redstone", location: "Downtown" },
-  { name: "Bijay Crescent", location: "Pibco" },
-  { name: "Subham Square", location: "Lokhra" },
-];
+const fadeInUp = {
+  initial: { opacity: 0, y: 15 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: "easeOut" },
+};
 
 export default function ProjectOverview() {
-  const [activeTab, setActiveTab] = useState("ongoing");
-  const [selectedProjectName, setSelectedProjectName] = useState("Subham Garden");
   const [selectedLocation, setSelectedLocation] = useState("Jorhat");
+  const [selectedProjectName, setSelectedProjectName] = useState("Subham Garden");
+  const [activeAccordion, setActiveAccordion] = useState("ongoing");
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    let firstProject;
-    if (tab === "ongoing") firstProject = ongoingProjects[0];
-    if (tab === "completed") firstProject = completedProjects[0];
-    if (tab === "commercial") firstProject = commercialProjects[0];
-    
-    if (firstProject) {
-      setSelectedProjectName(firstProject.name);
-      setSelectedLocation(firstProject.location);
-    }
-  };
-
-  const getActiveProjects = () => {
-    if (activeTab === "ongoing") return ongoingProjects;
-    if (activeTab === "completed") return completedProjects;
-    return commercialProjects;
+  const handleProjectClick = (name, location) => {
+    setSelectedLocation(location);
+    setSelectedProjectName(name);
   };
 
   return (
-    <section id="project" className="relative bg-[#F9F8F6] py-12 md:py-16 text-[#1C1C1C] overflow-hidden border-b border-[#E5DFD5]">
-      {/* Structural Hairlines */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <div className="absolute left-[5%] top-0 bottom-0 w-[1px] bg-[#E5DFD5]" />
-        <div className="absolute right-[5%] top-0 bottom-0 w-[1px] bg-[#E5DFD5]" />
-      </div>
+    <section
+      id="project"
+      className="relative overflow-hidden py-12 md:py-16 bg-[#f7f5ef]"
+    >
+      <div
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
+          `,
+          backgroundSize: "50px 50px",
+        }}
+      />
 
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 max-w-[1220px] mx-auto px-4 lg:px-6">
         
-        {/* ================= UPPER PACKED HERO CONTAINER ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 pb-10 border-b border-[#E5DFD5]">
-          
-          {/* Logo Showcase Pedestal */}
-          <div className="lg:col-span-4 flex items-center justify-center relative">
-            <div className="absolute -top-2 -left-2 text-[#A89F91] select-none pointer-events-none text-[10px]">+</div >
-            <div className="absolute -bottom-2 -right-2 text-[#A89F91] select-none pointer-events-none text-[10px]">+</div >
-
-            <motion.div
-              animate={{ 
-                y: [0, -6, 3, 0],
-                x: [0, 3, -3, 0]
-              }}
-              transition={{
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              whileHover={{ scale: 1.02 }}
-              className="relative w-full max-w-[230px] sm:max-w-[250px] aspect-square rounded-full bg-white border border-[#E5DFD5] p-8 flex items-center justify-center shadow-[0_12px_30px_rgba(28,28,28,0.02)] group cursor-pointer transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(163,92,70,0.05)]"
+        {/* ================= HEADER SECTION ================= */}
+        <motion.div {...fadeInUp} className="mb-2">
+          <div className="flex items-center gap-3">
+            <div className="w-[40px] h-[1.5px] bg-[#d1a54d]" />
+            <p
+              className="uppercase tracking-[0.28em] text-[10px] text-[#c79d47]"
+              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
             >
-              <div className="absolute inset-1 rounded-full border border-[#FAF9F6] bg-gradient-to-b from-[#FDFDFD] to-[#F5F3EE] opacity-30 pointer-events-none" />
-              <img
-                src={logo}
-                alt="Subham Group Corporate Signet"
-                className="w-[85%] h-auto object-contain select-none relative z-10 filter contrast-[1.01]"
-              />
-            </motion.div>
-          </div>
-
-          {/* Copy Deck Typography */}
-          <div className="lg:col-span-8 flex flex-col justify-center">
-            <span className="text-[9px] uppercase tracking-[0.35em] text-[#A35C46] font-bold block mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Developers profile
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#111111] leading-[1.15] mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}>
-              Sculpting spaces. <span className="italic font-normal text-[#A35C46]">Inspiriting Generations.</span>
-            </h2>
-            <p className="text-[14px] leading-[1.7] text-[#4A4A4A] text-justify tracking-wide font-light max-w-3xl" style={{ fontFamily: "'Inter', sans-serif" }}>
-              Subham Group has crafted premium residential architectural masterpieces and commercial 
-              landmarks across the skylines of Assam and Northeast India. Driven by an uncompromised 
-              focus on structural integrity, elevated aesthetic lifestyles, timeless design paradigms, 
-              and highly trusted quality construction execution, we have successfully created unparalleled 
-              and holistic standard living experiences for thousands of happy modern families.
+              Project Overview
             </p>
           </div>
+        </motion.div>
 
-        </div>
+        <motion.div {...fadeInUp} className="mb-8 lg:ml-1">
+          <h2
+            className="text-[34px] md:text-[44px] lg:text-[54px] leading-[0.95] tracking-[-1.5px] text-[#101010]"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
+          >
+            Landmark <span className="italic text-[#d1a54d]">Projects</span>
+          </h2>
+        </motion.div>
 
-        {/* ================= LOWER CONTROL FRAMEWORK ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Dense Metrics Strip */}
-          <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-3 lg:pr-6">
-            {stats.map((item, index) => (
-              <div key={index} className="flex flex-col border-l border-[#A35C46] pl-3 py-0.5">
-                <span className="text-[9px] uppercase tracking-widest text-[#8A8276] mb-1 flex items-center gap-1.5" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  <span className="text-[#A35C46] flex items-center justify-center">{item.icon}</span>
-                  {item.label}
-                </span>
-                <h4 className="text-xl sm:text-2xl font-light text-[#111111] leading-none" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                  {item.value}
-                </h4>
+        {/* ================= STATS MATRIX GRID ================= */}
+        <motion.div
+          {...fadeInUp}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
+        >
+          {stats.map((item, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -4, boxShadow: "0_10px_25px_rgba(20,35,75,0.05)" }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="rounded-[20px] border border-[#f0e8db] bg-white p-4 flex items-center gap-4 transition-all duration-300"
+            >
+              <div className="w-10 h-10 rounded-full bg-[#f6edd9] flex items-center justify-center text-[#d1a54d] shrink-0">
+                {item.icon}
               </div>
-            ))}
+              <div>
+                <h3
+                  className="text-[22px] md:text-[26px] leading-none text-[#14234b]"
+                  style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700 }}
+                >
+                  {item.value}
+                </h3>
+                <p
+                  className="mt-1 text-[8px] uppercase tracking-[0.16em] text-[#5f6674] leading-[1.4]"
+                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
+                >
+                  {item.label}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* ================= PREMIUM LUXURY BRAND SHOWCASE BLOCK ================= */}
+        <motion.div
+          {...fadeInUp}
+          className="relative w-full bg-white rounded-[24px] border border-[#e8dfd0] p-6 md:p-10 lg:p-12 mb-8 shadow-[0_12px_40px_rgba(20,35,75,0.02),0_1px_2px_rgba(0,0,0,0.01)] overflow-hidden"
+        >
+          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+            
+            {/* 1. HERO LOGO DISPLAY */}
+            <div className="flex-shrink-0 flex justify-center items-center relative py-1 lg:py-0">
+              <motion.div
+                animate={{ 
+                  y: [0, -6, 3, 0],
+                  rotate: [0, 0.2, -0.2, 0]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                whileHover={{ 
+                  scale: 1.03,
+                  filter: "drop-shadow(0 15px 25px rgba(20,35,75,0.04))"
+                }}
+                className="relative w-[190px] sm:w-[210px] md:w-[230px] flex items-center justify-center transition-all duration-300 cursor-pointer"
+              >
+                <img
+                  src={logo}
+                  alt="Subham Group Corporate Crest"
+                  className="w-full h-auto object-contain select-none"
+                />
+              </motion.div>
+            </div>
+
+            {/* 2. LUXURY GOLD GRADIENT DIVIDER */}
+            <div className="relative flex items-center justify-center flex-shrink-0 w-full lg:w-auto -my-1 lg:my-0 lg:-mx-1 z-20">
+              {/* Desktop Vertical Line */}
+              <div 
+                className="hidden lg:block w-[1.5px] h-[140px] bg-gradient-to-b from-transparent via-[#D1A54D] to-transparent opacity-50"
+              />
+              {/* Mobile Horizontal Line */}
+              <div 
+                className="block lg:hidden w-1/3 h-[1.5px] bg-gradient-to-r from-transparent via-[#D1A54D] to-transparent opacity-50"
+              />
+            </div>
+
+            {/* 3. BRAND CONTENT METRICS */}
+            <motion.div 
+              initial={{ opacity: 0, x: 12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="flex-grow flex flex-col justify-center text-center lg:text-left pt-1 lg:pt-0 lg:pl-2"
+            >
+              <span 
+                className="text-[9px] uppercase tracking-[0.35em] text-[#C79D47] font-bold block mb-2"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                Corporate Signet Architecture
+              </span>
+              
+              <h2 
+                className="text-2xl sm:text-3xl lg:text-[36px] tracking-tight text-[#14234B] leading-[1.2] mb-4"
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
+              >
+                Time-Bound Projects <span className="italic font-normal text-[#D1A54D] relative inline-block">and Timeless</span> Relationships
+              </h2>
+              
+              <p 
+                className="text-[13.5px] md:text-[14.5px] leading-[1.8] text-[#5F6674] text-justify lg:text-left tracking-wide font-normal"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                Since 2007, Subham Group has been the silent force behind Assam’s skyline, blending architectural bravery with the warmth of a home. Based in Guwahati, we are known for innovation, timely delivery, and dedicated customer support. Driven by passion, we create lasting value through time-bound projects and timeless relationships.
+              </p>
+            </motion.div>
+
+          </div>
+        </motion.div>
+
+        {/* ================= PROJECTS TWO-TAB ACCORDION PANEL ================= */}
+        <motion.div
+          {...fadeInUp}
+          className="rounded-[24px] border border-[#e8dfd0] bg-white p-5 md:p-6 shadow-[0_8px_24px_rgba(0,0,0,0.015)] flex flex-col gap-3"
+        >
+          {/* 1. ONGOING PROJECTS */}
+          <div className="border-b border-[#f3eee5] pb-3">
+            <button
+              onClick={() => setActiveAccordion(activeAccordion === "ongoing" ? null : "ongoing")}
+              className="w-full flex justify-between items-center py-1.5 text-left group"
+            >
+              <p
+                className="uppercase tracking-[0.26em] text-[10px] text-[#b58d45]"
+                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+              >
+                Ongoing Projects
+              </p>
+              <motion.div
+                animate={{ rotate: activeAccordion === "ongoing" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-[#b58d45] group-hover:text-[#14234b] transition-colors"
+              >
+                <ChevronDown size={16} />
+              </motion.div>
+            </button>
+
+            <AnimatePresence initial={false}>
+              {activeAccordion === "ongoing" && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                  animate={{ height: "auto", opacity: 1, marginTop: 12 }}
+                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="flex flex-wrap gap-2.5 pt-0.5">
+                    {ongoingProjects.map((project, idx) => {
+                      const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => handleProjectClick(project.name, project.location)}
+                          className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-250 ${
+                            isSelected
+                              ? "bg-[#14234b] border-[#14234b] text-white shadow-sm shadow-blue-900/10"
+                              : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white hover:border-[#14234b]"
+                          }`}
+                          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+                        >
+                          {project.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
-          {/* Dynamic Compact Tab Section */}
-          <div className="lg:col-span-8 flex flex-col w-full">
-            
-            {/* Custom 3-Tab Selector Grid Line */}
-            <div className="flex border-b border-[#E5DFD5] mb-4 overflow-x-auto scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] gap-6 md:gap-8 relative w-full">
-              <button
-                onClick={() => handleTabChange("ongoing")}
-                className={`pb-2 text-[10px] uppercase tracking-[0.2em] font-bold relative transition-colors duration-200 whitespace-nowrap focus:outline-none ${
-                  activeTab === "ongoing" ? "text-[#A35C46]" : "text-[#8A8276] hover:text-[#111111]"
-                }`}
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                Ongoing Works
-                {activeTab === "ongoing" && (
-                  <motion.div layoutId="activeTabLine" className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#A35C46]" />
-                )}
-              </button>
-              
-              <button
-                onClick={() => handleTabChange("completed")}
-                className={`pb-2 text-[10px] uppercase tracking-[0.2em] font-bold relative transition-colors duration-200 whitespace-nowrap focus:outline-none ${
-                  activeTab === "completed" ? "text-[#A35C46]" : "text-[#8A8276] hover:text-[#111111]"
-                }`}
-                style={{ fontFamily: "'Inter', sans-serif" }}
+          {/* 2. COMPLETED PROJECTS */}
+          <div className="pb-1">
+            <button
+              onClick={() => setActiveAccordion(activeAccordion === "completed" ? null : "completed")}
+              className="w-full flex justify-between items-center py-1.5 text-left group"
+            >
+              <p
+                className="uppercase tracking-[0.26em] text-[10px] text-[#b58d45]"
+                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
               >
                 Completed Landscapes
-                {activeTab === "completed" && (
-                  <motion.div layoutId="activeTabLine" className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#A35C46]" />
-                )}
-              </button>
-
-              <button
-                onClick={() => handleTabChange("commercial")}
-                className={`pb-2 text-[10px] uppercase tracking-[0.2em] font-bold relative transition-colors duration-200 whitespace-nowrap focus:outline-none ${
-                  activeTab === "commercial" ? "text-[#A35C46]" : "text-[#8A8276] hover:text-[#111111]"
-                }`}
-                style={{ fontFamily: "'Inter', sans-serif" }}
+              </p>
+              <motion.div
+                animate={{ rotate: activeAccordion === "completed" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-[#b58d45] group-hover:text-[#14234b] transition-colors"
               >
-                Commercial Portfolios
-                {activeTab === "commercial" && (
-                  <motion.div layoutId="activeTabLine" className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#A35C46]" />
-                )}
-              </button>
-            </div>
+                <ChevronDown size={16} />
+              </motion.div>
+            </button>
 
-            {/* Micro Tag Cluster Wrapper */}
-            <div className="min-h-[110px] w-full">
-              <AnimatePresence mode="wait">
+            <AnimatePresence initial={false}>
+              {activeAccordion === "completed" && (
                 <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex flex-wrap gap-2 max-h-[150px] overflow-y-auto pr-1 items-start content-start"
+                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                  animate={{ height: "auto", opacity: 1, marginTop: 12 }}
+                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="overflow-hidden"
                 >
-                  {getActiveProjects().map((project, idx) => {
-                    const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
-                    return (
-                      <button
-                        key={idx}
-                        onClick={() => {
-                          setSelectedProjectName(project.name);
-                          setSelectedLocation(project.location);
-                        }}
-                        className={`h-[30px] px-3.5 text-[9px] uppercase tracking-[0.12em] font-medium rounded-sm transition-all duration-200 flex items-center justify-center focus:outline-none ${
-                          isSelected
-                            ? "bg-[#111111] text-[#FFFFFF] shadow-sm"
-                            : "bg-[#FFFFFF] border border-[#E5DFD5] text-[#4A4A4A] hover:border-[#111111] hover:text-[#111111]"
-                        }`}
-                        style={{ fontFamily: "'Inter', sans-serif" }}
-                      >
-                        {project.name}
-                      </button>
-                    );
-                  })}
+                  <div className="flex flex-wrap gap-2.5 pt-0.5">
+                    {completedProjects.map((project, idx) => {
+                      const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => handleProjectClick(project.name, project.location)}
+                          className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-250 ${
+                            isSelected
+                              ? "bg-[#14234b] border-[#14234b] text-white shadow-sm shadow-blue-900/10"
+                              : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white hover:border-[#14234b]"
+                          }`}
+                          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+                        >
+                          {project.name}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </motion.div>
-              </AnimatePresence>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* DYNAMIC METADATA FOOTER */}
+          <div className="mt-2 pt-4 border-t border-[#f3eee5] flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-3 px-3.5 py-1.5 bg-[#fdfcf9] border border-[#f0e9dd] rounded-full shadow-sm">
+              <MapPin className="w-3.5 h-3.5 text-[#d1a54d]" />
+              <div className="flex items-center gap-2">
+                <span className="text-[9px] tracking-[0.12em] uppercase text-[#7a8293]" style={{ fontFamily: "'Inter', sans-serif" }}>Location:</span>
+                <p
+                  className="text-[10.5px] uppercase tracking-[0.16em] text-[#14234b]"
+                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+                >
+                  {selectedLocation}
+                </p>
+              </div>
             </div>
 
-            {/* Context Ledger Footer */}
-            <div className="mt-4 pt-3 border-t border-[#E5DFD5] flex flex-wrap items-center justify-between gap-2 w-full">
-              <div className="flex items-center gap-2 h-4">
-                <MapPin size={12} className="text-[#A35C46] shrink-0" />
-                <span className="text-[9px] tracking-[0.12em] uppercase text-[#8A8276] font-medium leading-none" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  Context Location:
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.15em] text-[#111111] font-bold leading-none" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  {selectedLocation}
-                </span>
-              </div>
-              
-              <span className="text-base text-[#111111] font-light italic leading-none" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            <div className="text-center lg:text-right">
+              <span className="text-[9.5px] uppercase tracking-[0.12em] text-[#7a8293] block mb-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>Selected Landmark:</span>
+              <span className="text-lg md:text-xl text-[#14234b] font-semibold italic" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 {selectedProjectName}
               </span>
             </div>
-
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
