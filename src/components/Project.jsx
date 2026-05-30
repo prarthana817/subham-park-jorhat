@@ -5,9 +5,8 @@ import {
   Ruler,
   Construction,
   Users,
-  ChevronDown,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import logo from "../assests/images/shubham_logo.png";
 
 const stats = [
@@ -66,7 +65,6 @@ const fadeInUp = {
 export default function ProjectOverview() {
   const [selectedLocation, setSelectedLocation] = useState("Jorhat");
   const [selectedProjectName, setSelectedProjectName] = useState("Subham Garden");
-  const [activeAccordion, setActiveAccordion] = useState("ongoing");
 
   const handleProjectClick = (name, location) => {
     setSelectedLocation(location);
@@ -89,7 +87,7 @@ export default function ProjectOverview() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1220px] mx-auto px-4 lg:px-6">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full">
         
         {/* ================= HEADER SECTION ================= */}
         <motion.div {...fadeInUp} className="mb-2">
@@ -121,7 +119,7 @@ export default function ProjectOverview() {
           {stats.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -4, boxShadow: "0_10px_25px_rgba(20,35,75,0.05)" }}
+              whileHover={{ y: -4, boxShadow: "0px 10px 25px rgba(20,35,75,0.05)" }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
               className="rounded-[20px] border border-[#f0e8db] bg-white p-4 flex items-center gap-4 transition-all duration-300"
             >
@@ -163,11 +161,12 @@ export default function ProjectOverview() {
                 transition={{
                   duration: 6,
                   repeat: Infinity,
+                  repeatType: "reverse",
                   ease: "easeInOut",
                 }}
                 whileHover={{ 
                   scale: 1.03,
-                  filter: "drop-shadow(0 15px 25px rgba(20,35,75,0.04))"
+                  filter: "drop-shadow(0px 15px 25px rgba(20,35,75,0.04))"
                 }}
                 className="relative w-[190px] sm:w-[210px] md:w-[230px] flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
@@ -224,121 +223,79 @@ export default function ProjectOverview() {
           </div>
         </motion.div>
 
-        {/* ================= PROJECTS TWO-TAB ACCORDION PANEL ================= */}
+        {/* ================= STATIC PROJECT LIST CONTAINER ================= */}
         <motion.div
           {...fadeInUp}
-          className="rounded-[24px] border border-[#e8dfd0] bg-white p-5 md:p-6 shadow-[0_8px_24px_rgba(0,0,0,0.015)] flex flex-col gap-3"
+          className="rounded-[24px] border border-[#e8dfd0] bg-white p-6 md:p-8 shadow-[0_8px_24px_rgba(0,0,0,0.015)] flex flex-col gap-8"
         >
-          {/* 1. ONGOING PROJECTS */}
-          <div className="border-b border-[#f3eee5] pb-3">
-            <button
-              onClick={() => setActiveAccordion(activeAccordion === "ongoing" ? null : "ongoing")}
-              className="w-full flex justify-between items-center py-1.5 text-left group"
-            >
+          {/* SECTION A: ONGOING PROJECTS */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
               <p
                 className="uppercase tracking-[0.26em] text-[10px] text-[#b58d45]"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
               >
                 Ongoing Projects
               </p>
-              <motion.div
-                animate={{ rotate: activeAccordion === "ongoing" ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-                className="text-[#b58d45] group-hover:text-[#14234b] transition-colors"
-              >
-                <ChevronDown size={16} />
-              </motion.div>
-            </button>
+              <div className="flex-grow h-[1px] bg-[#f3eee5]" />
+            </div>
 
-            <AnimatePresence initial={false}>
-              {activeAccordion === "ongoing" && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                  animate={{ height: "auto", opacity: 1, marginTop: 12 }}
-                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                  transition={{ duration: 0.25, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="flex flex-wrap gap-2.5 pt-0.5">
-                    {ongoingProjects.map((project, idx) => {
-                      const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => handleProjectClick(project.name, project.location)}
-                          className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-250 ${
-                            isSelected
-                              ? "bg-[#14234b] border-[#14234b] text-white shadow-sm shadow-blue-900/10"
-                              : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white hover:border-[#14234b]"
-                          }`}
-                          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
-                        >
-                          {project.name}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div className="flex flex-wrap gap-2.5">
+              {ongoingProjects.map((project, idx) => {
+                const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => handleProjectClick(project.name, project.location)}
+                    className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer ${
+                      isSelected
+                        ? "bg-[#14234b] border-[#14234b] text-white shadow-sm shadow-blue-900/10"
+                        : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white hover:border-[#14234b]"
+                    }`}
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+                  >
+                    {project.name}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* 2. COMPLETED PROJECTS */}
-          <div className="pb-1">
-            <button
-              onClick={() => setActiveAccordion(activeAccordion === "completed" ? null : "completed")}
-              className="w-full flex justify-between items-center py-1.5 text-left group"
-            >
+          {/* SECTION B: COMPLETED PROJECTS */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
               <p
                 className="uppercase tracking-[0.26em] text-[10px] text-[#b58d45]"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
               >
                 Completed Projects
               </p>
-              <motion.div
-                animate={{ rotate: activeAccordion === "completed" ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-                className="text-[#b58d45] group-hover:text-[#14234b] transition-colors"
-              >
-                <ChevronDown size={16} />
-              </motion.div>
-            </button>
+              <div className="flex-grow h-[1px] bg-[#f3eee5]" />
+            </div>
 
-            <AnimatePresence initial={false}>
-              {activeAccordion === "completed" && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                  animate={{ height: "auto", opacity: 1, marginTop: 12 }}
-                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                  transition={{ duration: 0.25, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="flex flex-wrap gap-2.5 pt-0.5">
-                    {completedProjects.map((project, idx) => {
-                      const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => handleProjectClick(project.name, project.location)}
-                          className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-250 ${
-                            isSelected
-                              ? "bg-[#14234b] border-[#14234b] text-white shadow-sm shadow-blue-900/10"
-                              : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white hover:border-[#14234b]"
-                          }`}
-                          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
-                        >
-                          {project.name}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div className="flex flex-wrap gap-2.5">
+              {completedProjects.map((project, idx) => {
+                const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => handleProjectClick(project.name, project.location)}
+                    className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer ${
+                      isSelected
+                        ? "bg-[#14234b] border-[#14234b] text-white shadow-sm shadow-blue-900/10"
+                        : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white hover:border-[#14234b]"
+                    }`}
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+                  >
+                    {project.name}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* DYNAMIC METADATA FOOTER */}
-          <div className="mt-2 pt-4 border-t border-[#f3eee5] flex flex-wrap items-center justify-between gap-3">
+          {/* DYNAMIC METADATA FOOTER (REMOVED SELECTED LANDMARK) */}
+          <div className="pt-5 border-t border-[#f3eee5] flex items-center">
             <div className="flex items-center gap-3 px-3.5 py-1.5 bg-[#fdfcf9] border border-[#f0e9dd] rounded-full shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-[#d1a54d]" />
               <div className="flex items-center gap-2">
@@ -350,13 +307,6 @@ export default function ProjectOverview() {
                   {selectedLocation}
                 </p>
               </div>
-            </div>
-
-            <div className="text-center lg:text-right">
-              <span className="text-[9.5px] uppercase tracking-[0.12em] text-[#7a8293] block mb-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>Selected Landmark:</span>
-              <span className="text-lg md:text-xl text-[#14234b] font-semibold italic" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                {selectedProjectName}
-              </span>
             </div>
           </div>
 
