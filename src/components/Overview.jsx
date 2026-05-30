@@ -13,7 +13,7 @@ export default function Overview({ setOpen }) {
   return (
     <section
       id="overview"
-      className="relative overflow-hidden py-12 lg:py-16 bg-[#f8f5ed]"
+      className="relative overflow-hidden py-16 lg:py-24 bg-[#f8f5ed]"
     >
       {/* GRID BACKGROUND */}
       <div
@@ -39,8 +39,9 @@ export default function Overview({ setOpen }) {
       <div className="absolute top-[-100px] left-[-100px] w-[260px] h-[260px] bg-[#d7b56d]/10 blur-[120px] rounded-full" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[260px] h-[260px] bg-[#2143b5]/10 blur-[120px] rounded-full" />
 
-      <div className="relative z-10 max-w-[1380px] mx-auto px-5 lg:px-6">
-        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-10 items-center">
+      {/* Tightened max-width constraint to keep contents close and premium */}
+      <div className="relative z-10 max-w-[1150px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
           
           {/* LEFT CONTENT */}
           <motion.div
@@ -48,9 +49,10 @@ export default function Overview({ setOpen }) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="w-full"
           >
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-[60px] h-[2px] bg-[#d1a54d]" />
+              <div className="w-[40px] h-[2px] bg-[#d1a54d]" />
               <p
                 className="uppercase tracking-[0.32em] text-[10px] text-[#c79d47]"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
@@ -59,16 +61,16 @@ export default function Overview({ setOpen }) {
               </p>
             </div>
 
-            {/* NATURAL HEADING FLOW - REMOVED FORCED BR TAGS */}
             <h2
-              className="text-[#111111] text-[36px] md:text-[46px] lg:text-[50px] leading-[1.05] tracking-[-1px] mb-3.5"
+              className="text-[#111111] text-[34px] md:text-[44px] lg:text-[48px] leading-[1.08] tracking-[-1px] mb-4"
               style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}
             >
               Elegant <span className="italic text-[#d1a54d]">Living</span> Crafted For Modern Homes
             </h2>
 
+            {/* Changed from text-justify to text-left to prevent luxury-breaking typography gaps */}
             <p
-              className="text-[15px] leading-[1.65] text-[#5f6674] max-w-[680px] mb-5 text-justify"
+              className="text-[15px] leading-[1.65] text-[#5f6674] max-w-[620px] mb-6 text-left"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
             >
               Experience thoughtfully designed living spaces with elegant architecture,
@@ -78,18 +80,18 @@ export default function Overview({ setOpen }) {
 
             <button
               onClick={() => setOpen(true)}
-              className="inline-flex items-center gap-3 px-7 h-[46px] rounded-full bg-[#162a63] hover:bg-[#10214f] text-white uppercase tracking-[0.16em] text-[10px] shadow-[0_10px_24px_rgba(22,42,99,0.2)] hover:-translate-y-[2px] transition-all duration-300 select-none cursor-pointer"
+              className="inline-flex items-center gap-3 px-7 h-[46px] rounded-full bg-[#162a63] hover:bg-[#10214f] text-white uppercase tracking-[0.16em] text-[10px] shadow-[0_10px_24px_rgba(22,42,99,0.2)] hover:-translate-y-[2px] transition-all duration-300 select-none cursor-pointer mb-8 lg:mb-10"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
             >
               Schedule A Visit
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
 
-            {/* COMPACTED FEATURES GRID WITH EXACT PRESERVED CONTENT */}
-            <div className="grid sm:grid-cols-2 gap-3 mt-6 max-w-[680px]">
+            {/* FEATURES GRID */}
+            <div className="grid sm:grid-cols-2 gap-3.5 max-w-[620px]">
               
               {/* CONFIGURATION */}
-              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-3.5 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
+              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-4 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
                 <div className="w-[42px] h-[42px] rounded-[10px] bg-[#f5f5f5] flex items-center justify-center shrink-0">
                   <ShieldCheck size={18} className="text-[#333333]" />
                 </div>
@@ -110,7 +112,7 @@ export default function Overview({ setOpen }) {
               </div>
 
               {/* 24x7 POWER BACKUP */}
-              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-3.5 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
+              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-4 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
                 <div className="w-[42px] h-[42px] rounded-[10px] bg-[#f5f5f5] flex items-center justify-center shrink-0">
                   <Zap size={17} className="text-[#333333]" />
                 </div>
@@ -131,7 +133,7 @@ export default function Overview({ setOpen }) {
               </div>
 
               {/* SMART SECURITY */}
-              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-3.5 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
+              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-4 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
                 <div className="w-[42px] h-[42px] rounded-[10px] bg-[#f5f5f5] flex items-center justify-center shrink-0">
                   <LockKeyhole size={16} className="text-[#333333]" />
                 </div>
@@ -152,7 +154,7 @@ export default function Overview({ setOpen }) {
               </div>
 
               {/* TOTAL UNITS */}
-              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-3.5 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
+              <div className="bg-white rounded-[14px] border border-[#f0f0f0]/90 p-4 flex items-center gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.04)]">
                 <div className="w-[42px] h-[42px] rounded-[10px] bg-[#f5f5f5] flex items-center justify-center shrink-0">
                   <Droplets size={17} className="text-[#333333]" />
                 </div>
@@ -175,15 +177,15 @@ export default function Overview({ setOpen }) {
             </div>
           </motion.div>
 
-          {/* COMPACT SIDE CARD */}
+          {/* RIGHT SIDE COMPACT CARD */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="w-full max-w-[440px] lg:ml-auto"
+            className="w-full max-w-[420px] lg:ml-auto"
           >
-            <div className="relative bg-[#fffdfa] rounded-[24px] border border-[#ede2d3] p-6 shadow-[0_15px_45px_rgba(0,0,0,0.04)] overflow-hidden">
+            <div className="relative bg-[#fffdfa] rounded-[24px] border border-[#ede2d3] p-7 md:p-8 shadow-[0_15px_45px_rgba(0,0,0,0.04)] overflow-hidden">
               <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-[#2143b5]/5 blur-[70px] rounded-full" />
 
               <div
@@ -194,7 +196,7 @@ export default function Overview({ setOpen }) {
               </div>
 
               <p
-                className="text-[18px] md:text-[21px] leading-[1.55] text-[#202020] italic mb-6"
+                className="text-[19px] md:text-[21px] leading-[1.55] text-[#202020] italic mb-6"
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontWeight: 400,
@@ -216,7 +218,6 @@ export default function Overview({ setOpen }) {
                 </div>
 
                 <div>
-                  {/* PRECISE 17PX CARD TITLE FONT SIZE */}
                   <h4
                     className="text-[17px] text-[#171717] font-bold leading-tight mb-[2px]"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
