@@ -19,7 +19,7 @@ const stats = [
   {
     icon: Home,
     value: "44",
-    label: "TOTAL UNITS",
+    label: "SPACIOUS UNITS",
   },
 ];
 

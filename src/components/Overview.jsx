@@ -83,7 +83,7 @@ export default function Overview({ setOpen }) {
                     Configuration
                   </h4>
                   <p className="text-[11px] text-[#707887] mt-1 font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    2 BHK & 3 BHK Apartments
+                    2 BHK & 3 BHK & 3.5 BHK Apartments
                   </p>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function Overview({ setOpen }) {
                     24×7 Power Backup
                   </h4>
                   <p className="text-[11px] text-[#707887] mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    Uninterrupted premium living
+                    Common areas only
                   </p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function Overview({ setOpen }) {
                     Total Units
                   </h4>
                   <p className="text-[11px] text-[#707887] mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    8 premium units
+                    44 Premium Units
                   </p>
                 </div>
               </div>
