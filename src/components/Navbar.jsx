@@ -16,27 +16,18 @@ import logo from "../assests/images/logo.png";
 export default function Navbar({
   galleryPopupOpen,
 }) {
-  const [isOpen, setIsOpen] =
-    useState(false);
-
-  const [scrolled, setScrolled] =
-    useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 15);
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
+    window.addEventListener("scroll", handleScroll);
 
     return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
@@ -82,10 +73,8 @@ export default function Navbar({
       justify-center
       px-3
       pt-3
-
       transition-all
       duration-300
-
       ${
         galleryPopupOpen
           ? "opacity-0 invisible pointer-events-none"
@@ -97,15 +86,11 @@ export default function Navbar({
         className={`
         w-full
         max-w-[1240px]
-
         rounded-[22px]
-
         border
         border-[#eadfcb]
-
         transition-all
         duration-300
-
         ${
           scrolled
             ? "bg-[#f8f5ed]/95 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
@@ -173,8 +158,7 @@ export default function Navbar({
                 whitespace-nowrap
                 "
                 style={{
-                  fontFamily:
-                    "'Inter', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 600,
                 }}
               >
@@ -203,21 +187,17 @@ export default function Navbar({
               duration-300
               "
               style={{
-                fontFamily:
-                  "'Inter', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontWeight: 600,
               }}
             >
               Download Brochure
-
               <ArrowUpRight size={12} />
             </a>
           </div>
 
           <button
-            onClick={() =>
-              setIsOpen(!isOpen)
-            }
+            onClick={() => setIsOpen(!isOpen)}
             className="
             ml-auto
             lg:hidden
@@ -231,13 +211,26 @@ export default function Navbar({
             justify-center
             "
           >
-            {isOpen ? (
-              <X size={20} />
-            ) : (
-              <Menu size={20} />
-            )}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
+
+        {/* Mobile Menu Panel */}
+        {isOpen && (
+          <div className="lg:hidden bg-[#f8f5ed] border-t border-[#eadfcb] p-6 flex flex-col gap-4 rounded-b-[22px]">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-[14px] uppercase tracking-[0.1em] text-[#171717] font-semibold py-2"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
     </header>
   );
