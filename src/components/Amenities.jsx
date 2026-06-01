@@ -13,10 +13,10 @@ import {
   Camera,
   Leaf,
   ArrowUpRight,
+  Building2,
 } from "lucide-react";
 
 import { GiShuttlecock } from "react-icons/gi";
-import { MdOutlineCelebration } from "react-icons/md";
 
 const amenities = [
   {
@@ -37,7 +37,7 @@ const amenities = [
   {
     title: "Community Hall",
     desc: "Elegant celebration & events zone.",
-    icon: MdOutlineCelebration,
+    icon: Building2,
   },
   {
     title: "Gymnasium",
@@ -95,7 +95,7 @@ export default function Amenities({ setOpen }) {
 
       <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
 
-        {/* ── HEADER CARD (unchanged dividers) ── */}
+        {/* ── HEADER CARD ── */}
         <div
           className="relative overflow-hidden rounded-[30px] lg:rounded-[34px] bg-[#f8f5ed] border border-[#ece2d2] mb-14 shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
         >
@@ -147,14 +147,14 @@ export default function Amenities({ setOpen }) {
                 className="mt-8 inline-flex items-center gap-3 px-7 py-4 rounded-full bg-[#14234b] hover:bg-[#0f1c3f] text-white uppercase tracking-[0.18em] text-[10px] transition-all duration-300 hover:-translate-y-[2px] shadow-[0_14px_34px_rgba(20,35,75,0.22)]"
                 style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 600 }}
               >
-                Book Site Visit
+                Book A Site Visit
                 <ArrowUpRight size={15} />
               </button>
             </div>
           </div>
         </div>
 
-        {/* ── THIN GOLD RULE before grid ── */}
+        {/* ── THIN GOLD RULE ── */}
         <div className="flex items-center gap-4 mb-10 px-1">
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
           <span
@@ -166,7 +166,7 @@ export default function Amenities({ setOpen }) {
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
         </div>
 
-        {/* ── AMENITIES GRID — new horizontal card layout ── */}
+        {/* ── AMENITIES GRID ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-0">
           {amenities.map((item, index) => {
             const Icon = item.icon;
@@ -234,7 +234,7 @@ export default function Amenities({ setOpen }) {
                   </p>
                 </div>
 
-                {/* animated gold underline on hover */}
+                {/* animated gold underline */}
                 <div
                   className="
                     absolute bottom-0 left-7

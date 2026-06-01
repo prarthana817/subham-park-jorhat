@@ -65,7 +65,7 @@ export default function Overview({ setOpen }) {
                 className="inline-flex items-center gap-2 px-5 h-[38px] rounded-full bg-[#162a63] hover:bg-[#10214f] text-white uppercase tracking-[0.12em] text-[9px] shadow-[0_4px_15px_rgba(22,42,99,0.15)] hover:-translate-y-[1px] transition-all duration-200 select-none cursor-pointer"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
               >
-                Schedule A Visit
+                Schedule A Site Visit
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </button>
             </div>

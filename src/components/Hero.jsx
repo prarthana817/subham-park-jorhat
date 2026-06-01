@@ -85,7 +85,7 @@ export default function Hero({ setOpen }) {
               Jorhat.
             </p>
 
-            {/* LOCATION + STRETCHED PRICE CARDS CONTAINER */}
+            {/* LOCATION + PRICE CARDS CONTAINER */}
             <div className="flex flex-wrap items-center gap-4">
               
               {/* LOCATION CARD */}
@@ -129,7 +129,6 @@ export default function Hero({ setOpen }) {
                 <div className="absolute inset-0 rounded-[16px] before:absolute before:inset-0 before:rounded-[16px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_4s_linear_infinite] before:content-['']" />
                 <div className="absolute inset-[1px] rounded-[15px] bg-[#e8d6ab]" />
                 
-                {/* CONTENT */}
                 <div className="relative z-10 min-w-[85px]">
                   <p
                     className="uppercase tracking-[0.18em] text-[8px] text-[#9e7426] mb-[3px]"
@@ -171,27 +170,20 @@ export default function Hero({ setOpen }) {
                   </div>
                 </div>
               </div>
-
             </div>
 
-            {/* ================= BUTTONS CTA SECTION ================= */}
-            <div className="mt-9 flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-8 w-full sm:w-auto">
+            {/* BUTTONS CTA SECTION - আপডেট করা হয়েছে */}
+            <div className="mt-9 flex flex-wrap items-center gap-6 sm:gap-8">
               
-              {/* NEW DESIGN: PRIMARY CTA - MATCHED WITH PRICE CARD DESIGN */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setOpen(true)}
-                className="relative h-[48px] w-full sm:w-auto px-7 rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden text-[#111111] flex items-center justify-center select-none cursor-pointer group"
+                className="h-[44px] px-7 rounded-[16px] bg-[#162a63] hover:bg-[#070715] text-white flex items-center justify-center select-none cursor-pointer transition-colors duration-300 shadow-lg shrink-0"
               >
-                {/* Animated Border Background Effect */}
-                <div className="absolute inset-0 rounded-[16px] before:absolute before:inset-0 before:rounded-[16px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_4s_linear_infinite] before:content-['']" />
-                <div className="absolute inset-[1px] rounded-[15px] bg-[#e8d6ab] transition-colors duration-300 group-hover:bg-[#ebdcae]" />
-                
-                {/* Button Interactive Content */}
-                <div className="relative z-10 flex items-center justify-center gap-2.5">
+                <div className="flex items-center justify-center gap-2.5 whitespace-nowrap">
                   <svg 
-                    className="w-3.5 h-3.5 text-[#9e7426]" 
+                    className="w-3.5 h-3.5" 
                     fill="none" 
                     stroke="currentColor" 
                     strokeWidth="2.5" 
@@ -200,7 +192,7 @@ export default function Hero({ setOpen }) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                   </svg>
                   <span 
-                    className="text-[10.5px] uppercase tracking-[0.22em] font-bold text-[#111111]"
+                    className="text-[10.5px] uppercase tracking-[0.22em] font-bold"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     Download Brochure
@@ -208,7 +200,6 @@ export default function Hero({ setOpen }) {
                 </div>
               </motion.button>
 
-              {/* SECONDARY CTA: EXPLORE MORE */}
               <button
                 onClick={() => {
                   document.getElementById("overview")?.scrollIntoView({ 
@@ -216,7 +207,7 @@ export default function Hero({ setOpen }) {
                     block: "start" 
                   });
                 }}
-                className="group relative flex items-center justify-center gap-2 py-2 bg-transparent text-[#14234b] select-none cursor-pointer"
+                className="group relative flex items-center justify-center gap-2 py-2 bg-transparent text-[#14234b] select-none cursor-pointer shrink-0"
               >
                 <span 
                   className="text-[10.5px] uppercase tracking-[0.22em] font-bold"
@@ -235,12 +226,9 @@ export default function Hero({ setOpen }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                 </svg>
 
-                {/* ANIMATED GOLD ACCENT UNDERLINE */}
                 <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-[#caa64d] -translate-x-1/2 transition-all duration-300 ease-in-out group-hover:w-full" />
               </button>
-
             </div>
-
           </motion.div>
 
           {/* RIGHT IMAGE */}
@@ -259,7 +247,6 @@ export default function Hero({ setOpen }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent" />
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

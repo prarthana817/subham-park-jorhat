@@ -119,7 +119,7 @@ export default function Contact() {
                 </div>
 
                 <button style={sansFont} className="mt-4 w-full h-[48px] rounded-[10px] bg-[#14234b] hover:bg-[#0f1c3d] text-white uppercase tracking-[0.12em] text-[11px] transition-all duration-200 shadow-md font-bold cursor-pointer">
-                  BOOK SITE VISIT
+                  BOOK A SITE VISIT
                 </button>
 
                 <p className="mt-3 text-center text-[11px] text-[#7b8390]" style={sansFont}>

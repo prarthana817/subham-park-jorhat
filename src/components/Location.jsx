@@ -66,7 +66,7 @@ export default function Location() {
       <div className="absolute left-0 top-0 h-full w-[120px] opacity-[0.03] hidden lg:block" style={{ backgroundImage: "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 9px)" }} />
 
       <div className="relative z-10 max-w-[1320px] mx-auto px-4 lg:px-6">
-        {/* UPPER SECTION - mt-10 added here */}
+        {/* UPPER SECTION */}
         <div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-5 lg:gap-6 items-stretch mb-8 mt-10">
           
           <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }} className="flex flex-col">
@@ -107,7 +107,15 @@ export default function Location() {
             <div className="absolute bottom-0 left-0 w-full p-5 md:p-6 z-20">
               <h3 className="text-white text-[26px] md:text-[34px] leading-[1] mb-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>Strategic Location</h3>
               <p className="text-white/90 text-[13px] md:text-[14px] leading-[1.7] max-w-[460px] mb-4" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>Located in the heart of Jorhat with effortless connectivity to schools, hospitals, shopping centres and major transportation hubs.</p>
-              <a href="https://maps.google.com/?q=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[42px] px-5 rounded-full bg-white text-[#111] text-[10px] uppercase tracking-[0.16em] hover:-translate-y-[2px] transition-all duration-300" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>View Location</a>
+              
+              {/* Button ব্যবহার করা হয়েছে যাতে ব্রাউজার একই ট্যাবে লোড করে */}
+              <button 
+                onClick={() => window.location.assign("https://maps.google.com/?q=1+Sonari+Gaon+Tarajan+Jorhat+Bhatemora+Gaon+Assam+785001")}
+                className="inline-flex items-center h-[42px] px-5 rounded-full bg-white text-[#111] text-[10px] uppercase tracking-[0.16em] hover:-translate-y-[2px] transition-all duration-300" 
+                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+              >
+                View Location
+              </button>
             </div>
           </motion.div>
         </div>
