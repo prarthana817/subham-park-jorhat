@@ -21,15 +21,9 @@ export default function Contact() {
       {/* ... (পূর্বের ব্যাকগ্রাউন্ড কোড একই থাকবে) ... */}
       
       <div className="absolute inset-0 bg-[#0d1b46]" />
-      
-      {/* ANIMATED BACKGROUND LOGO */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] opacity-10 pointer-events-none">
-        <div className="w-full h-full animate-[spin_30s_linear_infinite] flex items-center justify-center">
-          <img src={logo} alt="Logo Background" className="w-full h-full object-contain opacity-40 animate-pulse" />
-        </div>
-      </div>
+    
 
-      <div className="relative z-10 max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full relative z-10 -mt-4 md:-mt-6">
         
         {/* HEADER SECTION */}
         <div className="flex items-center gap-3 mb-8 pl-2">

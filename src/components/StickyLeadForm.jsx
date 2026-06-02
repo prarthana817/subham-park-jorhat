@@ -13,37 +13,23 @@ export default function StickyLeadForm({
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const footer =
-        document.getElementById("footer");
+    const footer = document.getElementById("footer");
+    if (!footer) return;
 
-      if (!footer) return;
-
-      const footerRect =
-        footer.getBoundingClientRect();
-
-      if (
-        footerRect.top <=
-        window.innerHeight
-      ) {
-        setHide(true);
-      } else {
-        setHide(false);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHide(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
       }
-    };
-
-    handleScroll();
-
-    window.addEventListener(
-      "scroll",
-      handleScroll
     );
 
+    observer.observe(footer);
+
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      observer.disconnect();
     };
   }, []);
 

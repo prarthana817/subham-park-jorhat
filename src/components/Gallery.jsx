@@ -273,7 +273,7 @@ export default function Gallery({
         }}
       />
 
-      <div className="relative z-10 max-w-[1500px] mx-auto px-4 lg:px-6 mt-0">
+      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8 -mt-4 md:-mt-6">
         {/* ================================= */}
         {/* HEADING */}
         {/* ================================= */}

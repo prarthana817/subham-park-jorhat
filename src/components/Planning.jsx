@@ -202,18 +202,19 @@ export default function FloorPlans() {
       />
 
       <div
-        className="
-        relative
-        z-10
+  className="
+  relative
+  z-10
 
-        max-w-[1450px]
-        mx-auto
+  max-w-[1450px]
+  mx-auto
 
-        px-5
-        lg:px-8
-        mt-10
-        "
-      >
+  px-5
+  lg:px-8
+  -mt-4
+  md:-mt-6
+  "
+>
         {/* HEADER */}
 
         <div className="mb-10 lg:mb-12">
