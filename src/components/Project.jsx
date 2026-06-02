@@ -39,6 +39,7 @@ const ongoingProjects = [
   { name: "Subham Ashray", location: "Garal" },
   { name: "Subham Park", location: "Bongaigaon" },
   { name: "Subham Kishori Heights", location: "Dibrugarh" },
+  { name: "The Peak", location: "GS Road" },
 ];
 
 const completedProjects = [

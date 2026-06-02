@@ -226,22 +226,18 @@ export default function PopupForm({ open, setOpen }) {
                     fontFamily: "'Josefin Sans', sans-serif",
                   }}
                 >
-                  <option>Select Unit</option>
+                  <option>Select Configuration</option>
 
                   <option>
-                    2 BHK Smart – 800 sq.ft
+                    2.5 BHK
                   </option>
 
                   <option>
-                    2.5 BHK – 1096 sq.ft
+                    3 BHK 
                   </option>
 
                   <option>
-                    3 BHK – 1339 sq.ft & 1530 sq.ft
-                  </option>
-
-                  <option>
-                    3.5 BHK – 1684 sq.ft
+                    3.5 BHK
                   </option>
                 </select>
 
