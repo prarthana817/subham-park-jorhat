@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -21,6 +21,28 @@ import Preloader from "./components/Preloader";
 function App() {
   const [open, setOpen] = useState(false);
   const [galleryPopupOpen, setGalleryPopupOpen] = useState(false);
+  const [hideMobileCTA, setHideMobileCTA] = useState(false);
+
+  useEffect(() => {
+    const footer = document.getElementById("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHideMobileCTA(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+
+    observer.observe(footer);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <Router>
@@ -48,7 +70,13 @@ function App() {
 
                 {/* MOBILE CTA */}
 {!galleryPopupOpen && (
-  <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#14234b]/95 backdrop-blur-md px-3 py-3 flex gap-3 lg:hidden">
+  <div
+    className={`fixed bottom-0 left-0 right-0 z-50 bg-[#14234b]/95 backdrop-blur-md px-3 py-3 flex gap-3 lg:hidden transition-all duration-500 ${
+      hideMobileCTA
+        ? "opacity-0 invisible pointer-events-none translate-y-4"
+        : "opacity-100 visible translate-y-0"
+    }`}
+  >
     <button
       onClick={() => setOpen(true)}
       className="flex-1 h-[48px] rounded-full bg-[#d1a54d] hover:bg-[#be9339] text-[#111111] uppercase tracking-[0.14em] text-[10px] transition-all duration-300"
