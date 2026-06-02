@@ -32,7 +32,7 @@ export default function Hero({ setOpen }) {
       />
 
       <div className="relative z-10 max-w-[1380px] mx-auto w-full px-5 lg:px-6">
-        <div className="grid lg:grid-cols-[0.92fr_1.08fr] items-center gap-10 lg:gap-8">
+        <div className="grid lg:grid-cols-[1fr_1fr] items-center gap-10 lg:gap-12">
           
           {/* LEFT CONTENT */}
           <motion.div
@@ -93,29 +93,118 @@ export default function Hero({ setOpen }) {
               </div>
             </div>
 
-            {/* BUTTONS - flex-nowrap নিশ্চিত করা হয়েছে যাতে পাশাপাশি থাকে */}
-            <div className="mt-9 flex flex-row items-center gap-6 sm:gap-8 flex-nowrap">
-              <motion.button whileHover={{ scale: 1.02 }} onClick={() => setOpen(true)} className="h-[44px] px-7 rounded-[16px] bg-[#162a63] text-white flex items-center justify-center transition-colors">
-                <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold">Download Brochure</span>
-              </motion.button>
+            {/* BUTTONS */}
+<div className="mt-9 flex items-center gap-6 lg:gap-8">
+  <motion.button
+    whileHover={{ scale: 1.02 }}
+    onClick={() => setOpen(true)}
+    className="
+      flex-shrink-0
+      min-w-[180px]
 
-              <button onClick={() => document.getElementById("overview")?.scrollIntoView({ behavior: "smooth" })} className="group relative flex items-center justify-center gap-2 py-2 text-[#14234b]">
-                <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold whitespace-nowrap">
-  Explore More
-</span>
-                {/* অ্যারো রাখা হয়েছে */}
-                <svg className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                </svg>
-                <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-[#caa64d] -translate-x-1/2 transition-all group-hover:w-full" />
-              </button>
-            </div>
+      h-[44px]
+
+      px-4
+      sm:px-7
+
+      rounded-[16px]
+
+      bg-[#162a63]
+      text-white
+
+      flex
+      items-center
+      justify-center
+
+      transition-colors
+    "
+  >
+    <span
+      className="
+        text-[9px]
+        sm:text-[10.5px]
+
+        uppercase
+
+        tracking-[0.18em]
+        sm:tracking-[0.22em]
+
+        font-bold
+
+        whitespace-nowrap
+      "
+    >
+      Download Brochure
+    </span>
+  </motion.button>
+
+  <button
+    onClick={() =>
+      document
+        .getElementById("overview")
+        ?.scrollIntoView({ behavior: "smooth" })
+    }
+    className="
+      group
+
+      flex-shrink-0
+
+      flex
+      items-center
+      justify-center
+
+      gap-2
+
+      py-2
+
+      text-[#14234b]
+    "
+  >
+    <span
+      className="
+        text-[9px]
+        sm:text-[10.5px]
+
+        uppercase
+
+        tracking-[0.18em]
+        sm:tracking-[0.22em]
+
+        font-bold
+
+        whitespace-nowrap
+      "
+    >
+      Explore More
+    </span>
+
+    <svg
+      className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-y-0.5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      />
+    </svg>
+
+    <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-[#caa64d] -translate-x-1/2 transition-all group-hover:w-full" />
+  </button>
+</div>
           </motion.div>
 
           {/* RIGHT IMAGE */}
           <motion.div className="relative">
             <div className="relative overflow-hidden rounded-[34px] h-[360px] md:h-[470px] lg:h-[560px] w-full shadow-[0_25px_80px_rgba(0,0,0,0.10)]">
-              <img src={heroBg} alt="Subham Park" className="w-full h-full object-cover object-top" />
+              <img
+  src={heroBg}
+  alt="Subham Park"
+  className="w-full h-full object-cover object-[40%_center]"
+/>
             </div>
           </motion.div>
         </div>
