@@ -64,7 +64,7 @@ const fadeInUp = {
   transition: { duration: 0.5, ease: "easeOut" },
 };
 
-export default function ProjectOverview() {
+export default function ProjectOverview({ galleryPopupOpen }) {
   const [selectedLocation, setSelectedLocation] = useState("Jorhat");
   const [selectedProjectName, setSelectedProjectName] = useState("Subham Garden");
 
@@ -114,7 +114,7 @@ export default function ProjectOverview() {
 
         {/* Site Visit Form Component */}
         <div className="w-full -mt-10">
-           <StickyLeadForm />
+           <StickyLeadForm galleryPopupOpen={galleryPopupOpen} />
         </div>
 
         {/* ================= STATS MATRIX GRID ================= */}

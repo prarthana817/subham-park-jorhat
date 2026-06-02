@@ -26,6 +26,7 @@ import gallery8 from "../assests/images/gallery-8.jpg";
 import gallery9 from "../assests/images/gallery-9.jpg";
 import gallery10 from "../assests/images/amenities-1.jpg";
 import gallery11 from "../assests/images/amenities-2.jpg";
+
 const galleryImages = [
   { img: gallery1, title: "Community Hall" },
   { img: gallery2, title: "Gymnasium" },
@@ -40,7 +41,6 @@ const galleryImages = [
   { img: gallery11, title: "Elevation Left View" },
 ];
 
-
 export default function Gallery({
   setOpen,
   setGalleryPopupOpen,
@@ -49,10 +49,10 @@ export default function Gallery({
     useState(null);
 
   /*
-  ============================================
-  BODY LOCK WITHOUT LAYOUT SHIFT
-  ============================================
-  */
+   ============================================
+   BODY LOCK WITHOUT LAYOUT SHIFT
+   ============================================
+   */
 
   useEffect(() => {
     if (selectedImage) {
@@ -91,10 +91,10 @@ export default function Gallery({
   }, [selectedImage]);
 
   /*
-  ============================================
-  HIDE NAVBAR + STICKY FORM
-  ============================================
-  */
+   ============================================
+   HIDE NAVBAR + STICKY FORM
+   ============================================
+   */
 
   useEffect(() => {
     if (setGalleryPopupOpen) {
@@ -109,16 +109,16 @@ export default function Gallery({
 
   return (
     <section
-  id="gallery"
-  className="
-  relative
-  overflow-hidden
-  pt-0
-  lg:pt-0
-  pb-[120px]
-  bg-[#f8f5ed]
-  "
->
+      id="gallery"
+      className="
+      relative
+      overflow-hidden
+      pt-0
+      lg:pt-0
+      pb-[120px]
+      bg-[#f8f5ed]
+      "
+    >
       {/* ================================= */}
       {/* FULLSCREEN POPUP */}
       {/* ================================= */}
@@ -137,18 +137,13 @@ export default function Gallery({
             fixed
             inset-0
             z-[999999999]
-
             bg-black/95
-
             flex
             items-center
             justify-center
-
             p-4
             sm:p-6
-
             overflow-hidden
-
             isolation-isolate
             "
           >
@@ -177,32 +172,22 @@ export default function Gallery({
               fixed
               top-5
               right-5
-
               z-[9999999999]
-
               h-[56px]
               px-7
-
               rounded-full
-
               bg-white/10
               backdrop-blur-xl
-
               border
               border-white/10
-
               flex
               items-center
               gap-3
-
               text-white
-
               uppercase
               tracking-[0.18em]
               text-[11px]
-
               hover:bg-white/20
-
               transition-all
               duration-300
               "
@@ -240,14 +225,10 @@ export default function Gallery({
               className="
               relative
               z-[999999999]
-
               max-w-[96vw]
               max-h-[92vh]
-
               object-contain
-
               rounded-[24px]
-
               shadow-[0_25px_90px_rgba(0,0,0,0.55)]
               "
             />
@@ -292,7 +273,7 @@ export default function Gallery({
         }}
       />
 
-      <div className="relative z-10 max-w-[1500px] mx-auto px-4 lg:px-6 mt-10">
+      <div className="relative z-10 max-w-[1500px] mx-auto px-4 lg:px-6 mt-0">
         {/* ================================= */}
         {/* HEADING */}
         {/* ================================= */}
@@ -321,16 +302,12 @@ export default function Gallery({
           <h2
             className="
             text-[#111111]
-
             text-[36px]
             md:text-[48px]
             lg:text-[58px]
-
             leading-[0.95]
-
             tracking-[-2px]
-
-            max-w-[850px]
+            max-w-[550px]
             "
             style={{
               fontFamily:
@@ -370,29 +347,20 @@ export default function Gallery({
               onClick={() => setOpen(true)}
               className="
               mt-6
-
               inline-flex
               items-center
               gap-3
-
               h-[50px]
               px-7
-
               rounded-full
-
               bg-[#14234b]
               hover:bg-[#1b2f63]
-
               text-white
-
               uppercase
               tracking-[0.15em]
               text-[10px]
-
               shadow-[0_12px_28px_rgba(20,35,75,0.22)]
-
               hover:-translate-y-[2px]
-
               transition-all
               duration-300
               "
@@ -407,200 +375,200 @@ export default function Gallery({
           </div>
         </div>
 
-    {/* ================================= */}
-{/* PINTEREST / MASONRY GALLERY */}
-{/* ================================= */}
-
-<div
-  className="
-  columns-1
-  sm:columns-2
-  lg:columns-3
-  gap-5
-  "
->
-  {galleryImages.map((item, index) => (
-    <motion.div
-      key={index}
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.05,
-      }}
-      viewport={{ once: true }}
-      className="
-      group
-      relative
-      overflow-hidden
-      rounded-[26px]
-      mb-5
-      break-inside-avoid
-      border
-      border-[#e9dfcf]
-      bg-[#f1f1f1]
-      shadow-[0_18px_45px_rgba(0,0,0,0.05)]
-      "
-    >
-      {/* IMAGE */}
-
-      <img
-        src={item.img}
-        alt={item.title}
-        loading="lazy"
-        className={`
-        w-full
-        object-cover
-        transition-all
-        duration-700
-        group-hover:scale-105
-
-        ${
-  index === 9
-    ? "h-[399px]"
-    : index === galleryImages.length - 1
-    ? "h-[630px]"
-    : index % 8 === 0
-    ? "h-[480px]"
-    : index % 8 === 1
-    ? "h-[320px]"
-    : index % 8 === 2
-    ? "h-[280px]"
-    : index % 8 === 3
-    ? "h-[430px]"
-    : index % 8 === 4
-    ? "h-[340px]"
-    : index % 8 === 5
-    ? "h-[500px]"
-    : index % 8 === 6
-    ? "h-[300px]"
-    : "h-[360px]"
-}
-        `}
-      />
-
-      {/* OVERLAY */}
-
-      <div
-        className="
-        absolute
-        inset-0
-        bg-gradient-to-t
-        from-black/70
-        via-black/10
-        to-transparent
-        "
-      />
-
-      {/* SEARCH ICON */}
-
-      <div
-        className="
-        absolute
-        inset-0
-        flex
-        items-center
-        justify-center
-        opacity-0
-        group-hover:opacity-100
-        transition-all
-        duration-300
-        z-20
-        "
-      >
-        <button
-          onClick={() =>
-            setSelectedImage(item.img)
-          }
-          className="
-          w-14
-          h-14
-          rounded-full
-          bg-white/15
-          backdrop-blur-md
-          border
-          border-white/20
-          flex
-          items-center
-          justify-center
-          scale-75
-          group-hover:scale-100
-          transition-all
-          duration-300
-          "
-        >
-          <Search className="w-5 h-5 text-white" />
-        </button>
-      </div>
-
-      {/* CONTENT */}
-
-      <div
-        className="
-        absolute
-        bottom-0
-        left-0
-        w-full
-        p-5
-        z-30
-        "
-      >
-        <h3
-          className="
-          text-white
-          text-[20px]
-          md:text-[24px]
-          leading-none
-          "
-          style={{
-            fontFamily:
-              "'Cormorant Garamond', serif",
-            fontWeight: 500,
-          }}
-        >
-          {item.title}
-        </h3>
+        {/* ================================= */}
+        {/* PINTEREST / MASONRY GALLERY */}
+        {/* ================================= */}
 
         <div
           className="
-          mt-3
-          w-[55px]
-          h-[2px]
-          bg-[#d1a54d]
-          transition-all
-          duration-500
-          group-hover:w-[90px]
+          columns-1
+          sm:columns-2
+          lg:columns-3
+          gap-5
           "
-        />
-      </div>
+        >
+          {galleryImages.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.05,
+              }}
+              viewport={{ once: true }}
+              className="
+              group
+              relative
+              overflow-hidden
+              rounded-[26px]
+              mb-5
+              break-inside-avoid
+              border
+              border-[#e9dfcf]
+              bg-[#f1f1f1]
+              shadow-[0_18px_45px_rgba(0,0,0,0.05)]
+              "
+            >
+              {/* IMAGE */}
 
-      {/* GLOW */}
+              <img
+                src={item.img}
+                alt={item.title}
+                loading="lazy"
+                className={`
+                w-full
+                object-cover
+                transition-all
+                duration-700
+                group-hover:scale-105
 
-      <div
-        className="
-        absolute
-        bottom-[-60px]
-        right-[-60px]
-        w-[140px]
-        h-[140px]
-        rounded-full
-        bg-[#2143b5]/10
-        blur-[70px]
-        opacity-0
-        transition-all
-        duration-500
-        group-hover:opacity-100
-        "
-      />
-    </motion.div>
-  ))}
-</div>
+                ${
+                  index === 9
+                    ? "h-[399px]"
+                    : index === galleryImages.length - 1
+                    ? "h-[630px]"
+                    : index % 8 === 0
+                    ? "h-[480px]"
+                    : index % 8 === 1
+                    ? "h-[320px]"
+                    : index % 8 === 2
+                    ? "h-[280px]"
+                    : index % 8 === 3
+                    ? "h-[430px]"
+                    : index % 8 === 4
+                    ? "h-[340px]"
+                    : index % 8 === 5
+                    ? "h-[500px]"
+                    : index % 8 === 6
+                    ? "h-[300px]"
+                    : "h-[360px]"
+                }
+                `}
+              />
+
+              {/* OVERLAY */}
+
+              <div
+                className="
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-black/70
+                via-black/10
+                to-transparent
+                "
+              />
+
+              {/* SEARCH ICON */}
+
+              <div
+                className="
+                absolute
+                inset-0
+                flex
+                items-center
+                justify-center
+                opacity-0
+                group-hover:opacity-100
+                transition-all
+                duration-300
+                z-20
+                "
+              >
+                <button
+                  onClick={() =>
+                    setSelectedImage(item.img)
+                  }
+                  className="
+                  w-14
+                  h-14
+                  rounded-full
+                  bg-white/15
+                  backdrop-blur-md
+                  border
+                  border-white/20
+                  flex
+                  items-center
+                  justify-center
+                  scale-75
+                  group-hover:scale-100
+                  transition-all
+                  duration-300
+                  "
+                >
+                  <Search className="w-5 h-5 text-white" />
+                </button>
+              </div>
+
+              {/* CONTENT */}
+
+              <div
+                className="
+                absolute
+                bottom-0
+                left-0
+                w-full
+                p-5
+                z-30
+                "
+              >
+                <h3
+                  className="
+                  text-white
+                  text-[20px]
+                  md:text-[24px]
+                  leading-none
+                  "
+                  style={{
+                    fontFamily:
+                      "'Cormorant Garamond', serif",
+                    fontWeight: 500,
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+                <div
+                  className="
+                  mt-3
+                  w-[55px]
+                  h-[2px]
+                  bg-[#d1a54d]
+                  transition-all
+                  duration-500
+                  group-hover:w-[90px]
+                  "
+                />
+              </div>
+
+              {/* GLOW */}
+
+              <div
+                className="
+                absolute
+                bottom-[-60px]
+                right-[-60px]
+                w-[140px]
+                h-[140px]
+                rounded-full
+                bg-[#2143b5]/10
+                blur-[70px]
+                opacity-0
+                transition-all
+                duration-500
+                group-hover:opacity-100
+                "
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
