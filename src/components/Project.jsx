@@ -92,7 +92,7 @@ export default function ProjectOverview() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full flex flex-col gap-12">
         
         {/* ================= HEADER SECTION (Updated Padding-Top) ================= */}
-        <motion.div {...fadeInUp} className="pt-8">
+        <motion.div {...fadeInUp} className="mt-10">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-[40px] h-[1.5px] bg-[#d1a54d]" />
             <p

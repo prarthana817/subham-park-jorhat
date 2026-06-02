@@ -21,7 +21,7 @@ export default function Overview({ setOpen }) {
       />
 
       {/* CONTAINER: Matches Hero wrapper alignment perfectly */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full relative z-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full relative z-10 mt-10">
         {/* BACKGROUND DESIGN */}
         <div className="absolute -top-[90px] right-10 hidden xl:block">
           <div className="w-[240px] h-[240px] rounded-full bg-[#d1a54d]/10 blur-[100px] pointer-events-none" />

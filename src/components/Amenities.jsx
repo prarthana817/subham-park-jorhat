@@ -93,7 +93,7 @@ export default function Amenities({ setOpen }) {
       <div className="absolute top-[-140px] left-[-120px] w-[320px] h-[320px] bg-[#f8f5ed]/20 blur-[130px] rounded-full" />
       <div className="absolute bottom-[-80px] right-[-60px] w-[260px] h-[260px] bg-[#c9a84c]/10 blur-[100px] rounded-full" />
 
-      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8">
+      <div className="relative z-10 max-w-[1450px] mx-auto px-5 lg:px-8 mt-10">
 
         {/* ── HEADER CARD ── */}
         <div

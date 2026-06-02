@@ -211,6 +211,7 @@ export default function FloorPlans() {
 
         px-5
         lg:px-8
+        mt-10
         "
       >
         {/* HEADER */}

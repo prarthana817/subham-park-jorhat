@@ -7,33 +7,32 @@ export default function StickyLeadForm({ galleryPopupOpen }) {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const footer = document.getElementById("footer");
-      if (!footer) return;
+    const projectSection = document.getElementById("project");
+    if (!projectSection) return;
 
-      const footerRect = footer.getBoundingClientRect();
-      
-      // ফুটার স্ক্রিনে আসার ৫০ পিক্সেল আগেই ফর্মটি ভ্যানিশ হবে
-      if (footerRect.top <= window.innerHeight - 50) {
-        setHide(true);
-      } else {
-        setHide(false);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHide(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
       }
-    };
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    observer.observe(projectSection);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div
       className={`
-      hidden xl:flex  /* মোবাইলে পুরোপুরি হিডেন */
       fixed
       left-1/2
       -translate-x-1/2
       bottom-4
       z-[999]
+      w-[min(95vw,1180px)]
       transition-all
       duration-500
       ${
@@ -43,7 +42,7 @@ export default function StickyLeadForm({ galleryPopupOpen }) {
       }
       `}
     >
-      <div className="flex items-center gap-2 bg-[#efe3c2] border border-[#d6c08a] rounded-[20px] px-3 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.10)]">
+      <div className="flex flex-wrap items-center gap-2 bg-[#efe3c2] border border-[#d6c08a] rounded-[20px] px-3 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.10)]">
         <button className="flex items-center gap-2 px-4 h-[42px] rounded-[12px] bg-[#d4ad57] text-[#111111] uppercase tracking-[0.14em] text-[9px] whitespace-nowrap" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
           <Home size={13} /> Site Visit
         </button>

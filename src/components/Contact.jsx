@@ -29,7 +29,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10">
         
         {/* HEADER SECTION */}
         <div className="flex items-center gap-3 mb-8 pl-2">
