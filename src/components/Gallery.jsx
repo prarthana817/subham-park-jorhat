@@ -113,8 +113,8 @@ export default function Gallery({
   className="
   relative
   overflow-hidden
-  py-14
-  lg:py-20
+  py-12
+  lg:py-12
   pb-[180px]
   bg-[#f8f5ed]
   "

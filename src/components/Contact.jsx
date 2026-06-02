@@ -17,7 +17,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-16 md:py-20 lg:py-24 bg-[#0d1b46] w-full overflow-hidden">
+    <section id="contact" className="relative py-12 bg-[#0d1b46] w-full overflow-hidden">
       {/* ... (পূর্বের ব্যাকগ্রাউন্ড কোড একই থাকবে) ... */}
       
       <div className="absolute inset-0 bg-[#0d1b46]" />

@@ -6,7 +6,7 @@ export default function Overview({ setOpen }) {
   return (
     <section 
       id="overview" 
-      className="relative overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 bg-[#f8f5ed] w-full"
+      className="relative overflow-hidden pt-12 pb-12 md:pt-12 md:pb-16 lg:pt-12 bg-[#f8f5ed] w-full"
     >
       {/* DECORATIVE GRID BACKGROUND */}
       <div

@@ -157,8 +157,7 @@ export default function FloorPlans() {
       className="
       relative
       overflow-hidden
-      py-16
-      lg:py-24
+      py-12
       bg-[#14234b]
       "
     >

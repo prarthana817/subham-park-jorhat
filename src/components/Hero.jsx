@@ -8,7 +8,7 @@ export default function Hero({ setOpen }) {
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-screen flex items-center bg-[#f8f5ed] pt-[125px] pb-10"
+      className="relative overflow-hidden min-h-screen flex items-center bg-[#f8f5ed] pt-12 pb-10"
     >
       {/* GRID BACKGROUND */}
       <div
@@ -49,7 +49,7 @@ export default function Hero({ setOpen }) {
             </div>
 
             {/* HEADING */}
-            <h1 className="text-[#111111] text-[48px] md:text-[58px] lg:text-[70px] leading-[0.92] tracking-[-2px] mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}>
+            <h1 className="text-[#111111] text-[36px] sm:text-[48px] md:text-[58px] lg:text-[70px] leading-[0.92] tracking-[-2px] mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}>
               Elevate <span className="italic text-[#d1a54d]">Your</span><br /> Lifestyle
             </h1>
 
