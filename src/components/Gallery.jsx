@@ -33,7 +33,7 @@ const galleryImages = [
   { img: gallery4, title: "Badminton Court" },
   { img: gallery5, title: "Splash Pool" },
   { img: gallery6, title: "Indoor Games" },
-  { img: gallery7, title: "Evening Gate" },
+  { img: gallery7, title: "Entrance Gate" },
   { img: gallery8, title: "Elevation Night" },
   { img: gallery9, title: "Aerial-view" },
   { img: gallery10, title: "Elevation" },

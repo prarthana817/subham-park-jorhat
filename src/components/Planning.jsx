@@ -23,8 +23,8 @@ import bhk3_5_sbua_1684 from "../assests/images/3.5 BHK - SBUA 1684 Sq Ft.png";
 
 const mainTabs = [
   { id: "site-plan", label: "Site Plan" },
-  { id: "2bhk", label: "2 BHK Layouts" },
-  { id: "3bhk", label: "3 BHK Layouts" },
+  { id: "2bhk", label: "2.5 BHK Layouts" },
+  { id: "3bhk", label: "3 & 3.5 BHK Layouts" },
 ];
 
 const bhk2Plans = [
