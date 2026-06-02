@@ -100,7 +100,9 @@ export default function Hero({ setOpen }) {
               </motion.button>
 
               <button onClick={() => document.getElementById("overview")?.scrollIntoView({ behavior: "smooth" })} className="group relative flex items-center justify-center gap-2 py-2 text-[#14234b]">
-                <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold">Explore More</span>
+                <span className="text-[10.5px] uppercase tracking-[0.22em] font-bold whitespace-nowrap">
+  Explore More
+</span>
                 {/* অ্যারো রাখা হয়েছে */}
                 <svg className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
