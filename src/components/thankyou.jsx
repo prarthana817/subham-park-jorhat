@@ -23,7 +23,7 @@ export default function ThankYou() {
       <div className="absolute inset-0 z-0 bg-black/70" />
 
       {/* Top Left Logo */}
-      <div className="absolute top-8 left-8 z-20">
+      <div className="absolute top-[42px] left-8 z-20">
         <div className="relative">
           <div className="absolute inset-0 bg-white blur-2xl opacity-20 rounded-full" />
           <img src={logo} alt="Logo" className="relative w-28 h-28 object-contain z-10" />
