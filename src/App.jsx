@@ -24,23 +24,34 @@ function App() {
   const [hideMobileCTA, setHideMobileCTA] = useState(false);
 
   useEffect(() => {
-    const footer = document.getElementById("footer");
-    if (!footer) return;
+    let observer = null;
+    let retryTimer = null;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setHideMobileCTA(entry.isIntersecting);
-      },
-      {
-        root: null,
-        threshold: 0,
+    const initObserver = () => {
+      const footer = document.getElementById("footer");
+      if (!footer) {
+        retryTimer = window.setTimeout(initObserver, 100);
+        return;
       }
-    );
 
-    observer.observe(footer);
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          setHideMobileCTA(entry.isIntersecting);
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+
+      observer.observe(footer);
+    };
+
+    initObserver();
 
     return () => {
-      observer.disconnect();
+      if (observer) observer.disconnect();
+      if (retryTimer) window.clearTimeout(retryTimer);
     };
   }, []);
 

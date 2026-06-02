@@ -1,8 +1,11 @@
 // src/components/PopupForm.jsx
 
 import { X, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function PopupForm({ open, setOpen }) {
+  const navigate = useNavigate();
+
   if (!open) return null;
 
   return (
@@ -45,38 +48,6 @@ export default function PopupForm({ open, setOpen }) {
 
         <div className="absolute bottom-[-100px] right-[-100px] w-[220px] h-[220px] bg-[#d79a74]/10 blur-[100px] rounded-full" />
 
-        <button
-          onClick={() => setOpen(false)}
-          className="
-          absolute
-          top-4
-          right-4
-
-          w-[42px]
-          h-[42px]
-
-          rounded-full
-
-          border
-          border-white/10
-
-          bg-white/5
-
-          flex
-          items-center
-          justify-center
-
-          text-white/70
-          hover:text-white
-
-          transition-all
-          duration-300
-
-          z-20
-          "
-        >
-          <X size={22} />
-        </button>
 
         <div className="relative z-10 p-6 lg:p-7">
           {/* TOP TEXT */}
@@ -299,33 +270,31 @@ export default function PopupForm({ open, setOpen }) {
               </div>
             </div>
 
-            {/* SUBMIT BUTTON */}
             <button
-              className="
-              w-full
-              h-[60px]
-
-              rounded-[18px]
-
-              bg-[#d1a54d]
-              hover:bg-[#bf933c]
-
-              text-white
-
-              uppercase
-              tracking-[0.28em]
-              text-[11px]
-
-              transition-all
-              duration-300
-              "
-              style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 700,
-              }}
-            >
-              Submit Enquiry
-            </button>
+  onClick={() => {
+    setOpen(false);
+    navigate("/thank-you");
+  }}
+  className="
+    w-full
+    h-[60px]
+    rounded-[18px]
+    bg-[#d1a54d]
+    hover:bg-[#bf933c]
+    text-white
+    uppercase
+    tracking-[0.28em]
+    text-[11px]
+    transition-all
+    duration-300
+  "
+  style={{
+    fontFamily: "'Raleway', sans-serif",
+    fontWeight: 700,
+  }}
+>
+  Submit Enquiry
+</button>
           </div>
         </div>
       </div>
