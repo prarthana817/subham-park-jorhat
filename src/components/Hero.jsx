@@ -8,7 +8,7 @@ export default function Hero({ setOpen }) {
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-screen flex items-center bg-[#f8f5ed] pt-12 pb-10"
+      className="relative overflow-hidden min-h-screen flex items-center bg-[#f8f5ed] pt-[125px] pb-10"
     >
       {/* GRID BACKGROUND */}
       <div

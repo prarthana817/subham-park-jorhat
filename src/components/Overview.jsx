@@ -6,7 +6,7 @@ export default function Overview({ setOpen }) {
   return (
     <section 
       id="overview" 
-      className="relative overflow-hidden pt-12 pb-12 md:pt-12 md:pb-16 lg:pt-12 bg-[#f8f5ed] w-full"
+      className="relative overflow-hidden pt-0 pb-10 md:pt-0 md:pb-14 lg:pt-0 w-full"
     >
       {/* DECORATIVE GRID BACKGROUND */}
       <div
@@ -22,7 +22,13 @@ export default function Overview({ setOpen }) {
 
       {/* CONTAINER: Matches Hero wrapper alignment perfectly */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full relative z-10">
-        
+        {/* BACKGROUND DESIGN */}
+        <div className="absolute -top-[90px] right-10 hidden xl:block">
+          <div className="w-[240px] h-[240px] rounded-full bg-[#d1a54d]/10 blur-[100px] pointer-events-none" />
+        </div>
+        <div className="absolute left-8 top-[50px] hidden lg:block">
+          <div className="w-[150px] h-[150px] rounded-full bg-white/70 blur-[50px] pointer-events-none" />
+        </div>
         {/* FLEX BOX: Keeps left side locked and brings the right card strictly closer */}
         <div className="flex flex-col lg:flex-row items-start justify-start gap-8 md:gap-12 lg:gap-16 w-full">
           

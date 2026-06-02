@@ -61,7 +61,7 @@ const locationCards = [
 
 export default function Location() {
   return (
-    <section id="location" className="relative overflow-hidden py-12 bg-[#f8f5ed]">
+    <section id="location" className="relative overflow-hidden pt-0 pb-10 bg-[#f8f5ed]">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
       <div className="absolute left-0 top-0 h-full w-[120px] opacity-[0.03] hidden lg:block" style={{ backgroundImage: "repeating-linear-gradient(to right,#000000 0px,#000000 1px,transparent 1px,transparent 9px)" }} />
 

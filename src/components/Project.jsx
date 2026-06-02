@@ -76,7 +76,7 @@ export default function ProjectOverview() {
   return (
     <section
       id="project"
-      className="relative overflow-hidden py-12 bg-[#f7f5ef]"
+      className="relative overflow-hidden pt-0 pb-10 bg-[#f7f5ef]"
     >
       <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none"

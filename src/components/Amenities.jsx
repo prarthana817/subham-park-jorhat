@@ -75,7 +75,7 @@ export default function Amenities({ setOpen }) {
   return (
     <section
       id="amenities"
-      className="relative overflow-hidden py-12 bg-[#14234b]"
+      className="relative overflow-hidden pt-0 pb-10 bg-[#14234b]"
     >
       {/* Grid texture */}
       <div
