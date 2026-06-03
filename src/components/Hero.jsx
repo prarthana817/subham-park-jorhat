@@ -61,8 +61,8 @@ export default function Hero({ setOpen }) {
             </p>
 
             {/* LOCATION + PRICE CARDS */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="relative px-5 py-[11px] rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden">
+            <div className="flex flex-row items-center gap-4">
+              <div className="relative min-w-0 px-5 py-[11px] rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden">
                 <div className="absolute inset-0 rounded-[16px] before:absolute before:inset-0 before:rounded-[16px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_6s_linear_infinite] before:content-['']" />
                 <div className="absolute inset-[1px] rounded-[15px] bg-[#e8d6ab]" />
                 <div className="relative z-10 flex items-center gap-3">
@@ -79,7 +79,7 @@ export default function Hero({ setOpen }) {
                 <div className="w-[2px] h-[32px] rounded-full bg-gradient-to-b from-transparent via-[#d1a54d] to-transparent opacity-90" />
               </div>
 
-              <div className="relative px-6 py-[11px] rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden">
+              <div className="relative min-w-0 px-6 py-[11px] rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden">
                 <div className="absolute inset-0 rounded-[16px] before:absolute before:inset-0 before:rounded-[16px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_4s_linear_infinite] before:content-['']" />
                 <div className="absolute inset-[1px] rounded-[15px] bg-[#e8d6ab]" />
                 <div className="relative z-10 min-w-[85px]">
