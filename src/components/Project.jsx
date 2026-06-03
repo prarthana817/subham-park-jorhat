@@ -205,7 +205,7 @@ export default function ProjectOverview({ galleryPopupOpen }) {
            <div
   className="grid gap-2.5"
   style={{
-    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
   }}
 >
               {ongoingProjects.map((project, idx) => {
@@ -221,6 +221,7 @@ export default function ProjectOverview({ galleryPopupOpen }) {
   text-[9px]
   uppercase
   tracking-[0.14em]
+  whitespace-nowrap
   transition-all
   duration-200
   cursor-pointer
@@ -245,7 +246,7 @@ export default function ProjectOverview({ galleryPopupOpen }) {
             <div
   className="grid gap-2.5"
   style={{
-    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
   }}
 >
               {completedProjects.map((project, idx) => {
@@ -261,6 +262,7 @@ export default function ProjectOverview({ galleryPopupOpen }) {
   text-[9px]
   uppercase
   tracking-[0.14em]
+  whitespace-nowrap
   transition-all
   duration-200
   cursor-pointer
