@@ -39,10 +39,26 @@ export default function Contact() {
           <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between bg-[#fcfaf5] gap-8 w-full">
             <div>
               <p className="uppercase tracking-[0.25em] text-[10px] md:text-[11px] text-[#c9a14a] mb-3 font-semibold" style={sansFont}>PREMIUM LIVING</p>
-              <h2 className="text-[#111111] text-[32px] md:text-[42px] lg:text-[52px] leading-[1.05] tracking-[-1.5px] font-medium" style={serifFont}>
-                Your Dream <br /> Home <br />
-                <span className="italic text-[#d1a54d]">Awaits You</span>
-              </h2>
+              <h2
+  className="
+    text-[#111111]
+    text-[32px]
+    md:text-[42px]
+    lg:text-[52px]
+    leading-[1.05]
+    tracking-[-1.5px]
+    font-medium
+  "
+  style={serifFont}
+>
+  Your Dream
+  <br className="hidden md:block" />
+  {" "}Home
+  <br />
+  <span className="italic text-[#d1a54d]">
+    Awaits You
+  </span>
+</h2>
             </div>
             <div className="w-full">
               <div className="rounded-[14px] border border-[#e7dccb] bg-[#f8f1e4] p-4 max-w-[260px]">

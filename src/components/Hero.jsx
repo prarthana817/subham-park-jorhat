@@ -8,7 +8,7 @@ export default function Hero({ setOpen }) {
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-screen flex items-center bg-[#f8f5ed] pt-[125px] pb-10"
+      className="relative overflow-hidden min-h-screen flex items-center bg-[#f8f5ed] pt-[150px] lg:pt-[125px] pb-10"
     >
       {/* GRID BACKGROUND */}
       <div
@@ -61,7 +61,7 @@ export default function Hero({ setOpen }) {
             </p>
 
             {/* LOCATION + PRICE CARDS */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-3 flex-wrap">
               <div className="relative px-5 py-[11px] rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden">
                 <div className="absolute inset-0 rounded-[16px] before:absolute before:inset-0 before:rounded-[16px] before:bg-[conic-gradient(from_0deg,#d1a54d,transparent,transparent,#e7c97a,#d1a54d)] before:animate-[spin_6s_linear_infinite] before:content-['']" />
                 <div className="absolute inset-[1px] rounded-[15px] bg-[#e8d6ab]" />
@@ -94,7 +94,7 @@ export default function Hero({ setOpen }) {
             </div>
 
             {/* BUTTONS */}
-<div className="mt-9 flex items-center gap-6 lg:gap-8">
+<div className="mt-9 flex items-center gap-3 overflow-hidden">
   <motion.button
     whileHover={{ scale: 1.02 }}
     onClick={() => setOpen(true)}
