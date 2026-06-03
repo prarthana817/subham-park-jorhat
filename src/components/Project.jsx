@@ -202,11 +202,34 @@ export default function ProjectOverview({ galleryPopupOpen }) {
               <p className="uppercase tracking-[0.26em] text-[10px] text-[#b58d45]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>Ongoing Projects</p>
               <div className="flex-grow h-[1px] bg-[#f3eee5]" />
             </div>
-            <div className="flex flex-wrap gap-2.5">
+           <div
+  className="grid gap-2.5"
+  style={{
+    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+  }}
+>
               {ongoingProjects.map((project, idx) => {
                 const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
                 return (
-                  <button key={idx} onClick={() => handleProjectClick(project.name, project.location)} className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer ${isSelected ? "bg-[#14234b] border-[#14234b] text-white" : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white"}`} style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
+                  <button key={idx} onClick={() => handleProjectClick(project.name, project.location)} className={`
+  w-full
+  lg:w-auto
+  h-[34px]
+  px-4
+  rounded-full
+  border
+  text-[9px]
+  uppercase
+  tracking-[0.14em]
+  transition-all
+  duration-200
+  cursor-pointer
+  ${
+    isSelected
+      ? "bg-[#14234b] border-[#14234b] text-white"
+      : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white"
+  }
+`}>
                     {project.name}
                   </button>
                 );
@@ -219,11 +242,34 @@ export default function ProjectOverview({ galleryPopupOpen }) {
               <p className="uppercase tracking-[0.26em] text-[10px] text-[#b58d45]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>Completed Projects</p>
               <div className="flex-grow h-[1px] bg-[#f3eee5]" />
             </div>
-            <div className="flex flex-wrap gap-2.5">
+            <div
+  className="grid gap-2.5"
+  style={{
+    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+  }}
+>
               {completedProjects.map((project, idx) => {
                 const isSelected = selectedProjectName === project.name && selectedLocation === project.location;
                 return (
-                  <button key={idx} onClick={() => handleProjectClick(project.name, project.location)} className={`h-[34px] px-4 rounded-full border text-[9px] uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer ${isSelected ? "bg-[#14234b] border-[#14234b] text-white" : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white"}`} style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
+                  <button key={idx} onClick={() => handleProjectClick(project.name, project.location)} className={`
+  w-full
+  lg:w-auto
+  h-[34px]
+  px-4
+  rounded-full
+  border
+  text-[9px]
+  uppercase
+  tracking-[0.14em]
+  transition-all
+  duration-200
+  cursor-pointer
+  ${
+    isSelected
+      ? "bg-[#14234b] border-[#14234b] text-white"
+      : "border-[#ddd4c5] bg-[#f8f6f1] text-[#14234b] hover:bg-[#14234b] hover:text-white"
+  }
+`}>
                     {project.name}
                   </button>
                 );
