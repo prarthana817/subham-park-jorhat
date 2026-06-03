@@ -75,8 +75,8 @@ export default function Hero({ setOpen }) {
               </div>
 
               {/* লাইন - আগের মতো ঠিক রাখা হয়েছে */}
-              <div className="hidden md:flex items-center justify-center h-[54px]">
-                <div className="w-[2px] h-[32px] rounded-full bg-gradient-to-b from-transparent via-[#d1a54d] to-transparent opacity-90" />
+              <div className="flex items-center justify-center h-[54px]">
+                <div className="w-[2px] h-[36px] rounded-full bg-gradient-to-b from-transparent via-[#d1a54d] to-transparent opacity-90" />
               </div>
 
               <div className="relative min-w-0 px-6 py-[11px] rounded-[16px] border border-[#dcc89b] bg-[#e8d6ab] shadow-[0_8px_18px_rgba(209,165,77,0.08)] overflow-hidden">
