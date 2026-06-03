@@ -94,13 +94,13 @@ export default function Hero({ setOpen }) {
             </div>
 
             {/* BUTTONS */}
-<div className="mt-9 flex flex-nowrap items-center gap-3 overflow-hidden">
+<div className="mt-9 flex items-center gap-2 overflow-x-auto scrollbar-hide">
   <motion.button
     whileHover={{ scale: 1.02 }}
     onClick={() => setOpen(true)}
     className="
       flex-shrink-0
-      min-w-[140px] sm:min-w-[180px]
+      w-[150px] sm:min-w-[180px]
 
       h-[44px]
 
