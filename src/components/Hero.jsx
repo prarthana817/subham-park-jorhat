@@ -75,7 +75,7 @@ export default function Hero({ setOpen }) {
               </div>
 
               {/* লাইন - আগের মতো ঠিক রাখা হয়েছে */}
-              <div className="flex items-center justify-center h-[54px]">
+              <div className="flex-shrink-0 self-center flex items-center justify-center h-[54px]">
                 <div className="w-[2px] h-[36px] rounded-full bg-gradient-to-b from-transparent via-[#d1a54d] to-transparent opacity-90" />
               </div>
 
@@ -94,7 +94,7 @@ export default function Hero({ setOpen }) {
             </div>
 
             {/* BUTTONS */}
-<div className="mt-9 flex items-center gap-2 overflow-x-auto scrollbar-hide">
+<div className="mt-9 flex items-center gap-4 overflow-x-auto scrollbar-hide">
   <motion.button
     whileHover={{ scale: 1.02 }}
     onClick={() => setOpen(true)}

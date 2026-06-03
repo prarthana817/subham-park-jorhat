@@ -1,10 +1,25 @@
 // src/components/PopupForm.jsx
 
+import { useEffect } from "react";
 import { X, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function PopupForm({ open, setOpen }) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [setOpen]);
 
   if (!open) return null;
 
@@ -24,6 +39,7 @@ export default function PopupForm({ open, setOpen }) {
 
       p-4
       "
+      onClick={() => setOpen(false)}
     >
       <div
         className="
@@ -43,7 +59,33 @@ export default function PopupForm({ open, setOpen }) {
 
         shadow-[0_25px_70px_rgba(0,0,0,0.45)]
         "
+        onClick={(event) => event.stopPropagation()}
       >
+        <button
+          type="button"
+          onClick={() => setOpen(false)}
+          className="
+            absolute
+            top-4
+            right-4
+            z-20
+            inline-flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-white/10
+            bg-[#111111]/80
+            text-white
+            transition-colors
+            hover:bg-[#1f1f1f]
+          "
+          aria-label="Close modal"
+        >
+          <X size={18} />
+        </button>
         <div className="absolute top-[-100px] left-[-100px] w-[220px] h-[220px] bg-[#d79a74]/10 blur-[100px] rounded-full" />
 
         <div className="absolute bottom-[-100px] right-[-100px] w-[220px] h-[220px] bg-[#d79a74]/10 blur-[100px] rounded-full" />
