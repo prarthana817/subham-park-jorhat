@@ -100,7 +100,7 @@ export default function Hero({ setOpen }) {
     onClick={() => setOpen(true)}
     className="
       flex-shrink-0
-      min-w-[180px]
+      min-w-[140px] sm:min-w-[180px]
 
       h-[44px]
 
@@ -121,9 +121,7 @@ export default function Hero({ setOpen }) {
   >
     <span
       className="
-        text-[9px]
-        sm:text-[10.5px]
-
+        text-[8px] sm:text-[10.5px]
         uppercase
 
         tracking-[0.18em]
