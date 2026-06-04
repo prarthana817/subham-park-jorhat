@@ -1,20 +1,63 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom"; // ১. useNavigate ইমপোর্ট করুন
 import { ChevronDown } from "lucide-react"; 
-import logo from "../assests/images/logo.png"; 
+import { supabase } from "../lib/supabase";
+import { useState } from "react"; 
 
 export default function Contact() {
-  const navigate = useNavigate(); // ২. হুকটি ইনিশিয়ালাইজ করুন
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+const [name, setName] = useState("");
+const [phone, setPhone] = useState("");
+const [email, setEmail] = useState("");
+const [bhk, setBhk] = useState(""); // ২. হুকটি ইনিশিয়ালাইজ করুন
 
   const serifFont = { fontFamily: "'Cormorant Garamond', serif" };
   const sansFont = { fontFamily: "'Inter', sans-serif" };
 
   // ৩. সাবমিট ফাংশন তৈরি করুন
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // এখানে আপনার ফর্ম ডাটা প্রসেস করার কোড লিখতে পারেন
-    navigate("/thank-you"); // সাবমিট হওয়ার পর Thank You পেজে চলে যাবে
-  };
+ const handleFormSubmit = async (e) => {
+  e.preventDefault();
+
+  setLoading(true);
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+
+    const { error } = await supabase
+      .from("leads")
+      .insert([
+        {
+          source: "website",
+          form_type: "contact_form",
+
+          name,
+          phone,
+          email,
+
+          configuration: bhk,
+          city: "Jorhat",
+
+          utm_source: params.get("utm_source"),
+          utm_medium: params.get("utm_medium"),
+          utm_campaign: params.get("utm_campaign"),
+          utm_term: params.get("utm_term"),
+          utm_content: params.get("utm_content"),
+        },
+      ]);
+
+    if (error) {
+      console.error("SUPABASE ERROR:", error);
+      setLoading(false);
+      return;
+    }
+
+    navigate("/thank-you");
+  } catch (err) {
+    console.error(err);
+    setLoading(false);
+  }
+};
 
   return (
     <section id="contact" className="relative pt-0 pb-10 bg-[#0d1b46] w-full overflow-hidden">
@@ -81,37 +124,85 @@ export default function Contact() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>FULL NAME</label>
-                    <input required type="text" placeholder="Your name" style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none" />
+                    <input 
+                      required 
+                      type="text" 
+                      placeholder="Your name" 
+                      style={sansFont} 
+                      className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none" 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>PHONE NUMBER</label>
-                    <input required type="tel" placeholder="+91..." style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none" />
+                    <input
+  required
+  type="text"
+  value={phone}
+  onChange={(e) => setPhone(e.target.value)}
+  placeholder="Your phone number"
+  style={sansFont}
+  className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none"
+/>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>EMAIL ADDRESS</label>
-                  <input required type="email" placeholder="your@email.com" style={sansFont} className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none" />
+                  <input
+  required
+  type="email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  placeholder="your@email.com"
+  style={sansFont}
+  className="w-full h-[46px] px-3.5 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none"
+/>
                 </div>
                 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10.5px] uppercase tracking-[0.12em] text-[#6d7482] font-bold" style={sansFont}>PREFERRED BHK</label>
                   <div className="relative w-full">
-                    <select required style={sansFont} className="w-full h-[46px] pl-3.5 pr-10 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none cursor-pointer">
-                      <option value="">Select Configuration</option>
-                      <option value="2.5bhk">2.5 BHK</option>
-                      <option value="3bhk">3 BHK</option>
-                      <option value="3.5bhk">3.5 BHK</option>
-                    </select>
+                    <select
+  required
+  value={bhk}
+  onChange={(e) => setBhk(e.target.value)}
+  style={sansFont}
+  className="w-full h-[46px] pl-3.5 pr-10 rounded-[10px] border border-[#dbc8a2] bg-[#fffaf2] text-[14px] outline-none cursor-pointer"
+>
+  <option value="">Select Configuration</option>
+  <option value="2.5 BHK">2.5 BHK</option>
+  <option value="3 BHK">3 BHK</option>
+  <option value="3.5 BHK">3.5 BHK</option>
+</select>
                     <div className="absolute inset-y-0 right-3.5 flex items-center pointer-events-none">
                       <ChevronDown size={16} />
                     </div>
                   </div>
                 </div>
 
-                <button type="submit" style={sansFont} className="mt-4 w-full h-[48px] rounded-[10px] bg-[#14234b] hover:bg-[#0f1c3d] text-white uppercase font-bold cursor-pointer transition-all">
-                  BOOK A SITE VISIT
-                </button>
+                <button
+  type="submit"
+  disabled={loading}
+  style={sansFont}
+  className="
+    mt-4
+    w-full
+    h-[48px]
+    rounded-[10px]
+    bg-[#14234b]
+    hover:bg-[#0f1c3d]
+    text-white
+    uppercase
+    font-bold
+    transition-all
+    disabled:opacity-70
+    disabled:cursor-not-allowed
+  "
+>
+  {loading ? "Redirecting..." : "BOOK A SITE VISIT"}
+</button>
               </form>
             </div>
           </div>
