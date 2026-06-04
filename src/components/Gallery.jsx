@@ -6,7 +6,9 @@ import {
 } from "framer-motion";
 
 import {
+  memo,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 
@@ -28,20 +30,130 @@ import gallery10 from "../assests/images/amenities-1.jpg";
 import gallery11 from "../assests/images/amenities-2.jpg";
 
 const galleryImages = [
-  { img: gallery1, title: "Community Hall" },
-  { img: gallery2, title: "Gymnasium" },
-  { img: gallery3, title: "Terrace Lawn" },
-  { img: gallery4, title: "Badminton Court" },
-  { img: gallery5, title: "Splash Pool" },
-  { img: gallery6, title: "Indoor Games" },
-  { img: gallery7, title: "Entrance Gate" },
-  { img: gallery8, title: "Elevation Night" },
-  { img: gallery9, title: "Aerial-view" },
-  { img: gallery10, title: "Elevation" },
-  { img: gallery11, title: "Elevation Left View" },
+  {
+    img: gallery1,
+    title: "Community Hall",
+    width: 10000,
+    height: 6110,
+    webp640: new URL("../assests/images/location-map-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/location-map-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/location-map-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/location-map-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/location-map-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery2,
+    title: "Gymnasium",
+    width: 10000,
+    height: 6112,
+    webp640: new URL("../assests/images/gallery-2-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-2-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-2-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-2-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-2-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery3,
+    title: "Terrace Lawn",
+    width: 4000,
+    height: 2890,
+    webp640: new URL("../assests/images/gallery-3-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-3-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-3-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-3-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-3-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery4,
+    title: "Badminton Court",
+    width: 5000,
+    height: 2500,
+    webp640: new URL("../assests/images/gallery-4-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-4-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-4-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-4-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-4-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery5,
+    title: "Splash Pool",
+    width: 6000,
+    height: 3000,
+    webp640: new URL("../assests/images/gallery-5-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-5-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-5-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-5-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-5-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery6,
+    title: "Indoor Games",
+    width: 10000,
+    height: 5626,
+    webp640: new URL("../assests/images/gallery-6-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-6-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-6-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-6-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-6-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery7,
+    title: "Entrance Gate",
+    width: 5000,
+    height: 3611,
+    webp640: new URL("../assests/images/gallery-7-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-7-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-7-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-7-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-7-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery8,
+    title: "Elevation Night",
+    width: 5000,
+    height: 2500,
+    webp640: new URL("../assests/images/gallery-8-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-8-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-8-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-8-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-8-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery9,
+    title: "Aerial-view",
+    width: 7000,
+    height: 3500,
+    webp640: new URL("../assests/images/gallery-9-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/gallery-9-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/gallery-9-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/gallery-9-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/gallery-9-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery10,
+    title: "Elevation",
+    width: 4000,
+    height: 2000,
+    webp640: new URL("../assests/images/amenities-1-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/amenities-1-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/amenities-1-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/amenities-1-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/amenities-1-1400.jpg", import.meta.url).href,
+  },
+  {
+    img: gallery11,
+    title: "Elevation Left View",
+    width: 5000,
+    height: 5000,
+    webp640: new URL("../assests/images/amenities-2-640.webp", import.meta.url).href,
+    webp1024: new URL("../assests/images/amenities-2-1024.webp", import.meta.url).href,
+    webp1400: new URL("../assests/images/amenities-2-1400.webp", import.meta.url).href,
+    jpg640: new URL("../assests/images/amenities-2-640.jpg", import.meta.url).href,
+    jpg1400: new URL("../assests/images/amenities-2-1400.jpg", import.meta.url).href,
+  },
 ];
 
-export default function Gallery({
+function Gallery({
   setOpen,
   setGalleryPopupOpen,
 }) {
@@ -106,6 +218,212 @@ export default function Gallery({
     selectedImage,
     setGalleryPopupOpen,
   ]);
+
+  const galleryEntries = useMemo(
+    () =>
+      galleryImages.map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: index * 0.05,
+          }}
+          viewport={{ once: true }}
+          className="
+              group
+              relative
+              overflow-hidden
+              rounded-[26px]
+              mb-5
+              break-inside-avoid
+              border
+              border-[#e9dfcf]
+              bg-[#f1f1f1]
+              shadow-[0_18px_45px_rgba(0,0,0,0.05)]
+              "
+        >
+          {/* IMAGE */}
+
+<picture>
+                <source
+                  type="image/webp"
+                  srcSet={`
+                    ${item.webp640} 640w,
+                    ${item.webp1024} 1024w,
+                    ${item.webp1400} 1400w
+                  `}
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+                <source
+                  type="image/jpeg"
+                  srcSet={`${item.jpg640} 640w, ${item.jpg1400} 1400w`}
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+                <img
+                  src={item.jpg1400}
+                  alt={item.title}
+                  loading={index < 2 ? "eager" : "lazy"}
+                  fetchPriority={index < 2 ? "high" : "auto"}
+                  decoding="async"
+                  width={item.width}
+                  height={item.height}
+                  className={`
+                w-full
+                object-cover
+                transition-all
+                duration-700
+                group-hover:scale-105
+
+                ${
+                  index === 9
+                    ? "h-[399px]"
+                    : index === galleryImages.length - 1
+                    ? "h-[630px]"
+                    : index % 8 === 0
+                    ? "h-[480px]"
+                    : index % 8 === 1
+                    ? "h-[320px]"
+                    : index % 8 === 2
+                    ? "h-[280px]"
+                    : index % 8 === 3
+                    ? "h-[430px]"
+                    : index % 8 === 4
+                    ? "h-[340px]"
+                    : index % 8 === 5
+                    ? "h-[500px]"
+                    : index % 8 === 6
+                    ? "h-[300px]"
+                    : "h-[360px]"
+                }
+                `}
+                />
+              </picture>
+
+          {/* OVERLAY */}
+
+          <div
+            className="
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-black/70
+                via-black/10
+                to-transparent
+                "
+          />
+
+          {/* SEARCH ICON */}
+
+          <div
+            className="
+                absolute
+                inset-0
+                flex
+                items-center
+                justify-center
+                opacity-0
+                group-hover:opacity-100
+                transition-all
+                duration-300
+                z-20
+                "
+          >
+            <button
+              onClick={() =>
+                setSelectedImage(item)
+              }
+              className="
+                  w-14
+                  h-14
+                  rounded-full
+                  bg-white/15
+                  backdrop-blur-md
+                  border
+                  border-white/20
+                  flex
+                  items-center
+                  justify-center
+                  scale-75
+                  group-hover:scale-100
+                  transition-all
+                  duration-300
+                  "
+            >
+              <Search className="w-5 h-5 text-white" />
+            </button>
+          </div>
+
+          {/* CONTENT */}
+
+          <div
+            className="
+                absolute
+                bottom-0
+                left-0
+                w-full
+                p-5
+                z-30
+                "
+          >
+            <h3
+              className="
+                  text-white
+                  text-[20px]
+                  md:text-[24px]
+                  leading-none
+                  "
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', serif",
+                fontWeight: 500,
+              }}
+            >
+              {item.title}
+            </h3>
+
+            <div
+              className="
+                  mt-3
+                  w-[55px]
+                  h-[2px]
+                  bg-[#d1a54d]
+                  transition-all
+                  duration-500
+                  group-hover:w-[90px]
+                  "
+            />
+          </div>
+
+          {/* GLOW */}
+
+          <div
+            className="
+                absolute
+                bottom-[-60px]
+                right-[-60px]
+                w-[140px]
+                h-[140px]
+                rounded-full
+                bg-[#2143b5]/10
+                blur-[70px]
+                opacity-0
+                transition-all
+                duration-500
+                group-hover:opacity-100
+                "
+          />
+        </motion.div>
+      )),
+    [setSelectedImage]
+  );
 
   return (
     <section
@@ -204,25 +522,40 @@ export default function Gallery({
 
             {/* IMAGE */}
 
-            <motion.img
-              initial={{
-                scale: 0.92,
-                opacity: 0,
-              }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-              }}
-              exit={{
-                scale: 0.92,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.32,
-              }}
-              src={selectedImage}
-              alt="Preview"
-              className="
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`${selectedImage.webp1024} 1024w, ${selectedImage.webp1400} 1400w`}
+                sizes="96vw"
+              />
+              <source
+                type="image/jpeg"
+                srcSet={`${selectedImage.jpg1400} 1400w`}
+                sizes="96vw"
+              />
+              <motion.img
+                initial={{
+                  scale: 0.92,
+                  opacity: 0,
+                }}
+                animate={{
+                  scale: 1,
+                  opacity: 1,
+                }}
+                exit={{
+                  scale: 0.92,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.32,
+                }}
+                src={selectedImage.jpg1400}
+                alt="Preview"
+                loading="eager"
+                decoding="async"
+                width={selectedImage.width}
+                height={selectedImage.height}
+                className="
               relative
               z-[999999999]
               max-w-[96vw]
@@ -231,7 +564,8 @@ export default function Gallery({
               rounded-[24px]
               shadow-[0_25px_90px_rgba(0,0,0,0.55)]
               "
-            />
+              />
+            </picture>
           </motion.div>
         )}
       </AnimatePresence>
@@ -387,189 +721,11 @@ export default function Gallery({
           gap-5
           "
         >
-          {galleryImages.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.05,
-              }}
-              viewport={{ once: true }}
-              className="
-              group
-              relative
-              overflow-hidden
-              rounded-[26px]
-              mb-5
-              break-inside-avoid
-              border
-              border-[#e9dfcf]
-              bg-[#f1f1f1]
-              shadow-[0_18px_45px_rgba(0,0,0,0.05)]
-              "
-            >
-              {/* IMAGE */}
-
-              <img
-                src={item.img}
-                alt={item.title}
-                loading="lazy"
-                className={`
-                w-full
-                object-cover
-                transition-all
-                duration-700
-                group-hover:scale-105
-
-                ${
-                  index === 9
-                    ? "h-[399px]"
-                    : index === galleryImages.length - 1
-                    ? "h-[630px]"
-                    : index % 8 === 0
-                    ? "h-[480px]"
-                    : index % 8 === 1
-                    ? "h-[320px]"
-                    : index % 8 === 2
-                    ? "h-[280px]"
-                    : index % 8 === 3
-                    ? "h-[430px]"
-                    : index % 8 === 4
-                    ? "h-[340px]"
-                    : index % 8 === 5
-                    ? "h-[500px]"
-                    : index % 8 === 6
-                    ? "h-[300px]"
-                    : "h-[360px]"
-                }
-                `}
-              />
-
-              {/* OVERLAY */}
-
-              <div
-                className="
-                absolute
-                inset-0
-                bg-gradient-to-t
-                from-black/70
-                via-black/10
-                to-transparent
-                "
-              />
-
-              {/* SEARCH ICON */}
-
-              <div
-                className="
-                absolute
-                inset-0
-                flex
-                items-center
-                justify-center
-                opacity-0
-                group-hover:opacity-100
-                transition-all
-                duration-300
-                z-20
-                "
-              >
-                <button
-                  onClick={() =>
-                    setSelectedImage(item.img)
-                  }
-                  className="
-                  w-14
-                  h-14
-                  rounded-full
-                  bg-white/15
-                  backdrop-blur-md
-                  border
-                  border-white/20
-                  flex
-                  items-center
-                  justify-center
-                  scale-75
-                  group-hover:scale-100
-                  transition-all
-                  duration-300
-                  "
-                >
-                  <Search className="w-5 h-5 text-white" />
-                </button>
-              </div>
-
-              {/* CONTENT */}
-
-              <div
-                className="
-                absolute
-                bottom-0
-                left-0
-                w-full
-                p-5
-                z-30
-                "
-              >
-                <h3
-                  className="
-                  text-white
-                  text-[20px]
-                  md:text-[24px]
-                  leading-none
-                  "
-                  style={{
-                    fontFamily:
-                      "'Cormorant Garamond', serif",
-                    fontWeight: 500,
-                  }}
-                >
-                  {item.title}
-                </h3>
-
-                <div
-                  className="
-                  mt-3
-                  w-[55px]
-                  h-[2px]
-                  bg-[#d1a54d]
-                  transition-all
-                  duration-500
-                  group-hover:w-[90px]
-                  "
-                />
-              </div>
-
-              {/* GLOW */}
-
-              <div
-                className="
-                absolute
-                bottom-[-60px]
-                right-[-60px]
-                w-[140px]
-                h-[140px]
-                rounded-full
-                bg-[#2143b5]/10
-                blur-[70px]
-                opacity-0
-                transition-all
-                duration-500
-                group-hover:opacity-100
-                "
-              />
-            </motion.div>
-          ))}
+          {galleryEntries}
         </div>
       </div>
     </section>
   );
 }
+
+export default memo(Gallery);
