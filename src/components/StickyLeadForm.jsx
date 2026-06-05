@@ -65,11 +65,11 @@ const [loading, setLoading] = useState(false);
         configuration: bhk,
         city,
 
-        utm_source: params.get("utm_source"),
-        utm_medium: params.get("utm_medium"),
-        utm_campaign: params.get("utm_campaign"),
-        utm_term: params.get("utm_term"),
-        utm_content: params.get("utm_content"),
+        utm_source: params.get("utm_source") || "direct",
+utm_medium: params.get("utm_medium") || "none",
+utm_campaign: params.get("utm_campaign") || "none",
+utm_term: params.get("utm_term") || "none",
+utm_content: params.get("utm_content") || "none",
       },
     ]);
 
@@ -87,14 +87,20 @@ const [loading, setLoading] = useState(false);
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name,
-      phone,
-      email,
-      configuration: bhk,
-      city,
-      form_type: "sticky_form",
-    }),
-  }
+  name,
+  phone,
+  email,
+  configuration: bhk,
+  city: "Jorhat",
+  form_type: "sticky_form",
+
+  utm_source: params.get("utm_source") || "direct",
+  utm_medium: params.get("utm_medium") || "none",
+  utm_campaign: params.get("utm_campaign") || "none",
+  utm_term: params.get("utm_term") || "none",
+  utm_content: params.get("utm_content") || "none",
+}),
+   }
 );
 
   setLoading(false);

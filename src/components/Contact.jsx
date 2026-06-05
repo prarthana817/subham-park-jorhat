@@ -38,11 +38,11 @@ const [bhk, setBhk] = useState(""); // ২. হুকটি ইনিশিয়�
           configuration: bhk,
           city: "Jorhat",
 
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_term: params.get("utm_term"),
-          utm_content: params.get("utm_content"),
+          utm_source: params.get("utm_source") || "direct",
+utm_medium: params.get("utm_medium") || "none",
+utm_campaign: params.get("utm_campaign") || "none",
+utm_term: params.get("utm_term") || "none",
+utm_content: params.get("utm_content") || "none",
         },
       ]);
 
@@ -65,6 +65,12 @@ const [bhk, setBhk] = useState(""); // ২. হুকটি ইনিশিয়�
   configuration: bhk,
   city: "Jorhat",
   form_type: "contact_form",
+
+  utm_source: params.get("utm_source") || "direct",
+utm_medium: params.get("utm_medium") || "none",
+utm_campaign: params.get("utm_campaign") || "none",
+utm_term: params.get("utm_term") || "none",
+utm_content: params.get("utm_content") || "none",
 }),
 }
 );

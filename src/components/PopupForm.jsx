@@ -53,11 +53,11 @@ export default function PopupForm({ open, setOpen }) {
           configuration: bhk,
           city,
 
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_term: params.get("utm_term"),
-          utm_content: params.get("utm_content"),
+          utm_source: params.get("utm_source") || "direct",
+          utm_medium: params.get("utm_medium") || "none",
+          utm_campaign: params.get("utm_campaign") || "none",
+          utm_term: params.get("utm_term") || "none",
+          utm_content: params.get("utm_content") || "none",
         },
       ]);
 
@@ -80,7 +80,13 @@ await fetch(
       email,
       configuration: bhk,
       city,
-      form_type: "sticky_form",
+      form_type: "popup_form",
+
+      utm_source: params.get("utm_source") || "direct",
+      utm_medium: params.get("utm_medium") || "none",
+      utm_campaign: params.get("utm_campaign") || "none",
+      utm_term: params.get("utm_term") || "none",
+      utm_content: params.get("utm_content") || "none",
     }),
   }
 );
