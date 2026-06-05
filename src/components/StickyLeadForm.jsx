@@ -1,6 +1,8 @@
 // src/components/StickyLeadForm.jsx
 
 import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase"
+import { useNavigate } from "react-router-dom";
 
 import {
   Send,
@@ -10,7 +12,14 @@ import {
 export default function StickyLeadForm({
   galleryPopupOpen,
 }) {
-  const [hide, setHide] = useState(false);
+  const navigate = useNavigate();
+ const [hide, setHide] = useState(false);
+ const [name, setName] = useState("");
+const [phone, setPhone] = useState("");
+const [email, setEmail] = useState("");
+const [bhk, setBhk] = useState("");
+const [city, setCity] = useState("");
+const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const footer = document.getElementById("footer");
@@ -32,6 +41,72 @@ export default function StickyLeadForm({
       observer.disconnect();
     };
   }, []);
+  const handleSubmit = async () => {
+  if (!name || !phone || !email || !bhk || !city) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  setLoading(true);
+
+  const params = new URLSearchParams(window.location.search);
+
+  const { error } = await supabase
+    .from("leads")
+    .insert([
+      {
+        source: "website",
+        form_type: "sticky_form",
+
+        name,
+        phone,
+        email,
+
+        configuration: bhk,
+        city,
+
+        utm_source: params.get("utm_source"),
+        utm_medium: params.get("utm_medium"),
+        utm_campaign: params.get("utm_campaign"),
+        utm_term: params.get("utm_term"),
+        utm_content: params.get("utm_content"),
+      },
+    ]);
+
+  if (error) {
+    console.error(error);
+    alert(error.message);
+    setLoading(false);
+    return;
+  }
+  await fetch(
+  "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZlMDYzZjA0MzI1MjZiNTUzMTUxMzci_pc",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      phone,
+      email,
+      configuration: bhk,
+      city,
+      form_type: "sticky_form",
+    }),
+  }
+);
+
+  setLoading(false);
+
+setName("");
+setPhone("");
+setEmail("");
+setBhk("");
+setCity("");
+
+navigate("/thank-you");
+};
 
   return (
     <div
@@ -112,207 +187,171 @@ export default function StickyLeadForm({
 
         {/* NAME */}
 
-        <input
-          type="text"
-          placeholder="Name"
-          className="
-          w-[125px]
-
-          h-[42px]
-
-          bg-[#f8efd7]
-
-          border
-          border-[#d8c18c]
-
-          rounded-[11px]
-
-          px-3
-
-          text-[12px]
-          text-[#1a1a1a]
-
-          placeholder:text-[#7a6d4e]
-
-          outline-none
-          "
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontWeight: 500,
-          }}
-        />
+       <input
+  type="text"
+  placeholder="Name"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+  className="
+    w-[125px]
+    h-[42px]
+    bg-[#f8efd7]
+    border
+    border-[#d8c18c]
+    rounded-[11px]
+    px-3
+    text-[12px]
+    text-[#1a1a1a]
+    placeholder:text-[#7a6d4e]
+    outline-none
+  "
+  style={{
+    fontFamily: "'Inter', sans-serif",
+    fontWeight: 500,
+  }}
+/>
 
         {/* PHONE */}
 
         <input
-          type="text"
-          placeholder="Phone"
-          className="
-          w-[125px]
-
-          h-[42px]
-
-          bg-[#f8efd7]
-
-          border
-          border-[#d8c18c]
-
-          rounded-[11px]
-
-          px-3
-
-          text-[12px]
-          text-[#1a1a1a]
-
-          placeholder:text-[#7a6d4e]
-
-          outline-none
-          "
-          style={{
+  type="text"
+  placeholder="Phone"
+  value={phone}
+  onChange={(e) => setPhone(e.target.value)}
+  className="
+    w-[125px]
+    h-[42px]
+    bg-[#f8efd7]
+    border
+    border-[#d8c18c]
+    rounded-[11px]
+    px-3
+    text-[12px]
+    text-[#1a1a1a]
+    placeholder:text-[#7a6d4e]
+    outline-none
+  "
+  style={{
             fontFamily: "'Inter', sans-serif",
             fontWeight: 500,
           }}
-        />
+/>
 
         {/* EMAIL */}
 
         <input
-          type="email"
-          placeholder="Email"
-          className="
-          w-[150px]
-
-          h-[42px]
-
-          bg-[#f8efd7]
-
-          border
-          border-[#d8c18c]
-
-          rounded-[11px]
-
-          px-3
-
-          text-[12px]
-          text-[#1a1a1a]
-
-          placeholder:text-[#7a6d4e]
-
-          outline-none
-          "
-          style={{
+  type="email"
+  placeholder="Email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="
+    w-[150px]
+    h-[42px]
+    bg-[#f8efd7]
+    border
+    border-[#d8c18c]
+    rounded-[11px]
+    px-3
+    text-[12px]
+    text-[#1a1a1a]
+    placeholder:text-[#7a6d4e]
+    outline-none
+  "
+  style={{
             fontFamily: "'Inter', sans-serif",
             fontWeight: 500,
           }}
-        />
+/>
 
         {/* BHK */}
 
         <select
-          className="
-          w-[92px]
-
-          h-[42px]
-
-          bg-[#f8efd7]
-
-          border
-          border-[#d8c18c]
-
-          rounded-[11px]
-
-          px-3
-
-          text-[12px]
-          text-[#1a1a1a]
-
-          outline-none
-          "
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontWeight: 500,
-          }}
-        >
-          <option value="">BHK</option>
-          <option>2 BHK</option>
-          <option>3 BHK</option>
-          <option>4 BHK</option>
-        </select>
+  value={bhk}
+  onChange={(e) => setBhk(e.target.value)}
+  className="
+    w-[92px]
+    h-[42px]
+    bg-[#f8efd7]
+    border
+    border-[#d8c18c]
+    rounded-[11px]
+    px-3
+    text-[12px]
+    text-[#1a1a1a]
+    outline-none
+  "
+  style={{          fontFamily: "'Inter', sans-serif",          fontWeight: 500,        }}
+>
+  <option value="">BHK</option>
+  <option value="2.5 BHK">2.5 BHK</option>
+  <option value="3 BHK">3 BHK</option>
+  <option value="3.5 BHK">3.5 BHK</option>
+</select>
 
         {/* LOCATION */}
 
         <select
-          className="
-          w-[115px]
-
-          h-[42px]
-
-          bg-[#f8efd7]
-
-          border
-          border-[#d8c18c]
-
-          rounded-[11px]
-
-          px-3
-
-          text-[12px]
-          text-[#1a1a1a]
-
-          outline-none
-          "
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontWeight: 500,
-          }}
-        >
-          <option value="">
-            Location
-          </option>
-
-          <option>Jorhat</option>
-          <option>Guwahati</option>
-          <option>Dibrugarh</option>
-        </select>
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+  className="
+    w-[115px]
+    h-[42px]
+    bg-[#f8efd7]
+    border
+    border-[#d8c18c]
+    rounded-[11px]
+    px-3
+    text-[12px]
+    text-[#1a1a1a]
+    outline-none
+  "
+  style={{          fontFamily: "'Inter', sans-serif",          fontWeight: 500,        }}
+>
+  <option value="">Location</option>
+  <option value="Jorhat">Jorhat</option>
+  <option value="Guwahati">Guwahati</option>
+  <option value="Dibrugarh">Dibrugarh</option>
+</select>
 
         {/* SUBMIT */}
 
         <button
-          className="
-          flex
-          items-center
-          justify-center
-          gap-2
+  onClick={handleSubmit}
+  disabled={loading}
+  className="
+    flex
+    items-center
+    justify-center
+    gap-2
 
-          h-[42px]
+    h-[42px]
+    px-5
 
-          px-5
+    rounded-[11px]
 
-          rounded-[11px]
+    bg-[#1b3173]
+    hover:bg-[#16295f]
 
-          bg-[#1b3173]
+    text-white
 
-          hover:bg-[#16295f]
+    uppercase
+    tracking-[0.14em]
 
-          text-white
+    text-[10px]
 
-          uppercase
-          tracking-[0.14em]
+    transition-all
+    duration-300
 
-          text-[10px]
-
-          transition-all
-          duration-300
-          "
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontWeight: 700,
-          }}
-        >
-          Book
-
-          <Send size={13} />
-        </button>
+    disabled:opacity-70
+  "
+  style={{
+    fontFamily: "'Inter', sans-serif",
+    fontWeight: 700,
+  }}
+>
+  {loading ? "Submitting..." : "Book"}
+  <Send size={13} />
+</button>
       </div>
     </div>
   );

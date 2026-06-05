@@ -67,6 +67,23 @@ export default function PopupForm({ open, setOpen }) {
   setLoading(false);
   return;
 }
+await fetch(
+  " https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZlMDYzZjA0MzI1MjZiNTUzMTUxMzci_pc",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      phone,
+      email,
+      configuration: bhk,
+      city,
+      form_type: "sticky_form",
+    }),
+  }
+);
 
 setLoading(false);
 setOpen(false);
