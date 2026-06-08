@@ -89,7 +89,7 @@ export default function Overview({ setOpen }) {
                     Configuration
                   </h4>
                   <p className="text-[11px] text-[#707887] mt-1 font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    2 BHK & 3 BHK & 3.5 BHK Apartments
+                    2.5 BHK & 3 BHK & 3.5 BHK Apartments
                   </p>
                 </div>
               </div>
